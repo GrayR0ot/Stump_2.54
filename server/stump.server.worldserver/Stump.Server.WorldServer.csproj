@@ -973,6 +973,7 @@
     <Compile Include="Game\Idols\IdolInventory.cs" />
     <Compile Include="Game\Idols\IdolManager.cs" />
     <Compile Include="Game\Interactives\Skills\CustomSkill.cs" />
+    <Compile Include="Game\Interactives\Skills\EliocalypseAstrubBreach.cs" />
     <Compile Include="Game\Interactives\Skills\ISkillWithAgeBonus.cs" />
     <Compile Include="Game\Interactives\Skills\LoterieSkill.cs" />
     <Compile Include="Game\Interactives\Skills\SkillAnimate.cs" />

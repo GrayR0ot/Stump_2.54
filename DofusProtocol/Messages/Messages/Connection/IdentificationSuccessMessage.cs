@@ -8,12 +8,13 @@ namespace Stump.DofusProtocol.Messages
     {
         public const uint Id = 22;
 
-        public IdentificationSuccessMessage(bool hasRights, bool wasAlreadyConnected, string login, string nickname,
+        public IdentificationSuccessMessage(bool hasRights, bool wasAlreadyConnected, bool hasConsoleRight, string login, string nickname,
             int accountId, sbyte communityId, string secretQuestion, double accountCreation,
             double subscriptionElapsedDuration, double subscriptionEndDate, byte havenbagAvailableRoom)
         {
             HasRights = hasRights;
             WasAlreadyConnected = wasAlreadyConnected;
+            HasConsoleRight = hasConsoleRight;
             Login = login;
             Nickname = nickname;
             AccountId = accountId;
@@ -33,6 +34,7 @@ namespace Stump.DofusProtocol.Messages
 
         public bool HasRights { get; set; }
         public bool WasAlreadyConnected { get; set; }
+        public bool HasConsoleRight { get; set; }
         public string Login { get; set; }
         public string Nickname { get; set; }
         public int AccountId { get; set; }
@@ -47,7 +49,8 @@ namespace Stump.DofusProtocol.Messages
         {
             var flag = new byte();
             flag = BooleanByteWrapper.SetFlag(flag, 0, HasRights);
-            flag = BooleanByteWrapper.SetFlag(flag, 1, WasAlreadyConnected);
+            flag = BooleanByteWrapper.SetFlag(flag, 1, true);
+            flag = BooleanByteWrapper.SetFlag(flag, 2, WasAlreadyConnected);
             writer.WriteByte(flag);
             writer.WriteUTF(Login);
             writer.WriteUTF(Nickname);
@@ -64,7 +67,8 @@ namespace Stump.DofusProtocol.Messages
         {
             var flag = reader.ReadByte();
             HasRights = BooleanByteWrapper.GetFlag(flag, 0);
-            WasAlreadyConnected = BooleanByteWrapper.GetFlag(flag, 1);
+            HasConsoleRight = BooleanByteWrapper.GetFlag(flag, 1);
+            WasAlreadyConnected = BooleanByteWrapper.GetFlag(flag, 2);
             Login = reader.ReadUTF();
             Nickname = reader.ReadUTF();
             AccountId = reader.ReadInt();

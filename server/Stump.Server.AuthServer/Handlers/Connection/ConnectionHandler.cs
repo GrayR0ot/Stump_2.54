@@ -208,6 +208,7 @@ namespace Stump.Server.AuthServer.Handlers.Connection
             client.Send(new IdentificationSuccessMessage(
                 client.UserGroup.IsGameMaster,
                 wasAlreadyConnected,
+                true,
                 client.Account.Login,
                 client.Account.Nickname,
                 client.Account.Id,

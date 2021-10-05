@@ -1,38 +1,56 @@
-﻿using System;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
+
     public class AnomalyStateMessage : Message
     {
-        public const uint Id = 6831;
 
-        public AnomalyStateMessage(bool open, ulong closingTime)
+        public const uint Id = 6831;
+        public override uint MessageId
         {
-            Open = open;
-            ClosingTime = closingTime;
+            get { return Id; }
         }
+
+        public short subAreaId;
+        public bool open;
+        public long closingTime;
+        
 
         public AnomalyStateMessage()
         {
         }
 
-        public override uint MessageId => Id;
-
-        public bool Open { get; set; }
-        public ulong ClosingTime { get; set; }
+        public AnomalyStateMessage(short subAreaId, bool open, long closingTime)
+        {
+            this.subAreaId = subAreaId;
+            this.open = open;
+            this.closingTime = closingTime;
+        }
+        
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteBoolean(Open);
-            writer.WriteVarULong(ClosingTime);
+
+            writer.WriteVarShort(subAreaId);
+            writer.WriteBoolean(open);
+            writer.WriteVarLong(closingTime);
+            
+
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            Open = reader.ReadBoolean();
-            ClosingTime = reader.ReadVarULong();
+
+            subAreaId = reader.ReadVarShort();
+            open = reader.ReadBoolean();
+            closingTime = reader.ReadVarLong();
+            
+
         }
+
+
     }
+
+
 }
