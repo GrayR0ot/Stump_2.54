@@ -1,92 +1,104 @@
-﻿using System;
-using System.Linq;
-using Stump.Core.IO;
-using Stump.DofusProtocol.Types;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
     public class GameFightSpectateMessage : Message
     {
         public const uint Id = 6069;
 
-        public GameFightSpectateMessage(FightDispellableEffectExtendedInformations[] effects, GameActionMark[] marks,
-            ushort gameTurn, int fightStart, Idol[] idols)
+        public override uint MessageId
         {
-            Effects = effects;
-            Marks = marks;
-            GameTurn = gameTurn;
-            FightStart = fightStart;
-            Idols = idols;
+            get { return Id; }
         }
+
+        public Types.FightDispellableEffectExtendedInformations[] Efects;
+        public Types.GameActionMark[] Marks;
+        public uint GameTurn;
+        public int FightStart;
+        public Types.Idol[] Idols;
+        public Types.GameFightEffectTriggerCount[] FxTriggerCounts;
+
 
         public GameFightSpectateMessage()
         {
         }
 
-        public override uint MessageId => Id;
+        public GameFightSpectateMessage(Types.FightDispellableEffectExtendedInformations[] effects,
+            Types.GameActionMark[] marks, uint gameTurn, int fightStart, Types.Idol[] idols,
+            Types.GameFightEffectTriggerCount[] fxTriggerCounts)
+        {
+            this.Efects = effects;
+            this.Marks = marks;
+            this.GameTurn = gameTurn;
+            this.FightStart = fightStart;
+            this.Idols = idols;
+            this.FxTriggerCounts = fxTriggerCounts;
+        }
 
-        public FightDispellableEffectExtendedInformations[] Effects { get; set; }
-        public GameActionMark[] Marks { get; set; }
-        public ushort GameTurn { get; set; }
-        public int FightStart { get; set; }
-        public Idol[] Idols { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteShort((short) Effects.Count());
-            for (var effectsIndex = 0; effectsIndex < Effects.Count(); effectsIndex++)
+            writer.WriteShort((short) Efects.Length);
+            foreach (var entry in Efects)
             {
-                var objectToSend = Effects[effectsIndex];
-                objectToSend.Serialize(writer);
+                entry.Serialize(writer);
             }
 
-            writer.WriteShort((short) Marks.Count());
-            for (var marksIndex = 0; marksIndex < Marks.Count(); marksIndex++)
+            writer.WriteShort((short) Marks.Length);
+            foreach (var entry in Marks)
             {
-                var objectToSend = Marks[marksIndex];
-                objectToSend.Serialize(writer);
+                entry.Serialize(writer);
             }
 
-            writer.WriteVarUShort(GameTurn);
+            writer.WriteVarShort((short)GameTurn);
             writer.WriteInt(FightStart);
-            writer.WriteShort((short) Idols.Count());
-            for (var idolsIndex = 0; idolsIndex < Idols.Count(); idolsIndex++)
+            writer.WriteShort((short) Idols.Length);
+            foreach (var entry in Idols)
             {
-                var objectToSend = Idols[idolsIndex];
-                objectToSend.Serialize(writer);
+                entry.Serialize(writer);
+            }
+
+            writer.WriteShort((short) FxTriggerCounts.Length);
+            foreach (var entry in FxTriggerCounts)
+            {
+                entry.Serialize(writer);
             }
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            var effectsCount = reader.ReadUShort();
-            Effects = new FightDispellableEffectExtendedInformations[effectsCount];
-            for (var effectsIndex = 0; effectsIndex < effectsCount; effectsIndex++)
+            var limit = (ushort) reader.ReadUShort();
+            Efects = new Types.FightDispellableEffectExtendedInformations[limit];
+            for (int i = 0; i < limit; i++)
             {
-                var objectToAdd = new FightDispellableEffectExtendedInformations();
-                objectToAdd.Deserialize(reader);
-                Effects[effectsIndex] = objectToAdd;
+                Efects[i] = new Types.FightDispellableEffectExtendedInformations();
+                Efects[i].Deserialize(reader);
             }
 
-            var marksCount = reader.ReadUShort();
-            Marks = new GameActionMark[marksCount];
-            for (var marksIndex = 0; marksIndex < marksCount; marksIndex++)
+            limit = (ushort) reader.ReadUShort();
+            Marks = new Types.GameActionMark[limit];
+            for (int i = 0; i < limit; i++)
             {
-                var objectToAdd = new GameActionMark();
-                objectToAdd.Deserialize(reader);
-                Marks[marksIndex] = objectToAdd;
+                Marks[i] = new Types.GameActionMark();
+                Marks[i].Deserialize(reader);
             }
 
             GameTurn = reader.ReadVarUShort();
             FightStart = reader.ReadInt();
-            var idolsCount = reader.ReadUShort();
-            Idols = new Idol[idolsCount];
-            for (var idolsIndex = 0; idolsIndex < idolsCount; idolsIndex++)
+            limit = (ushort) reader.ReadUShort();
+            Idols = new Types.Idol[limit];
+            for (int i = 0; i < limit; i++)
             {
-                var objectToAdd = new Idol();
-                objectToAdd.Deserialize(reader);
-                Idols[idolsIndex] = objectToAdd;
+                Idols[i] = new Types.Idol();
+                Idols[i].Deserialize(reader);
+            }
+
+            limit = (ushort) reader.ReadUShort();
+            FxTriggerCounts = new Types.GameFightEffectTriggerCount[limit];
+            for (int i = 0; i < limit; i++)
+            {
+                FxTriggerCounts[i] = new Types.GameFightEffectTriggerCount();
+                FxTriggerCounts[i].Deserialize(reader);
             }
         }
     }

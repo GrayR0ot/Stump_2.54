@@ -8,7 +8,7 @@ namespace Stump.DofusProtocol.Messages
     {
         public const uint Id = 1000;
 
-        public AbstractGameActionMessage(ushort actionId, double sourceId)
+        public AbstractGameActionMessage(uint actionId, double sourceId)
         {
             ActionId = actionId;
             SourceId = sourceId;
@@ -20,12 +20,12 @@ namespace Stump.DofusProtocol.Messages
 
         public override uint MessageId => Id;
 
-        public ushort ActionId { get; set; }
+        public uint ActionId { get; set; }
         public double SourceId { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteVarUShort(ActionId);
+            writer.WriteVarUInt(ActionId);
             writer.WriteDouble(SourceId);
         }
 

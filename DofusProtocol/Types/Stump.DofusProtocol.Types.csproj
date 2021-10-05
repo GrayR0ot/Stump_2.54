@@ -299,8 +299,11 @@
     <Compile Include="Types\Game\Context\Fight\FightTeamMemberMonsterInformations.cs" />
     <Compile Include="Types\Game\Context\Fight\FightTeamMemberTaxCollectorInformations.cs" />
     <Compile Include="Types\Game\Context\Fight\FightTeamMemberWithAllianceCharacterInformations.cs" />
+    <Compile Include="Types\Game\Context\Fight\GameContextBasicSpawnInformation.cs" />
+    <Compile Include="Types\Game\Context\Fight\GameContextSummonsInformation.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightAIInformations.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightCharacterInformations.cs" />
+    <Compile Include="Types\Game\Context\Fight\GameFightEffectTriggerCount.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightEntityInformation.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightFighterEntityLightInformation.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightFighterInformations.cs" />
@@ -317,6 +320,7 @@
     <Compile Include="Types\Game\Context\Fight\GameFightResumeSlaveInfo.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightSpellCooldown.cs" />
     <Compile Include="Types\Game\Context\Fight\GameFightTaxCollectorInformations.cs" />
+    <Compile Include="Types\Game\Context\Fight\SpawnInformation.cs" />
     <Compile Include="Types\Game\Context\GameContextActorInformations.cs" />
     <Compile Include="Types\Game\Context\GameContextActorPositionInformations.cs" />
     <Compile Include="Types\Game\Context\GameRolePlayTaxCollectorInformations.cs" />

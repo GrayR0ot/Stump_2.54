@@ -300,6 +300,7 @@
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightLifePointsLostMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightMarkCellsMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightModifyEffectsDurationMessage.cs" />
+    <Compile Include="Messages\Game\Actions\Fight\GameActionFightMultipleSummonMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightNoSpellCastMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightPointsVariationMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightReduceDamagesMessage.cs" />
@@ -318,6 +319,7 @@
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightTriggerGlyphTrapMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightUnmarkCellsMessage.cs" />
     <Compile Include="Messages\Game\Actions\Fight\GameActionFightVanishMessage.cs" />
+    <Compile Include="Messages\Game\Actions\Fight\GameActionUpdateEffectTriggerCountMessage.cs" />
     <Compile Include="Messages\Game\Actions\GameActionAcknowledgementMessage.cs" />
     <Compile Include="Messages\Game\Actions\GameActionNoopMessage.cs" />
     <Compile Include="Messages\Game\Actions\Sequence\SequenceEndMessage.cs" />
