@@ -1,0 +1,7 @@
+.idea/
+run/
+/bin
+/Debug
+/obj
+.vs/
+*.cache

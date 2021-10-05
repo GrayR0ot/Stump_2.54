@@ -1,0 +1,66 @@
+-------------Fatal at 04/08/2021 07:56:19------------- 
+ Stump.Server.BaseServer.ServerBase.HandleCrashException -> 
+	 Crash Exception : Could not load file or assembly 'MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+ Source: mscorlib -> System.Reflection.RuntimeAssembly _nLoad(System.Reflection.AssemblyName, System.String, System.Security.Policy.Evidence, System.Reflection.RuntimeAssembly, System.Threading.StackCrawlMark ByRef, IntPtr, Boolean, Boolean, Boolean)
+ Stack Trace:
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Stump.Server.BaseServer.ServerBase.<>c.<PreLoadReferences>b__98_1(AssemblyName assemblyName) in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 350
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at Stump.Server.BaseServer.ServerBase.PreLoadReferences(Assembly executingAssembly) in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 350
+   at Stump.Server.BaseServer.ServerBase.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 225
+   at Stump.Server.BaseServer.ServerBase`1.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 578
+   at Stump.Server.WorldServer.WorldServer.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\stump.server.worldserver\WorldServer.cs:line 96
+   at Stump.GUI.WorldConsole.Program.Main(String[] args) in C:\Users\Administrator\Desktop\Emu 2.51 debug\GUI\Stump.GUI.WorldConsole\Program.cs:line 19 
+-------------Fatal at 04/08/2021 07:56:19------------- 
+
+-------------Fatal at 04/08/2021 07:56:20------------- 
+ Stump.Server.BaseServer.ServerBase.HandleCrashException -> 
+	 Crash Exception : Object reference not set to an instance of an object.
+ Source: Stump.Server.WorldServer -> Void OnShutdown()
+ Stack Trace:
+   at Stump.Server.WorldServer.WorldServer.OnShutdown() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\stump.server.worldserver\WorldServer.cs:line 293
+   at Stump.Server.BaseServer.ServerBase.Shutdown() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 534
+   at Stump.GUI.WorldConsole.Program.Main(String[] args) in C:\Users\Administrator\Desktop\Emu 2.51 debug\GUI\Stump.GUI.WorldConsole\Program.cs:line 35 
+-------------Fatal at 04/08/2021 07:56:20------------- 
+
+-------------Fatal at 04/08/2021 07:56:30------------- 
+ Stump.Server.BaseServer.ServerBase.HandleCrashException -> 
+	 Crash Exception : Could not load file or assembly 'MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+ Source: mscorlib -> System.Reflection.RuntimeAssembly _nLoad(System.Reflection.AssemblyName, System.String, System.Security.Policy.Evidence, System.Reflection.RuntimeAssembly, System.Threading.StackCrawlMark ByRef, IntPtr, Boolean, Boolean, Boolean)
+ Stack Trace:
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.Assembly.Load(AssemblyName assemblyRef)
+   at Stump.Server.BaseServer.ServerBase.<>c.<PreLoadReferences>b__98_1(AssemblyName assemblyName) in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 350
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at Stump.Server.BaseServer.ServerBase.PreLoadReferences(Assembly executingAssembly) in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 350
+   at Stump.Server.BaseServer.ServerBase.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 225
+   at Stump.Server.BaseServer.ServerBase`1.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 578
+   at Stump.Server.AuthServer.AuthServer.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.AuthServer\AuthServer.cs:line 98 
+-------------Fatal at 04/08/2021 07:56:30------------- 
+
+-------------Fatal at 04/08/2021 07:56:30------------- 
+ Stump.Server.BaseServer.ServerBase.HandleCrashException -> 
+	 Crash Exception : Object reference not set to an instance of an object.
+ Source: Stump.Server.AuthServer -> Void OnShutdown()
+ Stack Trace:
+   at Stump.Server.AuthServer.AuthServer.OnShutdown() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.AuthServer\AuthServer.cs:line 185
+   at Stump.Server.BaseServer.ServerBase.Shutdown() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 534
+   at Stump.Server.AuthServer.AuthServer.Initialize() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.AuthServer\AuthServer.cs:line 146
+   at Stump.GUI.AuthConsole.Program.Main(String[] args) in C:\Users\Administrator\Desktop\Emu 2.51 debug\GUI\Stump.GUI.AuthConsole\Program.cs:line 20 
+-------------Fatal at 04/08/2021 07:56:30------------- 
+
+-------------Fatal at 04/08/2021 07:56:30------------- 
+ Stump.Server.BaseServer.ServerBase.HandleCrashException -> 
+	 Crash Exception : Object reference not set to an instance of an object.
+ Source: Stump.Server.AuthServer -> Void OnShutdown()
+ Stack Trace:
+   at Stump.Server.AuthServer.AuthServer.OnShutdown() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.AuthServer\AuthServer.cs:line 185
+   at Stump.Server.BaseServer.ServerBase.Shutdown() in C:\Users\Administrator\Desktop\Emu 2.51 debug\server\Stump.Server.BaseServer\ServerBase.cs:line 534
+   at Stump.GUI.AuthConsole.Program.Main(String[] args) in C:\Users\Administrator\Desktop\Emu 2.51 debug\GUI\Stump.GUI.AuthConsole\Program.cs:line 36 
+-------------Fatal at 04/08/2021 07:56:30------------- 
+

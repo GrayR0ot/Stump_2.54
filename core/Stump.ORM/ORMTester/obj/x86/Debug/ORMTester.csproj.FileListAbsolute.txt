@@ -1,0 +1,2 @@
+C:\Users\leomo\Downloads\Nonobstant 2.51\core\Stump.ORM\ORMTester\obj\x86\Debug\ORMTester.csproj.AssemblyReference.cache
+C:\Users\leomo\Downloads\Nonobstant 2.51\core\Stump.ORM\ORMTester\obj\x86\Debug\ORMTester.csproj.CoreCompileInputs.cache

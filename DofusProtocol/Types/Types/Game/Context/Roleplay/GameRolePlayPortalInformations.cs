@@ -1,0 +1,42 @@
+﻿using System;
+using Stump.Core.IO;
+
+namespace Stump.DofusProtocol.Types
+{
+    [Serializable]
+    public class GameRolePlayPortalInformations : GameRolePlayActorInformations
+    {
+        public new const short Id = 467;
+
+        public GameRolePlayPortalInformations(double contextualId, EntityLook look,
+            EntityDispositionInformations disposition, PortalInformation portal)
+        {
+            ContextualId = contextualId;
+            Look = look;
+            Disposition = disposition;
+            Portal = portal;
+        }
+
+        public GameRolePlayPortalInformations()
+        {
+        }
+
+        public override short TypeId => Id;
+
+        public PortalInformation Portal { get; set; }
+
+        public override void Serialize(IDataWriter writer)
+        {
+            base.Serialize(writer);
+            writer.WriteShort(Portal.TypeId);
+            Portal.Serialize(writer);
+        }
+
+        public override void Deserialize(IDataReader reader)
+        {
+            base.Deserialize(reader);
+            Portal = ProtocolTypeManager.GetInstance<PortalInformation>(reader.ReadShort());
+            Portal.Deserialize(reader);
+        }
+    }
+}
