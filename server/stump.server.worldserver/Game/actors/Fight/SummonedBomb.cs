@@ -25,21 +25,17 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 {
     public class SummonedBomb : FightActor, INamedActor, ICreature
     {
-        [Variable]
-        public static int BombLimit = 3;
-        [Variable]
-        public static int WallMinSize = 1;
-        [Variable]
-        public static int WallMaxSize = 6;
-        [Variable]
-        public static int ExplosionZone = 2;
+        [Variable] public static int BombLimit = 3;
+        [Variable] public static int WallMinSize = 1;
+        [Variable] public static int WallMaxSize = 6;
+        [Variable] public static int ExplosionZone = 2;
 
         static readonly Dictionary<int, SpellIdEnum> wallsSpells = new Dictionary<int, SpellIdEnum>
         {
             {2, SpellIdEnum.WALL_OF_FIRE},
             {3, SpellIdEnum.WALL_OF_AIR},
             {4, SpellIdEnum.WALL_OF_WATER},
-            {5, SpellIdEnum.EARTH_WALL },
+            {5, SpellIdEnum.EARTH_WALL},
         };
 
         static readonly Dictionary<int, Color> wallsColors = new Dictionary<int, Color>()
@@ -56,7 +52,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         readonly StatsFields m_stats;
         readonly bool m_initialized;
 
-        public SummonedBomb(int id, FightTeam team, SpellBombTemplate spellBombTemplate, MonsterGrade monsterBombTemplate, FightActor summoner, Cell cell)
+        public SummonedBomb(int id, FightTeam team, SpellBombTemplate spellBombTemplate,
+            MonsterGrade monsterBombTemplate, FightActor summoner, Cell cell)
             : base(team)
         {
             /*int bombAmount = 0;
@@ -85,11 +82,11 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             SpellBombTemplate = spellBombTemplate;
             m_stats = new StatsFields(this);
             m_stats.Initialize(monsterBombTemplate);
-            WallSpell = new Spell((int)wallsSpells[SpellBombTemplate.WallId], (byte)MonsterBombTemplate.GradeId);
+            WallSpell = new Spell((int) wallsSpells[SpellBombTemplate.WallId], (byte) MonsterBombTemplate.GradeId);
             m_color = wallsColors[SpellBombTemplate.WallId];
             AdjustStats();
 
-            ExplodSpell = new Spell(spellBombTemplate.ExplodReactionSpell, (byte)MonsterBombTemplate.GradeId);
+            ExplodSpell = new Spell(spellBombTemplate.ExplodReactionSpell, (byte) MonsterBombTemplate.GradeId);
 
             Fight.TurnStarted += OnTurnStarted;
             Team.FighterAdded += OnFighterAdded;
@@ -104,7 +101,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 return;
             }
 
-            CastAutoSpell(new Spell((int)SpellIdEnum.IGNITION_2928, 1), Cell);
+            CastAutoSpell(new Spell((int) SpellIdEnum.IGNITION_2928, 1), Cell);
             CheckAndBuildWalls();
         }
 
@@ -118,46 +115,27 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         void AdjustStats()
         {
-            m_stats.Health.Base = (int)Math.Floor(MonsterBombTemplate.LifePoints + 10 + (Summoner.MaxLifePoints / 4.0));
+            m_stats.Health.Base =
+                (int) Math.Floor(MonsterBombTemplate.LifePoints + 10 + (Summoner.MaxLifePoints / 4.0));
         }
 
-        public override sealed int Id
-        {
-            get;
-            protected set;
-        }
+        public override sealed int Id { get; protected set; }
 
         public override bool HasResult => false;
 
         public override ObjectPosition MapPosition => Position;
 
-        public MonsterGrade MonsterBombTemplate
-        {
-            get;
-        }
+        public MonsterGrade MonsterBombTemplate { get; }
 
         public MonsterGrade MonsterGrade => MonsterBombTemplate;
 
-        public SpellBombTemplate SpellBombTemplate
-        {
-            get;
-        }
+        public SpellBombTemplate SpellBombTemplate { get; }
 
-        public Spell ExplodSpell
-        {
-            get;
-        }
+        public Spell ExplodSpell { get; }
 
-        public Spell WallSpell
-        {
-            get;
-        }
+        public Spell WallSpell { get; }
 
-        public bool Exploded
-        {
-            get;
-            private set;
-        }
+        public bool Exploded { get; private set; }
 
         public int DamageBonusPercent => Stats[PlayerFields.ComboBonus].TotalSafe;
 
@@ -165,7 +143,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override bool CanMove() => base.CanMove() && MonsterGrade.MovementPoints > 0;
 
-        public override ushort Level => (ushort)MonsterBombTemplate.Level;
+        public override ushort Level => (ushort) MonsterBombTemplate.Level;
 
         public override StatsFields Stats => m_stats;
 
@@ -178,7 +156,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override bool HasSpell(int id) => false;
 
-        public override string GetMapRunningFighterName() => MonsterBombTemplate.Id.ToString(CultureInfo.InvariantCulture);
+        public override string GetMapRunningFighterName() =>
+            MonsterBombTemplate.Id.ToString(CultureInfo.InvariantCulture);
 
         public string Name => MonsterBombTemplate.Template.Name;
 
@@ -187,7 +166,6 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             PlayerFields stats;
             switch (damage.School)
             {
-
                 case EffectSchoolEnum.Neutral:
                 case EffectSchoolEnum.Earth:
                     stats = PlayerFields.Strength;
@@ -206,9 +184,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                     break;
             }
 
-            damage.Amount = (int)Math.Floor(damage.Amount *
-                                    (100 + Summoner.Stats[stats].Total + Summoner.Stats[PlayerFields.DamageBonusPercent]) /
-                                    100d + Summoner.Stats[PlayerFields.DamageBonus].Total);
+            damage.Amount = (int) Math.Floor(damage.Amount *
+                (100 + Summoner.Stats[stats].Total + Summoner.Stats[PlayerFields.DamageBonusPercent]) /
+                100d + Summoner.Stats[PlayerFields.DamageBonus].Total);
 
             return damage;
         }
@@ -218,12 +196,15 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             var dist = Position.Point.ManhattanDistanceTo(bomb.Position.Point);
 
             return dist > WallMinSize && dist <= (WallMaxSize + 1) && // check the distance
-                MonsterBombTemplate == bomb.MonsterBombTemplate && // bombs are from the same type
-                !IsCarried() && !bomb.IsCarried() && // bombs are not carried
-                Position.Point.IsOnSameLine(bomb.Position.Point) && // bombs are in alignment
-                Summoner.Bombs.All(x => x == this || x == bomb
-                || !x.Position.Point.IsBetween(Position.Point, bomb.Position.Point)
-                || (x.Position.Point.IsBetween(Position.Point, bomb.Position.Point) && MonsterBombTemplate != x.MonsterBombTemplate)); // there are no others bombs from the same type between them
+                   MonsterBombTemplate == bomb.MonsterBombTemplate && // bombs are from the same type
+                   !IsCarried() && !bomb.IsCarried() && // bombs are not carried
+                   Position.Point.IsOnSameLine(bomb.Position.Point) && // bombs are in alignment
+                   Summoner.Bombs.All(x => x == this || x == bomb
+                                                     || !x.Position.Point.IsBetween(Position.Point, bomb.Position.Point)
+                                                     || (x.Position.Point.IsBetween(Position.Point,
+                                                             bomb.Position.Point) &&
+                                                         MonsterBombTemplate !=
+                                                         x.MonsterBombTemplate)); // there are no others bombs from the same type between them
         }
 
         public bool IsInExplosionZone(SummonedBomb bomb)
@@ -240,12 +221,14 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public SummonedBomb[] GetBombsBoundedWith()
         {
-            var bombs = new List<SummonedBomb> { this };
-            foreach (var bomb in Summoner.Bombs.Where(bomb => !bombs.Contains(bomb)).Where(x => IsBoundWith(x) || IsInExplosionZone(x)))
+            var bombs = new List<SummonedBomb> {this};
+            foreach (var bomb in Summoner.Bombs.Where(bomb => !bombs.Contains(bomb))
+                .Where(x => IsBoundWith(x) || IsInExplosionZone(x)))
             {
                 bombs.Add(bomb);
                 var bomb1 = bomb;
-                foreach (var bomb2 in Summoner.Bombs.Where(bomb2 => !bombs.Contains(bomb2)).Where(x => bomb1.IsBoundWith(x) || bomb1.IsInExplosionZone(x)))
+                foreach (var bomb2 in Summoner.Bombs.Where(bomb2 => !bombs.Contains(bomb2))
+                    .Where(x => bomb1.IsBoundWith(x) || bomb1.IsInExplosionZone(x)))
                 {
                     bombs.Add(bomb2);
                 }
@@ -257,12 +240,14 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         public void Explode()
         {
             // check reaction
-            var bombs = new List<SummonedBomb> { this };
-            foreach (var bomb in Summoner.Bombs.Where(bomb => !bombs.Contains(bomb)).Where(x => IsBoundWith(x) || IsInExplosionZone(x)))
+            var bombs = new List<SummonedBomb> {this};
+            foreach (var bomb in Summoner.Bombs.Where(bomb => !bombs.Contains(bomb))
+                .Where(x => IsBoundWith(x) || IsInExplosionZone(x)))
             {
                 bombs.Add(bomb);
                 var bomb1 = bomb;
-                foreach (var bomb2 in Summoner.Bombs.Where(bomb2 => !bombs.Contains(bomb2)).Where(x => bomb1.IsBoundWith(x) || bomb1.IsInExplosionZone(x)))
+                foreach (var bomb2 in Summoner.Bombs.Where(bomb2 => !bombs.Contains(bomb2))
+                    .Where(x => bomb1.IsBoundWith(x) || bomb1.IsInExplosionZone(x)))
                 {
                     bombs.Add(bomb2);
                 }
@@ -371,7 +356,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             {
                 foreach (var bomb2 in Summoner.Bombs.ToArray())
                 {
-                    if (bomb1 == bomb2 || !bomb1.m_wallsBinding.All(x => x.Bomb1 != bomb2 && x.Bomb2 != bomb2) || !bomb1.IsBoundWith(bomb2))
+                    if (bomb1 == bomb2 || !bomb1.m_wallsBinding.All(x => x.Bomb1 != bomb2 && x.Bomb2 != bomb2) ||
+                        !bomb1.IsBoundWith(bomb2))
                     {
                         continue;
                     }
@@ -422,58 +408,62 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
 
         public override GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null)
-            => new GameFightMonsterInformations(Id, Look.GetEntityLook(), GetEntityDispositionInformations(),
-                (sbyte)Team.Id, 0, IsAlive(), GetGameFightMinimalStats(), new ushort[0], (ushort)MonsterBombTemplate.MonsterId,
-                (sbyte)MonsterBombTemplate.GradeId, (short)MonsterBombTemplate.Level);
+            => new GameFightMonsterInformations(Id, GetEntityDispositionInformations(), Look.GetEntityLook(),
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
+                0, GetGameFightMinimalStats(), new uint[0],
+                (ushort) MonsterBombTemplate.MonsterId,
+                (sbyte) MonsterBombTemplate.GradeId, (short) MonsterBombTemplate.Level);
 
         public override FightTeamMemberInformations GetFightTeamMemberInformations()
-            => new FightTeamMemberMonsterInformations(Id, MonsterBombTemplate.Template.Id, (sbyte)MonsterBombTemplate.GradeId);
+            => new FightTeamMemberMonsterInformations(Id, MonsterBombTemplate.Template.Id,
+                (sbyte) MonsterBombTemplate.GradeId);
 
         public override GameFightMinimalStats GetGameFightMinimalStats(WorldClient client = null)
             => new GameFightMinimalStats(
-                (uint)Stats.Health.Total,
-                (uint)Stats.Health.TotalMax,
-                (uint)Stats.Health.TotalMaxWithoutPermanentDamages,
-                (uint)Stats[PlayerFields.PermanentDamagePercent].Total,
-                (uint)Stats.Shield.TotalSafe,
-                (short)Stats.AP.Total,
-                (short)Stats.AP.TotalMax,
-                (short)Stats.MP.Total,
-                (short)Stats.MP.TotalMax,
+                (uint) Stats.Health.Total,
+                (uint) Stats.Health.TotalMax,
+                (uint) Stats.Health.TotalMaxWithoutPermanentDamages,
+                (uint) Stats[PlayerFields.PermanentDamagePercent].Total,
+                (uint) Stats.Shield.TotalSafe,
+                (short) Stats.AP.Total,
+                (short) Stats.AP.TotalMax,
+                (short) Stats.MP.Total,
+                (short) Stats.MP.TotalMax,
                 Summoner.Id,
                 true,
-                (short)Stats[PlayerFields.NeutralResistPercent].Total,
-                (short)Stats[PlayerFields.EarthResistPercent].Total,
-                (short)Stats[PlayerFields.WaterResistPercent].Total,
-                (short)Stats[PlayerFields.AirResistPercent].Total,
-                (short)Stats[PlayerFields.FireResistPercent].Total,
-                (short)Stats[PlayerFields.NeutralElementReduction].Total,
-                (short)Stats[PlayerFields.EarthElementReduction].Total,
-                (short)Stats[PlayerFields.WaterElementReduction].Total,
-                (short)Stats[PlayerFields.AirElementReduction].Total,
-                (short)Stats[PlayerFields.FireElementReduction].Total,
-                (short)Stats[PlayerFields.CriticalDamageReduction].Total,
-                (short)Stats[PlayerFields.PushDamageReduction].Total,
-                (short)Stats[PlayerFields.PvpNeutralResistPercent].Total,
-                (short)Stats[PlayerFields.PvpEarthResistPercent].Total,
-                (short)Stats[PlayerFields.PvpWaterResistPercent].Total,
-                (short)Stats[PlayerFields.PvpAirResistPercent].Total,
-                (short)Stats[PlayerFields.PvpFireResistPercent].Total,
-                (short)Stats[PlayerFields.PvpNeutralElementReduction].Total,
-                (short)Stats[PlayerFields.PvpEarthElementReduction].Total,
-                (short)Stats[PlayerFields.PvpWaterElementReduction].Total,
-                (short)Stats[PlayerFields.PvpAirElementReduction].Total,
-                (short)Stats[PlayerFields.PvpFireElementReduction].Total,
-                (ushort)Stats[PlayerFields.DodgeAPProbability].Total,
-                (ushort)Stats[PlayerFields.DodgeMPProbability].Total,
-                (short)Stats[PlayerFields.TackleBlock].Total,
-                (short)Stats[PlayerFields.TackleEvade].Total,
+                (short) Stats[PlayerFields.NeutralResistPercent].Total,
+                (short) Stats[PlayerFields.EarthResistPercent].Total,
+                (short) Stats[PlayerFields.WaterResistPercent].Total,
+                (short) Stats[PlayerFields.AirResistPercent].Total,
+                (short) Stats[PlayerFields.FireResistPercent].Total,
+                (short) Stats[PlayerFields.NeutralElementReduction].Total,
+                (short) Stats[PlayerFields.EarthElementReduction].Total,
+                (short) Stats[PlayerFields.WaterElementReduction].Total,
+                (short) Stats[PlayerFields.AirElementReduction].Total,
+                (short) Stats[PlayerFields.FireElementReduction].Total,
+                (short) Stats[PlayerFields.CriticalDamageReduction].Total,
+                (short) Stats[PlayerFields.PushDamageReduction].Total,
+                (short) Stats[PlayerFields.PvpNeutralResistPercent].Total,
+                (short) Stats[PlayerFields.PvpEarthResistPercent].Total,
+                (short) Stats[PlayerFields.PvpWaterResistPercent].Total,
+                (short) Stats[PlayerFields.PvpAirResistPercent].Total,
+                (short) Stats[PlayerFields.PvpFireResistPercent].Total,
+                (short) Stats[PlayerFields.PvpNeutralElementReduction].Total,
+                (short) Stats[PlayerFields.PvpEarthElementReduction].Total,
+                (short) Stats[PlayerFields.PvpWaterElementReduction].Total,
+                (short) Stats[PlayerFields.PvpAirElementReduction].Total,
+                (short) Stats[PlayerFields.PvpFireElementReduction].Total,
+                (ushort) Stats[PlayerFields.DodgeAPProbability].Total,
+                (ushort) Stats[PlayerFields.DodgeMPProbability].Total,
+                (short) Stats[PlayerFields.TackleBlock].Total,
+                (short) Stats[PlayerFields.TackleEvade].Total,
                 0,
-                (sbyte)(client == null ? VisibleState : GetVisibleStateFor(client.Character)), // invisibility state
-                (ushort)(100 + Stats[PlayerFields.MeleeDamageReceivedPercent].Total),
-                    (ushort)(100 + Stats[PlayerFields.RangedDamageReceivedPercent].Total),
-                    (ushort)(100 + Stats[PlayerFields.WeaponDamageReceivedPercent].Total),
-                    (ushort)(100 + Stats[PlayerFields.SpellDamageReceivedPercent].Total)
-                );
+                (sbyte) (client == null ? VisibleState : GetVisibleStateFor(client.Character)), // invisibility state
+                (ushort) (100 + Stats[PlayerFields.MeleeDamageReceivedPercent].Total),
+                (ushort) (100 + Stats[PlayerFields.RangedDamageReceivedPercent].Total),
+                (ushort) (100 + Stats[PlayerFields.WeaponDamageReceivedPercent].Total),
+                (ushort) (100 + Stats[PlayerFields.SpellDamageReceivedPercent].Total)
+            );
     }
 }

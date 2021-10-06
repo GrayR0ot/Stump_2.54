@@ -21,14 +21,12 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             Look = caster.Look.Clone();
             m_stats = new StatsFields(this);
             m_stats.InitializeFromStats(caster.Stats);
-            if (Caster is CharacterFighter && (Caster as CharacterFighter).Character.BreedId == PlayableBreedEnum.Sram) Stats.Health.DamageTaken = 0;
+            if (Caster is CharacterFighter && (Caster as CharacterFighter).Character.BreedId == PlayableBreedEnum.Sram)
+                Stats.Health.DamageTaken = 0;
             ResetUsedPoints();
         }
 
-        public FightActor Caster
-        {
-            get;
-        }
+        public FightActor Caster { get; }
 
         public override ObjectPosition MapPosition => Position;
 
@@ -36,7 +34,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override ushort Level => Caster.Level;
 
-        public override string Name => (Caster is NamedFighter) ? ((NamedFighter)Caster).Name : "(no name)";
+        public override string Name => (Caster is NamedFighter) ? ((NamedFighter) Caster).Name : "(no name)";
 
         public override StatsFields Stats => m_stats;
 
@@ -48,15 +46,25 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             {
                 var characterInfos = casterInfos as GameFightCharacterInformations;
 
-                return new GameFightCharacterInformations(Id, casterInfos.Look, GetEntityDispositionInformations(), casterInfos.TeamId,
-                    0, IsAlive(), GetGameFightMinimalStats(), MovementHistory.GetEntries(2).Select(x => x.Cell.Id).Select(x => (ushort)x).ToArray(),
-                    characterInfos.Name, characterInfos.Status, characterInfos.LeagueId, characterInfos.LadderPosition, false, characterInfos.Level, characterInfos.AlignmentInfos, characterInfos.Breed, characterInfos.Sex);
+                return new GameFightCharacterInformations(Id, GetEntityDispositionInformations(), casterInfos.Look,
+                    new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                        new GameContextActorPositionInformations((double) Id,
+                            GetEntityDispositionInformations(client))),
+                    0, GetGameFightMinimalStats(),
+                    MovementHistory.GetEntries(2).Select(x => x.Cell.Id).Select(x => (uint) x).ToArray(),
+                    characterInfos.Name, characterInfos.Status, characterInfos.LeagueId, characterInfos.LadderPosition,
+                    false, characterInfos.Level, characterInfos.AlignmentInfos, characterInfos.Breed,
+                    characterInfos.Sex);
             }
 
-            return new GameFightFighterInformations(Id, casterInfos.Look, GetEntityDispositionInformations(), casterInfos.TeamId,
-                0, IsAlive(), GetGameFightMinimalStats(), MovementHistory.GetEntries(2).Select(x => x.Cell.Id).Select(x => (ushort)x).ToArray());
+            return new GameFightFighterInformations(Id, GetEntityDispositionInformations(), casterInfos.Look,
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
+                0, GetGameFightMinimalStats(),
+                MovementHistory.GetEntries(2).Select(x => x.Cell.Id).Select(x => (uint) x).ToArray());
         }
 
-        public override FightTeamMemberInformations GetFightTeamMemberInformations() => new FightTeamMemberInformations(Id);
+        public override FightTeamMemberInformations GetFightTeamMemberInformations() =>
+            new FightTeamMemberInformations(Id);
     }
 }

@@ -8,10 +8,9 @@ namespace Stump.DofusProtocol.Messages
     {
         public const uint Id = 6740;
 
-        public AccountInformationsUpdateMessage(double subscriptionEndDate, double unlimitedRestatEndDate)
+        public AccountInformationsUpdateMessage(double subscriptionEndDate)
         {
             SubscriptionEndDate = subscriptionEndDate;
-            UnlimitedRestatEndDate = unlimitedRestatEndDate;
         }
 
         public AccountInformationsUpdateMessage()
@@ -21,18 +20,15 @@ namespace Stump.DofusProtocol.Messages
         public override uint MessageId => Id;
 
         public double SubscriptionEndDate { get; set; }
-        public double UnlimitedRestatEndDate { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             writer.WriteDouble(SubscriptionEndDate);
-            writer.WriteDouble(UnlimitedRestatEndDate);
         }
 
         public override void Deserialize(IDataReader reader)
         {
             SubscriptionEndDate = reader.ReadDouble();
-            UnlimitedRestatEndDate = reader.ReadDouble();
         }
     }
 }

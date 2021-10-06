@@ -8,12 +8,12 @@ namespace Stump.DofusProtocol.Types
     {
         public new const short Id = 161;
 
-        public GameRolePlayPrismInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, PrismInformation prism)
+        public GameRolePlayPrismInformations(double contextualId, 
+            EntityDispositionInformations disposition, EntityLook look, PrismInformation prism)
         {
             ContextualId = contextualId;
-            Look = look;
             Disposition = disposition;
+            Look = look;
             Prism = prism;
         }
 

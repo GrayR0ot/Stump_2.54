@@ -51,17 +51,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             InitializeCharacterFighter();
         }
 
-        public Character Character
-        {
-            get;
-            private set;
-        }
+        public Character Character { get; private set; }
 
-        public ReadyChecker PersonalReadyChecker
-        {
-            get;
-            set;
-        }
+        public ReadyChecker PersonalReadyChecker { get; set; }
 
         public override int Id
         {
@@ -72,7 +64,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         {
             get { return Character.Name; }
         }
-        
+
 
         public override ObjectPosition MapPosition
         {
@@ -89,23 +81,11 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             get { return Character.Stats; }
         }
 
-        public bool IsDisconnected
-        {
-            get;
-            private set;
-        }
+        public bool IsDisconnected { get; private set; }
 
-        public int ErosionDamageBeforeLeft
-        {
-            get;
-            set;
-        }
-        
-        public int LeftRound
-        {
-            get;
-            private set;
-        }
+        public int ErosionDamageBeforeLeft { get; set; }
+
+        public int LeftRound { get; private set; }
 
         public Hoskar Hoskar { get; }
 
@@ -119,13 +99,16 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         private void Fight_BeforeTurnStopped(IFight arg1, FightActor arg2)
         {
-            if (Character.Inventory.GetEquipedItems().Where(x => x.Template.Id == 30199).Count() > 0 && arg1.TimeLine.RoundNumber != 1)
+            if (Character.Inventory.GetEquipedItems().Where(x => x.Template.Id == 30199).Count() > 0 &&
+                arg1.TimeLine.RoundNumber != 1)
             {
                 if (arg2 != this)
                     return;
 
                 var buff = new EffectDice(EffectsEnum.Effect_CastSpell_1160, 0, 9089, 1);
-                var handlerr = EffectManager.Instance.GetSpellEffectHandler(buff, this, SpellManager.Instance.GetSpellCastHandler(this, new Spell(9088, 1), this.Cell, false), this.Cell, false);
+                var handlerr = EffectManager.Instance.GetSpellEffectHandler(buff, this,
+                    SpellManager.Instance.GetSpellCastHandler(this, new Spell(9088, 1), this.Cell, false), this.Cell,
+                    false);
                 handlerr.DefaultDispellableStatus = FightDispellableEnum.DISPELLABLE_BY_DEATH;
                 handlerr.Apply();
                 return;
@@ -144,8 +127,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 return;
 
             //Cast Spells of Items has CastSpell effect
-            foreach (var effect in Character.Inventory.GetEquipedItems().SelectMany(x => x.Effects).Where(y => y.EffectId == EffectsEnum.Effect_CastSpell_1175))
-                EffectManager.Instance.GetSpellEffectHandler((EffectDice)effect, this,
+            foreach (var effect in Character.Inventory.GetEquipedItems().SelectMany(x => x.Effects)
+                .Where(y => y.EffectId == EffectsEnum.Effect_CastSpell_1175))
+                EffectManager.Instance.GetSpellEffectHandler((EffectDice) effect, this,
                     new DefaultSpellCastHandler(new SpellCastInformations(this, null, Cell)), Cell, false).Apply();
         }
 
@@ -173,6 +157,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
 
         private bool m_left;
+
         public override bool HasLeft()
         {
             return m_left;
@@ -197,7 +182,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 return false;
 
             // not a weapon attack
-            if (cast.Spell.Id != 0 || Character.Inventory.TryGetItem(CharacterInventoryPositionEnum.ACCESSORY_POSITION_WEAPON) == null)
+            if (cast.Spell.Id != 0 ||
+                Character.Inventory.TryGetItem(CharacterInventoryPositionEnum.ACCESSORY_POSITION_WEAPON) == null)
                 return base.CastSpell(cast);
 
             var weapon = Character.Inventory.TryGetItem(CharacterInventoryPositionEnum.ACCESSORY_POSITION_WEAPON);
@@ -219,7 +205,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                         OnWeaponUsed(weaponTemplate, cast.TargetedCell, critical, false);
 
                         if (!cast.ApFree)
-                            UseAP((short)weaponTemplate.ApCost);
+                            UseAP((short) weaponTemplate.ApCost);
 
                         PassTurn();
 
@@ -231,7 +217,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
                 m_isUsingWeapon = true;
                 var effects =
-                    weapon.Effects.Where(entry => EffectManager.Instance.IsUnRandomableWeaponEffect(entry.EffectId)).OfType<EffectDice>();
+                    weapon.Effects.Where(entry => EffectManager.Instance.IsUnRandomableWeaponEffect(entry.EffectId))
+                        .OfType<EffectDice>();
                 var handlers = new List<SpellEffectHandler>();
                 foreach (var effect in effects)
                 {
@@ -244,14 +231,20 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                         }
                     }
 
-                    var handler = EffectManager.Instance.GetSpellEffectHandler(effect, this, new DefaultSpellCastHandler(cast), cast.TargetedCell,
+                    var handler = EffectManager.Instance.GetSpellEffectHandler(effect, this,
+                        new DefaultSpellCastHandler(cast), cast.TargetedCell,
                         critical == FightSpellCastCriticalEnum.CRITICAL_HIT);
 
-                    handler.EffectZone = new Zone(weaponTemplate.Type.ZoneShape, (byte)weaponTemplate.Type.ZoneSize, (byte)weaponTemplate.Type.ZoneMinSize,
-                        handler.CastPoint.OrientationTo(handler.TargetedPoint), (int)weaponTemplate.Type.ZoneEfficiencyPercent, (int)weaponTemplate.Type.ZoneMaxEfficiency);
+                    handler.EffectZone = new Zone(weaponTemplate.Type.ZoneShape, (byte) weaponTemplate.Type.ZoneSize,
+                        (byte) weaponTemplate.Type.ZoneMinSize,
+                        handler.CastPoint.OrientationTo(handler.TargetedPoint),
+                        (int) weaponTemplate.Type.ZoneEfficiencyPercent, (int) weaponTemplate.Type.ZoneMaxEfficiency);
 
                     handler.Targets = new TargetCriterion[]
-                        { new TargetTypeCriterion(SpellTargetType.ALLY_ALL_EXCEPT_SELF, false), new TargetTypeCriterion(SpellTargetType.ENEMY_ALL, false) }; // everyone but caster
+                    {
+                        new TargetTypeCriterion(SpellTargetType.ALLY_ALL_EXCEPT_SELF, false),
+                        new TargetTypeCriterion(SpellTargetType.ENEMY_ALL, false)
+                    }; // everyone but caster
 
                     handlers.Add(handler);
                 }
@@ -261,7 +254,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 OnWeaponUsed(weaponTemplate, cast.TargetedCell, critical, silentCast);
 
                 if (!cast.ApFree)
-                    UseAP((short)weaponTemplate.ApCost);
+                    UseAP((short) weaponTemplate.ApCost);
 
                 foreach (var handler in handlers)
                     handler.Apply();
@@ -276,7 +269,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             return true;
         }
 
-        protected override void OnWeaponUsed(WeaponTemplate weapon, Cell cell, FightSpellCastCriticalEnum critical, bool silentCast)
+        protected override void OnWeaponUsed(WeaponTemplate weapon, Cell cell, FightSpellCastCriticalEnum critical,
+            bool silentCast)
         {
             m_weaponUses++;
             base.OnWeaponUsed(weapon, cell, critical, silentCast);
@@ -284,7 +278,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override SpellCastResult CanCastSpell(SpellCastInformations cast)
         {
-             var result = base.CanCastSpell(cast);
+            var result = base.CanCastSpell(cast);
 
             if (result == SpellCastResult.OK || cast.IsConditionBypassed(result))
                 return result;
@@ -304,7 +298,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                     break;
                 case SpellCastResult.NOT_ENOUGH_AP:
                     // Impossible de lancer ce sort : Vous avez %1 PA disponible(s) et il vous en faut %2 pour ce sort !
-                    Character.SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 170, AP, cast.SpellLevel.ApCost);
+                    Character.SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 170, AP,
+                        cast.SpellLevel.ApCost);
                     break;
                 case SpellCastResult.UNWALKABLE_CELL:
                     // Impossible de lancer ce sort : la cellule visée n'est pas disponible !
@@ -345,13 +340,15 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             if (!IsFighterTurn())
                 return false;
 
-            if (HasState((int)SpellStatesEnum.AFFAIBLI_42))
+            if (HasState((int) SpellStatesEnum.AFFAIBLI_42))
                 return false;
 
             var point = new MapPoint(cell);
 
-            if ((weapon.CastInDiagonal && (point.EuclideanDistanceTo(Position.Point) > weapon.WeaponRange || point.EuclideanDistanceTo(Position.Point) < weapon.MinRange)) ||
-                (!weapon.CastInDiagonal && point.ManhattanDistanceTo(Position.Point) > weapon.WeaponRange || point.ManhattanDistanceTo(Position.Point) < weapon.MinRange))
+            if ((weapon.CastInDiagonal && (point.EuclideanDistanceTo(Position.Point) > weapon.WeaponRange ||
+                                           point.EuclideanDistanceTo(Position.Point) < weapon.MinRange)) ||
+                (!weapon.CastInDiagonal && point.ManhattanDistanceTo(Position.Point) > weapon.WeaponRange ||
+                 point.ManhattanDistanceTo(Position.Point) < weapon.MinRange))
                 return false;
 
             if (m_weaponUses >= weapon.MaxCastPerTurn)
@@ -387,7 +384,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         }
 
         public override bool MustSkipTurn()
-            => base.MustSkipTurn() || (IsDisconnected && Team.GetAllFighters<CharacterFighter>().Any(x => x.IsAlive() && !x.IsDisconnected));
+            => base.MustSkipTurn() || (IsDisconnected &&
+                                       Team.GetAllFighters<CharacterFighter>()
+                                           .Any(x => x.IsAlive() && !x.IsDisconnected));
 
         public void EnterDisconnectedState()
         {
@@ -415,39 +414,42 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             Character = character;
         }
 
-        public override IFightResult GetFightResult(FightOutcomeEnum outcome) => new FightPlayerResult(this, outcome, Loot);
+        public override IFightResult GetFightResult(FightOutcomeEnum outcome) =>
+            new FightPlayerResult(this, outcome, Loot);
 
         public override FightTeamMemberInformations GetFightTeamMemberInformations()
-            => new FightTeamMemberCharacterInformations(Id, Name, (ushort)Character.Level);
+            => new FightTeamMemberCharacterInformations(Id, Name, (ushort) Character.Level);
 
         public override GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null)
         {
-            return new GameFightCharacterInformations(Id,
-                                                      Look.GetEntityLook(),
-                                                      GetEntityDispositionInformations(client),
-                                                      (sbyte)Team.Id,
-                                                      0,
-                                                      IsAlive(),
-                                                      GetGameFightMinimalStats(client),
-                                                      MovementHistory.GetEntries(2).Select(x => x.Cell.Id).Select(x => (ushort)x).ToArray(),
-                                                      Name,
-                                                      Character.Status,
-                                                      (short)Character.ArenaLeague.LeagueId,
-                                                      1,
-                                                      false,
-                                                      (ushort)Character.Level,
-                                                      Character.GetActorAlignmentInformations(),
-                                                      (sbyte)Character.Breed.Id,
-                                                      Character.Sex != SexTypeEnum.SEX_MALE);
+            return new GameFightCharacterInformations((double) Id,
+                GetEntityDispositionInformations(client),
+                Look.GetEntityLook(),
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
+                0,
+                GetGameFightMinimalStats(client),
+                MovementHistory.GetEntries(2).Select(x => x.Cell.Id).Select(x => (uint) x).ToArray(),
+                Name,
+                Character.Status,
+                (short) Character.ArenaLeague.LeagueId,
+                1,
+                false,
+                (ushort) Character.Level,
+                Character.GetActorAlignmentInformations(),
+                (sbyte) Character.Breed.Id,
+                Character.Sex != SexTypeEnum.SEX_MALE);
         }
 
-        public override GameFightFighterLightInformations GetGameFightFighterLightInformations(WorldClient client = null) => new GameFightFighterNamedLightInformations(
+        public override GameFightFighterLightInformations
+            GetGameFightFighterLightInformations(WorldClient client = null) =>
+            new GameFightFighterNamedLightInformations(
                 Character.Sex == SexTypeEnum.SEX_FEMALE,
                 IsAlive(),
                 Id,
                 0,
                 Level,
-                (sbyte)Character.Breed.Id,
+                (sbyte) Character.Breed.Id,
                 Name);
 
         public override string ToString()
@@ -456,6 +458,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         }
 
         #region God state
+
         public override bool UseAP(short amount)
         {
             if (!Character.GodMode)

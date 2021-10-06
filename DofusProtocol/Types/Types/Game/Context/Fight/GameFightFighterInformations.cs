@@ -7,61 +7,63 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightFighterInformations : GameContextActorInformations
     {
-        public new const short Id = 143;
+        public const short Id = 143;
 
-        public GameFightFighterInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
+            get { return Id; }
         }
+
+        public Types.GameContextBasicSpawnInformation SpawnInfo;
+        public sbyte Wave;
+        public Types.GameFightMinimalStats Stats;
+        public uint[] PreviousPositions;
+
 
         public GameFightFighterInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightFighterInformations(double contextualId, Types.EntityDispositionInformations disposition,
+            Types.EntityLook look, Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave,
+            Types.GameFightMinimalStats stats, uint[] previousPositions)
+            : base(contextualId, disposition, look)
+        {
+            this.SpawnInfo = spawnInfo;
+            this.Wave = wave;
+            this.Stats = stats;
+            this.PreviousPositions = previousPositions;
+        }
 
-        public sbyte TeamId { get; set; }
-        public sbyte Wave { get; set; }
-        public bool Alive { get; set; }
-        public GameFightMinimalStats Stats { get; set; }
-        public ushort[] PreviousPositions { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
-            writer.WriteSByte(TeamId);
+            SpawnInfo.Serialize(writer);
             writer.WriteSByte(Wave);
-            writer.WriteBoolean(Alive);
             writer.WriteShort(Stats.TypeId);
             Stats.Serialize(writer);
-            writer.WriteShort((short) PreviousPositions.Count());
-            for (var previousPositionsIndex = 0;
-                previousPositionsIndex < PreviousPositions.Count();
-                previousPositionsIndex++) writer.WriteVarUShort(PreviousPositions[previousPositionsIndex]);
+            writer.WriteShort((short) PreviousPositions.Length);
+            foreach (var entry in PreviousPositions)
+            {
+                writer.WriteVarShort((short)entry);
+            }
         }
 
         public override void Deserialize(IDataReader reader)
         {
             base.Deserialize(reader);
-            TeamId = reader.ReadSByte();
+            SpawnInfo = new Types.GameContextBasicSpawnInformation();
+            SpawnInfo.Deserialize(reader);
             Wave = reader.ReadSByte();
-            Alive = reader.ReadBoolean();
-            Stats = ProtocolTypeManager.GetInstance<GameFightMinimalStats>(reader.ReadShort());
+            Stats = ProtocolTypeManager.GetInstance<Types.GameFightMinimalStats>(reader.ReadShort());
             Stats.Deserialize(reader);
-            var previousPositionsCount = reader.ReadUShort();
-            PreviousPositions = new ushort[previousPositionsCount];
-            for (var previousPositionsIndex = 0;
-                previousPositionsIndex < previousPositionsCount;
-                previousPositionsIndex++) PreviousPositions[previousPositionsIndex] = reader.ReadVarUShort();
+            var limit = (ushort) reader.ReadUShort();
+            PreviousPositions = new uint[limit];
+            for (int i = 0; i < limit; i++)
+            {
+                PreviousPositions[i] = reader.ReadVarUShort();
+            }
         }
     }
 }

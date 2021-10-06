@@ -19,11 +19,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 {
     public class MonsterGroup : RolePlayActor, IContextDependant, IAutoMovedEntity
     {
-        [Variable(true)]
-        public static int StarsBonusRate = 1800;
+        [Variable(true)] public static int StarsBonusRate = 1800;
 
-        [Variable(true)]
-        public static short StarsBonusLimit = 200;
+        [Variable(true)] public static short StarsBonusLimit = 200;
 
         public const short ClientStarsBonusLimit = 200;
 
@@ -46,11 +44,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             protected set { base.Position = value; }
         }
 
-        public IFight Fight
-        {
-            get;
-            private set;
-        }
+        public IFight Fight { get; private set; }
 
         public override int Id
         {
@@ -58,29 +52,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             protected set { ContextualId = value; }
         }
 
-        public int ContextualId
-        {
-            get;
-            private set;
-        }
+        public int ContextualId { get; private set; }
 
-        public SpawningPoolBase SpawningPool
-        {
-            get;
-            set;
-        }
+        public SpawningPoolBase SpawningPool { get; set; }
 
-        public GroupSize GroupSize
-        {
-            get;
-            set;
-        }
+        public GroupSize GroupSize { get; set; }
 
-        public Monster Leader
-        {
-            get;
-            private set;
-        }
+        public Monster Leader { get; private set; }
 
         public short AgeBonus
         {
@@ -88,39 +66,23 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             {
                 //Note: To find rate choose how many bonus per hour and then divise 60(1 hour) by bonus and multiply result by 60(seconds).
                 //Note: Exemple for 20 bonus per hour. 60/20 = 3 * 60 = 180.
-                var bonus = ( DateTime.Now - CreationDate ).TotalSeconds / (StarsBonusRate);
+                var bonus = (DateTime.Now - CreationDate).TotalSeconds / (StarsBonusRate);
 
                 if (bonus > StarsBonusLimit)
                     bonus = StarsBonusLimit;
 
                 return (short) bonus;
             }
-            set { CreationDate = DateTime.Now - TimeSpan.FromSeconds(value*StarsBonusRate); }
-        }
-        
-        public DateTime NextMoveDate
-        {
-            get;
-            set;
+            set { CreationDate = DateTime.Now - TimeSpan.FromSeconds(value * StarsBonusRate); }
         }
 
-        public DateTime LastMoveDate
-        {
-            get;
-            private set;
-        }
+        public DateTime NextMoveDate { get; set; }
 
-        public DateTime CreationDate
-        {
-            get;
-            set;
-        }
+        public DateTime LastMoveDate { get; private set; }
 
-        public Character AuthorizedAgressor
-        {
-            get;
-            set;
-        }
+        public DateTime CreationDate { get; set; }
+
+        public Character AuthorizedAgressor { get; set; }
 
         public override bool CanMove()
         {
@@ -159,20 +121,18 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 
         public void CheckAgression(Character character)
         {
-            
-            
-                bool isPossible = false;
-            
+            bool isPossible = false;
+
 
             foreach (var test in Position.Map.SubArea.GetMonstersAgression())
             {
                 foreach (var tes in GetMonsters())
                 {
-                  
                     if (test.MonsterId == tes.Template.Id && character.IsOppositeAlignement(test.AlignmentId))
                         isPossible = true;
                 }
             }
+
             if (Fight != null || !Position.Map.SubArea.IsAgressibleMonsters || !isPossible)
                 return;
 
@@ -198,7 +158,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             // only this character and his group can join the fight
             if (AuthorizedAgressor != null && AuthorizedAgressor != character && AuthorizedAgressor.Client.Connected)
             {
-                ContextHandler.SendChallengeFightJoinRefusedMessage(character.Client, character, FighterRefusedReasonEnum.TEAM_LIMITED_BY_MAINCHARACTER);
+                ContextHandler.SendChallengeFightJoinRefusedMessage(character.Client, character,
+                    FighterRefusedReasonEnum.TEAM_LIMITED_BY_MAINCHARACTER);
                 return;
             }
 
@@ -211,7 +172,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             }
 
             Map.Leave(this);
-            
+
             if (Map.GetBlueFightPlacement().Length < CountInitialFighters())
             {
                 //character.SendServerMessage("Cannot start fight : Not enough fight placements");
@@ -219,7 +180,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             }
 
             var fight = FightManager.Instance.CreatePvMFight(Map);
-            
+
             var monsterFighters = CreateFighters(fight.DefendersTeam).ToArray();
 
             fight.ChallengersTeam.AddFighter(character.CreateFighter(fight.ChallengersTeam));
@@ -254,7 +215,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             if (handler != null) handler(this, fight);
         }
 
-        public virtual IEnumerable<MonsterFighter> CreateFighters(FightMonsterTeam team) => m_monsters.Select(monster => monster.CreateFighter(team));
+        public virtual IEnumerable<MonsterFighter> CreateFighters(FightMonsterTeam team) =>
+            m_monsters.Select(monster => monster.CreateFighter(team));
 
         public virtual void AddMonster(Monster monster)
         {
@@ -286,21 +248,21 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
         {
             return GetMonsters().Where(entry => entry != Leader);
         }
-       
+
         public virtual int Count() => m_monsters.Count;
 
         protected virtual int CountInitialFighters() => Count();
 
         public override GameContextActorInformations GetGameContextActorInformations(Character character)
-                                                        => new GameRolePlayGroupMonsterInformations(Id,
-                                                            Leader.Look.GetEntityLook(),
-                                                            GetEntityDispositionInformations(),
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            GetGroupMonsterStaticInformations(character),
-                                                            0,
-                                                            0);
+            => new GameRolePlayGroupMonsterInformations(Id,
+                GetEntityDispositionInformations(),
+                Leader.Look.GetEntityLook(),
+                false,
+                false,
+                false,
+                GetGroupMonsterStaticInformations(character),
+                0,
+                0);
 
         public virtual GroupMonsterStaticInformations GetGroupMonsterStaticInformations(Character character)
             => new GroupMonsterStaticInformations(Leader.GetMonsterInGroupLightInformations(),

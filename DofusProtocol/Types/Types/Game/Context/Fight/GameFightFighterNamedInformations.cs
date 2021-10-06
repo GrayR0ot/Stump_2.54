@@ -6,46 +6,44 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightFighterNamedInformations : GameFightFighterInformations
     {
-        public new const short Id = 158;
+        public const short Id = 158;
 
-        public GameFightFighterNamedInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, string name, PlayerStatus status, short leagueId,
-            int ladderPosition, bool hiddenInPrefight)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            Name = name;
-            Status = status;
-            LeagueId = leagueId;
-            LadderPosition = ladderPosition;
-            HiddenInPrefight = hiddenInPrefight;
+            get { return Id; }
         }
+
+        public string Name;
+        public Types.PlayerStatus Status;
+        public int LeagueId;
+        public int LadderPosition;
+        public bool HiddenInPrefight;
+
 
         public GameFightFighterNamedInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightFighterNamedInformations(double contextualId, Types.EntityDispositionInformations disposition,
+            Types.EntityLook look, Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave,
+            Types.GameFightMinimalStats stats, uint[] previousPositions, string name, Types.PlayerStatus status,
+            int leagueId, int ladderPosition, bool hiddenInPrefight)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions)
+        {
+            this.Name = name;
+            this.Status = status;
+            this.LeagueId = leagueId;
+            this.LadderPosition = ladderPosition;
+            this.HiddenInPrefight = hiddenInPrefight;
+        }
 
-        public string Name { get; set; }
-        public PlayerStatus Status { get; set; }
-        public short LeagueId { get; set; }
-        public int LadderPosition { get; set; }
-        public bool HiddenInPrefight { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
             writer.WriteUTF(Name);
             Status.Serialize(writer);
-            writer.WriteVarShort(LeagueId);
+            writer.WriteVarShort((short) LeagueId);
             writer.WriteInt(LadderPosition);
             writer.WriteBoolean(HiddenInPrefight);
         }
@@ -54,7 +52,7 @@ namespace Stump.DofusProtocol.Types
         {
             base.Deserialize(reader);
             Name = reader.ReadUTF();
-            Status = new PlayerStatus();
+            Status = new Types.PlayerStatus();
             Status.Deserialize(reader);
             LeagueId = reader.ReadVarShort();
             LadderPosition = reader.ReadInt();

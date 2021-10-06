@@ -9,12 +9,12 @@ namespace Stump.DofusProtocol.Types
     {
         public new const short Id = 129;
 
-        public GameRolePlayMerchantInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, string name, sbyte sellType, HumanOption[] options)
+        public GameRolePlayMerchantInformations(double contextualId, 
+            EntityDispositionInformations disposition, EntityLook look, string name, sbyte sellType, HumanOption[] options)
         {
             ContextualId = contextualId;
-            Look = look;
             Disposition = disposition;
+            Look = look;
             Name = name;
             SellType = sellType;
             Options = options;

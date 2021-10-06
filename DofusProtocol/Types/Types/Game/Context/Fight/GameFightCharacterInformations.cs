@@ -1,53 +1,44 @@
-﻿using System;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Types
 {
-    [Serializable]
     public class GameFightCharacterInformations : GameFightFighterNamedInformations
     {
-        public new const short Id = 46;
+        public const short Id = 46;
 
-        public GameFightCharacterInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, string name, PlayerStatus status, short leagueId,
-            int ladderPosition, bool hiddenInPrefight, ushort level, ActorAlignmentInformations alignmentInfos,
-            sbyte breed, bool sex)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            Name = name;
-            Status = status;
-            LeagueId = leagueId;
-            LadderPosition = ladderPosition;
-            HiddenInPrefight = hiddenInPrefight;
-            Level = level;
-            AlignmentInfos = alignmentInfos;
-            Breed = breed;
-            Sex = sex;
+            get { return Id; }
         }
+
+        public uint Level;
+        public ActorAlignmentInformations AlignmentInfos;
+        public sbyte Breed;
+        public bool Sex;
+
 
         public GameFightCharacterInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightCharacterInformations(double contextualId, EntityDispositionInformations disposition,
+            EntityLook look, GameContextBasicSpawnInformation spawnInfo, sbyte wave, GameFightMinimalStats stats,
+            uint[] previousPositions, string name, PlayerStatus status, int leagueId, int ladderPosition,
+            bool hiddenInPrefight, uint level, ActorAlignmentInformations alignmentInfos, sbyte breed, bool sex)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions, name, status, leagueId,
+                ladderPosition, hiddenInPrefight)
+        {
+            this.Level = level;
+            this.AlignmentInfos = alignmentInfos;
+            this.Breed = breed;
+            this.Sex = sex;
+        }
 
-        public ushort Level { get; set; }
-        public ActorAlignmentInformations AlignmentInfos { get; set; }
-        public sbyte Breed { get; set; }
-        public bool Sex { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
-            writer.WriteVarUShort(Level);
+            writer.WriteVarShort((short) Level);
             AlignmentInfos.Serialize(writer);
             writer.WriteSByte(Breed);
             writer.WriteBoolean(Sex);

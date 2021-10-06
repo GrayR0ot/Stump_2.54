@@ -10,16 +10,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
     {
         #region Network
 
-        public virtual string Name
-        {
-            get;
-            protected set;
-        }
+        public virtual string Name { get; protected set; }
 
         public override GameContextActorInformations GetGameContextActorInformations(Character character)
         {
-            return new GameRolePlayNamedActorInformations(Id, Look.GetEntityLook(), GetEntityDispositionInformations(), Name);
+            return new GameRolePlayNamedActorInformations(Id, GetEntityDispositionInformations(), Look.GetEntityLook(),
+                Name);
         }
+
         #endregion
 
         #region Actions
@@ -28,11 +26,12 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 
         public void Say(string msg)
         {
-            ChatHandler.SendChatServerMessage(CharacterContainer.Clients, this, ChatActivableChannelsEnum.CHANNEL_GLOBAL, msg);
+            ChatHandler.SendChatServerMessage(CharacterContainer.Clients, this,
+                ChatActivableChannelsEnum.CHANNEL_GLOBAL, msg);
         }
 
         #endregion
-        
+
         #endregion
     }
 }

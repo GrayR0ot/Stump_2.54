@@ -9,7 +9,7 @@ namespace Stump.DofusProtocol.Types
         public new const short Id = 209;
 
         public FightTemporaryBoostEffect(uint uid, double targetId, short turnDuration, sbyte dispelable,
-            ushort spellId, uint effectId, uint parentBoostUid, short delta)
+            ushort spellId, uint effectId, uint parentBoostUid, int delta)
         {
             Uid = uid;
             TargetId = targetId;
@@ -27,18 +27,18 @@ namespace Stump.DofusProtocol.Types
 
         public override short TypeId => Id;
 
-        public short Delta { get; set; }
+        public int Delta { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
-            writer.WriteShort(Delta);
+            writer.WriteInt(Delta);
         }
 
         public override void Deserialize(IDataReader reader)
         {
             base.Deserialize(reader);
-            Delta = reader.ReadShort();
+            Delta = reader.ReadInt();
         }
     }
 }

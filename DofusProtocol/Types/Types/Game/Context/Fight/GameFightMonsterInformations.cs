@@ -6,50 +6,48 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightMonsterInformations : GameFightAIInformations
     {
-        public new const short Id = 29;
+        public const short Id = 29;
 
-        public GameFightMonsterInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, ushort creatureGenericId, sbyte creatureGrade,
-            short creatureLevel)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            CreatureGenericId = creatureGenericId;
-            CreatureGrade = creatureGrade;
-            CreatureLevel = creatureLevel;
+            get { return Id; }
         }
+
+        public uint creatureGenericId;
+        public sbyte creatureGrade;
+        public short creatureLevel;
+
 
         public GameFightMonsterInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightMonsterInformations(double contextualId, Types.EntityDispositionInformations disposition,
+            Types.EntityLook look, Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave,
+            Types.GameFightMinimalStats stats, uint[] previousPositions, uint creatureGenericId,
+            sbyte creatureGrade, short creatureLevel)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions)
+        {
+            this.creatureGenericId = creatureGenericId;
+            this.creatureGrade = creatureGrade;
+            this.creatureLevel = creatureLevel;
+        }
 
-        public ushort CreatureGenericId { get; set; }
-        public sbyte CreatureGrade { get; set; }
-        public short CreatureLevel { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
-            writer.WriteVarUShort(CreatureGenericId);
-            writer.WriteSByte(CreatureGrade);
-            writer.WriteShort(CreatureLevel);
+            writer.WriteVarShort((short) creatureGenericId);
+            writer.WriteSByte(creatureGrade);
+            writer.WriteShort(creatureLevel);
         }
 
         public override void Deserialize(IDataReader reader)
         {
             base.Deserialize(reader);
-            CreatureGenericId = reader.ReadVarUShort();
-            CreatureGrade = reader.ReadSByte();
-            CreatureLevel = reader.ReadShort();
+            creatureGenericId = reader.ReadVarUShort();
+            creatureGrade = reader.ReadSByte();
+            creatureLevel = reader.ReadShort();
         }
     }
 }

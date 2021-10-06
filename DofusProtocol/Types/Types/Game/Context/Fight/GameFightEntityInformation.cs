@@ -1,45 +1,42 @@
-﻿using System;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
+using Stump.DofusProtocol.Types;
 
-namespace Stump.DofusProtocol.Types
+namespace AmaknaProxy.API.Protocol.Types
 {
-    [Serializable]
     public class GameFightEntityInformation : GameFightFighterInformations
     {
-        public new const short Id = 551;
+        public const short Id = 551;
 
-        public GameFightEntityInformation(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, sbyte entityModelId, ushort level, double masterId)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            EntityModelId = entityModelId;
-            Level = level;
-            MasterId = masterId;
+            get { return Id; }
         }
+
+        public sbyte EntityModelId;
+        public uint Level;
+        public double MasterId;
+
 
         public GameFightEntityInformation()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightEntityInformation(double contextualId, EntityDispositionInformations disposition,
+            EntityLook look, GameContextBasicSpawnInformation spawnInfo, sbyte wave, GameFightMinimalStats stats,
+            uint[] previousPositions, sbyte entityModelId, uint level, double masterId)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions)
+        {
+            this.EntityModelId = entityModelId;
+            this.Level = level;
+            this.MasterId = masterId;
+        }
 
-        public sbyte EntityModelId { get; set; }
-        public ushort Level { get; set; }
-        public double MasterId { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
             writer.WriteSByte(EntityModelId);
-            writer.WriteVarUShort(Level);
+            writer.WriteVarShort((short) Level);
             writer.WriteDouble(MasterId);
         }
 

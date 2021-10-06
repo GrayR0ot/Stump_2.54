@@ -6,36 +6,30 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightMutantInformations : GameFightFighterNamedInformations
     {
-        public new const short Id = 50;
+        public const short Id = 50;
 
-        public GameFightMutantInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, string name, PlayerStatus status, short leagueId,
-            int ladderPosition, bool hiddenInPrefight, sbyte powerLevel)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            Name = name;
-            Status = status;
-            LeagueId = leagueId;
-            LadderPosition = ladderPosition;
-            HiddenInPrefight = hiddenInPrefight;
-            PowerLevel = powerLevel;
+            get { return Id; }
         }
+
+        public sbyte PowerLevel;
+
 
         public GameFightMutantInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightMutantInformations(double contextualId, Types.EntityDispositionInformations disposition,
+            Types.EntityLook look, Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave,
+            Types.GameFightMinimalStats stats, uint[] previousPositions, string name, Types.PlayerStatus status,
+            int leagueId, int ladderPosition, bool hiddenInPrefight, sbyte powerLevel)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions, name, status, leagueId,
+                ladderPosition, hiddenInPrefight)
+        {
+            this.PowerLevel = powerLevel;
+        }
 
-        public sbyte PowerLevel { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {

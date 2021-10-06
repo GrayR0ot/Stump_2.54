@@ -24,9 +24,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             Id = Fight.GetNextContextualId();
             TaxCollectorNpc = taxCollector;
             Look = TaxCollectorNpc.Look.Clone();
-            Items = TaxCollectorNpc.Bag.SelectMany(x => Enumerable.Repeat(x.Template.Id, (int)x.Stack))
-                            .Shuffle()
-                            .ToList();
+            Items = TaxCollectorNpc.Bag.SelectMany(x => Enumerable.Repeat(x.Template.Id, (int) x.Stack))
+                .Shuffle()
+                .ToList();
             Kamas = TaxCollectorNpc.GatheredKamas;
 
             m_stats = new StatsFields(this);
@@ -36,13 +36,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 return;
 
             Position = new ObjectPosition(TaxCollectorNpc.Map, cell, TaxCollectorNpc.Direction);
-
         }
 
-        public TaxCollectorNpc TaxCollectorNpc
-        {
-            get;
-        }
+        public TaxCollectorNpc TaxCollectorNpc { get; }
 
         public override string Name => TaxCollectorNpc.Name;
 
@@ -52,55 +48,56 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override StatsFields Stats => m_stats;
 
-        public List<int> Items
-        {
-            get;
-        }
+        public List<int> Items { get; }
 
-        public long Kamas
-        {
-            get;
-        }
+        public long Kamas { get; }
 
         public override string GetMapRunningFighterName() => TaxCollectorNpc.Name;
 
-        public override IFightResult GetFightResult(FightOutcomeEnum outcome) => new TaxCollectorFightResult(this, outcome, Loot);
+        public override IFightResult GetFightResult(FightOutcomeEnum outcome) =>
+            new TaxCollectorFightResult(this, outcome, Loot);
 
         public TaxCollectorFightersInformation GetTaxCollectorFightersInformation()
         {
             var allies = Fight.State == FightState.Placement && Fight is FightPvT pvtFight
                 ? pvtFight.DefendersQueue.Select(x => x.GetCharacterMinimalPlusLookInformations())
-                : Team.Fighters.OfType<CharacterFighter>().Select(x => x.Character.GetCharacterMinimalPlusLookInformations());
+                : Team.Fighters.OfType<CharacterFighter>()
+                    .Select(x => x.Character.GetCharacterMinimalPlusLookInformations());
 
             return new TaxCollectorFightersInformation(TaxCollectorNpc.GlobalId, allies.ToArray(),
-                OpposedTeam.Fighters.OfType<CharacterFighter>().Select(x => x.Character.GetCharacterMinimalPlusLookInformations()).ToArray());
+                OpposedTeam.Fighters.OfType<CharacterFighter>()
+                    .Select(x => x.Character.GetCharacterMinimalPlusLookInformations()).ToArray());
         }
 
-        public override GameFightFighterLightInformations GetGameFightFighterLightInformations(WorldClient client = null) => new GameFightFighterTaxCollectorLightInformations(
+        public override GameFightFighterLightInformations
+            GetGameFightFighterLightInformations(WorldClient client = null) =>
+            new GameFightFighterTaxCollectorLightInformations(
                 true,
                 IsAlive(),
                 Id,
                 0,
                 Level,
-                (sbyte)BreedEnum.TAX_COLLECTOR,
-                (ushort)TaxCollectorNpc.FirstNameId,
-                (ushort)TaxCollectorNpc.LastNameId);
+                (sbyte) BreedEnum.TAX_COLLECTOR,
+                (ushort) TaxCollectorNpc.FirstNameId,
+                (ushort) TaxCollectorNpc.LastNameId);
 
-        public override FightTeamMemberInformations GetFightTeamMemberInformations() => new FightTeamMemberTaxCollectorInformations(Id, (ushort)TaxCollectorNpc.FirstNameId,
-                (ushort)TaxCollectorNpc.LastNameId, (byte)TaxCollectorNpc.Level, (uint)TaxCollectorNpc.Guild.Id,
+        public override FightTeamMemberInformations GetFightTeamMemberInformations() =>
+            new FightTeamMemberTaxCollectorInformations(Id, (ushort) TaxCollectorNpc.FirstNameId,
+                (ushort) TaxCollectorNpc.LastNameId, (byte) TaxCollectorNpc.Level, (uint) TaxCollectorNpc.Guild.Id,
                 TaxCollectorNpc.GlobalId);
 
-        public override GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null) => new GameFightTaxCollectorInformations(
+        public override GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null) =>
+            new GameFightTaxCollectorInformations(
                 Id,
-                Look.GetEntityLook(),
                 GetEntityDispositionInformations(client),
-                (sbyte)Team.Id,
+                Look.GetEntityLook(),
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
                 0,
-                IsAlive(),
                 GetGameFightMinimalStats(client),
-                new ushort[0],
-                (ushort)TaxCollectorNpc.FirstNameId,
-                (ushort)TaxCollectorNpc.LastNameId,
-                (byte)TaxCollectorNpc.Level);
+                new uint[0],
+                (ushort) TaxCollectorNpc.FirstNameId,
+                (ushort) TaxCollectorNpc.LastNameId,
+                (byte) TaxCollectorNpc.Level);
     }
 }

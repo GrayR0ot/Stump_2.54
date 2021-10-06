@@ -1826,7 +1826,12 @@ namespace Stump.Server.WorldServer.Game.Fights
                 ContextHandler.SendSlaveSwitchContextMessage(companion.Master.Client, companion);
             }
             ContextHandler.SendGameFightTurnStartMessage(Clients, FighterPlaying.Id, FighterPlaying.TurnTime / 100);
+            if (FighterPlaying is CharacterFighter)
+            {
+                Character character = (FighterPlaying as CharacterFighter).Character;
+                ContextHandler.SendGameFightTurnStartPlayingMessage(character.Client);
 
+            }
             if (FighterPlaying is CharacterFighter)
                 ItemAutoSpell(FighterPlaying);
 

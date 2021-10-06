@@ -8,13 +8,13 @@ namespace Stump.DofusProtocol.Types
     {
         public new const short Id = 160;
 
-        public GameRolePlayGroupMonsterInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, bool keyRingBonus, bool hasHardcoreDrop, bool hasAVARewardToken,
+        public GameRolePlayGroupMonsterInformations(double contextualId, 
+            EntityDispositionInformations disposition, EntityLook look, bool keyRingBonus, bool hasHardcoreDrop, bool hasAVARewardToken,
             GroupMonsterStaticInformations staticInfos, sbyte lootShare, sbyte alignmentSide)
         {
             ContextualId = contextualId;
-            Look = look;
             Disposition = disposition;
+            Look = look;
             KeyRingBonus = keyRingBonus;
             HasHardcoreDrop = hasHardcoreDrop;
             HasAVARewardToken = hasAVARewardToken;

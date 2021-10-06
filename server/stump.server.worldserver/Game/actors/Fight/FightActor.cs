@@ -2608,13 +2608,13 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         public virtual GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null)
             => new GameFightFighterInformations(
                 Id,
-                Look.GetEntityLook(),
                 GetEntityDispositionInformations(client),
-                (sbyte)Team.Id,
+                Look.GetEntityLook(),
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
                 0,
-                IsAlive(),
                 GetGameFightMinimalStats(client),
-                MovementHistory.GetEntries(2).Select(x => (ushort)x.Cell.Id).ToArray());
+                MovementHistory.GetEntries(2).Select(x => (uint)x.Cell.Id).ToArray());
 
         public virtual GameFightFighterLightInformations GetGameFightFighterLightInformations(WorldClient client = null)
             => new GameFightFighterLightInformations(

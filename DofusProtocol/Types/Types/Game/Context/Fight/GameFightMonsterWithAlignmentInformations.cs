@@ -6,34 +6,31 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightMonsterWithAlignmentInformations : GameFightMonsterInformations
     {
-        public new const short Id = 203;
+        public const short Id = 203;
 
-        public GameFightMonsterWithAlignmentInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, ushort creatureGenericId, sbyte creatureGrade,
-            short creatureLevel, ActorAlignmentInformations alignmentInfos)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            CreatureGenericId = creatureGenericId;
-            CreatureGrade = creatureGrade;
-            CreatureLevel = creatureLevel;
-            AlignmentInfos = alignmentInfos;
+            get { return Id; }
         }
+
+        public Types.ActorAlignmentInformations AlignmentInfos;
+
 
         public GameFightMonsterWithAlignmentInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightMonsterWithAlignmentInformations(double contextualId,
+            Types.EntityDispositionInformations disposition, Types.EntityLook look,
+            Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave, Types.GameFightMinimalStats stats,
+            uint[] previousPositions, uint creatureGenericId, sbyte creatureGrade, short creatureLevel,
+            Types.ActorAlignmentInformations alignmentInfos)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions, creatureGenericId,
+                creatureGrade, creatureLevel)
+        {
+            this.AlignmentInfos = alignmentInfos;
+        }
 
-        public ActorAlignmentInformations AlignmentInfos { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
@@ -44,7 +41,7 @@ namespace Stump.DofusProtocol.Types
         public override void Deserialize(IDataReader reader)
         {
             base.Deserialize(reader);
-            AlignmentInfos = new ActorAlignmentInformations();
+            AlignmentInfos = new Types.ActorAlignmentInformations();
             AlignmentInfos.Deserialize(reader);
         }
     }

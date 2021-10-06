@@ -26,12 +26,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 
             EnterMap?.Invoke(this, map);
         }
+
         public virtual void OnChangeSubArea(SubArea subArea)
         {
             ChangeSubArea?.Invoke(this, subArea);
         }
 
         public event Action<RolePlayActor, Map> LeaveMap;
+
         public virtual void OnLeaveMap(Map map)
         {
             var handler = LeaveMap;
@@ -42,7 +44,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 
         public override GameContextActorInformations GetGameContextActorInformations(Character character)
         {
-            return new GameRolePlayActorInformations(Id, Look.GetEntityLook(), GetEntityDispositionInformations());
+            return new GameRolePlayActorInformations(Id, GetEntityDispositionInformations(), Look.GetEntityLook());
         }
 
         #endregion
@@ -61,7 +63,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 
         protected override void OnInstantMoved(Cell cell)
         {
-            Map.Clients.Send(new TeleportOnSameMapMessage(Id, (ushort)cell.Id));
+            Map.Clients.Send(new TeleportOnSameMapMessage(Id, (ushort) cell.Id));
 
             base.OnInstantMoved(cell);
         }
@@ -74,11 +76,12 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
                 return false;
 
             var character = this as Character;
-            if(character != null)
-            if (character.Area.Id == 42 && character.IsInIncarnation && neighbour.SubArea.Id != character.SubArea.Id)
-            {
-                return false;
-            }
+            if (character != null)
+                if (character.Area.Id == 42 && character.IsInIncarnation &&
+                    neighbour.SubArea.Id != character.SubArea.Id)
+                {
+                    return false;
+                }
 
             var cell = Position.Map.GetCellAfterChangeMap(Position.Cell.Id, mapNeighbour);
 
@@ -93,8 +96,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 
             if (!destination.Cell.Walkable)
             {
-                var cells = MapPoint.GetBorderCells(mapNeighbour).Select(x => neighbour.Cells[x.CellId]).Where(x => x.Walkable);
-                var walkableCell = cells.Select(x => new MapPoint(x)).OrderBy(x => x.EuclideanDistanceTo(destination.Point)).FirstOrDefault();
+                var cells = MapPoint.GetBorderCells(mapNeighbour).Select(x => neighbour.Cells[x.CellId])
+                    .Where(x => x.Walkable);
+                var walkableCell = cells.Select(x => new MapPoint(x))
+                    .OrderBy(x => x.EuclideanDistanceTo(destination.Point)).FirstOrDefault();
 
                 if (walkableCell != null)
                     destination.Cell = neighbour.Cells[walkableCell.CellId];
@@ -124,8 +129,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 
             if (!destination.Cell.Walkable)
             {
-                var cells = MapPoint.GetBorderCells(mapNeighbour).Select(x => neighbour.Cells[x.CellId]).Where(x => x.Walkable);
-                var walkableCell = cells.Select(x => new MapPoint(x)).OrderBy(x => x.EuclideanDistanceTo(destination.Point)).FirstOrDefault();
+                var cells = MapPoint.GetBorderCells(mapNeighbour).Select(x => neighbour.Cells[x.CellId])
+                    .Where(x => x.Walkable);
+                var walkableCell = cells.Select(x => new MapPoint(x))
+                    .OrderBy(x => x.EuclideanDistanceTo(destination.Point)).FirstOrDefault();
 
                 if (walkableCell != null)
                     destination.Cell = neighbour.Cells[walkableCell.CellId];
@@ -156,15 +163,15 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay
                 NextMap.Area.Start();
 
             NextMap.Area.ExecuteInContext(() =>
-                {
-                    Position = destination.Clone();
-                    Position.Map.Enter(this);
+            {
+                Position = destination.Clone();
+                Position.Map.Enter(this);
 
-                    NextMap = null;
-                    LastMap = null;
+                NextMap = null;
+                LastMap = null;
 
-                    OnTeleported(Position);
-                });
+                OnTeleported(Position);
+            });
 
             return true;
         }

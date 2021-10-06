@@ -298,13 +298,13 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         {
             return new GameFightMonsterInformations(
                 Id,
-                Look.GetEntityLook(),
                 GetEntityDispositionInformations(client),
-                (sbyte)Team.Id,
+                Look.GetEntityLook(),
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
                 0,
-                IsAlive(),
                 GetGameFightMinimalStats(client),
-                new ushort[0],
+                new uint[0],
                 (ushort)Monster.Template.Id,
                 (sbyte)Monster.Grade.GradeId,
                 (short)Monster.Grade.Level);

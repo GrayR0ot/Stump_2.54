@@ -36,15 +36,11 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
             AdjustStats();
 
-            if (Monster.Template.Id == (int)MonsterIdEnum.TACTIRELLE)
+            if (Monster.Template.Id == (int) MonsterIdEnum.TACTIRELLE)
                 Team.FighterAdded += OnFighterAdded;
         }
 
-        public bool AlreadyRecursive
-        {
-            get;
-            set;
-        }
+        public bool AlreadyRecursive { get; set; }
 
         public override void OnTurnStarted(IFight fight, FightActor fighter)
         {
@@ -56,72 +52,87 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             Spell spellToCast = null;
             FightActor target = null;
 
-            switch ((MonsterIdEnum)Monster.Template.Id)
+            switch ((MonsterIdEnum) Monster.Template.Id)
             {
                 case MonsterIdEnum.TACTIRELLE:
+                {
+                    if (this.GetStates().FirstOrDefault(x =>
+                        x.State.Id == (int) SpellStatesEnum.EVOLUTION_III_135 && !x.IsDisabled) != null)
                     {
-                        if (this.GetStates().FirstOrDefault(x => x.State.Id == (int)SpellStatesEnum.EVOLUTION_III_135 && !x.IsDisabled) != null)
-                        {
-                            target = Fight.Fighters.FirstOrDefault(x => this != x && x.HasState((int)SpellStatesEnum.TRANSKO_364) &&
-                               !x.HasState((int)SpellStatesEnum.ENRACINE_6) && !x.HasState((int)SpellStatesEnum.INDEPLACABLE_97));
+                        target = Fight.Fighters.FirstOrDefault(x =>
+                            this != x && x.HasState((int) SpellStatesEnum.TRANSKO_364) &&
+                            !x.HasState((int) SpellStatesEnum.ENRACINE_6) &&
+                            !x.HasState((int) SpellStatesEnum.INDEPLACABLE_97));
 
-                            if (target == null)
-                                spellToCast = new Spell((int)SpellIdEnum.TRANSKO_3240, 1);
-                            else
-                                spellToCast = new Spell((int)SpellIdEnum.TRANSKO_3240, (short)target.GetStates().FirstOrDefault(x => x.State.Id == (int)SpellStatesEnum.TRANSKO_364 && !x.IsDisabled).Spell.CurrentLevel);
-                        }
-                        break;
+                        if (target == null)
+                            spellToCast = new Spell((int) SpellIdEnum.TRANSKO_3240, 1);
+                        else
+                            spellToCast = new Spell((int) SpellIdEnum.TRANSKO_3240,
+                                (short) target.GetStates().FirstOrDefault(x =>
+                                        x.State.Id == (int) SpellStatesEnum.TRANSKO_364 && !x.IsDisabled).Spell
+                                    .CurrentLevel);
                     }
+
+                    break;
+                }
                 case MonsterIdEnum.GARDIENNE:
-                    {
-                        if (!HasState((int)SpellStatesEnum.EVOLUTION_III_135)) break;
-                        spellToCast = new Spell((int)SpellIdEnum.RESCUE_3244, 1);
-                        target = fighter.Team.Fighters.FirstOrDefault(x => x.HasState((int)SpellStatesEnum.SECOURISME_131));
-                        break;
-                    }
+                {
+                    if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
+                    spellToCast = new Spell((int) SpellIdEnum.RESCUE_3244, 1);
+                    target = fighter.Team.Fighters.FirstOrDefault(x =>
+                        x.HasState((int) SpellStatesEnum.SECOURISME_131));
+                    break;
+                }
 
 
                 case MonsterIdEnum.HARPONNEUSE:
-                    {
-                        if (!HasState((int)SpellStatesEnum.EVOLUTION_III_135)) break;
-                        if (HasState((int)SpellStatesEnum.TELLURIQUE_127))
-                            spellToCast = new Spell((int)SpellIdEnum.BOOBOOME, 1);
-                        else if (HasState((int)SpellStatesEnum.AQUATIQUE_128))
-                            spellToCast = new Spell((int)SpellIdEnum.BWOOBWOOM, 1);
-                        else if (HasState((int)SpellStatesEnum.ARDENT_129))
-                            spellToCast = new Spell((int)SpellIdEnum.BOOBOOMF, 1);
+                {
+                    if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
+                    if (HasState((int) SpellStatesEnum.TELLURIQUE_127))
+                        spellToCast = new Spell((int) SpellIdEnum.BOOBOOME, 1);
+                    else if (HasState((int) SpellStatesEnum.AQUATIQUE_128))
+                        spellToCast = new Spell((int) SpellIdEnum.BWOOBWOOM, 1);
+                    else if (HasState((int) SpellStatesEnum.ARDENT_129))
+                        spellToCast = new Spell((int) SpellIdEnum.BOOBOOMF, 1);
 
-                        target = fighter.OpposedTeam.Fighters.FirstOrDefault(x => x.HasState((int)SpellStatesEnum.EMBUSCADE_130));
-                        break;
-                    }
+                    target = fighter.OpposedTeam.Fighters.FirstOrDefault(x =>
+                        x.HasState((int) SpellStatesEnum.EMBUSCADE_130));
+                    break;
+                }
 
                 case MonsterIdEnum.CHALUTIER:
-                    {
-                        if (!HasState((int)SpellStatesEnum.EVOLUTION_III_135)) break;
-                        spellToCast = new Spell(9881, 1);
-                        target = Fight.Fighters.FirstOrDefault(x => this != x && (x.HasState((int)SpellStatesEnum.LONGUE_VUE_132))
-                                    && !x.HasState((int)SpellStatesEnum.ENRACINE_6) && !x.HasState((int)SpellStatesEnum.INDEPLACABLE_97));
-                        if (target == null)
-                            target = Fight.Fighters.FirstOrDefault(x => this != x && (x.HasState((int)SpellStatesEnum.COURTE_VUE_147))
-                                    && !x.HasState((int)SpellStatesEnum.ENRACINE_6) && !x.HasState((int)SpellStatesEnum.INDEPLACABLE_97));
-                        break;
-                    }
+                {
+                    if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
+                    spellToCast = new Spell(9881, 1);
+                    target = Fight.Fighters.FirstOrDefault(x =>
+                        this != x && (x.HasState((int) SpellStatesEnum.LONGUE_VUE_132))
+                                  && !x.HasState((int) SpellStatesEnum.ENRACINE_6) &&
+                                  !x.HasState((int) SpellStatesEnum.INDEPLACABLE_97));
+                    if (target == null)
+                        target = Fight.Fighters.FirstOrDefault(x =>
+                            this != x && (x.HasState((int) SpellStatesEnum.COURTE_VUE_147))
+                                      && !x.HasState((int) SpellStatesEnum.ENRACINE_6) &&
+                                      !x.HasState((int) SpellStatesEnum.INDEPLACABLE_97));
+                    break;
+                }
 
                 case MonsterIdEnum.FOREUSE:
-                    {
-                        if (!HasState((int)SpellStatesEnum.EVOLUTION_III_135)) break;
-                        spellToCast = new Spell(9883, 1);
-                        target = fighter.OpposedTeam.Fighters.FirstOrDefault(x => x.HasState((int)SpellStatesEnum.EMBUSCADE_130));
-                        break;
-                    }
+                {
+                    if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
+                    spellToCast = new Spell(9883, 1);
+                    target = fighter.OpposedTeam.Fighters.FirstOrDefault(x =>
+                        x.HasState((int) SpellStatesEnum.EMBUSCADE_130));
+                    break;
+                }
 
                 case MonsterIdEnum.BATHYSCAPHE:
-                    {
-                        if (!HasState((int)SpellStatesEnum.EVOLUTION_III_135)) break;
-                        spellToCast = new Spell(9887, 1);
-                        target = fighter.Team.Fighters.FirstOrDefault(x => x.HasState((int)SpellStatesEnum.SECOURISME_131));
-                        break;
-                    }
+                {
+                    if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
+                    spellToCast = new Spell(9887, 1);
+                    target = fighter.Team.Fighters.FirstOrDefault(x =>
+                        x.HasState((int) SpellStatesEnum.SECOURISME_131));
+                    break;
+                }
             }
 
             if (spellToCast == null || target == null)
@@ -140,7 +151,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             if (actor != this)
                 return;
 
-            CastAutoSpell(new Spell((int)SpellIdEnum.TRANSKO, 1), Cell);
+            CastAutoSpell(new Spell((int) SpellIdEnum.TRANSKO, 1), Cell);
         }
 
         void AdjustStats()
@@ -149,28 +160,29 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
             switch (Monster.Template.Id)
             {
-                case (int)MonsterIdEnum.HARPONNEUSE:
-                case (int)MonsterIdEnum.FOREUSE:
+                case (int) MonsterIdEnum.HARPONNEUSE:
+                case (int) MonsterIdEnum.FOREUSE:
                     baseCoef = 0.3;
                     break;
-                case (int)MonsterIdEnum.GARDIENNE:
-                case (int)MonsterIdEnum.BATHYSCAPHE:
+                case (int) MonsterIdEnum.GARDIENNE:
+                case (int) MonsterIdEnum.BATHYSCAPHE:
                     baseCoef = 0.25;
                     break;
-                case (int)MonsterIdEnum.TACTIRELLE:
-                case (int)MonsterIdEnum.CHALUTIER:
+                case (int) MonsterIdEnum.TACTIRELLE:
+                case (int) MonsterIdEnum.CHALUTIER:
                     baseCoef = 0.2;
                     break;
             }
 
             var coef = baseCoef + (0.02 * (m_spell.CurrentLevel - 1));
-            m_stats.Health.Base += (int)(((Summoner.Level - 1) * 5 + 55) * coef) + (int)((Summoner.MaxLifePoints) * coef);
+            m_stats.Health.Base +=
+                (int) (((Summoner.Level - 1) * 5 + 55) * coef) + (int) ((Summoner.MaxLifePoints) * coef);
 
-            m_stats.Intelligence.Base = (short)(Summoner.Stats.Intelligence.Base * (1 + (Summoner.Level / 100d)));
-            m_stats.Chance.Base = (short)(Summoner.Stats.Chance.Base * (1 + (Summoner.Level / 100d)));
-            m_stats.Strength.Base = (short)(Summoner.Stats.Strength.Base * (1 + (Summoner.Level / 100d)));
-            m_stats.Agility.Base = (short)(Summoner.Stats.Agility.Base * (1 + (Summoner.Level / 100d)));
-            m_stats.Wisdom.Base = (short)(Summoner.Stats.Wisdom.Base * (1 + (Summoner.Level / 100d)));
+            m_stats.Intelligence.Base = (short) (Summoner.Stats.Intelligence.Base * (1 + (Summoner.Level / 100d)));
+            m_stats.Chance.Base = (short) (Summoner.Stats.Chance.Base * (1 + (Summoner.Level / 100d)));
+            m_stats.Strength.Base = (short) (Summoner.Stats.Strength.Base * (1 + (Summoner.Level / 100d)));
+            m_stats.Agility.Base = (short) (Summoner.Stats.Agility.Base * (1 + (Summoner.Level / 100d)));
+            m_stats.Wisdom.Base = (short) (Summoner.Stats.Wisdom.Base * (1 + (Summoner.Level / 100d)));
 
             m_stats[PlayerFields.DamageBonus].Base = Summoner.Stats[PlayerFields.DamageBonus].Equiped;
             m_stats[PlayerFields.DamageBonusPercent].Base = Summoner.Stats[PlayerFields.DamageBonusPercent].Equiped;
@@ -195,15 +207,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override bool CanMove() => base.CanMove() && MonsterGrade.MovementPoints > 0;
 
-        public FightActor Caster
-        {
-            get;
-        }
+        public FightActor Caster { get; }
 
-        public MonsterGrade Monster
-        {
-            get;
-        }
+        public MonsterGrade Monster { get; }
 
         public MonsterGrade MonsterGrade => Monster;
 
@@ -225,63 +231,68 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public override GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null)
         {
-            return new GameFightMonsterInformations(Id, Look.GetEntityLook(), GetEntityDispositionInformations(),
-                (sbyte)Team.Id, 0, IsAlive(), GetGameFightMinimalStats(), new ushort[0], (ushort)Monster.MonsterId, (sbyte)Monster.GradeId, (short)Monster.Level);
+            return new GameFightMonsterInformations(Id, 
+                GetEntityDispositionInformations(client),
+                Look.GetEntityLook(),
+                new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                    new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
+                0, GetGameFightMinimalStats(), new uint[0], (ushort) Monster.MonsterId,
+                (sbyte) Monster.GradeId, (short) Monster.Level);
         }
 
         public override FightTeamMemberInformations GetFightTeamMemberInformations()
         {
-            return new FightTeamMemberMonsterInformations(Id, Monster.Template.Id, (sbyte)Monster.GradeId);
+            return new FightTeamMemberMonsterInformations(Id, Monster.Template.Id, (sbyte) Monster.GradeId);
         }
 
 
         public override GameFightMinimalStats GetGameFightMinimalStats(WorldClient client = null)
         {
             return new GameFightMinimalStats(
-                (uint)Stats.Health.Total,
-                (uint)Stats.Health.TotalMax,
-                (uint)Stats.Health.TotalMaxWithoutPermanentDamages,
-                (uint)Stats[PlayerFields.PermanentDamagePercent].Total,
-                (uint)Stats.Shield.TotalSafe,
-                (short)Stats.AP.Total,
-                (short)Stats.AP.TotalMax,
-                (short)Stats.MP.Total,
-                (short)Stats.MP.TotalMax,
+                (uint) Stats.Health.Total,
+                (uint) Stats.Health.TotalMax,
+                (uint) Stats.Health.TotalMaxWithoutPermanentDamages,
+                (uint) Stats[PlayerFields.PermanentDamagePercent].Total,
+                (uint) Stats.Shield.TotalSafe,
+                (short) Stats.AP.Total,
+                (short) Stats.AP.TotalMax,
+                (short) Stats.MP.Total,
+                (short) Stats.MP.TotalMax,
                 Summoner.Id,
                 true,
-                (short)Stats[PlayerFields.NeutralResistPercent].Total,
-                (short)Stats[PlayerFields.EarthResistPercent].Total,
-                (short)Stats[PlayerFields.WaterResistPercent].Total,
-                (short)Stats[PlayerFields.AirResistPercent].Total,
-                (short)Stats[PlayerFields.FireResistPercent].Total,
-                (short)Stats[PlayerFields.NeutralElementReduction].Total,
-                (short)Stats[PlayerFields.EarthElementReduction].Total,
-                (short)Stats[PlayerFields.WaterElementReduction].Total,
-                (short)Stats[PlayerFields.AirElementReduction].Total,
-                (short)Stats[PlayerFields.FireElementReduction].Total,
-                (short)Stats[PlayerFields.CriticalDamageReduction].Total,
-                (short)Stats[PlayerFields.PushDamageReduction].Total,
-                (short)Stats[PlayerFields.PvpNeutralResistPercent].Total,
-                (short)Stats[PlayerFields.PvpEarthResistPercent].Total,
-                (short)Stats[PlayerFields.PvpWaterResistPercent].Total,
-                (short)Stats[PlayerFields.PvpAirResistPercent].Total,
-                (short)Stats[PlayerFields.PvpFireResistPercent].Total,
-                (short)Stats[PlayerFields.PvpNeutralElementReduction].Total,
-                (short)Stats[PlayerFields.PvpEarthElementReduction].Total,
-                (short)Stats[PlayerFields.PvpWaterElementReduction].Total,
-                (short)Stats[PlayerFields.PvpAirElementReduction].Total,
-                (short)Stats[PlayerFields.PvpFireElementReduction].Total,
-                (ushort)Stats[PlayerFields.DodgeAPProbability].Total,
-                (ushort)Stats[PlayerFields.DodgeMPProbability].Total,
-                (short)Stats[PlayerFields.TackleBlock].Total,
-                (short)Stats[PlayerFields.TackleEvade].Total,
+                (short) Stats[PlayerFields.NeutralResistPercent].Total,
+                (short) Stats[PlayerFields.EarthResistPercent].Total,
+                (short) Stats[PlayerFields.WaterResistPercent].Total,
+                (short) Stats[PlayerFields.AirResistPercent].Total,
+                (short) Stats[PlayerFields.FireResistPercent].Total,
+                (short) Stats[PlayerFields.NeutralElementReduction].Total,
+                (short) Stats[PlayerFields.EarthElementReduction].Total,
+                (short) Stats[PlayerFields.WaterElementReduction].Total,
+                (short) Stats[PlayerFields.AirElementReduction].Total,
+                (short) Stats[PlayerFields.FireElementReduction].Total,
+                (short) Stats[PlayerFields.CriticalDamageReduction].Total,
+                (short) Stats[PlayerFields.PushDamageReduction].Total,
+                (short) Stats[PlayerFields.PvpNeutralResistPercent].Total,
+                (short) Stats[PlayerFields.PvpEarthResistPercent].Total,
+                (short) Stats[PlayerFields.PvpWaterResistPercent].Total,
+                (short) Stats[PlayerFields.PvpAirResistPercent].Total,
+                (short) Stats[PlayerFields.PvpFireResistPercent].Total,
+                (short) Stats[PlayerFields.PvpNeutralElementReduction].Total,
+                (short) Stats[PlayerFields.PvpEarthElementReduction].Total,
+                (short) Stats[PlayerFields.PvpWaterElementReduction].Total,
+                (short) Stats[PlayerFields.PvpAirElementReduction].Total,
+                (short) Stats[PlayerFields.PvpFireElementReduction].Total,
+                (ushort) Stats[PlayerFields.DodgeAPProbability].Total,
+                (ushort) Stats[PlayerFields.DodgeMPProbability].Total,
+                (short) Stats[PlayerFields.TackleBlock].Total,
+                (short) Stats[PlayerFields.TackleEvade].Total,
                 0,
-                (sbyte)(client == null ? VisibleState : GetVisibleStateFor(client.Character)), // invisibility state
-                (ushort)(100 + Stats[PlayerFields.MeleeDamageReceivedPercent].Total),
-                    (ushort)(100 + Stats[PlayerFields.RangedDamageReceivedPercent].Total),
-                    (ushort)(100 + Stats[PlayerFields.WeaponDamageReceivedPercent].Total),
-                    (ushort)(100 + Stats[PlayerFields.SpellDamageReceivedPercent].Total)
-                );
+                (sbyte) (client == null ? VisibleState : GetVisibleStateFor(client.Character)), // invisibility state
+                (ushort) (100 + Stats[PlayerFields.MeleeDamageReceivedPercent].Total),
+                (ushort) (100 + Stats[PlayerFields.RangedDamageReceivedPercent].Total),
+                (ushort) (100 + Stats[PlayerFields.WeaponDamageReceivedPercent].Total),
+                (ushort) (100 + Stats[PlayerFields.SpellDamageReceivedPercent].Total)
+            );
         }
     }
 }

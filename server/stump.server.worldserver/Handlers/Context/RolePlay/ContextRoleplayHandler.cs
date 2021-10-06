@@ -59,10 +59,6 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
         public static void HandleMapInformationsRequestMessage(WorldClient client,
             MapInformationsRequestMessage message)
         {
-            //if (client.Character.Area.Id != 42 && client.Character.CustomLookActivated)
-            //{
-            //    IncarnationManager.Instance.UnApplyCustomIncarnation(client.Character);
-            //}
             SendMapComplementaryInformationsDataMessage(client);
 
             if (client.Character.Map.Id == 195561472)
@@ -290,7 +286,8 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
 
                 client.Send(new BreachEnterMessage((ulong) client.Character.songesOwner.Id));
                 client.Send(new BreachStateMessage(client.Character.songesOwner.GetCharacterMinimalInformations(),
-                    client.Character.songesOwner.songesBoosts.ToArray(), (uint) client.Character.songesOwner.songesBudget, true));
+                    client.Character.songesOwner.songesBoosts.ToArray(),
+                    (uint) client.Character.songesOwner.songesBudget, true));
                 foreach (var character in client.Character.Map.GetAllCharacters())
                 {
                     client.Send(new BreachCharactersMessage(client.Character.Map.GetAllCharacters()

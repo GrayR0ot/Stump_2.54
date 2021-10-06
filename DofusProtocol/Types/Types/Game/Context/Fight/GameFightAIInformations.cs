@@ -6,26 +6,25 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightAIInformations : GameFightFighterInformations
     {
-        public new const short Id = 151;
+        public const short Id = 151;
 
-        public GameFightAIInformations(double contextualId, EntityLook look, EntityDispositionInformations disposition,
-            sbyte teamId, sbyte wave, bool alive, GameFightMinimalStats stats, ushort[] previousPositions)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Disposition = disposition;
-            Look = look;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
+            get { return Id; }
         }
+
 
         public GameFightAIInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightAIInformations(double contextualId, Types.EntityDispositionInformations disposition,
+            Types.EntityLook look, Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave,
+            Types.GameFightMinimalStats stats, uint[] previousPositions)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions)
+        {
+        }
+
 
         public override void Serialize(IDataWriter writer)
         {

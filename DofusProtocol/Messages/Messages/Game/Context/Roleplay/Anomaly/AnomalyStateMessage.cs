@@ -12,16 +12,16 @@ namespace Stump.DofusProtocol.Messages
             get { return Id; }
         }
 
-        public short subAreaId;
+        public uint subAreaId;
         public bool open;
-        public long closingTime;
+        public double closingTime;
         
 
         public AnomalyStateMessage()
         {
         }
 
-        public AnomalyStateMessage(short subAreaId, bool open, long closingTime)
+        public AnomalyStateMessage(uint subAreaId, bool open, double closingTime)
         {
             this.subAreaId = subAreaId;
             this.open = open;
@@ -32,9 +32,9 @@ namespace Stump.DofusProtocol.Messages
         public override void Serialize(IDataWriter writer)
         {
 
-            writer.WriteVarShort(subAreaId);
+            writer.WriteVarUInt(subAreaId);
             writer.WriteBoolean(open);
-            writer.WriteVarLong(closingTime);
+            writer.WriteVarLong((long)closingTime);
             
 
         }
@@ -42,9 +42,9 @@ namespace Stump.DofusProtocol.Messages
         public override void Deserialize(IDataReader reader)
         {
 
-            subAreaId = reader.ReadVarShort();
+            subAreaId = reader.ReadVarUInt();
             open = reader.ReadBoolean();
-            closingTime = reader.ReadVarLong();
+            closingTime = reader.ReadVarULong();
             
 
         }

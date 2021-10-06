@@ -6,40 +6,38 @@ namespace Stump.DofusProtocol.Types
     [Serializable]
     public class GameFightTaxCollectorInformations : GameFightAIInformations
     {
-        public new const short Id = 48;
+        public const short Id = 48;
 
-        public GameFightTaxCollectorInformations(double contextualId, EntityLook look,
-            EntityDispositionInformations disposition, sbyte teamId, sbyte wave, bool alive,
-            GameFightMinimalStats stats, ushort[] previousPositions, ushort firstNameId, ushort lastNameId, byte level)
+        public override short TypeId
         {
-            ContextualId = contextualId;
-            Look = look;
-            Disposition = disposition;
-            TeamId = teamId;
-            Wave = wave;
-            Alive = alive;
-            Stats = stats;
-            PreviousPositions = previousPositions;
-            FirstNameId = firstNameId;
-            LastNameId = lastNameId;
-            Level = level;
+            get { return Id; }
         }
+
+        public uint FirstNameId;
+        public uint LastNameId;
+        public byte Level;
+
 
         public GameFightTaxCollectorInformations()
         {
         }
 
-        public override short TypeId => Id;
+        public GameFightTaxCollectorInformations(double contextualId, Types.EntityDispositionInformations disposition,
+            Types.EntityLook look, Types.GameContextBasicSpawnInformation spawnInfo, sbyte wave,
+            Types.GameFightMinimalStats stats, uint[] previousPositions, uint firstNameId, uint lastNameId, byte level)
+            : base(contextualId, disposition, look, spawnInfo, wave, stats, previousPositions)
+        {
+            this.FirstNameId = firstNameId;
+            this.LastNameId = lastNameId;
+            this.Level = level;
+        }
 
-        public ushort FirstNameId { get; set; }
-        public ushort LastNameId { get; set; }
-        public byte Level { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
             base.Serialize(writer);
-            writer.WriteVarUShort(FirstNameId);
-            writer.WriteVarUShort(LastNameId);
+            writer.WriteVarShort((short) FirstNameId);
+            writer.WriteVarShort((short) LastNameId);
             writer.WriteByte(Level);
         }
 

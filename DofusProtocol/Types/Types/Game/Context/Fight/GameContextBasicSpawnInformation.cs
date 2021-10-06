@@ -21,7 +21,7 @@ namespace Stump.DofusProtocol.Types
         {
         }
 
-        public GameContextBasicSpawnInformation(sbyte teamId, bool alive, Types.GameContextActorPositionInformations informations)
+        public GameContextBasicSpawnInformation(sbyte teamId, bool alive, GameContextActorPositionInformations informations)
         {
             this.teamId = teamId;
             this.alive = alive;

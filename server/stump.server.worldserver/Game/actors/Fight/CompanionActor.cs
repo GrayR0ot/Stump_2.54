@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using AmaknaProxy.API.Protocol.Types;
 using Stump.Core.Attributes;
 using Stump.Core.Reflection;
 using Stump.DofusProtocol.Enums;
@@ -376,13 +377,13 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         public override GameFightFighterInformations GetGameFightFighterInformations(WorldClient client = null)
         {
             return new GameFightEntityInformation(Id,
-                                                      Look.GetEntityLook(),
                                                       GetEntityDispositionInformations(client),
-                                                      (sbyte)Team.Id,
+                                                      Look.GetEntityLook(),
+                                                      new GameContextBasicSpawnInformation((sbyte) Team.Id, IsAlive(),
+                                                          new GameContextActorPositionInformations((double) Id, GetEntityDispositionInformations(client))),
                                                       0,
-                                                      IsAlive(),
                                                       GetGameFightMinimalStats(client),
-                                                      new ushort[0],
+                                                      new uint[0],
                                                       (sbyte)CompanionId, (byte)Level, Master.Id);
         }
 
