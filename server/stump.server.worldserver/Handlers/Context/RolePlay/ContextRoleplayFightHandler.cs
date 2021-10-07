@@ -18,7 +18,6 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
         public static void HandleGameRolePlayAttackMonsterRequestMessage(WorldClient client,
             GameRolePlayAttackMonsterRequestMessage message)
         {
-            SendGameRolePlayShowActorMessage(client, client.Character, client.Character);
             var map = client.Character.Map;
             var monster = map.GetActor<MonsterGroup>(entry => entry.Id == message.MonsterGroupId);
 

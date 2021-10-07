@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using ServiceStack.Text;
 
 namespace Stump.Server.WorldServer.Game.Fights
 {
@@ -602,9 +603,17 @@ namespace Stump.Server.WorldServer.Game.Fights
                                 foreach (DungeonKey dungeonKey in dungeonsKeys)
                                 {
                                     Map currentMap = World.Instance.GetMap(dungeonKey.getDungeon());
-                                    if (currentMap.Area.Id == Map.Area.Id)
+                                    try
                                     {
-                                        dropKey(looters, new DroppedItem(dungeonKey.getKey(), 1), random);
+                                        if (currentMap.Area.Id == Map.Area.Id)
+                                        {
+                                            dropKey(looters, new DroppedItem(dungeonKey.getKey(), 1), random);
+                                        }
+                                    }
+                                    catch (NullReferenceException e)
+                                    {
+                                        e.PrintDump();
+                                        Console.WriteLine("currentMap: " + currentMap.SerializeToString());
                                     }
 
                                 }

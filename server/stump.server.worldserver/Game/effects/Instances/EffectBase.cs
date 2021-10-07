@@ -190,7 +190,16 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         public int Priority
         {
-            get { return m_priority == 0 ? Template.EffectPriority : m_priority; } //m_priority == 0 ? Template.EffectPriority : m_priority; } NOT USED OBLIVIOUSLY
+            get {
+                if (Template != null)
+                {
+                    return m_priority == 0 ? Template.EffectPriority : m_priority;
+                }
+                else
+                {
+                    return m_priority;
+                }
+            } //m_priority == 0 ? Template.EffectPriority : m_priority; } NOT USED OBLIVIOUSLY
             set { m_priority = value; }
         }
 
@@ -619,7 +628,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
         /// <summary>
         /// Use EffectManager.Deserialize
         /// </summary>
-        internal void DeSerialize(byte[] buffer, ref int index)
+        public void DeSerialize(byte[] buffer, ref int index)
         {
             var reader = new BinaryReader(new MemoryStream(buffer, index, buffer.Length - index));
 

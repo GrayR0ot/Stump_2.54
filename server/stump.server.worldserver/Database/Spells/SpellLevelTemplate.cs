@@ -112,6 +112,7 @@ namespace Stump.Server.WorldServer.Database.Spells
             {
                 m_effectsBin = value;
                 m_effects = EffectManager.Instance.DeserializeEffects(EffectsBin).Cast<EffectDice>().ToList();
+                m_effects = EffectManager.Instance.DeserializeEffects(EffectsBin).Cast<EffectDice>().ToList();
             }
         }
 

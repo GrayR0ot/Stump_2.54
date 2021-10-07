@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using NLog;
+using ServiceStack.Text;
 using Stump.Core.Reflection;
 using Stump.Server.BaseServer.Database;
 using Stump.Server.BaseServer.Initialization;
@@ -38,7 +39,8 @@ namespace Stump.Server.WorldServer.Game.Spells
 
         private delegate SpellCastHandler SpellCastConstructor(SpellCastInformations cast);
 
-        private readonly Dictionary<int, SpellCastConstructor> m_spellsCastHandler = new Dictionary<int, SpellCastConstructor>();
+        private readonly Dictionary<int, SpellCastConstructor> m_spellsCastHandler =
+            new Dictionary<int, SpellCastConstructor>();
 
         #region Fields
 
@@ -47,13 +49,17 @@ namespace Stump.Server.WorldServer.Game.Spells
         [Initialization(typeof(EffectManager))]
         public override void Initialize()
         {
-            m_spellsLevels = Database.Fetch<SpellLevelTemplate>(SpellLevelTemplateRelator.FetchQuery).ToDictionary(entry => entry.Id);
+            m_spellsLevels = Database.Fetch<SpellLevelTemplate>(SpellLevelTemplateRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
             m_spells = Database.Fetch<SpellTemplate>(SpellTemplateRelator.FetchQuery).ToDictionary(entry => entry.Id);
             m_spellsTypes = Database.Fetch<SpellType>(SpellTypeRelator.FetchQuery).ToDictionary(entry => entry.Id);
             m_spellsState = Database.Fetch<SpellState>(SpellStateRelator.FetchQuery).ToDictionary(entry => entry.Id);
-            m_spellsBomb = Database.Fetch<SpellBombTemplate>(SpellBombRelator.FetchQuery).ToDictionary(entry => entry.Id);
-            m_spellsEffectsFixs = Database.Fetch<SpellEffectFix>(SpellEffectFixRelator.FetchQuery).ToDictionary(entry => entry.Id);
-            m_finishMoves = Database.Fetch<FinishMoveTemplate>(FinishMoveRelator.FetchQuery).ToDictionary(entry => entry.Id);
+            m_spellsBomb = Database.Fetch<SpellBombTemplate>(SpellBombRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
+            m_spellsEffectsFixs = Database.Fetch<SpellEffectFix>(SpellEffectFixRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
+            m_finishMoves = Database.Fetch<FinishMoveTemplate>(FinishMoveRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
             m_companionSpell =
                 Database.Fetch<CompanionSpellRecord>("SELECT * FROM companion_spells").ToDictionary(x => x.Id);
             m_spellsVariants = Database.Query<BreedSpell>("SELECT * FROM breeds_spells;").ToList();
@@ -64,7 +70,8 @@ namespace Stump.Server.WorldServer.Game.Spells
 
         private void InitializeHandlers()
         {
-            foreach (var type in Assembly.GetExecutingAssembly().GetTypes().Where(entry => entry.IsSubclassOf(typeof(SpellCastHandler)) && !entry.IsAbstract))
+            foreach (var type in Assembly.GetExecutingAssembly().GetTypes().Where(entry =>
+                entry.IsSubclassOf(typeof(SpellCastHandler)) && !entry.IsAbstract))
             {
                 if (type.GetCustomAttribute<DefaultSpellCastHandlerAttribute>(false) != null)
                     continue; // we don't mind about default handlers
@@ -104,7 +111,8 @@ namespace Stump.Server.WorldServer.Game.Spells
 
                     if (spell == null)
                     {
-                        logger.Error($"Cannot apply spell effect fix {fix.Id} because both SpellId {fix.SpellId} doesn't exist");
+                        logger.Error(
+                            $"Cannot apply spell effect fix {fix.Id} because both SpellId {fix.SpellId} doesn't exist");
                         continue;
                     }
 
@@ -116,7 +124,8 @@ namespace Stump.Server.WorldServer.Game.Spells
 
                     if (spellLevel == null)
                     {
-                        logger.Error($"Cannot apply spell effect fix {fix.Id} because both SpellLevelId {fix.SpellLevelId} doesn't exist");
+                        logger.Error(
+                            $"Cannot apply spell effect fix {fix.Id} because both SpellLevelId {fix.SpellLevelId} doesn't exist");
                         continue;
                     }
 
@@ -124,11 +133,14 @@ namespace Stump.Server.WorldServer.Game.Spells
                 }
                 else
                 {
-                    logger.Error($"Cannot apply spell effect fix {fix.Id} because both SpellId and SpellLevelId are null");
+                    logger.Error(
+                        $"Cannot apply spell effect fix {fix.Id} because both SpellId and SpellLevelId are null");
                     continue;
                 }
 
-                foreach (var effect in effects.Where((x, i) => fix.EffectId == null || (fix.EffectId == x.Id && (fix.EffectIndex == null || fix.EffectIndex == i))))
+                foreach (var effect in effects.Where((x, i) =>
+                    fix.EffectId == null ||
+                    (fix.EffectId == x.Id && (fix.EffectIndex == null || fix.EffectIndex == i))))
                 {
                     effect.EffectFix = fix;
                 }
@@ -161,10 +173,8 @@ namespace Stump.Server.WorldServer.Game.Spells
         public SpellTemplate GetSpellTemplate(string name, bool ignorecase)
         {
             return
-            m_spells.Values.FirstOrDefault(entry => entry.Name.Equals(name,
-               ignorecase ?
-               StringComparison.InvariantCultureIgnoreCase :
-               StringComparison.InvariantCulture));
+                m_spells.Values.FirstOrDefault(entry => entry.Name.Equals(name,
+                    ignorecase ? StringComparison.InvariantCultureIgnoreCase : StringComparison.InvariantCulture));
         }
 
         public SpellBombTemplate GetSpellBombTemplate(int id)
@@ -182,30 +192,55 @@ namespace Stump.Server.WorldServer.Game.Spells
         {
             return m_spells.Values;
         }
+
         public int GetRealCompanionSpell(int id)
         {
             return m_companionSpell.ContainsKey(id) ? m_companionSpell[id].SpellId : -1;
         }
+
         public SpellLevelTemplate GetSpellLevel(int id)
         {
             SpellLevelTemplate template;
 
-            return m_spellsLevels.TryGetValue((uint)id, out template) ? template : null;
+            return m_spellsLevels.TryGetValue((uint) id, out template) ? template : null;
         }
 
         public SpellLevelTemplate GetSpellLevel(int templateid, int level)
         {
-            var template = GetSpellTemplate(templateid);
+            try
+            {
+                var template = GetSpellTemplate(templateid);
 
-            if (template == null)
+                if (template == null)
+                    return null;
+
+                return template.SpellLevelsIds.Length <= level - 1
+                    ? null
+                    : GetSpellLevel((int) template.SpellLevelsIds[level - 1]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Unable to find #" + templateid + " spell levels");
+                e.PrintDump();
                 return null;
-
-            return template.SpellLevelsIds.Length <= level - 1 ? null : GetSpellLevel((int)template.SpellLevelsIds[level - 1]);
+            }            
         }
 
         public IEnumerable<SpellLevelTemplate> GetSpellLevels(SpellTemplate template)
         {
-            return template.SpellLevelsIds.Select(x => m_spellsLevels[x]);
+            try
+            {
+                Console.WriteLine("Trying to find spell #" + template.Id);
+                IEnumerable<SpellLevelTemplate> spellLevelTemplates =
+                    template.SpellLevelsIds.Select(x => m_spellsLevels[x]);
+                return spellLevelTemplates;
+            }
+            catch (KeyNotFoundException e)
+            {
+                Console.WriteLine("Unable to find #" + template.Id + " spell levels");
+                e.PrintDump();
+                return null;
+            }
         }
 
         public IEnumerable<SpellLevelTemplate> GetSpellLevels(int id)
@@ -219,20 +254,21 @@ namespace Stump.Server.WorldServer.Game.Spells
         }
 
         #region variants
+
         public static BreedSpell GetSpellVariant(int spell)
         {
-
             return m_spellsVariants.FirstOrDefault(x => x.Spell == spell || x.VariantId == spell);
         }
 
         public static BreedSpell[] GetSpellVariant(PlayableBreedEnum breed, ushort level)
         {
-            return m_spellsVariants.Where(x => x.BreedId == (int)breed && x.ObtainLevel <= level && x.ObtainLevel > 1).ToArray();
+            return m_spellsVariants.Where(x => x.BreedId == (int) breed && x.ObtainLevel <= level && x.ObtainLevel > 1)
+                .ToArray();
         }
 
         public static BreedSpell[] GetSpellVariant(PlayableBreedEnum breed)
         {
-            return m_spellsVariants.Where(x => x.BreedId == (int)breed && x.ObtainLevel == 1).ToArray();
+            return m_spellsVariants.Where(x => x.BreedId == (int) breed && x.ObtainLevel == 1).ToArray();
         }
 
         public IEnumerable<SpellLevelTemplate> GetSpellVariants(SpellTemplate template)
@@ -244,20 +280,21 @@ namespace Stump.Server.WorldServer.Game.Spells
         {
             return m_spellsVariants;
         }
+
         #endregion
 
         public SpellType GetSpellType(uint id)
         {
             SpellType template;
 
-            return m_spellsTypes.TryGetValue((int)id, out template) ? template : null;
+            return m_spellsTypes.TryGetValue((int) id, out template) ? template : null;
         }
 
         public SpellState GetSpellState(uint id)
         {
             SpellState state;
 
-            return m_spellsState.TryGetValue((int)id, out state) ? state : null;
+            return m_spellsState.TryGetValue((int) id, out state) ? state : null;
         }
 
         public IEnumerable<SpellState> GetSpellStates()
@@ -267,7 +304,7 @@ namespace Stump.Server.WorldServer.Game.Spells
 
         public void AddSpellCastHandler(Type handler, SpellTemplate spell)
         {
-            var ctor = handler.GetConstructor(new[] { typeof(SpellCastInformations) });
+            var ctor = handler.GetConstructor(new[] {typeof(SpellCastInformations)});
 
             if (ctor == null)
                 throw new Exception(string.Format("Handler {0} : No valid constructor found !", handler.Name));
@@ -278,7 +315,9 @@ namespace Stump.Server.WorldServer.Game.Spells
         public SpellCastHandler GetSpellCastHandler(SpellCastInformations cast)
         {
             SpellCastConstructor ctor;
-            return m_spellsCastHandler.TryGetValue(cast.Spell.Template.Id, out ctor) ? ctor(cast) : new DefaultSpellCastHandler(cast);
+            return m_spellsCastHandler.TryGetValue(cast.Spell.Template.Id, out ctor)
+                ? ctor(cast)
+                : new DefaultSpellCastHandler(cast);
         }
 
         public SpellCastHandler GetSpellCastHandler(FightActor caster, Spell spell, Cell targetedCell, bool critical)

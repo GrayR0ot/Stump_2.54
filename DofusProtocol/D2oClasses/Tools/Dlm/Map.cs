@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using D2pReader.GeneralInformations;
+using ServiceStack;
 using Stump.Core.IO;
 
 namespace D2pReader.MapInformations
@@ -177,7 +178,7 @@ namespace D2pReader.MapInformations
                 var layer = new Layer(_reader, (sbyte) MapVersion, map);
                 Layers.Add(layer);
             }
-
+            
             CellsCount = MAP_CELLS_COUNT;
             Cells = new CellData[CellsCount].ToList();
             m_compressedCells = new byte[Cells.ToArray().Length * 11];
@@ -185,14 +186,16 @@ namespace D2pReader.MapInformations
             {
                 var cell = new CellData(_reader, (sbyte) MapVersion, i);
                 Cells[i] = cell;
-                //System.Array.Copy(_cells[i].Serialize(), 0, m_compressedCells, i * 11, 11);
-                // _cells.Add(cell);
+                System.Array.Copy(Cells[i].Serialize(), 0, m_compressedCells, i * 11, 11);
+                Cells.Add(cell);
             }
-            /* for (i = 0; i < _cellsCount; i++)
+            //Console.WriteLine("Length: " + this.m_compressedCells.Length);
+             /*for (i = 0; i < Cells.Count; i++)
              {
-                 this.m_compressedCells = _cells.ToArray()[i].Serialize();
+                 this.m_compressedCells = Cells.ToArray()[i].Serialize();
              }*/
-            // this.map.m_compressedCells = ZipHelper.Compress(this.m_compressedCells);
+             this.map.m_compressedCells = ZipHelper.Compress(this.m_compressedCells);
+             //Console.WriteLine("CompressedLength: " + this.m_compressedCells.Length);
         }
 
         #region Vars
@@ -201,7 +204,7 @@ namespace D2pReader.MapInformations
 
         public const string DefaultEncryptionKeyString = "649ae451ca33ec53bbcbcc33becf15f4";
         private readonly byte[] _encryptionKey;
-        private byte[] m_compressedCells;
+        public byte[] m_compressedCells;
 
 
         public const int MAP_CELLS_COUNT = 560;

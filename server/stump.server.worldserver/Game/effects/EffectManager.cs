@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Google.Protobuf;
+using MongoDB.Bson.IO;
 using NLog;
 using Stump.Core.Reflection;
 using Stump.DofusProtocol.D2oClasses;
@@ -22,6 +24,7 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Items;
 using Stump.Server.WorldServer.Game.Items.Player;
 using Stump.Server.WorldServer.Game.Spells.Casts;
+using JsonConvert = Newtonsoft.Json.JsonConvert;
 
 namespace Stump.Server.WorldServer.Game.Effects
 {
@@ -442,6 +445,10 @@ namespace Stump.Server.WorldServer.Game.Effects
         }
 
 
+        public List<EffectBase> DeserializeEffectsFromJson(String jsonArray)
+        {
+            return JsonConvert.DeserializeObject<List<EffectBase>>(jsonArray);
+        }
         public List<EffectBase> DeserializeEffects(byte[] buffer)
         {
             var result = new List<EffectBase>();
