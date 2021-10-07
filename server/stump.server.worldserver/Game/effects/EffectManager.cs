@@ -444,9 +444,15 @@ namespace Stump.Server.WorldServer.Game.Effects
             return buffer.ToArray();
         }
 
+        public String SerializeEffectsToJson(IEnumerable<EffectInstance> effects)
+        {
+            return JsonConvert.SerializeObject(effects.ToArray());
+        }
+
 
         public List<EffectBase> DeserializeEffectsFromJson(String jsonArray)
         {
+            Console.WriteLine("Deserializing effects " + jsonArray);
             return JsonConvert.DeserializeObject<List<EffectBase>>(jsonArray);
         }
         public List<EffectBase> DeserializeEffects(byte[] buffer)

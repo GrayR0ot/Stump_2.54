@@ -239,7 +239,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
             return new ObjectItem(
                 (sbyte) Position,
                 (ushort) Template.Id,
-                Effects.Where(entry => !entry.Hidden).Select(entry => entry.GetObjectEffect()).ToArray(),
+                Effects.Select(entry => entry.GetObjectEffect()).ToArray(),
                 (uint)Guid,
                 (uint)Stack);
         }
@@ -264,7 +264,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
         {
             return new ObjectItemNotInContainer(
                 (ushort)Template.Id,
-                Effects.Where(entry => !entry.Hidden).Select(entry => entry.GetObjectEffect()).ToArray(),
+                Effects.Select(entry => entry.GetObjectEffect()).ToArray(),
                 (uint)Guid,
                 (uint)Stack);
         }

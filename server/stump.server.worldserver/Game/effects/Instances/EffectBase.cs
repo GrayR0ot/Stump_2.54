@@ -1,15 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using NLog;
 using Stump.DofusProtocol.D2oClasses;
 using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Types;
 using Stump.Server.WorldServer.Database.Effects;
-using System.Collections.Generic;
-using Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Targets;
-using System.Linq;
 using Stump.Server.WorldServer.Database.Spells;
+using Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Targets;
 
 namespace Stump.Server.WorldServer.Game.Effects.Instances
 {
@@ -29,39 +28,41 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
     [Serializable]
     public class EffectBase : ICloneable
     {
-
         static readonly Logger logger = LogManager.GetCurrentClassLogger();
-        int m_delay;
-        int m_duration;
-        int m_group;
-        bool m_hidden;
-        short m_id;
-        int m_uid;
-        int m_modificator;
-        int m_random;
+        string targetMask;
+        int diceNum;
+        bool visibleInBuffUi;
+        bool visibleInFight;
+        int targetId;
+        int effectElement;
+        int effectUid;
+        int dispellable;
+        string triggers;
+        int spellId;
+        int duration;
+        int random;
+        short effectId;
+        int delay;
+        int diceSide;
+        bool visibleInTooltip;
+        string rawZone;
+        bool forClientOnly;
+        int value;
+        int order;
+        int group;
+        int modificator;
 
-        int m_spellId;
-        int m_order;
-        bool m_forClientOnly;
-        int m_effectElement;
-        int m_dispellable;
+        [NonSerialized] TargetCriterion[] targets = new TargetCriterion[0];
 
-        [NonSerialized]
-        TargetCriterion[] m_targets = new TargetCriterion[0];
-        string m_targetMask;
-        string m_triggers;
+        [NonSerialized] protected EffectTemplate template;
+        bool trigger;
+        uint zoneMinSize;
+        SpellShapeEnum zoneShape;
+        uint zoneSize;
+        int zoneEfficiencyPercent;
+        int zoneMaxEfficiency;
 
-        [NonSerialized]
-        protected EffectTemplate m_template;
-        bool m_trigger;
-        uint m_zoneMinSize;
-        SpellShapeEnum m_zoneShape;
-        uint m_zoneSize;
-        int m_zoneEfficiencyPercent;
-        int m_zoneMaxEfficiency;
-
-        [NonSerialized]
-        int m_priority;
+        [NonSerialized] int priority;
 
         public EffectBase()
         {
@@ -69,60 +70,59 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         public EffectBase(EffectBase effect)
         {
-            m_id = effect.Id;
-            m_uid = effect.m_uid;
-            m_template = EffectManager.Instance.GetTemplate(effect.Id);
-            m_targets = effect.Targets;
-            m_targetMask = effect.TargetMask;
-            m_delay = effect.Delay;
-            m_duration = effect.Duration;
-            m_group = effect.Group;
-            m_random = effect.Random;
-            m_modificator = effect.Modificator;
-            m_trigger = effect.Trigger;
-            m_triggers = effect.Triggers;
-            m_hidden = effect.Hidden;
-            m_zoneSize = effect.m_zoneSize;
-            m_zoneMinSize = effect.m_zoneMinSize;
-            m_zoneShape = effect.ZoneShape;
-            m_zoneMaxEfficiency = effect.ZoneMaxEfficiency;
-            m_zoneEfficiencyPercent = effect.ZoneEfficiencyPercent;
+            effectId = effect.Id;
+            effectUid = effect.Uid;
+            template = EffectManager.Instance.GetTemplate(effect.Id);
+            targets = effect.Targets;
+            targetMask = effect.TargetMask;
+            delay = effect.Delay;
+            duration = effect.Duration;
+            group = effect.Group;
+            random = effect.Random;
+            modificator = effect.Modificator;
+            trigger = effect.Trigger;
+            triggers = effect.Triggers;
+            zoneSize = effect.zoneSize;
+            zoneMinSize = effect.zoneMinSize;
+            zoneShape = effect.ZoneShape;
+            zoneMaxEfficiency = effect.ZoneMaxEfficiency;
+            zoneEfficiencyPercent = effect.ZoneEfficiencyPercent;
 
-            m_spellId = effect.SpellId;
-            m_forClientOnly = effect.ForClientOnly;
-            m_order = effect.Order;
-            m_dispellable = effect.Dispellable;
-            m_effectElement = effect.EffectElement;
+            spellId = effect.SpellId;
+            forClientOnly = effect.ForClientOnly;
+            order = effect.Order;
+            dispellable = effect.Dispellable;
+            effectElement = effect.EffectElement;
             ParseTargets();
         }
 
         public EffectBase(short id, EffectBase effect)
-             : this(effect)
+            : this(effect)
         {
             Id = id;
         }
 
         public EffectBase(EffectInstance effect)
         {
-            m_id = (short)effect.effectId;
-            m_uid = (int)effect.effectUid;
+            effectId = (short) effect.effectId;
+            effectUid = (int) effect.effectUid;
 
-            m_template = EffectManager.Instance.GetTemplate(Id);
+            template = EffectManager.Instance.GetTemplate(Id);
 
-            m_targetMask = effect.targetMask;
-            m_delay = effect.delay;
-            m_duration = effect.duration;
-            m_group = effect.group;
-            m_random = effect.random;
-            m_modificator = effect.modificator;
-            m_trigger = effect.trigger;
-            m_triggers = effect.triggers;
+            targetMask = effect.targetMask;
+            delay = effect.delay;
+            duration = effect.duration;
+            group = effect.group;
+            random = effect.random;
+            modificator = effect.modificator;
+            trigger = effect.trigger;
+            triggers = effect.triggers;
 
-            m_order = effect.order;
-            m_spellId = effect.spellId;
-            m_dispellable = effect.dispellable;
-            m_effectElement = effect.effectElement;
-            m_forClientOnly = effect.forClientOnly;
+            order = effect.order;
+            spellId = effect.spellId;
+            dispellable = effect.dispellable;
+            effectElement = effect.effectElement;
+            forClientOnly = effect.forClientOnly;
             ParseRawZone(effect.rawZone);
             ParseTargets();
         }
@@ -133,20 +133,20 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         public short Id
         {
-            get { return m_id; }
+            get { return effectId; }
             set
             {
-                m_id = value;
+                effectId = value;
                 IsDirty = true;
             }
         }
 
         public int Uid
         {
-            get { return m_uid; }
+            get { return effectUid; }
             set
             {
-                m_uid = value;
+                effectUid = value;
                 IsDirty = true;
             }
         }
@@ -154,244 +154,296 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         public EffectsEnum EffectId
         {
-            get { return (EffectsEnum)Id; }
+            get { return (EffectsEnum) Id; }
             set
             {
-                Id = (short)value;
+                Id = (short) value;
                 IsDirty = true;
             }
         }
 
         public EffectTemplate Template
         {
-            get { return m_template ?? (m_template = EffectManager.Instance.GetTemplate(Id)); }
+            get { return template ?? (template = EffectManager.Instance.GetTemplate(Id)); }
             protected set
             {
-                m_template = value;
+                template = value;
                 IsDirty = true;
             }
         }
 
         public string TargetMask
         {
-            get { return m_targetMask; }
-            set { m_targetMask = value; IsDirty = true; }
+            get { return targetMask; }
+            set
+            {
+                targetMask = value;
+                IsDirty = true;
+            }
         }
 
         public TargetCriterion[] Targets
         {
-            get { return m_targets; }
+            get { return targets; }
             set
             {
-                m_targets = value;
+                targets = value;
                 IsDirty = true;
             }
         }
 
         public int Priority
         {
-            get {
+            get
+            {
                 if (Template != null)
                 {
-                    return m_priority == 0 ? Template.EffectPriority : m_priority;
+                    return priority == 0 ? Template.EffectPriority : priority;
                 }
                 else
                 {
-                    return m_priority;
+                    return priority;
                 }
-            } //m_priority == 0 ? Template.EffectPriority : m_priority; } NOT USED OBLIVIOUSLY
-            set { m_priority = value; }
+            } //priority == 0 ? Template.EffectPriority : priority; } NOT USED OBLIVIOUSLY
+            set { priority = value; }
         }
 
         public int Duration
         {
-            get { return m_duration; }
+            get { return duration; }
             set
             {
-                m_duration = value;
+                duration = value;
                 IsDirty = true;
             }
         }
 
         public int Delay
         {
-            get { return m_delay; }
+            get { return delay; }
             set
             {
-                m_delay = value;
+                delay = value;
                 IsDirty = true;
             }
         }
 
         public int Random
         {
-            get { return m_random; }
+            get { return random; }
             set
             {
-                m_random = value;
+                random = value;
                 IsDirty = true;
             }
         }
 
         public int Group
         {
-            get { return m_group; }
+            get { return group; }
             set
             {
-                m_group = value;
+                group = value;
                 IsDirty = true;
             }
         }
 
         public int Modificator
         {
-            get { return m_modificator; }
+            get { return modificator; }
             set
             {
-                m_modificator = value;
+                modificator = value;
                 IsDirty = true;
             }
         }
 
         public string Triggers
         {
-            get { return m_triggers; }
+            get { return triggers; }
             set
             {
-                m_triggers = value;
+                triggers = value;
                 IsDirty = true;
             }
         }
 
         public bool Trigger
         {
-            get { return m_trigger; }
+            get { return trigger; }
             set
             {
-                m_trigger = value;
-                IsDirty = true;
-            }
-        }
-
-        public bool Hidden
-        {
-            get { return m_hidden; }
-            set
-            {
-                m_hidden = value;
+                trigger = value;
                 IsDirty = true;
             }
         }
 
         public uint ZoneSize
         {
-            get { return m_zoneSize >= 63 ? (byte)63 : (byte)m_zoneSize; }
+            get { return zoneSize >= 63 ? (byte) 63 : (byte) zoneSize; }
             set
             {
-                m_zoneSize = value;
+                zoneSize = value;
                 IsDirty = true;
             }
         }
 
         public SpellShapeEnum ZoneShape
         {
-            get { return m_zoneShape; }
+            get { return zoneShape; }
             set
             {
-                m_zoneShape = value;
+                zoneShape = value;
                 IsDirty = true;
             }
         }
 
         public uint ZoneMinSize
         {
-            get { return m_zoneMinSize >= 63 ? (byte)63 : (byte)m_zoneMinSize; }
+            get { return zoneMinSize >= 63 ? (byte) 63 : (byte) zoneMinSize; }
             set
             {
-                m_zoneMinSize = value;
+                zoneMinSize = value;
                 IsDirty = true;
             }
         }
 
         public int ZoneEfficiencyPercent
         {
-            get { return m_zoneEfficiencyPercent; }
+            get { return zoneEfficiencyPercent; }
             set
             {
-                m_zoneEfficiencyPercent = value;
+                zoneEfficiencyPercent = value;
                 IsDirty = true;
             }
         }
 
         public int ZoneMaxEfficiency
         {
-            get { return m_zoneMaxEfficiency; }
+            get { return zoneMaxEfficiency; }
             set
             {
-                m_zoneMaxEfficiency = value;
+                zoneMaxEfficiency = value;
                 IsDirty = true;
             }
         }
 
         public int SpellId
         {
-            get { return m_spellId; }
+            get { return spellId; }
             set
             {
-                m_spellId = value;
+                spellId = value;
                 IsDirty = true;
             }
         }
 
         public int Order
         {
-            get { return m_order; }
+            get { return order; }
             set
             {
-                m_order = value;
+                order = value;
                 IsDirty = true;
             }
         }
 
         public int EffectElement
         {
-            get { return m_effectElement; }
+            get { return effectElement; }
             set
             {
-                m_effectElement = value;
+                effectElement = value;
                 IsDirty = true;
             }
         }
 
         public bool ForClientOnly
         {
-            get { return m_forClientOnly; }
+            get { return forClientOnly; }
             set
             {
-                m_forClientOnly = value;
+                forClientOnly = value;
                 IsDirty = true;
             }
         }
 
         public int Dispellable
         {
-            get { return m_dispellable; }
+            get { return dispellable; }
             set
             {
-                m_dispellable = value;
+                dispellable = value;
                 IsDirty = true;
             }
         }
 
+        public static Logger Logger => logger;
 
-        [NonSerialized]
-        public SpellEffectFix EffectFix;
-
-        public bool IsDirty
+        public int DiceNum
         {
-            get;
-            set;
+            get => diceNum;
+            set => diceNum = value;
         }
+
+        public bool VisibleInBuffUi
+        {
+            get => visibleInBuffUi;
+            set => visibleInBuffUi = value;
+        }
+
+        public bool VisibleInFight
+        {
+            get => visibleInFight;
+            set => visibleInFight = value;
+        }
+
+        public int TargetId
+        {
+            get => targetId;
+            set => targetId = value;
+        }
+
+        public int EffectUid
+        {
+            get => effectUid;
+            set => effectUid = value;
+        }
+
+        public int DiceSide
+        {
+            get => diceSide;
+            set => diceSide = value;
+        }
+
+        public bool VisibleInTooltip
+        {
+            get => visibleInTooltip;
+            set => visibleInTooltip = value;
+        }
+
+        public string RawZone
+        {
+            get => rawZone;
+            set => rawZone = value;
+        }
+
+        public int Value
+        {
+            get => value;
+            set => value = value;
+        }
+
+        public SpellEffectFix EffectFix1
+        {
+            get => EffectFix;
+            set => EffectFix = value;
+        }
+
+
+        [NonSerialized] public SpellEffectFix EffectFix;
+
+        public bool IsDirty { get; set; }
 
         #region ICloneable Members
 
@@ -404,35 +456,36 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         protected void ParseTargets()
         {
-            if (string.IsNullOrEmpty(m_targetMask) || m_targetMask == "a,A" || m_targetMask == "A,a")
+            if (string.IsNullOrEmpty(targetMask) || targetMask == "a,A" || targetMask == "A,a")
             {
-                m_targets = new TargetCriterion[0];
+                targets = new TargetCriterion[0];
                 return; // default target = ALL
             }
 
-            var data = m_targetMask.Split(',');
+            var data = targetMask.Split(',');
 
-            m_targets = data.Select(TargetCriterion.ParseCriterion).ToArray();
+            targets = data.Select(TargetCriterion.ParseCriterion).ToArray();
         }
 
         protected void ParseRawZone(string rawZone)
         {
             if (string.IsNullOrEmpty(rawZone))
             {
-                m_zoneShape = 0;
-                m_zoneSize = 0;
-                m_zoneMinSize = 0;
+                zoneShape = 0;
+                zoneSize = 0;
+                zoneMinSize = 0;
                 return;
             }
 
-            var shape = (SpellShapeEnum)rawZone[0];
+            var shape = SpellShapeEnum.P; //ToDo //TEMPORARY VALUE FOR TESTS
             byte size = 0;
             byte minSize = 0;
             int zoneEfficiency = 0;
             int zoneMaxEfficiency = 0;
 
-            var data = rawZone.Remove(0, 1).Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            var hasMinSize = shape == SpellShapeEnum.C || shape == SpellShapeEnum.X || shape == SpellShapeEnum.Q || shape == SpellShapeEnum.plus || shape == SpellShapeEnum.sharp;
+            var data = rawZone.Remove(0, 1).Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+            var hasMinSize = shape == SpellShapeEnum.C || shape == SpellShapeEnum.X || shape == SpellShapeEnum.Q ||
+                             shape == SpellShapeEnum.plus || shape == SpellShapeEnum.sharp;
 
 
             try
@@ -464,29 +517,30 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
             }
             catch (Exception ex)
             {
-                m_zoneShape = 0;
-                m_zoneSize = 0;
-                m_zoneMinSize = 0;
+                zoneShape = 0;
+                zoneSize = 0;
+                zoneMinSize = 0;
 
                 logger.Error("ParseRawZone() => Cannot parse {0}", rawZone);
             }
 
-            m_zoneShape = shape;
-            m_zoneSize = size;
-            m_zoneMinSize = minSize;
-            m_zoneEfficiencyPercent = zoneEfficiency;
-            m_zoneMaxEfficiency = zoneMaxEfficiency;
+            zoneShape = shape;
+            zoneSize = size;
+            zoneMinSize = minSize;
+            zoneEfficiencyPercent = zoneEfficiency;
+            zoneMaxEfficiency = zoneMaxEfficiency;
         }
 
         protected string BuildRawZone()
         {
             var builder = new StringBuilder();
 
-            builder.Append((char)(int)ZoneShape);
+            builder.Append((char) (int) ZoneShape);
             builder.Append(ZoneSize);
 
             var hasMinSize = ZoneShape == SpellShapeEnum.C || ZoneShape == SpellShapeEnum.X ||
-                ZoneShape == SpellShapeEnum.Q || ZoneShape == SpellShapeEnum.plus || ZoneShape == SpellShapeEnum.sharp;
+                             ZoneShape == SpellShapeEnum.Q || ZoneShape == SpellShapeEnum.plus ||
+                             ZoneShape == SpellShapeEnum.sharp;
 
             if (hasMinSize)
             {
@@ -532,21 +586,21 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
         }
 
         public virtual EffectBase GenerateEffect(EffectGenerationContext context,
-                                                 EffectGenerationType type = EffectGenerationType.Normal)
+            EffectGenerationType type = EffectGenerationType.Normal)
         {
             return new EffectBase(this);
         }
 
         public virtual ObjectEffect GetObjectEffect()
         {
-            return new ObjectEffect((ushort)Id);
+            return new ObjectEffect((ushort) Id);
         }
 
         public virtual EffectInstance GetEffectInstance()
         {
             return new EffectInstance
             {
-                effectId = (uint)Id,
+                effectId = (uint) Id,
                 targetMask = TargetMask,
                 delay = Delay,
                 duration = Duration,
@@ -557,7 +611,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 triggers = Triggers,
                 zoneMinSize = ZoneMinSize,
                 zoneSize = ZoneSize,
-                zoneShape = (uint)ZoneShape,
+                zoneShape = (uint) ZoneShape,
                 zoneEfficiencyPercent = ZoneEfficiencyPercent,
                 zoneMaxEfficiency = ZoneMaxEfficiency,
                 forClientOnly = ForClientOnly,
@@ -576,7 +630,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
             InternalSerialize(ref writer);
 
-            return ((MemoryStream)writer.BaseStream).ToArray();
+            return ((MemoryStream) writer.BaseStream).ToArray();
         }
 
         protected virtual void InternalSerialize(ref BinaryWriter writer)
@@ -588,7 +642,6 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 Group == 0 &&
                 Modificator == 0 &&
                 Trigger == false &&
-                Hidden == false &&
                 ZoneSize == 0 &&
                 ZoneShape == 0)
             {
@@ -609,7 +662,6 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 writer.Write(Modificator);
                 writer.Write(Trigger);
                 writer.Write(Triggers);
-                writer.Write(Hidden);
 
                 string rawZone = BuildRawZone();
                 if (rawZone == null)
@@ -634,7 +686,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
             InternalDeserialize(ref reader);
 
-            index += (int)reader.BaseStream.Position;
+            index += (int) reader.BaseStream.Position;
         }
 
         protected virtual void InternalDeserialize(ref BinaryReader reader)
@@ -642,29 +694,28 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
             var header = reader.ReadChar();
             if (header == 'C')
             {
-                m_id = reader.ReadInt16();
+                effectId = reader.ReadInt16();
             }
             else if (header == 'F')
             {
                 TargetMask = reader.ReadString();
-                m_id = reader.ReadInt16();
-                m_uid = reader.ReadInt32();
-                m_duration = reader.ReadInt32();
-                m_delay = reader.ReadInt32();
-                m_random = reader.ReadInt32();
-                m_group = reader.ReadInt32();
-                m_modificator = reader.ReadInt32();
-                m_trigger = reader.ReadBoolean();
-                m_triggers = reader.ReadString();
-                m_hidden = reader.ReadBoolean();
+                effectId = reader.ReadInt16();
+                effectUid = reader.ReadInt32();
+                duration = reader.ReadInt32();
+                delay = reader.ReadInt32();
+                random = reader.ReadInt32();
+                group = reader.ReadInt32();
+                modificator = reader.ReadInt32();
+                trigger = reader.ReadBoolean();
+                triggers = reader.ReadString();
 
                 ParseRawZone(reader.ReadString());
 
-                m_order = reader.ReadInt32();
-                m_spellId = reader.ReadInt32();
-                m_effectElement = reader.ReadInt32();
-                m_dispellable = reader.ReadInt32();
-                m_forClientOnly = reader.ReadBoolean();
+                order = reader.ReadInt32();
+                spellId = reader.ReadInt32();
+                effectElement = reader.ReadInt32();
+                dispellable = reader.ReadInt32();
+                forClientOnly = reader.ReadBoolean();
 
                 ParseTargets();
             }
@@ -679,7 +730,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != typeof(EffectBase)) return false;
-            return Equals((EffectBase)obj);
+            return Equals((EffectBase) obj);
         }
 
         public static bool operator ==(EffectBase left, EffectBase right)
