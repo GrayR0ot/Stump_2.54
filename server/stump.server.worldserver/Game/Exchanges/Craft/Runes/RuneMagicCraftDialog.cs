@@ -177,7 +177,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
 
         private void BoostEffectPotion(EffectInteger potionEffect)
         {
-            var effect = ItemToImprove.Effects.Find(x => x.EffectId == EffectsEnum.Effect_DamageNeutral);
+            var effect = ItemToImprove.Effects.Find(x => x.EffectId == EffectsEnum.Effect_100);
             var effectCac = (EffectsEnum) GetWeaponEffect(Potion.PlayerItem.Template.Id);
 
             if (effect != null)
@@ -194,7 +194,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
             if (ItemToImprove == null)
                 return;
 
-            if (ItemToImprove.Effects.Exists(x => x.EffectId == EffectsEnum.Effect_LivingObjectId))
+            if (ItemToImprove.Effects.Exists(x => x.EffectId == EffectsEnum.Effect_970))
             {
                 Crafter.Character.SendServerMessage(
                     "Vous ne pouvez pas FM un item avec un Obvijevan équipé. Déliez le et réessayez.");
@@ -202,7 +202,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
             }
 
             if (ItemToImprove.Effects.Exists(x =>
-                x.EffectId == EffectsEnum.Effect_Appearance || x.EffectId == EffectsEnum.Effect_Apparence_Wrapper))
+                x.EffectId == EffectsEnum.Effect_1151 || x.EffectId == EffectsEnum.Effect_1176))
             {
                 Crafter.Character.SendServerMessage(
                     "Vous ne pouvez pas FM un item mimibioté ou possédant un objet d'apparat. Libérez le du mimibiote ou de son objet d'apparat et réessayez.");
@@ -215,7 +215,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
             //    return;
             //}
 
-            if (ItemToImprove.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_CantFM) != null)
+            if (ItemToImprove.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_2825) != null)
                 Crafter.Character.OpenPopup(
                     "L'objet que vous essayez de modifier possède un enchantement empêchant la forgemagie.");
 
@@ -352,10 +352,10 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
                 }
 
                 foreach (var effect in specialrune.Effects.OfType<EffectInteger>()
-                    .Where(x => x.EffectId != EffectsEnum.Effect_FMPercentOfChance))
+                    .Where(x => x.EffectId != EffectsEnum.Effect_2827))
                 {
                     var percent =
-                        specialrune.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_FMPercentOfChance) as
+                        specialrune.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_2827) as
                             EffectInteger;
                     if (percent == null)
                         return;
@@ -685,7 +685,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
 
         private double GetExoticPower()
         {
-            return ItemToImprove.Effects.Where(x => x.EffectId != EffectsEnum.Effect_PowerSink && IsExotic(x))
+            return ItemToImprove.Effects.Where(x => x.EffectId != EffectsEnum.Effect_351 && IsExotic(x))
                 .OfType<EffectInteger>().Sum(x => EffectManager.Instance.GetEffectPower(x));
         }
 

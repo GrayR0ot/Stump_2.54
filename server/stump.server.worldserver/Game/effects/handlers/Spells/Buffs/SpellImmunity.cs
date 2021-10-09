@@ -8,7 +8,7 @@ using Stump.Server.WorldServer.Game.Spells;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_SpellImmunity)]
+    [EffectHandler(EffectsEnum.Effect_1044)]
     public class SpellImmunity : SpellEffectHandler
     {
         public SpellImmunity(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

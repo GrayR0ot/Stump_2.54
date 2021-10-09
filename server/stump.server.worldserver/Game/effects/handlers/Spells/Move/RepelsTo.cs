@@ -10,7 +10,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_RepelsTo)]
+    [EffectHandler(EffectsEnum.Effect_783)]
     public class RepelsTo : SpellEffectHandler
     {
         public RepelsTo(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

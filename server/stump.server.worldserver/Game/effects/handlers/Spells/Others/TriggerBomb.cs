@@ -3,11 +3,12 @@ using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
-using Stump.Server.WorldServer.Game.Fights.Buffs;using Stump.Server.WorldServer.Game.Spells.Casts;
+using Stump.Server.WorldServer.Game.Fights.Buffs;
+using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_TriggerBomb)]
+    [EffectHandler(EffectsEnum.Effect_1009)]
     public class TriggerBomb : SpellEffectHandler
     {
         public TriggerBomb(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

@@ -139,38 +139,59 @@ namespace Stump.Server.WorldServer.Database.Spells
         [Ignore]
         public List<EffectDice> Effects
         {
-            /*get =>
-                m_effects ??
-                (m_effects = EffectManager.Instance.DeserializeEffects(EffectsBin).Cast<EffectDice>().ToList());*/
-            get =>
-                m_effects ??
-                (m_effects = EffectManager.Instance.DeserializeEffectsFromJson(EffectsJson).Cast<EffectDice>().ToList());
-            set => m_effects = value;
-        }
+            get
+            {
+                if (m_effects != null)
+                {
+                    return m_effects;
+                }
+                else
+                {
+                    List<EffectBase> effectBaseList = EffectManager.Instance.DeserializeEffectsFromJson(EffectsJson);
+                    List<EffectDice> effectDiceList = new List<EffectDice>();
+                    foreach (var effectBase in effectBaseList)
+                    {
+                        EffectDice effectDice = new EffectDice(effectBase.Id, effectBase.Value, effectBase.DiceNum,
+                            effectBase.DiceSide, effectBase);
+                        effectDiceList.Add(effectDice);
+                    }
 
-        /*public byte[] CriticalEffectsBin
-        {
-            get => m_criticalEffectsBin;
+                    return effectDiceList;
+                }
+            }
             set
             {
-                m_criticalEffectsBin = value;
-                //m_criticalEffects = EffectManager.Instance.DeserializeEffects(CriticalEffectsBin).Cast<EffectDice>().ToList();
-                m_criticalEffects = EffectManager.Instance.DeserializeEffectsFromJson(CriticalEffectsJson).Cast<EffectDice>().ToList();
+                m_effects = value;
             }
-        }*/
+        }
 
         [Ignore]
         public List<EffectDice> CriticalEffects
         {
-            /*get =>
-                m_criticalEffects ??
-                (m_criticalEffects =
-                    EffectManager.Instance.DeserializeEffects(CriticalEffectsBin).Cast<EffectDice>().ToList());*/
-            get =>
-                m_criticalEffects ??
-                (m_criticalEffects =
-                    EffectManager.Instance.DeserializeEffectsFromJson(CriticalEffectsJson).Cast<EffectDice>().ToList());
-            set => m_criticalEffects = value;
+            get
+            {
+                if (m_criticalEffects != null)
+                {
+                    return m_criticalEffects;
+                }
+                else
+                {
+                    List<EffectBase> effectBaseList = EffectManager.Instance.DeserializeEffectsFromJson(CriticalEffectsJson);
+                    List<EffectDice> effectDiceList = new List<EffectDice>();
+                    foreach (var effectBase in effectBaseList)
+                    {
+                        EffectDice effectDice = new EffectDice(effectBase.Id, effectBase.Value, effectBase.DiceNum,
+                            effectBase.DiceSide, effectBase);
+                        effectDiceList.Add(effectDice);
+                    }
+
+                    return effectDiceList;
+                }
+            }
+            set
+            {
+                m_criticalEffects = value;
+            }
         }
 
         public string AdditionalEffectsZonesCSV { get; set; }

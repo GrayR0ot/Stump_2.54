@@ -2,9 +2,9 @@ namespace Stump.DofusProtocol.Enums
 {
     public enum SpellShapeEnum
     {
-        X = 88,
-        L = 76,
-        T = 84,
+        X = 88, //CROSS
+        L = 76, //LINE
+        T = 84, //
         P = 80,
         D = 68,
         C = 67,

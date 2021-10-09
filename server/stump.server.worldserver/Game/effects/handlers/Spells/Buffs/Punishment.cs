@@ -10,7 +10,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_Punishment)]
+    [EffectHandler(EffectsEnum.Effect_788)]
     public class Punishment : SpellEffectHandler
     {
         private readonly List<Tuple<int, StatBuff>> m_buffs = new List<Tuple<int, StatBuff>>();

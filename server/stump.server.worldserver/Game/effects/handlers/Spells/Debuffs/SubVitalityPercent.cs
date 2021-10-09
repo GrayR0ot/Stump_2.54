@@ -2,12 +2,13 @@
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
-using Stump.Server.WorldServer.Handlers.Actions;using Stump.Server.WorldServer.Game.Spells.Casts;
+using Stump.Server.WorldServer.Handlers.Actions;
+using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_SubVitalityPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubVitalityPercent_1048)]
+    [EffectHandler(EffectsEnum.Effect_1033)]
+    [EffectHandler(EffectsEnum.Effect_1048)]
     public class SubVitalityPercent : SpellEffectHandler
     {
         public SubVitalityPercent(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -27,7 +28,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
                 var bonus = (int)(actor.Stats.Health.TotalSafe * (integerEffect.Value / 100d));
 
                 AddStatBuff(actor, (short)-bonus, PlayerFields.Vitality,
-                    Effect.EffectId == EffectsEnum.Effect_SubVitalityPercent ?
+                    Effect.EffectId == EffectsEnum.Effect_1033 ?
                     (short)ActionsEnum.ACTION_CHARACTER_DEBOOST_VITALITY : (short)EffectsEnum.Effect_1047);     
             }
 

@@ -63,16 +63,16 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
 
             var item = ItemManager.Instance.CreatePlayerItem(character, (int) ItemIdEnum.ORDRE_DEXECUTION_10085, 25);
 
-            var seekEffect = item.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Seek);
+            var seekEffect = item.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_989);
 
             if (seekEffect != null)
                 item.Effects.Remove(seekEffect);
 
-            item.Effects.Add(new EffectString(EffectsEnum.Effect_Seek, target.Name));
-            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_Alignment, (short) target.AlignmentSide));
-            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_Grade, target.AlignmentGrade));
-            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_Level, (short) target.Level));
-            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_NonExchangeable_981, 0));
+            item.Effects.Add(new EffectString(EffectsEnum.Effect_989, target.Name));
+            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_960, (short) target.AlignmentSide));
+            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_961, target.AlignmentGrade));
+            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_962, (short) target.Level));
+            item.Effects.Add(new EffectInteger(EffectsEnum.Effect_981, 0));
 
             character.Inventory.AddItem(item);
 

@@ -27,7 +27,7 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Ecaflip
             //break;
             if (!m_initialized)
                 Initialize();
-            EffectDice subap = new EffectDice((short)EffectsEnum.Effect_Trap, 0, 5359, 1, new EffectBase());
+            EffectDice subap = new EffectDice((short)EffectsEnum.Effect_400, 0, 5359, 1, new EffectBase());
             SpellEffectHandler spellEffectHandler = Singleton<EffectManager>.Instance.GetSpellEffectHandler(subap, base.Caster, this, base.TargetedCell, false);
             spellEffectHandler.Dice.Value = 1;
             spellEffectHandler.Apply();

@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Handlers.Visual;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_Play_Animation)]
+    [EffectHandler(EffectsEnum.Effect_237)]
     public class PlayAnimation : UsableEffectHandler
     {
         public PlayAnimation(EffectBase effect, Character target, BasePlayerItem item) : base(effect, target, item)

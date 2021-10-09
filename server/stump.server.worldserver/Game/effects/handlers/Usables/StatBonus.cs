@@ -5,14 +5,15 @@ using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Items.Player;
-namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
+
+namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_AddPermanentAgility)]
-    [EffectHandler(EffectsEnum.Effect_AddPermanentStrength)]
-    [EffectHandler(EffectsEnum.Effect_AddPermanentChance)]
-    [EffectHandler(EffectsEnum.Effect_AddPermanentIntelligence)]
-    [EffectHandler(EffectsEnum.Effect_AddPermanentWisdom)]
-    [EffectHandler(EffectsEnum.Effect_AddPermanentVitality)]
+    [EffectHandler(EffectsEnum.Effect_609)]
+    [EffectHandler(EffectsEnum.Effect_607)]
+    [EffectHandler(EffectsEnum.Effect_608)]
+    [EffectHandler(EffectsEnum.Effect_611)]
+    [EffectHandler(EffectsEnum.Effect_606)]
+    [EffectHandler(EffectsEnum.Effect_610)]
     public class StatBonus : UsableEffectHandler
     {
         [Variable]
@@ -50,17 +51,17 @@ using Stump.Server.WorldServer.Game.Items.Player;
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_AddPermanentChance:
+                case EffectsEnum.Effect_608:
                     return PlayerFields.Chance;
-                case EffectsEnum.Effect_AddPermanentAgility:
+                case EffectsEnum.Effect_609:
                     return PlayerFields.Agility;
-                case EffectsEnum.Effect_AddPermanentIntelligence:
+                case EffectsEnum.Effect_611:
                     return PlayerFields.Intelligence;
-                case EffectsEnum.Effect_AddPermanentStrength:
+                case EffectsEnum.Effect_607:
                     return PlayerFields.Strength;
-                case EffectsEnum.Effect_AddPermanentWisdom:
+                case EffectsEnum.Effect_606:
                     return PlayerFields.Wisdom;
-                case EffectsEnum.Effect_AddPermanentVitality:
+                case EffectsEnum.Effect_610:
                     return PlayerFields.Vitality;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated Characteristic", effect));

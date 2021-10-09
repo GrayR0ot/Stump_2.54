@@ -8,7 +8,7 @@ using Stump.Server.WorldServer.Handlers.Context;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_Kill)]
+    [EffectHandler(EffectsEnum.Effect_141)]
     public class Kill : SpellEffectHandler
     {
         public Kill(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

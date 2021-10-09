@@ -8,7 +8,7 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_Teleport)]
+    [EffectHandler(EffectsEnum.Effect_4)]
     public class Teleportation : SpellEffectHandler
     {
         public Teleportation(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

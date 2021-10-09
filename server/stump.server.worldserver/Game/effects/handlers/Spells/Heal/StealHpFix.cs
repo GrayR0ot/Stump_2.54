@@ -9,7 +9,7 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_StealHPFix)]
+    [EffectHandler(EffectsEnum.Effect_82)]
     public class StealHpFix : SpellEffectHandler
     {
         public StealHpFix(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

@@ -11,12 +11,12 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_TriggerBuff)]
-    [EffectHandler(EffectsEnum.Effect_TriggerBuff_793)]
-    [EffectHandler(EffectsEnum.Effect_CastSpell_1160)]
-    [EffectHandler(EffectsEnum.Effect_CastSpell_1017)]
-    [EffectHandler(EffectsEnum.Effect_CastSpell_2160)]
-    [EffectHandler(EffectsEnum.Effect_CastSpell_1175)]
+    [EffectHandler(EffectsEnum.Effect_792)]
+    [EffectHandler(EffectsEnum.Effect_793)]
+    [EffectHandler(EffectsEnum.Effect_1160)]
+    [EffectHandler(EffectsEnum.Effect_1017)]
+    [EffectHandler(EffectsEnum.Effect_2160)]
+    [EffectHandler(EffectsEnum.Effect_1175)]
     [EffectHandler(EffectsEnum.Effect_2792)]
     [EffectHandler(EffectsEnum.Effect_2794)]
     [EffectHandler(EffectsEnum.Effect_1018)]
@@ -52,7 +52,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
                 {
                     var spell = new Spell(Dice.DiceNum, (byte)Dice.DiceFace);
 
-                    if (Effect.EffectId == EffectsEnum.Effect_CastSpell_1160 || Effect.EffectId == EffectsEnum.Effect_CastSpell_2160)
+                    if (Effect.EffectId == EffectsEnum.Effect_1160 || Effect.EffectId == EffectsEnum.Effect_2160)
                     {
                         if (Spell.Id == (int)SpellIdEnum.ABYSSAL_DOFUS)
                         {
@@ -81,7 +81,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
                             Caster.CastAutoSpell(spell, affectedActor.Cell);
                         }
                     }
-                    else if (Effect.EffectId == EffectsEnum.Effect_CastSpell_1017)
+                    else if (Effect.EffectId == EffectsEnum.Effect_1017)
                     {
                         affectedActor.CastAutoSpell(spell, Caster.Cell);
                     }
@@ -106,7 +106,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
             if (damages != null && damages.Spell != null && damages.Spell.Id == buff.Spell.Id)
                 return;
 
-            if (Effect.EffectId == EffectsEnum.Effect_CastSpell_1160)
+            if (Effect.EffectId == EffectsEnum.Effect_1160)
             {
                 if(buff.Spell.Id == 9917)
                 {
@@ -131,7 +131,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
                     });
                 }
             }
-            else if (Effect.EffectId == EffectsEnum.Effect_CastSpell_1017 ||
+            else if (Effect.EffectId == EffectsEnum.Effect_1017 ||
                 buff.Spell.Id == (int)SpellIdEnum.FRIKT)
             {
                 buff.Target.CastSpell(new SpellCastInformations(buff.Target, buff.Spell, triggerrer.Cell)

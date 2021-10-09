@@ -105,7 +105,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 if (arg2 != this)
                     return;
 
-                var buff = new EffectDice(EffectsEnum.Effect_CastSpell_1160, 0, 9089, 1);
+                var buff = new EffectDice(EffectsEnum.Effect_1160, 0, 9089, 1);
                 var handlerr = EffectManager.Instance.GetSpellEffectHandler(buff, this,
                     SpellManager.Instance.GetSpellCastHandler(this, new Spell(9088, 1), this.Cell, false), this.Cell,
                     false);
@@ -128,7 +128,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
             //Cast Spells of Items has CastSpell effect
             foreach (var effect in Character.Inventory.GetEquipedItems().SelectMany(x => x.Effects)
-                .Where(y => y.EffectId == EffectsEnum.Effect_CastSpell_1175))
+                .Where(y => y.EffectId == EffectsEnum.Effect_1175))
                 EffectManager.Instance.GetSpellEffectHandler((EffectDice) effect, this,
                     new DefaultSpellCastHandler(new SpellCastInformations(this, null, Cell)), Cell, false).Apply();
         }

@@ -10,8 +10,8 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_SubResistances)]
-    [EffectHandler(EffectsEnum.Effect_AddResistances)]
+    [EffectHandler(EffectsEnum.Effect_1077)]
+    [EffectHandler(EffectsEnum.Effect_1076)]
     public class Resistances : SpellEffectHandler
     {
         public Resistances(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -29,7 +29,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
             foreach (var actor in GetAffectedActors())
             {
                 var buff = new ResistancesBuff(actor.PopNextBuffId(), actor, Caster, this, Spell, 
-                    (short) ((Effect.EffectId == EffectsEnum.Effect_SubResistances) ? -integerEffect.Value : integerEffect.Value),
+                    (short) ((Effect.EffectId == EffectsEnum.Effect_1077) ? -integerEffect.Value : integerEffect.Value),
                     false, FightDispellableEnum.DISPELLABLE);
 
                    actor.AddBuff(buff);

@@ -6,10 +6,11 @@ using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Handlers.Actions;
 using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_Punishment_Damage)]
+    [EffectHandler(EffectsEnum.Effect_672)]
     public class PunishmentDamage : SpellEffectHandler
     {
         public PunishmentDamage(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

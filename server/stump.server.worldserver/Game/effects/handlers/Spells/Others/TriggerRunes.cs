@@ -8,7 +8,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_TriggerRunes)]
+    [EffectHandler(EffectsEnum.Effect_2023)]
     public class TriggerRunes : SpellEffectHandler
     {
         public TriggerRunes(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

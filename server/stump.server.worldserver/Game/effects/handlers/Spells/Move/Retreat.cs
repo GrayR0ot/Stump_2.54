@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_Retreat)]
+    [EffectHandler(EffectsEnum.Effect_1041)]
     public class Retreat : Push
     {
         public Retreat(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

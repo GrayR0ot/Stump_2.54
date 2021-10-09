@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_Advance)]
+    [EffectHandler(EffectsEnum.Effect_1042)]
     public class Advance : Push
     {
         public Advance(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

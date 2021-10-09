@@ -477,7 +477,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 return;
             }
 
-            var shape = SpellShapeEnum.P; //ToDo //TEMPORARY VALUE FOR TESTS
+            var shape = (SpellShapeEnum)rawZone[0]; //ToDo //TEMPORARY VALUE FOR TESTS
             byte size = 0;
             byte minSize = 0;
             int zoneEfficiency = 0;

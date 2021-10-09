@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Items.Player;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_LearnFinishMove)]
+    [EffectHandler(EffectsEnum.Effect_2030)]
     public class LearnFinishMove : UsableEffectHandler
     {
         public LearnFinishMove(EffectBase effect, Character target, BasePlayerItem item)

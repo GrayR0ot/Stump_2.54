@@ -1034,7 +1034,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
             {
                 var effectMinMax =
                     basePlayerItem.Effects.OfType<EffectDice>()
-                        .FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_RemainingFights);
+                        .FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_811);
                 if (!(effectMinMax == null))
                 {
                     var expr_4C = effectMinMax;
@@ -1128,36 +1128,36 @@ namespace Stump.Server.WorldServer.Game.Items.Player
             List<EffectBase> effects = item.Effects.ToList();
             if (item.Record.IsExo)
             {
-                if (item.Record.IsExoPa && CheckExo(item, EffectsEnum.Effect_AddAP_111))
+                if (item.Record.IsExoPa && CheckExo(item, EffectsEnum.Effect_111))
                 {
-                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_AddAP_111).FirstOrDefault();
+                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_111).FirstOrDefault();
                     if (effect != null)
                     {
                         effects.Remove(effect);
                     }
                 }
 
-                if (item.Record.IsExoPm && CheckExo(item, EffectsEnum.Effect_AddMP))
+                if (item.Record.IsExoPm && CheckExo(item, EffectsEnum.Effect_78))
                 {
-                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_AddMP || x.EffectId == EffectsEnum.Effect_AddMP_128).FirstOrDefault();
+                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_78 || x.EffectId == EffectsEnum.Effect_128).FirstOrDefault();
                     if (effect != null)
                     {
                         effects.Remove(effect);
                     }
                 }
 
-                if (item.Record.IsExoPo && CheckExo(item, EffectsEnum.Effect_AddRange))
+                if (item.Record.IsExoPo && CheckExo(item, EffectsEnum.Effect_117))
                 {
-                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_AddRange || x.EffectId == EffectsEnum.Effect_AddRange_136).FirstOrDefault();
+                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_117 || x.EffectId == EffectsEnum.Effect_136).FirstOrDefault();
                     if (effect != null)
                     {
                         effects.Remove(effect);
                     }
                 }
 
-                if (item.Record.IsExoInvoc && CheckExo(item, EffectsEnum.Effect_AddSummonLimit))
+                if (item.Record.IsExoInvoc && CheckExo(item, EffectsEnum.Effect_182))
                 {
-                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_AddSummonLimit).FirstOrDefault();
+                    var effect = effects.Where(x => x.EffectId == EffectsEnum.Effect_182).FirstOrDefault();
                     if (effect != null)
                     {
                         effects.Remove(effect);
@@ -1474,19 +1474,19 @@ namespace Stump.Server.WorldServer.Game.Items.Player
 
             foreach (var _effect in _exoItem.Effects)
             {
-                if (_effect.EffectId != EffectsEnum.Effect_Appearance &&
-                    _effect.EffectId != EffectsEnum.Effect_Apparence_Wrapper &&
+                if (_effect.EffectId != EffectsEnum.Effect_1151 &&
+                    _effect.EffectId != EffectsEnum.Effect_1176 &&
                     !_normalItem.Contains(_effect))
                 {
                     switch (_effect.EffectId)
                     {
-                        case EffectsEnum.Effect_AddMP_128:
+                        case EffectsEnum.Effect_128:
                             return 0;
-                        case EffectsEnum.Effect_AddAP_111:
+                        case EffectsEnum.Effect_111:
                             return 1;
-                        case EffectsEnum.Effect_AddRange:
+                        case EffectsEnum.Effect_117:
                             return 2;
-                        case EffectsEnum.Effect_AddSummonLimit:
+                        case EffectsEnum.Effect_182:
                             if (checkinvock)
                             {
                                 return 4;
@@ -1505,15 +1505,15 @@ namespace Stump.Server.WorldServer.Game.Items.Player
         public bool CheckExo(BasePlayerItem basePlayerItem, EffectsEnum effect)
         {
             var exoitems = GetEquipedItems().Where(x => x.Record.IsExo && x.Record.IsExoPa && x != basePlayerItem);
-            if (effect == EffectsEnum.Effect_AddMP || effect == EffectsEnum.Effect_AddMP_128)
+            if (effect == EffectsEnum.Effect_78 || effect == EffectsEnum.Effect_128)
             {
                 exoitems = GetEquipedItems().Where(x => x.Record.IsExo && x.Record.IsExoPm && x != basePlayerItem);
             }
-            else if (effect == EffectsEnum.Effect_AddRange || effect == EffectsEnum.Effect_AddRange_136)
+            else if (effect == EffectsEnum.Effect_117 || effect == EffectsEnum.Effect_136)
             {
                 exoitems = GetEquipedItems().Where(x => x.Record.IsExo && x.Record.IsExoPo && x != basePlayerItem);
             }
-            else if (effect == EffectsEnum.Effect_AddSummonLimit)
+            else if (effect == EffectsEnum.Effect_182)
             {
                 exoitems = GetEquipedItems().Where(x => x.Record.IsExo && x.Record.IsExoInvoc && x != basePlayerItem);
             }

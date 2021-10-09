@@ -32,7 +32,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             if (Owner.IsInFight())
                 return false;
 
-            var compatibleEffect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Compatible) as EffectInteger;
+            var compatibleEffect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_1179) as EffectInteger;
 
             if (compatibleEffect == null)
                 return false;
@@ -40,10 +40,10 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             if (dropOnItem.Template.TypeId != compatibleEffect.Value)
                 return false;
 
-            if (dropOnItem.Effects.Any(x => x.EffectId == EffectsEnum.Effect_LivingObjectId || x.EffectId == EffectsEnum.Effect_Appearance || x.EffectId == EffectsEnum.Effect_Apparence_Wrapper))
+            if (dropOnItem.Effects.Any(x => x.EffectId == EffectsEnum.Effect_970 || x.EffectId == EffectsEnum.Effect_1151 || x.EffectId == EffectsEnum.Effect_1176))
                 return false;
 
-            dropOnItem.Effects.Add(new EffectInteger(EffectsEnum.Effect_Apparence_Wrapper, (short)Template.Id));
+            dropOnItem.Effects.Add(new EffectInteger(EffectsEnum.Effect_1176, (short)Template.Id));
 
             dropOnItem.Invalidate();
             Owner.Inventory.RefreshItem(dropOnItem);

@@ -6,18 +6,19 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Stump.Server.WorldServer.Handlers.Actions;
 using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
 {
-    [EffectHandler(EffectsEnum.Effect_StealHPWater)]
-    [EffectHandler(EffectsEnum.Effect_StealHPEarth)]
-    [EffectHandler(EffectsEnum.Effect_StealHPAir)]
-    [EffectHandler(EffectsEnum.Effect_StealHPFire)]
-    [EffectHandler(EffectsEnum.Effect_StealHPNeutral)]
-    [EffectHandler(EffectsEnum.Effect_StealHPDamage)]
+    [EffectHandler(EffectsEnum.Effect_91)]
+    [EffectHandler(EffectsEnum.Effect_92)]
+    [EffectHandler(EffectsEnum.Effect_93)]
+    [EffectHandler(EffectsEnum.Effect_94)]
+    [EffectHandler(EffectsEnum.Effect_95)]
+    [EffectHandler(EffectsEnum.Effect_2828)]
     public class HPSteal : SpellEffectHandler
     {
         public HPSteal(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -51,7 +52,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
             {
                 var school = GetEffectSchool(Effect.EffectId);
 
-                if (Dice.EffectId == EffectsEnum.Effect_StealHPDamage)
+                if (Dice.EffectId == EffectsEnum.Effect_2828)
                     school = FindBestSchool(target, true);
 
                 var damage = new Fights.Damage(Dice, school, Caster, Spell, TargetedCell, EffectZone) { IsCritical = Critical };
@@ -68,7 +69,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
             {
                 var school = GetEffectSchool(Effect.EffectId);
 
-                if (Dice.EffectId == EffectsEnum.Effect_StealHPDamage)
+                if (Dice.EffectId == EffectsEnum.Effect_2828)
                     school = FindBestSchool(target);
                 
 
@@ -91,17 +92,17 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_StealHPWater:
+                case EffectsEnum.Effect_91:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_StealHPEarth:
+                case EffectsEnum.Effect_92:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_StealHPAir:
+                case EffectsEnum.Effect_93:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_StealHPFire:
+                case EffectsEnum.Effect_94:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_StealHPNeutral:
+                case EffectsEnum.Effect_95:
                     return EffectSchoolEnum.Neutral;
-                case EffectsEnum.Effect_StealHPDamage:
+                case EffectsEnum.Effect_2828:
                     return EffectSchoolEnum.Unknown;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

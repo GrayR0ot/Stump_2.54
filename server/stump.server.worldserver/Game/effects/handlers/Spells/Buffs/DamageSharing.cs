@@ -8,7 +8,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_DamageSharing)]
+    [EffectHandler(EffectsEnum.Effect_1061)]
     public class DamageSharing : SpellEffectHandler
     {
         public DamageSharing(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

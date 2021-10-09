@@ -9,7 +9,7 @@ using System;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_HealBuff)]
+    [EffectHandler(EffectsEnum.Effect_1159)]
     public class HealBuff : SpellEffectHandler
     {
         public HealBuff(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

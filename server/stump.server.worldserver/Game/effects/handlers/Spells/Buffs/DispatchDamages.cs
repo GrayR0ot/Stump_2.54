@@ -8,7 +8,7 @@ using System;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_DispatchDamages)]
+    [EffectHandler(EffectsEnum.Effect_1123)]
     public class DispatchDamages : SpellEffectHandler
     {
         public DispatchDamages(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

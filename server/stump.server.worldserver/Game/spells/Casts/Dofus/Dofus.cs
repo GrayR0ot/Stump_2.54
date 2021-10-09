@@ -41,14 +41,14 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts
             if (Fight.TimeLine.RoundNumber == 1 && !Caster.Abyssal)
             {
                 Caster.Abyssal = true;
-                EffectDice dice = new EffectDice(EffectsEnum.Effect_AddMP, 1, 0, 0);
+                EffectDice dice = new EffectDice(EffectsEnum.Effect_78, 1, 0, 0);
                 var cells = Caster.Position.Point.GetAdjacentCells();
                 foreach (var cell in cells)
                 {
                     var f = Fight.GetOneFighter(Map.GetCell(cell.CellId));
                     if (f != null)
                     {
-                        if (f.IsEnnemyWith(Caster)) dice = new EffectDice(EffectsEnum.Effect_AddAP_111, 1, 0, 0);
+                        if (f.IsEnnemyWith(Caster)) dice = new EffectDice(EffectsEnum.Effect_111, 1, 0, 0);
                     }
                 }
                 var hand = EffectManager.Instance.GetSpellEffectHandler(dice, Caster, this, Caster.Cell, false);
@@ -99,25 +99,25 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts
 
                 if (percentage >= 76)
                 {
-                    var effectHandler1 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_AddShield, 0, 0, 0), player, this, player.Cell, false);
+                    var effectHandler1 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_1040, 0, 0, 0), player, this, player.Cell, false);
                     var buffEffect1 = new StatBuff(Caster.PopNextBuffId(), Caster, Caster, effectHandler1, Spell, 200, PlayerFields.Shield, false, FightDispellableEnum.NOT_DISPELLABLE) { Duration = -1 };
                     Caster.AddBuff(buffEffect1);
                 }
                 else if (percentage >= 51 && percentage <= 75)
                 {
-                    var effectHandler0 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_AddCriticalDamageReduction, 0, 0, 0), player, this, player.Cell, false);
+                    var effectHandler0 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_420, 0, 0, 0), player, this, player.Cell, false);
                     var buffEffect0 = new StatBuff(Caster.PopNextBuffId(), Caster, Caster, effectHandler0, Spell, 30, PlayerFields.CriticalDamageReduction, false, FightDispellableEnum.NOT_DISPELLABLE) { Duration = -1 };
                     Caster.AddBuff(buffEffect0);
                 }
                 else if (percentage >= 16 && percentage <= 50)
                 {
-                    var effectHandler0 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_IncreaseFinalDamages, 0, 0, 0), player, this, player.Cell, false);
+                    var effectHandler0 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_1171, 0, 0, 0), player, this, player.Cell, false);
                     var buffEffect0 = new StatBuff(Caster.PopNextBuffId(), Caster, Caster, effectHandler0, Spell, 5, PlayerFields.DamageBonusPercent, false, FightDispellableEnum.NOT_DISPELLABLE) { Duration = -1 };
                     Caster.AddBuff(buffEffect0);
                 }
                 else if (percentage <= 15)
                 {
-                    var effectHandler0 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_IncreaseFinalDamages, 0, 0, 0), player, this, player.Cell, false);
+                    var effectHandler0 = EffectManager.Instance.GetSpellEffectHandler(new EffectDice(EffectsEnum.Effect_1171, 0, 0, 0), player, this, player.Cell, false);
                     var buffEffect0 = new StatBuff(Caster.PopNextBuffId(), Caster, Caster, effectHandler0, Spell, 10, PlayerFields.DamageBonusPercent, false, FightDispellableEnum.NOT_DISPELLABLE) { Duration = -1 };
                     Caster.AddBuff(buffEffect0);
                 }

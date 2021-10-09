@@ -65,7 +65,7 @@ namespace Stump.Server.WorldServer.Game.Fights.Triggers
         {
             if (CanTrigger(trigger))
             {
-                if ((GlyphSpell.Id == 9610 || GlyphSpell.CurrentSpellLevel.Effects.Any(x => x.EffectId == EffectsEnum.Effect_SwitchPosition || x.EffectId == EffectsEnum.Effect_SwitchPosition_1023)) && (trigger.Cell == Caster.Cell || trigger == Caster)) return;
+                if ((GlyphSpell.Id == 9610 || GlyphSpell.CurrentSpellLevel.Effects.Any(x => x.EffectId == EffectsEnum.Effect_8 || x.EffectId == EffectsEnum.Effect_1023)) && (trigger.Cell == Caster.Cell || trigger == Caster)) return;
                 NotifyTriggered(trigger, GlyphSpell);
                 Enter(trigger);
             }

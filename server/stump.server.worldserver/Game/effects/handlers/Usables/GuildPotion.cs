@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Items.Player;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_ForgetSpell)]
+    [EffectHandler(EffectsEnum.Effect_624)]
     public class GuildPotionForgetSpell : UsableEffectHandler
     {
         public GuildPotionForgetSpell(EffectBase effect, Character target, BasePlayerItem item)
@@ -36,7 +36,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
         }
     }
 
-    [EffectHandler(EffectsEnum.Effect_ChangeGuildName)]
+    [EffectHandler(EffectsEnum.Effect_1107)]
     public class GuildPotionName : UsableEffectHandler
     {
         public GuildPotionName(EffectBase effect, Character target, BasePlayerItem item)
@@ -61,7 +61,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
         }
     }
 
-    [EffectHandler(EffectsEnum.Effect_ChangeGuildBlazon)]
+    [EffectHandler(EffectsEnum.Effect_1108)]
     public class GuildPotionBlazon : UsableEffectHandler
     {
         public GuildPotionBlazon(EffectBase effect, Character target, BasePlayerItem item)

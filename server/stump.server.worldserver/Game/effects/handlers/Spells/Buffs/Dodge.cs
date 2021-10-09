@@ -9,7 +9,7 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_Dodge)]
+    [EffectHandler(EffectsEnum.Effect_9)]
     public class Dodge : SpellEffectHandler
     {
         public Dodge(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

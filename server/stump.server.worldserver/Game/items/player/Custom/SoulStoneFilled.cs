@@ -74,7 +74,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             Effects.Clear();
             foreach (var monster in group)
             {
-                Effects.Add(new EffectDice((short)EffectsEnum.Effect_SoulStoneSummon, (short)monster.Template.Id, (short)monster.Grade.GradeId, 0, new EffectBase()));
+                Effects.Add(new EffectDice((short)EffectsEnum.Effect_623, (short)monster.Template.Id, (short)monster.Grade.GradeId, 0, new EffectBase()));
             }
 
             Invalidate();
@@ -82,7 +82,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
 
         public IEnumerable<MonsterGrade> GetMonsterGroup()
         {
-            return Effects.OfType<EffectDice>().Where(x => x.EffectId == EffectsEnum.Effect_SoulStoneSummon).
+            return Effects.OfType<EffectDice>().Where(x => x.EffectId == EffectsEnum.Effect_623).
                 Select(effect => MonsterManager.Instance.GetMonsterGrade(effect.Value, effect.DiceNum));
         }
 

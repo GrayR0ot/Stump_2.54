@@ -24,7 +24,7 @@ using Stump.Server.WorldServer.Game.Spells;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_RestoreHPPercent)]
+    [EffectHandler(EffectsEnum.Effect_1109)]
     public class RestoreHpPercent : SpellEffectHandler
     {
         public RestoreHpPercent(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

@@ -7,55 +7,55 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_AddAgility)]
-    [EffectHandler(EffectsEnum.Effect_AddChance)]
-    [EffectHandler(EffectsEnum.Effect_AddIntelligence)]
-    [EffectHandler(EffectsEnum.Effect_AddStrength)]
-    [EffectHandler(EffectsEnum.Effect_AddWisdom)]
-    [EffectHandler(EffectsEnum.Effect_AddVitality)]
-    [EffectHandler(EffectsEnum.Effect_AddRange)]
-    [EffectHandler(EffectsEnum.Effect_AddRange_136)]
-    [EffectHandler(EffectsEnum.Effect_AddSummonLimit)]
-    [EffectHandler(EffectsEnum.Effect_AddDamageBonus)]
-    [EffectHandler(EffectsEnum.Effect_AddDamageBonus_121)]
-    [EffectHandler(EffectsEnum.Effect_AddHealBonus)]
-    [EffectHandler(EffectsEnum.Effect_IncreaseDamage_138)]
-    [EffectHandler(EffectsEnum.Effect_IncreaseDamage_1054)]
-    [EffectHandler(EffectsEnum.Effect_AddDamageBonusPercent)]
-    [EffectHandler(EffectsEnum.Effect_AddDamageReflection)]
-    [EffectHandler(EffectsEnum.Effect_AddPhysicalDamage_137)]
-    [EffectHandler(EffectsEnum.Effect_AddPhysicalDamage_142)]
-    [EffectHandler(EffectsEnum.Effect_AddPhysicalDamageReduction)]
-    [EffectHandler(EffectsEnum.Effect_AddMagicDamageReduction)]
-    [EffectHandler(EffectsEnum.Effect_AddLock)]
-    [EffectHandler(EffectsEnum.Effect_AddDodge)]
-    [EffectHandler(EffectsEnum.Effect_AddDodgeAPProbability)]
-    [EffectHandler(EffectsEnum.Effect_AddDodgeMPProbability)]
-    [EffectHandler(EffectsEnum.Effect_AddCriticalHit)]
-    [EffectHandler(EffectsEnum.Effect_AddCriticalMiss)]
-    [EffectHandler(EffectsEnum.Effect_AddMPAttack)]
-    [EffectHandler(EffectsEnum.Effect_AddAPAttack)]
-    [EffectHandler(EffectsEnum.Effect_AddPushDamageBonus)]
-    [EffectHandler(EffectsEnum.Effect_AddPushDamageReduction)]
-    [EffectHandler(EffectsEnum.Effect_AddShield)]
-    [EffectHandler(EffectsEnum.Effect_AddAirResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_AddFireResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_AddEarthResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_AddWaterResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_AddNeutralResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_IncreaseGlyphDamages)]
-    [EffectHandler(EffectsEnum.Effect_AddWeaponDamageBonus)]
-    [EffectHandler(EffectsEnum.Effect_AddProspecting)]
-    [EffectHandler(EffectsEnum.Effect_IncreaseFinalDamages)]
-    [EffectHandler(EffectsEnum.Effect_MeeleDamageDonePercent)]
-    [EffectHandler(EffectsEnum.Effect_MeeleResistence)]
-    [EffectHandler(EffectsEnum.Effect_RangedDamageDonePercent)]
-    [EffectHandler(EffectsEnum.Effect_RangedResistence)]
-    [EffectHandler(EffectsEnum.Effect_WeaponDamageDonePercent)]
-    [EffectHandler(EffectsEnum.Effect_WeaponResistence)]
-    [EffectHandler(EffectsEnum.Effect_SpellDamageBonusPercent)]
-    [EffectHandler(EffectsEnum.Effect_SpellResistence)]
-    [EffectHandler(EffectsEnum.Effect_AddTrapBonusPercent)]
+    [EffectHandler(EffectsEnum.Effect_119)]
+    [EffectHandler(EffectsEnum.Effect_123)]
+    [EffectHandler(EffectsEnum.Effect_126)]
+    [EffectHandler(EffectsEnum.Effect_118)]
+    [EffectHandler(EffectsEnum.Effect_124)]
+    [EffectHandler(EffectsEnum.Effect_125)]
+    [EffectHandler(EffectsEnum.Effect_117)]
+    [EffectHandler(EffectsEnum.Effect_136)]
+    [EffectHandler(EffectsEnum.Effect_182)]
+    [EffectHandler(EffectsEnum.Effect_112)]
+    [EffectHandler(EffectsEnum.Effect_121)]
+    [EffectHandler(EffectsEnum.Effect_178)]
+    [EffectHandler(EffectsEnum.Effect_138)]
+    [EffectHandler(EffectsEnum.Effect_1054)]
+    [EffectHandler(EffectsEnum.Effect_165)]
+    [EffectHandler(EffectsEnum.Effect_107)]
+    [EffectHandler(EffectsEnum.Effect_137)]
+    [EffectHandler(EffectsEnum.Effect_142)]
+    [EffectHandler(EffectsEnum.Effect_184)]
+    [EffectHandler(EffectsEnum.Effect_183)]
+    [EffectHandler(EffectsEnum.Effect_753)]
+    [EffectHandler(EffectsEnum.Effect_752)]
+    [EffectHandler(EffectsEnum.Effect_160)]
+    [EffectHandler(EffectsEnum.Effect_161)]
+    [EffectHandler(EffectsEnum.Effect_115)]
+    [EffectHandler(EffectsEnum.Effect_122)]
+    [EffectHandler(EffectsEnum.Effect_412)]
+    [EffectHandler(EffectsEnum.Effect_410)]
+    [EffectHandler(EffectsEnum.Effect_414)]
+    [EffectHandler(EffectsEnum.Effect_416)]
+    [EffectHandler(EffectsEnum.Effect_1040)]
+    [EffectHandler(EffectsEnum.Effect_212)]
+    [EffectHandler(EffectsEnum.Effect_213)]
+    [EffectHandler(EffectsEnum.Effect_210)]
+    [EffectHandler(EffectsEnum.Effect_211)]
+    [EffectHandler(EffectsEnum.Effect_214)]
+    [EffectHandler(EffectsEnum.Effect_1166)]
+    [EffectHandler(EffectsEnum.Effect_1144)]
+    [EffectHandler(EffectsEnum.Effect_176)]
+    [EffectHandler(EffectsEnum.Effect_1171)]
+    [EffectHandler(EffectsEnum.Effect_2800)]
+    [EffectHandler(EffectsEnum.Effect_2803)]
+    [EffectHandler(EffectsEnum.Effect_2804)]
+    [EffectHandler(EffectsEnum.Effect_2807)]
+    [EffectHandler(EffectsEnum.Effect_2808)]
+    [EffectHandler(EffectsEnum.Effect_2811)]
+    [EffectHandler(EffectsEnum.Effect_2812)]
+    [EffectHandler(EffectsEnum.Effect_2815)]
+    [EffectHandler(EffectsEnum.Effect_226)]
 
     public class StatsBuff : SpellEffectHandler
     {
@@ -83,99 +83,99 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
         {
             switch (Effect.EffectId)
             {
-                case EffectsEnum.Effect_AddVitality:
+                case EffectsEnum.Effect_125:
                     return PlayerFields.Vitality;
-                case EffectsEnum.Effect_AddAgility:
+                case EffectsEnum.Effect_119:
                     return PlayerFields.Agility;
-                case EffectsEnum.Effect_AddChance:
+                case EffectsEnum.Effect_123:
                     return PlayerFields.Chance;
-                case EffectsEnum.Effect_AddIntelligence:
+                case EffectsEnum.Effect_126:
                     return PlayerFields.Intelligence;
-                case EffectsEnum.Effect_AddStrength:
+                case EffectsEnum.Effect_118:
                     return PlayerFields.Strength;
-                case EffectsEnum.Effect_AddWisdom:
+                case EffectsEnum.Effect_124:
                     return PlayerFields.Wisdom;
-                case EffectsEnum.Effect_AddRange:
-                case EffectsEnum.Effect_AddRange_136:
+                case EffectsEnum.Effect_117:
+                case EffectsEnum.Effect_136:
                     return PlayerFields.Range;
-                case EffectsEnum.Effect_AddSummonLimit:
+                case EffectsEnum.Effect_182:
                     return PlayerFields.SummonLimit;
-                case EffectsEnum.Effect_AddDamageBonus:
-                case EffectsEnum.Effect_AddDamageBonus_121:
+                case EffectsEnum.Effect_112:
+                case EffectsEnum.Effect_121:
                     return PlayerFields.DamageBonus;
-                case EffectsEnum.Effect_IncreaseDamage_138:
-                case EffectsEnum.Effect_AddDamageBonusPercent:
+                case EffectsEnum.Effect_138:
+                case EffectsEnum.Effect_165:
                     return PlayerFields.DamageBonusPercent;
-                case EffectsEnum.Effect_AddHealBonus:
+                case EffectsEnum.Effect_178:
                     return PlayerFields.HealBonus;
-                case EffectsEnum.Effect_AddDamageReflection:
+                case EffectsEnum.Effect_107:
                     return PlayerFields.DamageReflection;
-                case EffectsEnum.Effect_AddPhysicalDamage_137:
-                case EffectsEnum.Effect_AddPhysicalDamage_142:
+                case EffectsEnum.Effect_137:
+                case EffectsEnum.Effect_142:
                     return PlayerFields.PhysicalDamage;
-                case EffectsEnum.Effect_AddPhysicalDamageReduction:
+                case EffectsEnum.Effect_184:
                     return PlayerFields.PhysicalDamageReduction;
-                case EffectsEnum.Effect_AddMagicDamageReduction:
+                case EffectsEnum.Effect_183:
                     return PlayerFields.MagicDamageReduction;
-                case EffectsEnum.Effect_AddLock:
+                case EffectsEnum.Effect_753:
                     return PlayerFields.TackleBlock;
-                case EffectsEnum.Effect_AddDodge:
+                case EffectsEnum.Effect_752:
                     return PlayerFields.TackleEvade;
-                case EffectsEnum.Effect_AddDodgeAPProbability:
+                case EffectsEnum.Effect_160:
                     return PlayerFields.DodgeAPProbability;
-                case EffectsEnum.Effect_AddDodgeMPProbability:
+                case EffectsEnum.Effect_161:
                     return PlayerFields.DodgeMPProbability;
-                case EffectsEnum.Effect_AddCriticalHit:
+                case EffectsEnum.Effect_115:
                     return PlayerFields.CriticalHit;
-                case EffectsEnum.Effect_AddCriticalMiss:
+                case EffectsEnum.Effect_122:
                     return PlayerFields.CriticalMiss;
-                case EffectsEnum.Effect_AddMPAttack:
+                case EffectsEnum.Effect_412:
                     return PlayerFields.MPAttack;
-                case EffectsEnum.Effect_AddAPAttack:
+                case EffectsEnum.Effect_410:
                     return PlayerFields.APAttack;
-                case EffectsEnum.Effect_AddPushDamageBonus:
+                case EffectsEnum.Effect_414:
                     return PlayerFields.PushDamageBonus;
-                case EffectsEnum.Effect_AddPushDamageReduction:
+                case EffectsEnum.Effect_416:
                     return PlayerFields.PushDamageReduction;
-                case EffectsEnum.Effect_AddShield:
+                case EffectsEnum.Effect_1040:
                     return PlayerFields.Shield;
-                case EffectsEnum.Effect_AddAirResistPercent:
+                case EffectsEnum.Effect_212:
                     return PlayerFields.AirResistPercent;
-                case EffectsEnum.Effect_AddFireResistPercent:
+                case EffectsEnum.Effect_213:
                     return PlayerFields.FireResistPercent;
-                case EffectsEnum.Effect_AddEarthResistPercent:
+                case EffectsEnum.Effect_210:
                     return PlayerFields.EarthResistPercent;
-                case EffectsEnum.Effect_AddWaterResistPercent:
+                case EffectsEnum.Effect_211:
                     return PlayerFields.WaterResistPercent;
-                case EffectsEnum.Effect_AddNeutralResistPercent:
+                case EffectsEnum.Effect_214:
                     return PlayerFields.NeutralResistPercent;
-                case EffectsEnum.Effect_IncreaseGlyphDamages:
+                case EffectsEnum.Effect_1166:
                     return PlayerFields.GlyphBonusPercent;
-                case EffectsEnum.Effect_AddWeaponDamageBonus:
+                case EffectsEnum.Effect_1144:
                     return PlayerFields.WeaponDamageBonus;
-                case EffectsEnum.Effect_IncreaseDamage_1054:
+                case EffectsEnum.Effect_1054:
                     return PlayerFields.SpellDamageBonus;
-                case EffectsEnum.Effect_AddProspecting:
+                case EffectsEnum.Effect_176:
                     return PlayerFields.Prospecting;
-                case EffectsEnum.Effect_IncreaseFinalDamages:
+                case EffectsEnum.Effect_1171:
                     return PlayerFields.DamageMultiplicator;
-                case EffectsEnum.Effect_MeeleDamageDonePercent:
+                case EffectsEnum.Effect_2800:
                     return PlayerFields.MeleeDamageDonePercent;
-                case EffectsEnum.Effect_MeeleResistence:
+                case EffectsEnum.Effect_2803:
                     return PlayerFields.MeleeDamageReceivedPercent;
-                case EffectsEnum.Effect_RangedDamageDonePercent:
+                case EffectsEnum.Effect_2804:
                     return PlayerFields.RangedDamageDonePercent;
-                case EffectsEnum.Effect_RangedResistence:
+                case EffectsEnum.Effect_2807:
                     return PlayerFields.RangedDamageReceivedPercent;
-                case EffectsEnum.Effect_WeaponDamageDonePercent:
+                case EffectsEnum.Effect_2808:
                     return PlayerFields.WeaponDamageDonePercent;
-                case EffectsEnum.Effect_WeaponResistence:
+                case EffectsEnum.Effect_2811:
                     return PlayerFields.WeaponDamageReceivedPercent;
-                case EffectsEnum.Effect_SpellDamageBonusPercent:
+                case EffectsEnum.Effect_2812:
                     return PlayerFields.SpellDamageDonePercent;
-                case EffectsEnum.Effect_SpellResistence:
+                case EffectsEnum.Effect_2815:
                     return PlayerFields.SpellDamageReceivedPercent;
-                case EffectsEnum.Effect_AddTrapBonusPercent:
+                case EffectsEnum.Effect_226:
                     return PlayerFields.TrapBonusPercent;
                 default:
                     throw new Exception($"'{Effect.EffectId}' has no binded caracteristic");

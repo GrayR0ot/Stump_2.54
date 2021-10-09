@@ -36,13 +36,13 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom.LivingObjects
             if (dropOnItem.Template.TypeId != LivingObjectRecord.ItemType)
                 return false;
 
-            if (dropOnItem.Effects.Any(x => x.EffectId == EffectsEnum.Effect_LivingObjectId || x.EffectId == EffectsEnum.Effect_Appearance || x.EffectId == EffectsEnum.Effect_Apparence_Wrapper))
+            if (dropOnItem.Effects.Any(x => x.EffectId == EffectsEnum.Effect_970 || x.EffectId == EffectsEnum.Effect_1151 || x.EffectId == EffectsEnum.Effect_1176))
                 return false;
 
             // check type
 
-            dropOnItem.Effects.Add(new EffectInteger(EffectsEnum.Effect_LivingObjectId, (short)Template.Id));
-            foreach (var effect in Effects.Where(x => x.EffectId != EffectsEnum.Effect_NonExchangeable_981 && x.EffectId != EffectsEnum.Effect_NonExchangeable_982))
+            dropOnItem.Effects.Add(new EffectInteger(EffectsEnum.Effect_970, (short)Template.Id));
+            foreach (var effect in Effects.Where(x => x.EffectId != EffectsEnum.Effect_981 && x.EffectId != EffectsEnum.Effect_982))
             {
                 dropOnItem.Effects.RemoveAll(x => x.EffectId == effect.EffectId);
                 dropOnItem.Effects.Add(effect);

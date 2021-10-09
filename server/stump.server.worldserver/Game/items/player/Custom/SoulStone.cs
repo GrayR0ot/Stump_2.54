@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
         public SoulStone(Character owner, PlayerItemRecord record)
             : base(owner, record)
         {
-            m_soulStoneEffect = Effects.OfType<EffectDice>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_SoulStone);
+            m_soulStoneEffect = Effects.OfType<EffectDice>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_705);
 
             if (m_soulStoneEffect == null)
             {

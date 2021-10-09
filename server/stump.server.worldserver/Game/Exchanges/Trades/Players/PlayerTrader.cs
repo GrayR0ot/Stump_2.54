@@ -72,8 +72,8 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Trades.Players
             }
 
             foreach (var currentEffect in item.Effects)
-                if (currentEffect == new EffectInteger(EffectsEnum.Effect_NonExchangeable_981, 1) ||
-                    currentEffect == new EffectInteger(EffectsEnum.Effect_NonExchangeable_982, 1))
+                if (currentEffect == new EffectInteger(EffectsEnum.Effect_981, 1) ||
+                    currentEffect == new EffectInteger(EffectsEnum.Effect_982, 1))
                 {
                     BasicHandler.SendTextInformationMessage(Character.Client,
                         TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 345, item.Template.Id, item.Guid);

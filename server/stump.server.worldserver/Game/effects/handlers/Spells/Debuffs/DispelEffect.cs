@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_DispelMagicEffects)]
+    [EffectHandler(EffectsEnum.Effect_132)]
     public class DispelMagicEffects : SpellEffectHandler
     {
         public DispelMagicEffects(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -38,7 +38,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
         }
     }
 
-    [EffectHandler(EffectsEnum.Effect_RemoveSpellEffects)]
+    [EffectHandler(EffectsEnum.Effect_406)]
     public class RemoveSpellEffects : SpellEffectHandler
     {
         public RemoveSpellEffects(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

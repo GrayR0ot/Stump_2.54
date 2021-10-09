@@ -30,30 +30,30 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom.LivingObjects
         protected virtual void Initialize()
         {
             if ((m_moodEffect = (EffectInteger)
-                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_LivingObjectMood))) == null)
+                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_971))) == null)
             {
-                m_moodEffect = new EffectInteger(EffectsEnum.Effect_LivingObjectMood, 0);
+                m_moodEffect = new EffectInteger(EffectsEnum.Effect_971, 0);
                 Effects.Add(m_moodEffect);
             }
 
             if ((m_selectedLevelEffect = (EffectInteger)
-                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_LivingObjectSkin))) == null)
+                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_972))) == null)
             {
-                m_selectedLevelEffect = new EffectInteger(EffectsEnum.Effect_LivingObjectSkin, 1);
+                m_selectedLevelEffect = new EffectInteger(EffectsEnum.Effect_972, 1);
                 Effects.Add(m_selectedLevelEffect);
             }
 
             if ((m_experienceEffect = (EffectInteger)
-                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_LivingObjectLevel))) == null)
+                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_974))) == null)
             {
-                m_experienceEffect = new EffectInteger(EffectsEnum.Effect_LivingObjectLevel, 0);
+                m_experienceEffect = new EffectInteger(EffectsEnum.Effect_974, 0);
                 Effects.Add(m_experienceEffect);
             }
 
 
             if ((m_categoryEffect = (EffectInteger)
-                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_LivingObjectCategory))) != null) return;
-            m_categoryEffect = new EffectInteger(EffectsEnum.Effect_LivingObjectCategory, (short) m_record.ItemType);
+                (Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_973))) != null) return;
+            m_categoryEffect = new EffectInteger(EffectsEnum.Effect_973, (short) m_record.ItemType);
             Effects.Add(m_categoryEffect);
 
             OnObjectModified();

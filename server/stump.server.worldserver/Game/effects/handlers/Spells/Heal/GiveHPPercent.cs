@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_GiveHPPercent)]
+    [EffectHandler(EffectsEnum.Effect_90)]
     public class GiveHpPercent : SpellEffectHandler
     {
         public GiveHpPercent(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

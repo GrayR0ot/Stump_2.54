@@ -11,8 +11,8 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.States
 {
-    [EffectHandler(EffectsEnum.Effect_DispelState)]
-    [EffectHandler(EffectsEnum.Effect_DisableState)]
+    [EffectHandler(EffectsEnum.Effect_951)]
+    [EffectHandler(EffectsEnum.Effect_952)]
     public class DispelState : SpellEffectHandler
     {
         static readonly Logger logger = LogManager.GetCurrentClassLogger();
@@ -51,7 +51,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.States
                         return false;
 
 
-                    if (Effect.EffectId == EffectsEnum.Effect_DisableState)
+                    if (Effect.EffectId == EffectsEnum.Effect_952)
                     {
                         foreach (var buff in actor.Buffs.OfType<DisableStateBuff>().Where(x => x.StateBuff == actualState).ToArray())
                             actor.RemoveBuff(buff);
@@ -82,7 +82,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.States
             if (!buff.Target.HasState(state.Id))
                 return;
 
-            if (Effect.EffectId == EffectsEnum.Effect_DisableState)
+            if (Effect.EffectId == EffectsEnum.Effect_952)
             {
                 var actualState = buff.Target.GetBuffs(x => x is StateBuff && ((StateBuff)x).State.Id == state.Id).FirstOrDefault() as StateBuff;
                 if (actualState == null)

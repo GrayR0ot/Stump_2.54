@@ -8,8 +8,8 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_RandDownModifier)]
-    [EffectHandler(EffectsEnum.Effect_RandUpModifier)]
+    [EffectHandler(EffectsEnum.Effect_781)]
+    [EffectHandler(EffectsEnum.Effect_782)]
     public class RandomModifier : SpellEffectHandler
     {
         public RandomModifier(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -21,12 +21,12 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
         {
             foreach (var target in GetAffectedActors())
             {
-                if (Dice.EffectId == EffectsEnum.Effect_RandDownModifier)
+                if (Dice.EffectId == EffectsEnum.Effect_781)
                 {
                     AddTriggerBuff(target, BuffTriggerType.AfterRollCritical, RollTrigger);
                 }
 
-                AddTriggerBuff(target, Dice.EffectId == EffectsEnum.Effect_RandDownModifier ?
+                AddTriggerBuff(target, Dice.EffectId == EffectsEnum.Effect_781 ?
                 BuffTriggerType.BeforeAttack : BuffTriggerType.BeforeDamaged, DamageModifier);
             }
 
@@ -45,7 +45,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
             if (damage == null)
                 return;
 
-            damage.EffectGenerationType = Dice.EffectId == EffectsEnum.Effect_RandDownModifier ?
+            damage.EffectGenerationType = Dice.EffectId == EffectsEnum.Effect_781 ?
                 EffectGenerationType.MinEffects : EffectGenerationType.MaxEffects;
 
             damage.Generated = false;

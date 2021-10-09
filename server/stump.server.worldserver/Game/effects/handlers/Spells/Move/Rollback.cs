@@ -9,8 +9,8 @@ using Stump.Server.WorldServer.Handlers.Actions;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_ReturnToOriginalPos)]
-    [EffectHandler(EffectsEnum.Effect_ReturnToLastPos)]
+    [EffectHandler(EffectsEnum.Effect_784)]
+    [EffectHandler(EffectsEnum.Effect_1100)]
     public class Rollback : SpellEffectHandler
     {
         public Rollback(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -22,7 +22,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
         {
             foreach (var actor in GetAffectedActors())
             {
-                var newCell = Effect.EffectId == EffectsEnum.Effect_ReturnToLastPos ? actor.MovementHistory.PopWhile(x=> x.Cell == actor.Cell, 2)?.Cell : actor.FightStartPosition?.Cell;
+                var newCell = Effect.EffectId == EffectsEnum.Effect_1100 ? actor.MovementHistory.PopWhile(x=> x.Cell == actor.Cell, 2)?.Cell : actor.FightStartPosition?.Cell;
 
                 if (newCell == null)
                     continue;

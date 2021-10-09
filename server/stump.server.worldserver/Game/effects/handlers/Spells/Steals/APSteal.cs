@@ -5,10 +5,11 @@ using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
 {
-    [EffectHandler(EffectsEnum.Effect_StealAP_440)]
+    [EffectHandler(EffectsEnum.Effect_440)]
     public class APSteal : SpellEffectHandler
     {
         public APSteal(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -26,12 +27,12 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
                     return false;
 
                 actor.TriggerBuffs(actor, BuffTriggerType.OnAPAttack);
-                AddStatBuff(actor, (short)( -( integerEffect.Value ) ), PlayerFields.AP, (short)EffectsEnum.Effect_SubAP);
+                AddStatBuff(actor, (short)( -( integerEffect.Value ) ), PlayerFields.AP, (short)EffectsEnum.Effect_168);
                 actor.TriggerBuffs(actor, BuffTriggerType.OnAPLost);
 
                 if (Effect.Duration != 0 || Effect.Delay != 0)
                 {
-                    AddStatBuff(Caster, (short)integerEffect.Value, PlayerFields.AP,  (short)EffectsEnum.Effect_AddAP_111);
+                    AddStatBuff(Caster, (short)integerEffect.Value, PlayerFields.AP,  (short)EffectsEnum.Effect_111);
                 }
                 else
                 {

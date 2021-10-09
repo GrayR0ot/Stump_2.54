@@ -5,10 +5,11 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Triggers;
 using Stump.Server.WorldServer.Game.Spells;
 using System.Linq;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_TriggerGlyphs)]
+    [EffectHandler(EffectsEnum.Effect_1026)]
     public class TriggerGlyphs : SpellEffectHandler
     {
         public TriggerGlyphs(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

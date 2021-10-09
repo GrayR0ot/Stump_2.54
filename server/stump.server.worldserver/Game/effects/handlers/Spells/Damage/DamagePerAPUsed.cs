@@ -8,11 +8,11 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamageAirPerAP)] 
-    [EffectHandler(EffectsEnum.Effect_DamageEarthPerAP)]
-    [EffectHandler(EffectsEnum.Effect_DamageFirePerAP)]
-    [EffectHandler(EffectsEnum.Effect_DamageWaterPerAP)]
-    [EffectHandler(EffectsEnum.Effect_DamageNeutralPerAP)]
+    [EffectHandler(EffectsEnum.Effect_1131)] 
+    [EffectHandler(EffectsEnum.Effect_1135)]
+    [EffectHandler(EffectsEnum.Effect_1133)]
+    [EffectHandler(EffectsEnum.Effect_1132)]
+    [EffectHandler(EffectsEnum.Effect_1134)]
     public class DamagePerAPUsed : SpellEffectHandler
     {
         public DamagePerAPUsed(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -56,15 +56,15 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_DamageWaterPerAP:
+                case EffectsEnum.Effect_1132:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_DamageEarthPerAP:
+                case EffectsEnum.Effect_1135:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_DamageAirPerAP:
+                case EffectsEnum.Effect_1131:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_DamageFirePerAP:
+                case EffectsEnum.Effect_1133:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_DamageNeutralPerAP:
+                case EffectsEnum.Effect_1134:
                     return EffectSchoolEnum.Neutral;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

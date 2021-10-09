@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using System.Linq;
+using NLog;
 using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
@@ -9,15 +10,15 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Stump.Server.WorldServer.Game.Fights.Buffs.Customs;
 using Stump.Server.WorldServer.Game.Fights.Triggers;
+using Stump.Server.WorldServer.Game.Maps.Cells;
 using Stump.Server.WorldServer.Game.Spells;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 using Stump.Server.WorldServer.Handlers.Actions;
-using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
 {
-    [EffectHandler(EffectsEnum.Effect_SummonSlave)]
-    [EffectHandler(EffectsEnum.Effect_Summon)]
+    [EffectHandler(EffectsEnum.Effect_1011)]
+    [EffectHandler(EffectsEnum.Effect_181)]
     public class Summon : SpellEffectHandler
     {
         static readonly Logger logger = LogManager.GetCurrentClassLogger();
@@ -45,7 +46,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
                 if (AffectedCells.Count <= 1)
                     return false;
 
-                var Cell = AffectedCells.Where(x => Fight.GetOneFighter(x) == null && x.Walkable && x.Id != Caster.Cell.Id).OrderBy(y => Caster.Position.Point.ManhattanDistanceTo(new Maps.Cells.MapPoint(y))).FirstOrDefault();
+                var Cell = AffectedCells.Where(x => Fight.GetOneFighter(x) == null && x.Walkable && x.Id != Caster.Cell.Id).OrderBy(y => Caster.Position.Point.ManhattanDistanceTo(new MapPoint(y))).FirstOrDefault();
 
                 if (Cell == null)
                     return false;
@@ -76,7 +77,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
             else
                 summon = new SummonedMonster(Fight.GetNextContextualId(), Caster.Team, Caster, monster, TargetedCell) {SummoningEffect = this};
 
-            if (Effect.Id == (short)EffectsEnum.Effect_SummonSlave && Caster is CharacterFighter)
+            if (Effect.Id == (short)EffectsEnum.Effect_1011 && Caster is CharacterFighter)
                 summon.SetController(Caster as CharacterFighter);
 
 
@@ -146,10 +147,10 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
                 if (item.Dice.Value == 432 || item.Dice.Value == 433 || item.Dice.Value == 434 || item.Dice.Value == 599)
                 {
                     var id = Caster.PopNextBuffId();
-                    controlBuff = new TakeControlBuff(id, Caster, Caster, new TakeControl(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_TakeControl), Caster, null, summon.Cell, false), item.Spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, summon as SummonedMonster) { Duration = (short)item.Duration };
-                    stateBuff = new StateBuff(id + 1, summon, Caster, new AddState(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_AddState && x.Value != 447), Caster, null, summon.Cell, false), item.Spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, SpellManager.Instance.GetSpellState((uint)item.Dice.Value)) { Duration = (short)item.Duration };
-                    immun = new SpellImmunityBuff(id + 2, summon, Caster, new SpellImmunity(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_SpellImmunity), Caster, null, summon.Cell, false), item.Spell, item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_SpellImmunity).DiceNum, false, FightDispellableEnum.DISPELLABLE_BY_DEATH) { Duration = (short)item.Duration };
-                    apbuff = new StatBuff(id + 3, summon, Caster, new APBuff(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_AddAP_111), Caster, null, summon.Cell, false), item.Spell, 2, PlayerFields.AP, false, FightDispellableEnum.DISPELLABLE_BY_DEATH) { Duration = (short)item.Duration };
+                    controlBuff = new TakeControlBuff(id, Caster, Caster, new TakeControl(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_2027), Caster, null, summon.Cell, false), item.Spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, summon as SummonedMonster) { Duration = (short)item.Duration };
+                    stateBuff = new StateBuff(id + 1, summon, Caster, new AddState(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_950 && x.Value != 447), Caster, null, summon.Cell, false), item.Spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, SpellManager.Instance.GetSpellState((uint)item.Dice.Value)) { Duration = (short)item.Duration };
+                    immun = new SpellImmunityBuff(id + 2, summon, Caster, new SpellImmunity(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_1044), Caster, null, summon.Cell, false), item.Spell, item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_1044).DiceNum, false, FightDispellableEnum.DISPELLABLE_BY_DEATH) { Duration = (short)item.Duration };
+                    apbuff = new StatBuff(id + 3, summon, Caster, new APBuff(item.Spell.CurrentSpellLevel.Effects.Find(x => x.EffectId == EffectsEnum.Effect_111), Caster, null, summon.Cell, false), item.Spell, 2, PlayerFields.AP, false, FightDispellableEnum.DISPELLABLE_BY_DEATH) { Duration = (short)item.Duration };
                 }
             }
 

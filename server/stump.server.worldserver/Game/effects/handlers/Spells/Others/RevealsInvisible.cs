@@ -6,10 +6,11 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Triggers;
 using Stump.Server.WorldServer.Handlers.Context;
 using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_RevealsInvisible)]
+    [EffectHandler(EffectsEnum.Effect_202)]
     public class RevealsInvisible : SpellEffectHandler
     {
         public RevealsInvisible(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

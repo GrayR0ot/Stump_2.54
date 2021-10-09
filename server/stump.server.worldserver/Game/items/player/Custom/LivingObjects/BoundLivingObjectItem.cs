@@ -10,7 +10,7 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 
 namespace Stump.Server.WorldServer.Game.Items.Player.Custom.LivingObjects
 {
-    [ItemHasEffect(EffectsEnum.Effect_LivingObjectId)]
+    [ItemHasEffect(EffectsEnum.Effect_970)]
     public sealed class BoundLivingObjectItem : CommonLivingObject
     {
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
@@ -20,7 +20,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom.LivingObjects
         public BoundLivingObjectItem(Character owner, PlayerItemRecord record)
             : base(owner, record)
         {
-            var idEffect = (EffectInteger) Effects.First(x => x.EffectId == EffectsEnum.Effect_LivingObjectId);
+            var idEffect = (EffectInteger) Effects.First(x => x.EffectId == EffectsEnum.Effect_970);
             m_livingObjectTemplate = ItemManager.Instance.TryGetTemplate(idEffect.Value);
             LivingObjectRecord = ItemManager.Instance.TryGetLivingObjectRecord(idEffect.Value);
 
@@ -77,7 +77,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom.LivingObjects
             //}
 
             Effects.RemoveAll(effects.Contains);
-            Effects.RemoveAll(x => x.EffectId == EffectsEnum.Effect_LivingObjectId);
+            Effects.RemoveAll(x => x.EffectId == EffectsEnum.Effect_970);
 
             var newInstance = Owner.Inventory.RefreshItemInstance(this);
 

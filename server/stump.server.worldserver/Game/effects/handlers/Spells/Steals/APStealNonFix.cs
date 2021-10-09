@@ -9,10 +9,11 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Stump.Server.WorldServer.Game.Spells;
 using Stump.Server.WorldServer.Handlers.Actions;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
 {
-   [EffectHandler(EffectsEnum.Effect_StealAP_84)]
+   [EffectHandler(EffectsEnum.Effect_84)]
     public class APStealNonFix: SpellEffectHandler
     {
        public APStealNonFix(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -57,7 +58,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
 
                 if (Effect.Duration != 0 || Effect.Delay != 0)
                 {
-                    AddStatBuff(Caster, (short)(value), PlayerFields.AP, (short)EffectsEnum.Effect_AddAP_111);
+                    AddStatBuff(Caster, (short)(value), PlayerFields.AP, (short)EffectsEnum.Effect_111);
                 }
                 else
                 {

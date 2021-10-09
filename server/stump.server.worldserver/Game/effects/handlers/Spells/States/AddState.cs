@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.States
 {
-    [EffectHandler(EffectsEnum.Effect_AddState)]
+    [EffectHandler(EffectsEnum.Effect_950)]
     public class AddState : SpellEffectHandler
     {
         static readonly SpellStatesEnum[] DISPELABLE_STATES =

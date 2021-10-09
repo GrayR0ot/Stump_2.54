@@ -12,9 +12,9 @@ using System.Collections.Generic;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_SymetricTargetTeleport)]
-    [EffectHandler(EffectsEnum.Effect_SymetricCasterTeleport)]
-    [EffectHandler(EffectsEnum.Effect_SymetricPointTeleport)]
+    [EffectHandler(EffectsEnum.Effect_1104)]
+    [EffectHandler(EffectsEnum.Effect_1105)]
+    [EffectHandler(EffectsEnum.Effect_1106)]
     public class SymetricTeleport : SpellEffectHandler
     {
         public SymetricTeleport(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -32,11 +32,11 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 
                 switch (Effect.EffectId)
                 {
-                    case EffectsEnum.Effect_SymetricCasterTeleport:
+                    case EffectsEnum.Effect_1105:
                         casterPoint = target.Position.Point;
                         targetPoint = Caster.Position.Point;
                         break;
-                    case EffectsEnum.Effect_SymetricPointTeleport:
+                    case EffectsEnum.Effect_1106:
                         casterPoint = target.Position.Point;
                         targetPoint = TargetedPoint;
                         break;
@@ -62,15 +62,15 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
                 {
                     var caster = Caster;
 
-                    if (Effect.EffectId == EffectsEnum.Effect_SymetricCasterTeleport || Effect.EffectId == EffectsEnum.Effect_SymetricPointTeleport)
+                    if (Effect.EffectId == EffectsEnum.Effect_1105 || Effect.EffectId == EffectsEnum.Effect_1106)
                         caster = target;
 
-                    if (!TelefraggedActor.Contains(caster) && Effect.EffectId == EffectsEnum.Effect_SymetricPointTeleport)
+                    if (!TelefraggedActor.Contains(caster) && Effect.EffectId == EffectsEnum.Effect_1106)
                     {
                         caster.Telefrag(Caster, fighter);
                         TelefraggedActor.Add(fighter);
                     }
-                    else if(Effect.EffectId != EffectsEnum.Effect_SymetricPointTeleport)
+                    else if(Effect.EffectId != EffectsEnum.Effect_1106)
                     {
                         caster.Telefrag(Caster, fighter);
                     }
@@ -79,7 +79,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
                 {
                     var caster = Caster;
 
-                    if (Effect.EffectId == EffectsEnum.Effect_SymetricCasterTeleport || Effect.EffectId == EffectsEnum.Effect_SymetricPointTeleport)
+                    if (Effect.EffectId == EffectsEnum.Effect_1105 || Effect.EffectId == EffectsEnum.Effect_1106)
                         caster = target;
 
                     caster.Position.Cell = dstCell;
@@ -192,7 +192,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
                         Fight.ForEach(entry => ActionsHandler.SendGameActionFightTeleportOnSameMapMessage(entry.Client, Caster, Caster, dstCell), true);
                     }
 
-                    EffectDice d = new EffectDice(EffectsEnum.Effect_PushBack, 4, 0, 0);
+                    EffectDice d = new EffectDice(EffectsEnum.Effect_5, 4, 0, 0);
                     var hand = EffectManager.Instance.GetSpellEffectHandler(d, custtarget, CastHandler, Caster.Cell, false);
                     if (newtowr) (hand as Move.Push).PushDirection = target.Position.Point.OrientationTo(nextturret.Position.Point);
                     hand.SetAffectedActors(new FightActor[] { Caster });

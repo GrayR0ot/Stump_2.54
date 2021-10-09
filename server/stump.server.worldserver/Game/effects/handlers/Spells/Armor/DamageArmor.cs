@@ -11,8 +11,8 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Armor
 {
-    [EffectHandler(EffectsEnum.Effect_AddArmorDamageReduction)]
-    [EffectHandler(EffectsEnum.Effect_AddGlobalDamageReduction_105)]
+    [EffectHandler(EffectsEnum.Effect_265)]
+    [EffectHandler(EffectsEnum.Effect_105)]
     public class DamageArmor : SpellEffectHandler
     {
         public DamageArmor(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

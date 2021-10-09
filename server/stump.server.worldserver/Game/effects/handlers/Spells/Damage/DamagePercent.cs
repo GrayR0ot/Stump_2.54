@@ -7,15 +7,16 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Stump.Server.WorldServer.Handlers.Actions;
 using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamagePercentAir)]
-    [EffectHandler(EffectsEnum.Effect_DamagePercentEarth)]
-    [EffectHandler(EffectsEnum.Effect_DamagePercentFire)]
-    [EffectHandler(EffectsEnum.Effect_DamagePercentWater)]
-    [EffectHandler(EffectsEnum.Effect_DamagePercentNeutral)]
-    [EffectHandler(EffectsEnum.Effect_DamagePercentNeutral_671)]
+    [EffectHandler(EffectsEnum.Effect_87)]
+    [EffectHandler(EffectsEnum.Effect_86)]
+    [EffectHandler(EffectsEnum.Effect_88)]
+    [EffectHandler(EffectsEnum.Effect_85)]
+    [EffectHandler(EffectsEnum.Effect_89)]
+    [EffectHandler(EffectsEnum.Effect_671)]
     public class DamagePercent : SpellEffectHandler
     {
         public DamagePercent(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -96,16 +97,16 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_DamagePercentAir:
+                case EffectsEnum.Effect_87:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_DamagePercentEarth:
+                case EffectsEnum.Effect_86:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_DamagePercentFire:
+                case EffectsEnum.Effect_88:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_DamagePercentWater:
+                case EffectsEnum.Effect_85:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_DamagePercentNeutral:
-                case EffectsEnum.Effect_DamagePercentNeutral_671:
+                case EffectsEnum.Effect_89:
+                case EffectsEnum.Effect_671:
                     return EffectSchoolEnum.Neutral;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

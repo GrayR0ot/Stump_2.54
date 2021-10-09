@@ -12,11 +12,11 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamageWater)]
-    [EffectHandler(EffectsEnum.Effect_DamageEarth)]
-    [EffectHandler(EffectsEnum.Effect_DamageAir)]
-    [EffectHandler(EffectsEnum.Effect_DamageFire)]
-    [EffectHandler(EffectsEnum.Effect_DamageNeutral)]
+    [EffectHandler(EffectsEnum.Effect_96)]
+    [EffectHandler(EffectsEnum.Effect_97)]
+    [EffectHandler(EffectsEnum.Effect_98)]
+    [EffectHandler(EffectsEnum.Effect_99)]
+    [EffectHandler(EffectsEnum.Effect_100)]
     public class DirectDamage : SpellEffectHandler
     {
         public DirectDamage(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -112,15 +112,15 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_DamageWater:
+                case EffectsEnum.Effect_96:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_DamageEarth:
+                case EffectsEnum.Effect_97:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_DamageAir:
+                case EffectsEnum.Effect_98:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_DamageFire:
+                case EffectsEnum.Effect_99:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_DamageNeutral:
+                case EffectsEnum.Effect_100:
                     return EffectSchoolEnum.Neutral;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

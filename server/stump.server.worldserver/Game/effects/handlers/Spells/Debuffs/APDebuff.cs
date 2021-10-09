@@ -8,9 +8,9 @@ using Stump.Server.WorldServer.Handlers.Actions;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_SubAP)]
-    [EffectHandler(EffectsEnum.Effect_LostAP)]
-    [EffectHandler(EffectsEnum.Effect_SubAP_Roll)]
+    [EffectHandler(EffectsEnum.Effect_168)]
+    [EffectHandler(EffectsEnum.Effect_101)]
+    [EffectHandler(EffectsEnum.Effect_1079)]
     public class APDebuff : SpellEffectHandler
     {
         public APDebuff(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -46,7 +46,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
                     if (integerEffect == null)
                         return false;
 
-                    var value = Effect.EffectId == EffectsEnum.Effect_SubAP ? integerEffect.Value : RollAP(actor, integerEffect.Value);
+                    var value = Effect.EffectId == EffectsEnum.Effect_168 ? integerEffect.Value : RollAP(actor, integerEffect.Value);
 
                     var dodged = (short) (integerEffect.Value - value);
 
@@ -63,9 +63,9 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 
                     target.TriggerBuffs(target, BuffTriggerType.OnAPLost);
 
-                    if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_LostAP)
+                    if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_101)
                     {
-                        AddStatBuff(actor, (short) -value, PlayerFields.AP, (short) EffectsEnum.Effect_SubAP);
+                        AddStatBuff(actor, (short) -value, PlayerFields.AP, (short) EffectsEnum.Effect_168);
                     }
                     else
                     {
@@ -84,7 +84,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
             if (integerEffect == null)
                 return;
 
-            var value = Effect.EffectId == EffectsEnum.Effect_SubAP ? integerEffect.Value : RollAP(buff.Target, integerEffect.Value);
+            var value = Effect.EffectId == EffectsEnum.Effect_168 ? integerEffect.Value : RollAP(buff.Target, integerEffect.Value);
 
             var dodged = (short)(integerEffect.Value - value);
 
@@ -101,9 +101,9 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 
             buff.Target.TriggerBuffs(buff.Target, BuffTriggerType.OnAPLost);
 
-            if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_LostAP)
+            if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_101)
             {
-                var newBuff = AddStatBuffDirectly(buff.Target, (short)-value, PlayerFields.AP, (short)EffectsEnum.Effect_SubAP, triggerrer: triggerrer);
+                var newBuff = AddStatBuffDirectly(buff.Target, (short)-value, PlayerFields.AP, (short)EffectsEnum.Effect_168, triggerrer: triggerrer);
                 if (TriggeredBuffDuration > 0)
                     newBuff.Duration = (short) TriggeredBuffDuration;
             }

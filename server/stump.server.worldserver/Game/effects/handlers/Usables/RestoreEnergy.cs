@@ -7,7 +7,7 @@ using System;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_RestoreEnergyPoints)]
+    [EffectHandler(EffectsEnum.Effect_139)]
     public class RestoreEnergy : UsableEffectHandler
     {
         public RestoreEnergy(EffectBase effect, Character target, BasePlayerItem item)

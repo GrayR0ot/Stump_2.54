@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Items.Player;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Items
 {
-    [EffectHandler(EffectsEnum.Effect_SummonTaxcollector)]
+    [EffectHandler(EffectsEnum.Effect_1153)]
     public class SummonTaxcollector : UsableEffectHandler
     {
         public SummonTaxcollector(EffectBase effect, Character target, BasePlayerItem item)

@@ -49,10 +49,10 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                     if (buff != null)
                         target.RemoveBuff(buff);
 
-                    var effect = new EffectDice(EffectsEnum.Effect_DamageAir, 0, 32, 34);
+                    var effect = new EffectDice(EffectsEnum.Effect_98, 0, 32, 34);
                     if (Critical)
                     {
-                        effect = new EffectDice(EffectsEnum.Effect_DamageAir, 0, 42, 44);
+                        effect = new EffectDice(EffectsEnum.Effect_98, 0, 42, 44);
                     }
                     var actorBuffId = Caster.PopNextBuffId();
                     var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
@@ -68,10 +68,10 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                     if (buff != null)
                         target.RemoveBuff(buff);
 
-                    var effect = new EffectDice(EffectsEnum.Effect_DamageAir, 0, 37, 39);
+                    var effect = new EffectDice(EffectsEnum.Effect_98, 0, 37, 39);
                     if (Critical)
                     {
-                        effect = new EffectDice(EffectsEnum.Effect_DamageAir, 0, 47, 49);
+                        effect = new EffectDice(EffectsEnum.Effect_98, 0, 47, 49);
                     }
                     var actorBuffId = Caster.PopNextBuffId();
                     var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
@@ -87,10 +87,10 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                     if (buff != null)
                         target.RemoveBuff(buff);
 
-                    var effect = new EffectDice(EffectsEnum.Effect_DamageAir, 0, 42, 44);
+                    var effect = new EffectDice(EffectsEnum.Effect_98, 0, 42, 44);
                     if (Critical)
                     {
-                        effect = new EffectDice(EffectsEnum.Effect_DamageAir, 0, 52, 54);
+                        effect = new EffectDice(EffectsEnum.Effect_98, 0, 52, 54);
                     }
                     var actorBuffId = Caster.PopNextBuffId();
                     var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);

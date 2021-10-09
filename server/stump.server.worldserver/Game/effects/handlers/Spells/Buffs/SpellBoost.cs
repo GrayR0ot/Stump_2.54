@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_SpellBoost)]
+    [EffectHandler(EffectsEnum.Effect_293)]
     public class SpellBoost : SpellEffectHandler
     {
         public SpellBoost(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical) { }

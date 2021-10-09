@@ -10,9 +10,9 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
 {
-    [EffectHandler(EffectsEnum.Effect_Glyph)]
-    [EffectHandler(EffectsEnum.Effect_Glyph_402)]
-    [EffectHandler(EffectsEnum.Effect_GlyphAura)]
+    [EffectHandler(EffectsEnum.Effect_401)]
+    [EffectHandler(EffectsEnum.Effect_402)]
+    [EffectHandler(EffectsEnum.Effect_1091)]
     [EffectHandler(EffectsEnum.Effect_1165)]
     public class GlyphSpawn : SpellEffectHandler
     {
@@ -39,7 +39,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
                 spell = glyphSpell;
 
             Glyph glyph;
-            if (Effect.EffectId == EffectsEnum.Effect_GlyphAura)
+            if (Effect.EffectId == EffectsEnum.Effect_1091)
             {
                 glyph = new GlyphAura((short)Fight.PopNextTriggerId(), Caster, spell, Dice, glyphSpell, TargetedCell,
                                 EffectZone.ShapeType, (byte)Effect.ZoneMinSize, (byte)Effect.ZoneSize, GetGlyphColorBySpell(Spell));
@@ -53,8 +53,8 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
             {
                 glyph = new Glyph((short)Fight.PopNextTriggerId(), Caster, spell, Dice, glyphSpell, TargetedCell,
                             EffectZone.ShapeType, (byte)Effect.ZoneMinSize, (byte)Effect.ZoneSize,
-                            GetGlyphColorBySpell(Spell), Effect.EffectId == EffectsEnum.Effect_Glyph,
-                            Effect.EffectId == EffectsEnum.Effect_Glyph_402 ? TriggerType.OnTurnEnd : TriggerType.OnTurnBegin);
+                            GetGlyphColorBySpell(Spell), Effect.EffectId == EffectsEnum.Effect_401,
+                            Effect.EffectId == EffectsEnum.Effect_402 ? TriggerType.OnTurnEnd : TriggerType.OnTurnBegin);
             }
 
             Fight.AddTriger(glyph);
