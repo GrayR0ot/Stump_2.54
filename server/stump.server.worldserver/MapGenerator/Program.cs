@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using D2pReader;
 using D2pReader.MapInformations;
+using MongoDB.Bson;
 using Newtonsoft.Json;
 
 namespace MapGenerator
@@ -36,11 +39,27 @@ namespace MapGenerator
                 //Console.WriteLine("Map cells.bin: " + keyValuePair.Value.map.m_compressedCells;
                 
                 mapJson.Add(mapUtils);
+                byte[] compressedCells = ZipHelper.Compress(keyValuePair.Value.map.GetMap(keyValuePair.Key).m_compressedCells);
+                string result;
+                using (MD5 hash = MD5.Create())
+                {
+                    result = String.Join
+                    (
+                        "",
+                        from ba in hash.ComputeHash
+                        (
+                            Encoding.UTF8.GetBytes(compressedCells.ToJson())
+                        ) 
+                        select ba.ToString("x2")
+                    );
+                }
+                Console.WriteLine(keyValuePair.Key + " map hash cells is " + result);
+                //Console.WriteLine(keyValuePair.Key + " map cells is " + keyValuePair.Value.m_compressedCells.ToJson());
                 using (StreamWriter sw = new StreamWriter(@"output\maps\"+keyValuePair.Key+".bin"))
                 {
                     //Console.WriteLine("Cells: " + JsonConvert.SerializeObject(keyValuePair.Value.map.GetMap(keyValuePair.Key).Cells.ToList()));
                     //Console.WriteLine("binary: " + keyValuePair.Value.map.GetMap(keyValuePair.Key).map.m_compressedCells.Length);
-                    sw.BaseStream.Write(keyValuePair.Value.map.m_compressedCells, 0, keyValuePair.Value.map.m_compressedCells.Length);
+                    sw.BaseStream.Write(compressedCells, 0, compressedCells.Length);
                     //Console.WriteLine("Saved map #" + keyValuePair.Key + " cells bins");
                     //break;
                 }

@@ -7,6 +7,7 @@ using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Game.Maps;
 using Stump.Server.WorldServer.Game.Maps.Cells;
 using System.Linq;
+using ServiceStack.Text;
 
 namespace Stump.Server.WorldServer.Game.Actors.RolePlay
 {

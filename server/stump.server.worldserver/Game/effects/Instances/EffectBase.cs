@@ -68,6 +68,36 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
         {
         }
 
+        public EffectBase(string targetMask, int diceNum, bool visibleInBuffUi, bool visibleInFight, int targetId,
+            int effectElement, int effectUid, int dispellable, string triggers, int spellId, int duration, int random,
+            short effectId, int delay, int diceSide, bool visibleInTooltip, string rawZone, bool forClientOnly,
+            int value, int order, int group, int modificator, bool trigger)
+        {
+            this.targetMask = targetMask;
+            this.diceNum = diceNum;
+            this.visibleInBuffUi = visibleInBuffUi;
+            this.visibleInFight = visibleInFight;
+            this.targetId = targetId;
+            this.effectElement = effectElement;
+            this.effectUid = effectUid;
+            this.dispellable = dispellable;
+            this.triggers = triggers;
+            this.spellId = spellId;
+            this.duration = duration;
+            this.random = random;
+            this.effectId = effectId;
+            this.delay = delay;
+            this.diceSide = diceSide;
+            this.visibleInTooltip = visibleInTooltip;
+            this.rawZone = rawZone;
+            this.forClientOnly = forClientOnly;
+            this.value = value;
+            this.order = order;
+            this.group = group;
+            this.modificator = modificator;
+            this.trigger = trigger;
+        }
+
         public EffectBase(EffectBase effect)
         {
             effectId = effect.Id;
@@ -454,7 +484,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         #endregion
 
-        protected void ParseTargets()
+        public void ParseTargets()
         {
             if (string.IsNullOrEmpty(targetMask) || targetMask == "a,A" || targetMask == "A,a")
             {
@@ -467,8 +497,9 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
             targets = data.Select(TargetCriterion.ParseCriterion).ToArray();
         }
 
-        protected void ParseRawZone(string rawZone)
+        public void ParseRawZone(string rawZone)
         {
+            Console.WriteLine("1Parsing RawZone " + rawZone + " for spell " + spellId);
             if (string.IsNullOrEmpty(rawZone))
             {
                 zoneShape = 0;
@@ -477,7 +508,10 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 return;
             }
 
-            var shape = (SpellShapeEnum)rawZone[0]; //ToDo //TEMPORARY VALUE FOR TESTS
+            Console.WriteLine("2Parsing RawZone " + rawZone + " for spell " + spellId);
+
+            var shape = (SpellShapeEnum) rawZone[0]; //ToDo //TEMPORARY VALUE FOR TESTS
+            Console.WriteLine("Found shape " + shape + " for spell " + spellId);
             byte size = 0;
             byte minSize = 0;
             int zoneEfficiency = 0;

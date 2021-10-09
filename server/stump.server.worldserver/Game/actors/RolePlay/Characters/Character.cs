@@ -92,6 +92,8 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson.IO;
 using Newtonsoft.Json;
@@ -4519,7 +4521,20 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 Map.DisableActivateStateInteractiveObjectForASpecificPlayer(this, 489541);
             }
-
+            string result;
+            using (MD5 hash = MD5.Create())
+            {
+                result = String.Join
+                (
+                    "",
+                    from ba in hash.ComputeHash
+                    (
+                        Encoding.UTF8.GetBytes(map.Cells.ToJson())
+                    ) 
+                    select ba.ToString("x2")
+                );
+            }
+            Console.WriteLine("map hash MD5: " + result);
             base.OnEnterMap(map);
         }
 
