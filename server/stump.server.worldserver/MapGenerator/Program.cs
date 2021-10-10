@@ -6,8 +6,11 @@ using System.Security.Cryptography;
 using System.Text;
 using D2pReader;
 using D2pReader.MapInformations;
+using D2pReader.MapInformations.Elements;
 using MongoDB.Bson;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Stump.DofusProtocol.D2oClasses;
 
 namespace MapGenerator
 {
@@ -24,6 +27,7 @@ namespace MapGenerator
                 Directory.CreateDirectory(@"output");
             if (!Directory.Exists(@"output\maps"))
                 Directory.CreateDirectory(@"output\maps");
+            
             foreach (var keyValuePair in maps)
             {
                 MapUtils mapUtils = new MapUtils(
@@ -33,6 +37,17 @@ namespace MapGenerator
                     keyValuePair.Value.LeftNeighbourId,
                     keyValuePair.Value.RightNeighbourId
                 );
+                
+                
+            
+            
+                using (StreamWriter sw = new StreamWriter(@"output\maps\\" + keyValuePair.Key + ".json"))
+                {
+                    if (keyValuePair.Value.Layers.Count > 0)
+                    {
+                        sw.Write(JsonConvert.SerializeObject(keyValuePair.Value.Layers));
+                    }
+                }
 
                 //Console.WriteLine("Map ID: " + keyValuePair.Key);
                 //Console.WriteLine("Map Cells: " + keyValuePair.Value.CellsCount);

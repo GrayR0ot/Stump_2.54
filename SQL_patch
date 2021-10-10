@@ -1,0 +1,35 @@
+//resources abysses
+
+UPDATE interactives_spawns SET TemplateId=294,Template="Aquajou" WHERE ElementId=74986;
+UPDATE interactives_spawns SET TemplateId=295,Template="Salikrone" WHERE ElementId=74984;
+UPDATE interactives_spawns SET TemplateId=296,Template="Quisnoa" WHERE ElementId=74985;
+UPDATE interactives_spawns SET TemplateId=293,Template="Écume de mer" WHERE ElementId=74982;
+UPDATE interactives_spawns SET TemplateId=297,Template="Patelle" WHERE ElementId=74983;
+
+
+
+//chemin eliocalypse
+UPDATE `interactives_spawns` SET `TemplateId` = '0',`Template`="Teleport Eliocalypse #1" WHERE `interactives_spawns`.`Id` = 518002;
+INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100714, 'Teleport', '0', NULL, NULL, '202899464', '549', '7', NULL, NULL, NULL);
+INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518002, 518002, 100714);
+
+
+UPDATE `interactives_spawns` SET `Template` = 'Teleport Eliocalypse #2' WHERE `interactives_spawns`.`Id` = 517965;
+INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100715, 'Teleport', '0', NULL, NULL, '203689222', '383', '7', NULL, NULL, NULL);
+INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518003, 517965, 100715);
+
+UPDATE `interactives_spawns` SET `Template` = 'Teleport Eliocalypse #3 - Servitude' WHERE `interactives_spawns`.`Id` = 517975;
+INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100716, 'Teleport', '0', NULL, NULL, '202246150', '383', '7', NULL, NULL, NULL);
+INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518004, 517975, 100716);
+
+UPDATE `interactives_spawns` SET `Template` = 'Teleport Eliocalypse #3 - Misère' WHERE `interactives_spawns`.`Id` = 517976;
+INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100717, 'Teleport', '0', NULL, NULL, '201850882', '383', '7', NULL, NULL, NULL);
+INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518005, 517976, 100717);
+
+UPDATE `interactives_spawns` SET `Template` = 'Teleport Eliocalypse #3 - Corruption' WHERE `interactives_spawns`.`Id` = 517977;
+INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100718, 'Teleport', '0', NULL, NULL, '201458178', '383', '7', NULL, NULL, NULL);
+INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518006, 517977, 100718);
+
+UPDATE `interactives_spawns` SET `Template` = 'Teleport Eliocalypse #3 - Guerre' WHERE `interactives_spawns`.`Id` = 518028;
+INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100719, 'Teleport', '0', NULL, NULL, '201588736', '424', '7', NULL, NULL, NULL);
+INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518007, 518028, 100719);

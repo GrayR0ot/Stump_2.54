@@ -186,16 +186,8 @@ namespace Stump.Server.WorldServer.Database.Spells
                     List<EffectDice> effectDiceList = new List<EffectDice>();
                     foreach (var effectBase in effectBaseList)
                     {
-                        Console.WriteLine("[DEBUG2] Spell Id: " + effectBase.SpellId);
-                        Console.WriteLine("[DEBUG2] Spell Effect ZoneShape: " + effectBase.ZoneShape);
-                        Console.WriteLine("[DEBUG2] Spell Effect RawZone: " + effectBase.RawZone);
-                        Console.WriteLine("[DEBUG2] Spell Effect ZoneSize: " + effectBase.ZoneSize);
                         EffectDice effectDice = new EffectDice(effectBase.Id, effectBase.Value, effectBase.DiceNum,
                             effectBase.DiceSide, effectBase);
-                        Console.WriteLine("[DEBUG2] Spell Id: " + effectDice.SpellId);
-                        Console.WriteLine("[DEBUG2] Spell EffectDice ZoneShape: " + effectDice.ZoneShape);
-                        Console.WriteLine("[DEBUG2] Spell EffectDice RawZone: " + effectDice.RawZone);
-                        Console.WriteLine("[DEBUG2] Spell EffectDice ZoneSize: " + effectDice.ZoneSize);
                             effectDiceList.Add(effectDice);
                     }
 

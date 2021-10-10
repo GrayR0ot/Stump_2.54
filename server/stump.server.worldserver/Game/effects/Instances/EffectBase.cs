@@ -499,7 +499,6 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
 
         public void ParseRawZone(string rawZone)
         {
-            Console.WriteLine("1Parsing RawZone " + rawZone + " for spell " + spellId);
             if (string.IsNullOrEmpty(rawZone))
             {
                 zoneShape = 0;
@@ -508,10 +507,8 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 return;
             }
 
-            Console.WriteLine("2Parsing RawZone " + rawZone + " for spell " + spellId);
 
             var shape = (SpellShapeEnum) rawZone[0]; //ToDo //TEMPORARY VALUE FOR TESTS
-            Console.WriteLine("Found shape " + shape + " for spell " + spellId);
             byte size = 0;
             byte minSize = 0;
             int zoneEfficiency = 0;
