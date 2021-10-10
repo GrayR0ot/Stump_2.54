@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
 {
-    [EffectHandler(EffectsEnum.Effect_TakeControl)]
+    [EffectHandler(EffectsEnum.Effect_2027)]
     public class TakeControl : SpellEffectHandler
     {
         public TakeControl(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

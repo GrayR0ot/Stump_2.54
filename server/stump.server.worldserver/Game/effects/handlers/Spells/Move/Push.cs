@@ -15,17 +15,17 @@ using Stump.Server.WorldServer.Game.Fights.Triggers;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_PushBack)]
-    [EffectHandler(EffectsEnum.Effect_PushBack_1103)]
-    [EffectHandler(EffectsEnum.Effect_PullForward)]
+    [EffectHandler(EffectsEnum.Effect_5)]
+    [EffectHandler(EffectsEnum.Effect_1103)]
+    [EffectHandler(EffectsEnum.Effect_6)]
     public class Push : SpellEffectHandler
     {
         public Push(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
             : base(effect, caster, castHandler, targetedCell, critical)
         {
-            DamagesDisabled = effect.EffectId == EffectsEnum.Effect_PushBack_1103 ||
-                effect.EffectId == EffectsEnum.Effect_PullForward;
-            Pull = effect.EffectId == EffectsEnum.Effect_PullForward;
+            DamagesDisabled = effect.EffectId == EffectsEnum.Effect_1103 ||
+                effect.EffectId == EffectsEnum.Effect_6;
+            Pull = effect.EffectId == EffectsEnum.Effect_6;
         }
 
         public bool DamagesDisabled
@@ -254,7 +254,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
                 if(Fight.Fighters.Any(x => actor.Position.Point.IsAdjacentTo(x.Position.Point)))
                     actor.TriggerBuffs(Caster, BuffTriggerType.OnPushDamagedInMelee);
 
-                if (Effect.EffectId != EffectsEnum.Effect_PullForward)
+                if (Effect.EffectId != EffectsEnum.Effect_6)
                     actor.TriggerBuffs(Caster, BuffTriggerType.OnPushed);
                 actor.TriggerBuffs(Caster, BuffTriggerType.OnMoved);
             }

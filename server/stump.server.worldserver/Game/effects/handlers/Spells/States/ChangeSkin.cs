@@ -11,8 +11,8 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.States
 {
-    [EffectHandler(EffectsEnum.Effect_ChangeAppearance)]
-    [EffectHandler(EffectsEnum.Effect_ChangeAppearance_335)]
+    [EffectHandler(EffectsEnum.Effect_149)]
+    [EffectHandler(EffectsEnum.Effect_335)]
     public class ChangeSkin : SpellEffectHandler
     {
         public ChangeSkin(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

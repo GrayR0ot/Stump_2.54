@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_HealWhenAttack)]
+    [EffectHandler(EffectsEnum.Effect_1164)]
     public class GiveHpWhenAttack : SpellEffectHandler
     {
         public GiveHpWhenAttack(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -45,7 +45,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
         }
     }
 
-    [EffectHandler(EffectsEnum.Effect_GiveHpPercentWhenAttack)]
+    [EffectHandler(EffectsEnum.Effect_786)]
     public class GiveHpPercentWhenAttack : SpellEffectHandler
     {
         public GiveHpPercentWhenAttack(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

@@ -10,40 +10,40 @@ using Stump.Server.WorldServer.Game.Fights.Buffs;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_SubAgility)]
-    [EffectHandler(EffectsEnum.Effect_SubChance)]
-    [EffectHandler(EffectsEnum.Effect_SubIntelligence)]
-    [EffectHandler(EffectsEnum.Effect_SubStrength)]
-    [EffectHandler(EffectsEnum.Effect_SubWisdom)]
-    [EffectHandler(EffectsEnum.Effect_SubVitality)]
-    [EffectHandler(EffectsEnum.Effect_SubRange)]
-    [EffectHandler(EffectsEnum.Effect_SubRange_135)]
-    [EffectHandler(EffectsEnum.Effect_SubCriticalHit)]
-    [EffectHandler(EffectsEnum.Effect_SubDamageBonus)]
-    [EffectHandler(EffectsEnum.Effect_SubDamageBonusPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubDodge)]
-    [EffectHandler(EffectsEnum.Effect_SubLock)]
-    [EffectHandler(EffectsEnum.Effect_SubDodgeAPProbability)]
-    [EffectHandler(EffectsEnum.Effect_SubDodgeMPProbability)]
-    [EffectHandler(EffectsEnum.Effect_SubAPAttack)]
-    [EffectHandler(EffectsEnum.Effect_SubMPAttack)]
-    [EffectHandler(EffectsEnum.Effect_SubHealBonus)]
-    [EffectHandler(EffectsEnum.Effect_SubNeutralResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubEarthResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubWaterResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubAirResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubFireResistPercent)]
-    [EffectHandler(EffectsEnum.Effect_ReduceFinalDamages)]
-    [EffectHandler(EffectsEnum.Effect_SubMeeleDamageDonePercent)]
-    [EffectHandler(EffectsEnum.Effect_SubMeeleResistence)]
-    [EffectHandler(EffectsEnum.Effect_SubRangedDamageDonePercent)]
-    [EffectHandler(EffectsEnum.Effect_SubRangedResistence)]
-    [EffectHandler(EffectsEnum.Effect_SubWeaponDamageDonePercent)]
-    [EffectHandler(EffectsEnum.Effect_SubWeaponResistence)]
-    [EffectHandler(EffectsEnum.Effect_SubSpellDamageBonusPercent)]
-    [EffectHandler(EffectsEnum.Effect_SubSpellResistence)]
-    [EffectHandler(EffectsEnum.Effect_SubPushDamageReduction)]
-    [EffectHandler(EffectsEnum.Effect_SubPushDamageBonus)]
+    [EffectHandler(EffectsEnum.Effect_154)]
+    [EffectHandler(EffectsEnum.Effect_152)]
+    [EffectHandler(EffectsEnum.Effect_155)]
+    [EffectHandler(EffectsEnum.Effect_157)]
+    [EffectHandler(EffectsEnum.Effect_156)]
+    [EffectHandler(EffectsEnum.Effect_153)]
+    [EffectHandler(EffectsEnum.Effect_116)]
+    [EffectHandler(EffectsEnum.Effect_135)]
+    [EffectHandler(EffectsEnum.Effect_171)]
+    [EffectHandler(EffectsEnum.Effect_145)]
+    [EffectHandler(EffectsEnum.Effect_186)]
+    [EffectHandler(EffectsEnum.Effect_754)]
+    [EffectHandler(EffectsEnum.Effect_755)]
+    [EffectHandler(EffectsEnum.Effect_162)]
+    [EffectHandler(EffectsEnum.Effect_163)]
+    [EffectHandler(EffectsEnum.Effect_411)]
+    [EffectHandler(EffectsEnum.Effect_413)]
+    [EffectHandler(EffectsEnum.Effect_179)]
+    [EffectHandler(EffectsEnum.Effect_219)]
+    [EffectHandler(EffectsEnum.Effect_215)]
+    [EffectHandler(EffectsEnum.Effect_216)]
+    [EffectHandler(EffectsEnum.Effect_217)]
+    [EffectHandler(EffectsEnum.Effect_218)]
+    [EffectHandler(EffectsEnum.Effect_1172)]
+    [EffectHandler(EffectsEnum.Effect_2801)]
+    [EffectHandler(EffectsEnum.Effect_2802)]
+    [EffectHandler(EffectsEnum.Effect_2805)]
+    [EffectHandler(EffectsEnum.Effect_2806)]
+    [EffectHandler(EffectsEnum.Effect_2809)]
+    [EffectHandler(EffectsEnum.Effect_2810)]
+    [EffectHandler(EffectsEnum.Effect_2813)]
+    [EffectHandler(EffectsEnum.Effect_2814)]
+    [EffectHandler(EffectsEnum.Effect_417)]
+    [EffectHandler(EffectsEnum.Effect_415)]
 
     public class StatsDebuff : SpellEffectHandler
     {
@@ -64,7 +64,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
                 if (Effect.Duration == 0)
                     continue;
 
-                if (Effect.EffectId == EffectsEnum.Effect_SubRange)
+                if (Effect.EffectId == EffectsEnum.Effect_116)
                 {
                     actor.OnFightPointsVariation(ActionsEnum.ACTION_CHARACTER_DEBOOST_RANGE, Caster, actor, (short)(-integerEffect.Value));
                     actor.TriggerBuffs(actor, BuffTriggerType.OnRangeLost);
@@ -80,72 +80,71 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_SubAgility:
+                case EffectsEnum.Effect_154:
                     return PlayerFields.Agility;
-                case EffectsEnum.Effect_SubChance:
+                case EffectsEnum.Effect_152:
                     return PlayerFields.Chance;
-                case EffectsEnum.Effect_SubIntelligence:
+                case EffectsEnum.Effect_155:
                     return PlayerFields.Intelligence;
-                case EffectsEnum.Effect_SubStrength:
+                case EffectsEnum.Effect_157:
                     return PlayerFields.Strength;
-                case EffectsEnum.Effect_SubWisdom:
+                case EffectsEnum.Effect_156:
                     return PlayerFields.Wisdom;
-                case EffectsEnum.Effect_SubRange:
-                case EffectsEnum.Effect_SubRange_135:
+                case EffectsEnum.Effect_116:
+                case EffectsEnum.Effect_135:
                     return PlayerFields.Range;
-                case EffectsEnum.Effect_SubCriticalHit:
+                case EffectsEnum.Effect_171:
                     return PlayerFields.CriticalHit;
-                case EffectsEnum.Effect_SubDamageBonus:
+                case EffectsEnum.Effect_145:
                     return PlayerFields.DamageBonus;
-                case EffectsEnum.Effect_SubDamageBonusPercent:
+                case EffectsEnum.Effect_186:
                     return PlayerFields.DamageBonusPercent;
-                case EffectsEnum.Effect_SubDodge:
+                case EffectsEnum.Effect_754:
                     return PlayerFields.TackleEvade;
-                case EffectsEnum.Effect_SubLock:
+                case EffectsEnum.Effect_755:
                     return PlayerFields.TackleBlock;
-                case EffectsEnum.Effect_SubDodgeAPProbability:
+                case EffectsEnum.Effect_162:
                     return PlayerFields.DodgeAPProbability;
-                case EffectsEnum.Effect_SubDodgeMPProbability:
-                    return PlayerFields.DodgeMPProbability;
-                case EffectsEnum.Effect_SubVitality:
+                case EffectsEnum.Effect_163:
+                case EffectsEnum.Effect_153:
                     return PlayerFields.Vitality;
-                case EffectsEnum.Effect_SubAPAttack:
+                case EffectsEnum.Effect_411:
                     return PlayerFields.APAttack;
-                case EffectsEnum.Effect_SubMPAttack:
+                case EffectsEnum.Effect_413:
                     return PlayerFields.MPAttack;
-                case EffectsEnum.Effect_SubHealBonus:
+                case EffectsEnum.Effect_179:
                     return PlayerFields.HealBonus;
-                case EffectsEnum.Effect_SubNeutralResistPercent:
+                case EffectsEnum.Effect_219:
                     return PlayerFields.NeutralResistPercent;
-                case EffectsEnum.Effect_SubEarthResistPercent:
+                case EffectsEnum.Effect_215:
                     return PlayerFields.EarthResistPercent;
-                case EffectsEnum.Effect_SubWaterResistPercent:
+                case EffectsEnum.Effect_216:
                     return PlayerFields.WaterResistPercent;
-                case EffectsEnum.Effect_SubAirResistPercent:
+                case EffectsEnum.Effect_217:
                     return PlayerFields.AirResistPercent;
-                case EffectsEnum.Effect_SubFireResistPercent:
+                case EffectsEnum.Effect_218:
                     return PlayerFields.FireResistPercent;
-                case EffectsEnum.Effect_ReduceFinalDamages:
+                case EffectsEnum.Effect_1172:
                     return PlayerFields.DamageMultiplicator;
-                case EffectsEnum.Effect_SubMeeleDamageDonePercent:
+                case EffectsEnum.Effect_2801:
                     return PlayerFields.MeleeDamageDonePercent;
-                case EffectsEnum.Effect_SubMeeleResistence:
+                case EffectsEnum.Effect_2802:
                     return PlayerFields.MeleeDamageReceivedPercent;
-                case EffectsEnum.Effect_SubRangedDamageDonePercent:
+                case EffectsEnum.Effect_2805:
                     return PlayerFields.RangedDamageDonePercent;
-                case EffectsEnum.Effect_SubRangedResistence:
+                case EffectsEnum.Effect_2806:
                     return PlayerFields.RangedDamageReceivedPercent;
-                case EffectsEnum.Effect_SubWeaponDamageDonePercent:
+                case EffectsEnum.Effect_2809:
                     return PlayerFields.WeaponDamageDonePercent;
-                case EffectsEnum.Effect_SubWeaponResistence:
+                case EffectsEnum.Effect_2810:
                     return PlayerFields.WeaponDamageReceivedPercent;
-                case EffectsEnum.Effect_SubSpellResistence:
+                case EffectsEnum.Effect_2814:
                     return PlayerFields.SpellDamageReceivedPercent;
-                case EffectsEnum.Effect_SubSpellDamageBonusPercent:
+                case EffectsEnum.Effect_2813:
                     return PlayerFields.SpellDamageDonePercent;
-                case EffectsEnum.Effect_SubPushDamageReduction:
+                case EffectsEnum.Effect_417:
                     return PlayerFields.PushDamageReduction;
-                case EffectsEnum.Effect_SubPushDamageBonus:
+                case EffectsEnum.Effect_415:
                     return PlayerFields.PushDamageBonus;
                 default:
                     throw new Exception(string.Format("'{0}' has no binded caracteristic", effect));

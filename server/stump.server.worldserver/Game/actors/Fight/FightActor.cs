@@ -167,7 +167,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         protected virtual void OnSpellCasted(SpellCastHandler castHandler)
         {
-            if (castHandler.SpellLevel.Effects.All(effect => effect.EffectId != EffectsEnum.Effect_Invisibility) && VisibleState == VisibleStateEnum.INVISIBLE)
+            if (castHandler.SpellLevel.Effects.All(effect => effect.EffectId != EffectsEnum.Effect_150) && VisibleState == VisibleStateEnum.INVISIBLE)
             {
                 if (!IsInvisibleSpellCast(castHandler.Spell) && !IsInvisibleSpellDofusCast(castHandler.Spell))
                 {
@@ -814,6 +814,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public bool CastSpell(Spell spell, Cell cell)
         {
+            Console.WriteLine("[DEBUG] Spell Id: " + spell.Template.Id);
             return CastSpell(new SpellCastInformations(this, spell, cell));
         }
         private double _bonusCoeffPortals;
@@ -823,6 +824,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 return false;
 
             var spellLevel = cast.SpellLevel;
+            Console.WriteLine("[DEBUG] Spell Effects Json: " + spellLevel.EffectsJson);
 
             if (CanCastSpell(cast) != SpellCastResult.OK)
             {
@@ -2107,8 +2109,8 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             if (!(this is CharacterFighter))
                 return true;
 
-            return spellLevel.Effects.Any(entry => entry.EffectId == EffectsEnum.Effect_Trap) || // traps
-                spellLevel.Effects.Any(entry => entry.EffectId == EffectsEnum.Effect_Summon) || // summons
+            return spellLevel.Effects.Any(entry => entry.EffectId == EffectsEnum.Effect_400) || // traps
+                spellLevel.Effects.Any(entry => entry.EffectId == EffectsEnum.Effect_181) || // summons
                 spell.Template.Id == (int)SpellIdEnum.DOUBLE_74 || // double
                 spell.Template.Id == (int)SpellIdEnum.CHAKRA_IMPULSE || // chakra pulsion
                 spell.Template.Id == (int)SpellIdEnum.CHAKRA_CONCENTRATION_62 || // chakra concentration
@@ -2220,13 +2222,13 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             var actorBuffId = PopNextBuffId();
             var targetBuffId = target.PopNextBuffId();
 
-            var addStateHandler = new AddState(new EffectDice((short)EffectsEnum.Effect_AddState, (short)stateCarrying.Id, 0, 0, new EffectBase()), this, castHandler, Cell, false);
+            var addStateHandler = new AddState(new EffectDice((short)EffectsEnum.Effect_950, (short)stateCarrying.Id, 0, 0, new EffectBase()), this, castHandler, Cell, false);
             var actorBuff = new StateBuff(actorBuffId, this, this, addStateHandler, spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, stateCarrying)
             {
                 Duration = -1000
             };
 
-            addStateHandler = new AddState(new EffectDice((short)EffectsEnum.Effect_AddState, (short)stateCarrying.Id, 0, 0, new EffectBase()), target, castHandler, target.Cell, false);
+            addStateHandler = new AddState(new EffectDice((short)EffectsEnum.Effect_950, (short)stateCarrying.Id, 0, 0, new EffectBase()), target, castHandler, target.Cell, false);
             var targetBuff = new StateBuff(targetBuffId, target, this, addStateHandler, spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, stateCarried)
             {
                 Duration = -1000

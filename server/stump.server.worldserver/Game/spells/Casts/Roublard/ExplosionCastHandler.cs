@@ -28,7 +28,7 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Roublard
                 }
 
                 // FIX SUB AP/MP
-                foreach(var handler in Handlers.Where(x => x.Effect.EffectId == EffectsEnum.Effect_SubMP_Roll || x.Effect.EffectId == EffectsEnum.Effect_SubAP_Roll))
+                foreach(var handler in Handlers.Where(x => x.Effect.EffectId == EffectsEnum.Effect_1080 || x.Effect.EffectId == EffectsEnum.Effect_1079))
                 {
                     handler.Efficiency = 1;
                 }

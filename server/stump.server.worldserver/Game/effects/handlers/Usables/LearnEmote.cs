@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Items.Player;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_LearnEmote)]
+    [EffectHandler(EffectsEnum.Effect_10)]
     public class LearnEmote : UsableEffectHandler
     {
         public LearnEmote(EffectBase effect, Character target, BasePlayerItem item)

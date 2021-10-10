@@ -4,16 +4,17 @@ using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
 {
-    [EffectHandler(EffectsEnum.Effect_StealChance)]
-    [EffectHandler(EffectsEnum.Effect_StealVitality)]
-    [EffectHandler(EffectsEnum.Effect_StealWisdom)]
-    [EffectHandler(EffectsEnum.Effect_StealIntelligence)]
-    [EffectHandler(EffectsEnum.Effect_StealAgility)]
-    [EffectHandler(EffectsEnum.Effect_StealStrength)]
-    [EffectHandler(EffectsEnum.Effect_StealRange)]
+    [EffectHandler(EffectsEnum.Effect_266)]
+    [EffectHandler(EffectsEnum.Effect_267)]
+    [EffectHandler(EffectsEnum.Effect_270)]
+    [EffectHandler(EffectsEnum.Effect_269)]
+    [EffectHandler(EffectsEnum.Effect_268)]
+    [EffectHandler(EffectsEnum.Effect_271)]
+    [EffectHandler(EffectsEnum.Effect_320)]
     public class StatsSteal : SpellEffectHandler
     {
         public StatsSteal(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -43,19 +44,19 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_StealChance:
+                case EffectsEnum.Effect_266:
                     return PlayerFields.Chance;
-                case EffectsEnum.Effect_StealVitality:
+                case EffectsEnum.Effect_267:
                     return PlayerFields.Vitality;
-                case EffectsEnum.Effect_StealWisdom:
+                case EffectsEnum.Effect_270:
                     return PlayerFields.Wisdom;
-                case EffectsEnum.Effect_StealIntelligence:
+                case EffectsEnum.Effect_269:
                     return PlayerFields.Intelligence;
-                case EffectsEnum.Effect_StealAgility:
+                case EffectsEnum.Effect_268:
                     return PlayerFields.Agility;
-                case EffectsEnum.Effect_StealStrength:
+                case EffectsEnum.Effect_271:
                     return PlayerFields.Strength;
-                case EffectsEnum.Effect_StealRange:
+                case EffectsEnum.Effect_320:
                     return PlayerFields.Range;
                 default:
                     throw new Exception("No associated caracteristic to effect '" + effect + "'");
@@ -66,20 +67,20 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Steals
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_StealChance:
-                    return new[] { EffectsEnum.Effect_AddChance, EffectsEnum.Effect_SubChance };
-                case EffectsEnum.Effect_StealVitality:
-                    return new[] { EffectsEnum.Effect_AddVitality, EffectsEnum.Effect_SubVitality };
-                case EffectsEnum.Effect_StealWisdom:
-                    return new[] { EffectsEnum.Effect_AddWisdom, EffectsEnum.Effect_SubWisdom };
-                case EffectsEnum.Effect_StealIntelligence:
-                    return new[] { EffectsEnum.Effect_AddIntelligence, EffectsEnum.Effect_SubIntelligence };
-                case EffectsEnum.Effect_StealAgility:
-                    return new[] { EffectsEnum.Effect_AddAgility, EffectsEnum.Effect_SubAgility };
-                case EffectsEnum.Effect_StealStrength:
-                    return new[] { EffectsEnum.Effect_AddStrength, EffectsEnum.Effect_SubStrength };
-                case EffectsEnum.Effect_StealRange:
-                    return new[] { EffectsEnum.Effect_AddRange, EffectsEnum.Effect_SubRange };
+                case EffectsEnum.Effect_266:
+                    return new[] { EffectsEnum.Effect_123, EffectsEnum.Effect_152 };
+                case EffectsEnum.Effect_267:
+                    return new[] { EffectsEnum.Effect_125, EffectsEnum.Effect_153 };
+                case EffectsEnum.Effect_270:
+                    return new[] { EffectsEnum.Effect_124, EffectsEnum.Effect_156 };
+                case EffectsEnum.Effect_269:
+                    return new[] { EffectsEnum.Effect_126, EffectsEnum.Effect_155 };
+                case EffectsEnum.Effect_268:
+                    return new[] { EffectsEnum.Effect_119, EffectsEnum.Effect_154 };
+                case EffectsEnum.Effect_271:
+                    return new[] { EffectsEnum.Effect_118, EffectsEnum.Effect_157 };
+                case EffectsEnum.Effect_320:
+                    return new[] { EffectsEnum.Effect_117, EffectsEnum.Effect_166 };
                 default:
                     throw new Exception("No associated caracteristic to effect '" + effect + "'");
             }

@@ -444,6 +444,11 @@ namespace Stump.Server.WorldServer.Game.Effects
             return buffer.ToArray();
         }
 
+        public String SerializeEffectsToJson(IEnumerable<EffectInstance> effects)
+        {
+            return JsonConvert.SerializeObject(effects.ToArray());
+        }
+
 
         public List<EffectBase> DeserializeEffectsFromJson(String jsonArray)
         {
@@ -575,35 +580,35 @@ namespace Stump.Server.WorldServer.Game.Effects
 
         readonly EffectsEnum[] m_unRandomablesEffects =
             {
-                    EffectsEnum.Effect_DamageWater,
-                    EffectsEnum.Effect_DamageEarth,
-                    EffectsEnum.Effect_DamageAir,
-                    EffectsEnum.Effect_DamageFire,
-                    EffectsEnum.Effect_DamageNeutral,
+                    EffectsEnum.Effect_96,
+                    EffectsEnum.Effect_97,
+                    EffectsEnum.Effect_98,
+                    EffectsEnum.Effect_99,
+                    EffectsEnum.Effect_100,
 
-                    EffectsEnum.Effect_StealHPWater,
-                    EffectsEnum.Effect_StealHPEarth,
-                    EffectsEnum.Effect_StealHPAir,
-                    EffectsEnum.Effect_StealHPFire,
-                    EffectsEnum.Effect_StealHPNeutral,
+                    EffectsEnum.Effect_91,
+                    EffectsEnum.Effect_92,
+                    EffectsEnum.Effect_93,
+                    EffectsEnum.Effect_94,
+                    EffectsEnum.Effect_95,
 
-                    EffectsEnum.Effect_LostAP,
+                    EffectsEnum.Effect_101,
 
-                    EffectsEnum.Effect_RemainingFights,
+                    EffectsEnum.Effect_811,
 
-                    EffectsEnum.Effect_HealHP_108,
+                    EffectsEnum.Effect_108,
 
-                    EffectsEnum.Effect_SoulStone,
-                    EffectsEnum.Effect_SoulStoneSummon,
+                    EffectsEnum.Effect_705,
+                    EffectsEnum.Effect_623,
 
-                    EffectsEnum.Effect_CastSpell_1175,
+                    EffectsEnum.Effect_1175,
 
-                    EffectsEnum.Effect_Exchangeable,
+                    EffectsEnum.Effect_983,
 
-                    EffectsEnum.Effect_LastMeal,
-                    EffectsEnum.Effect_LastMealDate,
+                    EffectsEnum.Effect_807,
+                    EffectsEnum.Effect_808,
 
-                    EffectsEnum.Effect_Corpulence,
+                    EffectsEnum.Effect_806,
 
 
                     EffectsEnum.Effect_999,

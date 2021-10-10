@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Armor
 {
-    [EffectHandler(EffectsEnum.Effect_AddShieldPercent)]
+    [EffectHandler(EffectsEnum.Effect_1039)]
     public class GiveShieldPercent : SpellEffectHandler
     {
         public GiveShieldPercent(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -37,11 +37,11 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Armor
                                                    entry.Dice.Id == 1039).ToList();
 
                         if (buff.Count() == 0)
-                            AddStatBuff(actor, shieldAmount, PlayerFields.Shield, (short)EffectsEnum.Effect_AddShield);
+                            AddStatBuff(actor, shieldAmount, PlayerFields.Shield, (short)EffectsEnum.Effect_1040);
                     }
 
                     else
-                        AddStatBuff(actor, shieldAmount, PlayerFields.Shield, (short)EffectsEnum.Effect_AddShield);
+                        AddStatBuff(actor, shieldAmount, PlayerFields.Shield, (short)EffectsEnum.Effect_1040);
 
                 }
                 else

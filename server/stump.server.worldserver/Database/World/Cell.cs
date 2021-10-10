@@ -28,6 +28,17 @@ namespace Stump.Server.WorldServer.Database.World
             this.versionMap = versionMap;
         }
 
+        public Cell(short floor, short id, byte losMov, byte mapChangeData, uint moveZone, byte speed, int versionMap)
+        {
+            Floor = floor;
+            Id = id;
+            LosMov = losMov;
+            MapChangeData = mapChangeData;
+            MoveZone = moveZone;
+            Speed = speed;
+            this.versionMap = versionMap;
+        }
+
         public bool Walkable => versionMap >= 9 ? (LosMov & 1) == 0 : (LosMov & 1) == 1;
 
         public bool LineOfSight => versionMap >= 9 ? (LosMov & 8) == 0 : (LosMov & 2) >> 1 == 1;

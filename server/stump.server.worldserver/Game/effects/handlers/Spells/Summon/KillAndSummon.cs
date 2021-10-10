@@ -10,8 +10,8 @@ using Stump.Server.WorldServer.Handlers.Actions;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
 {
-    [EffectHandler(EffectsEnum.Effect_KillAndSummon)]
-    [EffectHandler(EffectsEnum.Effect_KillAndSummon_2796)]
+    [EffectHandler(EffectsEnum.Effect_405)]
+    [EffectHandler(EffectsEnum.Effect_2796)]
     public class KillAndSummon : SpellEffectHandler
     {
         public KillAndSummon(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -34,7 +34,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
                 ActionsHandler.SendGameActionFightSummonMessage(Fight.Clients, summon);
                 Caster.AddSummon(summon);
 
-                if (Effect.EffectId == EffectsEnum.Effect_KillAndSummon_2796 && Caster is CharacterFighter)
+                if (Effect.EffectId == EffectsEnum.Effect_2796 && Caster is CharacterFighter)
                     summon.SetController(Caster as CharacterFighter);
 
                 Caster.Team.AddFighter(summon);

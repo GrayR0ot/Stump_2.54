@@ -9,7 +9,7 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_FixedNeutralDamage)]
+    [EffectHandler(EffectsEnum.Effect_144)]
     public class FixedNeutralDamage : SpellEffectHandler
     {
         public FixedNeutralDamage(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

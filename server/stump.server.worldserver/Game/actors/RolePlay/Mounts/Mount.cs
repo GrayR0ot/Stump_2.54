@@ -516,7 +516,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Mounts
                 ReproductionCount = ReproductionCount,
                 ReproductionCountMax = (uint)ReproductionCountMax,
                 EffectList = Effects.Select(x => x.GetObjectEffect() as ObjectEffectInteger).
-                Concat(Harness != null ? new[] { new EffectInteger(EffectsEnum.Effect_HarnessGID, (short)Harness.Template.Id).GetObjectEffect() as ObjectEffectInteger } : new ObjectEffectInteger[0]).ToArray(),
+                Concat(Harness != null ? new[] { new EffectInteger(EffectsEnum.Effect_1187, (short)Harness.Template.Id).GetObjectEffect() as ObjectEffectInteger } : new ObjectEffectInteger[0]).ToArray(),
                 HarnessGID = (ushort)(Harness?.Template.Id ?? 0),
                 UseHarnessColors = UseHarnessColors,
             };

@@ -7,7 +7,7 @@ using System;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_TransmitCharacteristic)]
+    [EffectHandler(EffectsEnum.Effect_2028)]
     public class TransmitCharacteristic : SpellEffectHandler
     {
         public TransmitCharacteristic(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

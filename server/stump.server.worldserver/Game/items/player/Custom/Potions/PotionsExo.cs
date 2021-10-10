@@ -41,18 +41,18 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 Owner.Client.Send(new ExchangeCraftInformationObjectMessage((sbyte)2, (ushort)dropOnItem.Template.Id, (ulong)Owner.Id));
                 switch (potionEffect.EffectId)
                 {
-                    case EffectsEnum.Effect_AddAP_111:
+                    case EffectsEnum.Effect_111:
                         dropOnItem.Record.IsExoPa = true; break;
 
-                    case EffectsEnum.Effect_AddMP_128:
-                    case EffectsEnum.Effect_AddMP:
+                    case EffectsEnum.Effect_128:
+                    case EffectsEnum.Effect_78:
                         dropOnItem.Record.IsExoPm = true; break;
 
-                    case EffectsEnum.Effect_AddRange:
-                    case EffectsEnum.Effect_AddRange_136:
+                    case EffectsEnum.Effect_117:
+                    case EffectsEnum.Effect_136:
                         dropOnItem.Record.IsExoPo = true; break;
 
-                    case EffectsEnum.Effect_AddSummonLimit:
+                    case EffectsEnum.Effect_182:
                         dropOnItem.Record.IsExoInvoc = true; break;
                 }
                 dropOnItem.Record.IsExo = true;

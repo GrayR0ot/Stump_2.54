@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
 {
-    [EffectHandler(EffectsEnum.Effect_Rune)]
+    [EffectHandler(EffectsEnum.Effect_2022)]
     public class RuneSpawn : SpellEffectHandler
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();

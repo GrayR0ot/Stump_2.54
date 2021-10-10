@@ -8,8 +8,8 @@ using Stump.Server.WorldServer.Game.Fights.Buffs;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_SwitchPosition)]
-    [EffectHandler(EffectsEnum.Effect_SwitchPosition_1023)]
+    [EffectHandler(EffectsEnum.Effect_8)]
+    [EffectHandler(EffectsEnum.Effect_1023)]
     public class SwitchPosition : SpellEffectHandler
     {
         public SwitchPosition(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

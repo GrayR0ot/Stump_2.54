@@ -144,7 +144,7 @@ namespace Stump.Server.WorldServer.Game.Items
                 Effects = effects,
                 IsNew = true,
             };
-            var effect = effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Exchangeable || x.EffectId == EffectsEnum.Effect_NonExchangeable_982 || x.EffectId == EffectsEnum.Effect_NonExchangeable_981);
+            var effect = effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_983 || x.EffectId == EffectsEnum.Effect_982 || x.EffectId == EffectsEnum.Effect_981);
             if (effect != null)
             {
                 effects.Remove(effect);
@@ -159,7 +159,7 @@ namespace Stump.Server.WorldServer.Game.Items
 
         public BasePlayerItem LoadPlayerItem(Character owner, PlayerItemRecord record)
         {
-            var effect = record.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Exchangeable || x.EffectId == EffectsEnum.Effect_NonExchangeable_982 || x.EffectId == EffectsEnum.Effect_NonExchangeable_981);
+            var effect = record.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_983 || x.EffectId == EffectsEnum.Effect_982 || x.EffectId == EffectsEnum.Effect_981);
             if (effect != null)
             {
                 record.Effects.Remove(effect);

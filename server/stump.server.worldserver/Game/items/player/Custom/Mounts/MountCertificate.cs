@@ -65,9 +65,9 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                     return;
 
                 m_mountEffect = Effects.OfType<EffectMount>().FirstOrDefault();
-                m_nameEffect = Effects.OfType<EffectString>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Name);
-                m_belongsToEffect = Effects.OfType<EffectString>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_BelongsTo);
-                m_validityEffect = Effects.OfType<EffectDuration>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Validity);
+                m_nameEffect = Effects.OfType<EffectString>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_997);
+                m_belongsToEffect = Effects.OfType<EffectString>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_987);
+                m_validityEffect = Effects.OfType<EffectDuration>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_998);
 
                 if (m_mountEffect == null)
                 {
@@ -97,12 +97,12 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             if (Effects.Count > 0)
                 Effects.Clear();
 
-            Effects.Add(m_mountEffect = new EffectMount(EffectsEnum.Effect_ViewMountCharacteristics, mount.Id,
+            Effects.Add(m_mountEffect = new EffectMount(EffectsEnum.Effect_995, mount.Id,
                 DateTimeOffset.Now.AddDays(MountManager.MountStorageValidityDays).ToUnixTimeMilliseconds(), (uint)mount.Template.Id, mount.Name, mount.Owner.Name, mount.Level,
                 mount.Sex, true, false, false, mount.ReproductionCount, (uint)mount.ReproductionCountMax,
                 mount.Effects.ToList(), new List<uint>() { }));
             if (mount.Owner != null)
-                Effects.Add(m_belongsToEffect = new EffectString(EffectsEnum.Effect_BelongsTo, mount.Owner.Name));
+                Effects.Add(m_belongsToEffect = new EffectString(EffectsEnum.Effect_987, mount.Owner.Name));
 
             Mount = mount;
             mount.StoredSince = DateTime.Now;

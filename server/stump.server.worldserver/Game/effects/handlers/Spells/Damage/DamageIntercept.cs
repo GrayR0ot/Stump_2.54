@@ -8,7 +8,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamageIntercept)]
+    [EffectHandler(EffectsEnum.Effect_765)]
     public class DamageIntercept : SpellEffectHandler
     {
         public DamageIntercept(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 
         }
 
-        public override bool CanApply() => !GetAffectedActors().Any(x => x.GetBuffs(y => y.Effect.EffectId == EffectsEnum.Effect_DamageIntercept).Any());
+        public override bool CanApply() => !GetAffectedActors().Any(x => x.GetBuffs(y => y.Effect.EffectId == EffectsEnum.Effect_765).Any());
 
         protected override bool InternalApply()
         {

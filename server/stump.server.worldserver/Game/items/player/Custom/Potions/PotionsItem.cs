@@ -235,9 +235,9 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 return 0;
             }
 
-            var effectDamage = equipedWeapon.Effects.Find(x => x.EffectId == EffectsEnum.Effect_DamageNeutral);
+            var effectDamage = equipedWeapon.Effects.Find(x => x.EffectId == EffectsEnum.Effect_100);
 
-            if (!equipedWeapon.Effects.Exists(x => x.EffectId == EffectsEnum.Effect_DamageNeutral))
+            if (!equipedWeapon.Effects.Exists(x => x.EffectId == EffectsEnum.Effect_100))
             {
                 Owner.SendServerMessage("Votre arme n'a pas les conditions requises pour cette action.", System.Drawing.Color.DarkOrange);
                 return 0;

@@ -306,8 +306,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
             SendCharacterLoadingCompleteMessage(client);
 
             BasicHandler.SendServerExperienceModificatorMessage(client);
-
-            if (client.Character.PrestigeRank > 0) client.Character.CreatePrestigeItem();
+            
             // Update LastConnection and Last Ip
             client.WorldAccount.LastConnection = DateTime.Now;
             client.WorldAccount.LastIp = client.IP;

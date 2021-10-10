@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_Attract)]
+    [EffectHandler(EffectsEnum.Effect_1043)]
     public class Attract : Push
     {
         public Attract(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

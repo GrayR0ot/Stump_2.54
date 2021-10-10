@@ -1,0 +1,33 @@
+[
+    {
+    "diceNum": 210,
+    "diceSide": 0,
+    "value": 0,
+    "effectUid": 0,
+    "effectId": 110,
+    "order": 0,
+    "targetId": 0,
+    "targetMask": "",
+    "duration": 0,
+    "delay": 0,
+    "random": 0,
+    "group": 0,
+    "modificator": 0,
+    "trigger": false,
+    "triggers": "",
+    "visibleInTooltip": true,
+    "visibleInBuffUi": true,
+    "visibleInFightLog": true,
+    "forClientOnly": false,
+    "dispellable": 1,
+    "zoneSize": 0,
+    "zoneShape": 0,
+    "zoneMinSize": 0,
+    "zoneEfficiencyPercent": 0,
+    "zoneMaxEfficiency": 0,
+    "zoneStopAtTarget": 0,
+    "effectElement": -1,
+    "spellId": -1,
+    "rawZone": "C"
+}
+]

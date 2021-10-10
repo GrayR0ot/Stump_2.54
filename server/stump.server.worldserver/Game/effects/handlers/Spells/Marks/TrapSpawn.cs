@@ -11,7 +11,7 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
 {
-    [EffectHandler(EffectsEnum.Effect_Trap)]
+    [EffectHandler(EffectsEnum.Effect_400)]
     public class TrapSpawn : SpellEffectHandler
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();

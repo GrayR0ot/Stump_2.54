@@ -4,14 +4,15 @@ using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Spells;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamageAirPerHPLost)]
-    [EffectHandler(EffectsEnum.Effect_DamageEarthPerHPLost)]
-    [EffectHandler(EffectsEnum.Effect_DamageFirePerHPLost)]
-    [EffectHandler(EffectsEnum.Effect_DamageWaterPerHPLost)]
-    [EffectHandler(EffectsEnum.Effect_DamageNeutralPerHPLost)]
+    [EffectHandler(EffectsEnum.Effect_277)]
+    [EffectHandler(EffectsEnum.Effect_276)]
+    [EffectHandler(EffectsEnum.Effect_278)]
+    [EffectHandler(EffectsEnum.Effect_275)]
+    [EffectHandler(EffectsEnum.Effect_279)]
     public class DamagePerHPLost : SpellEffectHandler
     {
         public DamagePerHPLost(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -47,15 +48,15 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_DamageWaterPerHPLost:
+                case EffectsEnum.Effect_275:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_DamageEarthPerHPLost:
+                case EffectsEnum.Effect_276:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_DamageAirPerHPLost:
+                case EffectsEnum.Effect_277:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_DamageFirePerHPLost:
+                case EffectsEnum.Effect_278:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_DamageNeutralPerHPLost:
+                case EffectsEnum.Effect_279:
                     return EffectSchoolEnum.Neutral;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

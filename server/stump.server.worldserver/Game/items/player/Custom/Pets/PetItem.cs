@@ -41,10 +41,10 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
         private void InitializeEffects()
         {
             // new item
-            if (Effects.OfType<EffectInteger>().All(x => x.EffectId != EffectsEnum.Effect_PetLevel))
+            if (Effects.OfType<EffectInteger>().All(x => x.EffectId != EffectsEnum.Effect_2821))
             {
-                Effects.Add(new EffectDice(EffectsEnum.Effect_PetLevel, 1, 18, 0));
-                Effects.Add(new EffectDice(EffectsEnum.Effect_PetExp, 0, 0, (int)ExperienceManager.Instance.GetPetNextLevelExperience(1)));
+                Effects.Add(new EffectDice(EffectsEnum.Effect_2821, 1, 18, 0));
+                Effects.Add(new EffectDice(EffectsEnum.Effect_2819, 0, 0, (int)ExperienceManager.Instance.GetPetNextLevelExperience(1)));
                 ChangeEffectsSquallingOnLevel(0);
             }
         }
@@ -61,20 +61,20 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
 
         public int Experience
         {
-            get { return ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_PetExp).FirstOrDefault()) as EffectDice).Value; }
-            set { ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_PetExp).FirstOrDefault()) as EffectDice).Value = value; }
+            get { return ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_2819).FirstOrDefault()) as EffectDice).Value; }
+            set { ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_2819).FirstOrDefault()) as EffectDice).Value = value; }
         }
 
         public int MaxExperience
         {
-            get { return ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_PetExp).FirstOrDefault()) as EffectDice).DiceFace; }
-            set { ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_PetExp).FirstOrDefault()) as EffectDice).DiceFace = value; }
+            get { return ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_2819).FirstOrDefault()) as EffectDice).DiceFace; }
+            set { ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_2819).FirstOrDefault()) as EffectDice).DiceFace = value; }
         }
 
         public int Level
         {
-            get { return ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_PetLevel).FirstOrDefault()) as EffectDice).Value; }
-            set { ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_PetLevel).FirstOrDefault()) as EffectDice).Value = value; }
+            get { return ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_2821).FirstOrDefault()) as EffectDice).Value; }
+            set { ((Effects.Where(x => x.EffectId == EffectsEnum.Effect_2821).FirstOrDefault()) as EffectDice).Value = value; }
         }
 
         public override bool OnRemoveItem()
@@ -108,23 +108,23 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 switch (rnd)
                 {
                     case 1:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12485, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12485, 1));
                         break;
 
                     case 2:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12483, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12483, 1));
                         break;
 
                     case 3:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12486, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12486, 1));
                         break;
 
                     case 4:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12482, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12482, 1));
                         break;
 
                     case 5:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12484, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12484, 1));
                         break;
                 }
             }
@@ -134,31 +134,31 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 switch (rnd2)
                 {
                     case 1:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12488, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12488, 1));
                         break;
 
                     case 2:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12492, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12492, 1));
                         break;
 
                     case 3:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12487, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12487, 1));
                         break;
 
                     case 4:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12497, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12497, 1));
                         break;
 
                     case 5:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12490, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12490, 1));
                         break;
 
                     case 6:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12489, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12489, 1));
                         break;
 
                     case 7:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12498, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12498, 1));
                         break;
                 }
             }
@@ -168,23 +168,23 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 switch (rnd3)
                 {
                     case 1:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12475, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12475, 1));
                         break;
 
                     case 2:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12480, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12480, 1));
                         break;
 
                     case 3:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12481, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12481, 1));
                         break;
 
                     case 4:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12479, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12479, 1));
                         break;
 
                     case 5:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12477, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12477, 1));
                         break;
                 }
             }
@@ -194,27 +194,27 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 switch (rnd3)
                 {
                     case 1:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12505, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12505, 1));
                         break;
 
                     case 2:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12501, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12501, 1));
                         break;
 
                     case 3:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12499, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12499, 1));
                         break;
 
                     case 4:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12503, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12503, 1));
                         break;
 
                     case 5:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12500, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12500, 1));
                         break;
 
                     case 6:
-                        Effects.Add(new EffectDice(EffectsEnum.Effect_CastSpell_1175, 0, 12506, 1));
+                        Effects.Add(new EffectDice(EffectsEnum.Effect_1175, 0, 12506, 1));
                         break;
                 }
             }
@@ -233,7 +233,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
                 return false;
 
             var xpToAdd = 0;
-            var exp = food.Effects.Where(x => x.EffectId == EffectsEnum.Effect_Exp).FirstOrDefault();
+            var exp = food.Effects.Where(x => x.EffectId == EffectsEnum.Effect_2820).FirstOrDefault();
 
             if (exp != null)
             {
@@ -241,7 +241,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             }
             else if(food.Template.Id == 20968 && Level > 100)
             {
-                Effects.Add(new EffectInteger(EffectsEnum.Effect_LegendaryState, 1));
+                Effects.Add(new EffectInteger(EffectsEnum.Effect_2862, 1));
             }
             else if(food.Template.Id == 20974 || food.Template.Id == 20975 || food.Template.Id == 20973 || food.Template.Id == 20976)
             {
@@ -271,7 +271,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
 
         private List<EffectBase> EffectsMax()
         {
-            var effects = Template.Effects.Where(x => x.EffectId != EffectsEnum.Effect_PetLevel && x.EffectId != EffectsEnum.Effect_PetExp).ToList();
+            var effects = Template.Effects.Where(x => x.EffectId != EffectsEnum.Effect_2821 && x.EffectId != EffectsEnum.Effect_2819).ToList();
             return effects;
         }
 

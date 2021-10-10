@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Items.Player;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_LearnSmileyPack)]
+    [EffectHandler(EffectsEnum.Effect_2797)]
     public class LearnSmileyPack : UsableEffectHandler
     {
         public LearnSmileyPack(EffectBase effect, Character target, BasePlayerItem item)

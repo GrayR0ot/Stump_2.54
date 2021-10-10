@@ -73,7 +73,7 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Ocra
             if (buff != null)
                 target.RemoveBuff(buff);
 
-            var effect = new EffectDice(EffectsEnum.Effect_DamageFire, 12, 12, 12);
+            var effect = new EffectDice(EffectsEnum.Effect_99, 12, 12, 12);
             var actorBuffId = Caster.PopNextBuffId();
             var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
 
@@ -102,7 +102,7 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Ocra
             if (buff != null)
                 target.RemoveBuff(buff);
 
-            var effect = new EffectDice(EffectsEnum.Effect_DamageAir, 12, 12, 12);
+            var effect = new EffectDice(EffectsEnum.Effect_98, 12, 12, 12);
             var actorBuffId = Caster.PopNextBuffId();
             var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
 

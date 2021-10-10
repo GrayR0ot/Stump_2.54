@@ -25,7 +25,7 @@ namespace Stump.Server.WorldServer.Handlers.Actions
         public static void SendGameActionFightVanishMessage(IPacketReceiver client, FightActor source,
             FightActor target)
         {
-            client.Send(new GameActionFightVanishMessage((ushort) EffectsEnum.Effect_Vanish, source.Id, target.Id));
+            client.Send(new GameActionFightVanishMessage((ushort) EffectsEnum.Effect_1029, source.Id, target.Id));
         }
 
         public static void SendGameActionFightSummonMessage(IPacketReceiver client, SummonedFighter summon)
@@ -37,7 +37,7 @@ namespace Stump.Server.WorldServer.Handlers.Actions
 
             if (summon is SummonedClone)
                 action = summon is SummonedImage
-                    ? (short) EffectsEnum.Effect_Illusions
+                    ? (short) EffectsEnum.Effect_1097
                     : (short) ActionsEnum.ACTION_CHARACTER_ADD_DOUBLE;
 
             if (summon.IsControlled()) action = (short) ActionsEnum.ACTION_SUMMON_SLAVE;

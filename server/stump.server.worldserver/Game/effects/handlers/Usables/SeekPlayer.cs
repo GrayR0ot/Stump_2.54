@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Handlers.Compass;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_Seek)]
+    [EffectHandler(EffectsEnum.Effect_989)]
     public class SeekPlayer : UsableEffectHandler
     {
         public SeekPlayer(EffectBase effect, Character target, BasePlayerItem item)

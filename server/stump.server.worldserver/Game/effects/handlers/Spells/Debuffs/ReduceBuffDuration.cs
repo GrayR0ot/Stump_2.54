@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_ReduceEffectsDuration)]
+    [EffectHandler(EffectsEnum.Effect_1075)]
     public class ReduceBuffDuration : SpellEffectHandler
     {
         public ReduceBuffDuration(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

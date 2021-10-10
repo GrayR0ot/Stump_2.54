@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_AddComboBonus)]
+    [EffectHandler(EffectsEnum.Effect_1027)]
     public class ComboBonusBuff : SpellEffectHandler
     {
         public ComboBonusBuff(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

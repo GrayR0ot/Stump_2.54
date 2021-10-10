@@ -1,13 +1,14 @@
 using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
-using Stump.Server.WorldServer.Game.Effects.Instances;using Stump.Server.WorldServer.Game.Spells.Casts;
+using Stump.Server.WorldServer.Game.Effects.Instances;
+using Stump.Server.WorldServer.Game.Spells.Casts;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_AddMP)]
-    [EffectHandler(EffectsEnum.Effect_AddMP_128)]
+    [EffectHandler(EffectsEnum.Effect_78)]
+    [EffectHandler(EffectsEnum.Effect_128)]
     public class MPBuff : SpellEffectHandler
     {
         public MPBuff(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

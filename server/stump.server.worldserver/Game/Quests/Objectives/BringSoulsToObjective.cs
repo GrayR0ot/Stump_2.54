@@ -57,7 +57,7 @@ namespace Stump.Server.WorldServer.Game.Quests.Objectives
             if (soulStone != null)
                 foreach (var test in soulStone)
                     if (test.Effects.OfType<EffectDice>().Any(x =>
-                        x.EffectId == EffectsEnum.Effect_SoulStoneSummon && x.Value == Monster.Id))
+                        x.EffectId == EffectsEnum.Effect_623 && x.Value == Monster.Id))
                     {
                         character.Inventory.RemoveItem(test, 1);
                         CompleteObjective();
@@ -76,7 +76,7 @@ namespace Stump.Server.WorldServer.Game.Quests.Objectives
             if (soulStone != null)
                 foreach (var test in soulStone)
                     if (test.Effects.OfType<EffectDice>().Any(x =>
-                        x.EffectId == EffectsEnum.Effect_SoulStoneSummon && x.Value == Monster.Id))
+                        x.EffectId == EffectsEnum.Effect_623 && x.Value == Monster.Id))
                         return true;
             return false;
         }

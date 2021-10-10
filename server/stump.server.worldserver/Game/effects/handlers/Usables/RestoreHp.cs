@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Handlers.Basic;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_AddHealth)]
+    [EffectHandler(EffectsEnum.Effect_110)]
     public class RestoreHp : UsableEffectHandler
     {
         public RestoreHp(EffectBase effect, Character target, BasePlayerItem item)

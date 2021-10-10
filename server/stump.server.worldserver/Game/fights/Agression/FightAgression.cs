@@ -449,7 +449,7 @@ namespace Stump.Server.WorldServer.Game.Fights
 
             if (pvpSeek != null)
             {
-                if (pvpSeek.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Seek) is EffectString seekEffect)
+                if (pvpSeek.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_989) is EffectString seekEffect)
                 {
                     var target = result.Fighter.OpposedTeam.GetAllFightersWithLeavers<CharacterFighter>().FirstOrDefault(x => x.Name == seekEffect.Text);
                     if (target != null)

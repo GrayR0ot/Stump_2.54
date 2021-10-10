@@ -92,6 +92,8 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson.IO;
 using Newtonsoft.Json;
@@ -782,7 +784,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             if (IsFirstConnection)
             {
-                var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10861));
+                /*var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10861));
                 if (WorldAccount.Vip >= 1 && !this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(10861)))
 
                 {
@@ -821,7 +823,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     item3.Effects.Add(new EffectInteger(EffectsEnum.Effect_NonExchangeable_981, 1));
                     item3.Invalidate();
                     this.Inventory.RefreshItem(item);
-                }
+                }*/
 
 
                 #region Announce
@@ -4007,117 +4009,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public ArenaLeague ArenaLeague => VersusManager.Instance.GetLeague(Record.LeagueId);
 
-        #region Prestige
-
-        public bool IsPrestigeMax() => PrestigeRank == PrestigeManager.PrestigeTitles.Length;
-
-        public PrestigeItem GetPrestigeItem()
-        {
-            if (!PrestigeManager.Instance.PrestigeEnabled)
-                return null;
-
-            return Inventory.TryGetItem(PrestigeManager.BonusItem) as PrestigeItem;
-        }
-
-        public PrestigeItem CreatePrestigeItem() => (PrestigeItem) Inventory.AddItem(PrestigeManager.BonusItem);
-
-        public bool IncrementPrestige()
-        {
-            if (Level < 200 || IsPrestigeMax() && PrestigeManager.Instance.PrestigeEnabled)
-                return false;
-
-            PrestigeRank++;
-            AddTitle(PrestigeManager.Instance.GetPrestigeTitle(PrestigeRank));
-
-            switch (PrestigeRank)
-            {
-                case 3:
-                    AddOrnament(111);
-                    break;
-                case 7:
-                    AddOrnament(112);
-                    break;
-                case 10:
-                    AddOrnament(113);
-                    break;
-            }
-
-            var item = GetPrestigeItem();
-
-            if (item == null)
-                item = CreatePrestigeItem();
-            else
-            {
-                item.UpdateEffects();
-                Inventory.RefreshItem(item);
-            }
-
-            OpenPopup(
-                $"Tu es passé prestige {PrestigeRank} ! \r\nTu repasses donc niveau 1 ! \r\n Si tu veux actualiser ton level et tes sorts n'hésite pas à deco reco !");
-            foreach (var equippedItem in Inventory.ToArray())
-                if (equippedItem.Position != CharacterInventoryPositionEnum.INVENTORY_POSITION_BOOST_FOOD)
-                {
-                    Inventory.MoveItem(equippedItem, CharacterInventoryPositionEnum.INVENTORY_POSITION_NOT_EQUIPED);
-                }
-
-            var points = (Spells.CountSpentBoostPoint() + SpellsPoints) - (Level - 1);
-
-            Dismount();
-
-            Experience = 0;
-            Spells.ForgetAllSpells();
-            SpellsPoints = (ushort) (points >= 0 ? points : 0);
-            ResetStats();
-            RefreshActor();
-
-            return true;
-        }
-
-        public bool DecrementPrestige()
-        {
-            RemoveTitle(PrestigeManager.Instance.GetPrestigeTitle(PrestigeRank));
-            PrestigeRank--;
-
-            var item = GetPrestigeItem();
-
-            if (item != null)
-            {
-                if (PrestigeRank > 0)
-                {
-                    item.UpdateEffects();
-                    Inventory.RefreshItem(item);
-                }
-                else Inventory.RemoveItem(item);
-            }
-
-            OpenPopup(
-                string.Format(
-                    "Vous venez de passer au rang prestige {0}. Vous repassez niveau 1 et vous avez acquis des bonus permanents visible sur l'objet '{1}' de votre inventaire, ",
-                    PrestigeRank + 1, item.Template.Name) +
-                "les bonus s'appliquent sans équipper l'objet. Vous devez vous reconnecter pour actualiser votre niveau.");
-
-            return true;
-        }
-
-        public void ResetPrestige()
-        {
-            foreach (var title in PrestigeManager.PrestigeTitles)
-            {
-                RemoveTitle(title);
-            }
-
-            PrestigeRank = 0;
-
-            var item = GetPrestigeItem();
-
-            if (item != null)
-            {
-                Inventory.RemoveItem(item);
-            }
-        }
-
-        #endregion Prestige
-
         #region Arena
 
         public bool CanEnterArena(bool send = true)
@@ -4630,7 +4521,20 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 Map.DisableActivateStateInteractiveObjectForASpecificPlayer(this, 489541);
             }
-
+            string result;
+            using (MD5 hash = MD5.Create())
+            {
+                result = String.Join
+                (
+                    "",
+                    from ba in hash.ComputeHash
+                    (
+                        Encoding.UTF8.GetBytes(map.Cells.ToJson())
+                    ) 
+                    select ba.ToString("x2")
+                );
+            }
+            Console.WriteLine("map hash MD5: " + result);
             base.OnEnterMap(map);
         }
 

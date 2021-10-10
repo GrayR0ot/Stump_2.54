@@ -2,15 +2,16 @@
 using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
-using Stump.Server.WorldServer.Game.Effects.Instances;using Stump.Server.WorldServer.Game.Spells.Casts;
+using Stump.Server.WorldServer.Game.Effects.Instances;
+using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamageNeutralRemainingMP)]
-    [EffectHandler(EffectsEnum.Effect_DamageAirRemainingMP)]
-    [EffectHandler(EffectsEnum.Effect_DamageWaterRemainingMP)]
-    [EffectHandler(EffectsEnum.Effect_DamageFireRemainingMP)]
-    [EffectHandler(EffectsEnum.Effect_DamageEarthRemainingMP)]
+    [EffectHandler(EffectsEnum.Effect_1012)]
+    [EffectHandler(EffectsEnum.Effect_1013)]
+    [EffectHandler(EffectsEnum.Effect_1014)]
+    [EffectHandler(EffectsEnum.Effect_1015)]
+    [EffectHandler(EffectsEnum.Effect_1016)]
     public class DamagePerRemainingMP : SpellEffectHandler
     {
         public DamagePerRemainingMP(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -44,15 +45,15 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_DamageWaterRemainingMP:
+                case EffectsEnum.Effect_1014:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_DamageEarthRemainingMP:
+                case EffectsEnum.Effect_1016:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_DamageAirRemainingMP:
+                case EffectsEnum.Effect_1013:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_DamageFireRemainingMP:
+                case EffectsEnum.Effect_1015:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_DamageNeutralRemainingMP:
+                case EffectsEnum.Effect_1012:
                     return EffectSchoolEnum.Neutral;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

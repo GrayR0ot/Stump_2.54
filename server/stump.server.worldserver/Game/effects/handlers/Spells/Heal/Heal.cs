@@ -8,9 +8,9 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_HealHP_108)]
-    [EffectHandler(EffectsEnum.Effect_HealHP_143)]
-    [EffectHandler(EffectsEnum.Effect_HealHP_81)]
+    [EffectHandler(EffectsEnum.Effect_108)]
+    [EffectHandler(EffectsEnum.Effect_143)]
+    [EffectHandler(EffectsEnum.Effect_81)]
     public class Heal : SpellEffectHandler
     {
         public Heal(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

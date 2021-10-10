@@ -14,7 +14,7 @@ using System;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_ReviveAndGiveHPToLastDiedAlly)]
+    [EffectHandler(EffectsEnum.Effect_780)]
     public class ReviveAndGiveHP : SpellEffectHandler
     {
         public ReviveAndGiveHP(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -43,7 +43,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
             ReviveActor(LastDeadFighter, integerEffect.Value);
 
             if (LastDeadFighter is CharacterFighter) {
-                foreach (var effect in (LastDeadFighter as CharacterFighter).Character.Inventory.GetEquipedItems().SelectMany(x => x.Effects).Where(y => y.EffectId == EffectsEnum.Effect_CastSpell_1175))
+                foreach (var effect in (LastDeadFighter as CharacterFighter).Character.Inventory.GetEquipedItems().SelectMany(x => x.Effects).Where(y => y.EffectId == EffectsEnum.Effect_1175))
                 {
                     EffectManager.Instance.GetSpellEffectHandler((EffectDice)effect, LastDeadFighter,
                         new DefaultSpellCastHandler(new SpellCastInformations(LastDeadFighter, null, LastDeadFighter.Cell)), LastDeadFighter.Cell, false).Apply();
@@ -70,7 +70,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
                 {
                     var actorBuffId = actor.PopNextBuffId();
 
-                    var addStateHandler = new AddState(new EffectDice(EffectsEnum.Effect_AddState, (short)SpellStatesEnum.ZOMBI_74, 0, 0), actor, null, actor.Cell, false);
+                    var addStateHandler = new AddState(new EffectDice(EffectsEnum.Effect_950, (short)SpellStatesEnum.ZOMBI_74, 0, 0), actor, null, actor.Cell, false);
                     var actorBuff = new StateBuff(actorBuffId, actor, Caster, addStateHandler,
                         Spell, FightDispellableEnum.DISPELLABLE_BY_DEATH, SpellManager.Instance.GetSpellState((uint)SpellStatesEnum.ZOMBI_74))
                     {

@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Handlers.Actions;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Move
 {
-    [EffectHandler(EffectsEnum.Effect_Rewind)]
+    [EffectHandler(EffectsEnum.Effect_1099)]
     public class Rewind : SpellEffectHandler
     {
         public Rewind(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

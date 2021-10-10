@@ -3,20 +3,21 @@ using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects.Instances;
-using Stump.Server.WorldServer.Game.Fights.Buffs;using Stump.Server.WorldServer.Game.Spells.Casts;
+using Stump.Server.WorldServer.Game.Fights.Buffs;
+using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
 {
-    [EffectHandler(EffectsEnum.Effect_DamageAirPerHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageEarthPerHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageFirePerHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageWaterPerHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageNeutralPerHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageAirPerCasterHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageEarthPerCasterHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageFirePerCasterHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageWaterPerCasterHPEroded)]
-    [EffectHandler(EffectsEnum.Effect_DamageNeutralPerCasterHPEroded)]
+    [EffectHandler(EffectsEnum.Effect_1093)]
+    [EffectHandler(EffectsEnum.Effect_1096)]
+    [EffectHandler(EffectsEnum.Effect_1094)]
+    [EffectHandler(EffectsEnum.Effect_1095)]
+    [EffectHandler(EffectsEnum.Effect_1092)]
+    [EffectHandler(EffectsEnum.Effect_1119)]
+    [EffectHandler(EffectsEnum.Effect_1122)]
+    [EffectHandler(EffectsEnum.Effect_1120)]
+    [EffectHandler(EffectsEnum.Effect_1121)]
+    [EffectHandler(EffectsEnum.Effect_1118)]
     public class DamagePerHPEroded : SpellEffectHandler
     {
         public DamagePerHPEroded(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -45,11 +46,11 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
                         Amount = (int)Math.Floor((actor.Stats.Health.PermanentDamages * Dice.DiceNum) / 100d)
                     };
 
-                    if (Effect.EffectId == EffectsEnum.Effect_DamageNeutralPerCasterHPEroded ||
-                        Effect.EffectId == EffectsEnum.Effect_DamageEarthPerCasterHPEroded ||
-                        Effect.EffectId == EffectsEnum.Effect_DamageFirePerCasterHPEroded ||
-                        Effect.EffectId == EffectsEnum.Effect_DamageWaterPerCasterHPEroded ||
-                        Effect.EffectId == EffectsEnum.Effect_DamageAirPerCasterHPEroded)
+                    if (Effect.EffectId == EffectsEnum.Effect_1118 ||
+                        Effect.EffectId == EffectsEnum.Effect_1122 ||
+                        Effect.EffectId == EffectsEnum.Effect_1120 ||
+                        Effect.EffectId == EffectsEnum.Effect_1121 ||
+                        Effect.EffectId == EffectsEnum.Effect_1119)
                     {
                         damages.Amount = (int)Math.Floor((Caster.Stats.Health.PermanentDamages * Dice.DiceNum) / 100d);
                     }
@@ -75,11 +76,11 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
                 Amount = (int)Math.Floor((buff.Target.Stats.Health.PermanentDamages * Dice.DiceNum) / 100d)
             };
 
-            if (Effect.EffectId == EffectsEnum.Effect_DamageNeutralPerCasterHPEroded ||
-                Effect.EffectId == EffectsEnum.Effect_DamageEarthPerCasterHPEroded ||
-                Effect.EffectId == EffectsEnum.Effect_DamageFirePerCasterHPEroded ||
-                Effect.EffectId == EffectsEnum.Effect_DamageWaterPerCasterHPEroded ||
-                Effect.EffectId == EffectsEnum.Effect_DamageAirPerCasterHPEroded)
+            if (Effect.EffectId == EffectsEnum.Effect_1118 ||
+                Effect.EffectId == EffectsEnum.Effect_1122 ||
+                Effect.EffectId == EffectsEnum.Effect_1120 ||
+                Effect.EffectId == EffectsEnum.Effect_1121 ||
+                Effect.EffectId == EffectsEnum.Effect_1119)
             {
                 damages.Amount = (int)Math.Floor((buff.Caster.Stats.Health.PermanentDamages * Dice.DiceNum) / 100d);
             }
@@ -91,20 +92,20 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage
         {
             switch (effect)
             {
-                case EffectsEnum.Effect_DamageWaterPerHPEroded:
-                case EffectsEnum.Effect_DamageWaterPerCasterHPEroded:
+                case EffectsEnum.Effect_1095:
+                case EffectsEnum.Effect_1121:
                     return EffectSchoolEnum.Water;
-                case EffectsEnum.Effect_DamageEarthPerHPEroded:
-                case EffectsEnum.Effect_DamageEarthPerCasterHPEroded:
+                case EffectsEnum.Effect_1096:
+                case EffectsEnum.Effect_1122:
                     return EffectSchoolEnum.Earth;
-                case EffectsEnum.Effect_DamageAirPerHPEroded:
-                case EffectsEnum.Effect_DamageAirPerCasterHPEroded:
+                case EffectsEnum.Effect_1093:
+                case EffectsEnum.Effect_1119:
                     return EffectSchoolEnum.Air;
-                case EffectsEnum.Effect_DamageFirePerHPEroded:
-                case EffectsEnum.Effect_DamageFirePerCasterHPEroded:
+                case EffectsEnum.Effect_1094:
+                case EffectsEnum.Effect_1120:
                     return EffectSchoolEnum.Fire;
-                case EffectsEnum.Effect_DamageNeutralPerHPEroded:
-                case EffectsEnum.Effect_DamageNeutralPerCasterHPEroded:
+                case EffectsEnum.Effect_1092:
+                case EffectsEnum.Effect_1118:
                     return EffectSchoolEnum.Neutral;
                 default:
                     throw new Exception(string.Format("Effect {0} has not associated School Type", effect));

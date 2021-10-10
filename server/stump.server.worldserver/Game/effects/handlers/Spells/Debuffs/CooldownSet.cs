@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Game.Fights.Buffs;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_CooldownSet)]
+    [EffectHandler(EffectsEnum.Effect_1045)]
     public class CooldownSet : SpellEffectHandler
     {
         public CooldownSet(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

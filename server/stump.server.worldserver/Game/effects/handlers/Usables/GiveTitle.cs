@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Items.Player;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Items
 {
-    [EffectHandler(EffectsEnum.Effect_AddTitle)]
+    [EffectHandler(EffectsEnum.Effect_724)]
     public class GiveUsableTitle : UsableEffectHandler
     {
         public GiveUsableTitle(EffectBase effect, Character target, BasePlayerItem item)

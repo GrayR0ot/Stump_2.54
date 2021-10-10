@@ -10,7 +10,7 @@ using System;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_HealOrMultiply)]
+    [EffectHandler(EffectsEnum.Effect_79)]
     public class HealOrMultiply : SpellEffectHandler
     {
         public HealOrMultiply(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

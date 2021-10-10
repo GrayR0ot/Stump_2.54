@@ -230,7 +230,6 @@ namespace Stump.Server.WorldServer.Game.Spells
         {
             try
             {
-                Console.WriteLine("Trying to find spell #" + template.Id);
                 IEnumerable<SpellLevelTemplate> spellLevelTemplates =
                     template.SpellLevelsIds.Select(x => m_spellsLevels[x]);
                 return spellLevelTemplates;

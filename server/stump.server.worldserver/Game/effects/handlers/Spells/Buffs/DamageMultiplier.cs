@@ -8,7 +8,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs
 {
-    [EffectHandler(EffectsEnum.Effect_DamageMultiplier)]
+    [EffectHandler(EffectsEnum.Effect_1163)]
     public class DamageMultiplier : SpellEffectHandler
     {
         public DamageMultiplier(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

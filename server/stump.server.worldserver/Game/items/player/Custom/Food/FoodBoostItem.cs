@@ -52,7 +52,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
 
         private void OnFightEnded(Character character, CharacterFighter fighter)
         {
-            var effect = Effects.OfType<EffectDice>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_RemainingFights);
+            var effect = Effects.OfType<EffectDice>().FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_811);
 
             if (effect == null)
                 return;

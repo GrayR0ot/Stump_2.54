@@ -310,7 +310,7 @@ namespace SpellEffectGenerator
 
         #region Unrandomable Effects
 
-        readonly EffectsEnum[] m_unRandomablesEffects =
+        /*readonly EffectsEnum[] m_unRandomablesEffects =
             {
                     EffectsEnum.Effect_DamageWater,
                     EffectsEnum.Effect_DamageEarth,
@@ -344,7 +344,7 @@ namespace SpellEffectGenerator
 
 
                     EffectsEnum.Effect_999,
-                };
+                };*/
 
         #endregion
     }

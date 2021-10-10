@@ -382,8 +382,8 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
             }
 
             if (host.Effects.Any(x =>
-                    x.EffectId == EffectsEnum.Effect_LivingObjectId || x.EffectId == EffectsEnum.Effect_Appearance ||
-                    x.EffectId == EffectsEnum.Effect_Apparence_Wrapper)
+                    x.EffectId == EffectsEnum.Effect_970 || x.EffectId == EffectsEnum.Effect_1151 ||
+                    x.EffectId == EffectsEnum.Effect_1176)
                 || !host.Template.Type.Mimickable)
             {
                 SendMimicryObjectErrorMessage(client, MimicryErrorEnum.NO_VALID_HOST);
@@ -391,8 +391,8 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
             }
 
             if (food.Effects.Any(x =>
-                    x.EffectId == EffectsEnum.Effect_LivingObjectId || x.EffectId == EffectsEnum.Effect_Appearance ||
-                    x.EffectId == EffectsEnum.Effect_Apparence_Wrapper)
+                    x.EffectId == EffectsEnum.Effect_970 || x.EffectId == EffectsEnum.Effect_1151 ||
+                    x.EffectId == EffectsEnum.Effect_1176)
                 || !food.Template.Type.Mimickable)
             {
                 SendMimicryObjectErrorMessage(client, MimicryErrorEnum.NO_VALID_FOOD);
@@ -418,7 +418,7 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
             }
 
             var modifiedItem = ItemManager.Instance.CreatePlayerItem(character, host);
-            modifiedItem.Effects.Add(new EffectInteger(EffectsEnum.Effect_Appearance, (short) food.Template.Id));
+            modifiedItem.Effects.Add(new EffectInteger(EffectsEnum.Effect_1151, (short) food.Template.Id));
             modifiedItem.Stack = 1;
 
             if (message.Preview)
@@ -446,7 +446,7 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
 
             if (host == null) return;
 
-            host.Effects.RemoveAll(x => x.EffectId == EffectsEnum.Effect_Appearance);
+            host.Effects.RemoveAll(x => x.EffectId == EffectsEnum.Effect_1151);
             host.Invalidate();
 
             client.Character.Inventory.RefreshItem(host);
@@ -466,13 +466,13 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
             if (host == null) return;
 
             var apparenceWrapper =
-                host.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Apparence_Wrapper) as EffectInteger;
+                host.Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_1176) as EffectInteger;
 
             if (apparenceWrapper == null) return;
 
             var wrapperItemTemplate = ItemManager.Instance.TryGetTemplate(apparenceWrapper.Value);
 
-            host.Effects.RemoveAll(x => x.EffectId == EffectsEnum.Effect_Apparence_Wrapper);
+            host.Effects.RemoveAll(x => x.EffectId == EffectsEnum.Effect_1176);
 
             host.Invalidate();
             client.Character.Inventory.RefreshItem(host);

@@ -687,7 +687,7 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Idols
             public override void Execute()
             {
                 Console.WriteLine("Apply effect for " + Spell.Id);
-                var effectHandler = new MPBuff(new EffectDice(EffectsEnum.Effect_AddMP, 0, 0, 0), Caster, this, Caster.Cell, false);
+                var effectHandler = new MPBuff(new EffectDice(EffectsEnum.Effect_78, 0, 0, 0), Caster, this, Caster.Cell, false);
                 var buffEffect = new StatBuff(Caster.PopNextBuffId(), Caster, Caster, effectHandler, Spell, (short)Spell.CurrentLevel, PlayerFields.MP, false, FightDispellableEnum.NOT_DISPELLABLE)
                 { Duration = -1 };
                 Caster.AddBuff(buffEffect);

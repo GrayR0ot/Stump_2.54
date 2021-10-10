@@ -8,7 +8,7 @@ using System;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 {
-    [EffectHandler(EffectsEnum.Effect_HealReceivedDamages)]
+    [EffectHandler(EffectsEnum.Effect_2020)]
     public class HealReceivedDamages : SpellEffectHandler
     {
         public HealReceivedDamages(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

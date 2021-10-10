@@ -12,7 +12,7 @@ using Stump.Server.WorldServer.Handlers.Actions;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
 {
-    [EffectHandler(EffectsEnum.Effect_SummonsBomb)]
+    [EffectHandler(EffectsEnum.Effect_1008)]
     public class Bomb : SpellEffectHandler
     {
         public Bomb(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical)

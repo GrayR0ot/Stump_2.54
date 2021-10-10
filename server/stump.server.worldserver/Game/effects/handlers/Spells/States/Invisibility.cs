@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.States
 {
-    [EffectHandler(EffectsEnum.Effect_Invisibility)]
+    [EffectHandler(EffectsEnum.Effect_150)]
     public class Invisibility : SpellEffectHandler
     {
         public Invisibility(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical) : base(effect, caster, castHandler, targetedCell, critical) { }

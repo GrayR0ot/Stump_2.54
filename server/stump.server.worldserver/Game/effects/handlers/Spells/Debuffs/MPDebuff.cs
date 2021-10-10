@@ -9,9 +9,9 @@ using Spell = Stump.Server.WorldServer.Game.Spells.Spell;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 {
-    [EffectHandler(EffectsEnum.Effect_SubMP)]
-    [EffectHandler(EffectsEnum.Effect_LostMP)]
-    [EffectHandler(EffectsEnum.Effect_SubMP_Roll)]
+    [EffectHandler(EffectsEnum.Effect_169)]
+    [EffectHandler(EffectsEnum.Effect_127)]
+    [EffectHandler(EffectsEnum.Effect_1080)]
     public class MPDebuff : SpellEffectHandler
     {
         public MPDebuff(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -34,7 +34,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
                     if (integerEffect == null)
                         return false;
 
-                    var value = Effect.EffectId == EffectsEnum.Effect_SubMP ? integerEffect.Value : RollMP(actor, integerEffect.Value);
+                    var value = Effect.EffectId == EffectsEnum.Effect_169 ? integerEffect.Value : RollMP(actor, integerEffect.Value);
 
                     var dodged = (short) (integerEffect.Value - value);
 
@@ -51,9 +51,9 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 
                     actor.TriggerBuffs(actor, BuffTriggerType.OnMPLost);
 
-                    if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_LostMP)
+                    if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_127)
                     {
-                        AddStatBuff(actor, (short) -value, PlayerFields.MP, (short) EffectsEnum.Effect_SubMP);
+                        AddStatBuff(actor, (short) -value, PlayerFields.MP, (short) EffectsEnum.Effect_169);
                     }
                     else
                     {
@@ -72,7 +72,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
             if (integerEffect == null)
                 return;
 
-            var value = Effect.EffectId == EffectsEnum.Effect_SubMP ? integerEffect.Value : RollMP(buff.Target, integerEffect.Value);
+            var value = Effect.EffectId == EffectsEnum.Effect_169 ? integerEffect.Value : RollMP(buff.Target, integerEffect.Value);
 
             var dodged = (short)(integerEffect.Value - value);
 
@@ -89,9 +89,9 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Debuffs
 
             buff.Target.TriggerBuffs(buff.Target, BuffTriggerType.OnMPLost);
 
-            if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_LostMP)
+            if (Effect.Duration != 0 || Effect.Delay != 0 && Effect.EffectId != EffectsEnum.Effect_127)
             {
-                var newBuff = AddStatBuffDirectly(buff.Target, (short)-value, PlayerFields.MP, (short)EffectsEnum.Effect_SubMP, triggerrer: triggerrer);
+                var newBuff = AddStatBuffDirectly(buff.Target, (short)-value, PlayerFields.MP, (short)EffectsEnum.Effect_169, triggerrer: triggerrer);
                 if (TriggeredBuffDuration > 0)
                     newBuff.Duration = (short) TriggeredBuffDuration;
             }

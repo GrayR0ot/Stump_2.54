@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Armor
 {
-    [EffectHandler(EffectsEnum.Effect_ReflectSpell)]
+    [EffectHandler(EffectsEnum.Effect_106)]
     public class SpellReflection : SpellEffectHandler
     {
         public SpellReflection(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)

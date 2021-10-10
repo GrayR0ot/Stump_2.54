@@ -98,7 +98,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
             if (IsTokenItem())
                 return true;
 
-            return Effects.Any(x => x.EffectId == EffectsEnum.Effect_NonExchangeable_981);
+            return Effects.Any(x => x.EffectId == EffectsEnum.Effect_981);
         }
 
         public bool IsTokenItem() => Inventory.ActiveTokens && Template.Id == Inventory.TokenTemplateId;
@@ -239,7 +239,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
             return new ObjectItem(
                 (sbyte) Position,
                 (ushort) Template.Id,
-                Effects.Where(entry => !entry.Hidden).Select(entry => entry.GetObjectEffect()).ToArray(),
+                Effects.Select(entry => entry.GetObjectEffect()).ToArray(),
                 (uint)Guid,
                 (uint)Stack);
         }
@@ -264,7 +264,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
         {
             return new ObjectItemNotInContainer(
                 (ushort)Template.Id,
-                Effects.Where(entry => !entry.Hidden).Select(entry => entry.GetObjectEffect()).ToArray(),
+                Effects.Select(entry => entry.GetObjectEffect()).ToArray(),
                 (uint)Guid,
                 (uint)Stack);
         }
@@ -329,7 +329,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
             {
                 var appearanceId = Template.AppearanceId;
 
-                var effect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_Appearance || x.EffectId == EffectsEnum.Effect_Apparence_Wrapper);
+                var effect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_1151 || x.EffectId == EffectsEnum.Effect_1176);
                 if (effect != null)
                 {
                     var itemId = ((EffectInteger)effect).Value;
@@ -348,13 +348,13 @@ namespace Stump.Server.WorldServer.Game.Items.Player
         public short PowerSink
         {
             get {
-                var sinkEffect = m_sinkEffect ?? (m_sinkEffect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_PowerSink) as EffectInteger);
+                var sinkEffect = m_sinkEffect ?? (m_sinkEffect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_351) as EffectInteger);
 
                 return (short)(sinkEffect?.Value ?? 0);
             }
             set
             {
-                var sinkEffect = m_sinkEffect ?? (m_sinkEffect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_PowerSink) as EffectInteger);
+                var sinkEffect = m_sinkEffect ?? (m_sinkEffect = Effects.FirstOrDefault(x => x.EffectId == EffectsEnum.Effect_351) as EffectInteger);
 
                 if (sinkEffect != null)
                 {
@@ -368,7 +368,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player
                 }
                 else if (value != 0)
                 {
-                    Effects.Add(m_sinkEffect = new EffectInteger(EffectsEnum.Effect_PowerSink, value));
+                    Effects.Add(m_sinkEffect = new EffectInteger(EffectsEnum.Effect_351, value));
                 }
 
                 Invalidate();

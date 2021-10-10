@@ -10,7 +10,7 @@ using Stump.Server.WorldServer.Handlers.Actions;
 using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Summon
 {
-    [EffectHandler(EffectsEnum.Effect_Double)]
+    [EffectHandler(EffectsEnum.Effect_180)]
     public class Double : SpellEffectHandler
     {
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();

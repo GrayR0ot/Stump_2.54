@@ -2,10 +2,11 @@
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Items.Player;
-using Stump.Server.WorldServer.Game.Spells.Casts;
+
+using Stump.Server.WorldServer.Game.Spells.Casts;
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Usables
 {
-    [EffectHandler(EffectsEnum.Effect_AddSpellPoints)]
+    [EffectHandler(EffectsEnum.Effect_613)]
     public class SpellPoint : UsableEffectHandler
     {
         public SpellPoint(EffectBase effect, Character target, BasePlayerItem item) 

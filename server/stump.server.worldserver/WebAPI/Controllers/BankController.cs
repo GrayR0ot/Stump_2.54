@@ -64,13 +64,8 @@ namespace Stump.Server.WorldServer.WebAPI.Controllers {
                     return;
                 }
 
-                if (item.Template.Id == (int) ItemIdEnum.TokenScroll) {
-                    if (!item.Effects.Any (x => x.EffectId == EffectsEnum.Effect_AddOgrines)) {
-                        item.Effects.Add (new EffectInteger (EffectsEnum.Effect_AddOgrines, (short) amount));
-                        item.Stack = 1;
-                    }
-                } else if (!item.Effects.Any (x => x.EffectId == EffectsEnum.Effect_NonExchangeable_982)) {
-                    item.Effects.Add (new EffectInteger (EffectsEnum.Effect_NonExchangeable_982, 0));
+                if (!item.Effects.Any (x => x.EffectId == EffectsEnum.Effect_982)) {
+                    item.Effects.Add (new EffectInteger (EffectsEnum.Effect_982, 0));
                 }
 
                 var playerItem = character.Bank.AddItem (item);

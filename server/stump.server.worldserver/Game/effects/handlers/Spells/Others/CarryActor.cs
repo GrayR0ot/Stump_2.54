@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Spells.Casts;
 
 namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 {
-    [EffectHandler(EffectsEnum.Effect_Carry)]
+    [EffectHandler(EffectsEnum.Effect_50)]
     public class CarryActor : SpellEffectHandler
     {
         public CarryActor(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
@@ -27,7 +27,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
         }
     }
 
-    [EffectHandler(EffectsEnum.Effect_Throw)]
+    [EffectHandler(EffectsEnum.Effect_51)]
     public class ThrowActor : SpellEffectHandler
     {
         public ThrowActor(EffectDice effect, FightActor caster, SpellCastHandler castHandler, Cell targetedCell, bool critical)
