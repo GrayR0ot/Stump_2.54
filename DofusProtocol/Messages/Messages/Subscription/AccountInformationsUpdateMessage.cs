@@ -1,34 +1,48 @@
-﻿using System;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
+
     public class AccountInformationsUpdateMessage : Message
     {
-        public const uint Id = 6740;
 
-        public AccountInformationsUpdateMessage(double subscriptionEndDate)
+        public const uint Id = 6740;
+        public override uint MessageId
         {
-            SubscriptionEndDate = subscriptionEndDate;
+            get { return Id; }
         }
+
+        public double subscriptionEndDate;
+        
 
         public AccountInformationsUpdateMessage()
         {
         }
 
-        public override uint MessageId => Id;
-
-        public double SubscriptionEndDate { get; set; }
+        public AccountInformationsUpdateMessage(double subscriptionEndDate)
+        {
+            this.subscriptionEndDate = subscriptionEndDate;
+        }
+        
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteDouble(SubscriptionEndDate);
+
+            writer.WriteDouble(subscriptionEndDate);
+            
+
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            SubscriptionEndDate = reader.ReadDouble();
+
+            subscriptionEndDate = reader.ReadDouble();
+            
+
         }
+
+
     }
+
+
 }

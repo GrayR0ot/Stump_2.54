@@ -64,12 +64,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             var characterIds =
                 client.Account.Characters.Where(x => x.WorldId == WorldServer.ServerInformation.Id)
-                      .Select(x => x.CharacterId).ToList();
+                    .Select(x => x.CharacterId).ToList();
 
             if (characterIds.Count == 0)
                 return new List<CharacterRecord>();
 
-            var characters = Database.Fetch<CharacterRecord>(string.Format(CharacterRelator.FetchByMultipleId, characterIds.ToCSV(",")));
+            var characters =
+                Database.Fetch<CharacterRecord>(string.Format(CharacterRelator.FetchByMultipleId,
+                    characterIds.ToCSV(",")));
 
             if (characters.Count == client.Account.Characters.Count)
                 return characters;
@@ -80,15 +82,18 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public bool DoesNameExist(string name)
         {
             WorldServer.Instance.IOTaskPool.EnsureContext();
-            return Database.ExecuteScalar<object>("SELECT 1 FROM characters WHERE Name=@0 AND DeletedDate IS NULL", name) != null;
+            return Database.ExecuteScalar<object>("SELECT 1 FROM characters WHERE Name=@0 AND DeletedDate IS NULL",
+                name) != null;
         }
 
         public void CreateCharacter(WorldClient client, string name, sbyte breedId, bool sex,
-                                                           IEnumerable<int> colors, int headId, Action successCallback, Action<CharacterCreationResultEnum> failCallback)
+            IEnumerable<int> colors, int headId, Action successCallback,
+            Action<CharacterCreationResultEnum> failCallback)
         {
             WorldServer.Instance.IOTaskPool.EnsureContext();
 
-            if (client.Characters.Count(x => !x.IsDeleted) >= MaxCharacterSlot && client.UserGroup.Role <= RoleEnum.Player)
+            if (client.Characters.Count(x => !x.IsDeleted) >= MaxCharacterSlot &&
+                client.UserGroup.Role <= RoleEnum.Player)
             {
                 failCallback(CharacterCreationResultEnum.ERR_TOO_MANY_CHARACTERS);
                 return;
@@ -130,7 +135,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 if (breedColors.Length > i)
                 {
-                    look.AddColor(i + 1, color == -1 ? Color.FromArgb((int)breedColors[i]) : Color.FromArgb(color));
+                    look.AddColor(i + 1, color == -1 ? Color.FromArgb((int) breedColors[i]) : Color.FromArgb(color));
                 }
 
                 i++;
@@ -144,7 +149,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 record = new CharacterRecord(breed)
                 {
-                    Experience = ExperienceManager.Instance.GetCharacterLevelExperience((ushort)breed.StartLevel),
+                    Experience = ExperienceManager.Instance.GetCharacterLevelExperience((ushort) breed.StartLevel),
                     Name = name,
                     Sex = sex ? SexTypeEnum.SEX_FEMALE : SexTypeEnum.SEX_MALE,
                     Head = headId,
@@ -168,20 +173,26 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 // add items here
 
                 var spellsToLearn = from spell in breed.Spells
-                                    where spell.ObtainLevel <= breed.StartLevel
-                                    orderby spell.ObtainLevel, spell.Spell ascending
-                                    select spell;
+                    where spell.ObtainLevel <= breed.StartLevel
+                    orderby spell.ObtainLevel, spell.Spell ascending
+                    select spell;
 
                 var slot = 0;
-                foreach (var spellRecord in spellsToLearn.Select(learnableSpell => SpellManager.Instance.CreateSpellRecord(record,
-                    SpellManager.Instance.
-                        GetSpellTemplate(
-                            learnableSpell.
-                                Spell))))
+                
+                var cacRecord = SpellManager.Instance.CreateSpellRecord(record,
+                    SpellManager.Instance.GetSpellTemplate(0));
+                var cacShortcut = new SpellShortcut(record, slot, (short) cacRecord.SpellId);
+                Database.Insert(cacRecord);
+                Database.Insert(cacShortcut);
+                slot++;
+                foreach (var spellRecord in spellsToLearn.Select(learnableSpell =>
+                    SpellManager.Instance.CreateSpellRecord(record,
+                        SpellManager.Instance.GetSpellTemplate(
+                            learnableSpell.Spell))))
                 {
                     Database.Insert(spellRecord);
 
-                    var shortcut = new SpellShortcut(record, slot, (short)spellRecord.SpellId);
+                    var shortcut = new SpellShortcut(record, slot, (short) spellRecord.SpellId);
                     Database.Insert(shortcut);
                     slot++;
                 }
@@ -201,13 +212,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
 
             IPCAccessor.Instance.SendRequest(new AddCharacterMessage(client.Account.Id, record.Id),
-                                             x => successCallback(),
-                                             x =>
-                                             {
-                                                 // todo cascade
-                                                 Database.Delete(record);
-                                                 failCallback(CharacterCreationResultEnum.ERR_NO_REASON);
-                                             });
+                x => successCallback(),
+                x =>
+                {
+                    // todo cascade
+                    Database.Delete(record);
+                    failCallback(CharacterCreationResultEnum.ERR_NO_REASON);
+                });
             ;
 
             logger.Debug("Character {0} created", record.Name);

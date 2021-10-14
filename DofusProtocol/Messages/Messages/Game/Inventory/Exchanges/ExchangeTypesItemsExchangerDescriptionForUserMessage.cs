@@ -1,52 +1,63 @@
-﻿using System;
-using System.Linq;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 using Stump.DofusProtocol.Types;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
+
     public class ExchangeTypesItemsExchangerDescriptionForUserMessage : Message
     {
-        public const uint Id = 5752;
 
-        public ExchangeTypesItemsExchangerDescriptionForUserMessage(BidExchangerObjectInfo[] itemTypeDescriptions)
+        public const uint Id = 5752;
+        public override uint MessageId
         {
-            ItemTypeDescriptions = itemTypeDescriptions;
+            get { return Id; }
         }
+
+        public int objectType;
+        public BidExchangerObjectInfo[] itemTypeDescriptions;
+        
 
         public ExchangeTypesItemsExchangerDescriptionForUserMessage()
         {
         }
 
-        public override uint MessageId => Id;
-
-        public BidExchangerObjectInfo[] ItemTypeDescriptions { get; set; }
+        public ExchangeTypesItemsExchangerDescriptionForUserMessage(int objectType, BidExchangerObjectInfo[] itemTypeDescriptions)
+        {
+            this.objectType = objectType;
+            this.itemTypeDescriptions = itemTypeDescriptions;
+        }
+        
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteShort((short) ItemTypeDescriptions.Count());
-            for (var itemTypeDescriptionsIndex = 0;
-                itemTypeDescriptionsIndex < ItemTypeDescriptions.Count();
-                itemTypeDescriptionsIndex++)
+
+            writer.WriteInt(objectType);
+            writer.WriteShort((short)itemTypeDescriptions.Length);
+            foreach (var entry in itemTypeDescriptions)
             {
-                var objectToSend = ItemTypeDescriptions[itemTypeDescriptionsIndex];
-                objectToSend.Serialize(writer);
+                entry.Serialize(writer);
             }
+            
+
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            var itemTypeDescriptionsCount = reader.ReadUShort();
-            ItemTypeDescriptions = new BidExchangerObjectInfo[itemTypeDescriptionsCount];
-            for (var itemTypeDescriptionsIndex = 0;
-                itemTypeDescriptionsIndex < itemTypeDescriptionsCount;
-                itemTypeDescriptionsIndex++)
+
+            objectType = reader.ReadInt();
+            var limit = (ushort)reader.ReadUShort();
+            itemTypeDescriptions = new BidExchangerObjectInfo[limit];
+            for (int i = 0; i < limit; i++)
             {
-                var objectToAdd = new BidExchangerObjectInfo();
-                objectToAdd.Deserialize(reader);
-                ItemTypeDescriptions[itemTypeDescriptionsIndex] = objectToAdd;
+                itemTypeDescriptions[i] = new BidExchangerObjectInfo();
+                itemTypeDescriptions[i].Deserialize(reader);
             }
+            
+
         }
+
+
     }
+
+
 }

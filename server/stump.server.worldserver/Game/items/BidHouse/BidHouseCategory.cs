@@ -98,7 +98,7 @@ namespace Stump.Server.WorldServer.Game.Items.BidHouse
 
         public BidExchangerObjectInfo GetBidExchangerObjectInfo()
         {
-            return new BidExchangerObjectInfo((uint)Id, Effects.Select(x => x.GetObjectEffect()).ToArray(), GetPrices().ToArray());
+            return new BidExchangerObjectInfo((uint)Id, (uint)TemplateId, (int)ItemManager.Instance.TryGetTemplate(TemplateId).TypeId, Effects.Select(x => x.GetObjectEffect()).ToArray(), GetPrices().ToArray());
         }
 
         #endregion

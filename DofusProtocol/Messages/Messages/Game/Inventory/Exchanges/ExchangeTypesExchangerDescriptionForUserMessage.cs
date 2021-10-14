@@ -1,40 +1,61 @@
-﻿using System;
-using System.Linq;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
+
     public class ExchangeTypesExchangerDescriptionForUserMessage : Message
     {
-        public const uint Id = 5765;
 
-        public ExchangeTypesExchangerDescriptionForUserMessage(uint[] typeDescription)
+        public const uint Id = 5765;
+        public override uint MessageId
         {
-            TypeDescription = typeDescription;
+            get { return Id; }
         }
+
+        public int objectType;
+        public uint[] typeDescription;
+        
 
         public ExchangeTypesExchangerDescriptionForUserMessage()
         {
         }
 
-        public override uint MessageId => Id;
-
-        public uint[] TypeDescription { get; set; }
+        public ExchangeTypesExchangerDescriptionForUserMessage(int objectType, uint[] typeDescription)
+        {
+            this.objectType = objectType;
+            this.typeDescription = typeDescription;
+        }
+        
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteShort((short) TypeDescription.Count());
-            for (var typeDescriptionIndex = 0; typeDescriptionIndex < TypeDescription.Count(); typeDescriptionIndex++)
-                writer.WriteVarUInt(TypeDescription[typeDescriptionIndex]);
+
+            writer.WriteInt(objectType);
+            writer.WriteShort((short)typeDescription.Length);
+            foreach (var entry in typeDescription)
+            {
+                writer.WriteVarInt((int)entry);
+            }
+            
+
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            var typeDescriptionCount = reader.ReadUShort();
-            TypeDescription = new uint[typeDescriptionCount];
-            for (var typeDescriptionIndex = 0; typeDescriptionIndex < typeDescriptionCount; typeDescriptionIndex++)
-                TypeDescription[typeDescriptionIndex] = reader.ReadVarUInt();
+
+            objectType = reader.ReadInt();
+            var limit = (ushort)reader.ReadUShort();
+            typeDescription = new uint[limit];
+            for (int i = 0; i < limit; i++)
+            {
+                typeDescription[i] = reader.ReadVarUInt();
+            }
+            
+
         }
+
+
     }
+
+
 }

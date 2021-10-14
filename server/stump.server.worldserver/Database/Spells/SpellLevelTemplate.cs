@@ -211,13 +211,47 @@ namespace Stump.Server.WorldServer.Database.Spells
                 }
                 else
                 {
-                    List<EffectBase> effectBaseList = EffectManager.Instance.DeserializeEffectsFromJson(CriticalEffectsJson);
+                    List<EffectBase> effectBaseList = new List<EffectBase>();
+                    JArray jArray = JArray.Parse(CriticalEffectsJson);
+                    foreach (JObject jsonObject in jArray)
+                    {
+                        EffectBase effectBase = new EffectBase(
+                            (string)jsonObject.GetValue("targetMask"),
+                            (int)jsonObject.GetValue("diceNum"),
+                            (bool)jsonObject.GetValue("visibleInBuffUi"),
+                            (bool)jsonObject.GetValue("visibleInFightLog"),
+                            (int)jsonObject.GetValue("targetId"),
+                            (int)jsonObject.GetValue("effectElement"),
+                            (int)jsonObject.GetValue("effectUid"),
+                            (int)jsonObject.GetValue("dispellable"),
+                            (string)jsonObject.GetValue("triggers"),
+                            (int)jsonObject.GetValue("spellId"),
+                            (int)jsonObject.GetValue("duration"),
+                            (int)jsonObject.GetValue("random"),
+                            (short)jsonObject.GetValue("effectId"),
+                            (int)jsonObject.GetValue("delay"),
+                            (int)jsonObject.GetValue("diceSide"),
+                            (bool)jsonObject.GetValue("visibleInTooltip"),
+                            (string)jsonObject.GetValue("rawZone"),
+                            (bool)jsonObject.GetValue("forClientOnly"),
+                            (int) jsonObject.GetValue("value"),
+                            (int)jsonObject.GetValue("order"),
+                            (int)jsonObject.GetValue("group"),
+                            0,
+                            true
+
+                        );
+                        effectBase.ParseRawZone(effectBase.RawZone);
+                        effectBase.ParseTargets();
+                        effectBaseList.Add(effectBase);
+                    }
+                    //EffectManager.Instance.DeserializeEffectsFromJson(CriticalEffectsJson);
                     List<EffectDice> effectDiceList = new List<EffectDice>();
                     foreach (var effectBase in effectBaseList)
                     {
                         EffectDice effectDice = new EffectDice(effectBase.Id, effectBase.Value, effectBase.DiceNum,
                             effectBase.DiceSide, effectBase);
-                        effectDiceList.Add(effectDice);
+                            effectDiceList.Add(effectDice);
                     }
 
                     return effectDiceList;

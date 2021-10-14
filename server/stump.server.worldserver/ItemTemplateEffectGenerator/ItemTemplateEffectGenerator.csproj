@@ -82,7 +82,8 @@
     <ItemGroup>
         <Compile Include="CharacteristicEnum.cs" />
         <Compile Include="EffectManager.cs" />
-        <Compile Include="Program.cs" />
+        <Compile Include="ItemTemplateProgram.cs" />
+        <Compile Include="ItemSetProgram.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

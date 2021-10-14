@@ -6,6 +6,9 @@ UPDATE interactives_spawns SET TemplateId=296,Template="Quisnoa" WHERE ElementId
 UPDATE interactives_spawns SET TemplateId=293,Template="Écume de mer" WHERE ElementId=74982;
 UPDATE interactives_spawns SET TemplateId=297,Template="Patelle" WHERE ElementId=74983;
 
+//atelier prysmaradite
+UPDATE interactives_spawns SET TemplateId=297,Template="Patelle" WHERE ElementId=93927;
+
 
 
 //chemin eliocalypse
@@ -33,3 +36,6 @@ INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) 
 UPDATE `interactives_spawns` SET `Template` = 'Teleport Eliocalypse #3 - Guerre' WHERE `interactives_spawns`.`Id` = 518028;
 INSERT INTO `interactives_skills` (`Id`, `Type`, `Duration`, `Condition`, `CustomTemplateId`, `Parameter0`, `Parameter1`, `Parameter2`, `Parameter3`, `Parameter4`, `AdditionalParameters`) VALUES (100719, 'Teleport', '0', NULL, NULL, '201588736', '424', '7', NULL, NULL, NULL);
 INSERT INTO `interactives_spawns_skills`(`Id`, `InteractiveSpawnId`, `SkillId`) VALUES (518007, 518028, 100719);
+
+//disabled monster spawn maps
+UPDATE `world_maps` SET `SpawnDisabled`=1 WHERE `Id`="";

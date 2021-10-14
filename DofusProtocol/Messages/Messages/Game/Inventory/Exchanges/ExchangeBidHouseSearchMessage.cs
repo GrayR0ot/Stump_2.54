@@ -1,38 +1,52 @@
-﻿using System;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
+
     public class ExchangeBidHouseSearchMessage : Message
     {
-        public const uint Id = 5806;
 
-        public ExchangeBidHouseSearchMessage(uint type, ushort genId)
+        public const uint Id = 5806;
+        public override uint MessageId
         {
-            Type = type;
-            GenId = genId;
+            get { return Id; }
         }
+
+        public ushort genId;
+        public bool follow;
+        
 
         public ExchangeBidHouseSearchMessage()
         {
         }
 
-        public override uint MessageId => Id;
-
-        public uint Type { get; set; }
-        public ushort GenId { get; set; }
+        public ExchangeBidHouseSearchMessage(ushort genId, bool follow)
+        {
+            this.genId = genId;
+            this.follow = follow;
+        }
+        
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteVarUInt(Type);
-            writer.WriteVarUShort(GenId);
+
+            writer.WriteVarShort((short)genId);
+            writer.WriteBoolean(follow);
+            
+
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            Type = reader.ReadVarUInt();
-            GenId = reader.ReadVarUShort();
+
+            genId = reader.ReadVarUShort();
+            follow = reader.ReadBoolean();
+            
+
         }
+
+
     }
+
+
 }

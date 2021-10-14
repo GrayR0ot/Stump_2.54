@@ -1,7 +1,8 @@
 .idea/
 run/
-/bin
-/Debug
-/obj
+*/bin
+*/Debug
+*/obj
 .vs/
 *.cache
+*.zip

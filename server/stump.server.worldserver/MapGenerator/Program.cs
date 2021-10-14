@@ -27,7 +27,7 @@ namespace MapGenerator
                 Directory.CreateDirectory(@"output");
             if (!Directory.Exists(@"output\maps"))
                 Directory.CreateDirectory(@"output\maps");
-            
+
             foreach (var keyValuePair in maps)
             {
                 MapUtils mapUtils = new MapUtils(
@@ -37,22 +37,20 @@ namespace MapGenerator
                     keyValuePair.Value.LeftNeighbourId,
                     keyValuePair.Value.RightNeighbourId
                 );
-                
-                
-            
-            
+
+
                 using (StreamWriter sw = new StreamWriter(@"output\maps\\" + keyValuePair.Key + ".json"))
                 {
-                    if (keyValuePair.Value.Layers.Count > 0)
-                    {
-                        sw.Write(JsonConvert.SerializeObject(keyValuePair.Value.Layers));
-                    }
+                    /*if (keyValuePair.Value.Count > 0)
+                    {*/
+                    sw.Write(JsonConvert.SerializeObject(keyValuePair.Value));
+                    //}
                 }
 
                 //Console.WriteLine("Map ID: " + keyValuePair.Key);
                 //Console.WriteLine("Map Cells: " + keyValuePair.Value.CellsCount);
                 //Console.WriteLine("Map cells.bin: " + keyValuePair.Value.map.m_compressedCells;
-                
+
                 mapJson.Add(mapUtils);
                 byte[] compressedCells = ZipHelper.Compress(keyValuePair.Value.map.GetMap(keyValuePair.Key).m_compressedCells);
                 string result;

@@ -108,7 +108,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.BidHouse
             var categories = BidHouseManager.Instance.GetBidHouseCategories(itemId, MaxItemLevel)
                 .Select(x => x.GetBidExchangerObjectInfo());
 
-            InventoryHandler.SendExchangeTypesItemsExchangerDescriptionForUserMessage(Character.Client, categories);
+            InventoryHandler.SendExchangeTypesItemsExchangerDescriptionForUserMessage(Character.Client, categories, CurrentViewedItem);
             InventoryHandler.SendExchangeBidPriceForSellerMessage(Character.Client, (ushort) itemId,
                 BidHouseManager.Instance.GetAveragePriceForItem(itemId), true,
                 BidHouseManager.Instance.GetMinimalPricesForItem(itemId));
@@ -153,7 +153,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.BidHouse
                 return;
 
             if (categoryDeleted)
-                InventoryHandler.SendExchangeBidHouseInListRemovedMessage(Character.Client, category);
+                InventoryHandler.SendExchangeBidHouseInListRemovedMessage(Character.Client, category, CurrentViewedItem);
             else
                 InventoryHandler.SendExchangeBidHouseInListUpdatedMessage(Character.Client, category);
         }
