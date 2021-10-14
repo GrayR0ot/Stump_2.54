@@ -1,68 +1,85 @@
-﻿using System;
-using System.Linq;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 using Stump.DofusProtocol.Types;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
+
     public class ExchangeBidHouseInListAddedMessage : Message
     {
-        public const uint Id = 5949;
 
-        public ExchangeBidHouseInListAddedMessage(int itemUID, int objGenericId, ObjectEffect[] effects, ulong[] prices)
+        public const uint Id = 5949;
+        public override uint MessageId
         {
-            ItemUID = itemUID;
-            ObjGenericId = objGenericId;
-            Effects = effects;
-            Prices = prices;
+            get { return Id; }
         }
+
+        public int itemUID;
+        public uint objectGID;
+        public int objectType;
+        public Types.ObjectEffect[] effects;
+        public ulong[] prices;
+        
 
         public ExchangeBidHouseInListAddedMessage()
         {
         }
 
-        public override uint MessageId => Id;
-
-        public int ItemUID { get; set; }
-        public int ObjGenericId { get; set; }
-        public ObjectEffect[] Effects { get; set; }
-        public ulong[] Prices { get; set; }
+        public ExchangeBidHouseInListAddedMessage(int itemUID, uint objectGID, int objectType, Types.ObjectEffect[] effects, ulong[] prices)
+        {
+            this.itemUID = itemUID;
+            this.objectGID = objectGID;
+            this.objectType = objectType;
+            this.effects = effects;
+            this.prices = prices;
+        }
+        
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteInt(ItemUID);
-            writer.WriteInt(ObjGenericId);
-            writer.WriteShort((short) Effects.Count());
-            for (var effectsIndex = 0; effectsIndex < Effects.Count(); effectsIndex++)
-            {
-                var objectToSend = Effects[effectsIndex];
-                writer.WriteShort(objectToSend.TypeId);
-                objectToSend.Serialize(writer);
-            }
 
-            writer.WriteShort((short) Prices.Count());
-            for (var pricesIndex = 0; pricesIndex < Prices.Count(); pricesIndex++)
-                writer.WriteVarULong(Prices[pricesIndex]);
+            writer.WriteInt(itemUID);
+            writer.WriteVarShort((short)objectGID);
+            writer.WriteInt(objectType);
+            writer.WriteShort((short)effects.Length);
+            foreach (var entry in effects)
+            {
+                writer.WriteShort(entry.TypeId);
+                entry.Serialize(writer);
+            }
+            writer.WriteShort((short)prices.Length);
+            foreach (var entry in prices)
+            {
+                writer.WriteVarLong((long)entry);
+            }
+            
+
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            ItemUID = reader.ReadInt();
-            ObjGenericId = reader.ReadInt();
-            var effectsCount = reader.ReadUShort();
-            Effects = new ObjectEffect[effectsCount];
-            for (var effectsIndex = 0; effectsIndex < effectsCount; effectsIndex++)
-            {
-                var objectToAdd = ProtocolTypeManager.GetInstance<ObjectEffect>(reader.ReadShort());
-                objectToAdd.Deserialize(reader);
-                Effects[effectsIndex] = objectToAdd;
-            }
 
-            var pricesCount = reader.ReadUShort();
-            Prices = new ulong[pricesCount];
-            for (var pricesIndex = 0; pricesIndex < pricesCount; pricesIndex++)
-                Prices[pricesIndex] = reader.ReadVarULong();
+            itemUID = reader.ReadInt();
+            objectGID = reader.ReadVarUShort();
+            objectType = reader.ReadInt();
+            var limit = (ushort)reader.ReadUShort();
+            effects = new Types.ObjectEffect[limit];
+            for (int i = 0; i < limit; i++)
+            {
+                effects[i] = ProtocolTypeManager.GetInstance<Types.ObjectEffect>(reader.ReadShort());
+                effects[i].Deserialize(reader);
+            }
+            limit = (ushort)reader.ReadUShort();
+            prices = new ulong[limit];
+            for (int i = 0; i < limit; i++)
+            {
+                prices[i] = reader.ReadVarULong();
+            }
+            
+
         }
+
+
     }
+
+
 }

@@ -17,7 +17,10 @@ namespace Stump.Server.WorldServer.Game.Achievements.Criterions.Data
             if (uint.TryParse(base[0], out m_achievementId))
                 Achievement = Singleton<AchievementManager>.Instance.TryGetAchievement(m_achievementId);
             else
-                throw new Exception();
+            {
+                //Console.WriteLine(base[0]);
+                //throw new Exception();
+            }
         }
 
         // PROPERTIES

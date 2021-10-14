@@ -1,34 +1,45 @@
-﻿using System;
-using Stump.Core.IO;
+﻿using Stump.Core.IO;
 
 namespace Stump.DofusProtocol.Messages
 {
-    [Serializable]
     public class ExchangeBidHouseInListRemovedMessage : Message
     {
         public const uint Id = 5950;
 
-        public ExchangeBidHouseInListRemovedMessage(int itemUID)
+        public override uint MessageId
         {
-            ItemUID = itemUID;
+            get { return Id; }
         }
+
+        public int itemUID;
+        public uint objectGID;
+        public int objectType;
+
 
         public ExchangeBidHouseInListRemovedMessage()
         {
         }
 
-        public override uint MessageId => Id;
+        public ExchangeBidHouseInListRemovedMessage(int itemUID, uint objectGID, int objectType)
+        {
+            this.itemUID = itemUID;
+            this.objectGID = objectGID;
+            this.objectType = objectType;
+        }
 
-        public int ItemUID { get; set; }
 
         public override void Serialize(IDataWriter writer)
         {
-            writer.WriteInt(ItemUID);
+            writer.WriteInt(itemUID);
+            writer.WriteVarShort((short) objectGID);
+            writer.WriteInt(objectType);
         }
 
         public override void Deserialize(IDataReader reader)
         {
-            ItemUID = reader.ReadInt();
+            itemUID = reader.ReadInt();
+            objectGID = reader.ReadVarUShort();
+            objectType = reader.ReadInt();
         }
     }
 }

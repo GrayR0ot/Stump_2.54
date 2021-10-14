@@ -1166,6 +1166,7 @@
     <Compile Include="Messages\Game\Inventory\Items\SymbioticObjectAssociatedMessage.cs" />
     <Compile Include="Messages\Game\Inventory\Items\SymbioticObjectAssociateRequestMessage.cs" />
     <Compile Include="Messages\Game\Inventory\Items\SymbioticObjectErrorMessage.cs" />
+    <Compile Include="Messages\Game\Inventory\Items\WatchInventoryContentMessage.cs" />
     <Compile Include="Messages\Game\Inventory\Items\WrapperObjectAssociatedMessage.cs" />
     <Compile Include="Messages\Game\Inventory\Items\WrapperObjectDissociateRequestMessage.cs" />
     <Compile Include="Messages\Game\Inventory\Items\WrapperObjectErrorMessage.cs" />
@@ -1187,6 +1188,7 @@
     <Compile Include="Messages\Game\Modificator\AreaFightModificatorUpdateMessage.cs" />
     <Compile Include="Messages\Game\Presets\CharacterPresetSaveRequestMessage.cs" />
     <Compile Include="Messages\Game\Presets\IdolsPresetSaveRequestMessage.cs" />
+    <Compile Include="Messages\Game\Presets\InvalidPresetsMessage.cs" />
     <Compile Include="Messages\Game\Presets\ItemForPresetUpdateMessage.cs" />
     <Compile Include="Messages\Game\Presets\PresetDeleteRequestMessage.cs" />
     <Compile Include="Messages\Game\Presets\PresetDeleteResultMessage.cs" />

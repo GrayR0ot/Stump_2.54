@@ -903,20 +903,20 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Idols
             }
         }
 
-        //    //[SpellCastHandler(5881)]
-        //    //public class BihileteIdolCastHandler : DefaultSpellCastHandler
-        //    //{
-        //    //    public BihileteIdolCastHandler(SpellCastInformations cast)
-        //    //        : base(cast)
-        //    //    {
-        //    //    }
+            [SpellCastHandler(5881)]
+            public class BihileteIdolCastHandler : DefaultSpellCastHandler
+            {
+                public BihileteIdolCastHandler(SpellCastInformations cast)
+                    : base(cast)
+                {
+                }
 
-        //    //    public override void Execute()
-        //    //    {
-        //    //        Handlers[0].SetAffectedActors(Fight.GetAllFighters<MonsterFighter>());
-        //    //        base.Execute();
-        //    //    }
-        //    //}
+                public override void Execute()
+                {
+                    Handlers[0].SetAffectedActors(Fight.GetAllFighters<MonsterFighter>());
+                    base.Execute();
+                }
+            }
 
         //    [SpellCastHandler(SpellIdEnum.DAKID)]
         //    public class DakidIdolCastHandler : DefaultSpellCastHandler

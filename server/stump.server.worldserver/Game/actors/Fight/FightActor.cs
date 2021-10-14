@@ -814,7 +814,6 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public bool CastSpell(Spell spell, Cell cell)
         {
-            Console.WriteLine("[DEBUG] Spell Id: " + spell.Template.Id);
             return CastSpell(new SpellCastInformations(this, spell, cell));
         }
         private double _bonusCoeffPortals;
@@ -824,7 +823,6 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 return false;
 
             var spellLevel = cast.SpellLevel;
-            Console.WriteLine("[DEBUG] Spell Effects Json: " + spellLevel.EffectsJson);
 
             if (CanCastSpell(cast) != SpellCastResult.OK)
             {

@@ -23,7 +23,8 @@ namespace Stump.Server.WorldServer.Game.Achievements.Criterions.Data
                 }
                 else
                 {
-                    throw new Exception();
+                    //Console.WriteLine(base[i]);
+                    //throw new Exception();
                 }
         }
 

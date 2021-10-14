@@ -9,9 +9,11 @@ namespace Stump.DofusProtocol.Types
     {
         public const short Id = 122;
 
-        public BidExchangerObjectInfo(uint objectUID, ObjectEffect[] effects, ulong[] prices)
+        public BidExchangerObjectInfo(uint objectUID, uint objectGID, int objectType, ObjectEffect[] effects, ulong[] prices)
         {
             ObjectUID = objectUID;
+            ObjectGID = objectGID;
+            ObjectType = objectType;
             Effects = effects;
             Prices = prices;
         }
@@ -23,12 +25,16 @@ namespace Stump.DofusProtocol.Types
         public virtual short TypeId => Id;
 
         public uint ObjectUID { get; set; }
+        public uint ObjectGID { get; set; }
+        public int ObjectType { get; set; }
         public ObjectEffect[] Effects { get; set; }
         public ulong[] Prices { get; set; }
 
         public virtual void Serialize(IDataWriter writer)
         {
             writer.WriteVarUInt(ObjectUID);
+            writer.WriteVarUInt(ObjectGID);
+            writer.WriteInt(ObjectType);
             writer.WriteShort((short) Effects.Count());
             for (var effectsIndex = 0; effectsIndex < Effects.Count(); effectsIndex++)
             {
@@ -45,6 +51,8 @@ namespace Stump.DofusProtocol.Types
         public virtual void Deserialize(IDataReader reader)
         {
             ObjectUID = reader.ReadVarUInt();
+            ObjectGID = reader.ReadVarUInt();
+            ObjectType = reader.ReadInt();
             var effectsCount = reader.ReadUShort();
             Effects = new ObjectEffect[effectsCount];
             for (var effectsIndex = 0; effectsIndex < effectsCount; effectsIndex++)
