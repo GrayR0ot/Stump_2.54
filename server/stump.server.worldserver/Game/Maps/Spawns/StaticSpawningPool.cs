@@ -138,7 +138,7 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
 
                 var group = new MonsterGroup(Map.GetNextContextualId(),
                     new ObjectPosition(Map, spawn.Cell, (DirectionsEnum) spawn.Direction), this);
-                foreach (var monsterGrade in spawn.GroupMonsters) @group.AddMonster(new Monster(monsterGrade, @group));
+                foreach (var monsterGrade in spawn.GroupMonsters) group.AddMonster(new Monster(monsterGrade, group));
 
                 m_groupsSpawn.Add(group, spawn);
 

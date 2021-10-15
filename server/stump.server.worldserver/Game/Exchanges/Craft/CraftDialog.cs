@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Stump.DofusProtocol.Enums;
-using Stump.Server.WorldServer.Core.Network;
 using Stump.Server.WorldServer.Database.Jobs;
-using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Game.Effects.Instances;
-using Stump.Server.WorldServer.Game.Exchanges.Trades;
 using Stump.Server.WorldServer.Game.Exchanges.Trades.Players;
 using Stump.Server.WorldServer.Game.Interactives;
 using Stump.Server.WorldServer.Game.Interactives.Skills;
 using Stump.Server.WorldServer.Game.Items;
-using Stump.Server.WorldServer.Game.Items.Player;
 using Stump.Server.WorldServer.Game.Jobs;
 using Stump.Server.WorldServer.Handlers.Inventory;
 
@@ -30,15 +26,15 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
             if (recipe.JobId != Job.Id)
                 return false;
 
-            if (recipe.ResultLevel > Job.Level && Job.Id != (int)JobEnum.BASE)
+            if (recipe.ResultLevel > Job.Level && Job.Id != (int) JobEnum.BASE)
                 return false;
 
-            bool valid = true;
-            for (int i = 0; valid && i < recipe.Ingredients.Length; i++)
+            var valid = true;
+            for (var i = 0; valid && i < recipe.Ingredients.Length; i++)
             {
                 var item = actor.Character.Inventory.TryGetItem(recipe.Ingredients[i]);
 
-                valid = item != null && actor.MoveItemToPanel(item, (int)recipe.Quantities[i]);
+                valid = item != null && actor.MoveItemToPanel(item, (int) recipe.Quantities[i]);
             }
 
             if (!valid)
@@ -59,9 +55,10 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
                 return false;
             }
 
-            if (recipe.ResultLevel > Job.Level && Job.Id != (int)JobEnum.BASE)
+            if (recipe.ResultLevel > Job.Level && Job.Id != (int) JobEnum.BASE)
             {
-                InventoryHandler.SendExchangeCraftResultWithObjectIdMessage(Clients, ExchangeCraftResultEnum.CRAFT_FAILED, recipe.ItemTemplate);
+                InventoryHandler.SendExchangeCraftResultWithObjectIdMessage(Clients,
+                    ExchangeCraftResultEnum.CRAFT_FAILED, recipe.ItemTemplate);
                 return false;
             }
 
@@ -74,12 +71,12 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
             foreach (var item in ingredients)
             {
                 var playerItem = item.Owner.Inventory[item.Guid];
-                item.Owner.Inventory.RemoveItem(playerItem, (int)item.Stack * Amount);
+                item.Owner.Inventory.RemoveItem(playerItem, (int) item.Stack * Amount);
 
                 if (item.Owner == Crafter.Character)
-                    Crafter.MoveItem((uint)item.Guid, 0);
+                    Crafter.MoveItem((uint) item.Guid, 0);
                 else
-                    Receiver.MoveItem((uint)item.Guid, 0);
+                    Receiver.MoveItem((uint) item.Guid, 0);
             }
 
             var xp = Job.GetCraftXp(recipe, Amount);
@@ -87,17 +84,15 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
 
             if (xp > 0)
                 Job.Experience += xp;
-            if (Job.Id == 65)
-            {
-                Job.Experience = lvlmax;
-            }
+            if (Job.Id == 65) Job.Experience = lvlmax;
 
             if (!ItemManager.Instance.HasToBeGenerated(recipe.ItemTemplate))
             {
                 var createdItem = Receiver.Character.Inventory.AddItem(recipe.ItemTemplate, Amount);
                 InventoryHandler.SendExchangeCraftResultWithObjectDescMessage(Clients,
                     ExchangeCraftResultEnum.CRAFT_SUCCESS, createdItem, Amount);
-                InventoryHandler.SendExchangeCraftInformationObjectMessage(Crafter.Character.Map.Clients, createdItem, Receiver.Character, ExchangeCraftResultEnum.CRAFT_SUCCESS);
+                InventoryHandler.SendExchangeCraftInformationObjectMessage(Crafter.Character.Map.Clients, createdItem,
+                    Receiver.Character, ExchangeCraftResultEnum.CRAFT_SUCCESS);
 
                 // MISC
                 JobManager.Instance.RegisterCraft(recipe.ItemTemplate.Id, Amount, Crafter.Character.Id);
@@ -106,14 +101,14 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
             else
             {
                 var dict = new Dictionary<List<EffectBase>, int>(new EffectsListComparer());
-                for (int i = 0; i < Amount; i++)
+                for (var i = 0; i < Amount; i++)
                 {
-                    Random rnd = new Random();
+                    var rnd = new Random();
                     var percent = rnd.Next(100, 100);
 
                     List<EffectBase> effects;
 
-                    if(percent <= 5)
+                    if (percent <= 5)
                         effects = ItemManager.Instance.GenerateItemEffects(recipe.ItemTemplate, true);
                     else
                         effects = ItemManager.Instance.GenerateItemEffects(recipe.ItemTemplate);
@@ -126,10 +121,12 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
 
                 foreach (var keyPair in dict)
                 {
-                    var createdItem = Receiver.Character.Inventory.AddItem(recipe.ItemTemplate, keyPair.Key, keyPair.Value);
+                    var createdItem =
+                        Receiver.Character.Inventory.AddItem(recipe.ItemTemplate, keyPair.Key, keyPair.Value);
                     InventoryHandler.SendExchangeCraftResultWithObjectDescMessage(Clients,
                         ExchangeCraftResultEnum.CRAFT_SUCCESS, createdItem, keyPair.Value);
-                    InventoryHandler.SendExchangeCraftInformationObjectMessage(Crafter.Character.Map.Clients, createdItem, Receiver.Character, ExchangeCraftResultEnum.CRAFT_SUCCESS);
+                    InventoryHandler.SendExchangeCraftInformationObjectMessage(Crafter.Character.Map.Clients,
+                        createdItem, Receiver.Character, ExchangeCraftResultEnum.CRAFT_SUCCESS);
 
                     // MISC
                     JobManager.Instance.RegisterCraft(recipe.ItemTemplate.Id, Amount, Crafter.Character.Id);
@@ -146,27 +143,24 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
         {
             var combinedIngredients = new Dictionary<int, uint>();
             foreach (var ingredient in ingredients)
-            {
                 if (combinedIngredients.ContainsKey(ingredient.Template.Id))
                     combinedIngredients[ingredient.Template.Id] += ingredient.Stack;
                 else
                     combinedIngredients.Add(ingredient.Template.Id, ingredient.Stack);
-            }
 
             return (from recipe in Skill.SkillTemplate.Recipes
-                    where recipe.IngredientIds.Length == combinedIngredients.Count
-                    let valid = !(from item in combinedIngredients
-                                  let index = Array.IndexOf(recipe.IngredientIds, item.Key)
-                                  where index < 0 || recipe.Quantities[index] != item.Value
-                                  select item).Any()
-                    where valid
-                    select recipe).FirstOrDefault();
+                where recipe.IngredientIds.Length == combinedIngredients.Count
+                let valid = !(from item in combinedIngredients
+                    let index = Array.IndexOf(recipe.IngredientIds, item.Key)
+                    where index < 0 || recipe.Quantities[index] != item.Value
+                    select item).Any()
+                where valid
+                select recipe).FirstOrDefault();
         }
 
         protected virtual IEnumerable<PlayerTradeItem> GetIngredients()
         {
             return Receiver.Items.Concat(Crafter.Items).OfType<PlayerTradeItem>();
         }
-
     }
 }

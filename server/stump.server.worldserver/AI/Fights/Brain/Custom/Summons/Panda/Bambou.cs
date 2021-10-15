@@ -1,12 +1,11 @@
-﻿using System.Linq;
-using Stump.DofusProtocol.Enums;
+﻿using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Fights;
 using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
 {
-    [BrainIdentifier((int)MonsterIdEnum.BAMBOU)]
+    [BrainIdentifier((int) MonsterIdEnum.BAMBOU)]
     public class Bambou : Brain
     {
         public Bambou(AIFighter fighter)

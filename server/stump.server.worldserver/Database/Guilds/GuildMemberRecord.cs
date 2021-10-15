@@ -75,7 +75,5 @@ namespace Stump.Server.WorldServer.Database.Guilds
         public AlignmentSideEnum AlignementSide => Character.AlignmentSide;
 
         public DateTime? LastConnection => Character.LastUsage;
-
-        public int PrestigeRank => Character.PrestigeRank;
     }
 }

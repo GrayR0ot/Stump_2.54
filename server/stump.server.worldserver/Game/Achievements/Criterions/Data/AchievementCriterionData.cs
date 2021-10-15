@@ -1,5 +1,4 @@
-﻿using System;
-using Stump.Core.Reflection;
+﻿using Stump.Core.Reflection;
 using Stump.Server.WorldServer.Database.Achievements;
 using Stump.Server.WorldServer.Game.Conditions;
 
@@ -15,11 +14,8 @@ namespace Stump.Server.WorldServer.Game.Achievements.Criterions.Data
             : base(@operator, parameters)
         {
             if (uint.TryParse(base[0], out m_achievementId))
-                Achievement = Singleton<AchievementManager>.Instance.TryGetAchievement(m_achievementId);
-            else
             {
-                //Console.WriteLine(base[0]);
-                //throw new Exception();
+                Achievement = Singleton<AchievementManager>.Instance.TryGetAchievement(m_achievementId);
             }
         }
 

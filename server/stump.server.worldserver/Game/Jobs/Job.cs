@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Linq;
+using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Types;
 using Stump.Server.WorldServer.Database.Interactives;
 using Stump.Server.WorldServer.Database.Jobs;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Handlers.Context.RolePlay;
-using Stump.DofusProtocol.Enums;
 
 namespace Stump.Server.WorldServer.Game.Jobs
 {
     public class Job
     {
         /// <summary>
-        /// Instantiate a job without record, experience equals zero
+        ///     Instantiate a job without record, experience equals zero
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="template"></param>
@@ -42,64 +42,28 @@ namespace Stump.Server.WorldServer.Game.Jobs
 
         public int Id => Template.Id;
 
-        public Character Owner
-        {
-            get;
-            private set;
-        }
+        public Character Owner { get; }
 
         // may be null
-        private JobRecord Record
-        {
-            get;
-            set;
-        }
+        private JobRecord Record { get; set; }
 
-        public JobTemplate Template
-        {
-            get;
-            private set;
-        }
+        public JobTemplate Template { get; }
 
-        private bool IsDirty
-        {
-            get;
-            set;
-        }
+        private bool IsDirty { get; set; }
 
-        private bool IsNew
-        {
-            get;
-            set;
-        }
+        private bool IsNew { get; set; }
 
-        public int Level
-        {
-            get;
-            private set;
-        }
+        public int Level { get; private set; }
 
-        public long UpperBoundExperience
-        {
-            get;
-            private set;
-        }
+        public long UpperBoundExperience { get; private set; }
 
-        public long LowerBoundExperience
-        {
-            get;
-            private set;
-        }
+        public long LowerBoundExperience { get; private set; }
 
-        public bool IsIndexed
-        {
-            get;
-            set;
-        }
+        public bool IsIndexed { get; set; }
 
         public long Experience
         {
-            get { return Record?.Experience ?? 0; }
+            get => Record?.Experience ?? 0;
             set
             {
                 if (value < 0)
@@ -118,7 +82,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
 
         public bool WorkForFree
         {
-            get { return Record?.WorkForFree ?? false; }
+            get => Record?.WorkForFree ?? false;
             set
             {
                 CheckRecordExists();
@@ -128,7 +92,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
 
         public int MinLevelCraftSetting
         {
-            get { return Record?.MinLevelCraftSetting ?? 1; }
+            get => Record?.MinLevelCraftSetting ?? 1;
             set
             {
                 if (value < 1 || value > 200)
@@ -137,7 +101,6 @@ namespace Stump.Server.WorldServer.Game.Jobs
                 CheckRecordExists();
 
                 Record.MinLevelCraftSetting = value;
-
             }
         }
 
@@ -150,10 +113,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
             var oldLevel = Level;
             Level = level;
 
-            if (oldLevel != Level)
-            {
-                OnLevelChanged(oldLevel, Level);
-            }
+            if (oldLevel != Level) OnLevelChanged(oldLevel, Level);
         }
 
         private void OnLevelChanged(int lastLevel, int newLevel)
@@ -168,7 +128,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
 
         public int GetCraftXp(RecipeRecord recipe, int amount)
         {
-            if (Id == (int)JobEnum.BASE)
+            if (Id == (int) JobEnum.BASE)
                 return 0;
 
             var level = Level;
@@ -186,10 +146,10 @@ namespace Stump.Server.WorldServer.Game.Jobs
 
                 var xpPerLevel = GetXpPerLevel(recipe, level);
 
-                var amountBeforeLevelUp = (int)Math.Min(amount, Math.Ceiling((upperBoundXp - currentXp) /xpPerLevel));
+                var amountBeforeLevelUp = (int) Math.Min(amount, Math.Ceiling((upperBoundXp - currentXp) / xpPerLevel));
                 amount -= amountBeforeLevelUp;
-                xp += xpPerLevel*amountBeforeLevelUp;
-                currentXp += xpPerLevel*amountBeforeLevelUp;
+                xp += xpPerLevel * amountBeforeLevelUp;
+                currentXp += xpPerLevel * amountBeforeLevelUp;
 
                 if (currentXp >= upperBoundXp)
                 {
@@ -198,16 +158,16 @@ namespace Stump.Server.WorldServer.Game.Jobs
                 }
             }
 
-            return (int)Math.Floor(xp);
+            return (int) Math.Floor(xp);
         }
 
         private int GetXpPerLevel(RecipeRecord recipe, int level)
         {
-            
             if (level - JobManager.MAX_JOB_LEVEL_GAP > recipe.ItemTemplate.Level)
                 return 0;
 
-            var xpPerLevel = 20d * recipe.ItemTemplate.Level / (Math.Pow((level - recipe.ItemTemplate.Level), 1.1) / 10 + 1);
+            var xpPerLevel = 20d * recipe.ItemTemplate.Level /
+                             (Math.Pow(level - recipe.ItemTemplate.Level, 1.1) / 10 + 1);
 
             if (recipe.ItemTemplate.CraftXpRatio > -1)
                 xpPerLevel *= recipe.ItemTemplate.CraftXpRatio / 100d;
@@ -217,11 +177,8 @@ namespace Stump.Server.WorldServer.Game.Jobs
             xpPerLevel *= Rates.JobXpRate;
             xpPerLevel = Math.Floor(xpPerLevel);
             if (Owner.WorldAccount.Vip >= 1)
-            {
-                return (int)(xpPerLevel * Rates.VipBonusJob);
-            }
-            else
-            return (int)xpPerLevel;
+                return (int) (xpPerLevel * Rates.VipBonusJob);
+            return (int) xpPerLevel;
         }
 
         public void Save(ORM.Database database)
@@ -238,41 +195,58 @@ namespace Stump.Server.WorldServer.Game.Jobs
         {
             if (Record == null)
             {
-                Record = new JobRecord() {OwnerId = Owner.Id, TemplateId = Template.Id};
+                Record = new JobRecord {OwnerId = Owner.Id, TemplateId = Template.Id};
                 IsNew = true;
             }
 
             return IsNew;
         }
-        
-        
+
+
         private SkillActionDescription GetSkillActionDescription(InteractiveSkillTemplate skill)
         {
             if (skill.GatheredRessourceItem > 0)
             {
                 var minMax = JobManager.Instance.GetHarvestItemMinMax(Template, Level, skill);
-                return new SkillActionDescriptionCollect((ushort) skill.Id, 0, (ushort) minMax.First, (ushort) minMax.Second);
+                return new SkillActionDescriptionCollect((ushort) skill.Id, 0, (ushort) minMax.First,
+                    (ushort) minMax.Second);
             }
-            else if (skill.CraftableItemIds.Length > 0)
+
+            if (skill.CraftableItemIds.Length > 0)
+            {
                 return new SkillActionDescriptionCraft((ushort) skill.Id, 0);
+            }
 
             return new SkillActionDescription((ushort) skill.Id);
         }
 
         public JobExperience GetJobExperience()
-            => new JobExperience((sbyte)Template.Id, (byte)Level, (ulong)Experience, (ulong)LowerBoundExperience, (ulong)UpperBoundExperience);
+        {
+            return new JobExperience((sbyte) Template.Id, (byte) Level, (ulong) Experience,
+                (ulong) LowerBoundExperience, (ulong) UpperBoundExperience);
+        }
 
         public JobDescription GetJobDescription()
-            => new JobDescription((sbyte) Template.Id, Template.Skills.Where(x => x.LevelMin <= Level).Select(x => GetSkillActionDescription(x)).ToArray());
+        {
+            return new JobDescription((sbyte) Template.Id,
+                Template.Skills.Where(x => x.LevelMin <= Level).Select(x => GetSkillActionDescription(x)).ToArray());
+        }
 
         public JobCrafterDirectorySettings GetJobCrafterDirectorySettings()
-            => new JobCrafterDirectorySettings((sbyte) Template.Id, (byte)MinLevelCraftSetting, WorkForFree);
+        {
+            return new JobCrafterDirectorySettings((sbyte) Template.Id, (byte) MinLevelCraftSetting, WorkForFree);
+        }
 
         public JobCrafterDirectoryListEntry GetJobCrafterDirectoryListEntry()
-            =>
-                new JobCrafterDirectoryListEntry(
-                    new JobCrafterDirectoryEntryPlayerInfo((ulong)Owner.Id, Owner.Name, (sbyte) Owner.AlignmentSide, (sbyte) Owner.Breed.Id, Owner.Sex != SexTypeEnum.SEX_FEMALE, Owner.Map.AvailableJobs.Contains(Template),
-                        (short) Owner.Map.Position.X, (short) Owner.Map.Position.Y, Owner.Map.Id, (ushort) Owner.SubArea.Id, Owner.Status),
-                    new JobCrafterDirectoryEntryJobInfo((sbyte) Template.Id, (byte) Level, WorkForFree, (byte) MinLevelCraftSetting));
+        {
+            return new JobCrafterDirectoryListEntry(
+                new JobCrafterDirectoryEntryPlayerInfo((ulong) Owner.Id, Owner.Name, (sbyte) Owner.AlignmentSide,
+                    (sbyte) Owner.Breed.Id, Owner.Sex != SexTypeEnum.SEX_FEMALE,
+                    Owner.Map.AvailableJobs.Contains(Template),
+                    (short) Owner.Map.Position.X, (short) Owner.Map.Position.Y, Owner.Map.Id, (ushort) Owner.SubArea.Id,
+                    Owner.Status),
+                new JobCrafterDirectoryEntryJobInfo((sbyte) Template.Id, (byte) Level, WorkForFree,
+                    (byte) MinLevelCraftSetting));
+        }
     }
 }

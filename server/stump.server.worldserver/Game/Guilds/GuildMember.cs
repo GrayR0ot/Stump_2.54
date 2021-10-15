@@ -94,8 +94,6 @@ namespace Stump.Server.WorldServer.Game.Guilds
 
         public long Experience => Record.Experience;
 
-        public int PrestigeRank => Record.PrestigeRank;
-
         public PlayableBreedEnum Breed => Record.Breed;
 
         public SexTypeEnum Sex => Record.Sex;
@@ -114,7 +112,7 @@ namespace Stump.Server.WorldServer.Game.Guilds
         public CharacterMinimalInformations GetCharacterMinimalInformations()
         {
             return new CharacterMinimalInformations((ulong) Id, Name,
-                ExperienceManager.Instance.GetCharacterLevel(Experience, PrestigeRank));
+                ExperienceManager.Instance.GetCharacterLevel(Experience, Character.Level > 200 ? (Character.Level-200) : 0));
         }
 
         public CharacterMinimalGuildPublicInformations GetCharacterMinimalGuildPublicInformations()
@@ -143,7 +141,7 @@ namespace Stump.Server.WorldServer.Game.Guilds
                     Record.AccountId, 0, Character.Status);
 
             return new NetworkGuildMember((ulong) Id, Name,
-                ExperienceManager.Instance.GetCharacterLevel(Experience, PrestigeRank),
+                ExperienceManager.Instance.GetCharacterLevel(Experience, Character.Level > 200 ? (Character.Level-200) : 0),
                 Sex == SexTypeEnum.SEX_FEMALE, false,
                 (sbyte) Breed, (ushort) RankId,
                 (ulong) GivenExperience, (sbyte) GivenPercent, (uint) Rights, 0,

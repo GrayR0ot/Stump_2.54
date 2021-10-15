@@ -86,12 +86,12 @@ namespace Stump.Server.WorldServer.Game.Arena
         /// </summary>
         [Variable] public static int KolizeumMapId = 128452097;
 
+        private readonly Dictionary<LeaguesEnum, VersusLeagueData> LeaguesInformations =
+            new Dictionary<LeaguesEnum, VersusLeagueData>();
+
         private readonly List<ArenaQueueMember> m_queue = new List<ArenaQueueMember>();
 
         private List<ArenaLeague> Leagues = new List<ArenaLeague>();
-
-        private readonly Dictionary<LeaguesEnum, VersusLeagueData> LeaguesInformations =
-            new Dictionary<LeaguesEnum, VersusLeagueData>();
 
         private List<ArenaLeagueReward> LeaguesRewards = new List<ArenaLeagueReward>();
         private List<ArenaLeagueSeason> LeaguesSeasons = new List<ArenaLeagueSeason>();

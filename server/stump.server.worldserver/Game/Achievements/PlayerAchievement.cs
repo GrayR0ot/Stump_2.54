@@ -1,4 +1,7 @@
-﻿using Stump.Core.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Stump.Core.Reflection;
 using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Enums.Custom;
 using Stump.DofusProtocol.Messages;
@@ -19,9 +22,6 @@ using Stump.Server.WorldServer.Game.Quests;
 using Stump.Server.WorldServer.Handlers.Achievements;
 using Stump.Server.WorldServer.Handlers.Characters;
 using Stump.Server.WorldServer.Handlers.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Achievements
 {
@@ -32,21 +32,23 @@ namespace Stump.Server.WorldServer.Game.Achievements
 
         private readonly object m_lock = new object();
         private AchievementPointsCriterion m_achievementPointsCriterion;
-        private CraftCountCriterion m_craftCountCriterion;
-        private DecraftCountCriterion m_decraftCountCriterion;
         private ChallengeCountCriterion m_challengesCriterion;
         private ChallengeInDungeonCountCriterion m_challengesInDungeonCriterion;
-        private QuestFinishedCountCriterion m_questFinishedCountCriterion;
+
+        private readonly List<DefaultChallenge> m_challs = new List<DefaultChallenge>();
+        private CraftCountCriterion m_craftCountCriterion;
+        private DecraftCountCriterion m_decraftCountCriterion;
 
         private List<AchievementTemplate> m_finishedAchievements;
         private Dictionary<string, AbstractCriterion> m_finishedCriterions;
+        private JobLevelCriterion m_jobLevelCriterion;
 
         private LevelCriterion m_levelCriterion;
-        private JobLevelCriterion m_jobLevelCriterion;
+        private QuestFinishedCountCriterion m_questFinishedCountCriterion;
         private Dictionary<AbstractCriterion, int> m_runningCriterions;
 
-        private List<DefaultChallenge> m_challs = new List<DefaultChallenge>();
-        public int[] Monsterwithoutchall = new int[] { 4045,377,374,375, };
+        public int[] Monsterwithoutchall = {4045, 377, 374, 375};
+
         // CONSTRUCTORS
         public PlayerAchievement(Character character)
         {
@@ -72,35 +74,29 @@ namespace Stump.Server.WorldServer.Game.Achievements
             foreach (var achievementId in Owner.Record.FinishedAchievements)
             {
                 var achievement = Singleton<AchievementManager>.Instance.TryGetAchievement(achievementId);
-                if (achievement != null)
-                {
-                    m_finishedAchievements.Add(achievement);
-                }
+                if (achievement != null) m_finishedAchievements.Add(achievement);
             }
+
             foreach (var finishedAchievementObjective in Owner.Record.FinishedAchievementObjectives)
             {
                 var achievementObjective =
                     Singleton<AchievementManager>.Instance.TryGetAchievementObjective(finishedAchievementObjective);
-                if (achievementObjective != null && !m_finishedCriterions.ContainsValue(achievementObjective.AbstractCriterion))
-                {
+                if (achievementObjective != null &&
+                    !m_finishedCriterions.ContainsValue(achievementObjective.AbstractCriterion))
                     m_finishedCriterions.Add(achievementObjective.Criterion, achievementObjective.AbstractCriterion);
-                }
             }
+
             foreach (var runningAchievementObjective in Owner.Record.RunningAchievementObjectives)
             {
                 var achievementObjective =
                     Singleton<AchievementManager>.Instance.TryGetAchievementObjective(
-                        (uint)runningAchievementObjective.Key);
+                        (uint) runningAchievementObjective.Key);
                 if (achievementObjective != null)
-                {
                     m_runningCriterions.Add(achievementObjective.AbstractCriterion, runningAchievementObjective.Value);
-                }
             }
 
             foreach (var rewardableAchievement in Owner.Record.AchievementRewards)
-            {
                 rewardableAchievement.Initialize(Owner);
-            }
 
             ManageCriterions();
         }
@@ -132,18 +128,21 @@ namespace Stump.Server.WorldServer.Game.Achievements
 
         private void OnDecraftItem(ItemTemplate item, int runeQuantity)
         {
-            var criterion = Singleton<AchievementManager>.Instance.IncrementableCriterion[typeof(DecraftCountCriterion)] as DecraftCountCriterion;
+            var criterion =
+                Singleton<AchievementManager>.Instance.IncrementableCriterion[typeof(DecraftCountCriterion)] as
+                    DecraftCountCriterion;
             while (criterion != null)
             {
                 if (criterion.ItemId != item.Id || ContainsCriterion(criterion.Criterion))
                 {
-                    criterion = (DecraftCountCriterion)criterion.Next;
+                    criterion = (DecraftCountCriterion) criterion.Next;
                     continue;
                 }
 
                 AddCriterion(criterion);
-                criterion = (DecraftCountCriterion)criterion.Next;
+                criterion = (DecraftCountCriterion) criterion.Next;
             }
+
             ManageIncrementalCriterions(ref m_decraftCountCriterion);
         }
 
@@ -171,31 +170,25 @@ namespace Stump.Server.WorldServer.Game.Achievements
         public bool AchievementIsCompleted(uint achievementId)
         {
             if (m_finishedAchievements.FirstOrDefault(i => i.Id == achievementId) != null)
-            {
                 return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public IEnumerable<Achievement> TryGetFinishedAchievements(AchievementCategoryRecord category)
         {
             var result = from template in category.Achievements
-                         where m_finishedAchievements.Contains(template)
-                         select template.GetAchievement(this);
+                where m_finishedAchievements.Contains(template)
+                select template.GetAchievement(this);
 
             return result;
         }
-
 
 
         public void CompleteAchievement(AchievementTemplate achievement)
         {
             lock (m_lock)
             {
-                var reward = Owner.Record.AchievementRewards.FirstOrDefault(entry => entry == (byte)Owner.Level);
+                var reward = Owner.Record.AchievementRewards.FirstOrDefault(entry => entry == (byte) Owner.Level);
                 if (reward == null)
                 {
                     reward = new PlayerAchievementReward(Owner, achievement);
@@ -209,19 +202,20 @@ namespace Stump.Server.WorldServer.Game.Achievements
                         reward.AddRewardableAchievement(achievement);
                 }
 
-                if (!Owner.Record.FinishedAchievements.Contains((ushort)achievement.Id))
-                    Owner.Record.FinishedAchievements.Add((ushort)achievement.Id);
+                if (!Owner.Record.FinishedAchievements.Contains((ushort) achievement.Id))
+                    Owner.Record.FinishedAchievements.Add((ushort) achievement.Id);
 
-                Owner.Record.AchievementPoints += (int)achievement.Points;
+                Owner.Record.AchievementPoints += (int) achievement.Points;
 
-                if (!Owner.Record.UnAcceptedAchievements.Contains((ushort)achievement.Id))
-                    Owner.Record.UnAcceptedAchievements.Add((ushort)achievement.Id);
+                if (!Owner.Record.UnAcceptedAchievements.Contains((ushort) achievement.Id))
+                    Owner.Record.UnAcceptedAchievements.Add((ushort) achievement.Id);
 
                 if (!m_finishedAchievements.Contains(achievement))
                     m_finishedAchievements.Add(achievement);
             }
 
-            AchievementHandler.SendAchievementFinishedMessage(Owner.Client, (ushort)achievement.Id, (ulong)Owner.Id, Owner.Level);
+            AchievementHandler.SendAchievementFinishedMessage(Owner.Client, (ushort) achievement.Id, (ulong) Owner.Id,
+                Owner.Level);
 
             OnAchievementCompleted(achievement);
         }
@@ -230,7 +224,7 @@ namespace Stump.Server.WorldServer.Game.Achievements
         {
             lock (m_lock)
             {
-                var reward = Owner.Record.AchievementRewards.FirstOrDefault(entry => entry == (byte)Owner.Level);
+                var reward = Owner.Record.AchievementRewards.FirstOrDefault(entry => entry == (byte) Owner.Level);
                 if (reward == null)
                 {
                     reward = new PlayerAchievementReward(Owner, achievement);
@@ -244,26 +238,24 @@ namespace Stump.Server.WorldServer.Game.Achievements
                         reward.AddRewardableAchievement(achievement);
                 }
 
-                if (!Owner.Record.FinishedAchievements.Contains((ushort)achievement.Id))
-                    Owner.Record.FinishedAchievements.Add((ushort)achievement.Id);
+                if (!Owner.Record.FinishedAchievements.Contains((ushort) achievement.Id))
+                    Owner.Record.FinishedAchievements.Add((ushort) achievement.Id);
 
-                if (!Owner.Record.UnAcceptedAchievements.Contains((ushort)achievement.Id))
-                    Owner.Record.UnAcceptedAchievements.Add((ushort)achievement.Id);
+                if (!Owner.Record.UnAcceptedAchievements.Contains((ushort) achievement.Id))
+                    Owner.Record.UnAcceptedAchievements.Add((ushort) achievement.Id);
 
                 if (!m_finishedAchievements.Contains(achievement))
                     m_finishedAchievements.Add(achievement);
             }
 
-            AchievementHandler.SendAchievementFinishedMessage(Owner.Client, (ushort)achievement.Id, (ulong)Owner.Id, Owner.Level);
+            AchievementHandler.SendAchievementFinishedMessage(Owner.Client, (ushort) achievement.Id, (ulong) Owner.Id,
+                Owner.Level);
         }
 
         public List<AchievementAchievedRewardable> GetRewardableAchievements()
         {
             var achievements = new List<AchievementAchievedRewardable>();
-            foreach (var item in RewardAchievements)
-            {
-                achievements.AddRange(item.GetRewardableAchievements());
-            }
+            foreach (var item in RewardAchievements) achievements.AddRange(item.GetRewardableAchievements());
 
             return achievements;
         }
@@ -285,13 +277,11 @@ namespace Stump.Server.WorldServer.Game.Achievements
                 lock (m_lock)
                 {
                     foreach (var item in Owner.Record.AchievementRewards)
-                    {
                         if (item.Contains(achievement))
                         {
                             reward = item;
                             break;
                         }
-                    }
                 }
 
                 result = reward != null && RewardAchievement(achievement, reward, out experience, out guildExperience);
@@ -304,38 +294,29 @@ namespace Stump.Server.WorldServer.Game.Achievements
             return result;
         }
 
-        public bool RewardAchievement(AchievementTemplate achievement, PlayerAchievementReward owner, out int experience,
+        public bool RewardAchievement(AchievementTemplate achievement, PlayerAchievementReward owner,
+            out int experience,
             out int guildExperience)
         {
             experience = 0;
             guildExperience = 0;
-            if (!owner.Remove(achievement))
-            {
-                return false;
-            }
+            if (!owner.Remove(achievement)) return false;
 
             experience = achievement.GetExperienceReward(Owner.Client);
             if (experience > 0)
-            {
                 if (Owner.GuildMember != null && Owner.GuildMember.GivenPercent > 0)
                 {
-                    var guildXP = (int)(experience * (Owner.GuildMember.GivenPercent * 0.01));
-                    var adjustedGuildExperience = (int)Owner.Guild.AdjustGivenExperience(Owner, guildXP);
+                    var guildXP = (int) (experience * (Owner.GuildMember.GivenPercent * 0.01));
+                    var adjustedGuildExperience = (int) Owner.Guild.AdjustGivenExperience(Owner, guildXP);
                     adjustedGuildExperience = Math.Min(Guild.MaxGuildXP, adjustedGuildExperience);
 
-                    experience = (int)(experience * (100.0 - Owner.GuildMember.GivenPercent) * 0.01);
-                    if (adjustedGuildExperience > 0)
-                    {
-                        guildExperience = adjustedGuildExperience;
-                    }
+                    experience = (int) (experience * (100.0 - Owner.GuildMember.GivenPercent) * 0.01);
+                    if (adjustedGuildExperience > 0) guildExperience = adjustedGuildExperience;
                 }
-            }
-            if (experience < 0)
-            {
-                experience = 0;
-            }
 
-            var kamas = (ulong)achievement.GetKamasReward(Owner.Client);
+            if (experience < 0) experience = 0;
+
+            var kamas = (ulong) achievement.GetKamasReward(Owner.Client);
             if (kamas > 0)
             {
                 Owner.Inventory.AddKamas(kamas);
@@ -349,55 +330,36 @@ namespace Stump.Server.WorldServer.Game.Achievements
                     var id = item.ItemsReward[i];
                     var quantity = item.ItemsQuantityReward[i];
 
-                    var itemTemplate = Singleton<ItemManager>.Instance.TryGetTemplate((int)id);
-                    if (itemTemplate != null)
-                    {
-                        Owner.Inventory.AddItem(itemTemplate, (int)quantity);
-                    }
+                    var itemTemplate = Singleton<ItemManager>.Instance.TryGetTemplate((int) id);
+                    if (itemTemplate != null) Owner.Inventory.AddItem(itemTemplate, (int) quantity);
                 }
 
                 if (item.EmotesReward != null)
-                {
                     foreach (var emoteId in item.EmotesReward)
                     {
                         Owner.Record.EmotesCSV = Owner.Record.EmotesCSV + "," + emoteId; //TODO Test
-                        Owner.Client.Send(new EmoteAddMessage((byte)emoteId));
+                        Owner.Client.Send(new EmoteAddMessage((byte) emoteId));
                     }
-                }
 
                 if (item.SpellsReward != null)
-                {
-                    foreach (var spellId in item.SpellsReward.Where(spellId => !Owner.Spells.HasSpell((int)spellId)))
-                    {
-                        Owner.Spells.LearnSpell((int)spellId);
-                    }
-                }
+                    foreach (var spellId in item.SpellsReward.Where(spellId => !Owner.Spells.HasSpell((int) spellId)))
+                        Owner.Spells.LearnSpell((int) spellId);
 
                 if (item.TitlesReward != null)
-                {
-                    foreach (var titleId in item.TitlesReward.Where(titleId => !Owner.HasTitle((short)titleId)))
-                    {
-                        Owner.AddTitle((short)titleId);
-                    }
-                }
+                    foreach (var titleId in item.TitlesReward.Where(titleId => !Owner.HasTitle((short) titleId)))
+                        Owner.AddTitle((short) titleId);
 
                 if (item.OrnamentsReward != null)
-                {
-                    foreach (var ornamentId in item.OrnamentsReward.Where(ornamentId => !Owner.HasOrnament((short)ornamentId)))
-                    {
-                        Owner.AddOrnament((short)ornamentId);
-                    }
-                }
+                    foreach (var ornamentId in item.OrnamentsReward.Where(ornamentId =>
+                        !Owner.HasOrnament((short) ornamentId)))
+                        Owner.AddOrnament((short) ornamentId);
             }
             // TODO : items
 
-            if (!owner.Any())
-            {
-                Owner.Record.AchievementRewards.Remove(owner);
-            }
+            if (!owner.Any()) Owner.Record.AchievementRewards.Remove(owner);
 
-            if (Owner.Record.UnAcceptedAchievements.Contains((ushort)achievement.Id))
-                Owner.Record.UnAcceptedAchievements.Remove((ushort)achievement.Id);
+            if (Owner.Record.UnAcceptedAchievements.Contains((ushort) achievement.Id))
+                Owner.Record.UnAcceptedAchievements.Remove((ushort) achievement.Id);
 
             Owner.RefreshStats();
 
@@ -428,25 +390,17 @@ namespace Stump.Server.WorldServer.Game.Achievements
             }
 
             if (totalExperience > 0)
-            {
                 Owner.AddExperience(totalExperience);
-            }
             else
-            {
                 totalExperience = 0;
-            }
 
             if (Owner.GuildMember != null && totalGuildExperience > 0)
-            {
                 Owner.GuildMember.AddXP(totalGuildExperience);
-            }
             else
-            {
                 totalGuildExperience = 0;
-            }
 
-            CharacterHandler.SendCharacterExperienceGainMessage(Owner.Client, (ulong)totalExperience, 0L,
-                (ulong)totalGuildExperience, 0L);
+            CharacterHandler.SendCharacterExperienceGainMessage(Owner.Client, (ulong) totalExperience, 0L,
+                (ulong) totalGuildExperience, 0L);
         }
 
         #region Handlers
@@ -454,13 +408,15 @@ namespace Stump.Server.WorldServer.Game.Achievements
         private void OnFightEnded(Character character, CharacterFighter fighter)
         {
             if (fighter.Fight.FightType == FightTypeEnum.FIGHT_TYPE_PvM)
-            {
                 if (fighter.HasWin())
                 {
                     if (fighter.Fight.Map.IsDungeon())
                     {
                         // KILL BOSS
-                        foreach (var criterion in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>().Select(item => Singleton<AchievementManager>.Instance.TryGetCriterionByBoss(item.Monster.Template)).Where(criterion => criterion != null))
+                        foreach (var criterion in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>()
+                            .Select(item =>
+                                Singleton<AchievementManager>.Instance.TryGetCriterionByBoss(item.Monster.Template))
+                            .Where(criterion => criterion != null))
                         {
                             if (m_runningCriterions.ContainsKey(criterion))
                                 m_runningCriterions[criterion]++;
@@ -487,43 +443,49 @@ namespace Stump.Server.WorldServer.Game.Achievements
                                 }
                             }
                         }*/
-                        foreach (var criterions in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>().Select(item => Singleton<AchievementManager>.Instance.TryGetIdolsScoreCriterionByMonster(item.Monster.Template)).Where(criterion => criterion != null))
+                        foreach (var criterions in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>()
+                            .Select(item =>
+                                Singleton<AchievementManager>.Instance.TryGetIdolsScoreCriterionByMonster(item.Monster
+                                    .Template)).Where(criterion => criterion != null))
+                        foreach (var criterion in criterions)
                         {
-                            foreach (var criterion in criterions)
-                            {
-                                if (ContainsCriterion(criterion.Criterion)) continue;
-                                if (criterion.Eval(Owner))
-                                    AddCriterion(criterion);
-                            }
+                            if (ContainsCriterion(criterion.Criterion)) continue;
+                            if (criterion.Eval(Owner))
+                                AddCriterion(criterion);
                         }
 
                         // KILL BOSS WITH CHALL
-                        foreach (var challenges in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.IsBoss).Select(item => Singleton<AchievementManager>.Instance.TryGetCriterionsByBossWithChallenge(item.Monster.Template)).Where(criterion => criterion != null))
+                        foreach (var challenges in fighter.Fight.DefendersTeam
+                            .GetAllFighters<MonsterFighter>(x => x.Monster.Template.IsBoss)
+                            .Select(item =>
+                                Singleton<AchievementManager>.Instance.TryGetCriterionsByBossWithChallenge(item.Monster
+                                    .Template)).Where(criterion => criterion != null))
+                        foreach (var challenge in challenges)
                         {
-                            foreach (var challenge in challenges)
+                            if (m_challs.FirstOrDefault(x => x.Id == challenge.ChallIdentifier) == null)
+                                continue;
+
+                            if (m_challs.FirstOrDefault(x => x.Id == challenge.ChallIdentifier).Status ==
+                                ChallengeStatusEnum.SUCCESS)
                             {
-                                if (m_challs.FirstOrDefault(x => x.Id == challenge.ChallIdentifier) == null)
-                                    continue;
+                                if (m_runningCriterions.ContainsKey(challenge))
+                                    m_runningCriterions[challenge]++;
+                                else
+                                    m_runningCriterions.Add(challenge, 1);
 
-                                if (m_challs.FirstOrDefault(x => x.Id == challenge.ChallIdentifier).Status == ChallengeStatusEnum.SUCCESS)
-                                {
-                                    if (m_runningCriterions.ContainsKey(challenge))
-                                        m_runningCriterions[challenge]++;
-                                    else
-                                        m_runningCriterions.Add(challenge, 1);
-
-                                    if (ContainsCriterion(challenge.Criterion)) continue;
-                                    if (challenge.Eval(Owner))
-                                        AddCriterion(challenge);
-                                }
+                                if (ContainsCriterion(challenge.Criterion)) continue;
+                                if (challenge.Eval(Owner))
+                                    AddCriterion(challenge);
                             }
                         }
                     }
 
                     //KILL MONSTER WITH CHALL
                     if (fighter.Fight.Challenges.FirstOrDefault(x => x.Status == ChallengeStatusEnum.SUCCESS) != null)
-                    {
-                        foreach (var criterion in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>().Select(item => Singleton<AchievementManager>.Instance.TryGetCriterionByMonster(item.Monster.Template)).Where(criterion => criterion != null))
+                        foreach (var criterion in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>()
+                            .Select(item =>
+                                Singleton<AchievementManager>.Instance.TryGetCriterionByMonster(item.Monster.Template))
+                            .Where(criterion => criterion != null))
                         {
                             if (m_runningCriterions.ContainsKey(criterion))
                                 m_runningCriterions[criterion]++;
@@ -534,13 +496,13 @@ namespace Stump.Server.WorldServer.Game.Achievements
                             if (criterion.Eval(Owner))
                                 AddCriterion(criterion);
                         }
-                    }
-                    
+
                     foreach (var monster in fighter.Fight.GetAllFighters<MonsterFighter>())
-                    {
                         if (Monsterwithoutchall.Contains(monster.Monster.Template.Id))
-                        {
-                            foreach (var criterion in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>().Select(item => Singleton<AchievementManager>.Instance.TryGetCriterionByMonster(item.Monster.Template)).Where(criterion => criterion != null))
+                            foreach (var criterion in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>()
+                                .Select(item =>
+                                    Singleton<AchievementManager>.Instance.TryGetCriterionByMonster(item.Monster
+                                        .Template)).Where(criterion => criterion != null))
                             {
                                 if (m_runningCriterions.ContainsKey(criterion))
                                     m_runningCriterions[criterion]++;
@@ -551,18 +513,14 @@ namespace Stump.Server.WorldServer.Game.Achievements
                                 if (criterion.Eval(Owner))
                                     AddCriterion(criterion);
                             }
-                        }
-                    }
 
                     //CHALL COUNT
                     var teamLevel = 0;
                     foreach (var fighterr in fighter.Team.Fighters)
-                    {
                         if (fighterr.Level > 200)
                             teamLevel += 200;
                         else
                             teamLevel += fighterr.Level;
-                    }
 
                     var opposedTeamLevel = 0;
                     foreach (var fighterr in fighter.OpposedTeam.Fighters)
@@ -570,7 +528,8 @@ namespace Stump.Server.WorldServer.Game.Achievements
 
                     if (teamLevel <= opposedTeamLevel)
                     {
-                        var challCount = fighter.Fight.Challenges.Where(x => x.Status == DofusProtocol.Enums.Custom.ChallengeStatusEnum.SUCCESS).Count();
+                        var challCount = fighter.Fight.Challenges.Where(x => x.Status == ChallengeStatusEnum.SUCCESS)
+                            .Count();
                         if (fighter.Fight.Map.IsDungeon())
                         {
                             character.ChallengesInDungeonCount += challCount;
@@ -590,7 +549,6 @@ namespace Stump.Server.WorldServer.Game.Achievements
                     ManageIncrementalCriterions(ref m_challengesCriterion);
                     ManageIncrementalCriterions(ref m_challengesInDungeonCriterion);
                 }
-            }
 
             m_challs.Clear();
         }
@@ -599,41 +557,37 @@ namespace Stump.Server.WorldServer.Game.Achievements
         {
             //Challs
             if (fighter.Fight.Map.IsDungeon())
-            {
-                foreach (var challenges in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.IsBoss).Select(item => Singleton<AchievementManager>.Instance.TryGetCriterionsByBossWithChallenge(item.Monster.Template)).Where(criterion => criterion != null))
+                foreach (var challenges in fighter.Fight.DefendersTeam
+                    .GetAllFighters<MonsterFighter>(x => x.Monster.Template.IsBoss)
+                    .Select(item =>
+                        Singleton<AchievementManager>.Instance.TryGetCriterionsByBossWithChallenge(
+                            item.Monster.Template)).Where(criterion => criterion != null))
+                foreach (var challenge in challenges)
                 {
-                    foreach (var challenge in challenges)
+                    var chall = ChallengeManager.Instance.GetChallenge(challenge.ChallIdentifier, fighter.Fight);
+
+                    if (chall == null)
+                        continue;
+                    Console.WriteLine("debug + " + chall.Id);
+                    fighter.Fight.AddChallenge(chall);
+                    m_challs.Add(chall);
+                    ContextHandler.SendChallengeInfoMessage(fighter.Fight.Clients, chall);
+                    chall.Initialize();
+
+                    if (chall is VolunteerChallenge || chall is ReprieveChallenge)
                     {
-                        var chall = ChallengeManager.Instance.GetChallenge(challenge.ChallIdentifier, fighter.Fight);
-
-                        if (chall == null)
-                            continue;
-                        Console.WriteLine("debug + " + chall.Id);
-                        fighter.Fight.AddChallenge(chall);
-                        m_challs.Add(chall);
-                        ContextHandler.SendChallengeInfoMessage(fighter.Fight.Clients, chall);
-                        chall.Initialize();
-
-                        if (chall is VolunteerChallenge || chall is ReprieveChallenge)
-                        {
-
-                            if (chall.Id == 233)
-                            {
-                                chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2884).FirstOrDefault();
-                            }
-                            else if (chall.Id == 234)
-                            {
-                                chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2992).FirstOrDefault();
-                            }
-                            else
-                                chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == challenge.GetMonsterIdByChallId(challenge.ChallIdentifier)).FirstOrDefault();
-                        }
-
-
-
+                        if (chall.Id == 233)
+                            chall.Target = fighter.Fight.DefendersTeam
+                                .GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2884).FirstOrDefault();
+                        else if (chall.Id == 234)
+                            chall.Target = fighter.Fight.DefendersTeam
+                                .GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2992).FirstOrDefault();
+                        else
+                            chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x =>
+                                    x.Monster.Template.Id == challenge.GetMonsterIdByChallId(challenge.ChallIdentifier))
+                                .FirstOrDefault();
                     }
                 }
-            }
         }
 
         private void OnChangeSubArea(RolePlayActor actor, SubArea subArea)
@@ -642,12 +596,8 @@ namespace Stump.Server.WorldServer.Game.Achievements
             lock (m_lock)
             {
                 if (achievement != null)
-                {
                     if (!m_finishedAchievements.Contains(achievement))
-                    {
                         CompleteAchievement(achievement);
-                    }
-                }
             }
             //if (actor is Character && (actor as Character).LastMap != null && (actor as Character).LastMap.SubArea != subArea)
             //{
@@ -664,10 +614,7 @@ namespace Stump.Server.WorldServer.Game.Achievements
 
         private void OnLevelChanged(Character character, ushort currentLevel, int difference)
         {
-            if (difference > 0)
-            {
-                ManageIncrementalCriterions(ref m_levelCriterion);
-            }
+            if (difference > 0) ManageIncrementalCriterions(ref m_levelCriterion);
         }
 
         private void OnCraftItem(BasePlayerItem item, int quantity)
@@ -679,10 +626,7 @@ namespace Stump.Server.WorldServer.Game.Achievements
         private void OnAchievementCompleted(AchievementTemplate achievement)
         {
             var achievementCriterion = Singleton<AchievementManager>.Instance.TryGetAchievementCriterion(achievement);
-            if (achievementCriterion != null)
-            {
-                AddCriterion(achievementCriterion);
-            }
+            if (achievementCriterion != null) AddCriterion(achievementCriterion);
         }
 
         private void ManageCriterions()
@@ -706,10 +650,7 @@ namespace Stump.Server.WorldServer.Game.Achievements
             ManageIncrementalCriterions(ref m_questFinishedCountCriterion);
 
             //QUEST
-            foreach (var quest in Owner.Quests.Where(x => x.Finished))
-            {
-                OnQuestFinished(Owner, quest);
-            }
+            foreach (var quest in Owner.Quests.Where(x => x.Finished)) OnQuestFinished(Owner, quest);
         }
 
         private void ManageIncrementalCriterions<T>(ref T criterion)
@@ -719,14 +660,10 @@ namespace Stump.Server.WorldServer.Game.Achievements
             while (criterion != null)
             {
                 if (criterion.Eval(Owner))
-                {
                     if (!ContainsCriterion(criterion.Criterion))
-                    {
                         AddCriterion(criterion);
-                    }
-                }
 
-                criterion = (T)criterion.Next;
+                criterion = (T) criterion.Next;
             }
         }
 
@@ -740,12 +677,12 @@ namespace Stump.Server.WorldServer.Game.Achievements
             {
                 m_finishedCriterions.Add(criterion.Criterion, criterion);
 
-                foreach (var item in criterion.UsefullFor.Where(item => item.Objectives.All(entry => m_finishedCriterions.ContainsKey(entry.Criterion))))
-                {
+                foreach (var item in criterion.UsefullFor.Where(item =>
+                    item.Objectives.All(entry => m_finishedCriterions.ContainsKey(entry.Criterion))))
                     CompleteAchievement(item);
-                }
 
-                if (!string.IsNullOrEmpty(Convert.ToString(criterion.DefaultObjective.Id)) && !Owner.Record.FinishedAchievementObjectives.Contains(criterion.DefaultObjective.Id))
+                if (!string.IsNullOrEmpty(Convert.ToString(criterion.DefaultObjective.Id)) &&
+                    !Owner.Record.FinishedAchievementObjectives.Contains(criterion.DefaultObjective.Id))
                     Owner.Record.FinishedAchievementObjectives.Add(criterion.DefaultObjective.Id);
             }
         }

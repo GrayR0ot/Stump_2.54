@@ -109,7 +109,7 @@ namespace Stump.Server.WorldServer.Game.Fights.Buffs.Customs
 
             return new FightTriggeredEffect((uint)Id, Target.Id, turnDuration,
                 (sbyte)Dispellable,
-                (ushort)Spell.Id, (uint)(EffectFix?.ClientEffectId ?? Effect.Id), 0,
+                (ushort)Spell.Id, (uint)Effect.Id, 0,
                 (values.Length > 0 ? Convert.ToInt32(values[0]) : 0),
                 (values.Length > 1 ? Convert.ToInt32(values[1]) : 0),
                 (values.Length > 2 ? Convert.ToInt32(values[2]) : 0),

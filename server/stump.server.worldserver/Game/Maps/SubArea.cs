@@ -53,9 +53,7 @@ namespace Stump.Server.WorldServer.Game.Maps
         }
 
         public bool IsAgressibleMonsters => true;
-
-        public bool HasAgressibleMonster => MonsterManager.Instance.GetMonsterAgressionRecordBySubAreaId(Id).Count > 0;
-
+        
         public SubAreaRecord Record { get; }
 
         public int Id => Record.Id;
@@ -91,13 +89,6 @@ namespace Stump.Server.WorldServer.Game.Maps
         }
 
         public ReadOnlyCollection<MonsterSpawn> MonsterSpawns => m_monsterSpawns.AsReadOnly();
-
-        public List<MonsterAgressionRecord> GetMonstersAgression()
-        {
-            return MonsterManager.Instance.GetMonsterAgressionRecordBySubAreaId(Id).Count > 0
-                ? MonsterManager.Instance.GetMonsterAgressionRecordBySubAreaId(Id)
-                : new List<MonsterAgressionRecord>();
-        }
 
         internal void AddMap(Map map)
         {

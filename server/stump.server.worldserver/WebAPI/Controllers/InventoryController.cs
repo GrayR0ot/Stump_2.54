@@ -4,71 +4,80 @@ using System.Web.Http;
 using Stump.Server.WorldServer.Game;
 using Stump.Server.WorldServer.Game.Items;
 
-namespace Stump.Server.WorldServer.WebAPI.Controllers {
+namespace Stump.Server.WorldServer.WebAPI.Controllers
+{
     [CustomAuthorize]
-    [Route ("Character/{characterId:int}/Inventory")]
-    public class InventoryController : ApiController {
-        public IHttpActionResult Get (int characterId) {
-            var character = World.Instance.GetCharacter (characterId);
+    [Route("Character/{characterId:int}/Inventory")]
+    public class InventoryController : ApiController
+    {
+        public IHttpActionResult Get(int characterId)
+        {
+            var character = World.Instance.GetCharacter(characterId);
 
             if (character == null)
-                return NotFound ();
+                return NotFound();
 
-            return Json (character.Inventory.GetItems ().Select (x => x.GetObjectItem ()));
+            return Json(character.Inventory.GetItems().Select(x => x.GetObjectItem()));
         }
 
-        [Route ("Character/{characterId:int}/Inventory/{guid:int}")]
-        public IHttpActionResult Get (int characterId, int guid) {
-            var character = World.Instance.GetCharacter (characterId);
+        [Route("Character/{characterId:int}/Inventory/{guid:int}")]
+        public IHttpActionResult Get(int characterId, int guid)
+        {
+            var character = World.Instance.GetCharacter(characterId);
 
             if (character == null)
-                return NotFound ();
+                return NotFound();
 
-            var item = character.Inventory.TryGetItem (guid);
+            var item = character.Inventory.TryGetItem(guid);
 
             if (item == null)
-                return NotFound ();
+                return NotFound();
 
-            return Json (item.GetObjectItem ());
+            return Json(item.GetObjectItem());
         }
 
-        public IHttpActionResult Post (int characterId, string value) => StatusCode (HttpStatusCode.MethodNotAllowed);
+        public IHttpActionResult Post(int characterId, string value)
+        {
+            return StatusCode(HttpStatusCode.MethodNotAllowed);
+        }
 
-        [Route ("Character/{characterId:int}/Inventory/{itemId:int}/{amount:int}")]
-        public IHttpActionResult Put (int characterId, int itemId, int amount) {
-            var character = World.Instance.GetCharacter (characterId);
+        [Route("Character/{characterId:int}/Inventory/{itemId:int}/{amount:int}")]
+        public IHttpActionResult Put(int characterId, int itemId, int amount)
+        {
+            var character = World.Instance.GetCharacter(characterId);
 
             if (character == null)
-                return NotFound ();
+                return NotFound();
 
-            var item = ItemManager.Instance.CreatePlayerItem (character, itemId, amount);
+            var item = ItemManager.Instance.CreatePlayerItem(character, itemId, amount);
 
             if (item == null)
-                return StatusCode (HttpStatusCode.InternalServerError);
+                return StatusCode(HttpStatusCode.InternalServerError);
 
-            var playerItem = character.Inventory.AddItem (item);
+            var playerItem = character.Inventory.AddItem(item);
 
             if (playerItem == null)
-                return StatusCode (HttpStatusCode.InternalServerError);
+                return StatusCode(HttpStatusCode.InternalServerError);
 
-            return Ok ();
+            return Ok();
         }
 
-        [Route ("Character/{characterId:int}/Inventory/{guid:int}/{amount:int}")]
-        public IHttpActionResult Delete (int characterId, int guid, int amount) {
-            var character = World.Instance.GetCharacter (characterId);
+        [Route("Character/{characterId:int}/Inventory/{guid:int}/{amount:int}")]
+        public IHttpActionResult Delete(int characterId, int guid, int amount)
+        {
+            var character = World.Instance.GetCharacter(characterId);
 
             if (character == null)
-                return NotFound ();
+                return NotFound();
 
-            var item = character.Inventory.TryGetItem (guid);
+            var item = character.Inventory.TryGetItem(guid);
 
             if (item == null)
-                return NotFound ();
+                return NotFound();
 
-            character.Inventory.UnStackItem (item, amount);
+            character.Inventory.UnStackItem(item, amount);
 
-            return Ok ();
+            return Ok();
         }
     }
 }

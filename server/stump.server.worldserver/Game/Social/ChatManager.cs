@@ -79,8 +79,6 @@ namespace Stump.Server.WorldServer.Game.Social
         public readonly Dictionary<ChatActivableChannelsEnum, ChatParserDelegate> ChatHandlers =
             new Dictionary<ChatActivableChannelsEnum, ChatParserDelegate>();
 
-        public List<BadWordRecord> BadWords;
-
         private Dictionary<int, Emote> m_emotes = new Dictionary<int, Emote>();
 
         public IReadOnlyDictionary<int, Emote> Emotes => new ReadOnlyDictionary<int, Emote>(m_emotes);
@@ -101,19 +99,8 @@ namespace Stump.Server.WorldServer.Game.Social
             ChatHandlers.Add(ChatActivableChannelsEnum.CHANNEL_MONDE, SayMonde);
             ChatHandlers.Add(ChatActivableChannelsEnum.CHANNEL_VIP, SayVip);
 
-            BadWords = Database.Query<BadWordRecord>(BadWordRelator.FetchQuery).ToList();
             m_emotes = Database.Query<Emote>(EmoteRelator.FetchQuery).ToDictionary(x => x.Id);
             World.Instance.RegisterSaveableInstance(this);
-        }
-
-
-        public string CanSendMessage(string message)
-        {
-            foreach (var badWord in BadWords)
-                if (message.ToLower().RemoveWhitespace().Contains(badWord.Text.ToLower()))
-                    return badWord.Text;
-
-            return string.Empty;
         }
 
         public bool CanUseChannel(Character character, ChatActivableChannelsEnum channel)
@@ -242,14 +229,6 @@ namespace Stump.Server.WorldServer.Game.Social
             {
                 if (!CanUseChannel(client.Character, channel))
                     return;
-
-                var badword = CanSendMessage(message);
-                if (badword != string.Empty)
-                {
-                    client.Character.SendServerMessage(
-                        $"Message non envoyé. Le terme <b>{badword}</b> est interdit sur le serveur !");
-                    return;
-                }
 
                 #region Logs Players
 
@@ -577,16 +556,7 @@ namespace Stump.Server.WorldServer.Game.Social
 
         public void Save()
         {
-            foreach (var badWord in BadWords.Where(x => x.IsDirty || x.IsNew))
-            {
-                if (badWord.IsNew)
-                    Database.Insert(badWord);
-                else
-                    Database.Update(badWord);
-
-                badWord.IsNew = false;
-                badWord.IsDirty = false;
-            }
+            
         }
 
         #endregion

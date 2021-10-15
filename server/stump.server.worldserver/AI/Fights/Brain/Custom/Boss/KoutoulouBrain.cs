@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 {
-    [BrainIdentifier((int)MonsterIdEnum.LARVE_DE_KOUTOULOU)]
+    [BrainIdentifier((int) MonsterIdEnum.LARVE_DE_KOUTOULOU)]
     public class KoutoulouBrain : Brain
     {
         public KoutoulouBrain(AIFighter fighter) : base(fighter)
@@ -15,7 +15,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.COSMIC_HORROR_6749, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.COSMIC_HORROR_6749, 1), Fighter.Cell);
         }
     }
 }

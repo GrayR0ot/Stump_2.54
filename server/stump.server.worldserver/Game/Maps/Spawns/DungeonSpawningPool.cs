@@ -88,9 +88,9 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
                     new ObjectPosition(Map, cell, Map.GetRandomDirection()), this);
                 foreach (var entity in spawn.GroupMonsters)
                     if (entity.MinPartyMembers != null)
-                        @group.AddMonster(new Monster(entity.MonsterGrade, @group), entity.MinPartyMembers.Value);
+                        group.AddMonster(new Monster(entity.MonsterGrade, group), entity.MinPartyMembers.Value);
                     else
-                        @group.AddMonster(new Monster(entity.MonsterGrade, @group));
+                        group.AddMonster(new Monster(entity.MonsterGrade, group));
 
                 m_groupsSpawn.Add(group, spawn);
 

@@ -227,32 +227,5 @@ namespace Stump.Server.WorldServer.Game.Breeds
                     }
             }
         }
-
-        //static void ForgetSpecialSpells(Character character)
-        //{
-        //    var specialSpellsList = new List<SpellIdEnum>
-        //    {
-        //        SpellIdEnum.REINFORCED_PROTECTION,
-        //        SpellIdEnum.SPIRITUAL_LEASH_420,
-        //        SpellIdEnum.PULL_OUT,
-        //        SpellIdEnum.JINX,
-        //        SpellIdEnum.RHOL_BAK,
-        //        SpellIdEnum.FELINTION,
-        //        //SpellIdEnum.DECISIVE_WORD,
-        //        //SpellIdEnum.BROKLE,
-        //        SpellIdEnum.DISPERSING_ARROW,
-        //        SpellIdEnum.THE_TREE_OF_LIFE,
-        //        //SpellIdEnum.PAIN_SHARED,
-        //        SpellIdEnum.DIFFRACTION,
-        //        SpellIdEnum.FOCUS,
-        //        SpellIdEnum.BOOMBOT,
-        //        SpellIdEnum.DRUNKENNESS,
-        //        SpellIdEnum.BREAKWATER_3277,
-        //        SpellIdEnum.FOCUS,
-        //        SpellIdEnum.JOURNEY
-        //    };
-
-        //    specialSpellsList.ForEach(x => character.Spells.UnLearnSpell((int)x));
-        //}
     }
 }

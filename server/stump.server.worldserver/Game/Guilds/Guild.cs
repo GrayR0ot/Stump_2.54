@@ -635,8 +635,8 @@ namespace Stump.Server.WorldServer.Game.Guilds
                     member.Rights = (GuildRightsBitEnum) rights;
 
                 if (from.GuildMember.HasRight(GuildRightsBitEnum.GUILD_RIGHT_MANAGE_XP_CONTRIBUTION) ||
-                    @from.GuildMember == member
-                    && @from.GuildMember.HasRight(GuildRightsBitEnum.GUILD_RIGHT_MANAGE_MY_XP_CONTRIBUTION))
+                    from.GuildMember == member
+                    && from.GuildMember.HasRight(GuildRightsBitEnum.GUILD_RIGHT_MANAGE_MY_XP_CONTRIBUTION))
                     member.GivenPercent = xpPercent;
             }
 

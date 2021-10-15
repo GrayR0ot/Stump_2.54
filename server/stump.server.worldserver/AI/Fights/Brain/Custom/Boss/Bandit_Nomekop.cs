@@ -3,23 +3,22 @@ using Stump.Server.WorldServer.AI.Fights.Actions;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Fights;
 using Stump.Server.WorldServer.Game.Spells;
-using System.Linq;
 using TreeSharp;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 {
-    [BrainIdentifier((int)MonsterIdEnum.NOMEKOP_LE_CRAPOTEUR)]
+    [BrainIdentifier((int) MonsterIdEnum.NOMEKOP_LE_CRAPOTEUR)]
     public class Bandit_Nomekop : Brain
     {
         public Bandit_Nomekop(AIFighter fighter)
-           : base(fighter)
+            : base(fighter)
         {
             fighter.Fight.FightStarted += Fight_FightStarted;
         }
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.DISTANT_SHOOTING_172, 6), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.DISTANT_SHOOTING_172, 6), Fighter.Cell);
         }
 
         public override void Play()
@@ -34,7 +33,6 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
                 selector.AddChild(new Decorator(ctx => spell == null, new DecoratorContinue(new FleeAction(Fighter))));
 
                 if (target != null && spell != null)
-                {
                     selector.AddChild(new PrioritySelector(
                         new Decorator(ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                             new Sequence(
@@ -46,13 +44,10 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
                                 ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                                 new Sequence(
                                     new SpellCastAction(Fighter, spell, target.Cell, true))))));
-                }
 
                 foreach (var action in selector.Execute(this))
                 {
-
                 }
-
             }
         }
     }

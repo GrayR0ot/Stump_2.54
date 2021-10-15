@@ -1,12 +1,11 @@
-﻿using Stump.DofusProtocol.Enums;
+﻿using System.Linq;
+using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Effects;
 using Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Damage;
 using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
 {
@@ -20,27 +19,21 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
 
         public override void Execute()
         {
-            var fighter = this.Fight.GetOneFighter(this.TargetedCell);
+            var fighter = Fight.GetOneFighter(TargetedCell);
             {
-                IEnumerable<SummonedMonster> monsters = Fight.GetAllFighters<SummonedMonster>(x => x.Position.Point.IsInMap());
+                var monsters = Fight.GetAllFighters<SummonedMonster>(x => x.Position.Point.IsInMap());
                 var amountOfTofu = 0;
                 foreach (var entry in monsters)
-                {
                     switch (entry.Monster.Template.Id)
                     {
                         case 5131:
                         case 4561:
                         case 4562:
                             amountOfTofu++;
-                            if (entry.IsDead())
-                            {
-                                amountOfTofu--;
-                            }
-                            break;
-                        default:
+                            if (entry.IsDead()) amountOfTofu--;
                             break;
                     }
-                }
+
                 if (amountOfTofu == 1)
                 {
                     var target = Fight.GetOneFighter(TargetedCell);
@@ -50,12 +43,10 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                         target.RemoveBuff(buff);
 
                     var effect = new EffectDice(EffectsEnum.Effect_98, 0, 32, 34);
-                    if (Critical)
-                    {
-                        effect = new EffectDice(EffectsEnum.Effect_98, 0, 42, 44);
-                    }
+                    if (Critical) effect = new EffectDice(EffectsEnum.Effect_98, 0, 42, 44);
                     var actorBuffId = Caster.PopNextBuffId();
-                    var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
+                    var handler =
+                        EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
 
                     var buff2 = new DirectDamage(effect, Caster, this, TargetedCell, false);
                     buff2.Apply();
@@ -69,12 +60,10 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                         target.RemoveBuff(buff);
 
                     var effect = new EffectDice(EffectsEnum.Effect_98, 0, 37, 39);
-                    if (Critical)
-                    {
-                        effect = new EffectDice(EffectsEnum.Effect_98, 0, 47, 49);
-                    }
+                    if (Critical) effect = new EffectDice(EffectsEnum.Effect_98, 0, 47, 49);
                     var actorBuffId = Caster.PopNextBuffId();
-                    var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
+                    var handler =
+                        EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
 
                     var buff2 = new DirectDamage(effect, Caster, this, TargetedCell, false);
                     buff2.Apply();
@@ -88,12 +77,10 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                         target.RemoveBuff(buff);
 
                     var effect = new EffectDice(EffectsEnum.Effect_98, 0, 42, 44);
-                    if (Critical)
-                    {
-                        effect = new EffectDice(EffectsEnum.Effect_98, 0, 52, 54);
-                    }
+                    if (Critical) effect = new EffectDice(EffectsEnum.Effect_98, 0, 52, 54);
                     var actorBuffId = Caster.PopNextBuffId();
-                    var handler = EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
+                    var handler =
+                        EffectManager.Instance.GetSpellEffectHandler(effect, Caster, this, TargetedCell, Critical);
 
                     var buff2 = new DirectDamage(effect, Caster, this, TargetedCell, false);
                     buff2.Apply();
@@ -102,9 +89,9 @@ namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
                 {
                     Handlers[0].AddTriggerBuff(fighter, BuffTriggerType.Instant, PlumeauSpell);
                 }
-
             }
         }
+
         public void PlumeauSpell(TriggerBuff buff, FightActor trigerrer, BuffTriggerType trigger, object token)
         {
             Handlers[0].Apply();

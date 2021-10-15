@@ -3,7 +3,6 @@ using System.Linq;
 using NLog;
 using Stump.Core.Attributes;
 using Stump.Core.IO;
-using Stump.DofusProtocol.Enums;
 using Stump.Server.BaseServer.Benchmark;
 using Stump.Server.WorldServer.AI.Fights.Actions;
 using Stump.Server.WorldServer.AI.Fights.Spells;
@@ -19,8 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
         public const int MaxMovesTries = 20;
         public const int MaxCastLimit = 20;
 
-        [Variable(true)]
-        public static bool DebugMode = false;
+        [Variable(true)] public static bool DebugMode = false;
 
         protected static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -31,37 +29,18 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
             SpellSelector = new SpellSelector(Fighter, Environment);
         }
 
-        public AIFighter Fighter
-        {
-            get;
-            private set;
-        }
+        public AIFighter Fighter { get; }
 
-        public SpellSelector SpellSelector
-        {
-            get;
-            private set;
-        }
+        public SpellSelector SpellSelector { get; }
 
-        public EnvironmentAnalyser Environment
-        {
-            get;
-            private set;
-        }
+        public EnvironmentAnalyser Environment { get; }
 
-        public bool IsRange
-        {
-            get;
-            set;
-        }
+        public bool IsRange { get; set; }
 
         public virtual void Play()
         {
             Stopwatch sw = null;
-            if (BenchmarkManager.Enable)
-            {
-                sw = Stopwatch.StartNew();
-            }
+            if (BenchmarkManager.Enable) sw = Stopwatch.StartNew();
 
             Environment.ResetMoveZone();
 
@@ -78,10 +57,8 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
                 sw.Stop();
 
                 if (sw.ElapsedMilliseconds > 50)
-                {
                     BenchmarkManager.Instance.Add(BenchmarkEntry.Create("[AI] " + Fighter, sw.Elapsed, "type", "ai",
                         "spells", SpellSelector.Possibilities.Select(x => x.Spell.ToString()).ToCSV(",")));
-                }
             }
 
             foreach (var spell in Fighter.Spells.Values)
@@ -94,7 +71,6 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
                 selector.AddChild(new Decorator(ctx => spell == null, new DecoratorContinue(new FleeAction(Fighter))));
 
                 if (target != null && spell != null)
-                {
                     selector.AddChild(new PrioritySelector(
                         new Decorator(ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                             new Sequence(
@@ -106,13 +82,10 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
                                 ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                                 new Sequence(
                                     new SpellCastAction(Fighter, spell, target.Cell, true))))));
-                }
 
                 foreach (var action in selector.Execute(this))
                 {
-
                 }
-
             }
         }
 
@@ -131,19 +104,14 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
                 action = new FleeAction(Fighter);
             }*/
             if (hasRangeAttack && maxRange > 3 && minRange < maxRange)
-            {
-                action = new StayInRange(Fighter, minRange, maxRange, Fighter.Spells.Values.Any(x => x.CurrentSpellLevel.CastTestLos));
-            }
+                action = new StayInRange(Fighter, minRange, maxRange,
+                    Fighter.Spells.Values.Any(x => x.CurrentSpellLevel.CastTestLos));
             else
-            {
                 action = new MoveNearTo(Fighter, Environment.GetNearestEnemy());
-            }
 
             foreach (var result in action.Execute(this))
-            {
                 if (result == RunStatus.Failure)
                     break;
-            }
         }
 
         public void ExecuteSpellCast()
@@ -164,34 +132,25 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
                         var pathfinder = new Pathfinder(Environment.CellInformationProvider);
                         var path = pathfinder.FindPath(Fighter.Position.Cell.Id, destinationId, false, Fighter.MP);
 
-                        if (path == null || path.IsEmpty())
-                        {
-                            break;
-                        }
+                        if (path == null || path.IsEmpty()) break;
 
-                        if (path.MPCost > Fighter.MP)
-                        {
-                            break;
-                        }
+                        if (path.MPCost > Fighter.MP) break;
 
                         success = Fighter.StartMove(path);
 
                         // the mob didn't move so we give up
-                        if (Fighter.Cell.Id == lastPos)
-                        {
-                            break;
-                        }
+                        if (Fighter.Cell.Id == lastPos) break;
 
                         lastPos = Fighter.Cell.Id;
                         tries++; // avoid infinite loops
                     }
-
                 }
 
                 var targets = Fighter.Fight.GetAllFighters(cast.Target.AffectedCells).ToArray();
 
                 var i = 0;
-                while (Fighter.CanCastSpell(cast.Spell, cast.TargetCell.Cell) == SpellCastResult.OK && i < cast.MaxConsecutiveCast)
+                while (Fighter.CanCastSpell(cast.Spell, cast.TargetCell.Cell) == SpellCastResult.OK &&
+                       i < cast.MaxConsecutiveCast)
                 {
                     if (!Fighter.CastSpell(cast.Spell, cast.TargetCell.Cell))
                         break;
@@ -206,7 +165,8 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
                     }
                 }
 
-                if (i > 0 && i < cast.MaxConsecutiveCast && Fighter.Spells.Values.Any(x => x.CurrentSpellLevel.ApCost <= Fighter.AP))
+                if (i > 0 && i < cast.MaxConsecutiveCast &&
+                    Fighter.Spells.Values.Any(x => x.CurrentSpellLevel.ApCost <= Fighter.AP))
                     SpellSelector.AnalysePossibilities();
                 else
                     break;

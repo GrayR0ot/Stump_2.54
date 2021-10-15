@@ -60,15 +60,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
             m_recipeRecords = Database.Query<RecipeRecord>(RecipeRelator.FetchQuery).ToDictionary(x => x.Id);
 
             m_historyRecords = Database.Query<CraftItemRecord>(CraftItemRelator.FetchQuery).ToList();
-
-            var secretRecipes = Database.Query<SecretRecipeRecord>(SecretRecipeRelator.FetchQuery)
-                .ToDictionary(x => x.Id);
-
-            foreach (var recipe in secretRecipes)
-                if (m_recipeRecords.ContainsKey(recipe.Key))
-                    m_recipeRecords[recipe.Key] = recipe.Value;
-                else
-                    m_recipeRecords.Add(recipe.Key, recipe.Value);
+            
 
             World.Instance.RegisterSaveableInstance(this);
         }
@@ -157,7 +149,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
             if (jobLevel <= 50)
                 return new Pair<int, int>(min, (int) (max + 5 * Rates.DropsRate));
             if (jobLevel == 200)
-                return new Pair<int, int>(min, (int)(max * (5 * Rates.DropsRate)));
+                return new Pair<int, int>(min, (int) (max * (5 * Rates.DropsRate)));
             if (skillTemplate.LevelMin == 200 || job.HarvestedCountMax == 0)
                 return new Pair<int, int>(min, max);
 

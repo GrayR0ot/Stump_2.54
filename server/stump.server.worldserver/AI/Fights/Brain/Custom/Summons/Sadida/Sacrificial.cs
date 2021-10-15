@@ -1,15 +1,15 @@
-﻿using Stump.DofusProtocol.Enums;
+﻿using System.Collections.Generic;
+using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.AI.Fights.Actions;
 using Stump.Server.WorldServer.Database.World;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Fights.Teams;
 using Stump.Server.WorldServer.Game.Spells;
-using System.Collections.Generic;
 using TreeSharp;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
 {
-    [BrainIdentifier((int)MonsterIdEnum.LA_SACRIFIEE)]
+    [BrainIdentifier((int) MonsterIdEnum.LA_SACRIFIEE)]
     public class Sacrificial : Brain
     {
         public Sacrificial(AIFighter fighter)
@@ -18,12 +18,12 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             fighter.Team.FighterAdded += OnFighterAdded;
         }
 
-        void OnFighterAdded(FightTeam team, FightActor fighter)
+        private void OnFighterAdded(FightTeam team, FightActor fighter)
         {
             if (fighter != Fighter)
                 return;
 
-            
+
             var spell = new Spell(5579, 1);
 
             var spellCastHandler = SpellManager.Instance.GetSpellCastHandler(fighter,
@@ -33,7 +33,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
 
             foreach (var handler in spellCastHandler.GetEffectHandlers())
             {
-                List<Cell> m_cell = new List<Cell>
+                var m_cell = new List<Cell>
                 {
                     fighter.Cell
                 };
@@ -42,7 +42,6 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             }
 
             spellCastHandler.Execute();
-
         }
 
         public override void Play()
@@ -57,7 +56,6 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
                 selector.AddChild(new Decorator(ctx => spell == null, new DecoratorContinue(new FleeAction(Fighter))));
 
                 if (target != null && spell != null)
-                {
                     selector.AddChild(new PrioritySelector(
                         new Decorator(ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                             new Sequence(
@@ -69,13 +67,10 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
                                 ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                                 new Sequence(
                                     new SpellCastAction(Fighter, spell, target.Cell, true))))));
-                }
 
                 foreach (var action in selector.Execute(this))
                 {
-
                 }
-
             }
         }
     }

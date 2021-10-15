@@ -20,19 +20,19 @@ namespace Stump.Server.WorldServer.Game.HavenBags
     public class HavenBagManager : DataManager<HavenBagManager>, ISaveable
     {
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
-
-        private readonly object m_lock = new object();
         private readonly List<HavenBagInvitationRequest> Invitations = new List<HavenBagInvitationRequest>();
         private readonly List<HavenBagFurnitureRecord> m_deletehavenBagFurnitures = new List<HavenBagFurnitureRecord>();
         private readonly List<HavenBagRecord> m_deletehavenBags = new List<HavenBagRecord>();
+
+        private readonly object m_lock = new object();
+        private readonly List<HavenBagFurnitureRecord> m_newhavenBagFurnitures = new List<HavenBagFurnitureRecord>();
+        private readonly List<HavenBagRecord> m_newhavenBags = new List<HavenBagRecord>();
 
         private List<HavenBagFurnitureRecord> m_havenBagFurnitures = new List<HavenBagFurnitureRecord>();
 
         private List<HavenBagRecord> m_havenBags = new List<HavenBagRecord>();
 
         private List<HavenBagThemes> m_havenBagThemes = new List<HavenBagThemes>();
-        private readonly List<HavenBagFurnitureRecord> m_newhavenBagFurnitures = new List<HavenBagFurnitureRecord>();
-        private readonly List<HavenBagRecord> m_newhavenBags = new List<HavenBagRecord>();
 
         public void Save()
         {

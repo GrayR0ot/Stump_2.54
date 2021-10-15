@@ -19,11 +19,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 {
     public class MonsterGroup : RolePlayActor, IContextDependant, IAutoMovedEntity
     {
-        [Variable(true)] public static int StarsBonusRate = 1800;
-
-        [Variable(true)] public static short StarsBonusLimit = 200;
-
-        public const short ClientStarsBonusLimit = 200;
 
         public event Action<MonsterGroup, Character> EnterFight;
         public event Action<MonsterGroup, IFight> ExitFight;
@@ -59,22 +54,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
         public GroupSize GroupSize { get; set; }
 
         public Monster Leader { get; private set; }
-
-        public short AgeBonus
-        {
-            get
-            {
-                //Note: To find rate choose how many bonus per hour and then divise 60(1 hour) by bonus and multiply result by 60(seconds).
-                //Note: Exemple for 20 bonus per hour. 60/20 = 3 * 60 = 180.
-                var bonus = (DateTime.Now - CreationDate).TotalSeconds / (StarsBonusRate);
-
-                if (bonus > StarsBonusLimit)
-                    bonus = StarsBonusLimit;
-
-                return (short) bonus;
-            }
-            set { CreationDate = DateTime.Now - TimeSpan.FromSeconds(value * StarsBonusRate); }
-        }
 
         public DateTime NextMoveDate { get; set; }
 

@@ -90,7 +90,6 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
             var random = new CryptoRandom();
             var randomBag = random.Next(20);
             if (randomBag == 2)
-            {
                 switch (m_harvestedItem.Id)
                 {
                     //PAYSAN
@@ -440,7 +439,6 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
                         Console.WriteLine("Gathered: " + m_harvestedItem.Id); //RE
                         break;
                 }
-            }
 
 
             SetHarvested();

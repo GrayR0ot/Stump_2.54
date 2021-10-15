@@ -464,15 +464,6 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
             set => value = value;
         }
 
-        public SpellEffectFix EffectFix1
-        {
-            get => EffectFix;
-            set => EffectFix = value;
-        }
-
-
-        [NonSerialized] public SpellEffectFix EffectFix;
-
         public bool IsDirty { get; set; }
 
         #region ICloneable Members

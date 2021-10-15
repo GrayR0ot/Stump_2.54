@@ -2,25 +2,14 @@
 {
     public class SongeBoost
     {
-        private uint id;
-        private uint price;
-
         public SongeBoost(uint id, uint price)
         {
-            this.id = id;
-            this.price = price;
+            this.Id = id;
+            this.Price = price;
         }
 
-        public uint Id
-        {
-            get => id;
-            set => id = value;
-        }
+        public uint Id { get; set; }
 
-        public uint Price
-        {
-            get => price;
-            set => price = value;
-        }
+        public uint Price { get; set; }
     }
 }

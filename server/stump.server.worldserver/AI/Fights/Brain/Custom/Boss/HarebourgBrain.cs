@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
 {
-    [BrainIdentifier((int)MonsterIdEnum.COMTE_HAREBOURG)]
+    [BrainIdentifier((int) MonsterIdEnum.COMTE_HAREBOURG)]
     public class HarebourgBrain : Brain
     {
         public HarebourgBrain(AIFighter fighter)
@@ -17,12 +17,11 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.HALF_TIME, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.HALF_TIME, 1), Fighter.Cell);
         }
 
         private void OnTurnStopped(IFight obj, FightActor fightActor)
         {
-
         }
     }
 }

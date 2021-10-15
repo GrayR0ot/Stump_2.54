@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 {
-    [BrainIdentifier((int)MonsterIdEnum.MISSIZ_FRIZZ)]
+    [BrainIdentifier((int) MonsterIdEnum.MISSIZ_FRIZZ)]
     public class FrizzBrain : Brain
     {
         public FrizzBrain(AIFighter fighter) : base(fighter)
@@ -15,7 +15,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.SNOWDRIFT, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SNOWDRIFT, 1), Fighter.Cell);
         }
     }
 }

@@ -9,11 +9,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 {
     public class Monster
     {
-        public Monster(MonsterGrade grade, MonsterGroup group, bool nani = false)
+        public Monster(MonsterGrade grade, MonsterGroup group)
         {
             Grade = grade;
             Group = group;
-            Nani = nani;
         }
 
         public MonsterFighter CreateFighter(FightTeam team)
@@ -25,12 +24,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
         {
             get;
             private set;
-        }
-
-        public bool Nani
-        {
-            get;
-            set;
         }
 
         public MonsterGrade Grade

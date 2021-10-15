@@ -181,6 +181,7 @@ namespace Stump.Server.WorldServer.Game.Idols
 
             return true;
         }
+
         private bool CanUseIdol(PlayerIdol idol, SongesFight fight)
         {
             if (!idol.Template.IdolSpellId.HasValue)
@@ -218,7 +219,7 @@ namespace Stump.Server.WorldServer.Game.Idols
 
             return GetIdols();
         }
-        
+
         public IEnumerable<PlayerIdol> ComputeIdols(SongesFight fight)
         {
             foreach (var idol in ActiveIdols.ToArray())

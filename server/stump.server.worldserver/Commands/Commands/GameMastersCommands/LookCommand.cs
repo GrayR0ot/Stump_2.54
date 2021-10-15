@@ -14,10 +14,10 @@ namespace Stump.Server.WorldServer.Commands.Commands
                 "look"
             };
             RequiredRole = RoleEnum.GameMaster;
-            Description = "Change l'apparence de la cible";
+            Description = "Update target look";
             AddParameter<string>("look", "l", "The new look for the target", null, true);
             AddTargetParameter(true);
-            AddParameter("demorph", "demorph", "Redonne l'apparence de base à la cible", false, true);
+            AddParameter("demorph", "demorph", "Reset target look", false, true);
         }
 
         public override void Execute(TriggerBase trigger)

@@ -80,9 +80,7 @@ namespace Stump.Server.WorldServer.Game.Accounts
             var worldAccount = new WorldAccount
             {
                 Id = client.Account.Id,
-                Nickname = client.Account.Nickname,
-                Tokens = 0,
-                NewTokens = 0
+                Nickname = client.Account.Nickname
             };
             Database.Insert(worldAccount);
 
@@ -112,11 +110,6 @@ namespace Stump.Server.WorldServer.Game.Accounts
         {
             return Database.ExecuteScalar<bool>(string.Format("SELECT EXISTS(SELECT 1 FROM accounts WHERE Id={0})",
                 id));
-        }
-
-        public void UpdateVip(WorldAccount account)
-        {
-            WorldServer.Instance.IOTaskPool.ExecuteInContext(() => { Database.Update(account); });
         }
 
         // block this account 

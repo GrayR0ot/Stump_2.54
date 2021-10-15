@@ -14,11 +14,11 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
         typeof(InteractiveObject))]
     public class SkillAnimate : CustomSkill
     {
+        private readonly MapObstacle[] m_mapObstacles;
         private short? m_cellId;
 
         private int? m_elementId;
         private int? m_mapId;
-        private readonly MapObstacle[] m_mapObstacles;
         private string m_obstacles;
 
         public SkillAnimate(int id, InteractiveCustomSkillRecord skillTemplate, InteractiveObject interactiveObject)

@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Messages;
 using Stump.DofusProtocol.Types;
-using Stump.Server.BaseServer.Database;
 using Stump.Server.BaseServer.Network;
 using Stump.Server.WorldServer.Core.Network;
 using Stump.Server.WorldServer.Database.Characters;
@@ -227,7 +226,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
 
             SendCharacterSelectedSuccessMessage(client);
 
-            
+
             //if (client.Character.Inventory.Presets.Any())
             //    InventoryHandler.SendInventoryContentAndPresetMessage(client);
             //else
@@ -290,7 +289,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
 
             //Start Cinematic
             if ((DateTime.Now - client.Character.Record.CreationDate).TotalSeconds <= 30)
-                
+
             {
                 client.Character.StartQuest(1042);
                 BasicHandler.SendCinematicMessage(client, 10);
@@ -306,7 +305,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
             SendCharacterLoadingCompleteMessage(client);
 
             BasicHandler.SendServerExperienceModificatorMessage(client);
-            
+
             // Update LastConnection and Last Ip
             client.WorldAccount.LastConnection = DateTime.Now;
             client.WorldAccount.LastIp = client.IP;

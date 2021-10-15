@@ -245,23 +245,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 vowel = !vowel;
             }
 
-            /*do
-            {
-                var rand = new Random();
-                var namelen = rand.Next(5, 10);
-                name = string.Empty;
-
-                var vowel = rand.Next(0, 2) == 0;
-                name += GetChar(vowel, rand).ToString(CultureInfo.InvariantCulture).ToUpper();
-                vowel = !vowel;
-
-                for (var i = 0; i < namelen - 1; i++)
-                {
-                    name += GetChar(vowel, rand);
-                    vowel = !vowel;
-                }
-            } while (DoesNameExist(name));*/
-
             return name;
         }
 

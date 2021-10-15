@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Stump.DofusProtocol.Enums;
@@ -8,7 +7,6 @@ using Stump.Server.WorldServer.AI.Fights.Spells;
 using Stump.Server.WorldServer.Commands.Trigger;
 using Stump.Server.WorldServer.Database.I18n;
 using Stump.Server.WorldServer.Database.Monsters;
-using Stump.Server.WorldServer.Game;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters;
 using Stump.Server.WorldServer.Game.Maps;
 using Stump.Server.WorldServer.Game.Maps.Cells;
@@ -206,43 +204,6 @@ namespace Stump.Server.WorldServer.Commands.Commands
                     .Where(pool => pool != null).Count(pool => pool.SpawnNextGroup());
 
                 trigger.Reply("{0} groups spawned", i);
-            }
-        }
-    }
-
-    public class MonsterStarsCommand : SubCommand
-    {
-        public MonsterStarsCommand()
-        {
-            Aliases = new[] {"stars"};
-            RequiredRole = RoleEnum.Administrator;
-            Description = "Set monster group stars bonus";
-            ParentCommandType = typeof(MonsterCommands);
-        }
-
-        public override void Execute(TriggerBase trigger)
-        {
-            if (!(trigger is GameTrigger))
-                return;
-
-            var gameTrigger = trigger as GameTrigger;
-            if (MonsterManager.Instance.GetMonsterDungeonsSpawns().Where(x => x.MapId == gameTrigger.Character.Map.Id)
-                .Count() == 0)
-            {
-                foreach (var map in World.Instance.GetMaps())
-                foreach (MonsterGroup monster in map.Actors.Where(x => x is MonsterGroup))
-                {
-                    monster.CreationDate = new DateTime(monster.CreationDate.Year,
-                        monster.CreationDate.Month, monster.CreationDate.Day - 1,
-                        monster.CreationDate.Hour, monster.CreationDate.Minute, monster.CreationDate.Second);
-                    map.Refresh(monster);
-                }
-
-                World.Instance.SendAnnounce("Étoiles montées au maximum, bon jeu à tous ;)");
-            }
-            else
-            {
-                gameTrigger.Character.SendServerMessage("Vous ne pouvez pas utiliser cette commande dans un donjon !");
             }
         }
     }

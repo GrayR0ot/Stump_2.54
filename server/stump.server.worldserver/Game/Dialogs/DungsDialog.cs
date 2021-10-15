@@ -1,4 +1,6 @@
-﻿using Stump.DofusProtocol.Enums;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Messages;
 using Stump.DofusProtocol.Types;
 using Stump.Server.BaseServer.Network;
@@ -8,14 +10,12 @@ using Stump.Server.WorldServer.Game.Items;
 using Stump.Server.WorldServer.Game.Items.Player.Custom;
 using Stump.Server.WorldServer.Game.Maps;
 using Stump.Server.WorldServer.Handlers.Dialogs;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
 {
     public class DungsDialog : IDialog
     {
-        readonly Dictionary<Map, int> m_destinations = new Dictionary<Map, int>();
+        private readonly Dictionary<Map, int> m_destinations = new Dictionary<Map, int>();
 
         public DungsDialog(Character character, Dictionary<Map, int> destinations, bool isDungeon = false)
         {
@@ -24,17 +24,16 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
             m_destinations = destinations;
         }
 
+        public Character Character { get; }
+
+        private bool IsDungeon { get; }
+
         public DialogTypeEnum DialogType => DialogTypeEnum.DIALOG_TELEPORTER;
 
-        public Character Character
+        public void Close()
         {
-            get;
-        }
-
-        private bool IsDungeon
-        {
-            get;
-            set;
+            Character.CloseDialog(this);
+            DialogHandler.SendLeaveDialogMessage(Character.Client, DialogType);
         }
 
         public void AddDestination(Map map, int cellId)
@@ -46,12 +45,6 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
         {
             Character.SetDialog(this);
             SendZaapListMessage(Character.Client);
-        }
-
-        public void Close()
-        {
-            Character.CloseDialog(this);
-            DialogHandler.SendLeaveDialogMessage(Character.Client, DialogType);
         }
 
         public void Teleport(Map map)
@@ -70,23 +63,23 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
 
             if (IsDungeon)
             {
-                Dictionary<DungeonKey, int> destinations = new Dictionary<DungeonKey, int>();
+                var destinations = new Dictionary<DungeonKey, int>();
 
                 destinations.Add(new DungeonKey(152829952, 8545), 437); //kardo
-                destinations.Add(new DungeonKey(121373185, 1568), 464);  //bouftou
-                destinations.Add(new DungeonKey(190449664, 8143), 437);  //champs
-                destinations.Add(new DungeonKey(193725440, 8437), 520);  //emsablé
-                destinations.Add(new DungeonKey(146675712, 15991), 491);  //kankreblath
-                destinations.Add(new DungeonKey(163578368, 11799), 456);  //maison hanté
-                destinations.Add(new DungeonKey(87033344, 1570), 417);  //squelette
-                destinations.Add(new DungeonKey(94110720, 8139), 443);  //scara
-                destinations.Add(new DungeonKey(96338946, 7918), 480);  //batofu
-                destinations.Add(new DungeonKey(181665792, 19041), 552);  //magik riktus
-                destinations.Add(new DungeonKey(155713536, 8156), 505);  //meulou
+                destinations.Add(new DungeonKey(121373185, 1568), 464); //bouftou
+                destinations.Add(new DungeonKey(190449664, 8143), 437); //champs
+                destinations.Add(new DungeonKey(193725440, 8437), 520); //emsablé
+                destinations.Add(new DungeonKey(146675712, 15991), 491); //kankreblath
+                destinations.Add(new DungeonKey(163578368, 11799), 456); //maison hanté
+                destinations.Add(new DungeonKey(87033344, 1570), 417); //squelette
+                destinations.Add(new DungeonKey(94110720, 8139), 443); //scara
+                destinations.Add(new DungeonKey(96338946, 7918), 480); //batofu
+                destinations.Add(new DungeonKey(181665792, 19041), 552); //magik riktus
+                destinations.Add(new DungeonKey(155713536, 8156), 505); //meulou
                 destinations.Add(new DungeonKey(187432960, 19515), 258); //bethel
-                destinations.Add(new DungeonKey(55050240, 11174), 284);  //royalmouth
-                destinations.Add(new DungeonKey(17564931, 7310), 536);  //bulbe
-                destinations.Add(new DungeonKey(184690945, 19216), 534);  //ilyzaelle
+                destinations.Add(new DungeonKey(55050240, 11174), 284); //royalmouth
+                destinations.Add(new DungeonKey(17564931, 7310), 536); //bulbe
+                destinations.Add(new DungeonKey(184690945, 19216), 534); //ilyzaelle
                 destinations.Add(new DungeonKey(87295489, 1569), 422); //forgeron
                 destinations.Add(new DungeonKey(104595969, 8135), 472); //bwork
                 destinations.Add(new DungeonKey(64749568, 12017), 478); //kwakwa
@@ -146,7 +139,7 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
                 destinations.Add(new DungeonKey(140771328, 15690), 459); //baleine
                 destinations.Add(new DungeonKey(119277057, 14870), 240); //merkator
                 destinations.Add(new DungeonKey(110100480, 14044), 465); //sylargh
-                                                                         //destinations.Add(new DungeonKey(173934082, ),285); croco
+                //destinations.Add(new DungeonKey(173934082, ),285); croco
                 destinations.Add(new DungeonKey(187957506, 19514), 473); //solar
                 destinations.Add(new DungeonKey(182714368, 19049), 362); //4patte
                 destinations.Add(new DungeonKey(107481088, 8073), 553); //skeunk
@@ -160,7 +153,7 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
                 destinations.Add(new DungeonKey(62915584, 11179), 328); //korri
                 destinations.Add(new DungeonKey(61865984, 11180), 491); //kolosso
                 destinations.Add(new DungeonKey(62130696, 11181), 300); //glours
-                destinations.Add(new DungeonKey(109838849, 14043), 300);//frizz
+                destinations.Add(new DungeonKey(109838849, 14043), 300); //frizz
                 destinations.Add(new DungeonKey(57934593, 8329), 300); //grolum
                 destinations.Add(new DungeonKey(102760961, 12351), 300); //sphincter
                 destinations.Add(new DungeonKey(179568640, 18736), 300); //razoff
@@ -168,17 +161,16 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
                 destinations.Add(new DungeonKey(182327297, 9247), 300); //ougah
                 destinations.Add(new DungeonKey(101188608, 13333), 300); // halloween
                 destinations.Add(new DungeonKey(169607168, 18067), 300); //dentinea
-                destinations.Add(new DungeonKey(123207680, 14935), 300);// ombre
+                destinations.Add(new DungeonKey(123207680, 14935), 300); // ombre
                 destinations.Add(new DungeonKey(176030208, 18552), 300); // pervert
                 destinations.Add(new DungeonKey(74973185, 31019), 300); // grozilla
                 destinations.Add(new DungeonKey(175113216, 31254), 465); // repere asylium
                 foreach (var item in destinations)
-                {
                     if (map.Id == item.Key.getDungeon())
-                    {
                         if (Character.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(item.Key.getKey())))
                         {
-                            var key = Character.Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(item.Key.getKey()));
+                            var key = Character.Inventory.TryGetItem(
+                                ItemManager.Instance.TryGetTemplate(item.Key.getKey()));
                             if (key.Stack > 1)
                             {
                                 key.Stack--;
@@ -189,9 +181,8 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
                                 Character.Inventory.RemoveItem(key);
                             }
                         }
-                    }
-                }
             }
+
             Close();
         }
 
@@ -200,8 +191,10 @@ namespace Stump.Server.WorldServer.Game.Dialogs.Interactives
             client.Send(
                 new TeleportDestinationsMessage
                 (
-                (sbyte)TeleporterTypeEnum.TELEPORTER_ZAAP,
-                m_destinations.Select(entry => new TeleportDestination((sbyte)TeleporterTypeEnum.TELEPORTER_ZAAP, entry.Key.Id, (ushort)entry.Key.SubArea.Id, (ushort)entry.Key.SubArea.Record.Level, (ushort)entry.Key.SubArea.Record.Level)).ToArray()
+                    (sbyte) TeleporterTypeEnum.TELEPORTER_ZAAP,
+                    m_destinations.Select(entry => new TeleportDestination((sbyte) TeleporterTypeEnum.TELEPORTER_ZAAP,
+                        entry.Key.Id, (ushort) entry.Key.SubArea.Id, (ushort) entry.Key.SubArea.Record.Level,
+                        (ushort) entry.Key.SubArea.Record.Level)).ToArray()
                 ));
         }
 

@@ -42,7 +42,7 @@ namespace Stump.Server.WorldServer.Game.Fights
             var challengersTeam = new FightPlayerTeam(TeamEnum.TEAM_CHALLENGER, map.GetRedFightPlacement());
             var defendersTeam = new FightMonsterTeam(TeamEnum.TEAM_DEFENDER, map.GetBlueFightPlacement());
 
-            var fight = new SongesFight(m_idProvider.Pop(), character, map, defendersTeam, challengersTeam, character.songesStep);
+            var fight = new SongesFight(m_idProvider.Pop(), character, map, defendersTeam, challengersTeam, character.breachStep);
 
             AddEntity(fight.Id, fight);
 
@@ -60,30 +60,7 @@ namespace Stump.Server.WorldServer.Game.Fights
 
             return fight;
         }
-
-        public FightPvBoss CreatePvBFight(Map map)
-        {
-            var challengersTeam = new FightPlayerTeam(TeamEnum.TEAM_CHALLENGER, map.GetRedFightPlacement());
-            var defendersTeam = new FightMonsterTeam(TeamEnum.TEAM_DEFENDER, map.GetBlueFightPlacement());
-
-            var fight = new FightPvBoss(m_idProvider.Pop(), map, defendersTeam, challengersTeam);
-
-            AddEntity(fight.Id, fight);
-
-            return fight;
-        }
-
-        public FightPvDark CreateFightDarkVlad(Map map)
-        {
-            var challengersTeam = new FightPlayerTeam(TeamEnum.TEAM_CHALLENGER, map.GetRedFightPlacement());
-            var defendersTeam = new FightMonsterTeam(TeamEnum.TEAM_DEFENDER, map.GetBlueFightPlacement());
-
-            var fight = new FightPvDark(m_idProvider.Pop(), map, defendersTeam, challengersTeam);
-
-            AddEntity(fight.Id, fight);
-
-            return fight;
-        }
+       
 
         public FightAgression CreateAgressionFight(Map map, AlignmentSideEnum redAlignment, AlignmentSideEnum blueAlignment, bool isBattlefield = false)
         {

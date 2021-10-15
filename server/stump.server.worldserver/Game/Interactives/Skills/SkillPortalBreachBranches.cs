@@ -1,20 +1,13 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Stump.Core.Reflection;
 using Stump.DofusProtocol.Messages;
-using Stump.DofusProtocol.Types;
 using Stump.Server.BaseServer.Database;
 using Stump.Server.WorldServer.Database.Interactives;
-using Stump.Server.WorldServer.Database.Monsters;
-using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters;
 using Stump.Server.WorldServer.Game.Fights;
-using Stump.Server.WorldServer.Game.Maps;
 using Stump.Server.WorldServer.Game.Maps.Cells;
-using Stump.Server.WorldServer.Game.Songes;
 using Stump.Server.WorldServer.Handlers.Context;
 
 namespace Stump.Server.WorldServer.Game.Interactives.Skills
@@ -30,41 +23,35 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
 
         public override int StartExecute(Character character)
         {
-            if (character.songesOwner == null)
+            if (character.breachOwner == null)
             {
                 if (character.Level > 200)
                 {
-                    if (character.songesStep < 201)
+                    if (character.breachStep < 201)
                     {
-                        if (character.songesBranches != null)
+                        if (character.breachBranches != null)
                         {
-                            ExtendedBreachBranch extendedBreachBranch = character.songesBranches[0];
+                            var extendedBreachBranch = character.breachBranches[0];
                             switch (Id)
                             {
                                 case 105623:
-                                    extendedBreachBranch = character.songesBranches[2];
+                                    extendedBreachBranch = character.breachBranches[2];
                                     break;
                                 case 105624:
-                                    extendedBreachBranch = character.songesBranches[1];
+                                    extendedBreachBranch = character.breachBranches[1];
                                     break;
                                 case 105625:
-                                    extendedBreachBranch = character.songesBranches[0];
-                                    break;
-                                default:
+                                    extendedBreachBranch = character.breachBranches[0];
                                     break;
                             }
 
-                            Map map = World.Instance.GetMap((int) extendedBreachBranch.Map);
+                            var map = World.Instance.GetMap((int) extendedBreachBranch.Map);
                             character.Teleport(map, character.Cell);
-                            if (character.songesGroup != null)
-                            {
-                                foreach (long guest in character.songesGroup)
-                                {
+                            if (character.breachGroup != null)
+                                foreach (var guest in character.breachGroup)
                                     World.Instance.GetCharacter((int) guest).Teleport(character.Position);
-                                }
-                            }
 
-                            character.currentSongeRoom = extendedBreachBranch;
+                            character.currentBreachRoom = extendedBreachBranch;
 
                             Task.Delay(1000).ContinueWith(t =>
                             {
@@ -72,71 +59,63 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
                                     new ObjectPosition(map, map.GetRandomFreeCell(), map.GetRandomDirection()));
                                 foreach (var monster in extendedBreachBranch.Monsters)
                                 {
-                                    MonsterGrade monsterGrade = MonsterManager.Instance.GetMonsterGrades()
+                                    var monsterGrade = MonsterManager.Instance.GetMonsterGrades()
                                         .Where(x => x.MonsterId == monster.GenericId)
                                         .Where(x => x.GradeId == monster.Grade)
                                         .First();
                                     group.AddMonster(new Monster(monsterGrade, group));
                                 }
 
-                                MonsterGrade bossGrade = MonsterManager.Instance.GetMonsterGrades()
+                                var bossGrade = MonsterManager.Instance.GetMonsterGrades()
                                     .Where(x => x.MonsterId == extendedBreachBranch.Bosses[0].GenericId)
                                     .Where(x => x.GradeId == extendedBreachBranch.Bosses[0].Grade).First();
                                 group.AddMonster(new Monster(bossGrade, group));
-                                var songesFight =
+                                var breachFight =
                                     Singleton<FightManager>.Instance.CreateSongesFight(character.Map, character);
-                                songesFight.ChallengersTeam.AddFighter(
-                                    character.CreateFighter(songesFight.ChallengersTeam));
-                                if (character.songesGroup != null)
-                                {
-                                    foreach (long guest in character.songesGroup)
-                                    {
-                                        songesFight.ChallengersTeam.AddFighter(
+                                breachFight.ChallengersTeam.AddFighter(
+                                    character.CreateFighter(breachFight.ChallengersTeam));
+                                if (character.breachGroup != null)
+                                    foreach (var guest in character.breachGroup)
+                                        breachFight.ChallengersTeam.AddFighter(
                                             World.Instance.GetCharacter((int) guest)
-                                                .CreateFighter(songesFight.ChallengersTeam));
-                                    }
-                                }
+                                                .CreateFighter(breachFight.ChallengersTeam));
 
                                 foreach (var monster in group.GetMonsters())
-                                {
-                                    songesFight.DefendersTeam.AddFighter(
-                                        monster.CreateFighter(songesFight.DefendersTeam));
-                                }
+                                    breachFight.DefendersTeam.AddFighter(
+                                        monster.CreateFighter(breachFight.DefendersTeam));
 
-                                songesFight.StartPlacement();
+                                breachFight.StartPlacement();
 
                                 ContextHandler.HandleGameFightJoinRequestMessage(character.Client,
-                                    new GameFightJoinRequestMessage(character.Fighter.Id, (ushort) songesFight.Id));
+                                    new GameFightJoinRequestMessage(character.Fighter.Id, (ushort) breachFight.Id));
                                 character.SaveLater();
-                                if (character.songesGroup != null)
-                                {
-                                    foreach (long guest in character.songesGroup)
+                                if (character.breachGroup != null)
+                                    foreach (var guest in character.breachGroup)
                                     {
-                                        Character guestCharacter = World.Instance.GetCharacter((int) guest);
+                                        var guestCharacter = World.Instance.GetCharacter((int) guest);
                                         ContextHandler.HandleGameFightJoinRequestMessage(guestCharacter.Client,
                                             new GameFightJoinRequestMessage(guestCharacter.Fighter.Id,
-                                                (ushort) songesFight.Id));
+                                                (ushort) breachFight.Id));
                                         guestCharacter.SaveLater();
                                     }
-                                }
                             });
                         }
                         else
                         {
                             character.SendServerMessage(
-                                "Veuillez ouvrir le globe des songes afin de débloquer votre étage !");
+                                "Veuillez ouvrir le globe des breach afin de débloquer votre étage !");
                         }
                     }
                     else
                     {
                         character.SendServerMessage(
-                            "Vous avez terminé votre run songes, veuillez en recommencer une !");
+                            "Vous avez terminé votre run breach, veuillez en recommencer une !");
                     }
                 }
             }
             else
             {
-                character.SendServerMessage("Vous devez être niveau 200 pour accéder aux songes !");
+                character.SendServerMessage("Vous devez être niveau 200 pour accéder aux breach !");
             }
 
             return base.StartExecute(character);

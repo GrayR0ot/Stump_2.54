@@ -4,14 +4,12 @@ using System.Linq;
 using Stump.Core.IO;
 using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Enums.Custom;
-using Stump.DofusProtocol.Types;
 using Stump.ORM;
 using Stump.ORM.SubSonic.SQLGeneration.Schema;
 using Stump.Server.WorldServer.Database.Breeds;
 using Stump.Server.WorldServer.Game.Achievements;
 using Stump.Server.WorldServer.Game.Actors.Look;
 using Stump.Server.WorldServer.Game.Maps;
-using Stump.Server.WorldServer.Game.Songes;
 using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.Database.Characters
@@ -86,20 +84,20 @@ namespace Stump.Server.WorldServer.Database.Characters
             ChallengesInDungeonCount = 0;
             OwnedRuneAmount = 0;
         }
-        
-        public String DungeonKeyset { get; set; }
+
+        public string DungeonKeyset { get; set; }
 
         public bool ControlIA { get; set; }
 
-        public int SongesStep { get; set; }
-        
-        public int SongesBudget { get; set; }
-        
-        public String SongesBoosts { get; set; }
-        
-        public String SongesBuyables { get; set; }
-        
-        public String SongesBranches { get; set; }
+        public int BreachStep { get; set; }
+
+        public int BreachBudget { get; set; }
+
+        public string BreachBoosts { get; set; }
+
+        public string BreachBuyables { get; set; }
+
+        public string BreachBranches { get; set; }
 
         [Ignore]
         public ActorLook DefaultLook
@@ -135,8 +133,6 @@ namespace Stump.Server.WorldServer.Database.Characters
             }
         }
 
-        public int NumberOfPnjFound { get; set; }
-
         public int WinPvm { get; set; }
 
         public int LosPvm { get; set; }
@@ -144,8 +140,6 @@ namespace Stump.Server.WorldServer.Database.Characters
         public int WinPvp { get; set; }
 
         public int LosPvp { get; set; }
-
-        public int BackDungeon { get; set; }
 
         public int LeagueId { get; set; }
 
@@ -179,36 +173,6 @@ namespace Stump.Server.WorldServer.Database.Characters
                     : new List<int>();
             }
         }
-
-        public int AscensionStair { get; set; }
-
-        public int MaxStatsPvp { get; set; }
-
-        public int ForceStatsPointRetirePvp { get; set; }
-
-        public int IntelligenceStatsPointRetirePvp { get; set; }
-
-        public int ChanceStatsPointRetirePvp { get; set; }
-
-        public int AgiliteStatsPointRetirePvp { get; set; }
-
-        //public int BackDj
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //public uint SpouseID
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //public int CurrentSpouse
-        //{
-        //    get;
-        //    set;
-        //}
 
         public void BeforeSave(bool insert)
         {
@@ -578,14 +542,6 @@ namespace Stump.Server.WorldServer.Database.Characters
 
         public int? LeftFightId { get; set; }
 
-        public int safe200 { get; set; }
-
-        public int safeitem { get; set; }
-
-        public int PrestigeRank { get; set; }
-
-        public int PrestigeHonor { get; set; }
-
         public int Xpepique { get; set; }
 
         #region Arena(3vs3)
@@ -634,25 +590,7 @@ namespace Stump.Server.WorldServer.Database.Characters
 
         public DateTime? DeletedDate { get; set; }
 
-        public bool HasExoPa { get; set; }
-
-        public bool HasExoPm { get; set; }
-
-        public bool HasExoPo { get; set; }
-
         public bool IsDeleted => DeletedDate != null;
-
-        #endregion
-
-        #region Chasse au trésor
-
-        public int TreasureSearch { get; set; }
-
-        public int? TreasureMapCoffre { get; set; }
-
-        public DateTime TreasureTimeStart { get; set; }
-
-        public int? TreasureIndice { get; set; }
 
         #endregion
 

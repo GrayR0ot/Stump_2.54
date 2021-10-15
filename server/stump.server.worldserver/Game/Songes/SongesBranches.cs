@@ -4,7 +4,6 @@ using System.Linq;
 using Stump.Core.Extensions;
 using Stump.Core.Mathematics;
 using Stump.DofusProtocol.Types;
-using Stump.Server.WorldServer.Database.Monsters;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters;
 
@@ -38,7 +37,7 @@ namespace Stump.Server.WorldServer.Game.Songes
                     branchBosses.Add(getRandomMonster(character, true, random));
                     for (var i = 0; i < 3; i++)
                     {
-                        int monsterGrade = getRandomMonster(character, false, random);
+                        var monsterGrade = getRandomMonster(character, false, random);
                         monsterGrades.Add(monsterGrade);
                     }
 
@@ -50,11 +49,11 @@ namespace Stump.Server.WorldServer.Game.Songes
                 var monsterBranches = new List<MonsterInGroupLightInformations[]>();
                 for (var i = 0; i < 3; i++)
                 {
-                    List<MonsterInGroupLightInformations> monsterBranch =
+                    var monsterBranch =
                         new List<MonsterInGroupLightInformations>();
                     for (var j = 0; j < 3; j++)
                     {
-                        MonsterGrade monsterGrade = MonsterManager.Instance.GetMonsterGrade(branchMonsters[i][j]);
+                        var monsterGrade = MonsterManager.Instance.GetMonsterGrade(branchMonsters[i][j]);
 
                         monsterBranch.Add(new MonsterInGroupLightInformations(
                             monsterGrade.Template.Id, (sbyte) monsterGrade.GradeId,
@@ -68,8 +67,8 @@ namespace Stump.Server.WorldServer.Game.Songes
                 var bossBranches = new List<MonsterInGroupLightInformations[]>();
                 for (var i = 0; i < 3; i++)
                 {
-                    List<MonsterInGroupLightInformations> bossBranch = new List<MonsterInGroupLightInformations>();
-                    MonsterGrade monsterGrade = MonsterManager.Instance.GetMonsterGrade(branchBosses[i]);
+                    var bossBranch = new List<MonsterInGroupLightInformations>();
+                    var monsterGrade = MonsterManager.Instance.GetMonsterGrade(branchBosses[i]);
 
                     bossBranch.Add(new MonsterInGroupLightInformations(
                         monsterGrade.Template.Id, (sbyte) monsterGrade.GradeId,
@@ -82,11 +81,11 @@ namespace Stump.Server.WorldServer.Game.Songes
                 ExtendedBreachBranch[] extendedBreachBranchs =
                 {
                     new ExtendedBreachBranch(1, 1, bossBranches[0], map.Id, monsterBranches[0], getRandomReward(random),
-                        (uint) 155, 100),
+                        155, 100),
                     new ExtendedBreachBranch(2, 2, bossBranches[1], map.Id, monsterBranches[1], getRandomReward(random),
-                        (uint) 155, 100),
+                        155, 100),
                     new ExtendedBreachBranch(3, 3, bossBranches[2], map.Id, monsterBranches[2], getRandomReward(random),
-                        (uint) 155, 100)
+                        155, 100)
                 };
                 return extendedBreachBranchs;
             }
@@ -96,8 +95,8 @@ namespace Stump.Server.WorldServer.Game.Songes
 
         private static BreachReward[] getRandomReward(CryptoRandom cryptoRandom)
         {
-            BreachReward[] breachRewards = new BreachReward[] { };
-            List<SongeBoost> range = new List<SongeBoost>()
+            BreachReward[] breachRewards = { };
+            var range = new List<SongeBoost>
             {
                 new SongeBoost(100, 300), new SongeBoost(114, 600), new SongeBoost(128, 900),
                 new SongeBoost(93,
@@ -110,9 +109,9 @@ namespace Stump.Server.WorldServer.Game.Songes
                 new SongeBoost(96, 300), new SongeBoost(110, 600), new SongeBoost(124, 900), new SongeBoost(99, 300),
                 new SongeBoost(113, 600), new SongeBoost(127, 900)
             };
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
-                SongeBoost breachReward = range[cryptoRandom.Next(range.Count)];
+                var breachReward = range[cryptoRandom.Next(range.Count)];
                 breachRewards =
                     breachRewards.Add(new BreachReward(breachReward.Id, new byte[0], "", false, breachReward.Price));
             }
@@ -122,26 +121,17 @@ namespace Stump.Server.WorldServer.Game.Songes
 
         private static int getRandomMonster(Character character, bool isBoss, CryptoRandom random)
         {
-            int levelGroup = 0;
+            var levelGroup = 0;
             if (character.songesStep <= 50)
-            {
                 levelGroup = 21;
-            }
             else if (character.songesStep <= 100)
-            {
                 levelGroup = 22;
-            }
             else if (character.songesStep <= 150)
-            {
                 levelGroup = 23;
-            }
             else
-            {
                 levelGroup = 24;
-            }
 
             if (isBoss)
-            {
                 return MonsterManager.Instance.GetMonsterGrades().Where(x => x.GradeId == levelGroup)
                     .Where(x => MonsterManager.Instance.GetTemplate(x.MonsterId).IsBoss)
                     .OrderBy(x => random.Next())
@@ -150,18 +140,14 @@ namespace Stump.Server.WorldServer.Game.Songes
                             .Where(x => x.GradeId == levelGroup)
                             .Where(x => MonsterManager.Instance.GetTemplate(x.MonsterId).IsBoss)
                             .Count())].Id;
-            }
-            else
-            {
-                return MonsterManager.Instance.GetMonsterGrades().Where(x => x.GradeId == levelGroup)
-                    .Where(x => !MonsterManager.Instance.GetTemplate(x.MonsterId).IsBoss)
-                    .OrderBy(x => random.Next())
-                    .ToArray()[
-                        random.Next(MonsterManager.Instance.GetMonsterGrades()
-                            .Where(x => x.GradeId == levelGroup)
-                            .Where(x => !MonsterManager.Instance.GetTemplate(x.MonsterId).IsBoss)
-                            .Count())].Id;
-            }
+            return MonsterManager.Instance.GetMonsterGrades().Where(x => x.GradeId == levelGroup)
+                .Where(x => !MonsterManager.Instance.GetTemplate(x.MonsterId).IsBoss)
+                .OrderBy(x => random.Next())
+                .ToArray()[
+                    random.Next(MonsterManager.Instance.GetMonsterGrades()
+                        .Where(x => x.GradeId == levelGroup)
+                        .Where(x => !MonsterManager.Instance.GetTemplate(x.MonsterId).IsBoss)
+                        .Count())].Id;
         }
     }
 }

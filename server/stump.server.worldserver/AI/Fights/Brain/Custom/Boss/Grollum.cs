@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 {
-    [BrainIdentifier((int)MonsterIdEnum.GROLLOUM)]
+    [BrainIdentifier((int) MonsterIdEnum.GROLLOUM)]
     public class Grollum : Brain
     {
         public Grollum(AIFighter fighter)
@@ -16,8 +16,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.ROCK_HARD, 1), Fighter.Cell);
-
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.ROCK_HARD, 1), Fighter.Cell);
         }
     }
 }

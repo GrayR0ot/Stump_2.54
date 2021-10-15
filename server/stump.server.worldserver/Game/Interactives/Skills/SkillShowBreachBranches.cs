@@ -16,10 +16,7 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
 
         public override int StartExecute(Character character)
         {
-            if (character.songesOwner == null)
-            {
-                new SongesBranchesGUI(character).Open();
-            }
+            if (character.breachOwner == null) new SongesBranchesGUI(character).Open();
             return base.StartExecute(character);
         }
     }

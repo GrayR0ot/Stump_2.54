@@ -348,6 +348,7 @@ namespace Stump.Server.WorldServer.Game
                         interactive.MapId);
                     continue;
                 }
+
                 map.SpawnInteractive(interactive);
             }
 

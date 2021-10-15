@@ -16,7 +16,7 @@ namespace Stump.Server.WorldServer.Commands.Commands.Info
                 "infoip"
             };
             RequiredRole = RoleEnum.GameMaster;
-            Description = "Number of connected player by IP";
+            Description = "Amount of connected players by IP";
         }
 
         public override void Execute(TriggerBase trigger)
@@ -25,7 +25,7 @@ namespace Stump.Server.WorldServer.Commands.Commands.Info
             foreach (var chr in Singleton<World>.Instance.GetCharacters())
                 if (!IPAlreadySeen.Contains(chr.Account.LastConnectionIp))
                     IPAlreadySeen.Add(chr.Account.LastConnectionIp);
-            trigger.Reply("Ip connectés: " + IPAlreadySeen.Count);
+            trigger.Reply("Connected IPs: " + IPAlreadySeen.Count);
         }
     }
 }

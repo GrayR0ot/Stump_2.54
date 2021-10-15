@@ -8,11 +8,7 @@ using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Types;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
-using Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Buffs;
-using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Fights;
-using Stump.Server.WorldServer.Game.Fights.Buffs;
-using Stump.Server.WorldServer.Game.Fights.Buffs.Customs;
 using Stump.Server.WorldServer.Game.Fights.Challenges;
 using Stump.Server.WorldServer.Game.Fights.Results;
 using Stump.Server.WorldServer.Game.Fights.Teams;
@@ -20,15 +16,14 @@ using Stump.Server.WorldServer.Game.Formulas;
 using Stump.Server.WorldServer.Game.Items;
 using Stump.Server.WorldServer.Game.Maps;
 using Stump.Server.WorldServer.Game.Maps.Cells;
-using Stump.Server.WorldServer.Handlers.Characters;
 using Stump.Server.WorldServer.Handlers.Context;
 
 namespace Stump.Server.WorldServer.Game.Songes
 {
     public class SongesFight : Fight<FightMonsterTeam, FightPlayerTeam>
     {
+        private readonly Character leader;
         private int step;
-        private Character leader;
 
         public SongesFight(int id, Character leader, Map fightMap, FightMonsterTeam defendersTeam,
             FightPlayerTeam challengersTeam,
@@ -68,44 +63,41 @@ namespace Stump.Server.WorldServer.Game.Songes
 
         protected override void OnFightEnded()
         {
-            foreach (var entry in this.ChallengersTeam.Fighters)
-            {
+            foreach (var entry in ChallengersTeam.Fighters)
                 if (entry is CharacterFighter)
                 {
-                    Character character = (entry as CharacterFighter).Character;
+                    var character = (entry as CharacterFighter).Character;
                     Task.Delay(1000).ContinueWith(t =>
                     {
-                        Map map = World.Instance.GetMap(195561472);
+                        var map = World.Instance.GetMap(195561472);
                         character.Teleport(new ObjectPosition(map, 300, character.Direction));
                     });
                 }
-            }
+
             leader.songesStep++;
             leader.songesBranches = SongeBranches.generateSongeBranches(leader);
-            leader.songesBuyables = new BreachReward[]{};
+            leader.songesBuyables = new BreachReward[] { };
             foreach (var boost in leader.currentSongeRoom.Rewards)
-            {
                 leader.songesBuyables = leader.songesBuyables.Add(boost);
-            }
             if (leader.songesStep >= 201)
             {
-                leader.songesBuyables = new BreachReward[]{};
+                leader.songesBuyables = new BreachReward[] { };
                 leader.OpenPopup("Vous venez de terminer votre run songes ! Retour à la salle 1 !");
                 leader.songesStep = 1;
             }
+
             base.OnFightEnded();
         }
-        
+
         protected override void OnFightStarted()
         {
             base.OnFightStarted();
             initChallenge();
 
-            foreach (var characterFighter in this.ChallengersTeam.Fighters)
-            {
+            foreach (var characterFighter in ChallengersTeam.Fighters)
                 if (characterFighter is CharacterFighter)
                 {
-                    Character character = (characterFighter as CharacterFighter).Character;
+                    var character = (characterFighter as CharacterFighter).Character;
                     foreach (var boost in leader.songesBoosts)
                     {
                         switch (boost.TypeId)
@@ -113,60 +105,58 @@ namespace Stump.Server.WorldServer.Game.Songes
                             case 99:
                             case 113:
                             case 127:
-                                character.Stats[PlayerFields.TackleEvade].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.TackleEvade].Additional += (int) boost.Value;
                                 break;
                             case 100:
                             case 114:
                             case 128:
-                                character.Stats[PlayerFields.TackleBlock].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.TackleBlock].Additional += (int) boost.Value;
                                 break;
                             case 6:
                             case 103:
                             case 117:
-                                character.Stats[PlayerFields.Intelligence].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.Intelligence].Additional += (int) boost.Value;
                                 break;
                             case 7:
                             case 104:
                             case 118:
-                                character.Stats[PlayerFields.Chance].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.Chance].Additional += (int) boost.Value;
                                 break;
                             case 91:
                             case 105:
                             case 119:
-                                character.Stats[PlayerFields.Agility].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.Agility].Additional += (int) boost.Value;
                                 break;
                             case 92:
                             case 106:
                             case 120:
-                                character.Stats[PlayerFields.Strength].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.Strength].Additional += (int) boost.Value;
                                 break;
                             case 93:
                             case 107:
                             case 121:
-                                character.Stats[PlayerFields.Vitality].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.Vitality].Additional += (int) boost.Value;
                                 break;
                             case 94:
                             case 108:
                             case 122:
-                                character.Stats[PlayerFields.DamageBonus].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.DamageBonus].Additional += (int) boost.Value;
                                 break;
                             case 95:
                             case 109:
                             case 123:
-                                character.Stats[PlayerFields.APAttack].Additional += (int)boost.Value;
+                                character.Stats[PlayerFields.APAttack].Additional += (int) boost.Value;
                                 break;
                             case 96:
                             case 110:
                             case 124:
-                                character.Stats[PlayerFields.MPAttack].Additional += (int)boost.Value;
-                                break;
-                            default:
+                                character.Stats[PlayerFields.MPAttack].Additional += (int) boost.Value;
                                 break;
                         }
+
                         characterFighter.Stats[PlayerFields.Agility].Additional = 9999;
                     }
                 }
-            }
 
             void initChallenge()
             {
@@ -193,7 +183,7 @@ namespace Stump.Server.WorldServer.Game.Songes
         {
             var cryptoRandom = new CryptoRandom();
             var results = new List<IFightResult>();
-            Character leader = this.leader;
+            var leader = this.leader;
             results.AddRange(GetFightersAndLeavers().Where(entry => entry.HasResult)
                 .Select(entry => entry.GetFightResult()));
             {

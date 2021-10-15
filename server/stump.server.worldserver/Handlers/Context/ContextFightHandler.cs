@@ -15,7 +15,6 @@ using Stump.Server.WorldServer.Game.Fights;
 using Stump.Server.WorldServer.Game.Fights.Buffs;
 using Stump.Server.WorldServer.Game.Fights.Teams;
 using Stump.Server.WorldServer.Game.Fights.Triggers;
-using Stump.Server.WorldServer.Game.Songes;
 using Stump.Server.WorldServer.Game.Spells;
 using Stump.Server.WorldServer.Handlers.Context.RolePlay;
 
@@ -386,8 +385,8 @@ namespace Stump.Server.WorldServer.Handlers.Context
         {
             if (fight.FightType == FightTypeEnum.FIGHT_TYPE_BREACH)
             {
-                int budget = fight.Winners == fight.ChallengersTeam ? 100 : 0;
-                client.Send(new BreachGameFightEndMessage((int) fight.GetFightDuration().TotalMilliseconds, 1,  0,
+                var budget = fight.Winners == fight.ChallengersTeam ? 100 : 0;
+                client.Send(new BreachGameFightEndMessage((int) fight.GetFightDuration().TotalMilliseconds, 1, 0,
                     results.ToArray(), fight.GetPartiesNameWithOutcome().ToArray(), budget));
             }
             else
@@ -417,7 +416,7 @@ namespace Stump.Server.WorldServer.Handlers.Context
                 fight.GetBuffs().Select(entry => entry.GetFightDispellableEffectExtendedInformations()).ToArray(),
                 fight.GetTriggers().Select(entry => entry.GetHiddenGameActionMark()).ToArray(),
                 (ushort) fight.TimeLine.RoundNumber, !fight.IsStarted ? 0 : fight.StartTime.GetUnixTimeStamp(),
-                fight.ActiveIdols.Select(x => x.GetNetworkIdol()).ToArray(), new GameFightEffectTriggerCount[]{}));
+                fight.ActiveIdols.Select(x => x.GetNetworkIdol()).ToArray(), new GameFightEffectTriggerCount[] { }));
         }
 
         public static void SendGameFightTurnResumeMessage(IPacketReceiver client, FightActor fighterPlaying)
@@ -642,7 +641,7 @@ namespace Stump.Server.WorldServer.Handlers.Context
                     (ushort) fighter.Fight.TimeLine.RoundNumber,
                     !fighter.Fight.IsStarted ? 0 : fighter.Fight.StartTime.GetUnixTimeStamp(),
                     fighter.Fight.ActiveIdols.Select(x => x.GetNetworkIdol()).ToArray(),
-                    new GameFightEffectTriggerCount[]{},
+                    new GameFightEffectTriggerCount[] { },
                     fighter.SpellHistory.GetCooldowns(),
                     (sbyte) fighter.SummonedCount,
                     (sbyte) fighter.BombsCount,
@@ -656,7 +655,7 @@ namespace Stump.Server.WorldServer.Handlers.Context
                     (ushort) fighter.Fight.TimeLine.RoundNumber,
                     !fighter.Fight.IsStarted ? 0 : fighter.Fight.StartTime.GetUnixTimeStamp(),
                     fighter.Fight.ActiveIdols.Select(x => x.GetNetworkIdol()).ToArray(),
-                    new GameFightEffectTriggerCount[]{},
+                    new GameFightEffectTriggerCount[] { },
                     fighter.SpellHistory.GetCooldowns(),
                     (sbyte) fighter.SummonedCount,
                     (sbyte) fighter.BombsCount));

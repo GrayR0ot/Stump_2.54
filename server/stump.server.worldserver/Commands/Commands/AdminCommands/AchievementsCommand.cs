@@ -35,7 +35,7 @@ namespace Stump.Server.WorldServer.Commands.Commands
             if (achievementTemplate != null)
                 trigger.Character.Achievement.CompleteAchievement(achievementTemplate);
             else
-                trigger.Character.SendServerMessage("Cette Id n'existe pas !", Color.Red);
+                trigger.Character.SendServerMessage("This Id does not exist!", Color.Red);
         }
     }
 }

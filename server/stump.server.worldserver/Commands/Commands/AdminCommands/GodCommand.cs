@@ -32,7 +32,7 @@ namespace Stump.Server.WorldServer.Commands.Commands
             foreach (var target in GetTargets(trigger))
             {
                 target.ToggleGodMode(true);
-                trigger.Reply("Vous voilà maintenant le Dieux de Asylium !");
+                trigger.Reply("You are now a god !");
             }
         }
     }
@@ -53,7 +53,7 @@ namespace Stump.Server.WorldServer.Commands.Commands
             foreach (var target in GetTargets(trigger))
             {
                 target.ToggleGodMode(false);
-                trigger.Reply("Vous n'êtes plus un Dieux..");
+                trigger.Reply("You are no longuer a god!");
             }
         }
     }

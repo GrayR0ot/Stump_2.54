@@ -25,9 +25,9 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Trades.Npcs
 {
     public class NpcTradeItem : TradeItem
     {
+        private readonly List<EffectBase> m_effects;
         private readonly int m_guid;
         private readonly ItemTemplate m_template;
-        private readonly List<EffectBase> m_effects;
         private uint m_stack;
 
         public NpcTradeItem(int guid, ItemTemplate template, uint stack)

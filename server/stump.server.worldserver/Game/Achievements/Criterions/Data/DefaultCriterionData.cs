@@ -1,5 +1,4 @@
-﻿using System;
-using Stump.Server.WorldServer.Game.Conditions;
+﻿using Stump.Server.WorldServer.Game.Conditions;
 
 namespace Stump.Server.WorldServer.Game.Achievements.Criterions.Data
 {
@@ -20,11 +19,6 @@ namespace Stump.Server.WorldServer.Game.Achievements.Criterions.Data
                 }
                 else if (base[i] == "d")
                 {
-                }
-                else
-                {
-                    //Console.WriteLine(base[i]);
-                    //throw new Exception();
                 }
         }
 

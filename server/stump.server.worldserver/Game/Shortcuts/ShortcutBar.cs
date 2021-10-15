@@ -15,10 +15,10 @@ namespace Stump.Server.WorldServer.Game.Shortcuts
     public class ShortcutBar
     {
         public const int MaxSlot = 40;
+        private readonly Dictionary<int, SpellShortcut> m_CustomspellShortcuts = new Dictionary<int, SpellShortcut>();
 
         private readonly object m_locker = new object();
         private readonly Queue<Shortcut> m_shortcutsToDelete = new Queue<Shortcut>();
-        private readonly Dictionary<int, SpellShortcut> m_CustomspellShortcuts = new Dictionary<int, SpellShortcut>();
         private Dictionary<int, ItemShortcut> m_itemShortcuts = new Dictionary<int, ItemShortcut>();
         private Dictionary<int, PresetShortcut> m_presetShortcuts = new Dictionary<int, PresetShortcut>();
         private Dictionary<int, SpellShortcut> m_spellShortcuts = new Dictionary<int, SpellShortcut>();
@@ -223,10 +223,7 @@ namespace Stump.Server.WorldServer.Game.Shortcuts
                 return;
             }
 
-            if (shortcut is PresetShortcut)
-            {
-                m_presetShortcuts.Remove(shortcut.Slot);
-            }
+            if (shortcut is PresetShortcut) m_presetShortcuts.Remove(shortcut.Slot);
         }
 
         public int GetNextFreeSlot(ShortcutBarEnum barType)

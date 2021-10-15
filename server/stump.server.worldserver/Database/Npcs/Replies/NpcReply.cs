@@ -69,13 +69,13 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
                 {
                     if (character.Client.Account.UserGroupId == 5)
                     {
-                        if (this.ReplyId == 26029)
+                        if (ReplyId == 26029)
                         {
-                            character.songesStep = 1;
-                            character.songesBoosts = new ObjectEffectInteger[] { };
-                            character.songesBranches = SongeBranches.generateSongeBranches(character);
-                            character.songesBudget = 0;
-                            character.songesBuyables = new BreachReward[]{};
+                            character.breachStep = 1;
+                            character.breachBoosts = new ObjectEffectInteger[] { };
+                            character.breachBranches = SongeBranches.generateSongeBranches(character);
+                            character.breachBudget = 0;
+                            character.breachBuyables = new BreachReward[] { };
                             return true;
                         }
                     }
@@ -83,9 +83,8 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
                     {
                         return false;
                     }
-                    
-                
                 }
+
             return true;
 
             character.SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 34);

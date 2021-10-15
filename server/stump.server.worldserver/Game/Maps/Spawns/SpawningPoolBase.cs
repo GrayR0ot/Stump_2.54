@@ -175,7 +175,7 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
         private void OnMapActorLeave(Map map, RolePlayActor actor)
         {
             var group = actor as MonsterGroup;
-            if (group != null && Spawns.Contains(@group))
+            if (group != null && Spawns.Contains(group))
                 OnGroupUnSpawned(group);
         }
 
@@ -190,7 +190,7 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
         {
             lock (Spawns)
             {
-                Spawns.Add(@group);
+                Spawns.Add(group);
             }
 
             var handler = Spawned;

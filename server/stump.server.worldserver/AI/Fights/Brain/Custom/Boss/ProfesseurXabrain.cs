@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 {
-    [BrainIdentifier((int)MonsterIdEnum.PROFESSEUR_XA)]
+    [BrainIdentifier((int) MonsterIdEnum.PROFESSEUR_XA)]
     public class ProfesseurXabrain : Brain
     {
         public ProfesseurXabrain(AIFighter fighter)
@@ -16,7 +16,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.TELEPATHY_2554, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.TELEPATHY_2554, 1), Fighter.Cell);
         }
     }
 }

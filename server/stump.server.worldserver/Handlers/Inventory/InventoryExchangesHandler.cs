@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using MongoDB.Bson;
 using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Enums.Custom;
 using Stump.DofusProtocol.Messages;
@@ -392,8 +390,9 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
 
             var items = BidHouseManager.Instance.GetBidHouseItems((ItemTypeEnum) message.Type, exchange.MaxItemLevel)
                 .ToArray();
-            
-            SendExchangeTypesExchangerDescriptionForUserMessage(client, (int)message.Type, items.Select(x => (uint) x.Template.Id));
+
+            SendExchangeTypesExchangerDescriptionForUserMessage(client, (int) message.Type,
+                items.Select(x => (uint) x.Template.Id));
         }
 
         [WorldHandler(ExchangeBidHouseListMessage.Id)]
@@ -440,6 +439,7 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
                 SendExchangeErrorMessage(client, ExchangeErrorEnum.BID_SEARCH_ERROR);
                 return;
             }
+
             SendExchangeTypesItemsExchangerDescriptionForUserMessage(client, categories, message.genId);
         }
 
@@ -731,7 +731,8 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
         public static void SendExchangeObjectAddedMessage(IPacketReceiver client, bool remote, TradeItem item)
         {
             client.Send(new ExchangeObjectAddedMessage(remote, item.GetObjectItem()));
-            client.Send(new ObjectAveragePricesMessage(new ushort[]{item.GetObjectItem().ObjectGID}, new ulong[]{PriceFormulas.getItemPrice(item.Template.Id)}));
+            client.Send(new ObjectAveragePricesMessage(new[] {item.GetObjectItem().ObjectGID},
+                new ulong[] {PriceFormulas.getItemPrice(item.Template.Id)}));
         }
 
         public static void SendExchangeObjectModifiedMessage(IPacketReceiver client, bool remote, TradeItem item)
@@ -807,7 +808,9 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
         public static void SendExchangeTypesItemsExchangerDescriptionForUserMessage(IPacketReceiver client,
             IEnumerable<BidExchangerObjectInfo> items, int type)
         {
-            client.Send(new ExchangeTypesItemsExchangerDescriptionForUserMessage((int)ItemManager.Instance.TryGetTemplate(type).TypeId, items.ToArray()));
+            client.Send(
+                new ExchangeTypesItemsExchangerDescriptionForUserMessage(
+                    (int) ItemManager.Instance.TryGetTemplate(type).TypeId, items.ToArray()));
         }
 
         public static void SendExchangeBidPriceForSellerMessage(IPacketReceiver client, ushort itemId, long average,
@@ -838,18 +841,20 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
 
         public static void SendExchangeBidHouseInListAddedMessage(IPacketReceiver client, BidHouseCategory category)
         {
-            client.Send(new ExchangeBidHouseInListAddedMessage(category.Id, (uint)category.Id, category.TemplateId,
+            client.Send(new ExchangeBidHouseInListAddedMessage(category.Id, (uint) category.Id, category.TemplateId,
                 category.Effects.Select(x => x.GetObjectEffect()).ToArray(), category.GetPrices().ToArray()));
         }
 
-        public static void SendExchangeBidHouseInListRemovedMessage(IPacketReceiver client, BidHouseCategory category, int item)
+        public static void SendExchangeBidHouseInListRemovedMessage(IPacketReceiver client, BidHouseCategory category,
+            int item)
         {
-            client.Send(new ExchangeBidHouseInListRemovedMessage(item, (uint)item, category.Id));
+            client.Send(new ExchangeBidHouseInListRemovedMessage(item, (uint) item, category.Id));
         }
 
         public static void SendExchangeBidHouseInListUpdatedMessage(IPacketReceiver client, BidHouseCategory category)
         {
-            client.Send(new ExchangeBidHouseInListUpdatedMessage(category.Id, (uint)category.TemplateId, category.TemplateId,
+            client.Send(new ExchangeBidHouseInListUpdatedMessage(category.Id, (uint) category.TemplateId,
+                category.TemplateId,
                 category.Effects.Select(x => x.GetObjectEffect()).ToArray(), category.GetPrices().ToArray()));
         }
 

@@ -31,9 +31,6 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
                     character.SendServerMessage(
                         "Vous venez d'utiliser un ticket de loterie ! Écaflip prie pour que le hasard soit avec vous !",
                         Color.YellowGreen);
-                    //var nbr = nbr1;
-                    //character.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(12124), nbr);
-                    //character.OpenPopup("Vous avez obtenu "+ nbr + "<b>Points boutiques.</b>");
                     GetPrice(character);
                 }
                 else

@@ -5,17 +5,14 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain
 {
     public class InitBrain : Brain
     {
-        InitBrainRecord BrainRecord
-        {
-            get;
-        }
-
         public InitBrain(AIFighter fighter, InitBrainRecord record)
             : base(fighter)
         {
             BrainRecord = record;
             fighter.GetAlive += OnGetAlive;
         }
+
+        private InitBrainRecord BrainRecord { get; }
 
         private void OnGetAlive(FightActor fighter)
         {

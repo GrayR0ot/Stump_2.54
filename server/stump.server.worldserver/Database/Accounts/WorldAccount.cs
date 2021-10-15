@@ -17,16 +17,6 @@ namespace Stump.Server.WorldServer.Database.Accounts
         ///     Use parameters
         /// </summary>
         public static string FetchByNickname = "SELECT * FROM accounts WHERE Nickname=@0";
-
-        /// <summary>
-        ///     Use string.Format
-        /// </summary>
-        public static string UpdateNewTokens = "UPDATE accounts SET NewTokens={0}";
-
-        /// <summary>
-        ///     Use string.Format
-        /// </summary>
-        public static string UpdateVip = "UPDATE accounts SET Vip={0} WHERE Id={1}";
     }
 
     [TableName("accounts")]
@@ -43,11 +33,7 @@ namespace Stump.Server.WorldServer.Database.Accounts
         public int? ConnectedCharacter { get; set; }
 
         public ulong BankKamas { get; set; }
-
-        public int Tokens { get; set; }
-
-        [ResultColumn("NewTokens")] public int NewTokens { get; set; }
-
+        
         public DateTime LastLoterieDate { get; set; }
 
         public int LastConnectionTimeStamp =>

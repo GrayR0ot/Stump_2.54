@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 {
-    [BrainIdentifier((int)MonsterIdEnum.GLOURSELESTE)]
+    [BrainIdentifier((int) MonsterIdEnum.GLOURSELESTE)]
     public class GlourselesteBrain : Brain
     {
         public GlourselesteBrain(AIFighter fighter) : base(fighter)
@@ -15,7 +15,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.BEARBARBIE, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.BEARBARBIE, 1), Fighter.Cell);
         }
     }
 }

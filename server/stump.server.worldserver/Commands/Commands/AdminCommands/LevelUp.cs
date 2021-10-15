@@ -24,15 +24,11 @@ public class LevelUp : TargetCommand
             {
                 delta = (byte) amount;
                 target.LevelUp(delta);
-                trigger.Reply("Agregados " + trigger.Bold("{0}") + " niveles a '{1}'.", delta, target.Name);
-            }
-            else if (amount < 0 && -amount <= byte.MaxValue)
-            {
-                trigger.ReplyError("Level invalide.");
+                trigger.Reply("Added " + trigger.Bold("{0}") + " levels to '{1}'.", delta, target.Name);
             }
             else
             {
-                trigger.ReplyError("Level invalide.");
+                trigger.ReplyError("Invalid level!");
             }
         }
     }

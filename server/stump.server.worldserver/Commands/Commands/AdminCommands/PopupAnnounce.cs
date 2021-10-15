@@ -38,11 +38,11 @@ namespace Stump.Server.WorldServer.Commands.Commands
             var num = 0;
             foreach (var current in characters)
             {
-                current.Client.Send(new PopupWarningMessage(5, "Message de l'équipe", "<br />" + text));
+                current.Client.Send(new PopupWarningMessage(5, "Administration", "<br />" + text));
                 num++;
             }
 
-            trigger.Reply("Message envoyé à " + num + " joueur(s)");
+            trigger.Reply("Message sent to " + num + " player(s)");
         }
     }
 }

@@ -23,7 +23,6 @@ using Stump.Server.WorldServer.Core.IO;
 using Stump.Server.WorldServer.Core.IPC;
 using Stump.Server.WorldServer.Core.Network;
 using Stump.Server.WorldServer.Game;
-using Stump.Server.WorldServer.WebAPI;
 
 namespace Stump.Server.WorldServer
 {
@@ -82,7 +81,7 @@ namespace Stump.Server.WorldServer
             ConsoleInterface = new WorldConsole();
             VirtualConsoleInterface = new WorldVirtualConsole();
             ConsoleBase.SetTitle($"#Nonobstant World Server - {Version} : {ServerInformation.Name}");
-            
+
             logger.Info("Initializing Database...");
             DBAccessor = new DatabaseAccessor(DatabaseConfiguration);
             DBAccessor.RegisterMappingAssembly(Assembly.GetExecutingAssembly());

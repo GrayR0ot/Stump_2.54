@@ -72,8 +72,9 @@ namespace Stump.Server.WorldServer.Handlers.Approach
                 client.DisconnectLater(1000);
                 return;
             }
-           Console.WriteLine("Lang: " + message.Lang);
-           Console.WriteLine("Ticket: " + message.Ticket);
+
+            Console.WriteLine("Lang: " + message.Lang);
+            Console.WriteLine("Ticket: " + message.Ticket);
 
             message.Ticket =
                 Encoding.ASCII.GetString(message.Ticket.Split(',').Select(x => (byte) int.Parse(x)).ToArray());

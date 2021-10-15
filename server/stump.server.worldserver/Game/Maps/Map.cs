@@ -1072,7 +1072,7 @@ namespace Stump.Server.WorldServer.Game.Maps
 
             var group = new MonsterGroup(id, position);
 
-            group.AddMonster(new Monster(monster, group, Nani));
+            group.AddMonster(new Monster(monster, group));
 
             Enter(group);
 

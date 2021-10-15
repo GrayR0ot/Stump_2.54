@@ -16,8 +16,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
 
         public override bool OnEquipItem(bool unequip)
         {
-            if (unequip)
-            return base.OnEquipItem(true);
+            if (unequip) return base.OnEquipItem(true);
             return true;
 
         //    if (!(Owner.Fight is ArenaFight))

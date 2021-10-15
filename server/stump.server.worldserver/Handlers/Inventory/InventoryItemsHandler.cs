@@ -550,7 +550,8 @@ namespace Stump.Server.WorldServer.Handlers.Inventory
         public static void SendObjectAddedMessage(IPacketReceiver client, IItem addedItem)
         {
             client.Send(new ObjectAddedMessage(addedItem.GetObjectItem(), 0));
-            client.Send(new ObjectAveragePricesMessage(new ushort[]{addedItem.GetObjectItem().ObjectGID}, new ulong[]{PriceFormulas.getItemPrice(addedItem.Template.Id)}));
+            client.Send(new ObjectAveragePricesMessage(new[] {addedItem.GetObjectItem().ObjectGID},
+                new ulong[] {PriceFormulas.getItemPrice(addedItem.Template.Id)}));
         }
 
         public static void SendObjectsAddedMessage(IPacketReceiver client, IEnumerable<ObjectItem> addeditems)

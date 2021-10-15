@@ -1,12 +1,11 @@
-﻿using Stump.DofusProtocol.Enums;
+﻿using System.Linq;
+using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Fights;
-using Stump.Server.WorldServer.Game.Spells;
-using System.Linq;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 {
-    [BrainIdentifier((int)MonsterIdEnum.SPHINCTER_CELL)]
+    [BrainIdentifier((int) MonsterIdEnum.SPHINCTER_CELL)]
     public class Sphincter_Cell : Brain
     {
         public Sphincter_Cell(AIFighter fighter) : base(fighter)

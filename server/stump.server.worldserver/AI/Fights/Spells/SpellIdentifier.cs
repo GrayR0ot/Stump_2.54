@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Database.Spells;
 using Stump.Server.WorldServer.Game.Effects.Instances;

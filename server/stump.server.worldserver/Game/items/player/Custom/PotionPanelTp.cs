@@ -43,12 +43,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             destinations.Add(World.Instance.GetMap(54165815), 300);//lac gelé
             destinations.Add(World.Instance.GetMap(33554950), 238);//sanctuaire
             destinations.Add(World.Instance.GetMap(196345858), 286);//ile kao
-
-
-
-
-
-
+            
             DungsDialog s = new DungsDialog(Owner, destinations);
             s.Open();
 

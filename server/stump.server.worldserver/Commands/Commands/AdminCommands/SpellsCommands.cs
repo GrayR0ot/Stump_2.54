@@ -233,7 +233,7 @@ namespace Stump.Server.WorldServer.Commands.Commands
                 trigger.ReplyBold("DiceFace = {0}, DiceNum = {1}, Value = {2}", effect.DiceFace, effect.DiceNum,
                     effect.Value);
                 trigger.ReplyBold(" Modificator = {0}, Random = {1}, Trigger = {2}, Delay = {3}",
-                     effect.Modificator, effect.Random, effect.Trigger, effect.Delay);
+                    effect.Modificator, effect.Random, effect.Trigger, effect.Delay);
                 trigger.ReplyBold("ZoneShape = {0}, ZoneSize = {1}-{2}, Duration = {3}, Target = {4}, Group = {5}",
                     effect.ZoneShape, effect.ZoneMinSize, effect.ZoneSize, effect.Duration, effect.Targets,
                     effect.Group);

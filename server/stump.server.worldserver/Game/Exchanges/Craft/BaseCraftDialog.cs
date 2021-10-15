@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Core.Network;
-using Stump.Server.WorldServer.Database.Jobs;
-using Stump.Server.WorldServer.Game.Effects.Instances;
 using Stump.Server.WorldServer.Game.Exchanges.Trades;
-using Stump.Server.WorldServer.Game.Exchanges.Trades.Players;
 using Stump.Server.WorldServer.Game.Interactives;
 using Stump.Server.WorldServer.Game.Interactives.Skills;
-using Stump.Server.WorldServer.Game.Items;
 using Stump.Server.WorldServer.Game.Items.Player;
 using Stump.Server.WorldServer.Game.Jobs;
 using Stump.Server.WorldServer.Handlers.Inventory;
@@ -25,61 +19,27 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
             Job = job;
         }
 
+        public InteractiveObject Interactive { get; }
+
+        public Skill Skill { get; }
+
+        public Job Job { get; }
+
+        public Crafter Crafter { get; protected set; }
+
+        public CraftingActor Receiver { get; protected set; }
+
+        public WorldClientCollection Clients { get; protected set; }
+
+        public int Amount { get; protected set; }
+
         public DialogTypeEnum DialogType => DialogTypeEnum.DIALOG_EXCHANGE;
         public ExchangeTypeEnum ExchangeType => ExchangeTypeEnum.CRAFT;
         public abstract void Close();
 
-        public abstract Trader FirstTrader
-        {
-            get;
-        }
+        public abstract Trader FirstTrader { get; }
 
-        public abstract Trader SecondTrader
-        {
-            get;
-        }
-
-        public InteractiveObject Interactive
-        {
-            get;
-            private set;
-        }
-
-        public Skill Skill
-        {
-            get;
-            private set;
-        }
-
-        public Job Job
-        {
-            get;
-            private set;
-        }
-
-        public Crafter Crafter
-        {
-            get;
-            protected set;
-        }
-
-        public CraftingActor Receiver
-        {
-            get;
-            protected set;
-        }
-
-        public WorldClientCollection Clients
-        {
-            get;
-            protected set;
-        }
-
-        public int Amount
-        {
-            get;
-            protected set;
-        }
+        public abstract Trader SecondTrader { get; }
 
         public bool ChangeAmount(int amount)
         {

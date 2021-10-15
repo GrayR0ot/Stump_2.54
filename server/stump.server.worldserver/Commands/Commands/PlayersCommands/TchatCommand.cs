@@ -14,7 +14,7 @@ namespace Stump.Server.WorldServer.Commands.Commands
         public ChatCommand()
         {
             Aliases = new[] {"m", "monde"};
-            Description = "Display an announce to all players";
+            Description = "Envoyer un message à tout le monde";
             RequiredRole = RoleEnum.Player;
             AddParameter<string>("message", "msg", "The announce");
         }

@@ -23,7 +23,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Ranks
 
         public List<KeyValuePair<byte, RankRewardEntry>> getRewardsByRank(int rankId)
         {
-           return m_records.Where(x => x.Value.RankId == rankId).ToList();
+            return m_records.Where(x => x.Value.RankId == rankId).ToList();
         }
     }
 }

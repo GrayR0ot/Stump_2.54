@@ -7,9 +7,9 @@ using TreeSharp;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
 {
-    [BrainIdentifier((int)MonsterIdEnum.LAPINO)]
-    [BrainIdentifier((int)MonsterIdEnum.LAPINO_PROTECTEUR)]
-    class Bunny : Brain
+    [BrainIdentifier((int) MonsterIdEnum.LAPINO)]
+    [BrainIdentifier((int) MonsterIdEnum.LAPINO_PROTECTEUR)]
+    internal class Bunny : Brain
     {
         public Bunny(AIFighter fighter)
             : base(fighter)
@@ -18,19 +18,18 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
             fighter.BeforeDead += OnBeforeDead;
         }
 
-        void OnFighterAdded(FightTeam team, FightActor fighter)
+        private void OnFighterAdded(FightTeam team, FightActor fighter)
         {
             if (fighter != Fighter)
                 return;
 
             if (fighter is SummonedMonster && (fighter as SummonedMonster).Monster.MonsterId == 39)
-            {
-                fighter.CastAutoSpell(new Spell((int)SpellIdEnum.STIMULATING_WORD_126, (short)fighter.Level), fighter.Cell);
-            }
-            if (fighter is SummonedMonster && (fighter as SummonedMonster).Monster.MonsterId == (int)MonsterIdEnum.LAPINO_PROTECTEUR)
-            {
-                fighter.CastAutoSpell(new Spell((int)SpellIdEnum.STIMULATING_WORD, (short)fighter.Level), fighter.Cell);
-            }
+                fighter.CastAutoSpell(new Spell((int) SpellIdEnum.STIMULATING_WORD_126, (short) fighter.Level),
+                    fighter.Cell);
+            if (fighter is SummonedMonster &&
+                (fighter as SummonedMonster).Monster.MonsterId == (int) MonsterIdEnum.LAPINO_PROTECTEUR)
+                fighter.CastAutoSpell(new Spell((int) SpellIdEnum.STIMULATING_WORD, (short) fighter.Level),
+                    fighter.Cell);
         }
 
         public void OnBeforeDead(FightActor fighter, FightActor killedBy)
@@ -39,13 +38,10 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
                 return;
 
             if (fighter is SummonedMonster && (fighter as SummonedMonster).Monster.MonsterId == 39)
-            {
                 (fighter as SummonedMonster).Summoner.CastAutoSpell(new Spell(6638, 1), fighter.Cell);
-            }
-            if (fighter is SummonedMonster && (fighter as SummonedMonster).Monster.MonsterId == (int)MonsterIdEnum.LAPINO_PROTECTEUR)
-            {
+            if (fighter is SummonedMonster &&
+                (fighter as SummonedMonster).Monster.MonsterId == (int) MonsterIdEnum.LAPINO_PROTECTEUR)
                 (fighter as SummonedMonster).Summoner.CastAutoSpell(new Spell(9598, 1), fighter.Cell);
-            }
         }
 
         public override void Play()
@@ -53,15 +49,11 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
             foreach (var spell in Fighter.Spells.Values)
             {
                 FightActor target = null;
-                if (Fighter.Id == (int)MonsterIdEnum.LAPINO_PROTECTEUR)
-                {
+                if (Fighter.Id == (int) MonsterIdEnum.LAPINO_PROTECTEUR)
                     target = Environment.GetNearestFighter(x => x.IsFriendlyWith(Fighter) && x != Fighter);
-                }
                 else
-                {
-                    target = Environment.GetNearestFighter(x => x.IsFriendlyWith(Fighter) && x != Fighter && x.LifePoints < x.MaxLifePoints);
-
-                }
+                    target = Environment.GetNearestFighter(x =>
+                        x.IsFriendlyWith(Fighter) && x != Fighter && x.LifePoints < x.MaxLifePoints);
                 var ennemy = Environment.GetNearestEnemy();
 
                 var selector = new PrioritySelector();
@@ -69,7 +61,6 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
                 selector.AddChild(new Decorator(ctx => spell == null, new DecoratorContinue(new FleeAction(Fighter))));
 
                 if (target != null && spell != null)
-                {
                     selector.AddChild(new PrioritySelector(
                         new Decorator(ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                             new Sequence(
@@ -85,11 +76,9 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
                                 ctx => Fighter.CanCastSpell(spell, target.Cell) == SpellCastResult.OK,
                                 new Sequence(
                                     new SpellCastAction(Fighter, spell, target.Cell, true))))));
-                }
 
                 foreach (var action in selector.Execute(this))
                 {
-
                 }
             }
         }

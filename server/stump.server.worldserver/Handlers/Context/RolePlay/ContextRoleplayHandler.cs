@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using Stump.Core.Extensions;
 using Stump.DofusProtocol.Enums;
 using Stump.DofusProtocol.Messages;
 using Stump.DofusProtocol.Types;
@@ -12,7 +9,6 @@ using Stump.Server.WorldServer.Game;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Actors.RolePlay;
 using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
-using Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters;
 using Stump.Server.WorldServer.Game.Arena;
 using Stump.Server.WorldServer.Game.Fights;
 using Stump.Server.WorldServer.Game.HavenBags;
@@ -221,14 +217,12 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
             if (client.Character.songesOwner == null)
             {
                 if (client.Character.songesBranches == null)
-                {
                     client.Character.songesBranches = SongeBranches.generateSongeBranches(client.Character);
-                }
 
-                List<BreachBranch> breachBranches = new List<BreachBranch>();
+                var breachBranches = new List<BreachBranch>();
                 foreach (var breachBranch in client.Character.songesBranches)
                 {
-                    BreachBranch branch = new BreachBranch(breachBranch.Room, breachBranch.Element, breachBranch.Bosses,
+                    var branch = new BreachBranch(breachBranch.Room, breachBranch.Element, breachBranch.Bosses,
                         breachBranch.Map);
                     breachBranches.Add(branch);
                 }
@@ -237,11 +231,9 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
                 client.Send(new BreachStateMessage(client.Character.GetCharacterMinimalInformations(),
                     client.Character.songesBoosts.ToArray(), (uint) client.Character.songesBudget, true));
                 foreach (var character in client.Character.Map.GetAllCharacters())
-                {
                     client.Send(new BreachCharactersMessage(client.Character.Map.GetAllCharacters()
                         .Select(x => (ulong) x.Id)
                         .ToArray()));
-                }
 
                 client.Send(new MapComplementaryInformationsBreachMessage((ushort) client.Character.Map.SubArea.Id,
                     client.Character.Map.Id, new HouseInformations[0],
@@ -268,18 +260,15 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
 
 
                 var cm = client.Character.Map.GetMapComplementaryInformationsDataMessage(client.Character);
-                if (cm is MapComplementaryInformationsBreachMessage)
-                {
-                    client.Send(cm);
-                }
+                if (cm is MapComplementaryInformationsBreachMessage) client.Send(cm);
             }
             else
             {
                 client.Character.SendServerMessage("Invited songes!");
-                List<BreachBranch> breachBranches = new List<BreachBranch>();
+                var breachBranches = new List<BreachBranch>();
                 foreach (var breachBranch in client.Character.songesOwner.songesBranches)
                 {
-                    BreachBranch branch = new BreachBranch(breachBranch.Room, breachBranch.Element, breachBranch.Bosses,
+                    var branch = new BreachBranch(breachBranch.Room, breachBranch.Element, breachBranch.Bosses,
                         breachBranch.Map);
                     breachBranches.Add(branch);
                 }
@@ -289,11 +278,9 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
                     client.Character.songesOwner.songesBoosts.ToArray(),
                     (uint) client.Character.songesOwner.songesBudget, true));
                 foreach (var character in client.Character.Map.GetAllCharacters())
-                {
                     client.Send(new BreachCharactersMessage(client.Character.Map.GetAllCharacters()
                         .Select(x => (ulong) x.Id)
                         .ToArray()));
-                }
 
                 client.Send(new MapComplementaryInformationsBreachMessage((ushort) client.Character.Map.SubArea.Id,
                     client.Character.Map.Id, new HouseInformations[0],
@@ -320,10 +307,7 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
 
 
                 var cm = client.Character.Map.GetMapComplementaryInformationsDataMessage(client.Character);
-                if (cm is MapComplementaryInformationsBreachMessage)
-                {
-                    client.Send(cm);
-                }
+                if (cm is MapComplementaryInformationsBreachMessage) client.Send(cm);
             }
         }
     }

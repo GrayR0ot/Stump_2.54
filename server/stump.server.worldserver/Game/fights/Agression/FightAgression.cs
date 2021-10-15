@@ -361,7 +361,7 @@ namespace Stump.Server.WorldServer.Game.Fights
                     result.Loot.AddItem((int)ItemIdEnum.PARCHEMIN_DES_FLAQUEUX_10670, 1);
 
                     result.Character.SendServerMessage("Vous avez gagné le combat, félicitations !");
-                    result.Character.Teleport(result.Character.MapBattleField, result.Character.CellBattleField);
+                    result.Character.Teleport(result.Character.MapKolizeum, result.Character.CellKolizeum);
                 }
             }
         }

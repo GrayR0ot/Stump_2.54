@@ -204,18 +204,8 @@ namespace Stump.Server.WorldServer.Game.Formulas
                           (4 * Math.Pow(2, targets)));
         }
 
-        private enum Dia
+        public static double getRandomFinalBonus()
         {
-            Lunes = 1,
-            Martes = 2,
-            Miercoles = 3,
-            Jueves = 4,
-            Viernes = 5,
-            Sabado = 6,
-            Domingo = 0
-        }
-        
-        public static double getRandomFinalBonus() {
             double finalBonus = 1;
             double randomBonus = new Random().Next(9);
             switch (randomBonus)
@@ -248,7 +238,19 @@ namespace Stump.Server.WorldServer.Game.Formulas
                     finalBonus = 1;
                     break;
             }
+
             return finalBonus;
+        }
+
+        private enum Dia
+        {
+            Lunes = 1,
+            Martes = 2,
+            Miercoles = 3,
+            Jueves = 4,
+            Viernes = 5,
+            Sabado = 6,
+            Domingo = 0
         }
     }
 }

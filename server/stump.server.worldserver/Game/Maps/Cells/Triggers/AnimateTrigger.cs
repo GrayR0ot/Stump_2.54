@@ -13,11 +13,11 @@ namespace Stump.Server.WorldServer.Game.Maps.Cells.Triggers
     [Discriminator("Animate", typeof(CellTrigger), typeof(CellTriggerRecord))]
     public class AnimateTrigger : CellTrigger
     {
+        private readonly MapObstacle[] m_mapObstacles;
         private short? m_cellId;
 
         private int? m_elementId;
         private int? m_mapId;
-        private readonly MapObstacle[] m_mapObstacles;
         private string m_obstacles;
 
         public AnimateTrigger(CellTriggerRecord record)

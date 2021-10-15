@@ -14,7 +14,7 @@ namespace Stump.Server.WorldServer.Commands.Commands
             {
                 "event"
             };
-            Description = "Envoyer une annonce d'event aux connectés";
+            Description = "Send an event message to all connected player(s)";
             RequiredRole = RoleEnum.GameMaster_Padawan;
         }
 

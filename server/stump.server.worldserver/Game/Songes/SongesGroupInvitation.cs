@@ -5,25 +5,14 @@ namespace Stump.Server.WorldServer.Game.Songes
 {
     public class SongesGroupInvitation
     {
-        private Character host;
-        private BreachInvitationOfferMessage message;
-
         public SongesGroupInvitation(Character host, BreachInvitationOfferMessage message)
         {
-            this.host = host;
-            this.message = message;
+            this.Host = host;
+            this.Message = message;
         }
 
-        public Character Host
-        {
-            get => host;
-            set => host = value;
-        }
+        public Character Host { get; set; }
 
-        public BreachInvitationOfferMessage Message
-        {
-            get => message;
-            set => message = value;
-        }
+        public BreachInvitationOfferMessage Message { get; set; }
     }
 }

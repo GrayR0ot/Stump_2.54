@@ -57,14 +57,8 @@ namespace Stump.Server.WorldServer.Commands.Commands
                     case "fr":
                         cr.SendServerMessage("Votre personnage a été sauvegardé.");
                         break;
-                    case "es":
-                        cr.SendServerMessage("Votre personnage a été sauvegardé.");
-                        break;
-                    case "en":
-                        cr.SendServerMessage("Votre personnage a été sauvegardé.");
-                        break;
                     default:
-                        cr.SendServerMessage("Votre personnage a été sauvegardé.");
+                        cr.SendServerMessage("You character has just been saved!");
                         break;
                 }
 

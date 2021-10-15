@@ -1,11 +1,11 @@
-﻿using Stump.DofusProtocol.Enums;
+﻿using System.Linq;
+using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Fights;
-using System.Linq;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 {
-    [BrainIdentifier((int)MonsterIdEnum.KRALAMOURE_GEANT)]
+    [BrainIdentifier((int) MonsterIdEnum.KRALAMOURE_GEANT)]
     public class KralamoureBrain : Brain
     {
         public KralamoureBrain(AIFighter fighter) : base(fighter)

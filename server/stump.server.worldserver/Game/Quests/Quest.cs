@@ -10,9 +10,9 @@ namespace Stump.Server.WorldServer.Game.Quests
     public class Quest
     {
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
-        private bool m_isDirty;
 
         private readonly QuestRecord m_record;
+        private bool m_isDirty;
 
         public Quest(Character owner, QuestRecord record)
         {

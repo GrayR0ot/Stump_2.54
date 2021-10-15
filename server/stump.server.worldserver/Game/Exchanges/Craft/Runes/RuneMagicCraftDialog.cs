@@ -588,9 +588,7 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft.Runes
                         effect.Template.Id == 93 ||
                         effect.Template.Id == 94 || effect.Template.Id == 95 || effect.Template.Id == 101 ||
                         effect.Template.Id == 108)
-                    {
                         break;
-                    }
 
                     ItemToImprove.Effects.Remove(effect);
                     ItemToImprove.Effects.Add(new EffectInteger((EffectsEnum) effect.Template.OppositeId,

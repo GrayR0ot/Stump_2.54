@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Spells;
 
 namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 {
-    [BrainIdentifier((int)MonsterIdEnum.MEULOU)]
+    [BrainIdentifier((int) MonsterIdEnum.MEULOU)]
     public class Meulou : Brain
     {
         public Meulou(AIFighter fighter)
@@ -16,8 +16,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.RAGE_305, 1), Fighter.Cell);
-
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.RAGE_305, 1), Fighter.Cell);
         }
     }
 }
