@@ -37,12 +37,12 @@ namespace Stump.Server.WorldServer.Game.Fights
             return fight;
         }
 
-        public SongesFight CreateSongesFight(Map map, Character character)
+        public BreachFight CreateSongesFight(Map map, Character character)
         {
             var challengersTeam = new FightPlayerTeam(TeamEnum.TEAM_CHALLENGER, map.GetRedFightPlacement());
             var defendersTeam = new FightMonsterTeam(TeamEnum.TEAM_DEFENDER, map.GetBlueFightPlacement());
 
-            var fight = new SongesFight(m_idProvider.Pop(), character, map, defendersTeam, challengersTeam, character.breachStep);
+            var fight = new BreachFight(m_idProvider.Pop(), character, map, defendersTeam, challengersTeam, character.breachStep);
 
             AddEntity(fight.Id, fight);
 

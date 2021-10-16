@@ -214,13 +214,13 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
 
         public static void SendMapComplementaryInformationsBreachMessage(WorldClient client)
         {
-            if (client.Character.songesOwner == null)
+            if (client.Character.breachOwner == null)
             {
-                if (client.Character.songesBranches == null)
-                    client.Character.songesBranches = SongeBranches.generateSongeBranches(client.Character);
+                if (client.Character.breachBranches == null)
+                    client.Character.breachBranches = BreachBranches.generateSongeBranches(client.Character);
 
                 var breachBranches = new List<BreachBranch>();
-                foreach (var breachBranch in client.Character.songesBranches)
+                foreach (var breachBranch in client.Character.breachBranches)
                 {
                     var branch = new BreachBranch(breachBranch.Room, breachBranch.Element, breachBranch.Bosses,
                         breachBranch.Map);
@@ -229,7 +229,7 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
 
                 client.Send(new BreachEnterMessage((ulong) client.Character.Id));
                 client.Send(new BreachStateMessage(client.Character.GetCharacterMinimalInformations(),
-                    client.Character.songesBoosts.ToArray(), (uint) client.Character.songesBudget, true));
+                    client.Character.breachBoosts.ToArray(), (uint) client.Character.breachBudget, true));
                 foreach (var character in client.Character.Map.GetAllCharacters())
                     client.Send(new BreachCharactersMessage(client.Character.Map.GetAllCharacters()
                         .Select(x => (ulong) x.Id)
@@ -253,7 +253,7 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
                     false,
                     new FightStartingPositions(client.Character.Map.GetBlueFightPlacement().Select(x => (ushort) x.Id),
                         client.Character.Map.GetRedFightPlacement().Select(x => (ushort) x.Id)),
-                    (uint) (200 + client.Character.songesStep),
+                    (uint) (200 + client.Character.breachStep),
                     0,
                     breachBranches.ToArray()
                 ));
@@ -264,19 +264,18 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
             }
             else
             {
-                client.Character.SendServerMessage("Invited songes!");
                 var breachBranches = new List<BreachBranch>();
-                foreach (var breachBranch in client.Character.songesOwner.songesBranches)
+                foreach (var breachBranch in client.Character.breachOwner.breachBranches)
                 {
                     var branch = new BreachBranch(breachBranch.Room, breachBranch.Element, breachBranch.Bosses,
                         breachBranch.Map);
                     breachBranches.Add(branch);
                 }
 
-                client.Send(new BreachEnterMessage((ulong) client.Character.songesOwner.Id));
-                client.Send(new BreachStateMessage(client.Character.songesOwner.GetCharacterMinimalInformations(),
-                    client.Character.songesOwner.songesBoosts.ToArray(),
-                    (uint) client.Character.songesOwner.songesBudget, true));
+                client.Send(new BreachEnterMessage((ulong) client.Character.breachOwner.Id));
+                client.Send(new BreachStateMessage(client.Character.breachOwner.GetCharacterMinimalInformations(),
+                    client.Character.breachOwner.breachBoosts.ToArray(),
+                    (uint) client.Character.breachOwner.breachBudget, true));
                 foreach (var character in client.Character.Map.GetAllCharacters())
                     client.Send(new BreachCharactersMessage(client.Character.Map.GetAllCharacters()
                         .Select(x => (ulong) x.Id)
@@ -300,7 +299,7 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
                     false,
                     new FightStartingPositions(client.Character.Map.GetBlueFightPlacement().Select(x => (ushort) x.Id),
                         client.Character.Map.GetRedFightPlacement().Select(x => (ushort) x.Id)),
-                    (uint) (200 + client.Character.songesOwner.songesStep),
+                    (uint) (200 + client.Character.breachOwner.breachStep),
                     0,
                     breachBranches.ToArray()
                 ));

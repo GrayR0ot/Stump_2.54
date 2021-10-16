@@ -1024,15 +1024,8 @@
     <Compile Include="Game\Maps\WorldObject.cs" />
     <Compile Include="Game\Maps\WorldObjectItem.cs" />
     <Compile Include="Game\Maps\WorldObjectsContext.cs" />
-    <Compile Include="Game\Mariages\SpouseManager.cs" />
     <Compile Include="Game\Misc\AutoAnnounceManager.cs" />
     <Compile Include="Game\Parties\PartyTeleport.cs" />
-    <Compile Include="Game\Prims\AllianceKoH.cs" />
-    <Compile Include="Game\Prims\ISimpleTrigger.cs" />
-    <Compile Include="Game\Prims\KoHmaneger.cs" />
-    <Compile Include="Game\Prims\PrismManeger.cs" />
-    <Compile Include="Game\Prims\PrismNpc.cs" />
-    <Compile Include="Game\Prims\PrismVulnerality.cs" />
     <Compile Include="Game\Quests\Objectives\BringItemsToObjective.cs" />
     <Compile Include="Game\Quests\Objectives\BringSoulsToObjective.cs" />
     <Compile Include="Game\Quests\Objectives\CraftItemObjective.cs" />
@@ -1052,14 +1045,14 @@
     <Compile Include="Game\Social\Friend.cs" />
     <Compile Include="Game\Social\FriendsBook.cs" />
     <Compile Include="Game\Social\Ignored.cs" />
-    <Compile Include="Game\Songes\BreachPrizes.cs" />
-    <Compile Include="Game\Songes\SongesBoost.cs" />
-    <Compile Include="Game\Songes\SongesBranches.cs" />
-    <Compile Include="Game\Songes\SongesBranchesGUI.cs" />
-    <Compile Include="Game\Songes\SongesCrates.cs" />
-    <Compile Include="Game\Songes\SongesGroupInvitation.cs" />
-    <Compile Include="Game\Songes\SongesReply.cs" />
-    <Compile Include="Game\Songes\SongesFight.cs" />
+    <Compile Include="Game\Breach\BreachPrizes.cs" />
+    <Compile Include="Game\Breach\BreachBoost.cs" />
+    <Compile Include="Game\Breach\BreachBranches.cs" />
+    <Compile Include="Game\Breach\BreachBranchesGUI.cs" />
+    <Compile Include="Game\Breach\BreachCrates.cs" />
+    <Compile Include="Game\Breach\BreachGroupInvitation.cs" />
+    <Compile Include="Game\Breach\BreachReply.cs" />
+    <Compile Include="Game\Breach\BreachFight.cs" />
     <Compile Include="Game\Spells\Casts\carried.cs" />
     <Compile Include="Game\Spells\Casts\Cra\AgudesaAbsoluta.cs" />
     <Compile Include="Game\Spells\Casts\Cra\FlecheTiranique.cs" />
@@ -1148,7 +1141,6 @@
     <Compile Include="Handlers\Inventory\InventoryPresetHandler.cs" />
     <Compile Include="Handlers\Moderation\ModerationHandler.cs" />
     <Compile Include="Handlers\Mounts\MountHandler.cs" />
-    <Compile Include="Handlers\Prism\PrismHandler.cs" />
     <Compile Include="Handlers\PvP\PvPHandler.cs" />
     <Compile Include="Handlers\Social\SocialHandler.cs" />
     <Compile Include="Handlers\Startup\StartupHandler.cs" />
@@ -1384,9 +1376,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Game\Zaap\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

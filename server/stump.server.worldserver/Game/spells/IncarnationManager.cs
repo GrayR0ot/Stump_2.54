@@ -33,7 +33,6 @@ namespace Stump.Server.WorldServer.Game.Spells
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         private List<CustomIncarnationRecord> CustomIncarnationRecords = new List<CustomIncarnationRecord>();
-        public List<Jesaispasquoimettre> handlers = new List<Jesaispasquoimettre>();
 
         [Initialization(InitializationPass.Fourth)]
         public override void Initialize()
@@ -142,23 +141,6 @@ namespace Stump.Server.WorldServer.Game.Spells
             UnApplyCustomStats(character);
 
             character.SaveLater();
-        }
-
-        public void CheckArea(Character character, Map map)
-        {
-            var handlr = handlers.FirstOrDefault(x => x.chracter == character.Id);
-            if (handlr == null)
-            {
-                IncarnationManager.Instance.UnApplyCustomIncarnation(character);
-                character.Teleport(character.Breed.GetStartPosition());
-                return;
-            }
-            var areas = handlr.areas;
-            if (!areas.Contains(map.SubArea))
-            {
-                IncarnationManager.Instance.UnApplyCustomIncarnation(character);
-                IncarnationManager.Instance.handlers.Remove(handlr);
-            }
         }
     }
 }

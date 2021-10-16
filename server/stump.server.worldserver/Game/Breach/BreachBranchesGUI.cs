@@ -5,11 +5,11 @@ using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 
 namespace Stump.Server.WorldServer.Game.Songes
 {
-    public class SongesBranchesGUI
+    public class BreachBranchesGUI
     {
         private readonly Character character;
 
-        public SongesBranchesGUI(Character character)
+        public BreachBranchesGUI(Character character)
         {
             this.character = character;
         }
@@ -21,16 +21,16 @@ namespace Stump.Server.WorldServer.Game.Songes
 
         public void openBranches()
         {
-            if (character.songesBranches == null)
-                character.songesBranches = SongeBranches.generateSongeBranches(character);
+            if (character.breachBranches == null)
+                character.breachBranches = BreachBranches.generateSongeBranches(character);
 
-            character.Client.Send(new BreachBranchesMessage(character.songesBranches));
-            if (character.songesBuyables != null && character.songesBuyables.Length >= 1)
+            character.Client.Send(new BreachBranchesMessage(character.breachBranches));
+            if (character.breachBuyables != null && character.breachBuyables.Length >= 1)
             {
                 var breachReward = new BreachReward();
-                character.songesBuyables[0].CopyTo(breachReward);
+                character.breachBuyables[0].CopyTo(breachReward);
                 breachReward.Bought = true;
-                character.Client.Send(new BreachRewardsMessage(character.songesBuyables,
+                character.Client.Send(new BreachRewardsMessage(character.breachBuyables,
                     breachReward)); //ASSURANCE DEFAITE
             }
         }

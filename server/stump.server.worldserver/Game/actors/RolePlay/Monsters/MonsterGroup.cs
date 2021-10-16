@@ -98,36 +98,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 
         public override bool Teleport(ObjectPosition destination, bool performCheck = true) => false;
 
-        public void CheckAgression(Character character)
-        {
-            bool isPossible = false;
-
-
-            foreach (var test in Position.Map.SubArea.GetMonstersAgression())
-            {
-                foreach (var tes in GetMonsters())
-                {
-                    if (test.MonsterId == tes.Template.Id && character.IsOppositeAlignement(test.AlignmentId))
-                        isPossible = true;
-                }
-            }
-
-            if (Fight != null || !Position.Map.SubArea.IsAgressibleMonsters || !isPossible)
-                return;
-
-            var allCharacterMap = Map.GetAllCharacters().ToList();
-            for (int i = 0; i < allCharacterMap.Count(); i++)
-            {
-                var distance = Position.Point.DistanceTo(allCharacterMap[i].Position.Point);
-                if (distance <= 6)
-                {
-                    allCharacterMap[i].StopMove();
-                    FightWith(allCharacterMap[i]);
-                    return;
-                }
-            }
-        }
-
 
         public void FightWith(Character character)
         {

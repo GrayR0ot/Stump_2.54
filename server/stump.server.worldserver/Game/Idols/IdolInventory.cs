@@ -182,7 +182,7 @@ namespace Stump.Server.WorldServer.Game.Idols
             return true;
         }
 
-        private bool CanUseIdol(PlayerIdol idol, SongesFight fight)
+        private bool CanUseIdol(PlayerIdol idol, BreachFight fight)
         {
             if (!idol.Template.IdolSpellId.HasValue)
                 return false;
@@ -220,7 +220,7 @@ namespace Stump.Server.WorldServer.Game.Idols
             return GetIdols();
         }
 
-        public IEnumerable<PlayerIdol> ComputeIdols(SongesFight fight)
+        public IEnumerable<PlayerIdol> ComputeIdols(BreachFight fight)
         {
             foreach (var idol in ActiveIdols.ToArray())
             {

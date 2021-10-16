@@ -3,9 +3,9 @@ using Stump.Server.WorldServer.Game.Actors.RolePlay.Characters;
 
 namespace Stump.Server.WorldServer.Game.Songes
 {
-    public class SongesGroupInvitation
+    public class BreachGroupInvitation
     {
-        public SongesGroupInvitation(Character host, BreachInvitationOfferMessage message)
+        public BreachGroupInvitation(Character host, BreachInvitationOfferMessage message)
         {
             this.Host = host;
             this.Message = message;

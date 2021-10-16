@@ -18,10 +18,10 @@ using Stump.Server.WorldServer.Handlers.Context;
 
 namespace Stump.Server.WorldServer.Database.Npcs.Replies
 {
-    [Discriminator("Ascension", typeof(NpcReply), typeof(NpcReplyRecord))]
-    public class SongesReply : NpcReply
+    [Discriminator("Breach", typeof(NpcReply), typeof(NpcReplyRecord))]
+    public class BreachReply : NpcReply
     {
-        public SongesReply(NpcReplyRecord record)
+        public BreachReply(NpcReplyRecord record)
             : base(record)
         {
         }
@@ -44,10 +44,10 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
             var map = Game.World.Instance.GetMap(maps[new Random().Next(maps.Count())]);
             var branchMonsters = new List<List<int>>();
             var branchBosses = new List<int>();
-            if (character.songesStep < 201)
+            if (character.breachStep < 201)
             {
                 for (var branches = 0; branches < 3; branches++)
-                    if (character.songesStep < 51)
+                    if (character.breachStep < 51)
                     {
                         var monsters = new List<int>();
                         branchBosses.Add(
@@ -70,7 +70,6 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
             }
             else
             {
-                character.SetAscensionStair(0);
                 //return true;
             }
 
@@ -135,7 +134,7 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
             Task.Delay(1000).ContinueWith(t =>
             {
                 character.SendServerMessage(
-                    "Vous avez été téléporté a l'étage " + character.songesStep + " des songes !");
+                    "Vous avez été téléporté a l'étage " + character.breachStep + " des breach !");
 
                 var fight = Singleton<FightManager>.Instance.CreateSongesFight(character.Map, character);
                 fight.ChallengersTeam.AddFighter(character.CreateFighter(fight.ChallengersTeam));
@@ -143,7 +142,7 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
                 foreach (var monsterGrade in monsters)
                 {
                     var grade = Singleton<MonsterManager>.Instance.GetMonsterGrade(monsterGrade).DeepCopy();
-                    grade.Level += (uint) character.songesStep;
+                    grade.Level += (uint) character.breachStep;
                     var position = new ObjectPosition(map, map.GetCell(cell), (DirectionsEnum) 5);
                     var monster = new Monster(grade, new MonsterGroup(0, position));
 

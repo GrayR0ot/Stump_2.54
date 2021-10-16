@@ -451,22 +451,6 @@ namespace Stump.Server.WorldServer.Handlers.Characters
                 select characterInFight).FirstOrDefault();
         }
 
-        public static void SendCharactersListMessage(WorldClient client)
-        {
-            var characters = client.Characters.Where(x => !x.IsDeleted).OrderByDescending(x => x.LastUsage).Select(
-                characterRecord =>
-                    new CharacterBaseInformations(
-                        (ulong) characterRecord.Id,
-                        characterRecord.Name,
-                        ExperienceManager.Instance.GetCharacterLevel(characterRecord.Experience,
-                            characterRecord.PrestigeRank),
-                        characterRecord.LastLook.GetEntityLook(),
-                        (sbyte) characterRecord.Breed,
-                        characterRecord.Sex != SexTypeEnum.SEX_MALE)).ToList();
-
-            client.Send(new CharactersListMessage(characters.ToArray(), false));
-        }
-
         public static void SendCharactersListWithRemodelingMessage(WorldClient client)
         {
             var characterBaseInformations = new List<CharacterBaseInformations>();
@@ -477,8 +461,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
             {
                 characterBaseInformations.Add(new CharacterBaseInformations((ushort) characterRecord.Id,
                     characterRecord.Name,
-                    ExperienceManager.Instance.GetCharacterLevel(characterRecord.Experience,
-                        characterRecord.PrestigeRank),
+                    ExperienceManager.Instance.GetCharacterLevel(characterRecord.Experience, 0),
                     characterRecord.LastLook?.GetEntityLook() ?? characterRecord.DefaultLook.GetEntityLook(),
                     (sbyte) characterRecord.Breed,
                     characterRecord.Sex == SexTypeEnum.SEX_MALE));

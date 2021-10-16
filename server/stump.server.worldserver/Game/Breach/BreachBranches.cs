@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters;
 
 namespace Stump.Server.WorldServer.Game.Songes
 {
-    public class SongeBranches
+    public class BreachBranches
     {
         public static ExtendedBreachBranch[] generateSongeBranches(Character character)
         {
@@ -29,7 +29,7 @@ namespace Stump.Server.WorldServer.Game.Songes
             var map = World.Instance.GetMap(maps[new Random().Next(maps.Count())]);
             var branchMonsters = new List<List<int>>();
             var branchBosses = new List<int>();
-            if (character.songesStep < 201)
+            if (character.breachStep < 201)
             {
                 for (var index = 0; index < 3; index++)
                 {
@@ -96,18 +96,18 @@ namespace Stump.Server.WorldServer.Game.Songes
         private static BreachReward[] getRandomReward(CryptoRandom cryptoRandom)
         {
             BreachReward[] breachRewards = { };
-            var range = new List<SongeBoost>
+            var range = new List<BreachBoost>
             {
-                new SongeBoost(100, 300), new SongeBoost(114, 600), new SongeBoost(128, 900),
-                new SongeBoost(93,
+                new BreachBoost(100, 300), new BreachBoost(114, 600), new BreachBoost(128, 900),
+                new BreachBoost(93,
                     300), //TACKLE, VITALITY, INTELLIGENCY, CHANCE, AGILITY, STRENGTH, POWER, RET PA, RET PM, FUITE
-                new SongeBoost(107, 600), new SongeBoost(121, 900), new SongeBoost(6, 300), new SongeBoost(103, 600),
-                new SongeBoost(117, 900), new SongeBoost(7, 300), new SongeBoost(104, 600), new SongeBoost(118, 900),
-                new SongeBoost(91, 300), new SongeBoost(105, 600), new SongeBoost(119, 900), new SongeBoost(92, 300),
-                new SongeBoost(106, 600), new SongeBoost(120, 900), new SongeBoost(94, 300), new SongeBoost(108, 600),
-                new SongeBoost(122, 900), new SongeBoost(95, 300), new SongeBoost(109, 600), new SongeBoost(123, 900),
-                new SongeBoost(96, 300), new SongeBoost(110, 600), new SongeBoost(124, 900), new SongeBoost(99, 300),
-                new SongeBoost(113, 600), new SongeBoost(127, 900)
+                new BreachBoost(107, 600), new BreachBoost(121, 900), new BreachBoost(6, 300), new BreachBoost(103, 600),
+                new BreachBoost(117, 900), new BreachBoost(7, 300), new BreachBoost(104, 600), new BreachBoost(118, 900),
+                new BreachBoost(91, 300), new BreachBoost(105, 600), new BreachBoost(119, 900), new BreachBoost(92, 300),
+                new BreachBoost(106, 600), new BreachBoost(120, 900), new BreachBoost(94, 300), new BreachBoost(108, 600),
+                new BreachBoost(122, 900), new BreachBoost(95, 300), new BreachBoost(109, 600), new BreachBoost(123, 900),
+                new BreachBoost(96, 300), new BreachBoost(110, 600), new BreachBoost(124, 900), new BreachBoost(99, 300),
+                new BreachBoost(113, 600), new BreachBoost(127, 900)
             };
             for (var i = 0; i < 3; i++)
             {
@@ -122,11 +122,11 @@ namespace Stump.Server.WorldServer.Game.Songes
         private static int getRandomMonster(Character character, bool isBoss, CryptoRandom random)
         {
             var levelGroup = 0;
-            if (character.songesStep <= 50)
+            if (character.breachStep <= 50)
                 levelGroup = 21;
-            else if (character.songesStep <= 100)
+            else if (character.breachStep <= 100)
                 levelGroup = 22;
-            else if (character.songesStep <= 150)
+            else if (character.breachStep <= 150)
                 levelGroup = 23;
             else
                 levelGroup = 24;

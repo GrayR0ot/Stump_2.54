@@ -4,13 +4,13 @@ using Stump.Server.WorldServer.Game.Items;
 
 namespace Stump.Server.WorldServer.Game.Songes
 {
-    public class SongesCrates
+    public class BreachCrates
     {
         public CryptoRandom cryptoRandom;
         private readonly List<ItemProbability> itemProbabilities;
         private double total;
 
-        public SongesCrates(List<ItemProbability> itemProbabilities)
+        public BreachCrates(List<ItemProbability> itemProbabilities)
         {
             this.itemProbabilities = itemProbabilities;
             cryptoRandom = new CryptoRandom();

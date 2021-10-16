@@ -73,7 +73,7 @@ namespace Stump.Server.WorldServer.Database.Npcs.Replies
                         {
                             character.breachStep = 1;
                             character.breachBoosts = new ObjectEffectInteger[] { };
-                            character.breachBranches = SongeBranches.generateSongeBranches(character);
+                            character.breachBranches = BreachBranches.generateSongeBranches(character);
                             character.breachBudget = 0;
                             character.breachBuyables = new BreachReward[] { };
                             return true;

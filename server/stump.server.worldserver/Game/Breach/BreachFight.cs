@@ -20,12 +20,12 @@ using Stump.Server.WorldServer.Handlers.Context;
 
 namespace Stump.Server.WorldServer.Game.Songes
 {
-    public class SongesFight : Fight<FightMonsterTeam, FightPlayerTeam>
+    public class BreachFight : Fight<FightMonsterTeam, FightPlayerTeam>
     {
         private readonly Character leader;
         private int step;
 
-        public SongesFight(int id, Character leader, Map fightMap, FightMonsterTeam defendersTeam,
+        public BreachFight(int id, Character leader, Map fightMap, FightMonsterTeam defendersTeam,
             FightPlayerTeam challengersTeam,
             int step) :
             base(id, fightMap, defendersTeam, challengersTeam)
@@ -74,16 +74,16 @@ namespace Stump.Server.WorldServer.Game.Songes
                     });
                 }
 
-            leader.songesStep++;
-            leader.songesBranches = SongeBranches.generateSongeBranches(leader);
-            leader.songesBuyables = new BreachReward[] { };
-            foreach (var boost in leader.currentSongeRoom.Rewards)
-                leader.songesBuyables = leader.songesBuyables.Add(boost);
-            if (leader.songesStep >= 201)
+            leader.breachStep++;
+            leader.breachBranches = BreachBranches.generateSongeBranches(leader);
+            leader.breachBuyables = new BreachReward[] { };
+            foreach (var boost in leader.currentBreachRoom.Rewards)
+                leader.breachBuyables = leader.breachBuyables.Add(boost);
+            if (leader.breachStep >= 201)
             {
-                leader.songesBuyables = new BreachReward[] { };
-                leader.OpenPopup("Vous venez de terminer votre run songes ! Retour à la salle 1 !");
-                leader.songesStep = 1;
+                leader.breachBuyables = new BreachReward[] { };
+                leader.OpenPopup("Vous venez de terminer votre run breach ! Retour à la salle 1 !");
+                leader.breachStep = 1;
             }
 
             base.OnFightEnded();
@@ -98,7 +98,7 @@ namespace Stump.Server.WorldServer.Game.Songes
                 if (characterFighter is CharacterFighter)
                 {
                     var character = (characterFighter as CharacterFighter).Character;
-                    foreach (var boost in leader.songesBoosts)
+                    foreach (var boost in leader.breachBoosts)
                     {
                         switch (boost.TypeId)
                         {
@@ -199,15 +199,15 @@ namespace Stump.Server.WorldServer.Game.Songes
                     foreach (var looter in looters)
                         if (team == Winners && looter is FightPlayerResult)
                         {
-                            if (leader.songesStep < 200)
+                            if (leader.breachStep < 200)
                             {
-                                if (leader.songesStep % 5 == 0)
+                                if (leader.breachStep % 5 == 0)
                                 {
-                                    if (leader.songesStep >= 150)
+                                    if (leader.breachStep >= 150)
                                         looter.Loot.AddItem(new DroppedItem(31266, 1));
-                                    else if (leader.songesStep >= 100)
+                                    else if (leader.breachStep >= 100)
                                         looter.Loot.AddItem(new DroppedItem(31263, 1));
-                                    else if (leader.songesStep >= 50)
+                                    else if (leader.breachStep >= 50)
                                         looter.Loot.AddItem(new DroppedItem(31260, 1));
                                     else
                                         looter.Loot.AddItem(new DroppedItem(31257, 1));
@@ -246,7 +246,7 @@ namespace Stump.Server.WorldServer.Game.Songes
                     if (Winners == null || Draw) return results;
                 }
             }
-            this.leader.songesBudget += 100;
+            this.leader.breachBudget += 100;
             return results;
         }
 
@@ -285,21 +285,21 @@ namespace Stump.Server.WorldServer.Game.Songes
             switch (cryptoRandom.Next(2))
             {
                 case 0:
-                    if (character.songesStep >= 150)
+                    if (character.breachStep >= 150)
                         fightResult.Loot.AddItem(new DroppedItem(31265, 1));
-                    else if (character.songesStep >= 100)
+                    else if (character.breachStep >= 100)
                         fightResult.Loot.AddItem(new DroppedItem(31265, 1));
-                    else if (character.songesStep >= 50)
+                    else if (character.breachStep >= 50)
                         fightResult.Loot.AddItem(new DroppedItem(31259, 1));
                     else
                         fightResult.Loot.AddItem(new DroppedItem(31256, 1));
                     break;
                 default:
-                    if (character.songesStep >= 150)
+                    if (character.breachStep >= 150)
                         fightResult.Loot.AddItem(new DroppedItem(31264, 1));
-                    else if (character.songesStep >= 100)
+                    else if (character.breachStep >= 100)
                         fightResult.Loot.AddItem(new DroppedItem(31261, 1));
-                    else if (character.songesStep >= 50)
+                    else if (character.breachStep >= 50)
                         fightResult.Loot.AddItem(new DroppedItem(31258, 1));
                     else
                         fightResult.Loot.AddItem(new DroppedItem(31255, 1));

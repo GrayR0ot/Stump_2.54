@@ -24,7 +24,7 @@ namespace Stump.Server.WorldServer.Game.Items.Player.Custom
             itemProbabilities.Add(new ItemProbability(ItemManager.Instance.TryGetTemplate(20292), 4, 7)); //Reflet Onirique
             itemProbabilities.Add(new ItemProbability(ItemManager.Instance.TryGetTemplate(0), 1, 5)); //Rune astrale mineure
             itemProbabilities.Add(new ItemProbability(ItemManager.Instance.TryGetTemplate(20292), 20, 5)); //Reflet onirique
-            SongesCrates songesCrates = new SongesCrates(itemProbabilities);
+            BreachCrates songesCrates = new BreachCrates(itemProbabilities);
             ItemProbability itemProbability = songesCrates.open();
             target.Inventory.AddItem(itemProbability.itemTemplate, itemProbability.amount);
             return 1;

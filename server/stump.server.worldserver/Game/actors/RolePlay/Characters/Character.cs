@@ -3658,11 +3658,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 BasicHandler.SendBasicNoOperationMessage(Client);
             }
 
-            if (IsInIncarnation)
-            {
-                IncarnationManager.Instance.CheckArea(this, map);
-            }
-
             if (map.Zaap != null && !KnownZaaps.Contains(map))
                 DiscoverZaap(map);
 
@@ -5664,7 +5659,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             set { Record.ControlIA = value; }
         }
 
-        public SongesGroupInvitation breachGroupInvitation
+        public BreachGroupInvitation breachGroupInvitation
         {
             get;
             set;
@@ -5742,7 +5737,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 }
                 else
                 {
-                    ExtendedBreachBranch[] extendedBreachBranches = SongeBranches.generateSongeBranches(this);
+                    ExtendedBreachBranch[] extendedBreachBranches = BreachBranches.generateSongeBranches(this);
                     this.breachBranches = extendedBreachBranches;
                     return extendedBreachBranches;
                 }

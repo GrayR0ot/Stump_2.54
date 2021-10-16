@@ -30,7 +30,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
             var secretAnswerHash = message.SecretAnswerHash;
 
             /* Level < 20 or > 20 and Good secret Answer */
-            if (ExperienceManager.Instance.GetCharacterLevel(character.Experience, character.PrestigeRank) <= 20 ||
+            if (ExperienceManager.Instance.GetCharacterLevel(character.Experience, 0) <= 20 ||
                 client.Account.SecretAnswer != null
                 && secretAnswerHash == (message.CharacterId + "~" + client.Account.SecretAnswer).GetMD5())
             {

@@ -25,7 +25,7 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
         {
             if (character.breachOwner == null)
             {
-                if (character.Level > 200)
+                if (character.Level > 180)
                 {
                     if (character.breachStep < 201)
                     {
@@ -53,7 +53,7 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
 
                             character.currentBreachRoom = extendedBreachBranch;
 
-                            Task.Delay(1000).ContinueWith(t =>
+                            Task.Delay(3000).ContinueWith(t =>
                             {
                                 var group = new MonsterGroup(map.GetNextContextualId(),
                                     new ObjectPosition(map, map.GetRandomFreeCell(), map.GetRandomDirection()));
@@ -115,7 +115,7 @@ namespace Stump.Server.WorldServer.Game.Interactives.Skills
             }
             else
             {
-                character.SendServerMessage("Vous devez être niveau 200 pour accéder aux breach !");
+                character.SendServerMessage("Vous devez être niveau 180 pour accéder aux songes !");
             }
 
             return base.StartExecute(character);

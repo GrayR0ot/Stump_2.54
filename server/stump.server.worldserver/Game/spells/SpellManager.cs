@@ -32,7 +32,6 @@ namespace Stump.Server.WorldServer.Game.Spells
         private Dictionary<int, SpellBombTemplate> m_spellsBomb;
         private Dictionary<int, SpellType> m_spellsTypes;
         private Dictionary<int, SpellState> m_spellsState;
-        private Dictionary<int, SpellEffectFix> m_spellsEffectsFixs;
         private Dictionary<int, FinishMoveTemplate> m_finishMoves;
         private Dictionary<int, CompanionSpellRecord> m_companionSpell = new Dictionary<int, CompanionSpellRecord>();
         private static List<BreedSpell> m_spellsVariants;
@@ -56,15 +55,11 @@ namespace Stump.Server.WorldServer.Game.Spells
             m_spellsState = Database.Fetch<SpellState>(SpellStateRelator.FetchQuery).ToDictionary(entry => entry.Id);
             m_spellsBomb = Database.Fetch<SpellBombTemplate>(SpellBombRelator.FetchQuery)
                 .ToDictionary(entry => entry.Id);
-            m_spellsEffectsFixs = Database.Fetch<SpellEffectFix>(SpellEffectFixRelator.FetchQuery)
-                .ToDictionary(entry => entry.Id);
             m_finishMoves = Database.Fetch<FinishMoveTemplate>(FinishMoveRelator.FetchQuery)
                 .ToDictionary(entry => entry.Id);
             m_companionSpell =
                 Database.Fetch<CompanionSpellRecord>("SELECT * FROM companion_spells").ToDictionary(x => x.Id);
             m_spellsVariants = Database.Query<BreedSpell>("SELECT * FROM breeds_spells;").ToList();
-
-            ApplyEffectFixes();
             InitializeHandlers();
         }
 
@@ -95,54 +90,6 @@ namespace Stump.Server.WorldServer.Game.Spells
                     }
 
                     AddSpellCastHandler(type, spell);
-                }
-            }
-        }
-
-        private void ApplyEffectFixes()
-        {
-            foreach (var fix in m_spellsEffectsFixs.Values)
-            {
-                IEnumerable<EffectBase> effects;
-
-                if (fix.SpellId != null)
-                {
-                    var spell = GetSpellTemplate(fix.SpellId.Value);
-
-                    if (spell == null)
-                    {
-                        logger.Error(
-                            $"Cannot apply spell effect fix {fix.Id} because both SpellId {fix.SpellId} doesn't exist");
-                        continue;
-                    }
-
-                    effects = GetSpellLevels(spell).SelectMany(x => x.Effects);
-                }
-                else if (fix.SpellLevelId != null)
-                {
-                    var spellLevel = GetSpellLevel(fix.SpellLevelId.Value);
-
-                    if (spellLevel == null)
-                    {
-                        logger.Error(
-                            $"Cannot apply spell effect fix {fix.Id} because both SpellLevelId {fix.SpellLevelId} doesn't exist");
-                        continue;
-                    }
-
-                    effects = spellLevel.Effects;
-                }
-                else
-                {
-                    logger.Error(
-                        $"Cannot apply spell effect fix {fix.Id} because both SpellId and SpellLevelId are null");
-                    continue;
-                }
-
-                foreach (var effect in effects.Where((x, i) =>
-                    fix.EffectId == null ||
-                    (fix.EffectId == x.Id && (fix.EffectIndex == null || fix.EffectIndex == i))))
-                {
-                    effect.EffectFix = fix;
                 }
             }
         }

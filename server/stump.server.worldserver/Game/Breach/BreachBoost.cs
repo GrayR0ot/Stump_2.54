@@ -1,8 +1,8 @@
 ﻿namespace Stump.Server.WorldServer.Game.Songes
 {
-    public class SongeBoost
+    public class BreachBoost
     {
-        public SongeBoost(uint id, uint price)
+        public BreachBoost(uint id, uint price)
         {
             this.Id = id;
             this.Price = price;
