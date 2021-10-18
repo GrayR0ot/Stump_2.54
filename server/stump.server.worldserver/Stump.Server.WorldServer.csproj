@@ -926,7 +926,6 @@
     <Compile Include="Game\Items\Player\Custom\Companion\CompanionSign.cs" />
     <Compile Include="Game\Items\Player\Custom\Costume\GuildCostumeItem.cs" />
     <Compile Include="Game\Items\Player\Custom\Costume\CostumeItem.cs" />
-    <Compile Include="Game\Items\Player\Custom\DebugMap.cs" />
     <Compile Include="Game\Items\Player\Custom\DofusItem.cs" />
     <Compile Include="Game\Items\Player\Custom\DungeonKey.cs" />
     <Compile Include="Game\Items\Player\Custom\Food\CandyItem.cs" />
@@ -945,7 +944,6 @@
     <Compile Include="Game\Items\Player\Custom\Mounts\MountCertificate.cs" />
     <Compile Include="Game\Items\Player\Custom\Pets\PetItem.cs" />
     <Compile Include="Game\Items\Player\Custom\Pets\PetManager.cs" />
-    <Compile Include="Game\Items\Player\Custom\PotionPanelTp.cs" />
     <Compile Include="Game\Items\Player\Custom\Potions\PotionsItem.cs" />
     <Compile Include="Game\Items\Player\Custom\Potions\TeleportPotion.cs" />
     <Compile Include="Game\Items\Player\Custom\Potions\TeleportPotionManager.cs" />

@@ -330,22 +330,20 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             #region FirstConnectionEvent
             if (IsFirstConnection)
             {
-                var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10861));
+                var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10207));
+                if (!this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(10207)))
+                {
+                    item = this.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(10207), 1);
+                    /*item.Effects.Clear();
+                    item.Invalidate();*/
+                    this.Inventory.RefreshItem(item);
+                }
+                /*var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10861));
                 if (WorldAccount.Vip >= 1 && !this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(10861)))
 
                 {
                     item = this.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(10861), 1);
                     item.Effects.Add(new EffectInteger(EffectsEnum.Effect_981, 1));
-                    item.Invalidate();
-                    this.Inventory.RefreshItem(item);
-                }
-
-
-                item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10207));
-                if (!this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(10207)))
-                {
-                    item = this.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(10207), 1);
-                    item.Effects.Clear();
                     item.Invalidate();
                     this.Inventory.RefreshItem(item);
                 }
@@ -369,7 +367,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     item3.Effects.Add(new EffectInteger(EffectsEnum.Effect_981, 1));
                     item3.Invalidate();
                     this.Inventory.RefreshItem(item);
-                }
+                }*/
                 
 
                 #region Announce
