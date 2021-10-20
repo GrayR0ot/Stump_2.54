@@ -38,7 +38,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
 
             var trap = new Trap((short)Fight.PopNextTriggerId(), Caster, Spell, Dice, trapSpell, TargetedCell, EffectZone.ShapeType, (byte) Effect.ZoneMinSize, (byte) Effect.ZoneSize);
 
-            if (Spell.Id == (int) SpellIdEnum.REPELLING_TRAP_73)
+            if (Spell.Id == (int) SpellIdEnum.PIEGE_REPULSIF_73)
                 trap.Priority = -1;
 
             Fight.AddTriger(trap);

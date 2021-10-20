@@ -10,6 +10,8 @@ namespace Stump.DofusProtocol.D2oClasses
         public const int IS_DISPELLABLE = 1;
         public const int IS_DISPELLABLE_ONLY_BY_DEATH = 2;
         public const int IS_NOT_DISPELLABLE = 3;
+        public int diceNum;
+        public int diceSide;
         public int delay;
         public int dispellable = 1;
         public int duration;
@@ -42,6 +44,19 @@ namespace Stump.DofusProtocol.D2oClasses
         {
             get => effectUid;
             set => effectUid = value;
+        }
+        
+        [D2OIgnore]
+        public int DiceMin
+        {
+            get => DiceMin;
+            set => DiceMin = value;
+        }
+        [D2OIgnore]
+        public int DiceSide
+        {
+            get => diceSide;
+            set => diceSide = value;
         }
 
         [D2OIgnore]

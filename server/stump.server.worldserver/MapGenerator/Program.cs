@@ -43,7 +43,7 @@ namespace MapGenerator
                 {
                     /*if (keyValuePair.Value.Count > 0)
                     {*/
-                    sw.Write(JsonConvert.SerializeObject(keyValuePair.Value));
+                    sw.Write(JsonConvert.SerializeObject(keyValuePair.Value.Layers));
                     //}
                 }
 

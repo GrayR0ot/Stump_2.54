@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace ItemTemplateEffectGenerator
             using (StreamWriter sw = new StreamWriter(@"output\test1.json"))
             {
                 sw.Write(JsonConvert.SerializeObject(effects));
-            }*/
+            }*//*
             string[] files = Directory.GetFiles(@"input\\itemSets\\");
 
             foreach (string file in files)
@@ -64,4 +64,4 @@ namespace ItemTemplateEffectGenerator
             }
         }
     }
-}
+}*/

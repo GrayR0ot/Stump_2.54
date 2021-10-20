@@ -141,6 +141,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
             foreach (var droppableItem in Monster.Template.DroppableItems.Where(droppableItem => prospectingSum >= droppableItem.ProspectingLock).Shuffle())
             {
+                if (droppableItem.Condition != null && !droppableItem.Condition.Equals("null"))
+                    continue;
+                
                 if (droppedGroups.Contains(droppableItem.DropGroup))
                     continue;
 
@@ -153,7 +156,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                         break;
 
                     var chance = (random.Next(0, 100) + random.NextDouble());
-                    var dropRate = FightFormulas.AdjustDropChance(looter, droppableItem, Monster, Fight.AgeBonus);
+                    var dropRate = FightFormulas.AdjustDropChance(looter, droppableItem, Monster, Fight.Bonus);
 
                     if (!(dropRate >= chance))
                         continue;
@@ -169,90 +172,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                         m_dropsCount[droppableItem]++;
                 }
             }
-
-            /*if (random.NextDouble() * 100d <= Rates.KeyDropPercent)
-            {
-                //DROP CLEFS IN AREA
-                switch (Map.Area.Id)
-                {
-                    //Crypte de Kardorim
-                    case 45:
-                        items.Add(new DroppedItem(8545, 1));
-                        break;
-                    //Grange du Tournesol Affamé
-                    //Château Ensablé
-                    //Cour du Bouftou Royal
-                    //Cache de Kankreblath
-                    case 18:
-                        items.Add(new DroppedItem(8143, 1));
-                        items.Add(new DroppedItem(8437, 1));
-                        items.Add(new DroppedItem(1568, 1));
-                        items.Add(new DroppedItem(15991, 1));
-                        break;
-                    //Caverne des Bulbes
-                    //Repaire de Daïgoro
-                    case 24:
-                        items.Add(new DroppedItem(7310, 1));
-                        items.Add(new DroppedItem(12735, 1));
-                        break;
-                    //Forgerons
-                    //Squelettes
-                    //Tofus
-                    //Bworks
-                    //Kwakwa
-                    //Scarafeuilles
-                    //Pitons Rocheux des Craqueleurs
-                    //Larves
-                    //La Gelaxième dimension
-                    case 0:
-                        items.Add(new DroppedItem(1569, 1));
-                        items.Add(new DroppedItem(1570, 1));
-                        items.Add(new DroppedItem(7918, 1));
-                        if (Monster.Template.RaceId == 5)
-                            items.Add(new DroppedItem(8135, 1));
-                        if (Monster.Template.RaceId == 12)
-                            items.Add(new DroppedItem(12017, 1));
-                        items.Add(new DroppedItem(8139, 1));
-                        items.Add(new DroppedItem(7927, 1));
-                        if (Monster.Template.RaceId == 11)
-                            items.Add(new DroppedItem(7423, 1));
-                        if (Monster.Template.RaceId == 7)
-                            items.Add(new DroppedItem(996, 1));
-                        break;
-                    //Maison Fantôme
-                    case 15:
-                        items.Add(new DroppedItem(11799, 1));
-                        break;
-                    //Château du Wa Wabbit
-                    //Terrier du Wa Wabbit
-                    case 1:
-                        items.Add(new DroppedItem(14464, 1));
-                        items.Add(new DroppedItem(14465, 1));
-                        break;
-                    //Clos des Blops
-                    case 8:
-                        items.Add(new DroppedItem(9248, 1));
-                        break;
-                    //Grotte Hesque
-                    case 46:
-                        items.Add(new DroppedItem(8917, 1));
-                        break;
-                    //Village Kanniboul
-                    case 2:
-                        items.Add(new DroppedItem(11798, 1));
-                        break;
-                    //Laboratoire de Brumen Tinctorias
-                    case 12:
-                        items.Add(new DroppedItem(12073, 1));
-                        break;
-                    //Cimetière des Mastodontes
-                    case 61:
-                        items.Add(new DroppedItem(18241, 1));
-                        break;
-
-                }
-            }*/
-            //itemid pour iconID 19131 Icon id = 164125
+            
             if (Monster.Template.IsBoss)
             {
                 if (Level <= 50)

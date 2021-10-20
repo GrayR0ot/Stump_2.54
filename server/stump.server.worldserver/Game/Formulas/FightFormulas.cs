@@ -115,7 +115,7 @@ namespace Stump.Server.WorldServer.Game.Formulas
 
             var looterPP = looter.Prospecting + looter.Prospecting * (challengeBonus + idolsBonus) / 250d;
 
-            var multiplicator = looter.Fight.AgeBonus <= 0 ? 1 : 1 + looter.Fight.AgeBonus / 5 / 200d;
+            var multiplicator = looter.Fight.Bonus <= 0 ? 1 : 1 + looter.Fight.Bonus / 5 / 200d;
             var kamas = (int) (baseKamas * (looterPP / teamPP) * multiplicator * (kamasRate ? Rates.KamasRate : 2));
 
             return InvokeWinKamasModifier(looter, kamas);
@@ -202,44 +202,6 @@ namespace Stump.Server.WorldServer.Game.Formulas
             return (int) ((level / 2 + (source.Stats[PlayerFields.PushDamageBonus] -
                                         target.Stats[PlayerFields.PushDamageReduction]) + 32) * range /
                           (4 * Math.Pow(2, targets)));
-        }
-
-        public static double getRandomFinalBonus()
-        {
-            double finalBonus = 1;
-            double randomBonus = new Random().Next(9);
-            switch (randomBonus)
-            {
-                case 1:
-                    finalBonus = 1.25;
-                    break;
-                case 2:
-                    finalBonus = 1.5;
-                    break;
-                case 3:
-                    finalBonus = 1.75;
-                    break;
-                case 4:
-                    finalBonus = 2;
-                    break;
-                case 5:
-                    finalBonus = 2.25;
-                    break;
-                case 6:
-                    finalBonus = 2.5;
-                    break;
-                case 7:
-                    finalBonus = 2.75;
-                    break;
-                case 8:
-                    finalBonus = 3;
-                    break;
-                default:
-                    finalBonus = 1;
-                    break;
-            }
-
-            return finalBonus;
         }
 
         private enum Dia

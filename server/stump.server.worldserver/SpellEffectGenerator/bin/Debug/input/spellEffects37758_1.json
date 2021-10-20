@@ -1,0 +1,23 @@
+[{
+  "targetMask": "C,F1189,F1190,F1191,F1192,F1193",
+  "diceNum": 11287,
+  "visibleInBuffUi": false,
+  "visibleInFightLog": false,
+  "targetId": 0,
+  "effectElement": -1,
+  "effectUid": 197263,
+  "dispellable": 3,
+  "triggers": "TB",
+  "spellId": 11287,
+  "duration": -1,
+  "random": 0,
+  "effectId": 792,
+  "delay": 0,
+  "diceSide": 2,
+  "visibleInTooltip": true,
+  "rawZone": "P1",
+  "forClientOnly": false,
+  "value": 0,
+  "order": 0,
+  "group": 0
+}]

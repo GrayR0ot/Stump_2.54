@@ -7,7 +7,7 @@ using Stump.Server.WorldServer.Game.Songes;
 
 namespace Stump.Server.WorldServer.Game.Items.Player.Custom
 {
-    [ItemId(ItemIdEnum.NARKASSETH_ONIRIQUE)]
+    [ItemId(ItemIdEnum.NARKASSETH_ONIRIQUE_21950)]
     public class NarkassethOnirique : BasePlayerItem
     {
         public NarkassethOnirique(Character owner, PlayerItemRecord record)

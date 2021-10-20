@@ -926,7 +926,7 @@ namespace Stump.Server.WorldServer.Game.Maps
             m_monsterSpawns.Clear();
         }
 
-        public void AddMonsterDungeonSpawn(MonsterDungeonSpawn spawn)
+        public void AddMonsterDungeonSpawn(NewMonsterDungeonSpawn spawn)
         {
             var pool = m_spawningPools.FirstOrDefault(entry => entry is DungeonSpawningPool) as DungeonSpawningPool;
 
@@ -939,7 +939,7 @@ namespace Stump.Server.WorldServer.Game.Maps
                 pool.StartAutoSpawn();
         }
 
-        public void RemoveMonsterDungeonSpawn(MonsterDungeonSpawn spawn)
+        public void RemoveMonsterDungeonSpawn(NewMonsterDungeonSpawn spawn)
         {
             var pool = m_spawningPools.FirstOrDefault(entry => entry is DungeonSpawningPool) as DungeonSpawningPool;
 

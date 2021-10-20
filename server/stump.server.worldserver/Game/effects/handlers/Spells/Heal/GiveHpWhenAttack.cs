@@ -62,8 +62,8 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
                 if (integerEffect == null)
                     return false;
 
-                if(Spell.Id == (int)SpellIdEnum.BAGRIFICE_3252 || Spell.Id == (int)SpellIdEnum.SHARING_9549)
-                    AddTriggerBuff(actor, BuffTriggerType.OnDamagedByAlly, OnBuffTriggered);
+                //if(Spell.Id == (int)SpellIdEnum.BAGRIFICE_3252 || Spell.Id == (int)SpellIdEnum.SHARING_9549)
+                //    AddTriggerBuff(actor, BuffTriggerType.OnDamagedByAlly, OnBuffTriggered);
                 else
                     AddTriggerBuff(actor, BuffTriggerType.AfterDamaged, OnBuffTriggered);
             }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading;
 using MongoDB.Bson;
 using NLog;
+using Stump.Core.Mathematics;
 using Stump.DofusProtocol.Enums;
 using Stump.Server.BaseServer.Database;
 using Stump.Server.BaseServer.Initialization;
@@ -217,8 +218,9 @@ namespace Stump.Server.WorldServer.Game
                 .ToDictionary(entry => entry.Id, entry => new Map(entry));
 
             logger.Info("Load sub areas...");
+            CryptoRandom cryptoRandom = new CryptoRandom();
             m_subAreas = Database.Query<SubAreaRecord>(SubAreaRecordRelator.FetchQuery)
-                .ToDictionary(entry => entry.Id, entry => new SubArea(entry));
+                .ToDictionary(entry => entry.Id, entry => new SubArea(entry, (short)(((int)(cryptoRandom.Next(200)/10)) * 10 )));
 
             logger.Info("Load areas...");
             m_areas = Database.Query<AreaRecord>(AreaRecordRelator.FetchQuery)
@@ -496,6 +498,11 @@ namespace Stump.Server.WorldServer.Game
 
             maps = reference.SuperArea.GetMaps(x, y, outdoor);
             return maps.Length > 0 ? maps : new Map[0];
+        }
+
+        public SubArea[] GetSubAreas()
+        {
+            return m_subAreas.Values.ToArray();
         }
 
         public SubArea GetSubArea(int id)

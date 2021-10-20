@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             if (fighter != Fighter)
                 return;
 
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.DISTORTION_9448, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum._9448, 1), Fighter.Cell);
         }
     }
 }

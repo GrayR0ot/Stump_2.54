@@ -38,7 +38,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Heal
 
                     switch (Spell.Id)
                     {
-                        case (int)SpellIdEnum.SPORK_2687:
+                        case (int)SpellIdEnum.SPORE_TEILLE_2687:
                             triggerType = BuffTriggerType.OnTackle;
                             break;
                     }

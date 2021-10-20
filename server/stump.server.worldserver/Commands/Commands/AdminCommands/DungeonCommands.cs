@@ -212,11 +212,11 @@ namespace Stump.Server.WorldServer.Commands.Commands
 
                 if (group == null)
                 {
-                    group = new MonsterDungeonSpawn {Map = map};
+                    group = new NewMonsterDungeonSpawn {Map = map};
                     WorldServer.Instance.DBAccessor.Database.Insert(group);
                 }
 
-                var record = new MonsterDungeonSpawnEntity(group, grade, minPartyMembers);
+                var record = new NewMonsterDungeonSpawnEntity(group, grade.Template, minPartyMembers);
 
                 WorldServer.Instance.DBAccessor.Database.Insert(record);
 
@@ -262,13 +262,12 @@ namespace Stump.Server.WorldServer.Commands.Commands
 
                 foreach (var spawn in pool.Spawns)
                 {
-                    var monsters = spawn.GroupMonsters.Where(y => y.MonsterGrade.MonsterId == monsterTemplate.Id)
-                        .ToArray();
+                    var monsters = spawn.GroupMonsters.ToArray();
 
                     foreach (var monster in monsters)
                     {
                         spawn.GroupMonsters.Remove(monster);
-                        WorldServer.Instance.DBAccessor.Database.Delete<MonsterDungeonSpawnEntity>(
+                        WorldServer.Instance.DBAccessor.Database.Delete<NewMonsterDungeonSpawnEntity>(
                             string.Format("WHERE DungeonSpawnId={0} AND MonsterGradeId={1}", spawn.Id, monster.Id));
                     }
                 }

@@ -92,6 +92,8 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson.IO;
 using Newtonsoft.Json;
@@ -106,9 +108,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 {
     public sealed class Character : Humanoid, IStatsOwner, IInventoryOwner, ICommandsUser
     {
-        [Variable]
-        public static ushort HonorLimit = 20000;
-        public bool kolizeumOn = false;
+        [Variable] public static ushort HonorLimit = 20000;
+        public bool onKolizeum = false;
         public Map followMap = null;
         public Map nextMap = null;
         public List<Map> followHistory = null;
@@ -125,10 +126,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             Client = client;
             SaveSync = new object();
             LoggoutSync = new object();
-            Status = new PlayerStatus((sbyte)PlayerStatusEnum.PLAYER_STATUS_AVAILABLE);
+            Status = new PlayerStatus((sbyte) PlayerStatusEnum.PLAYER_STATUS_AVAILABLE);
         }
 
         #region Events
+
 
         public void onFollowMap(Map follow)
         {
@@ -153,7 +155,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public void checkFollowMap()
         {
             if (this.NextMap != null)
-                ContextRoleplayHandler.HandleChangeMapMessage(this.Client, new ChangeMapMessage(this.NextMap.Id, false));
+                ContextRoleplayHandler.HandleChangeMapMessage(this.Client,
+                    new ChangeMapMessage(this.NextMap.Id, false));
             if (this.Map == this.followMap)
                 this.UndoFollow();
             else
@@ -207,6 +210,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     return maps[0];
                 }
             }
+
             return null;
         }
 
@@ -226,11 +230,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 var maps = World.Instance.GetMaps(this.Map, this.Map.Position.X, this.Map.Position.Y + 1).ToList();
                 if (maps.Count() > 0)
                 {
-                    var cells = MapPoint.GetBorderCells(MapNeighbour.Left).Where(x => this.Map.GetCell(x.CellId).Walkable).ToList();
+                    var cells = MapPoint.GetBorderCells(MapNeighbour.Left)
+                        .Where(x => this.Map.GetCell(x.CellId).Walkable).ToList();
                     this.NextMap = maps[0];
                     return maps[0];
                 }
             }
+
             return null;
         }
 
@@ -270,10 +276,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public bool IsFirstConnection
         {
             get { return Record.FirstConnection; }
-            set
-            {
-                Record.FirstConnection = value;
-            }
+            set { Record.FirstConnection = value; }
         }
 
         public int ChallengesCount
@@ -297,7 +300,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         void OnLoggedIn()
         {
-
             if (GuildMember != null)
             {
                 GuildMember.OnCharacterConnected(this);
@@ -316,6 +318,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             CheckArenaDailyProperties_3vs3();
 
             #region ZAAP a la creation joueur
+
             if (this.KnownZaaps.Count == 0)
             {
                 var maps = World.Instance.GetMaps();
@@ -325,17 +328,19 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                         this.DiscoverZaap(map, false);
                 }
             }
+
             #endregion
 
             #region FirstConnectionEvent
+
             if (IsFirstConnection)
             {
-                var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10861));
+                /*var item = Inventory.TryGetItem(ItemManager.Instance.TryGetTemplate(10861));
                 if (WorldAccount.Vip >= 1 && !this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(10861)))
 
                 {
                     item = this.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(10861), 1);
-                    item.Effects.Add(new EffectInteger(EffectsEnum.Effect_981, 1));
+                    item.Effects.Add(new EffectInteger(EffectsEnum.Effect_NonExchangeable_981, 1));
                     item.Invalidate();
                     this.Inventory.RefreshItem(item);
                 }
@@ -356,7 +361,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 if (WorldAccount.Vip >= 1 && !this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(30836)))
                 {
                     item2 = this.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(30836), 1);
-                    item2.Effects.Add(new EffectInteger(EffectsEnum.Effect_981, 1));
+                    item2.Effects.Add(new EffectInteger(EffectsEnum.Effect_NonExchangeable_981, 1));
                     item2.Invalidate();
                     this.Inventory.RefreshItem(item);
                 }
@@ -366,11 +371,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 if (WorldAccount.Vip >= 1 && !this.Inventory.HasItem(ItemManager.Instance.TryGetTemplate(30110)))
                 {
                     item3 = this.Inventory.AddItem(ItemManager.Instance.TryGetTemplate(30110), 1);
-                    item3.Effects.Add(new EffectInteger(EffectsEnum.Effect_981, 1));
+                    item3.Effects.Add(new EffectInteger(EffectsEnum.Effect_NonExchangeable_981, 1));
                     item3.Invalidate();
                     this.Inventory.RefreshItem(item);
-                }
-                
+                }*/
+
 
                 #region Announce
 
@@ -435,28 +440,310 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     default:
                         name = "Undefined";
                         break;
-
                 }
 
                 if (Sex == SexTypeEnum.SEX_MALE)
-                    World.Instance.SendAnnounce("Souhaitez la bienvenue à <b>" + Name + "</b> qui viens de créer son personnage dont la classe est <b>" + name + "</b>.", Color.DeepSkyBlue);
+                    World.Instance.SendAnnounce(
+                        "Souhaitez la bienvenue à <b>" + Name +
+                        "</b> qui viens de créer son personnage dont la classe est <b>" + name + "</b>.",
+                        Color.DeepSkyBlue);
                 else
-                    World.Instance.SendAnnounce("Souhaitez la bienvenue à <b>" + Name + "</b> qui viens de créer son personnage dont la classe est <b>" + name + "</b>.", Color.DeepPink);
+                    World.Instance.SendAnnounce(
+                        "Souhaitez la bienvenue à <b>" + Name +
+                        "</b> qui viens de créer son personnage dont la classe est <b>" + name + "</b>.",
+                        Color.DeepPink);
 
                 #endregion
 
                 IsFirstConnection = false;
                 BasicHandler.SendCinematicMessage(Client, 10);
             }
+
             #endregion
 
             //PoPup
-            logger.Debug((DateTime.Now - (DateTime)this.Account.LastConnection).TotalSeconds);
-            if (!IsInFight() && (DateTime.Now - (DateTime)Account.LastConnection).TotalSeconds >= 1800) // 30 mins
+            logger.Debug((DateTime.Now - (DateTime) this.Account.LastConnection).TotalSeconds);
+            if (!IsInFight() && (DateTime.Now - (DateTime) Account.LastConnection).TotalSeconds >= 1800) // 30 mins
             {
-                Client.Send(new PopupWarningMessage(5, "Asylium", "Bienvenue sur Asylium, le serveur est en développement constant. " +
+                Client.Send(new PopupWarningMessage(5, "Asylium",
+                    "Bienvenue sur Asylium, le serveur est en développement constant. " +
                     "Retrouvez toutes nos mises à jours sur notre discord.<br />Toute l'équipe vous souhaites une bonne aventure."));
             }
+
+
+            //if (DateTime.Now.IsWeekEnd())
+            //{
+            //    if (!IsInFight() && (DateTime.Now - (DateTime)Account.LastConnection).TotalSeconds >= 900) // 15 mins
+            //    {
+            //        Client.Character.DisplayNotification("Le Week End est en cours. L'XP est maintenant multiplié par X2.", NotificationEnum.INFORMATION);
+            //    }
+            //}
+
+            ////Prestige désactivé quand aile ouverte
+            //var diffForce = Stats.Strength.Total - 1000;
+            //var diffIntelligence = Stats.Intelligence.Total - 1000;
+            //var diffChance = Stats.Chance.Total - 1000;
+            //var diffAgilite = Stats.Agility.Total - 1000;
+
+
+            //if (PvPEnabled)
+            //{
+            //    var item = GetPrestigeItem();
+            //    if (item != null)
+            //        Inventory.RemoveItem(item, true);
+            //    DisplayNotification("L'arme gelée est désactivé temporairement. Elle vous sera réstitué lorsque vous désactiverais vos ailes.", NotificationEnum.INFORMATION);
+            //    RefreshStats();
+            //    #region Stats max en pvp
+
+            //    //Stats Max en PVP
+            //    #region 1 élément
+            //    //Force
+            //    if (Stats.Strength.Total > 1000 && Stats.Intelligence.Total < 1000 && Stats.Chance.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Stats.Strength.Equiped -= diffForce;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 1;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Intelligence
+            //    if (Stats.Intelligence.Total > 1000 && Stats.Strength.Total < 1000 && Stats.Chance.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 2;
+            //        SendServerMessage("<b>" + diffIntelligence + "</b> points <b>d'intelligence</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Chance
+            //    if (Stats.Chance.Total > 1000 && Stats.Strength.Total < 1000 && Stats.Intelligence.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+            //        Stats.Chance.Equiped -= diffChance;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 3;
+            //        SendServerMessage("<b>" + diffChance + "</b> points <b>de chance</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Agilité
+            //    if (Stats.Agility.Total > 1000 && Stats.Chance.Total < 1000 && Stats.Strength.Total < 1000 && Stats.Intelligence.Total < 1000)
+            //    {
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+            //        Stats.Agility.Equiped -= diffAgilite;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 4;
+            //        SendServerMessage("<b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    #endregion
+
+            //    #region 2 éléments
+            //    //Force et Chance
+            //    if (Stats.Strength.Total > 1000 && Stats.Chance.Total > 1000 && Stats.Intelligence.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Chance.Equiped -= diffChance;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 5;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Force et Agilité
+            //    if (Stats.Strength.Total > 1000 && Stats.Agility.Total > 1000 && Stats.Chance.Total < 1000 && Stats.Intelligence.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Agility.Equiped -= diffAgilite;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 6;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Force et Intelligence
+            //    if (Stats.Strength.Total > 1000 && Stats.Intelligence.Total > 1000 && Stats.Chance.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 14;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffIntelligence + "</b> points <b>d'intelligence</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Intelligence et Chance
+            //    if (Stats.Chance.Total > 1000 && Stats.Intelligence.Total > 1000 && Stats.Strength.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        Stats.Chance.Equiped -= diffChance;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 7;
+            //        SendServerMessage("<b>" + diffIntelligence + "</b> points <b>d'intelligence</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Intelligence et Agilité
+            //    if (Stats.Agility.Total > 1000 && Stats.Intelligence.Total > 1000 && Stats.Strength.Total < 1000 && Stats.Chance.Total < 1000)
+            //    {
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        Stats.Agility.Equiped -= diffAgilite;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 8;
+            //        SendServerMessage("<b>" + diffIntelligence + "</b> points <b>d'intelligence</b> " +
+            //            "et <b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    //Chance et Agilité
+            //    if (Stats.Chance.Total > 1000 && Stats.Intelligence.Total > 1000 && Stats.Strength.Total < 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+
+            //        Stats.Chance.Equiped -= diffChance;
+            //        Stats.Agility.Equiped -= diffAgilite;
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 9;
+            //        SendServerMessage("<b>" + diffChance + "</b> points <b>de chance</b> " +
+            //            "et <b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    #endregion
+
+            //    #region 3 éléments
+            //    //Force et Intelligence et Chance
+            //    if (Stats.Strength.Total > 1000 && Stats.Intelligence.Total > 1000 && Stats.Chance.Total > 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        Stats.Chance.Equiped -= diffChance;
+
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 10;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffIntelligence + "</b> points <b>d'intelligence</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+
+            //    //Force et Intelligence et Chance
+            //    if (Stats.Strength.Total > 1000 && Stats.Intelligence.Total > 1000 && Stats.Chance.Total > 1000 && Stats.Agility.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        Stats.Chance.Equiped -= diffChance;
+
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 11;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffIntelligence + "</b> points <b>d'intelligence</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+
+            //    //Force et Chance et Agilité
+            //    if (Stats.Strength.Total > 1000 && Stats.Chance.Total > 1000 && Stats.Agility.Total > 1000 && Stats.Intelligence.Total < 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Chance.Equiped -= diffChance;
+            //        Stats.Agility.Equiped -= diffAgilite;
+
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 12;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> " +
+            //            "et <b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+
+            //    //Intelligence et Chance et Agilité
+            //    if (Stats.Intelligence.Total > 1000 && Stats.Chance.Total > 1000 && Stats.Agility.Total > 1000 && Stats.Strength.Total < 1000)
+            //    {
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        Stats.Chance.Equiped -= diffChance;
+            //        Stats.Agility.Equiped -= diffAgilite;
+
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 13;
+            //        SendServerMessage("<b>" + diffIntelligence + "</b> points <b>d'intelligence</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> " +
+            //            "et <b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    #endregion
+
+            //    #region 4 éléments
+            //    //All Element
+            //    if (Stats.Intelligence.Total > 1000 && Stats.Strength.Total > 1000 && Stats.Chance.Total > 1000 && Stats.Agility.Total > 1000)
+            //    {
+            //        Record.ForceStatsPointRetirePvp = diffForce;
+            //        Record.IntelligenceStatsPointRetirePvp = diffIntelligence;
+            //        Record.ChanceStatsPointRetirePvp = diffChance;
+            //        Record.AgiliteStatsPointRetirePvp = diffAgilite;
+
+            //        Stats.Strength.Equiped -= diffForce;
+            //        Stats.Intelligence.Equiped -= diffIntelligence;
+            //        Stats.Chance.Equiped -= diffChance;
+            //        Stats.Agility.Equiped -= diffAgilite;
+
+            //        RefreshStats();
+
+            //        Record.MaxStatsPvp = 15;
+            //        SendServerMessage("<b>" + diffForce + "</b> points <b>de force</b> " +
+            //            "et <b>" + diffIntelligence + "</b> points <b>d'intelligence</b> " +
+            //            "et <b>" + diffChance + "</b> points <b>de chance</b> " +
+            //            "et <b>" + diffAgilite + "</b> points <b>d'agilité</b> vous ont été retiré pour vous battre en PVP.");
+            //    }
+            //    #endregion
+
+            //    #endregion
+
+            //}
+            //else if (!PvPEnabled & PrestigeRank > 0)
+            //{
+            //    var item = GetPrestigeItem();
+            //    if (item == null)
+            //        CreatePrestigeItem();
+            //    else
+            //    {
+            //        item.UpdateEffects();
+            //        Inventory.RefreshItem(item);
+            //    }
+
+            //    RefreshStats();
+            //}
 
 
             if (DateTime.Now > Record.CreationDate.AddDays(3d))
@@ -469,9 +756,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             if (!IsGhost())
             {
-                var energyGain = (short)(DateTime.Now - Record.LastUsage.Value).TotalMinutes;
+                var energyGain = (short) (DateTime.Now - Record.LastUsage.Value).TotalMinutes;
 
-                energyGain = (short)((Energy + energyGain) > EnergyMax ? (EnergyMax - Energy) : energyGain);
+                energyGain = (short) ((Energy + energyGain) > EnergyMax ? (EnergyMax - Energy) : energyGain);
 
                 if (energyGain > 0)
                 {
@@ -485,6 +772,20 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
 
             Record.LastUsage = DateTime.Now;
+
+            var document = new BsonDocument
+            {
+                {"AcctId", Account.Id},
+                {"AcctName", Account.Login},
+                {"CharacterId", Id},
+                {"CharacterName", Name},
+
+                {"IPAddress", Client.IP},
+                {"Action", "Login"},
+                {"Date", DateTime.Now.ToString(CultureInfo.InvariantCulture)}
+            };
+
+            //MongoLogger.Instance.Insert("characters_connections", document);
 
             LoggedIn?.Invoke(this);
         }
@@ -518,6 +819,19 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (Jobs != null)
                 foreach (var job in Jobs.Where(x => x.IsIndexed))
                     job.Template.RemoveAvaiableCrafter(this);
+
+            var document = new BsonDocument
+            {
+                {"AcctId", Client.Account.Id},
+                {"AcctName", Client.Account.Login},
+                {"CharacterId", Id},
+                {"CharacterName", Name},
+                {"IPAddress", Client.IP},
+                {"Action", "Loggout"},
+                {"Date", DateTime.Now.ToString(CultureInfo.InvariantCulture)}
+            };
+
+            // MongoLogger.Instance.Insert("characters_connections", document);
 
             Record.LastUsage = DateTime.Now;
 
@@ -568,33 +882,18 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         {
             InteractingWith?.Invoke(this, npc, actionType, action);
         }
+
         #endregion Events
 
         #region Properties
 
-        public WorldClient Client
-        {
-            get;
-        }
+        public WorldClient Client { get; }
 
-        public string _timeTarget
-        {
-            get;
-            set;
-        }
+        public string _timeTarget { get; set; }
 
-        public int _divisor
-        {
-            get;
-            set;
-        }
+        public int _divisor { get; set; }
 
-        public DateTime _date
-        {
-
-            get;
-            set;
-        }
+        public DateTime _date { get; set; }
 
         public string CharacterToSeekName
         {
@@ -615,115 +914,66 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public UserGroup UserGroup
         {
-            get
-            {
-                return Client.UserGroup;
-            }
+            get { return Client.UserGroup; }
         }
 
-        public DateTime LastTeleportParty
-        {
-            get;
-            set;
-        }
+        public DateTime LastTeleportParty { get; set; }
 
-        public object SaveSync
-        {
-            get;
-            private set;
-        }
+        public object SaveSync { get; private set; }
 
-        public object LoggoutSync
-        {
-            get;
-            private set;
-        }
+        public object LoggoutSync { get; private set; }
 
         private bool m_inWorld;
 
         public override bool IsInWorld
         {
-            get
-            {
-                return m_inWorld;
-            }
+            get { return m_inWorld; }
         }
 
-        public CharacterMerchantBag MerchantBag
-        {
-            get;
-            private set;
-        }
+        public CharacterMerchantBag MerchantBag { get; private set; }
 
-        public Map MapKolizeum
-        {
-            get;
-            set;
-        }
+        public Map MapKolizeum { get; set; }
 
-        public Cell CellKolizeum
-        {
-            get;
-            set;
-        }
+        public Cell CellKolizeum { get; set; }
 
         #region Commands
-        public bool ForcePassTurn
-        {
-            get;
-            set;
-        }
 
-        public bool isMultiLeadder
-        {
-            get;
-            set;
-        }
+        public bool ForcePassTurn { get; set; }
 
-        public bool IsIpDrop
-        {
-            get;
-            set;
-        }
+        public bool isMultiLeadder { get; set; }
+
+        public bool IsIpDrop { get; set; }
+
         #endregion
 
         #region Incarnation
 
         public bool IsInIncarnation
         {
-            get
-            {
-                return Record.IsInIncarnation;
-            }
-            set
-            {
-                Record.IsInIncarnation = value;
-            }
+            get { return Record.IsInIncarnation; }
+            set { Record.IsInIncarnation = value; }
         }
 
         public int IncarnationId
         {
-            get
-            {
-                return Record.IncarnationId;
-            }
-            set
-            {
-                Record.IncarnationId = value;
-            }
+            get { return Record.IncarnationId; }
+            set { Record.IncarnationId = value; }
         }
 
         #endregion
 
-        #region Kolizeum
+        #region Battlefield
+
         public void updateKolizeumPosition()
         {
             this.MapKolizeum = this.Map;
             this.CellKolizeum = this.Cell;
         }
+
         #endregion
 
         #region Achievement
+
         public PlayerAchievement Achievement { get; private set; }
 
         #endregion
@@ -732,19 +982,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public override string Name
         {
-            get
-            {
-                return (RoleEnum)Account.UserGroupId >= RoleEnum.GameMaster ? $"[{m_record.Name}]" : m_record.Name;
-
-            }
+            get { return (RoleEnum) Account.UserGroupId >= RoleEnum.GameMaster ? $"[{m_record.Name}]" : m_record.Name; }
             protected set
             {
-
                 m_record.Name = value;
                 base.Name = value;
             }
         }
-
 
 
         public override int Id
@@ -761,11 +1005,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Inventory
 
-        public Inventory Inventory
-        {
-            get;
-            private set;
-        }
+        public Inventory Inventory { get; private set; }
 
         public ulong Kamas
         {
@@ -777,11 +1017,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Jobs
 
-        public JobsCollection Jobs
-        {
-            get;
-            private set;
-        }
+        public JobsCollection Jobs { get; private set; }
 
         public event Action<ItemTemplate, int> HarvestItem;
 
@@ -801,6 +1037,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void OnDecraftItem(ItemTemplate item, int runeQuantity)
         {
+            OwnedRuneAmount += runeQuantity;
             DecraftItem?.Invoke(item, runeQuantity);
         }
 
@@ -810,11 +1047,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public InteractiveObject CurrentUsedInteractive => CurrentUsedSkill?.InteractiveObject;
 
-        public Skill CurrentUsedSkill
-        {
-            get;
-            private set;
-        }
+        public Skill CurrentUsedSkill { get; private set; }
 
         public void SetCurrentSkill(Skill skill)
         {
@@ -880,11 +1113,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public MerchantShopDialog MerchantShopDialog => Dialog as MerchantShopDialog;
 
-        public RequestBox RequestBox
-        {
-            get;
-            private set;
-        }
+        public RequestBox RequestBox { get; private set; }
 
         public void SetDialoger(IDialoger dialoger)
         {
@@ -970,12 +1199,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_arenaParty; }
             private set
             {
-                if (m_arenaParty != null && value != m_arenaParty) SetLoyalToParty(PartyTypeEnum.PARTY_TYPE_ARENA, false);
+                if (m_arenaParty != null && value != m_arenaParty)
+                    SetLoyalToParty(PartyTypeEnum.PARTY_TYPE_ARENA, false);
                 m_arenaParty = value;
             }
         }
 
-        public Party[] Parties => new[] { Party, ArenaParty }.Where(x => x != null).ToArray();
+        public Party[] Parties => new[] {Party, ArenaParty}.Where(x => x != null).ToArray();
 
         public bool IsInParty()
         {
@@ -989,7 +1219,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public bool IsInParty(PartyTypeEnum type)
         {
-            return (type == PartyTypeEnum.PARTY_TYPE_CLASSICAL && Party != null) || (type == PartyTypeEnum.PARTY_TYPE_ARENA && ArenaParty != null);
+            return (type == PartyTypeEnum.PARTY_TYPE_CLASSICAL && Party != null) ||
+                   (type == PartyTypeEnum.PARTY_TYPE_ARENA && ArenaParty != null);
         }
 
         public bool IsPartyLeader()
@@ -1014,9 +1245,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         }
 
         public bool IsLoyalToParty(PartyTypeEnum type) => m_partiesLoyalTo.Contains(type);
+
         public void SetLoyalToParty(PartyTypeEnum type, bool loyal)
         {
-            if (loyal) m_partiesLoyalTo.Add(type); else m_partiesLoyalTo.Remove(type);
+            if (loyal) m_partiesLoyalTo.Add(type);
+            else m_partiesLoyalTo.Remove(type);
 
             PartyHandler.SendPartyLoyaltyStatusMessage(Client, GetParty(type), loyal);
         }
@@ -1045,7 +1278,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     break;
 
                 case PartyTypeEnum.PARTY_TYPE_ARENA:
-                    ArenaParty = (ArenaParty)party;
+                    ArenaParty = (ArenaParty) party;
                     break;
 
                 default:
@@ -1119,22 +1352,23 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Idols
 
-        public IdolInventory IdolInventory
-        {
-            get;
-            set;
-        }
+        public IdolInventory IdolInventory { get; set; }
 
         #endregion
 
         #region BreedsItemsSpellsModifications
+
         public void SpellRangeableEnable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.RangeableEnable = true;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.RANGEABLE, (ushort)spellId, new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.RANGEABLE, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1142,31 +1376,39 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void SpellRangeableDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.RangeableEnable = false;
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.RANGEABLE);
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.RANGEABLE);
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s.FirstOrDefault());
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void SpellObstaclesDisable(short spellId)
         {
-
             if (Spells == null)
                 return;
-            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.SpellObstaclesDisable = true;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.LOS, (ushort)spellId, new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.LOS, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1175,7 +1417,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public void SpellObstaclesDisable(Spell spell)
         {
             spell.SpellObstaclesDisable = true;
-            CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.LOS, (ushort)spell.Template.Id, new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
+            CharacterSpellModification s = new CharacterSpellModification(
+                (sbyte) CharacterSpellModificationTypeEnum.LOS, (ushort) spell.Template.Id,
+                new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
             SpellsModifications.Add(s);
         }
 
@@ -1184,7 +1428,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (spell != null)
             {
                 spell.SpellObstaclesDisable = false;
-                var s = SpellsModifications.FirstOrDefault(x => x.SpellId == spell.Template.Id && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.LOS);
+                var s = SpellsModifications.FirstOrDefault(x =>
+                    x.SpellId == spell.Template.Id &&
+                    x.ModificationType == (byte) CharacterSpellModificationTypeEnum.LOS);
                 if (s != null)
                     SpellsModifications.Remove(s);
             }
@@ -1192,28 +1438,38 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void SpellObstaclesEnable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.SpellObstaclesDisable = false;
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.LOS);
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.LOS);
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s.FirstOrDefault());
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void LineCastDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.LineCastDisable = true;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.CAST_LINE, (ushort)spellId, new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.CAST_LINE, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, 1, 0, 0, 1));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1221,35 +1477,47 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void LineCastEnable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.LineCastDisable = false;
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.CAST_LINE);
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.CAST_LINE);
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s.FirstOrDefault());
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void ReduceSpellCost(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var v = SpellsModifications.FirstOrDefault(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.AP_COST);
+                var v = SpellsModifications.FirstOrDefault(x =>
+                    x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.AP_COST);
                 if (v != null)
                 {
-                    v.Value.Additionnal += (short)amount;
+                    v.Value.Additionnal += (short) amount;
                     spell.ApCostReduction += amount;
                     RefreshStats();
                     return;
                 }
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.AP_COST, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, 0));
+
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.AP_COST, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, 0));
                 SpellsModifications.Add(s);
                 spell.ApCostReduction += amount;
                 RefreshStats();
@@ -1258,35 +1526,46 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void SpellCostDisable(short spellId, short boost)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.AP_COST).FirstOrDefault();
+                var s = SpellsModifications.Where(x =>
+                        x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.AP_COST)
+                    .FirstOrDefault();
 
                 try
                 {
                     if (s != null)
                     {
                         s.Value.Additionnal -= boost;
-                        spell.ApCostReduction -= (uint)boost;
+                        spell.ApCostReduction -= (uint) boost;
                         if (s.Value.Additionnal <= 0)
                         {
                             SpellsModifications.Remove(s);
                         }
                     }
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void IncreaseRange(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                spell.AdditionalRange += (int)amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.RANGE, (ushort)spellId, new CharacterBaseCharacteristic(0, 0, 0, 0, (short)amount));
+                spell.AdditionalRange += (int) amount;
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.RANGE, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, 0, 0, 0, (short) amount));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1294,10 +1573,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void IncreaseRangeDisable(short spellId, short boost)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.RANGE).FirstOrDefault();
+                var s = SpellsModifications.Where(x =>
+                        x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.RANGE)
+                    .FirstOrDefault();
 
                 try
                 {
@@ -1311,17 +1594,23 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                         }
                     }
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void SpellRangeHandler(short spellId, short amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var v = SpellsModifications.FirstOrDefault(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.RANGE);
+                var v = SpellsModifications.FirstOrDefault(x =>
+                    x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.RANGE);
                 if (v != null)
                 {
                     v.Value.ContextModif += amount;
@@ -1329,7 +1618,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     RefreshStats();
                     return;
                 }
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.RANGE, (ushort)spellId, new CharacterBaseCharacteristic(0, 0, 0, 0, amount));
+
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.RANGE, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, 0, 0, 0, amount));
                 SpellsModifications.Add(s);
                 spell.AdditionalRange += amount;
                 RefreshStats();
@@ -1338,11 +1630,15 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void ReduceDelay(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.DelayReduction += amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.CAST_INTERVAL, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, 0));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.CAST_INTERVAL, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, 0));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1350,28 +1646,39 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void ReduceDelayDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.CAST_INTERVAL).FirstOrDefault();
-                spell.DelayReduction -= (uint)s.Value.Additionnal;
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId &&
+                    x.ModificationType == (byte) CharacterSpellModificationTypeEnum.CAST_INTERVAL).FirstOrDefault();
+                spell.DelayReduction -= (uint) s.Value.Additionnal;
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void AddMaxCastPerTurn(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.AdditionalCastPerTurn += amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.MAX_CAST_PER_TURN, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, (short)amount));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.MAX_CAST_PER_TURN, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, (short) amount));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1379,28 +1686,39 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddMaxCastPerTurnDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.MAX_CAST_PER_TURN).FirstOrDefault();
-                spell.AdditionalCastPerTurn -= (uint)s.Value.Additionnal;
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId &&
+                    x.ModificationType == (byte) CharacterSpellModificationTypeEnum.MAX_CAST_PER_TURN).FirstOrDefault();
+                spell.AdditionalCastPerTurn -= (uint) s.Value.Additionnal;
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void AddMaxCastPerTarget(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.AdditionalCastPerTarget += amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.MAX_CAST_PER_TARGET, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, (short)amount));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.MAX_CAST_PER_TARGET, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, (short) amount));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1408,28 +1726,39 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddMaxCastPerTargetDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.MAX_CAST_PER_TARGET).FirstOrDefault();
-                spell.AdditionalCastPerTarget -= (uint)s.Value.Additionnal;
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId && x.ModificationType ==
+                    (byte) CharacterSpellModificationTypeEnum.MAX_CAST_PER_TARGET).FirstOrDefault();
+                spell.AdditionalCastPerTarget -= (uint) s.Value.Additionnal;
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void AddDamage(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.AdditionalDamage += amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.DAMAGE, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, (short)amount));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.DAMAGE, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, (short) amount));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1437,26 +1766,38 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddDamageDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.DAMAGE).FirstOrDefault();
-                spell.AdditionalDamage -= (uint)s.Value.Additionnal;
+                var s = SpellsModifications.Where(x =>
+                        x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.DAMAGE)
+                    .FirstOrDefault();
+                spell.AdditionalDamage -= (uint) s.Value.Additionnal;
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
+
         public void SpellAddDamage(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.DAMAGE, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, (short)amount));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.DAMAGE, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, (short) amount));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1464,16 +1805,22 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void SpellAddDamageDisable(short spellId, short amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.DAMAGE);
+                var s = SpellsModifications.Where(x =>
+                    x.SpellId == spellId && x.ModificationType == (byte) CharacterSpellModificationTypeEnum.DAMAGE);
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s.FirstOrDefault());
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
@@ -1481,11 +1828,15 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddHeal(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.AdditionalHeal += amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.HEAL_BONUS, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, (short)amount));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.HEAL_BONUS, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, (short) amount));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1493,28 +1844,40 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddHealDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.HEAL_BONUS).FirstOrDefault();
-                spell.AdditionalHeal -= (uint)s.Value.Additionnal;
+                var s = SpellsModifications.Where(x =>
+                        x.SpellId == spellId &&
+                        x.ModificationType == (byte) CharacterSpellModificationTypeEnum.HEAL_BONUS)
+                    .FirstOrDefault();
+                spell.AdditionalHeal -= (uint) s.Value.Additionnal;
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
 
         public void AddCritical(short spellId, uint amount)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
                 spell.AdditionalCriticalPercent += amount;
-                CharacterSpellModification s = new CharacterSpellModification((sbyte)CharacterSpellModificationTypeEnum.CRITICAL_HIT_BONUS, (ushort)spellId, new CharacterBaseCharacteristic(0, (short)amount, 0, 0, 0));
+                CharacterSpellModification s = new CharacterSpellModification(
+                    (sbyte) CharacterSpellModificationTypeEnum.CRITICAL_HIT_BONUS, (ushort) spellId,
+                    new CharacterBaseCharacteristic(0, (short) amount, 0, 0, 0));
                 SpellsModifications.Add(s);
                 RefreshStats();
             }
@@ -1522,17 +1885,25 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddCriticalDisable(short spellId)
         {
-            if (Spells == null) return; if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return; var spell = Spells.Where(x => x.Id == spellId).First();
+            if (Spells == null) return;
+            if (Spells.Where(x => x.Id == spellId) == null || Spells.Where(x => x.Id == spellId).Count() < 1) return;
+            var spell = Spells.Where(x => x.Id == spellId).First();
             if (spell != null)
             {
-                var s = SpellsModifications.Where(x => x.SpellId == spellId && x.ModificationType == (byte)CharacterSpellModificationTypeEnum.CRITICAL_HIT_BONUS).FirstOrDefault();
-                spell.AdditionalCriticalPercent -= (uint)s.Value.Additionnal;
+                var s = SpellsModifications.Where(x =>
+                        x.SpellId == spellId &&
+                        x.ModificationType == (byte) CharacterSpellModificationTypeEnum.CRITICAL_HIT_BONUS)
+                    .FirstOrDefault();
+                spell.AdditionalCriticalPercent -= (uint) s.Value.Additionnal;
                 try
                 {
                     if (s != null)
                         SpellsModifications.Remove(s);
                 }
-                catch { }
+                catch
+                {
+                }
+
                 RefreshStats();
             }
         }
@@ -1595,14 +1966,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public short? SelectedOrnament
         {
-            get
-            {
-                return Record.Ornament;
-            }
-            private set
-            {
-                Record.Ornament = value;
-            }
+            get { return Record.Ornament; }
+            private set { Record.Ornament = value; }
         }
 
         public bool HasOrnament(short ornament)
@@ -1708,48 +2073,33 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
         }
 
-        public Breed Breed
-        {
-            get;
-            private set;
-        }
+        public Breed Breed { get; private set; }
 
-        public Head Head
-        {
-            get;
-            set;
-        }
+        public Head Head { get; set; }
 
-        public bool Invisible
-        {
-            get;
-            private set;
-        }
+        public bool Invisible { get; private set; }
 
-        public PlayerStatus Status
-        {
-            get;
-            private set;
-        }
+        public PlayerStatus Status { get; private set; }
 
         public void SetStatus(PlayerStatusEnum status)
         {
-            if (Status.StatusId == (sbyte)status)
+            if (Status.StatusId == (sbyte) status)
                 return;
 
-            Status = new PlayerStatus((sbyte)status);
+            Status = new PlayerStatus((sbyte) status);
             CharacterStatusHandler.SendPlayerStatusUpdateMessage(Client, Status);
         }
 
         public bool IsAvailable(Character character, bool msg)
         {
-            if (Status.StatusId == (sbyte)PlayerStatusEnum.PLAYER_STATUS_SOLO)
+            if (Status.StatusId == (sbyte) PlayerStatusEnum.PLAYER_STATUS_SOLO)
                 return false;
 
-            if (Status.StatusId == (sbyte)PlayerStatusEnum.PLAYER_STATUS_PRIVATE && !FriendsBook.IsFriend(character.Account.Id))
+            if (Status.StatusId == (sbyte) PlayerStatusEnum.PLAYER_STATUS_PRIVATE &&
+                !FriendsBook.IsFriend(character.Account.Id))
                 return false;
 
-            if (Status.StatusId == (sbyte)PlayerStatusEnum.PLAYER_STATUS_AFK && !msg)
+            if (Status.StatusId == (sbyte) PlayerStatusEnum.PLAYER_STATUS_AFK && !msg)
                 return false;
 
             return true;
@@ -1762,7 +2112,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (!IsInFight())
                 Map.Refresh(this);
 
-            SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, toggle ? (short)236 : (short)237);
+            SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE,
+                toggle ? (short) 236 : (short) 237);
 
             return Invisible;
         }
@@ -1790,7 +2141,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 case PlayerLifeStatusEnum.STATUS_PHANTOM:
                     look.BonesID = 3;
-                    look.AddSkin(Sex == SexTypeEnum.SEX_FEMALE ? (short)323 : (short)322);
+                    look.AddSkin(Sex == SexTypeEnum.SEX_FEMALE ? (short) 323 : (short) 322);
                     look.AddSkin(Sex == SexTypeEnum.SEX_FEMALE ? Breed.FemaleGhostBonesId : Breed.MaleGhostBonesId);
                     break;
                 case PlayerLifeStatusEnum.STATUS_TOMBSTONE:
@@ -1806,6 +2157,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
                 look = mountLook;
             }
+
             var currentEmote = GetCurrentEmote();
 
             if (currentEmote != null)
@@ -1887,18 +2239,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Levels
 
-        public ushort Level
-        {
-            get;
-            private set;
-        }
+        public ushort Level { get; private set; }
 
         public long Experience
         {
-            get { return RealExperience * ExperienceManager.Instance.HighestCharacterExperience; }
+            get { return RealExperience - 0 * ExperienceManager.Instance.HighestCharacterExperience; }
             private set
             {
-                RealExperience = ExperienceManager.Instance.HighestCharacterExperience + value;
+                RealExperience = 0 * ExperienceManager.Instance.HighestCharacterExperience + value;
                 if ((value < UpperBoundExperience || Level >= ExperienceManager.Instance.HighestCharacterLevel) &&
                     value >= LowerBoundExperience) return;
                 var lastLevel = Level;
@@ -1921,7 +2269,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (levelAdded + Level > ExperienceManager.Instance.HighestCharacterLevel)
                 level = ExperienceManager.Instance.HighestCharacterLevel;
             else
-                level = (ushort)(levelAdded + Level);
+                level = (ushort) (levelAdded + Level);
 
             var experience = ExperienceManager.Instance.GetCharacterLevelExperience(level);
 
@@ -1935,7 +2283,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (Level - levelRemoved < 1)
                 level = 1;
             else
-                level = (ushort)(Level - levelRemoved);
+                level = (ushort) (Level - levelRemoved);
 
             var experience = ExperienceManager.Instance.GetCharacterLevelExperience(level);
 
@@ -1946,7 +2294,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         {
             Experience += amount;
         }
+
         #region perte xp
+
         public void LosExperience(int amount)
         {
             Experience -= amount;
@@ -1959,9 +2309,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void LosExperience(double amount)
         {
-            Experience -= (long)amount;
+            Experience -= (long) amount;
         }
+
         #endregion
+
         public void AddExperience(long amount)
         {
             Experience += amount;
@@ -1969,22 +2321,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddExperience(double amount)
         {
-            Experience += (long)amount;
+            Experience += (long) amount;
         }
 
         #endregion Levels
 
-        public long LowerBoundExperience
-        {
-            get;
-            private set;
-        }
+        public long LowerBoundExperience { get; private set; }
 
-        public long UpperBoundExperience
-        {
-            get;
-            private set;
-        }
+        public long UpperBoundExperience { get; private set; }
 
         public ushort StatsPoints
         {
@@ -2009,8 +2353,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.Energy; }
             set
             {
-                var energy = (short)(value < 0 ? 0 : value);
-                var diff = (short)(energy - m_record.Energy);
+                var energy = (short) (value < 0 ? 0 : value);
+                var diff = (short) (energy - m_record.Energy);
 
                 m_record.Energy = energy;
                 OnEnergyChanged(energy, diff);
@@ -2037,17 +2381,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return Stats.Health.TotalMax; }
         }
 
-        public SpellInventory Spells
-        {
-            get;
-            private set;
-        }
+        public SpellInventory Spells { get; private set; }
 
-        public StatsFields PrivateStats
-        {
-            get;
-            private set;
-        }
+        public StatsFields PrivateStats { get; private set; }
 
         public StatsFields Stats
         {
@@ -2065,24 +2401,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 }
             }
         }
-        public StatsFields CustomStats
-        {
-            get;
-            private set;
-        }
+
+        public StatsFields CustomStats { get; private set; }
         public bool CustomStatsActivated = false;
 
-        public bool GodMode
-        {
-            get;
-            private set;
-        }
+        public bool GodMode { get; private set; }
 
-        public bool CriticalMode
-        {
-            get;
-            private set;
-        }
+        public bool CriticalMode { get; private set; }
 
         public static Dictionary<short, byte> OrnamentsEarnables = new Dictionary<short, byte>()
         {
@@ -2108,23 +2433,31 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public static Dictionary<short, EmotesEnum> EmotesEarnables = new Dictionary<short, EmotesEnum>()
         {
-            {100, (Stump.DofusProtocol.Enums.EmotesEnum)22},
-            {300, (Stump.DofusProtocol.Enums.EmotesEnum)171},
-            {400, (Stump.DofusProtocol.Enums.EmotesEnum)172},
-            {500, (Stump.DofusProtocol.Enums.EmotesEnum)173},
-            {600, (Stump.DofusProtocol.Enums.EmotesEnum)174},
-            {700, (Stump.DofusProtocol.Enums.EmotesEnum)175}
+            {100, (Stump.DofusProtocol.Enums.EmotesEnum) 22},
+            {300, (Stump.DofusProtocol.Enums.EmotesEnum) 171},
+            {400, (Stump.DofusProtocol.Enums.EmotesEnum) 172},
+            {500, (Stump.DofusProtocol.Enums.EmotesEnum) 173},
+            {600, (Stump.DofusProtocol.Enums.EmotesEnum) 174},
+            {700, (Stump.DofusProtocol.Enums.EmotesEnum) 175}
         };
 
         private void OnEnergyChanged(short energy, short diff)
         {
             if (diff < 0)
-                SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, 34, Math.Abs(diff)); //Vous avez perdu <b>%1</b> points d'énergie.
+                SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, 34,
+                    Math.Abs(diff)); //Vous avez perdu <b>%1</b> points d'énergie.
 
             if (energy > 0 && energy <= (Level * 10) && diff < 0)
                 SendSystemMessage(11, false, energy);
 
-            PlayerLifeStatus = energy > 0 ? PlayerLifeStatusEnum.STATUS_ALIVE_AND_KICKING : PlayerLifeStatusEnum.STATUS_TOMBSTONE;
+            PlayerLifeStatus = energy > 0
+                ? PlayerLifeStatusEnum.STATUS_ALIVE_AND_KICKING
+                : PlayerLifeStatusEnum.STATUS_TOMBSTONE;
+
+            if (HasEmote(EmotesEnum.EMOTE_CHERCHER_UN_TRESOR))
+            {
+                RemoveEmote(EmotesEnum.EMOTE_CHERCHER_UN_TRESOR);
+            }
         }
 
         private void OnPlayerLifeStatusChanged(PlayerLifeStatusEnum status)
@@ -2161,16 +2494,19 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         private void OnLevelChanged(ushort currentLevel, int difference)
         {
+            //if (difference > 0) {
+            //    StatsPoints += Level > 200 ? (ushort) 0 : (ushort) (difference * 5);
+            //}
 
             if ((currentLevel - difference) < 200)
             {
                 if (Level > 200)
                 {
-                    StatsPoints += (ushort)((200 - (currentLevel - difference)) * 5);
+                    StatsPoints += (ushort) ((200 - (currentLevel - difference)) * 5);
                 }
                 else
                 {
-                    StatsPoints += (ushort)((Level - (currentLevel - difference)) * 5);
+                    StatsPoints += (ushort) ((Level - (currentLevel - difference)) * 5);
                 }
             }
 
@@ -2218,7 +2554,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 {
                     if (Client.Character.Level < earnable.Key)
                     {
-                        RemoveEmote((EmotesEnum)earnable.Key);
+                        RemoveEmote((EmotesEnum) earnable.Key);
                     }
                 }
             }
@@ -2241,7 +2577,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 {
                     Spells.LearnSpell(spell.Spell);
                     Shortcuts.AddSpellShortcut(Shortcuts.GetNextFreeSlot(ShortcutBarEnum.SPELL_SHORTCUT_BAR),
-                        (short)spell.Spell);
+                        (short) spell.Spell);
                 }
 
                 if (spell.VariantLevel > currentLevel)
@@ -2259,6 +2595,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 {
                     Spells.LearnSpellVariant(spell.VariantId);
                 }
+
                 if (spell.Spell != 0)
                 {
                     try
@@ -2273,7 +2610,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                                 currentSpell.BoostSpell();
                         }
                     }
-                    catch (Exception ex) { }
+                    catch (Exception ex)
+                    {
+                    }
                 }
             }
 
@@ -2282,8 +2621,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (currentLevel > 1)
             {
                 if (difference > 0)
-                    CharacterHandler.SendCharacterLevelUpMessage(Client, (ushort)currentLevel);
-                CharacterHandler.SendCharacterLevelUpInformationMessage(Map.Clients, this, (ushort)currentLevel);
+                    CharacterHandler.SendCharacterLevelUpMessage(Client, (ushort) currentLevel);
+                CharacterHandler.SendCharacterLevelUpInformationMessage(Map.Clients, this, (ushort) currentLevel);
             }
             //AchievementManager.Instance.CheckLevelAchievements(this);
 
@@ -2317,14 +2656,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
 
 
-            StatsPoints = (ushort)newPoints;
+            StatsPoints = (ushort) newPoints;
 
             RefreshStats();
             Inventory.CheckItemsCriterias();
 
             //Caractéristiques (de base et additionnelles) réinitialisées.(469)
             //Caractéristiques de base réinitialisées.(470)
-            SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, (short)(additional ? 469 : 470));
+            SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, (short) (additional ? 469 : 470));
         }
 
         public void RefreshStats()
@@ -2402,12 +2741,17 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         {
             var database = MountManager.Instance.Database;
 
-            m_stabledMounts = database.Query<MountRecord>(string.Format(MountRecordRelator.FindByOwnerStabled, Id)).Select(x => new Mount(this, x)).ToList();
-            m_publicPaddockedMounts = database.Query<MountRecord>(string.Format(MountRecordRelator.FindByOwnerPublicPaddocked, Id)).Select(x => new Mount(this, x)).ToList();
+            m_stabledMounts = database.Query<MountRecord>(string.Format(MountRecordRelator.FindByOwnerStabled, Id))
+                .Select(x => new Mount(this, x)).ToList();
+            m_publicPaddockedMounts = database
+                .Query<MountRecord>(string.Format(MountRecordRelator.FindByOwnerPublicPaddocked, Id))
+                .Select(x => new Mount(this, x)).ToList();
 
             if (Record.EquippedMount.HasValue)
             {
-                EquippedMount = new Mount(this, database.Single<MountRecord>(string.Format(MountRecordRelator.FindById, Record.EquippedMount.Value)));
+                EquippedMount = new Mount(this,
+                    database.Single<MountRecord>(string.Format(MountRecordRelator.FindById,
+                        Record.EquippedMount.Value)));
                 EquippedMount.Inventory = new MountInventory(this);
                 EquippedMount.Inventory.LoadRecord();
 
@@ -2500,7 +2844,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             if (EquippedMount.Harness != null)
             {
-                Inventory.MoveItem(EquippedMount.Harness, CharacterInventoryPositionEnum.INVENTORY_POSITION_NOT_EQUIPED, true);
+                Inventory.MoveItem(EquippedMount.Harness, CharacterInventoryPositionEnum.INVENTORY_POSITION_NOT_EQUIPED,
+                    true);
 
                 // Votre harnachement est déposé dans votre inventaire.
                 BasicHandler.SendTextInformationMessage(Client, TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, 661);
@@ -2516,7 +2861,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         {
             if (HasEquippedMount() && EquippedMount.Inventory.Count != 0)
             {
-                SendServerMessage("Vous devez d'abord vider l'inventaire de votre monture, avant de la déséquiper.", Color.OrangeRed);
+                SendServerMessage("Vous devez d'abord vider l'inventaire de votre monture, avant de la déséquiper.",
+                    Color.OrangeRed);
                 return false;
             }
             else
@@ -2610,11 +2956,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Guild
 
-        public GuildMember GuildMember
-        {
-            get;
-            set;
-        }
+        public GuildMember GuildMember { get; set; }
 
         public Guild Guild
         {
@@ -2638,17 +2980,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public AlignmentSideEnum AlignmentSide
         {
             get { return m_record.AlignmentSide; }
-            private set
-            {
-                m_record.AlignmentSide = value;
-            }
+            private set { m_record.AlignmentSide = value; }
         }
 
-        public sbyte AlignmentGrade
-        {
-            get;
-            set;
-        }
+        public sbyte AlignmentGrade { get; set; }
 
         public sbyte AlignmentValue
         {
@@ -2667,10 +3002,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
                 var lastGrade = AlignmentGrade;
 
-                AlignmentGrade = (sbyte)ExperienceManager.Instance.GetAlignementGrade(m_record.Honor);
+                AlignmentGrade = (sbyte) ExperienceManager.Instance.GetAlignementGrade(m_record.Honor);
 
-                LowerBoundHonor = ExperienceManager.Instance.GetAlignementGradeHonor((byte)AlignmentGrade);
-                UpperBoundHonor = ExperienceManager.Instance.GetAlignementNextGradeHonor((byte)AlignmentGrade);
+                LowerBoundHonor = ExperienceManager.Instance.GetAlignementGradeHonor((byte) AlignmentGrade);
+                UpperBoundHonor = ExperienceManager.Instance.GetAlignementNextGradeHonor((byte) AlignmentGrade);
 
                 var difference = AlignmentGrade - lastGrade;
 
@@ -2679,17 +3014,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
         }
 
-        public ushort LowerBoundHonor
-        {
-            get;
-            private set;
-        }
+        public ushort LowerBoundHonor { get; private set; }
 
-        public ushort UpperBoundHonor
-        {
-            get;
-            private set;
-        }
+        public ushort UpperBoundHonor { get; private set; }
 
         public ushort Dishonor
         {
@@ -2705,10 +3032,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public int CharacterRankId
         {
             get { return m_record.RankId; }
-            set
-            {
-                m_record.RankId = value;
-            }
+            set { m_record.RankId = value; }
         }
 
         public int CharacterRankExp
@@ -2723,6 +3047,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     m_record.RankExp = 0;
                     m_record.RankId = 1;
                 }
+
                 this.checkRank(before, m_record.RankExp);
             }
         }
@@ -2734,8 +3059,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 int before = m_record.Xpepique;
                 m_record.Xpepique = value;
-
-
             }
         }
 
@@ -2744,10 +3067,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.WinPvm; }
             set
             {
-
                 // m_record.WinPvm = value;
-
-
             }
         }
 
@@ -2756,10 +3076,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.LosPvm; }
             set
             {
-
                 //  m_record.LosPvm = value;
-
-
             }
         }
 
@@ -2768,10 +3085,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.WinPvp; }
             set
             {
-
                 // m_record.WinPvm = value;
-
-
             }
         }
 
@@ -2780,31 +3094,23 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.LosPvp; }
             set
             {
-
                 //  m_record.LosPvm = value;
-
-
             }
         }
 
 
         public DoppleCollection DoppleCollection { get; private set; }
+
         public int CharacterRankWin
         {
             get { return m_record.RankWin; }
-            set
-            {
-                m_record.RankWin = value;
-            }
+            set { m_record.RankWin = value; }
         }
 
         public int CharacterRankLose
         {
             get { return m_record.RankLose; }
-            set
-            {
-                m_record.RankLose = value;
-            }
+            set { m_record.RankLose = value; }
         }
 
         public DateTime CharacterRankReward
@@ -2824,13 +3130,18 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 if (expBefore < rank.Value.RankExp && expAfter >= rank.Value.RankExp)
                 {
                     this.CharacterRankId = rank.Value.RankId;
-                    SendServerMessage("Félicitations, vous avez gagné un nouveau rang, '<b>" + GetCharacterRankName() + "</b>' !", Color.Chartreuse);
+                    SendServerMessage(
+                        "Enhorabuena, has ganado un nuevo rango Deathmatch, '<b>" + GetCharacterRankName() +
+                        "</b>', te queda perfectamente!", Color.Chartreuse);
                     break;
                 }
+
                 if (expBefore >= rank.Value.RankExp && expAfter < rank.Value.RankExp)
                 {
                     this.CharacterRankId = rank.Value.RankId - 1;
-                    SendServerMessage("Tu as perdu un rang, maintenant tu es '<b>" + GetCharacterRankName() + " dans le classement</b>'.", Color.Chartreuse);
+                    SendServerMessage(
+                        "Has perdido un rango en DeathMatch, ahora estás en el ranking '<b>" + GetCharacterRankName() +
+                        "</b>'..", Color.Chartreuse);
                     break;
                 }
             }
@@ -2873,7 +3184,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void AddHonor(ushort amount)
         {
-            Honor += (Honor + amount) >= HonorLimit ? (ushort)(HonorLimit - Honor) : amount;
+            Honor += (Honor + amount) >= HonorLimit ? (ushort) (HonorLimit - Honor) : amount;
         }
 
         public void SubHonor(ushort amount)
@@ -2919,7 +3230,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         private void OnPvPToggled()
         {
-            foreach (var item in Inventory.GetItems(x => x.Position == CharacterInventoryPositionEnum.ACCESSORY_POSITION_SHIELD && x.AreConditionFilled(this)))
+            foreach (var item in Inventory.GetItems(x =>
+                x.Position == CharacterInventoryPositionEnum.ACCESSORY_POSITION_SHIELD && x.AreConditionFilled(this)))
                 Inventory.MoveItem(item, CharacterInventoryPositionEnum.INVENTORY_POSITION_NOT_EQUIPED);
             /*
             if (!PvPEnabled)
@@ -2953,30 +3265,35 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #endregion Alignment
 
+        //#region Spouse
+        //public SpouseManager Spouse
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //public List<Character> AllPlayerInPartyFollowMe
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //public List<Character> OnePlayerFollowMe
+        //{
+        //    get;
+        //    set;
+        //}
+        //#endregion
+
         #region Fight
 
-        public CharacterFighter Fighter
-        {
-            get;
-            private set;
-        }
+        public CharacterFighter Fighter { get; private set; }
 
-        public CompanionActor Companion
-        {
-            get; set;
-        }
+        public CompanionActor Companion { get; set; }
 
-        public FightSpectator Spectator
-        {
-            get;
-            private set;
-        }
+        public FightSpectator Spectator { get; private set; }
 
-        public FightPvT TaxCollectorDefendFight
-        {
-            get;
-            private set;
-        }
+        public FightPvT TaxCollectorDefendFight { get; private set; }
 
         public IFight Fight
         {
@@ -3024,37 +3341,21 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Shortcuts
 
-        public ShortcutBar Shortcuts
-        {
-            get;
-            private set;
-        }
+        public ShortcutBar Shortcuts { get; private set; }
 
         #endregion Shortcuts
 
         #region Regen
 
-        public byte RegenSpeed
-        {
-            get;
-            private set;
-        }
+        public byte RegenSpeed { get; private set; }
 
-        public DateTime? RegenStartTime
-        {
-            get;
-            private set;
-        }
+        public DateTime? RegenStartTime { get; private set; }
 
         #endregion Regen
 
         #region Chat
 
-        public ChatHistory ChatHistory
-        {
-            get;
-            private set;
-        }
+        public ChatHistory ChatHistory { get; private set; }
 
         public DateTime? MuteUntil
         {
@@ -3068,14 +3369,14 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             // %1 vous a rendu muet pour %2 minute(s).
             SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 17, from.Name,
-                (int)time.TotalMinutes);
+                (int) time.TotalMinutes);
         }
 
         public void Mute(TimeSpan time)
         {
             MuteUntil = DateTime.Now + time;
             // Le principe de précaution vous a rendu muet pour %1 seconde(s).
-            SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 123, (int)time.TotalSeconds);
+            SendInformationMessage(TextInformationTypeEnum.TEXT_INFORMATION_ERROR, 123, (int) time.TotalSeconds);
         }
 
         public void UnMute()
@@ -3117,11 +3418,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             set { Record.SmileyMoodId = value; }
         }
 
-        public DateTime LastMoodChange
-        {
-            get;
-            private set;
-        }
+        public DateTime LastMoodChange { get; private set; }
 
         public bool HasSmileyPack(SmileyPacksEnum pack) => SmileyPacks.Contains(pack);
 
@@ -3177,12 +3474,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         {
             get { return m_record.LosPvm; }
             //  private set { m_record.LosPvm = value; }
-        }
-
-        public int Xpepique
-        {
-            get { return m_record.Xpepique; }
-            private set { m_record.Xpepique = value; }
         }
 
         public long RealExperience
@@ -3252,8 +3543,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (m_record.ArenaDailyDate_1vs1.Day == DateTime.Now.Day || ArenaDailyMaxRank_1vs1 <= 0)
                 return;
 
-            var amountToken = (int)Math.Floor(ArenaDailyMaxRank_1vs1 / 10d);
-            var amountKamas = (ulong)(ArenaDailyMaxRank_1vs1 * 1000);
+            var amountToken = (int) Math.Floor(ArenaDailyMaxRank_1vs1 / 10d);
+            var amountKamas = (ulong) (ArenaDailyMaxRank_1vs1 * 1000);
 
             if (amountToken > 6)
                 amountToken = 6;
@@ -3275,8 +3566,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (m_record.ArenaDailyDate_3vs3.Day == DateTime.Now.Day || ArenaDailyMaxRank_3vs3 <= 0)
                 return;
 
-            var amountToken = (int)Math.Floor(ArenaDailyMaxRank_3vs3 / 10d);
-            var amountKamas = (ulong)(ArenaDailyMaxRank_3vs3 * 1000);
+            var amountToken = (int) Math.Floor(ArenaDailyMaxRank_3vs3 / 10d);
+            var amountKamas = (ulong) (ArenaDailyMaxRank_3vs3 * 1000);
 
             if (amountToken > 6)
                 amountToken = 6;
@@ -3299,6 +3590,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 level = 200;
             }
+
             return level;
         }
 
@@ -3310,15 +3602,16 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public ulong ComputeWonArenaKamas()
         {
             //return (10000);
-            return (ulong)(Level > 199 ? (Level * 1000) : (Level * 1000));
+            return (ulong) (Level > 199 ? (Level * 1000) : (Level * 1000));
         }
 
         public int ComputeWonArenaExp()
         {
-            int[,] earnedEXPMatrix = new int[,] {
-                { 250000, 450000, 750000 },
-                { 750000, 1000000, 1250000 },
-                { 1250000, 1500000, 2000000 },
+            int[,] earnedEXPMatrix = new int[,]
+            {
+                {250000, 450000, 750000},
+                {750000, 1000000, 1250000},
+                {1250000, 1500000, 2000000},
             };
 
             if (Level >= 51 && Level <= 100)
@@ -3339,6 +3632,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 CheckArenaDailyProperties_3vs3();
 
             #region 1vs1
+
             if (mode == 1)
             {
                 ArenaRank_1vs1 = rank;
@@ -3355,11 +3649,12 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     ArenaDailyMatchsWon_1vs1++;
 
                 m_record.ArenaDailyDate_1vs1 = DateTime.Now;
-
             }
+
             #endregion
 
             #region 3vs3
+
             else
             {
                 ArenaRank_3vs3 = rank;
@@ -3376,11 +3671,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     ArenaDailyMatchsWon_3vs3++;
 
                 m_record.ArenaDailyDate_3vs3 = DateTime.Now;
-
             }
 
 
             ContextRoleplayHandler.SendGameRolePlayArenaUpdatePlayerInfosMessage(Client, this);
+
             #endregion
 
             ContextRoleplayHandler.SendGameRolePlayArenaUpdatePlayerInfosMessage(Client, this);
@@ -3395,15 +3690,15 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 Random rand = new Random();
 
-                var m_breeds = (from fighter in this.Fighter.OpposedTeam.GetAllFightersWithLeavers().OfType<CharacterFighter>()
-                                where (this.Fight.Losers.Fighters.Contains(fighter) || this.Fight.Leavers.Contains(fighter))
-                                select fighter.Character.Breed.Id).ToList();
+                var m_breeds =
+                    (from fighter in this.Fighter.OpposedTeam.GetAllFightersWithLeavers().OfType<CharacterFighter>()
+                        where (this.Fight.Losers.Fighters.Contains(fighter) || this.Fight.Leavers.Contains(fighter))
+                        select fighter.Character.Breed.Id).ToList();
 
                 Inventory.AddItem(ArenaManager.Instance.TokenItemTemplate, ComputeWonArenaCaliston());
                 Inventory.AddKamas(ComputeWonArenaKamas());
                 AddExperience(ComputeWonArenaExp());
             }
-
         }
 
         public void SetArenaPenality(TimeSpan time)
@@ -3422,8 +3717,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public void SetAgressionPenality(TimeSpan time)
         {
             AgressionPenality = DateTime.Now + time;
-            SendServerMessage("Vous avez été banni pendant une période de " + ArenaManager.ArenaPenalityTime + " minutes pour avoir abandonner un match..", Color.DarkOrange);
-            this.kolizeumOn = false;
+            SendServerMessage(
+                "Vous avez été banni pendant une période de " + ArenaManager.ArenaPenalityTime +
+                " minutes pour avoir abandonner un match..", Color.DarkOrange);
+            this.onKolizeum = false;
         }
 
         public void ToggleAgressionPenality()
@@ -3437,6 +3734,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         }
 
         #region Arena(3vs3)
+
         public int ArenaRank_3vs3
         {
             get { return m_record.ArenaRank_3vs3; }
@@ -3466,9 +3764,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.ArenaDailyMatchsCount_3vs3; }
             set { m_record.ArenaDailyMatchsCount_3vs3 = value; }
         }
+
         #endregion
 
         #region Arena(1vs1)
+
         public int ArenaRank_1vs1
         {
             get { return m_record.ArenaRank_1vs1; }
@@ -3498,6 +3798,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             get { return m_record.ArenaDailyMatchsCount_1vs1; }
             set { m_record.ArenaDailyMatchsCount_1vs1 = value; }
         }
+
         #endregion
 
         public DateTime ArenaPenality
@@ -3512,17 +3813,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             set { m_record.AgressionPenalityDate = value; }
         }
 
-        public ArenaPopup ArenaPopup
-        {
-            get;
-            set;
-        }
+        public ArenaPopup ArenaPopup { get; set; }
 
-        public int ArenaMode
-        {
-            get;
-            set;
-        }
+        public int ArenaMode { get; set; }
 
         #endregion Arena
 
@@ -3532,11 +3825,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Chat
 
-        public bool AdminMessagesEnabled
-        {
-            get;
-            set;
-        }
+        public bool AdminMessagesEnabled { get; set; }
 
         public void SendConnectionMessages()
         {
@@ -3565,13 +3854,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                     continue;
 
                 var price = item.Price * item.StackSold;
-                kamasMerchant += (ulong)price;
-                ObjectEffects effects = new ObjectEffects();
-                item.Effects.ForEach(x =>
-                {
-                    effects.effects.Add(x.GetObjectEffect());
-                });
-                merchantSoldItems.Add(new ObjectItemQuantityPriceDateEffects((ushort)item.Template.Id, (uint)item.StackSold, (ulong)price, effects,  0));
+                kamasMerchant += (ulong) price;
+
+                merchantSoldItems.Add(new ObjectItemQuantityPriceDateEffects((uint) item.Template.Id,
+                    (uint) item.StackSold, (double) price, new ObjectEffects() { }, (uint) 0));
 
                 item.StackSold = 0;
 
@@ -3587,25 +3873,24 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             foreach (var item in soldItems)
             {
-                kamasBidHouse += (ulong)item.Price;
+                kamasBidHouse += (ulong) item.Price;
                 BidHouseManager.Instance.RemoveBidHouseItem(item, true);
-                ObjectEffects effects = new ObjectEffects();
-                item.Effects.ForEach(x =>
-                {
-                    effects.effects.Add(x.GetObjectEffect());
-                });
-                bidhouseSoldItems.Add(new ObjectItemQuantityPriceDateEffects((ushort)item.Template.Id, (uint)item.Stack, (ulong)item.Price, effects, 0));
+
+                bidhouseSoldItems.Add(new ObjectItemQuantityPriceDateEffects((uint) item.Template.Id, (uint) item.Stack,
+                    (double) item.Price, new ObjectEffects() { }, (uint) item.Record.SellDate.Second));
             }
 
             Bank.AddKamas(kamasBidHouse);
 
             if (merchantSoldItems.Any() || bidhouseSoldItems.Any())
-                InventoryHandler.SendExchangeOfflineSoldItemsMessage(Client, merchantSoldItems.ToArray(), bidhouseSoldItems.ToArray());
+                InventoryHandler.SendExchangeOfflineSoldItemsMessage(Client, merchantSoldItems.ToArray(),
+                    bidhouseSoldItems.ToArray());
         }
 
         public void SendServerMessage(string message)
         {
-            BasicHandler.SendTextInformationMessage(Client, TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, 0, message);
+            BasicHandler.SendTextInformationMessage(Client, TextInformationTypeEnum.TEXT_INFORMATION_MESSAGE, 0,
+                message);
         }
 
         public void SendServerMessage(string message, Color color)
@@ -3677,24 +3962,48 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
 
             //TUTO Animation
-            if (Map.Id == 153092354 && Quests.FirstOrDefault(x => x.Id == 1629 && !x.Finished) != null && !Quests.FirstOrDefault(x => x.Id == 1629).CurrentStep.Objectives.FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10015).Finished)
+            if (Map.Id == 153092354 && Quests.FirstOrDefault(x => x.Id == 1629 && !x.Finished) != null && !Quests
+                .FirstOrDefault(x => x.Id == 1629).CurrentStep.Objectives
+                .FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10015).Finished)
             {
                 Map.ActivateInteractiveObjectForASpecificPlayer(this, 489593);
             }
-            else if (Map.Id == 153092354 && ((Quests.FirstOrDefault(x => x.Id == 1629 && !x.Finished) != null && Quests.FirstOrDefault(x => x.Id == 1629).CurrentStep.Objectives.FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10015).Finished) || Quests.FirstOrDefault(x => x.Id == 1629 && x.Finished) != null))
+            else if (Map.Id == 153092354 &&
+                     ((Quests.FirstOrDefault(x => x.Id == 1629 && !x.Finished) != null && Quests
+                          .FirstOrDefault(x => x.Id == 1629).CurrentStep.Objectives
+                          .FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10015).Finished) ||
+                      Quests.FirstOrDefault(x => x.Id == 1629 && x.Finished) != null))
             {
                 Map.DisableActivateStateInteractiveObjectForASpecificPlayer(this, 489593);
             }
 
-            if (Map.Id == 153092354 && Quests.FirstOrDefault(x => x.Id == 1630 && !x.Finished) != null && !Quests.FirstOrDefault(x => x.Id == 1630).CurrentStep.Objectives.FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10016).Finished)
+            if (Map.Id == 153092354 && Quests.FirstOrDefault(x => x.Id == 1630 && !x.Finished) != null && !Quests
+                .FirstOrDefault(x => x.Id == 1630).CurrentStep.Objectives
+                .FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10016).Finished)
             {
                 Map.ActivateInteractiveObjectForASpecificPlayer(this, 489541);
             }
-            else if (Map.Id == 153092354 && ((Quests.FirstOrDefault(x => x.Id == 1630 && !x.Finished) != null && Quests.FirstOrDefault(x => x.Id == 1630).CurrentStep.Objectives.FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10016).Finished) || Quests.FirstOrDefault(x => x.Id == 1630 && x.Finished) != null))
+            else if (Map.Id == 153092354 &&
+                     ((Quests.FirstOrDefault(x => x.Id == 1630 && !x.Finished) != null && Quests
+                          .FirstOrDefault(x => x.Id == 1630).CurrentStep.Objectives
+                          .FirstOrDefault(x => x.ObjectiveRecord.ObjectiveId == 10016).Finished) ||
+                      Quests.FirstOrDefault(x => x.Id == 1630 && x.Finished) != null))
             {
                 Map.DisableActivateStateInteractiveObjectForASpecificPlayer(this, 489541);
             }
-
+            string result;
+            using (MD5 hash = MD5.Create())
+            {
+                result = String.Join
+                (
+                    "",
+                    from ba in hash.ComputeHash
+                    (
+                        Encoding.UTF8.GetBytes(map.Cells.ToJson())
+                    ) 
+                    select ba.ToString("x2")
+                );
+            }
             base.OnEnterMap(map);
         }
 
@@ -3740,27 +4049,33 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             switch (this.AlignmentSide)
             {
                 case AlignmentSideEnum.ALIGNMENT_ANGEL:
-                    if (alignmentId == (int)AlignmentSideEnum.ALIGNMENT_EVIL)
+                    if (alignmentId == (int) AlignmentSideEnum.ALIGNMENT_EVIL)
                     {
                         flag = true;
                     }
+
                     break;
                 case AlignmentSideEnum.ALIGNMENT_EVIL:
-                    if (alignmentId == (int)AlignmentSideEnum.ALIGNMENT_ANGEL)
+                    if (alignmentId == (int) AlignmentSideEnum.ALIGNMENT_ANGEL)
                     {
                         flag = true;
                     }
+
                     break;
             }
+
             return flag;
         }
 
 
         public override bool StopMove() => IsFighting() ? Fighter.StopMove() : base.StopMove();
 
-        public override bool MoveInstant(ObjectPosition destination) => IsFighting() ? Fighter.MoveInstant(destination) : base.MoveInstant(destination);
+        public override bool MoveInstant(ObjectPosition destination) =>
+            IsFighting() ? Fighter.MoveInstant(destination) : base.MoveInstant(destination);
 
-        public override bool StopMove(ObjectPosition currentObjectPosition) => IsFighting() ? Fighter.StopMove(currentObjectPosition) : base.StopMove(currentObjectPosition);
+        public override bool StopMove(ObjectPosition currentObjectPosition) => IsFighting()
+            ? Fighter.StopMove(currentObjectPosition)
+            : base.StopMove(currentObjectPosition);
 
         public override bool Teleport(MapNeighbour mapNeighbour)
         {
@@ -3768,9 +4083,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             if (!success)
             {
-                if (this.Account.UserGroupId >= (int)RoleEnum.GameMaster)
+                if (this.Account.UserGroupId >= (int) RoleEnum.GameMaster)
                     SendServerMessage("Unknown map transition");
             }
+
             return success;
         }
 
@@ -3780,16 +4096,17 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             if (!success)
             {
-                if (this.Account.UserGroupId >= (int)RoleEnum.GameMaster)
+                if (this.Account.UserGroupId >= (int) RoleEnum.GameMaster)
                     SendServerMessage("Unknown map transition");
             }
+
             return success;
         }
 
         #region Jail
 
-        private readonly int[] JAILS_MAPS = { 105121026, 105119744, 105120002 };
-        private readonly int[][] JAILS_CELLS = { new[] { 179, 445, 184, 435 }, new[] { 314 }, new[] { 300 } };
+        private readonly int[] JAILS_MAPS = {105121026, 105119744, 105120002};
+        private readonly int[][] JAILS_CELLS = {new[] {179, 445, 184, 435}, new[] {314}, new[] {300}};
 
         public bool TeleportToJail()
         {
@@ -3815,7 +4132,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public bool MustBeJailed()
         {
-            return Client.Account.IsJailed && (Client.Account.BanEndDate == null || Client.Account.BanEndDate > DateTime.Now);
+            return Client.Account.IsJailed &&
+                   (Client.Account.BanEndDate == null || Client.Account.BanEndDate > DateTime.Now);
         }
 
         public bool IsInJail()
@@ -3843,12 +4161,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void DisplayNotification(string text, NotificationEnum notification = NotificationEnum.INFORMATION)
         {
-            Client.Send(new NotificationByServerMessage((ushort)notification, new[] { text }, true));
+            Client.Send(new NotificationByServerMessage((ushort) notification, new[] {text}, true));
         }
 
         public void DisplayNotification(NotificationEnum notification, params object[] parameters)
         {
-            Client.Send(new NotificationByServerMessage((ushort)notification, parameters.Select(entry => entry.ToString()).ToArray(), true));
+            Client.Send(new NotificationByServerMessage((ushort) notification,
+                parameters.Select(entry => entry.ToString()).ToArray(), true));
         }
 
         public void DisplayNotification(Notification notification)
@@ -3870,7 +4189,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (!IsTalkingWithNpc())
                 return;
 
-            ((NpcDialog)Dialog).Reply(replyId);
+            ((NpcDialog) Dialog).Reply(replyId);
         }
 
         public void AcceptRequest()
@@ -3920,6 +4239,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 created = true;
             }
             else party = GetParty(type);
+
             if (!party.CanInvite(target, out var error, this))
             {
                 PartyHandler.SendPartyCannotJoinErrorMessage(target.Client, party, error);
@@ -4092,9 +4412,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         {
             var database = QuestManager.Instance.Database;
             var _quests = database.Query<QuestRecord>(string.Format(QuestRecordRelator.FetchByOwner, Id)).ToList();
-            var objective = database.Query<QuestObjectiveStatus>(string.Format(QuestRecordRelator.FetchObjectiveByOwner, Id)).ToList();
+            var objective = database
+                .Query<QuestObjectiveStatus>(string.Format(QuestRecordRelator.FetchObjectiveByOwner, Id)).ToList();
             foreach (var test in _quests)
-                test.Objectives = objective.Where(x => x.QuestId == test.QuestId && x.OwnerId == test.OwnerId).Select(y => y).ToList();
+                test.Objectives = objective.Where(x => x.QuestId == test.QuestId && x.OwnerId == test.OwnerId)
+                    .Select(y => y).ToList();
             m_quests = _quests.Select(x => new Quest(this, x)).ToList();
         }
 
@@ -4122,6 +4444,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 quest.ChangeQuestStep(questStep);
             }
+
             foreach (var actor in Map.Actors.Where(x => x is Npc))
                 (actor as Npc).Refresh();
 
@@ -4180,7 +4503,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         private void OnDied()
         {
-            var energylost = (short)(10 * Level);
+            var energylost = (short) (10 * Level);
 
             if (SuperArea.Id == 5) //Dimensions divines
                 energylost *= 2;
@@ -4218,7 +4541,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void OnCharacterContextReady(int mapId)
         {
-
         }
 
         public void OnEnterFight(CharacterFighter fighter)
@@ -4233,7 +4555,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public FighterRefusedReasonEnum CanRequestFight(Character target)
         {
-            if (!target.IsInWorld || target.IsFighting() || target.IsSpectator() || target.IsBusy() || !target.IsAvailable(this, false))
+            if (!target.IsInWorld || target.IsFighting() || target.IsSpectator() || target.IsBusy() ||
+                !target.IsAvailable(this, false))
                 return FighterRefusedReasonEnum.OPPONENT_OCCUPIED;
 
             if (!IsInWorld || IsFighting() || IsSpectator() || IsBusy())
@@ -4252,15 +4575,16 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             return FighterRefusedReasonEnum.FIGHTER_ACCEPTED;
         }
 
-        public bool CanKolizeum(Character target)
+        public bool CanBattlefield(Character target)
         {
             if (target == this)
                 return false;
 
-            if (!target.kolizeumOn)
+            if (!target.onKolizeum)
                 return false;
 
-            if (!target.IsInWorld || target.IsFighting() || target.IsSpectator() || target.IsBusy() || !target.IsAvailable(this, false))
+            if (!target.IsInWorld || target.IsFighting() || target.IsSpectator() || target.IsBusy() ||
+                !target.IsAvailable(this, false))
                 return false;
 
             if (string.Equals(target.Client.IP, Client.IP) && !IsGameMaster())
@@ -4288,7 +4612,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (!bypassCheck && (!IsInWorld || IsFighting() || IsSpectator() || IsBusy()))
                 return FighterRefusedReasonEnum.IM_OCCUPIED;
 
-            if (AlignmentSide <= AlignmentSideEnum.ALIGNMENT_NEUTRAL || target.AlignmentSide <= AlignmentSideEnum.ALIGNMENT_NEUTRAL)
+            if (AlignmentSide <= AlignmentSideEnum.ALIGNMENT_NEUTRAL ||
+                target.AlignmentSide <= AlignmentSideEnum.ALIGNMENT_NEUTRAL)
                 return FighterRefusedReasonEnum.WRONG_ALIGNMENT;
 
             if (target.AlignmentSide == AlignmentSide)
@@ -4371,8 +4696,12 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             Fighter = new CharacterFighter(this, team);
 
             ContextHandler.SendGameFightStartingMessage(Client, team.Fight.FightType, Fight
-            .DefendersTeam.Leader == null ? 0 : Fight.DefendersTeam.Leader.Id, team.Leader ==
-            null ? 0 : team.Leader.Id, team.Fight);
+                    .DefendersTeam.Leader == null
+                    ? 0
+                    : Fight.DefendersTeam.Leader.Id, team.Leader ==
+                                                     null
+                    ? 0
+                    : team.Leader.Id, team.Fight);
 
             if (IsPartyLeader() && Party.RestrictFightToParty && team.Fighters.Count == 0 && !team.IsRestrictedToParty)
                 team.ToggleOption(FightOptionsEnum.FIGHT_OPTION_SET_TO_PARTY_ONLY);
@@ -4390,21 +4719,21 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 return null;
 
             CompanionRecord companion =
-           Singleton<CompanionsManager>.Instance.GetCompanionById(
-               Inventory.GetItems(CharacterInventoryPositionEnum.INVENTORY_POSITION_ENTITY).FirstOrDefault().Template.Id).FirstOrDefault();
+                Singleton<CompanionsManager>.Instance.GetCompanionById(
+                    Inventory.GetItems(CharacterInventoryPositionEnum.INVENTORY_POSITION_ENTITY).FirstOrDefault()
+                        .Template.Id).FirstOrDefault();
             if (companion != null)
             {
-
-                Companion = new CompanionActor(this, Fighter?.Team, ActorLook.Parse(companion.Look), companion.SpellsId.Select(spell => Singleton<SpellManager>.Instance.GetRealCompanionSpell(spell))
-                        .Select(finalId => new Spell(Singleton<SpellManager>.Instance.GetSpellTemplate(finalId), 1))
-                        .ToList(),
-                    (byte)companion.Id, Fight.GetNextContextualId())
-                { NextMap = Map };
+                Companion = new CompanionActor(this, Fighter?.Team, ActorLook.Parse(companion.Look), companion.SpellsId
+                            .Select(spell => Singleton<SpellManager>.Instance.GetRealCompanionSpell(spell))
+                            .Select(finalId => new Spell(Singleton<SpellManager>.Instance.GetSpellTemplate(finalId), 1))
+                            .ToList(),
+                        (byte) companion.Id, Fight.GetNextContextualId())
+                    {NextMap = Map};
                 return Companion;
             }
 
             return null;
-
         }
 
         public FightSpectator CreateSpectator(IFight fight)
@@ -4426,7 +4755,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             ContextHandler.SendGameContextCreateMessage(Client, 2);
 
             ContextHandler.SendGameFightStartingMessage(Client, fight.FightType, fight
-            .ChallengersTeam.Leader.Id, fight.DefendersTeam.Leader.Id, fight);
+                .ChallengersTeam.Leader.Id, fight.DefendersTeam.Leader.Id, fight);
 
             Spectator = new FightSpectator(this, fight);
 
@@ -4451,7 +4780,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             oldFighter.RestoreFighterFromDisconnection(this);
             Fighter = oldFighter;
 
-            ContextHandler.SendGameFightStartingMessage(Client, Fighter.Fight.FightType, Fighter.Fight.ChallengersTeam.Leader.Id,
+            ContextHandler.SendGameFightStartingMessage(Client, Fighter.Fight.FightType,
+                Fighter.Fight.ChallengersTeam.Leader.Id,
                 Fighter.Fight.DefendersTeam.Leader.Id, Fighter.Fight);
 
             Fighter.Fight.RejoinFightFromDisconnection(Fighter);
@@ -4483,7 +4813,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (GodMode)
                 Stats.Health.DamageTaken = 0;
 
-            else if (Fighter != null && (Fighter.HasLeft() && !Fighter.IsDisconnected || Fight.Losers == Fighter.Team) && !Fight.IsDeathTemporarily)
+            else if (Fighter != null &&
+                     (Fighter.HasLeft() && !Fighter.IsDisconnected || Fight.Losers == Fighter.Team) &&
+                     !Fight.IsDeathTemporarily)
                 OnDied();
 
             if (Fighter != null && Fighter.HasLeft() && Fight.FightType == FightTypeEnum.FIGHT_TYPE_AGRESSION)
@@ -4534,7 +4866,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void StartRegen()
         {
-            StartRegen((byte)(10f / Rates.RegenRate));
+            StartRegen((byte) (10f / Rates.RegenRate));
         }
 
         public void StartRegen(byte timePerHp)
@@ -4548,7 +4880,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 RegenStartTime = DateTime.Now;
             RegenSpeed = timePerHp;
 
-            CharacterHandler.SendLifePointsRegenBeginMessage(Client, (sbyte)RegenSpeed);
+            CharacterHandler.SendLifePointsRegenBeginMessage(Client, (sbyte) RegenSpeed);
         }
 
         public void StopRegen()
@@ -4556,7 +4888,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (!IsRegenActive())
                 return;
 
-            var regainedLife = (int)Math.Floor((DateTime.Now - RegenStartTime).Value.TotalSeconds / (RegenSpeed / 10f));
+            var regainedLife =
+                (int) Math.Floor((DateTime.Now - RegenStartTime).Value.TotalSeconds / (RegenSpeed / 10f));
 
             if (Stats.Health.TotalSafe + regainedLife > MaxLifePoints)
                 regainedLife = MaxLifePoints - Stats.Health.TotalSafe;
@@ -4581,7 +4914,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (IsInFight())
                 return;
 
-            var regainedLife = (int)Math.Floor((DateTime.Now - RegenStartTime).Value.TotalSeconds / (RegenSpeed / 10f));
+            var regainedLife =
+                (int) Math.Floor((DateTime.Now - RegenStartTime).Value.TotalSeconds / (RegenSpeed / 10f));
 
             if (Stats.Health.TotalSafe + regainedLife > MaxLifePoints)
                 regainedLife = MaxLifePoints - Stats.Health.TotalSafe;
@@ -4591,6 +4925,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 Stats.Health.DamageTaken -= regainedLife;
                 CharacterHandler.SendUpdateLifePointsMessage(Client);
             }
+
             if (Stats.Health.TotalSafe < MaxLifePoints)
                 RegenStartTime = DateTime.Now;
 
@@ -4652,15 +4987,19 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Emotes
 
-
         private LimitedStack<Pair<Emote, DateTime>> m_playedEmotes = new LimitedStack<Pair<Emote, DateTime>>(5);
         private bool m_cancelEmote;
 
         public ReadOnlyCollection<EmotesEnum> Emotes => Record.Emotes.AsReadOnly();
 
-        public override Pair<Emote, DateTime> LastEmoteUsed => !m_cancelEmote && m_playedEmotes.Count > 0 ? m_playedEmotes.Peek() : null;
+        public override Pair<Emote, DateTime> LastEmoteUsed =>
+            !m_cancelEmote && m_playedEmotes.Count > 0 ? m_playedEmotes.Peek() : null;
 
-        private Pair<Emote, DateTime> GetCurrentEmotePair() => LastEmoteUsed != null && (LastEmoteUsed.First.Duration == 0 || LastEmoteUsed.First.Persistancy || (DateTime.Now - LastEmoteUsed.Second) < TimeSpan.FromMilliseconds(LastEmoteUsed.First.Duration))
+        private Pair<Emote, DateTime> GetCurrentEmotePair() => LastEmoteUsed != null &&
+                                                               (LastEmoteUsed.First.Duration == 0 ||
+                                                                LastEmoteUsed.First.Persistancy ||
+                                                                (DateTime.Now - LastEmoteUsed.Second) <
+                                                                TimeSpan.FromMilliseconds(LastEmoteUsed.First.Duration))
             ? LastEmoteUsed
             : null;
 
@@ -4692,7 +5031,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 return;
 
             Record.Emotes.Add(emote);
-            ContextRoleplayHandler.SendEmoteAddMessage(Client, (sbyte)emote);
+            ContextRoleplayHandler.SendEmoteAddMessage(Client, (sbyte) emote);
         }
 
         public bool RemoveEmote(EmotesEnum emote)
@@ -4700,24 +5039,24 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             var result = Record.Emotes.Remove(emote);
 
             if (result)
-                ContextRoleplayHandler.SendEmoteRemoveMessage(Client, (sbyte)emote);
+                ContextRoleplayHandler.SendEmoteRemoveMessage(Client, (sbyte) emote);
 
             return result;
         }
 
         public void PlayEmote(EmotesEnum emoteId, bool force = false)
         {
-            var emote = ChatManager.Instance.GetEmote((int)emoteId);
+            var emote = ChatManager.Instance.GetEmote((int) emoteId);
 
             if (emote == null)
             {
-                ContextRoleplayHandler.SendEmotePlayErrorMessage(Client, (sbyte)emoteId);
+                ContextRoleplayHandler.SendEmotePlayErrorMessage(Client, (sbyte) emoteId);
                 return;
             }
 
             if (!HasEmote(emoteId) && !force)
             {
-                ContextRoleplayHandler.SendEmotePlayErrorMessage(Client, (sbyte)emoteId);
+                ContextRoleplayHandler.SendEmotePlayErrorMessage(Client, (sbyte) emoteId);
                 return;
             }
 
@@ -4780,11 +5119,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Friend & Ennemies
 
-        public FriendsBook FriendsBook
-        {
-            get;
-            private set;
-        }
+        public FriendsBook FriendsBook { get; private set; }
 
         #endregion Friend & Ennemies
 
@@ -4823,7 +5158,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 return false;
             }
 
-            if (Kamas >= (ulong)MerchantBag.GetMerchantTax())
+            if (Kamas >= (ulong) MerchantBag.GetMerchantTax())
                 return true;
 
             if (sendError)
@@ -4873,11 +5208,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Bank
 
-        public Bank Bank
-        {
-            get;
-            private set;
-        }
+        public Bank Bank { get; private set; }
 
         #endregion Bank
 
@@ -4904,7 +5235,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             if (quantity <= 0)
                 return;
 
-            var cell = Position.Point.GetAdjacentCells(x => Map.Cells[x].Walkable && Map.IsCellFree(x) && !Map.IsObjectItemOnCell(x)).FirstOrDefault();
+            var cell = Position.Point
+                .GetAdjacentCells(x => Map.Cells[x].Walkable && Map.IsCellFree(x) && !Map.IsObjectItemOnCell(x))
+                .FirstOrDefault();
             if (cell == null)
             {
                 //Il n'y a pas assez de place ici.
@@ -4928,7 +5261,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             Inventory.RemoveItem(item, quantity);
 
-            var objectItem = new WorldObjectItem(item.Guid, Map, Map.Cells[cell.CellId], item.Template, item.Effects.Clone(), quantity);
+            var objectItem = new WorldObjectItem(item.Guid, Map, Map.Cells[cell.CellId], item.Template,
+                item.Effects.Clone(), quantity);
 
             Map.Enter(objectItem);
         }
@@ -4953,7 +5287,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void HighlightCell(Cell cell, Color color)
         {
-            Client.Send(new DebugHighlightCellsMessage(color.ToArgb() & 16777215, new[] { (ushort)cell.Id }));
+            Client.Send(new DebugHighlightCellsMessage(color.ToArgb() & 16777215, new[] {(ushort) cell.Id}));
         }
 
         public Color HighlightCells(IEnumerable<Cell> cells)
@@ -4967,7 +5301,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public void HighlightCells(IEnumerable<Cell> cells, Color color)
         {
-            Client.Send(new DebugHighlightCellsMessage(color.ToArgb() & 16777215, cells.Select(x => (ushort)x.Id)));
+            Client.Send(new DebugHighlightCellsMessage(color.ToArgb() & 16777215, cells.Select(x => (ushort) x.Id)));
         }
 
         #endregion Debug
@@ -4976,23 +5310,11 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Save & Load
 
-        public bool IsLoggedIn
-        {
-            get;
-            private set;
-        }
+        public bool IsLoggedIn { get; private set; }
 
-        public bool IsAccountBlocked
-        {
-            get;
-            private set;
-        }
+        public bool IsAccountBlocked { get; private set; }
 
-        public bool IsAuthSynced
-        {
-            get;
-            set;
-        }
+        public bool IsAuthSynced { get; set; }
 
         public static String dayOfWeek(DateTime? date)
         {
@@ -5004,7 +5326,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         /// </summary>
         public void LogIn()
         {
-
             if (IsInWorld)
                 return;
 
@@ -5021,10 +5342,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             if (fighter != null && fighter.IsDisconnected)
             {
-                Map.Area.AddMessage(() =>
-                {
-                    RejoinFightAfterDisconnection(fighter);
-                });
+                Map.Area.AddMessage(() => { RejoinFightAfterDisconnection(fighter); });
 
                 RefreshStats();
             }
@@ -5055,7 +5373,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             {
                 foreach (var AchievementToUnlock in Record.m_unacceptedAchievements.ToArray())
                 {
-                    AchievementTemplate achievementTemplate = Singleton<AchievementManager>.Instance.TryGetAchievement(AchievementToUnlock);
+                    AchievementTemplate achievementTemplate =
+                        Singleton<AchievementManager>.Instance.TryGetAchievement(AchievementToUnlock);
                     Achievement.UnLockUnCompletedAchievement(achievementTemplate);
                 }
             }
@@ -5132,7 +5451,6 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                                 Delete();
                             }
                         });
-
                 }
             }
         }
@@ -5181,12 +5499,13 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                             m_record.Wisdom = PrivateStats[PlayerFields.Wisdom].Base;
                             m_record.Vitality = PrivateStats[PlayerFields.Vitality].Base;
 
-                            m_record.PermanentAddedStrength = (short)PrivateStats[PlayerFields.Strength].Additional;
-                            m_record.PermanentAddedAgility = (short)PrivateStats[PlayerFields.Agility].Additional;
-                            m_record.PermanentAddedChance = (short)PrivateStats[PlayerFields.Chance].Additional;
-                            m_record.PermanentAddedIntelligence = (short)PrivateStats[PlayerFields.Intelligence].Additional;
-                            m_record.PermanentAddedWisdom = (short)PrivateStats[PlayerFields.Wisdom].Additional;
-                            m_record.PermanentAddedVitality = (short)PrivateStats[PlayerFields.Vitality].Additional;
+                            m_record.PermanentAddedStrength = (short) PrivateStats[PlayerFields.Strength].Additional;
+                            m_record.PermanentAddedAgility = (short) PrivateStats[PlayerFields.Agility].Additional;
+                            m_record.PermanentAddedChance = (short) PrivateStats[PlayerFields.Chance].Additional;
+                            m_record.PermanentAddedIntelligence =
+                                (short) PrivateStats[PlayerFields.Intelligence].Additional;
+                            m_record.PermanentAddedWisdom = (short) PrivateStats[PlayerFields.Wisdom].Additional;
+                            m_record.PermanentAddedVitality = (short) PrivateStats[PlayerFields.Vitality].Additional;
 
                             m_record.BaseHealth = Stats.Health.Base;
                             m_record.DamageTaken = Stats.Health.DamageTaken;
@@ -5205,10 +5524,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 else
                 {
                     IPCAccessor.Instance.SendRequest<CommonOKMessage>(new UpdateAccountMessage(Account),
-                        msg =>
-                        {
-                            OnSaved();
-                        });
+                        msg => { OnSaved(); });
                 }
             }
             catch
@@ -5242,9 +5558,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             LowerBoundExperience = ExperienceManager.Instance.GetCharacterLevelExperience(Level);
             UpperBoundExperience = ExperienceManager.Instance.GetCharacterNextLevelExperience(Level);
 
-            AlignmentGrade = (sbyte)ExperienceManager.Instance.GetAlignementGrade(m_record.Honor);
-            LowerBoundHonor = ExperienceManager.Instance.GetAlignementGradeHonor((byte)AlignmentGrade);
-            UpperBoundHonor = ExperienceManager.Instance.GetAlignementNextGradeHonor((byte)AlignmentGrade);
+            AlignmentGrade = (sbyte) ExperienceManager.Instance.GetAlignementGrade(m_record.Honor);
+            LowerBoundHonor = ExperienceManager.Instance.GetAlignementGradeHonor((byte) AlignmentGrade);
+            UpperBoundHonor = ExperienceManager.Instance.GetAlignementNextGradeHonor((byte) AlignmentGrade);
             DoppleCollection = new DoppleCollection();
             DoppleCollection.Load(Id);
             Inventory = new Inventory(this);
@@ -5259,7 +5575,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 Achievement = new PlayerAchievement(this);
                 Achievement.LoadAchievements();
             }
-            catch { }
+            catch
+            {
+            }
 
             MerchantBag = new CharacterMerchantBag(this);
             CheckMerchantModeReconnection();
@@ -5319,7 +5637,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         #region Exceptions
 
-        private readonly List<KeyValuePair<string, Exception>> m_commandsError = new List<KeyValuePair<string, Exception>>();
+        private readonly List<KeyValuePair<string, Exception>> m_commandsError =
+            new List<KeyValuePair<string, Exception>>();
+
         private Mount m_equippedMount;
         private ActorLook m_look;
 
@@ -5350,9 +5670,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public ActorAlignmentInformations GetActorAlignmentInformations()
         {
             return new ActorAlignmentInformations(
-                (sbyte)AlignmentSide,
+                (sbyte) AlignmentSide,
                 AlignmentValue,
-                PvPEnabled ? AlignmentGrade : (sbyte)0,
+                PvPEnabled ? AlignmentGrade : (sbyte) 0,
                 CharacterPower);
         }
 
@@ -5363,14 +5683,16 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
         public ActorExtendedAlignmentInformations GetActorAlignmentExtendInformations()
         {
             return new ActorExtendedAlignmentInformations(
-                (sbyte)AlignmentSide,
+                (sbyte) AlignmentSide,
                 AlignmentValue,
-                PvPEnabled ? AlignmentGrade : (sbyte)0,
+                PvPEnabled ? AlignmentGrade : (sbyte) 0,
                 CharacterPower,
-                (ushort)Honor,
-                (ushort)LowerBoundHonor,
-                (ushort)UpperBoundHonor,
-                (PvPEnabled ? (sbyte)AggressableStatusEnum.PvP_ENABLED_AGGRESSABLE : (sbyte)AggressableStatusEnum.NON_AGGRESSABLE));
+                (ushort) Honor,
+                (ushort) LowerBoundHonor,
+                (ushort) UpperBoundHonor,
+                (PvPEnabled
+                    ? (sbyte) AggressableStatusEnum.PvP_ENABLED_AGGRESSABLE
+                    : (sbyte) AggressableStatusEnum.NON_AGGRESSABLE));
         }
 
         #endregion ActorExtendedAlignmentInformations
@@ -5379,123 +5701,118 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public CharacterBaseInformations GetCharacterBaseInformations()
             => new CharacterBaseInformations(
-                (ulong)Id,
+                (ulong) Id,
                 Name,
-                (ushort)Level,
+                (ushort) Level,
                 Look.GetEntityLook(),
-                (sbyte)BreedId,
+                (sbyte) BreedId,
                 Sex == SexTypeEnum.SEX_FEMALE);
 
         public CharacterMinimalPlusLookInformations GetCharacterMinimalPlusLookInformations()
             => new CharacterMinimalPlusLookInformations(
-                (ulong)Id,
+                (ulong) Id,
                 Name,
-                (ushort)Level,
+                (ushort) Level,
                 Look.GetEntityLook(),
-                (sbyte)Breed.Id);
+                (sbyte) Breed.Id);
 
         public CharacterMinimalInformations GetCharacterMinimalInformations()
             => new CharacterMinimalInformations(
-                (ulong)Id,
+                (ulong) Id,
                 Name,
-                (ushort)Level);
+                (ushort) Level);
 
         public CharacterCharacteristicsInformations GetCharacterCharacteristicsInformations()
             => new CharacterCharacteristicsInformations(
-                        (ulong)Experience, // EXPERIENCE
-                        (ulong)LowerBoundExperience, // EXPERIENCE level floor
-                        (ulong)UpperBoundExperience, // EXPERIENCE nextlevel floor
-                        (ulong)UpperBoundExperience, // TODO: EXPERIENCE bonus limit
+                (ulong) Experience, // EXPERIENCE
+                (ulong) LowerBoundExperience, // EXPERIENCE level floor
+                (ulong) UpperBoundExperience, // EXPERIENCE nextlevel floor
+                (ulong) UpperBoundExperience, // TODO: EXPERIENCE bonus limit
+                Kamas, // Amount of kamas.
+                (ushort) StatsPoints, // Stats points
+                0, // Additionnal points
+                (ushort) SpellsPoints, // Spell points
 
-                        Kamas, // Amount of kamas.
-
-                        (ushort)StatsPoints, // Stats points
-                        0, // Additionnal points
-                        (ushort)SpellsPoints, // Spell points
-
-                        // Alignment
-                        GetActorAlignmentExtendInformations(),
-                        (uint)Stats.Health.Total, // Life points
-                        (uint)Stats.Health.TotalMax, // Max Life points
-
-                        (ushort)Energy, // Energy points
-                        (ushort)EnergyMax, // maxEnergyPoints
-
-                        (short)Stats[PlayerFields.AP]
-                                    .Total, // actionPointsCurrent
-                        (short)Stats[PlayerFields.MP]
-                                    .Total, // movementPointsCurrent
-
-                        Stats[PlayerFields.Initiative],
-                        Stats[PlayerFields.Prospecting],
-                        Stats[PlayerFields.AP],
-                        Stats[PlayerFields.MP],
-                        Stats[PlayerFields.Strength],
-                        Stats[PlayerFields.Vitality],
-                        Stats[PlayerFields.Wisdom],
-                        Stats[PlayerFields.Chance],
-                        Stats[PlayerFields.Agility],
-                        Stats[PlayerFields.Intelligence],
-                        Stats[PlayerFields.Range],
-                        Stats[PlayerFields.SummonLimit],
-                        Stats[PlayerFields.DamageReflection],
-                        Stats[PlayerFields.CriticalHit],
-                        (ushort)Inventory.WeaponCriticalHit,
-                        Stats[PlayerFields.CriticalMiss],
-                        Stats[PlayerFields.HealBonus],
-                        Stats[PlayerFields.DamageBonus],
-                        Stats[PlayerFields.WeaponDamageBonus],
-                        Stats[PlayerFields.DamageBonusPercent],
-                        Stats[PlayerFields.TrapBonus],
-                        Stats[PlayerFields.TrapBonusPercent],
-                        Stats[PlayerFields.GlyphBonusPercent],
-                        Stats[PlayerFields.RuneBonusPercent],
-                        Stats[PlayerFields.PermanentDamagePercent],
-                        Stats[PlayerFields.TackleBlock],
-                        Stats[PlayerFields.TackleEvade],
-                        Stats[PlayerFields.APAttack],
-                        Stats[PlayerFields.MPAttack],
-                        Stats[PlayerFields.PushDamageBonus],
-                        Stats[PlayerFields.CriticalDamageBonus],
-                        Stats[PlayerFields.NeutralDamageBonus],
-                        Stats[PlayerFields.EarthDamageBonus],
-                        Stats[PlayerFields.WaterDamageBonus],
-                        Stats[PlayerFields.AirDamageBonus],
-                        Stats[PlayerFields.FireDamageBonus],
-                        Stats[PlayerFields.DodgeAPProbability],
-                        Stats[PlayerFields.DodgeMPProbability],
-                        Stats[PlayerFields.NeutralResistPercent],
-                        Stats[PlayerFields.EarthResistPercent],
-                        Stats[PlayerFields.WaterResistPercent],
-                        Stats[PlayerFields.AirResistPercent],
-                        Stats[PlayerFields.FireResistPercent],
-                        Stats[PlayerFields.NeutralElementReduction],
-                        Stats[PlayerFields.EarthElementReduction],
-                        Stats[PlayerFields.WaterElementReduction],
-                        Stats[PlayerFields.AirElementReduction],
-                        Stats[PlayerFields.FireElementReduction],
-                        Stats[PlayerFields.PushDamageReduction],
-                        Stats[PlayerFields.CriticalDamageReduction],
-                        Stats[PlayerFields.PvpNeutralResistPercent],
-                        Stats[PlayerFields.PvpEarthResistPercent],
-                        Stats[PlayerFields.PvpWaterResistPercent],
-                        Stats[PlayerFields.PvpAirResistPercent],
-                        Stats[PlayerFields.PvpFireResistPercent],
-                        Stats[PlayerFields.PvpNeutralElementReduction],
-                        Stats[PlayerFields.PvpEarthElementReduction],
-                        Stats[PlayerFields.PvpWaterElementReduction],
-                        Stats[PlayerFields.PvpAirElementReduction],
-                        Stats[PlayerFields.PvpFireElementReduction],
-                        Stats[PlayerFields.MeleeDamageDonePercent],
-                        Stats[PlayerFields.MeleeDamageReceivedPercent],
-                        Stats[PlayerFields.RangedDamageDonePercent],
-                        Stats[PlayerFields.RangedDamageReceivedPercent],
-                        Stats[PlayerFields.WeaponDamageDonePercent],
-                        Stats[PlayerFields.WeaponDamageReceivedPercent],
-                        Stats[PlayerFields.SpellDamageDonePercent],
-                        Stats[PlayerFields.SpellDamageReceivedPercent],
-                        SpellsModifications.ToArray(),
-                        0);
+                // Alignment
+                GetActorAlignmentExtendInformations(),
+                (uint) Stats.Health.Total, // Life points
+                (uint) Stats.Health.TotalMax, // Max Life points
+                (ushort) Energy, // Energy points
+                (ushort) EnergyMax, // maxEnergyPoints
+                (short) Stats[PlayerFields.AP]
+                    .Total, // actionPointsCurrent
+                (short) Stats[PlayerFields.MP]
+                    .Total, // movementPointsCurrent
+                Stats[PlayerFields.Initiative],
+                Stats[PlayerFields.Prospecting],
+                Stats[PlayerFields.AP],
+                Stats[PlayerFields.MP],
+                Stats[PlayerFields.Strength],
+                Stats[PlayerFields.Vitality],
+                Stats[PlayerFields.Wisdom],
+                Stats[PlayerFields.Chance],
+                Stats[PlayerFields.Agility],
+                Stats[PlayerFields.Intelligence],
+                Stats[PlayerFields.Range],
+                Stats[PlayerFields.SummonLimit],
+                Stats[PlayerFields.DamageReflection],
+                Stats[PlayerFields.CriticalHit],
+                (ushort) Inventory.WeaponCriticalHit,
+                Stats[PlayerFields.CriticalMiss],
+                Stats[PlayerFields.HealBonus],
+                Stats[PlayerFields.DamageBonus],
+                Stats[PlayerFields.WeaponDamageBonus],
+                Stats[PlayerFields.DamageBonusPercent],
+                Stats[PlayerFields.TrapBonus],
+                Stats[PlayerFields.TrapBonusPercent],
+                Stats[PlayerFields.GlyphBonusPercent],
+                Stats[PlayerFields.RuneBonusPercent],
+                Stats[PlayerFields.PermanentDamagePercent],
+                Stats[PlayerFields.TackleBlock],
+                Stats[PlayerFields.TackleEvade],
+                Stats[PlayerFields.APAttack],
+                Stats[PlayerFields.MPAttack],
+                Stats[PlayerFields.PushDamageBonus],
+                Stats[PlayerFields.CriticalDamageBonus],
+                Stats[PlayerFields.NeutralDamageBonus],
+                Stats[PlayerFields.EarthDamageBonus],
+                Stats[PlayerFields.WaterDamageBonus],
+                Stats[PlayerFields.AirDamageBonus],
+                Stats[PlayerFields.FireDamageBonus],
+                Stats[PlayerFields.DodgeAPProbability],
+                Stats[PlayerFields.DodgeMPProbability],
+                Stats[PlayerFields.NeutralResistPercent],
+                Stats[PlayerFields.EarthResistPercent],
+                Stats[PlayerFields.WaterResistPercent],
+                Stats[PlayerFields.AirResistPercent],
+                Stats[PlayerFields.FireResistPercent],
+                Stats[PlayerFields.NeutralElementReduction],
+                Stats[PlayerFields.EarthElementReduction],
+                Stats[PlayerFields.WaterElementReduction],
+                Stats[PlayerFields.AirElementReduction],
+                Stats[PlayerFields.FireElementReduction],
+                Stats[PlayerFields.PushDamageReduction],
+                Stats[PlayerFields.CriticalDamageReduction],
+                Stats[PlayerFields.PvpNeutralResistPercent],
+                Stats[PlayerFields.PvpEarthResistPercent],
+                Stats[PlayerFields.PvpWaterResistPercent],
+                Stats[PlayerFields.PvpAirResistPercent],
+                Stats[PlayerFields.PvpFireResistPercent],
+                Stats[PlayerFields.PvpNeutralElementReduction],
+                Stats[PlayerFields.PvpEarthElementReduction],
+                Stats[PlayerFields.PvpWaterElementReduction],
+                Stats[PlayerFields.PvpAirElementReduction],
+                Stats[PlayerFields.PvpFireElementReduction],
+                Stats[PlayerFields.MeleeDamageDonePercent],
+                Stats[PlayerFields.MeleeDamageReceivedPercent],
+                Stats[PlayerFields.RangedDamageDonePercent],
+                Stats[PlayerFields.RangedDamageReceivedPercent],
+                Stats[PlayerFields.WeaponDamageDonePercent],
+                Stats[PlayerFields.WeaponDamageReceivedPercent],
+                Stats[PlayerFields.SpellDamageDonePercent],
+                Stats[PlayerFields.SpellDamageReceivedPercent],
+                SpellsModifications.ToArray(),
+                0);
 
         #endregion CharacterBaseInformations
 
@@ -5503,40 +5820,43 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public PartyInvitationMemberInformations GetPartyInvitationMemberInformations()
             => new PartyInvitationMemberInformations(
-                (ulong)Id,
+                (ulong) Id,
                 Name,
                 Level,
                 Look.GetEntityLook(),
-                (sbyte)BreedId,
+                (sbyte) BreedId,
                 Sex == SexTypeEnum.SEX_FEMALE,
-                (short)Map.Position.X,
-                (short)Map.Position.Y,
+                (short) Map.Position.X,
+                (short) Map.Position.Y,
                 Map.Id,
-                (ushort)Map.SubArea.Id,
-                Companion == null ? new PartyEntityMemberInformation[0] : new PartyEntityMemberInformation[] { Companion.GetPartyCompanionMemberInformations() });
-
+                (ushort) Map.SubArea.Id,
+                Companion == null
+                    ? new PartyEntityMemberInformation[0]
+                    : new PartyEntityMemberInformation[] {Companion.GetPartyCompanionMemberInformations()});
 
 
         public PartyMemberInformations GetPartyMemberInformations()
             => new PartyMemberInformations(
-                (ulong)Id,
+                (ulong) Id,
                 Name,
                 Level,
                 Look.GetEntityLook(),
-                (sbyte)BreedId,
+                (sbyte) BreedId,
                 Sex == SexTypeEnum.SEX_FEMALE,
-                (uint)LifePoints,
-                (uint)MaxLifePoints,
-                (ushort)Stats[PlayerFields.Prospecting].Total,
-                (byte)RegenSpeed,
-                (ushort)Stats[PlayerFields.Initiative].Total,
-                (sbyte)AlignmentSide,
-                (short)Map.Position.X,
-                (short)Map.Position.Y,
+                (uint) LifePoints,
+                (uint) MaxLifePoints,
+                (ushort) Stats[PlayerFields.Prospecting].Total,
+                (byte) RegenSpeed,
+                (ushort) Stats[PlayerFields.Initiative].Total,
+                (sbyte) AlignmentSide,
+                (short) Map.Position.X,
+                (short) Map.Position.Y,
                 Map.Id,
-                (ushort)SubArea.Id,
+                (ushort) SubArea.Id,
                 Status,
-                Companion == null ? new PartyEntityMemberInformation[0] : new PartyEntityMemberInformation[] { Companion.GetPartyCompanionMemberInformations() });
+                Companion == null
+                    ? new PartyEntityMemberInformation[0]
+                    : new PartyEntityMemberInformation[] {Companion.GetPartyCompanionMemberInformations()});
 
         public PartyGuestInformations GetPartyGuestInformations(Party party)
         {
@@ -5546,67 +5866,69 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             var invitation = m_partyInvitations[party.Id];
 
             return new PartyGuestInformations(
-                (ulong)Id,
-                (ulong)invitation.Source.Id,
+                (ulong) Id,
+                (ulong) invitation.Source.Id,
                 Name,
                 Look.GetEntityLook(),
-                (sbyte)BreedId,
+                (sbyte) BreedId,
                 Sex == SexTypeEnum.SEX_FEMALE,
                 Status,
-                Companion == null ? new PartyEntityMemberInformation[0] : new PartyEntityMemberInformation[] { Companion.GetPartyCompanionMemberInformations() });
+                Companion == null
+                    ? new PartyEntityMemberInformation[0]
+                    : new PartyEntityMemberInformation[] {Companion.GetPartyCompanionMemberInformations()});
         }
 
         public PartyMemberArenaInformations GetPartyMemberArenaInformations()
             => new PartyMemberArenaInformations(
-                (ulong)Id,
+                (ulong) Id,
                 Name,
-                (byte)Level,
+                (byte) Level,
                 Look.GetEntityLook(),
-                (sbyte)BreedId,
+                (sbyte) BreedId,
                 Sex == SexTypeEnum.SEX_FEMALE,
-                (uint)LifePoints,
-                (uint)MaxLifePoints,
-                (ushort)Stats[PlayerFields.Prospecting].Total,
-                (byte)RegenSpeed,
-                (ushort)Stats[PlayerFields.Initiative].Total,
-                (sbyte)AlignmentSide,
-                (short)Map.Position.X,
-                (short)Map.Position.Y,
+                (uint) LifePoints,
+                (uint) MaxLifePoints,
+                (ushort) Stats[PlayerFields.Prospecting].Total,
+                (byte) RegenSpeed,
+                (ushort) Stats[PlayerFields.Initiative].Total,
+                (sbyte) AlignmentSide,
+                (short) Map.Position.X,
+                (short) Map.Position.Y,
                 Map.Id,
-                (ushort)SubArea.Id,
+                (ushort) SubArea.Id,
                 Status,
-                Companion == null ? new PartyEntityMemberInformation[0] : new PartyEntityMemberInformation[] { Companion.GetPartyCompanionMemberInformations() },
-                (ushort)ArenaRank_3vs3);
+                Companion == null
+                    ? new PartyEntityMemberInformation[0]
+                    : new PartyEntityMemberInformation[] {Companion.GetPartyCompanionMemberInformations()},
+                (ushort) ArenaRank_3vs3);
 
         #endregion PartyMemberInformations
 
         public override ActorRestrictionsInformations GetActorRestrictionsInformations()
         {
             return new ActorRestrictionsInformations(
-                                !Map.AllowAggression || IsGhost(), // cantBeAgressed
-                                !Map.AllowChallenge || IsGhost(), // cantBeChallenged
-                                !Map.AllowExchangesBetweenPlayers || IsGhost(), // cantTrade
-                                IsGhost(), // cantBeAttackedByMutant
-                                false, // cantRun
-                                false, // forceSlowWalk
-                                false, // cantMinimize
-                                PlayerLifeStatus == PlayerLifeStatusEnum.STATUS_TOMBSTONE, // cantMove
-
-                                !Map.AllowAggression || IsGhost(), // cantAggress
-                                IsGhost(), // cantChallenge
-                                IsGhost(), // cantExchange
-                                IsGhost(), // cantAttack
-                                false, // cantChat
-                                IsGhost(), // cantBeMerchant
-                                IsGhost(), // cantUseObject
-                                IsGhost(), // cantUseTaxCollector
-
-                                IsGhost(), // cantUseInteractive
-                                IsGhost(), // cantSpeakToNPC
-                                false, // cantChangeZone
-                                IsGhost(), // cantAttackMonster
-                                false // cantWalk8Directions
-                                );
+                !Map.AllowAggression || IsGhost(), // cantBeAgressed
+                !Map.AllowChallenge || IsGhost(), // cantBeChallenged
+                !Map.AllowExchangesBetweenPlayers || IsGhost(), // cantTrade
+                IsGhost(), // cantBeAttackedByMutant
+                false, // cantRun
+                false, // forceSlowWalk
+                false, // cantMinimize
+                PlayerLifeStatus == PlayerLifeStatusEnum.STATUS_TOMBSTONE, // cantMove
+                !Map.AllowAggression || IsGhost(), // cantAggress
+                IsGhost(), // cantChallenge
+                IsGhost(), // cantExchange
+                IsGhost(), // cantAttack
+                false, // cantChat
+                IsGhost(), // cantBeMerchant
+                IsGhost(), // cantUseObject
+                IsGhost(), // cantUseTaxCollector
+                IsGhost(), // cantUseInteractive
+                IsGhost(), // cantSpeakToNPC
+                false, // cantChangeZone
+                IsGhost(), // cantAttackMonster
+                false // cantWalk8Directions
+            );
         }
 
         public override HumanInformations GetHumanInformations()
@@ -5619,16 +5941,19 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 options.Add(new HumanOptionGuild(Guild.GetGuildInformations()));
 
             if (SelectedTitle != null)
-                options.Add(new HumanOptionTitle((ushort)SelectedTitle.Value, string.Empty));
+                options.Add(new HumanOptionTitle((ushort) SelectedTitle.Value, string.Empty));
 
             if (SelectedOrnament != null)
-                options.Add(new HumanOptionOrnament((ushort)SelectedOrnament.Value, Level, (short)Record.LeagueId, 0));
+                options.Add(new HumanOptionOrnament((ushort) SelectedOrnament.Value, Level, (short) Record.LeagueId,
+                    0));
 
             if (LastEmoteUsed != null)
-                options.Add(new HumanOptionEmote((byte)LastEmoteUsed.First.Id, LastEmoteUsed.Second.GetUnixTimeStampLong()));
+                options.Add(new HumanOptionEmote((byte) LastEmoteUsed.First.Id,
+                    LastEmoteUsed.Second.GetUnixTimeStampLong()));
 
             if (LastSkillUsed != null)
-                options.Add(new HumanOptionSkillUse((uint)LastSkillUsed.InteractiveObject.Id, (ushort)LastSkillUsed.SkillTemplate.Id, LastSkillUsed.SkillEndTime.GetUnixTimeStampLong()));
+                options.Add(new HumanOptionSkillUse((uint) LastSkillUsed.InteractiveObject.Id,
+                    (ushort) LastSkillUsed.SkillTemplate.Id, LastSkillUsed.SkillEndTime.GetUnixTimeStampLong()));
 
             human.Options = options.ToArray();
             return human;
@@ -5647,10 +5972,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
                 return JsonConvert.DeserializeObject<List<DungeonKey>>(Record.DungeonKeyset);
             }
-            set
-            {
-                Record.DungeonKeyset =  JsonConvert.SerializeObject(DungeonKey.generateKeyset());
-            }
+            set { Record.DungeonKeyset = JsonConvert.SerializeObject(DungeonKey.generateKeyset()); }
         }
 
         public bool IAControl
@@ -5659,42 +5981,26 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             set { Record.ControlIA = value; }
         }
 
-        public BreachGroupInvitation breachGroupInvitation
-        {
-            get;
-            set;
-        }
+        public BreachGroupInvitation breachGroupInvitation { get; set; }
 
-        public Character breachOwner
-        {
-            get;
-            set;
-        }
+        public Character breachOwner { get; set; }
 
-        public long[] breachGroup
-        {
-            get;
-            set;
-        }
+        public long[] breachGroup { get; set; }
 
         public int breachBudget
         {
             get { return Record.BreachBudget; }
             set { Record.BreachBudget = value; }
         }
-        
+
         public int breachStep
         {
             get { return Record.BreachStep; }
             set { Record.BreachStep = value; }
         }
-        
-        public ExtendedBreachBranch currentBreachRoom
-        {
-            get;
-            set;
-        }
-        
+
+        public ExtendedBreachBranch currentBreachRoom { get; set; }
+
         public ObjectEffectInteger[] breachBoosts
         {
             get
@@ -5710,7 +6016,7 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
             }
             set { Record.BreachBoosts = JsonConvert.SerializeObject(value); }
         }
-        
+
         public BreachReward[] breachBuyables
         {
             get
@@ -5721,12 +6027,12 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
                 }
                 else
                 {
-                    return new BreachReward[]{};
+                    return new BreachReward[] { };
                 }
             }
             set { Record.BreachBuyables = JsonConvert.SerializeObject(value); }
         }
-        
+
         public ExtendedBreachBranch[] breachBranches
         {
             get
@@ -5747,7 +6053,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
         public CharacterRecord Record => m_record;
 
-        public override bool CanBeSee(WorldObject byObj) => base.CanBeSee(byObj) && (byObj == this || !Invisible) && Game.HavenBags.HavenBagManager.Instance.CanBeSeenInHavenBag(byObj, this) && byObj is Character && (byObj == this || !Map.IsInstantiated);
+        public override bool CanBeSee(WorldObject byObj) => base.CanBeSee(byObj) && (byObj == this || !Invisible) &&
+                                                            Game.HavenBags.HavenBagManager.Instance.CanBeSeenInHavenBag(
+                                                                byObj, this) && byObj is Character &&
+                                                            (byObj == this || !Map.IsInstantiated);
 
         protected override void OnDisposed()
         {

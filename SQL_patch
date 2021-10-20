@@ -1,3 +1,7 @@
+//usables
+
+UPDATE `items_templates` SET `Usable` = '1', `TypeId` = '12' WHERE `items_templates`.`Id` = 10207;
+
 //resources abysses
 
 UPDATE interactives_spawns SET TemplateId=294,Template="Aquajou" WHERE ElementId=74986;
@@ -7,7 +11,9 @@ UPDATE interactives_spawns SET TemplateId=293,Template="Écume de mer" WHERE Ele
 UPDATE interactives_spawns SET TemplateId=297,Template="Patelle" WHERE ElementId=74983;
 
 //atelier prysmaradite
-UPDATE interactives_spawns SET TemplateId=297,Template="Patelle" WHERE ElementId=93927;
+UPDATE `interactives_spawns` SET `Id` = 517999, `TemplateId` = '12', `ElementId` = '68106', `Template` = 'Prysmaradite' WHERE `interactives_spawns`.`Id` = 463611;
+UPDATE `interactives_skills` SET `Type` = 'Template', `CustomTemplateId` = '380' WHERE `interactives_skills`.`Id` = 1897;
+UPDATE `interactives_spawns_skills` SET `InteractiveSpawnId` = '517999' WHERE `interactives_spawns_skills`.`Id` = 1929;
 
 
 

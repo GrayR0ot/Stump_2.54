@@ -620,6 +620,7 @@ namespace Stump.Server.WorldServer.Game.Achievements
         private void OnCraftItem(BasePlayerItem item, int quantity)
         {
             ManageIncrementalCriterions(ref m_craftCountCriterion);
+            Console.WriteLine("LevelCriterion: " + m_jobLevelCriterion);
             ManageIncrementalCriterions(ref m_jobLevelCriterion);
         }
 

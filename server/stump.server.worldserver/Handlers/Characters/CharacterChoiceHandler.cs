@@ -201,7 +201,6 @@ namespace Stump.Server.WorldServer.Handlers.Characters
         {
             if (character.IsDeleted)
                 return;
-
             // Check if we also have a world account
             if (client.WorldAccount == null)
             {
@@ -461,7 +460,7 @@ namespace Stump.Server.WorldServer.Handlers.Characters
             {
                 characterBaseInformations.Add(new CharacterBaseInformations((ushort) characterRecord.Id,
                     characterRecord.Name,
-                    ExperienceManager.Instance.GetCharacterLevel(characterRecord.Experience, 0),
+                    ExperienceManager.Instance.GetCharacterLevel(characterRecord.Experience),
                     characterRecord.LastLook?.GetEntityLook() ?? characterRecord.DefaultLook.GetEntityLook(),
                     (sbyte) characterRecord.Breed,
                     characterRecord.Sex == SexTypeEnum.SEX_MALE));

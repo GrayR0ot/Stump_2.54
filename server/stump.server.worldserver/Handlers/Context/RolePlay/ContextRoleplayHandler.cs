@@ -192,6 +192,11 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
                     HavenBagManager.Instance.GetHavenBagPermissions(havenbag.FriendsAllowed,
                         havenbag.GuildAllowed));
             }
+            client.Send(new MapRewardRateMessage(
+                0,
+                client.Character.Map.SubArea.Bonus,
+                client.Character.Map.SubArea.Bonus
+            ));
         }
 
         public static void SendGameRolePlayShowActorMessage(IPacketReceiver client, Character character,

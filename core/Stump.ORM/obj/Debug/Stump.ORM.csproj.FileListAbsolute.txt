@@ -286,3 +286,11 @@ C:\Users\leomo\Google Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM
 C:\Users\leomo\Google Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.csproj.CopyComplete
 C:\Users\leomo\Google Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.dll
 C:\Users\leomo\Google Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.pdb
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\bin\Debug\Stump.ORM.dll
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\bin\Debug\Stump.ORM.pdb
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\bin\Debug\MySql.Data.dll
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.csproj.AssemblyReference.cache
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.csproj.CoreCompileInputs.cache
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.csproj.CopyComplete
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.dll
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\Core\Stump.ORM\obj\Debug\Stump.ORM.pdb

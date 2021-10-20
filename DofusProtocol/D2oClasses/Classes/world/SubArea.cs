@@ -37,6 +37,7 @@ namespace Stump.DofusProtocol.D2oClasses
         public List<List<int>> playlists;
         public List<List<double>> quests;
         public List<int> shape;
+        public short bonus;
 
         [D2OIgnore]
         public int Id
@@ -219,6 +220,14 @@ namespace Stump.DofusProtocol.D2oClasses
             get => associatedZaapMapId;
             set => associatedZaapMapId = value;
         }
+
+        [D2OIgnore]
+        public short Bonus
+        {
+            get => bonus;
+            set => bonus = value;
+        }
+        
 
         int IIndexedData.Id => id;
     }

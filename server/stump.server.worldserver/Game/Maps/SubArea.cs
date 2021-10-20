@@ -47,9 +47,10 @@ namespace Stump.Server.WorldServer.Game.Maps
         private readonly List<Map> m_maps = new List<Map>();
         private readonly List<MonsterSpawn> m_monsterSpawns = new List<MonsterSpawn>();
 
-        public SubArea(SubAreaRecord record)
+        public SubArea(SubAreaRecord record, short bonus)
         {
             Record = record;
+            Bonus = bonus;
         }
 
         public bool IsAgressibleMonsters => true;
@@ -65,6 +66,12 @@ namespace Stump.Server.WorldServer.Game.Maps
         public Area Area { get; internal set; }
 
         public SuperArea SuperArea => Area.SuperArea;
+
+        public short Bonus
+        {
+            get;
+            set;
+        }
 
         public Difficulty Difficulty
         {

@@ -1,0 +1,23 @@
+[{
+  "targetMask": "A",
+  "diceNum": 2,
+  "visibleInBuffUi": true,
+  "visibleInFightLog": true,
+  "targetId": 0,
+  "effectElement": -1,
+  "effectUid": 74125,
+  "dispellable": 1,
+  "triggers": "I",
+  "spellId": 2059,
+  "duration": 3,
+  "random": 0,
+  "effectId": 1079,
+  "delay": 0,
+  "diceSide": 0,
+  "visibleInTooltip": true,
+  "rawZone": "C6,0",
+  "forClientOnly": false,
+  "value": 0,
+  "order": 0,
+  "group": 0
+}]

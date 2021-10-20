@@ -43,8 +43,6 @@ namespace Stump.Server.WorldServer.Game.Exchanges.Craft
 
         public bool ChangeAmount(int amount)
         {
-            Console.WriteLine("Debug0 +" + Skill.Id);
-            Console.WriteLine("Debug1 +" + Job.Id);
 
             if (amount < 0 && amount != -1 || amount > 100 && Job.Id != 1)
                 return false;

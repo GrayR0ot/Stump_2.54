@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             if (fighter != Fighter)
                 return;
 
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FLASKTIVATION_9491, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FIOLIE_9491, 1), Fighter.Cell);
         }
     }
 }
