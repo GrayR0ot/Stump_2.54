@@ -1,11 +1,3 @@
-//achievements & crafts
-
-INSERT INTO `achievements_objectives` (`Id`, `Name`, `AchievementId`, `Order`, `NameId`, `Criterion`) VALUES (NULL, 'Atteindre le niveau 10 dans un métier.', '14', '0', '0', 'PJ>9,0');
-INSERT INTO `achievements_objectives` (`Id`, `Name`, `AchievementId`, `Order`, `NameId`, `Criterion`) VALUES (NULL, 'Atteindre le niveau 100 dans un métier.', '15', '0', '0', 'PJ>99,0');
-INSERT INTO `achievements_objectives` (`Id`, `Name`, `AchievementId`, `Order`, `NameId`, `Criterion`) VALUES (NULL, 'Atteindre le niveau 200 dans un métier.', '16', '0', '0', 'PJ>199,0');
-INSERT INTO `achievements_objectives` (`Id`, `Name`, `AchievementId`, `Order`, `NameId`, `Criterion`) VALUES (NULL, 'Atteindre le niveau 200 dans 2 métiers.', '766', '0', '0', 'PJ>199,1');
-INSERT INTO `achievements_objectives` (`Id`, `Name`, `AchievementId`, `Order`, `NameId`, `Criterion`) VALUES (NULL, 'Atteindre le niveau 200 dans 3 métiers.', '767', '0', '0', 'PJ>199,2');
-
 //usables
 
 UPDATE `items_templates` SET `Usable` = '1', `TypeId` = '12' WHERE `items_templates`.`Id` = 10207;

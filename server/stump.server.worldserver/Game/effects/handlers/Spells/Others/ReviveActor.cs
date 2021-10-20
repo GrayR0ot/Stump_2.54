@@ -64,7 +64,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
             actor.Position.Cell = cell;
             actor.BuffRemoved += OnBuffRemoved;
 
-            if (Spell.Id == (int)SpellIdEnum.SPIRITUAL_LEASH_420)
+            if (Spell.Id == (int)SpellIdEnum._420)
             {
                 try
                 {

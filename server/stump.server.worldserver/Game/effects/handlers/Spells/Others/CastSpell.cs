@@ -54,7 +54,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
 
                     if (Effect.EffectId == EffectsEnum.Effect_1160 || Effect.EffectId == EffectsEnum.Effect_2160)
                     {
-                        if (Spell.Id == (int)SpellIdEnum.ABYSSAL_DOFUS)
+                        if (Spell.Id == (int)SpellIdEnum.DOFUS_ABYSSAL_6828)
                         {
                             var ignored = new[]
                                 {
@@ -132,7 +132,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
                 }
             }
             else if (Effect.EffectId == EffectsEnum.Effect_1017 ||
-                buff.Spell.Id == (int)SpellIdEnum.FRIKT)
+                buff.Spell.Id == (int)SpellIdEnum.FRIKT_13128)
             {
                 buff.Target.CastSpell(new SpellCastInformations(buff.Target, buff.Spell, triggerrer.Cell)
                 {
@@ -175,7 +175,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
             }
             else
             {
-                if (buff.Spell.Id == (int)SpellIdEnum.BEARBARKENTINE)
+                if (buff.Spell.Id == (int)SpellIdEnum.GLOURSOMPTUEUX_2514)
                 {
                     buff.Target.CastSpell(new SpellCastInformations(buff.Target, buff.Spell, buff.Caster.Cell)
                     {

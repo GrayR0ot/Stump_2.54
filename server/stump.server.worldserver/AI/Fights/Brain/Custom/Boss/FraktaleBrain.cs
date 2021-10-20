@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
             if (fighter != Fighter)
                 return;
 
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FRAGMENTATION, 1), Fighter.Map.GetCell(283));
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FRAGMENTATION_5112, 1), Fighter.Map.GetCell(283));
         }
     }
 
@@ -36,7 +36,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
             if (fighter != Fighter)
                 return;
 
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.ZEITGEIST_5104, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.HEURE_DU_TEMPS_5104, 1), Fighter.Cell);
         }
     }
 }

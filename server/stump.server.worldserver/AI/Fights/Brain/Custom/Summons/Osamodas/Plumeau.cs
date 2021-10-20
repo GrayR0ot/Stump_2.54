@@ -9,7 +9,7 @@ using Stump.Server.WorldServer.Game.Fights.Buffs;
 
 namespace Stump.Server.WorldServer.Game.Spells.Casts.Osamodas
 {
-    [SpellCastHandler(SpellIdEnum.DUSTER_33)]
+    [SpellCastHandler(SpellIdEnum._33)]
     public class Plumeau : DefaultSpellCastHandler
     {
         public Plumeau(SpellCastInformations cast)

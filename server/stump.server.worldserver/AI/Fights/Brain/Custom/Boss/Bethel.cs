@@ -19,7 +19,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
         private void Fight_FightStarted(IFight obj)
         {
             var cell1 = Fighter.Fight.Map.GetRandomAdjacentFreeCell(Fighter.Cell, true);
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.UNSPEAKABLE_CONTRACT_9542, 1), cell1);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.CONTRAT_INDICIBLE_9542, 1), cell1);
             Fighter.Stats[PlayerFields.SummonLimit].Additional = 9999;
         }
 
@@ -44,7 +44,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
                     if (summoned is SummonedMonster)
                         if (summoned.Monster.Template.Id == 5122)
                             if (summoned.IsAlive())
-                                Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SEAL_OF_INVULNERABILITY_9153, 1),
+                                Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SCEAU_DINVULNERABILITE_9153, 1),
                                     Fighter.Cell);
             }
         }

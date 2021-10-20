@@ -16,7 +16,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.DRHELL_FOR_GLORY_4497, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.PHORREUR_DE_GLOIRE_4497, 1), Fighter.Cell);
         }
 
         private void OnTurnStarted(IFight obj, FightActor actor)

@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
         private void OnFighterAdded(FightTeam team, FightActor fighter)
         {
             var spellHandler = SpellManager.Instance.GetSpellCastHandler((Fighter as SummonedMonster).Summoner,
-                new Spell((int) SpellIdEnum.ANIMAL_LINK_7064, 1), Fighter.Cell, false);
+                new Spell((int) SpellIdEnum._7064, 1), Fighter.Cell, false);
             spellHandler.Initialize();
 
             var handlers = spellHandler.GetEffectHandlers().ToArray();

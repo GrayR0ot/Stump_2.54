@@ -463,7 +463,7 @@
               <!--Editable as Running : True-->
               <Variable name="BaseMaxMembers" serialized="false">30</Variable>
               <!--Editable as Running : True-->
-              <Variable name="MaxGuildXP" serialized="false">500000</Variable>
+              <Variable name="MaxGuildXP" serialized="false">1000000000</Variable>
             </Guild>
           </Guilds>
           <Idols>

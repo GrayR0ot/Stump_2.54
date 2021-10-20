@@ -35,7 +35,7 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
 
             var spell = Spell;
 
-            if (spell.Id == (int)SpellIdEnum.LOAD_HEADICE)
+            if (spell.Id == (int)SpellIdEnum.DAIPIPAY_2699)
                 spell = glyphSpell;
 
             Glyph glyph;
@@ -66,20 +66,20 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Marks
         {
             switch (spell.Id)
             {
-                case (int)SpellIdEnum.BURNING_GLYPH_10:
+                case (int)SpellIdEnum.GLYPHE_ENFLAMME_12985:
                     return Color.FromArgb(202, 19, 48);
-                case (int)SpellIdEnum.PARALYSING_GLYPH_15:
-                    return Color.FromArgb(4, 117, 142);
-                case (int)SpellIdEnum.GLYPH_OF_BLINDNESS:
+                //case (int)SpellIdEnum.PARALYSING_GLYPH_15:
+                //    return Color.FromArgb(4, 117, 142);
+                case (int)SpellIdEnum.GLYPHE_DAVEUGLEMENT_12987:
                     return Color.FromArgb(166, 91, 42);
-                case (int)SpellIdEnum.GRAVITATIONAL_GLYPH_16:
+                case (int)SpellIdEnum.GLYPHE_GRAVITATIONNEL_12991:
                     return Color.FromArgb(238, 223, 105);
-                case (int)SpellIdEnum.GLYPH_OF_REPULSION:
+                case (int)SpellIdEnum.GLYPHE_DE_REPULSION_12988:
                     return Color.FromArgb(49, 45, 134);
-                case (int)SpellIdEnum.AGGRESSIVE_GLYPH_17:
+                case (int)SpellIdEnum.GLYPHE_AGRESSIF_12992:
                     return Color.FromArgb(53, 200, 120);
-                case (int)SpellIdEnum.LOAD_HEADICE:
-                case (int)SpellIdEnum.CAWWOT_367:
+                case (int)SpellIdEnum.DAIPIPAY_2699:
+                case (int)SpellIdEnum.CAWOTTE_367:
                     return Color.White;
                 default:
                     return Color.Red;

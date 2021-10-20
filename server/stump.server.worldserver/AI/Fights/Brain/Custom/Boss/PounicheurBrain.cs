@@ -17,7 +17,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
         private void OnGetAlive(FightActor fighter)
         {
             Fighter.Stats.Fields.FirstOrDefault(x => x.Key == PlayerFields.SummonLimit).Value.Base = 3;
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.LOUSPRING_6278, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.POUGENITURE_6278, 1), Fighter.Cell);
         }
     }
 }

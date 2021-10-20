@@ -21,7 +21,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.COHOBATION, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int)SpellIdEnum.COHOBATION_3545, 1), Fighter.Cell);
         }
     }
 }

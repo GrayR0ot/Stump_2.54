@@ -44,23 +44,23 @@ namespace Stump.Server.WorldServer.Game.Guilds
 
         public static readonly short[] TAX_COLLECTOR_SPELLS =
         {
-            (short) SpellIdEnum.ROCK,
-            (short) SpellIdEnum.WAVE,
-            (short) SpellIdEnum.CYCLONE,
-            (short) SpellIdEnum.FLAMES,
-            (short) SpellIdEnum.DESTABILISATION,
-            (short) SpellIdEnum.UNBEWITCHMENT,
-            (short) SpellIdEnum.WORD_OF_HEALING,
-            (short) SpellIdEnum.AQUEOUS_SHIELD,
-            (short) SpellIdEnum.EARTH_SHIELD,
-            (short) SpellIdEnum.WIND_SHIELD,
-            (short) SpellIdEnum.GLOWING_SHIELD,
-            (short) SpellIdEnum.MASS_COMPULSION
+            (short) SpellIdEnum.ROCHER_458,
+            (short) SpellIdEnum.VAGUE_457,
+            (short) SpellIdEnum.CYCLONE_456,
+            (short) SpellIdEnum.FLAMME_455,
+            (short) SpellIdEnum.DESTABILISATION_462,
+            (short) SpellIdEnum.DESENVOUTEMENT_460,
+            (short) SpellIdEnum.MOT_SOIGNANT_459,
+            (short) SpellIdEnum.ARMURE_AQUEUSE_451,
+            (short) SpellIdEnum.ARMURE_TERRESTRE_453,
+            (short) SpellIdEnum.ARMURE_VENTEUSE_454,
+            (short) SpellIdEnum.ARMURE_INCANDESCENTE_452,
+            (short) SpellIdEnum.COMPULSION_DE_MASSE_461
         };
 
         [Variable(true)] public static int BaseMaxMembers = 30;
 
-        [Variable(true)] public static int MaxGuildXP = 300000;
+        [Variable(true)] public static int MaxGuildXP = 1000000000;
 
         private readonly List<GuildMember> m_members = new List<GuildMember>();
         private readonly List<Paddock> m_paddocks = new List<Paddock>();

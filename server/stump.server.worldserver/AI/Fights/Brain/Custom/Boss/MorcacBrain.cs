@@ -15,7 +15,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
         private void OnGetAlive(FightActor fighter)
         {
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.LOUSSERK, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.MORZERK_6346, 1), Fighter.Cell);
         }
     }
 }

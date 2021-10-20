@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
         {
             Fighter.Stats[PlayerFields.SummonLimit].Additional = 9999;
             Fighter.Stats[PlayerFields.CriticalDamageReduction].Additional = 250;
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.POSSESSION, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.POSSESSION_9047, 1), Fighter.Cell);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Stump.Server.WorldServer.Handlers.Context.RolePlay
         [WorldHandler(StatsUpgradeRequestMessage.Id)]
         public static void HandleStatsUpgradeRequestMessage(WorldClient client, StatsUpgradeRequestMessage message)
         {
-            if (client.Character.IsInFight())
+            if (client.Character.IsInFight() && client.Character.Fight.State == FightState.Fighting)
             {
                 SendStatsUpgradeResultMessage(client, StatsUpgradeResultEnum.IN_FIGHT, (short) message.BoostPoint);
                 return;

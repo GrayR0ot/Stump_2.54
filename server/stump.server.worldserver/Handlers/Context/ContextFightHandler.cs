@@ -376,7 +376,7 @@ namespace Stump.Server.WorldServer.Handlers.Context
 
         public static void SendGameFightEndMessage(IPacketReceiver client, IFight fight)
         {
-            client.Send(new GameFightEndMessage((int) fight.GetFightDuration().TotalMilliseconds, fight.AgeBonus, 0,
+            client.Send(new GameFightEndMessage((int) fight.GetFightDuration().TotalMilliseconds, fight.Bonus, 0,
                 new FightResultListEntry[0], fight.GetPartiesNameWithOutcome().ToArray()));
         }
 
@@ -391,7 +391,7 @@ namespace Stump.Server.WorldServer.Handlers.Context
             }
             else
             {
-                client.Send(new GameFightEndMessage((int) fight.GetFightDuration().TotalMilliseconds, fight.AgeBonus, 0,
+                client.Send(new GameFightEndMessage((int) fight.GetFightDuration().TotalMilliseconds, fight.Bonus, 0,
                     results.ToArray(), fight.GetPartiesNameWithOutcome().ToArray()));
             }
         }

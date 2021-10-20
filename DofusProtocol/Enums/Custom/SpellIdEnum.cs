@@ -1,9562 +1,25341 @@
-namespace Stump.DofusProtocol.Enums {
+namespace Stump.DofusProtocol.Enums
+{
+    public enum SpellIdEnum
+    {
+        COUP_DE_POING_0 = 0,
 
-    public enum SpellIdEnum {
-        PUNCH_0 = 0,
-        TYPHOON_1 = 1,
-        BLINDNESS_2 = 2,
-        NATURAL_ATTACK_3 = 3,
-        BARRICADE_4 = 4,
-        TRUCE_5 = 5,
-        RAMPART_6 = 6,
-        FECA_SHIELD_7 = 7,
-        BACKLASH_8 = 8,
-        CLOUDY_ATTACK_9 = 9,
-        BURNING_GLYPH_10 = 10,
-        TELEGLYPH_11 = 11,
-        BLINDING_GLYPH_12 = 12,
-        REPULSION_GLYPH = 13,
-        SHIVER_14 = 14,
-        PARALYSING_GLYPH_15 = 15,
-        GRAVITATIONAL_GLYPH_16 = 16,
-        AGGRESSIVE_GLYPH_17 = 17,
-        LETHARGY_18 = 18,
-        BUBBLE_19 = 19,
-        BASTION_20 = 20,
-        DRAGONIC_21 = 21,
-        CANINE_22 = 22,
-        TAKEOFF_23 = 23,
-        DRAGON_S_BREATH_24 = 24,
-        SACRIFICIAL_FIRE_25 = 25,
-        ANIMAL_LINK_26 = 26,
-        HIGH_ENERGY_SHOT_27 = 27,
-        FOSSIL_28 = 28,
-        SYMBIOSA_29 = 29,
-        WHIP_30 = 30,
-        RED_WYRMLING_31 = 31,
-        NATURAL_DEFENCE_32 = 32,
-        DUSTER_33 = 33,
-        BLACK_TOFU_34 = 34,
-        GOBBALL_35 = 35,
-        CRACKLER_PUNCH_36 = 36,
-        CALL_TO_ORDER_37 = 37,
-        PODGY_TOFU_38 = 38,
-        BLACK_WYRMLING_39 = 39,
-        BLACK_GOBBALL_40 = 40,
-        LIVING_BAG_41 = 41,
-        FORTUNE_42 = 42,
-        SHOVEL_THROWING_43 = 43,
-        SHOVEL_KISS_44 = 44,
-        REDUCING_KEY_45 = 45,
-        UNSUMMONING_46 = 46,
-        PANDORA_S_BOX_47 = 47,
-        MOUND_48 = 48,
-        GHOSTLY_SHOVEL_49 = 49,
-        CLUMSINESS_50 = 50,
-        COINS_THROWING_51 = 51,
-        GREED_52 = 52,
-        PRIME_OF_LIFE_53 = 53,
-        MASS_CLUMSINESS_54 = 54,
-        ACCELERATION_55 = 55,
-        SHOVEL_OF_JUDGEMENT_56 = 56,
-        LIVING_SHOVEL_57 = 57,
-        SLAUGHTERING_SHOVEL_58 = 58,
-        BRIBERY_59 = 59,
-        LIVING_CHEST_60 = 60,
-        DEVIOUSNESS_61 = 61,
-        CHAKRA_CONCENTRATION_62 = 62,
-        TRICKY_BLOW_63 = 63,
-        FURROW_64 = 64,
-        TRICKY_TRAP_65 = 65,
-        INSIDIOUS_POISON_66 = 66,
-        FEAR_67 = 67,
-        MISTAKE_68 = 68,
-        PARALYSING_TRAP_69 = 69,
-        CON_70 = 70,
-        POISONED_TRAP_71 = 71,
-        INVISIBILITY_72 = 72,
-        REPELLING_TRAP_73 = 73,
+        _21 = 21,
+
+        _22 = 22,
+
+        _23 = 23,
+
+        _24 = 24,
+
+        _25 = 25,
+
+        _26 = 26,
+
+        _27 = 27,
+
+        _28 = 28,
+
+        _29 = 29,
+
+        _30 = 30,
+
+        _31 = 31,
+
+        _32 = 32,
+
+        _33 = 33,
+
+        _34 = 34,
+
+        _35 = 35,
+
+        _36 = 36,
+
+        _37 = 37,
+
+        _38 = 38,
+
+        _39 = 39,
+
+        _40 = 40,
+
+        SOURNOISERIE_61 = 61,
+
+        CONCENTRATION_DE_CHAKRA_62 = 62,
+
+        COUP_SOURNOIS_63 = 63,
+
+        FOURBERIE_64 = 64,
+
+        PIEGE_SOURNOIS_65 = 65,
+
+        POISON_INSIDIEUX_66 = 66,
+
+        PEUR_67 = 67,
+
+        FOURVOIEMENT_68 = 68,
+
+        PIEGE_DIMMOBILISATION_69 = 69,
+
+        ARNAQUE_70 = 70,
+
+        PIEGE_EMPOISONNE_71 = 71,
+
+        INVISIBILITE_72 = 72,
+
+        PIEGE_REPULSIF_73 = 73,
+
         DOUBLE_74 = 74,
-        MIRY_TRAP_75 = 75,
-        LETHAL_ATTACK_76 = 76,
-        INSIDIOUS_TRAP_77 = 77,
-        CRUELTY = 78,
-        MASS_TRAP_79 = 79,
-        LETHAL_TRAP_80 = 80,
-        SLOW_DOWN_81 = 81,
-        REWIND_82 = 82,
-        HAND_83 = 83,
-        FROSTBITE_84 = 84,
-        HAZINESS_85 = 85,
-        SYNCHRO_86 = 86,
-        LOSS_OF_MOTIVATION_87 = 87,
-        TELEPORTATION_88 = 88,
-        TEMPORAL_PARADOX_89 = 89,
-        FLIGHT_90 = 90,
-        XELOR_S_PUNCH_91 = 91,
-        DARK_RAY_92 = 92,
-        SHRIVELLING_93 = 93,
-        COUNTER_94 = 94,
-        CLOCK_95 = 95,
-        TEMPORAL_DUST_96 = 96,
-        XELOR_S_DIAL_97 = 97,
-        TIME_THEFT_98 = 98,
-        MUMMIFICATION_99 = 99,
-        XELOR_S_SANDGLASS_100 = 100,
-        ROULETTE_101 = 101,
-        HEADS_OR_TAILS_102 = 102,
-        ECAFLIP_S_LUCK_103 = 103,
-        CLOVER_104 = 104,
-        CATNIP_105 = 105,
-        WHEEL_OF_FORTUNE_106 = 106,
-        TOPKAJ_107 = 107,
-        FELINE_SPIRIT_108 = 108,
-        BLUFF_109 = 109,
-        PLAYFUL_CLAW_110 = 110,
-        REPERCUSSION_111 = 111,
-        CLAW_OF_CEANGAL_112 = 112,
-        PERCEPTION_113 = 113,
-        REKOP_114 = 114,
-        SMELL_115 = 115,
-        ROUGH_TONGUE_116 = 116,
-        SUMMONING_CLAW_117 = 117,
-        REFLEX_118 = 118,
-        ALL_OR_NOTHING_119 = 119,
-        FATE_OF_ECAFLIP_120 = 120,
-        THUNDEROUS_WORD_121 = 121,
-        WOUNDING_WORD_122 = 122,
-        TURBULENT_WORD_123 = 123,
-        ALTERNATIVE_WORD_124 = 124,
-        FORBIDDEN_WORD_125 = 125,
-        STIMULATING_WORD_126 = 126,
-        PREVENTING_WORD_127 = 127,
-        FRIGHTENING_WORD_128 = 128,
-        FRIENDSHIP_WORD_129 = 129,
-        SELECTIVE_WORD_130 = 130,
-        REGENERATING_WORD_131 = 131,
-        WHIRLING_WORD_132 = 132,
-        WORD_OF_YOUTH_133 = 133,
-        BLARING_WORD_134 = 134,
-        PUZZLING_WORD_135 = 135,
-        PARALYSING_WORD_136 = 136,
-        LIFTING_WORD_137 = 137,
-        WORD_OF_SILENCE = 138,
-        REVITALISING_WORD_139 = 139,
-        WORD_OF_RECOVERY_140 = 140,
-        PRESSURE_141 = 141,
-        JUMP_142 = 142,
-        INTIMIDATION_143 = 143,
-        DUEL_144 = 144,
-        DIVINE_SWORD_145 = 145,
-        SWORD_OF_FATE_146 = 146,
-        MASSACRE = 147,
-        FRICTION_148 = 148,
-        PRECIPITATION_149 = 149,
-        CUT_150 = 150,
-        BLOW_151 = 151,
-        SWORD_OF_JUDGEMENT_152 = 152,
-        POWER_153 = 153,
-        DESTRUCTIVE_SWORD_154 = 154,
-        VITALITY_155 = 155,
-        STRENGTHSTORM_156 = 156,
-        CELESTIAL_SWORD_157 = 157,
-        CONCENTRATION_158 = 158,
-        IOP_S_WRATH_159 = 159,
-        SWORD_OF_IOP_160 = 160,
-        MAGIC_ARROW_161 = 161,
-        CRITICAL_SHOOTING_162 = 162,
-        FROZEN_ARROW_163 = 163,
-        LASHING_ARROW_164 = 164,
-        BURNING_ARROW_165 = 165,
-        POWERFUL_SHOOTING_166 = 166,
-        ATONEMENT_ARROW_167 = 167,
-        BAT_S_EYE_168 = 168,
-        RETREAT_ARROW_169 = 169,
-        PARALYSING_ARROW_170 = 170,
-        PUNITIVE_ARROW_171 = 171,
-        DISTANT_SHOOTING_172 = 172,
-        PLAGUING_ARROW_173 = 173,
-        POISONED_ARROW_174 = 174,
-        DESTRUCTIVE_ARROW_175 = 175,
-        TORMENTING_ARROW_176 = 176,
-        SLOW_DOWN_ARROW_177 = 177,
-        ABSORPTIVE_ARROW_178 = 178,
-        EXPLOSIVE_ARROW_179 = 179,
-        BOW_SKILL_180 = 180,
-        EARTHQUAKE_181 = 181,
-        TRANSMUTED_MADOLL = 182,
-        BRAMBLE_183 = 183,
-        BUSH_FIRE_184 = 184,
-        WILD_GRASS_185 = 185,
-        TREE_186 = 186,
-        TRANSMUTED_ULTRA_POWERFUL = 187,
-        INSOLENT_BRAMBLE_188 = 188,
-        TRANSMUTED_SACRIFICED = 189,
-        TRANSMUTED_INFLATABLE = 190,
-        MANIFOLD_BRAMBLE_191 = 191,
-        SOOTHING_BRAMBLE_192 = 192,
-        TRANSMUTED_BLOCK = 193,
-        AGGRESSIVE_BRAMBLE_194 = 194,
-        TEAR_195 = 195,
-        POISONED_WIND_196 = 196,
-        SYLVAN_POWER_197 = 197,
-        DOLLY_SACRIFICE_198 = 198,
-        NATURAL_GIFT_199 = 199,
-        PARALYSING_POISON_200 = 200,
-        TOFU_KISS = 201,
-        GOBBALL_BITE_202 = 202,
-        MOCKERY_203 = 203,
-        SKEWERING_204 = 204,
-        SERIAL_LIGHTNINGS_205 = 205,
-        DEBILITATING_CRUSH = 206,
-        CHAFER_SLICE = 207,
-        TORNADO_208 = 208,
-        CATATACK = 209,
-        BUNNY_HEAL = 210,
-        CHOSSE = 211,
-        LARVAGE = 212,
-        WHACK = 213,
-        SUMMONING_OF_ARACHNEE_214 = 214,
-        BACKFIRE_215 = 215,
-        CARAPACE = 216,
-        PROTECTIVE_GEL = 217,
-        SUMMONING_OF_BLUE_JELLY = 218,
-        POISONING = 219,
-        LIGHT_TOUCH = 220,
-        PINCER = 221,
-        RUPTURE_222 = 222,
-        METEORITE = 223,
-        SUMMONING_OF_EVIL_TOFU = 224,
-        SUMMONING_OF_MINT_JELLY = 225,
-        SUMMONING_OF_STRAWBERRY_JELLY = 226,
-        MAGIC_PROTECTION = 227,
-        LETHAL_BLUNDER = 228,
-        FLUNKING = 229,
-        BLAZING_FIRE = 230,
-        SYLVAN_BITE = 231,
-        BULBIC_IRRITATION = 232,
-        PAINFUL_SACRIFICE = 233,
-        PICKAXE_BLOW = 234,
-        STONE_THROWING = 235,
-        THEFT_OF_LIFE = 236,
-        TEUBATAK = 237,
-        PERSECUTION = 238,
-        HATCHET_THROWING = 239,
-        PARALYSING_BRANCH = 240,
-        REGENERATION_241 = 241,
+
+        PIEGE_FANGEUX_75 = 75,
+
+        ATTAQUE_MORTELLE_76 = 76,
+
+        PIEGE_INSIDIEUX_77 = 77,
+
+        CRUAUTE_78 = 78,
+
+        PIEGE_DE_MASSE_79 = 79,
+
+        PIEGE_MORTEL_80 = 80,
+
+        _81 = 81,
+
+        _82 = 82,
+
+        _83 = 83,
+
+        _84 = 84,
+
+        _85 = 85,
+
+        _86 = 86,
+
+        _87 = 87,
+
+        _88 = 88,
+
+        _89 = 89,
+
+        _90 = 90,
+
+        _91 = 91,
+
+        _92 = 92,
+
+        _93 = 93,
+
+        _94 = 94,
+
+        _95 = 95,
+
+        _96 = 96,
+
+        _97 = 97,
+
+        _98 = 98,
+
+        _99 = 99,
+
+        _100 = 100,
+
+        _141 = 141,
+
+        _142 = 142,
+
+        _143 = 143,
+
+        _144 = 144,
+
+        _145 = 145,
+
+        _146 = 146,
+
+        _147 = 147,
+
+        _148 = 148,
+
+        _149 = 149,
+
+        _150 = 150,
+
+        _151 = 151,
+
+        _152 = 152,
+
+        _153 = 153,
+
+        _154 = 154,
+
+        _155 = 155,
+
+        _156 = 156,
+
+        _157 = 157,
+
+        _158 = 158,
+
+        _159 = 159,
+
+        _160 = 160,
+
+        BECO_DU_TOFU_201 = 201,
+
+        MORSURE_DU_BOUFTOU_202 = 202,
+
+        MOQUERIE_203 = 203,
+
+        EMBROCHEMENT_204 = 204,
+
+        ECLAIR_EN_SERIE_205 = 205,
+
+        ECRASEMENT_HANDICAPANT_206 = 206,
+
+        PETIT_COUP_DU_CHAFER_207 = 207,
+
+        TORNADE_208 = 208,
+
+        CHOSSE_211 = 211,
+
+        LARVEMENT_212 = 212,
+
+        FRAPPE_213 = 213,
+
+        INVOCATION_DARAKNE_214 = 214,
+
+        RETOUR_DE_FLAMME_215 = 215,
+
+        CARAPACE_216 = 216,
+
+        GEL_PROTECTEUR_217 = 217,
+
+        INVOCATION_DE_GELEE_BLEUE_218 = 218,
+
+        EMPOISONNEMENT_219 = 219,
+
+        EFFLEUREMENT_220 = 220,
+
+        PINCE_221 = 221,
+
+        EVENTRATION_222 = 222,
+
+        METEORITE_223 = 223,
+
+        INVOCATION_DE_TOFU_MALEFIQUE_224 = 224,
+
+        INVOCATION_DE_GELEE_MENTHE_225 = 225,
+
+        INVOCATION_DE_GELEE_FRAISE_226 = 226,
+
+        PROTECTION_MAGIQUE_227 = 227,
+
+        ETOURDERIE_MORTELLE_228 = 228,
+
+        CROUTAGE_229 = 229,
+
+        FEU_ARDENT_230 = 230,
+
+        MORSURE_SYLVESTRE_231 = 231,
+
+        AGACEMENT_BULBIQUE_232 = 232,
+
+        SACRIFICE_DOULOUREUX_233 = 233,
+
+        COUP_DE_PIOCHE_234 = 234,
+
+        JET_DE_PIERRE_235 = 235,
+
+        VOL_DE_VIE_236 = 236,
+
+        TEUBATAK_237 = 237,
+
+        PERSECUTION_238 = 238,
+
+        LANCER_DE_HACHETTE_239 = 239,
+
+        BRANCHE_PARALYSANTE_240 = 240,
+
+        RECONSTITUTION_241 = 241,
+
         RAGE_242 = 242,
+
         DISRUPTION_243 = 243,
-        IMMOBILISATION = 244,
-        TOFU_THROWING_245 = 245,
-        MAGIC_SEEDS = 246,
-        BITE_247 = 247,
-        STRENGTH_OF_THE_PUTRID_SOULS = 248,
-        DRIBBLE = 249,
-        SPIT_250 = 250,
-        ABOLITION = 251,
-        GOBBALL_HEALING = 252,
-        GOBBALL_RAGE = 253,
-        BOOWOLF_CRY = 254,
-        HYPNOSIS = 255,
-        BREAD_THROWING = 256,
-        VISUAL_CONFUSION = 257,
-        PUKING_PUNCH = 258,
-        NIBBLING = 259,
-        SUMMONING_OF_ARACHNID = 260,
-        NATURAL_MOTIVATION = 261,
-        DRAGERNEL_CALL = 262,
-        DREGGON_BREATH = 263,
-        SHELLMENT_264 = 264,
-        SHELL_SHOCK = 265,
-        SUMMONING_OF_SWINDLING = 266,
-        STRAWBERRY_BONE = 267,
-        CHAFER_SLASH_268 = 268,
-        DRAGOTURKEY_HEALING = 269,
-        HEADBUTT_270 = 270,
-        COIN_THEFT = 271,
-        JAVELIN = 272,
-        TURKIFIRE = 273,
-        TREMBLING = 275,
-        THINNING_IN = 276,
-        EDCHOT = 277,
-        KANNIBALL_ARROW = 278,
-        EXPLOSIVE_KANNIBALL_ARROW = 279,
-        KANNIBALL_SLING = 280,
-        JAVELOT = 281,
-        POISONED_DART = 282,
-        DART = 283,
-        DOLLISH_ACCELERATION = 284,
-        KIKOL = 285,
-        PASTING = 286,
-        LIMING_287 = 287,
-        MURKY_ATTRACTION = 288,
-        SLOBBER_JUICE = 290,
-        LANCE = 291,
-        REVITALISING_PUNCH = 292,
-        MOON_HAMMER_293 = 293,
-        INCANDESCENT_WEAKENING = 294,
-        AQUATIC_WEAKENING = 295,
-        WINDY_WEAKENING = 296,
-        TERRESTRIAL_WEAKENING = 297,
-        FIRE_TOTEM_298 = 298,
-        WATER_TOTEM_299 = 299,
-        AIR_TOTEM_300 = 300,
-        EARTH_TOTEM_301 = 301,
-        DARK_POWER_302 = 302,
-        BOMBOMB = 303,
-        STEALTH_BOMB = 304,
-        RAGE_305 = 305,
-        SUMMONING_OF_MILIMOOWOLF = 306,
-        TROOLISH_CONDEMNATION = 307,
-        TROOLISH_ABSORPTION = 308,
+
+        IMMOBILISATION_244 = 244,
+
+        LANCER_DE_TOFU_245 = 245,
+
+        GRAINES_MAGIQUES_246 = 246,
+
+        MORSURE_247 = 247,
+
+        FORCE_DES_AMES_PUTRIDES_248 = 248,
+
+        BAVOUILLE_249 = 249,
+
+        CRACHOUILLE_250 = 250,
+
+        ABOLISSEMENT_251 = 251,
+
+        GUERISON_BOUFTOU_252 = 252,
+
+        FUREUR_DU_BOUFTOU_253 = 253,
+
+        CRI_DU_MULOU_254 = 254,
+
+        HYPNOSE_255 = 255,
+
+        LANCER_DE_PAIN_256 = 256,
+
+        CONFUSION_VISUELLE_257 = 257,
+
+        FRAPPE_GERBANTE_258 = 258,
+
+        MORDILLEMENT_259 = 259,
+
+        INVOCATION_DARAKNELLE_260 = 260,
+
+        MOTIVATION_NATURELLE_261 = 261,
+
+        APPEL_DRAGERNEL_262 = 262,
+
+        SOUFFLE_DU_DRAGOEUF_263 = 263,
+
+        COQUILLEMENT_264 = 264,
+
+        COQUE_CHOC_265 = 265,
+
+        INVOCATION_DE_FOURBE_266 = 266,
+
+        FRAISE_OS_267 = 267,
+
+        COUP_DU_CHAFER_268 = 268,
+
+        GUERISON_DRAGODINDE_269 = 269,
+
+        COUP_DE_TETE_270 = 270,
+
+        VOL_DE_PIECES_271 = 271,
+
+        JAVELINE_272 = 272,
+
+        DINDOFEU_273 = 273,
+
+        FREMISSEMENT_275 = 275,
+
+        ENFEUILLAGE_276 = 276,
+
+        AIDCHOTTE_277 = 277,
+
+        FLECHE_KANNIBOUL_278 = 278,
+
+        FLECHE_KANNIBOUL_EXPLOSIVE_279 = 279,
+
+        FRONDE_KANNIBOUL_280 = 280,
+
+        JAVELOT_281 = 281,
+
+        FLECHETTE_EMPOISONNEE_282 = 282,
+
+        FLECHETTE_283 = 283,
+
+        ACCELERATION_POUPESQUE_284 = 284,
+
+        KIKOL_285 = 285,
+
+        ENCOLLEMENT_286 = 286,
+
+        ENGLUEMENT_287 = 287,
+
+        CRASSE_PIRATION_288 = 288,
+
+        JUS_BAVEUX_290 = 290,
+
+        LANCE_291 = 291,
+
+        FRAPPE_VITALISANTE_292 = 292,
+
+        MARTEAU_DE_MOON_293 = 293,
+
+        AFFAIBLISSEMENT_INCANDESCENT_294 = 294,
+
+        AFFAIBLISSEMENT_AQUATIQUE_295 = 295,
+
+        AFFAIBLISSEMENT_VENTEUX_296 = 296,
+
+        AFFAIBLISSEMENT_TERRESTRE_297 = 297,
+
+        TOTEM_DU_FEU_298 = 298,
+
+        TOTEM_DE_LEAU_299 = 299,
+
+        TOTEM_DE_LAIR_300 = 300,
+
+        TOTEM_DE_LA_TERRE_301 = 301,
+
+        PUISSANCE_OBSCURE_302 = 302,
+
+        BOMBOMBE_303 = 303,
+
+        BOULET_FURTIF_304 = 304,
+
+        FUREUR_305 = 305,
+
+        INVOCATION_DE_MILIMEULOU_306 = 306,
+
+        VINDICATION_TROOLLESQUE_307 = 307,
+
+        ABSORPTION_TROOLLESQUE_308 = 308,
+
         CAMOUFLAGE_309 = 309,
-        LUCK = 310,
-        SCARASUM = 311,
-        FINDING_ARROW = 312,
-        SLING = 313,
-        DADA_S_CALL = 314,
-        TREACHEROUS_STING = 315,
-        BWAKOOKIN_317 = 317,
-        CALL_OF_THE_FOREST_318 = 318,
-        ONISIDE = 319,
-        INCURABLE = 320,
-        GELPIKES = 321,
-        MINT_BONE = 322,
-        PUKE = 323,
-        SMALL_WABEHAMEHA = 324,
-        BITE_325 = 325,
-        WABEHAMEHA = 326,
-        WIND_OF_PANIC = 327,
-        SUMMONING_OF_TIWABBIT = 328,
-        SUMMONING_OF_BLACK_TIWABBIT = 329,
-        BELLY_S_GONNA_GET_YA = 330,
-        SUMMONING_OF_TIWABBIT_WOSUNGWEE = 331,
-        EXPLOSIVE_KAWWOT_332 = 332,
-        CAWWOT_WITH_ADDED_VITAMINS = 333,
-        PAWALYSING_CAWWOT = 334,
-        WOTAWY_WALLOP = 335,
-        SPEAW = 336,
-        WAWABEHAMEHA = 337,
-        MINDLESS_STATE = 338,
-        BANE_339 = 339,
-        DOGGEDNESS = 340,
-        WAVE_OF_EARTH = 341,
-        SUMMONING_OF_KOKONUT = 342,
-        SCARASTRENGTH = 343,
-        ELEMENTAL_SPEAR = 344,
-        ELEMENTAL_DISPERSION = 345,
-        KWAKOUKAS = 346,
-        WAKPOT = 347,
-        BOMBALL = 348,
-        SPIRIT_ELEMENT = 349,
-        LEEK_PIE = 350,
-        BURNING_SPELL = 351,
-        SNIFFER_ARROW = 352,
-        PAINFUL_ARROW = 353,
-        PORKY_EXHALATION = 354,
-        PERFIDIOUS_BOOMERANG = 364,
-        MOON_HAMMER_366 = 366,
-        CAWWOT_367 = 367,
-        RELEASE_368 = 368,
-        LIGHTNING_STRIKE = 369,
-        SUMMONING_OF_ARACHNEE_370 = 370,
-        SUMMONING_OF_CHAFERFU = 373,
-        OUTPOURING = 410,
-        SLAUGHTER_411 = 411,
-        FELINTION = 412,
-        SOUL_CAPTURE = 413,
-        MOUNT_TAMING = 414,
+
+        SCARINVOC_311 = 311,
+
+        FLECHE_TROUVEUSE_312 = 312,
+
+        FRONDE_313 = 313,
+
+        APPEL_DE_PAPA_314 = 314,
+
+        AIGUILLON_PERFIDE_315 = 315,
+
+        BWAKIKUI_317 = 317,
+
+        APPEL_SYLVESTRE_318 = 318,
+
+        ONISIDE_319 = 319,
+
+        INCURABLE_320 = 320,
+
+        GELPIKES_321 = 321,
+
+        MENTHE_OS_322 = 322,
+
+        GERBE_323 = 323,
+
+        PETIT_WABEHAMEHA_324 = 324,
+
+        PIQURE_325 = 325,
+
+        WABEHAMEHA_326 = 326,
+
+        VENT_DE_PANIQUE_327 = 327,
+
+        INVOCATION_DE_TIWABBIT_328 = 328,
+
+        INVOCATION_DE_BLACK_TIWABBIT_329 = 329,
+
+        VENTROBOOM_330 = 330,
+
+        INVOCATION_DE_TIWABBIT_KIAFIN_331 = 331,
+
+        CAWOTTE_EXPLOSIVE_332 = 332,
+
+        CAWOTTE_VITAMINEE_333 = 333,
+
+        CAWOTTE_PARALYSANTE_334 = 334,
+
+        MASSUE_WOTATIVE_335 = 335,
+
+        WAVELOT_336 = 336,
+
+        WAWABEHAMEHA_337 = 337,
+
+        ABRUTISSEMENT_338 = 338,
+
+        MALEDICTION_339 = 339,
+
+        ENTETEMENT_340 = 340,
+
+        RAFALE_DE_TERRE_341 = 341,
+
+        INVOCATION_DU_NODKOKO_342 = 342,
+
+        SCARAFORCE_343 = 343,
+
+        ELEMENTAL_SPEAR_344 = 344,
+
+        ELEMENTAL_DISPERSION_345 = 345,
+
+        KWAKOUKAS_346 = 346,
+
+        WAKPOT_347 = 347,
+
+        BOMBALL_348 = 348,
+
+        SPIRIT_ELEMENT_349 = 349,
+
+        FLAMICHE_350 = 350,
+
+        FLECHE_RENIFLEUSE_352 = 352,
+
+        FLECHE_DOULOUREUSE_353 = 353,
+
+        EXHALATION_PORCINE_354 = 354,
+
+        BOOMERANG_PERFIDE_364 = 364,
+
+        _365 = 365,
+
+        MARTEAU_DE_MOON_366 = 366,
+
+        CAWOTTE_367 = 367,
+
+        LIBERATION_368 = 368,
+
+        FOUDROIEMENT_369 = 369,
+
+        INVOCATION_DARAKNE_370 = 370,
+
+        INVOCATION_DE_CHAFERFU_373 = 373,
+
+        _375 = 375,
+
+        _376 = 376,
+
+        _377 = 377,
+
+        _378 = 378,
+
+        _379 = 379,
+
+        _380 = 380,
+
+        _381 = 381,
+
+        _382 = 382,
+
+        _383 = 383,
+
+        _384 = 384,
+
+        _385 = 385,
+
+        _386 = 386,
+
+        _387 = 387,
+
+        _388 = 388,
+
+        _389 = 389,
+
+        _390 = 390,
+
+        _391 = 391,
+
+        _392 = 392,
+
+        _393 = 393,
+
+        _394 = 394,
+
+        _395 = 395,
+
+        _396 = 396,
+
+        _397 = 397,
+
+        _398 = 398,
+
+        _399 = 399,
+
+        _400 = 400,
+
+        _401 = 401,
+
+        _402 = 402,
+
+        _403 = 403,
+
+        _404 = 404,
+
+        _405 = 405,
+
+        _406 = 406,
+
+        _407 = 407,
+
+        _408 = 408,
+
+        _409 = 409,
+
+        _410 = 410,
+
+        TUERIE_411 = 411,
+
+        CAPTURE_DAMES_413 = 413,
+
+        APPRIVOISEMENT_DE_MONTURE_414 = 414,
+
         DOOM_415 = 415,
-        JINX = 416,
-        DISPERSING_ARROW = 418,
-        SPIRITUAL_LEASH_420 = 420,
-        REINFORCED_PROTECTION = 422,
-        DRUNKENNESS = 423,
-        RHOL_BAK = 424,
-        PULL_OUT = 425,
-        THE_TREE_OF_LIFE = 426,
-        BRUTAL_WORD = 427,
-        BOOMBOT = 430,
-        AQUEOUS_SHIELD = 451,
-        GLOWING_SHIELD = 452,
-        EARTH_SHIELD = 453,
-        WIND_SHIELD = 454,
-        FLAME = 455,
-        CYCLONE = 456,
-        WAVE = 457,
-        ROCK = 458,
-        WORD_OF_HEALING = 459,
-        UNBEWITCHMENT = 460,
-        MASS_COMPULSION = 461,
-        DESTABILISATION = 462,
-        SUMMONING_OF_TRUNKNID = 463,
-        SUMMONING_OF_MAJOR_ARACHNEE = 466,
-        SUMMONING_OF_BRANCHES = 467,
-        OIL_ARROW = 468,
-        FIRE_ARROW_469 = 469,
-        SEISMIC_PUNCH = 470,
-        BIBLOPITION = 471,
-        BIBLOP_MASK = 472,
-        BIBLOBISH = 473,
-        BIBLOPEPPER = 474,
-        BLOPITION = 475,
-        BLYPH = 476,
-        DRAGOFIRE_477 = 477,
-        CRY_CRY_OLOVE = 478,
-        TERRIFYING_CRY = 479,
-        REVITALISING_SEED = 480,
-        RELEASE_481 = 481,
-        TREECNASSION = 482,
-        SOFT_OAK_BRANCH = 483,
-        BRANCH_TORNADO = 484,
-        TREEBRANCH = 485,
-        CUTTING_486 = 486,
-        CATAPLASM = 487,
-        RESTORING = 488,
-        WRECKING = 489,
-        ROBO_INITIALIZATION = 491,
-        ROBO_BUMP = 492,
-        MEGA_SUPRA_GIGA_HULA_HOOP = 493,
-        ROBO_HULA_HOOP = 494,
-        PROSPECTING = 495,
-        HEAD_PRUNING = 496,
-        CUDDLE = 497,
-        KNEADING = 498,
-        MAMA_S_CALL = 499,
-        NECK_PRUNING = 500,
-        SUMMONING_OF_KOLERAT = 501,
-        EMMENTAL = 502,
-        ANCESTRAL_ROBLOCHON = 503,
-        PRIMAL_INSTINCT = 504,
-        PRIMARY_RAGE = 505,
-        STYMATION = 506,
-        STICKOTICE = 507,
-        SHINLARVOC_II = 508,
-        SHINLARVOC_III = 509,
-        SWALLARVATION = 510,
-        GRANITE_SKIN = 511,
-        DAZING_STONE = 512,
-        FLINT_SKIN = 513,
-        STIMULANT_STONE = 514,
-        LITTLE_PICKAXE_BLOW = 517,
-        SQUIRROL = 518,
-        NATURAL_ATTACK_519 = 519,
-        CRIMSON_RUSE = 520,
-        KITSOUNE_TRICK = 521,
-        HAMMERING_522 = 522,
-        SMOKING_ELEMENTAL_SOLICITUDE = 523,
-        ELEMENTAL_COMMUNION = 524,
-        NAE_SPECTRAL_ILLUSION = 525,
-        BEAT = 526,
-        QUARTERING = 527,
-        SUCTION = 528,
-        KITSNITION = 529,
-        WANSHAK = 530,
-        WUXIA_PANDA = 531,
-        BOKKEN = 532,
-        SHINAI = 533,
-        SUCKING = 534,
-        BULVOCATION = 535,
-        BANZAI = 536,
-        MIGI = 537,
-        HIDARI = 538,
-        SALVE_REGINA = 539,
-        WARNING_540 = 540,
-        TRAP_541 = 541,
-        METALOVEPHOSIS = 542,
-        BULTOMB = 543,
-        MEDITATION_544 = 544,
-        BULBATION = 545,
-        NAKWA_SPECTRAL_ILLUSION = 546,
-        NERE_SPECTRAL_ILLUSION = 547,
-        NUFEU_SPECTRAL_ILLUSION = 548,
-        OFULGUR_HORNS = 549,
-        REINFORCEIMENTEX = 550,
-        MOTIVATION = 551,
-        DICARNIO = 552,
-        LEOHIT = 553,
-        BAD_BREATH = 554,
-        KAMAE = 555,
-        DRINKERY = 556,
-        TANUSHI = 557,
-        PHEROMONE = 558,
-        TANUKICK = 559,
-        PASSIONATE_KISS = 560,
-        SLOBBERY_KISS = 561,
-        MUDDY_KISS = 562,
-        ETHEREAL_KISS = 563,
-        RICKSHAW_564 = 564,
-        NEUTRAL_KISS = 565,
-        BOARDING = 566,
-        SUMMONING_OF_BWAK = 567,
-        SUMMONING_OF_BAMBOOTO = 568,
-        SUMMONING_OF_PANDAMANI = 569,
-        RISKY_OPENING = 570,
-        SUMMONING_OF_PANDORA_S_BOKSE = 571,
-        MAD_CALL = 572,
-        HEAVINESS = 573,
-        GHOST_RISKY_OPENING = 574,
-        GHOST_PHEROMONE = 575,
-        SUMMONING_OF_PANDORA_GHOST_S_BOKSE = 576,
-        MUSICAL_BAMBOO = 577,
-        DICARNIOTO = 578,
-        GHOST_METALOVEPHOSIS = 579,
-        PEKI_PEKI_CAMOUFLAGE = 580,
-        BUNNY_BOOST = 582,
-        SUMMONING_OF_SPIMUSH = 583,
-        SYLVAN_MOTIVATION = 584,
-        PARALYSING_SAP = 585,
-        PARALYSING_ROOT = 586,
-        DOLLISH_CARE_587 = 587,
-        UNLUCKY_BAMBOO = 588,
-        WEAKNESS = 589,
-        PENDULUM_590 = 590,
-        PORKY_SUCKING = 591,
-        BLOODY_SLOBBER = 592,
-        HANDCUFFING = 593,
-        BLOODTHIRSTY_CHARGE = 594,
-        SUMMONING_OF_FARLE_S_PIG = 595,
-        PIGGY_BLOODSUCKING = 596,
-        CORKSCREW = 597,
+
+        POISSE_416 = 416,
+
+        _420 = 420,
+
+        _424 = 424,
+
+        _429 = 429,
+
+        _430 = 430,
+
+        _431 = 431,
+
+        _432 = 432,
+
+        _433 = 433,
+
+        _434 = 434,
+
+        _435 = 435,
+
+        _436 = 436,
+
+        _437 = 437,
+
+        _438 = 438,
+
+        _439 = 439,
+
+        _440 = 440,
+
+        _441 = 441,
+
+        _442 = 442,
+
+        _443 = 443,
+
+        _444 = 444,
+
+        _445 = 445,
+
+        _446 = 446,
+
+        _447 = 447,
+
+        _448 = 448,
+
+        _449 = 449,
+
+        _450 = 450,
+
+        ARMURE_AQUEUSE_451 = 451,
+
+        ARMURE_INCANDESCENTE_452 = 452,
+
+        ARMURE_TERRESTRE_453 = 453,
+
+        ARMURE_VENTEUSE_454 = 454,
+
+        FLAMME_455 = 455,
+
+        CYCLONE_456 = 456,
+
+        VAGUE_457 = 457,
+
+        ROCHER_458 = 458,
+
+        MOT_SOIGNANT_459 = 459,
+
+        DESENVOUTEMENT_460 = 460,
+
+        COMPULSION_DE_MASSE_461 = 461,
+
+        DESTABILISATION_462 = 462,
+
+        INVOCATION_DE_TRONKNYDE_463 = 463,
+
+        INVOCATION_DARAKNE_MAJEURE_466 = 466,
+
+        INVOCATION_DE_BRANCHES_467 = 467,
+
+        FLECHE_DHUILE_468 = 468,
+
+        FLECHE_DE_FEU_469 = 469,
+
+        FRAPPE_SISMIQUE_470 = 470,
+
+        BIBLOPITION_471 = 471,
+
+        CACHE_BIBLOP_472 = 472,
+
+        BIBLOPERIE_473 = 473,
+
+        BIBLOPIMENT_474 = 474,
+
+        BLOPITION_475 = 475,
+
+        BLYPHE_476 = 476,
+
+        DRAGOFEU_477 = 477,
+
+        CRI_CRI_DAMOUR_478 = 478,
+
+        CRI_TERRIFIANT_479 = 479,
+
+        GRAINE_VITALISANTE_480 = 480,
+
+        LIBERATION_481 = 481,
+
+        ABRAKNASSION_482 = 482,
+
+        EMBRANCHEMENT_DU_CHENE_MOU_483 = 483,
+
+        TORNADE_DE_BRANCHES_484 = 484,
+
+        ABRABRANCHE_485 = 485,
+
+        _486 = 486,
+
+        REPARATION_488 = 488,
+
+        RATIBOISEMENT_489 = 489,
+
+        ROBO_INITIALISATION_491 = 491,
+
+        ROBO_BUMP_492 = 492,
+
+        MEGA_SUPRA_GIGA_HOULA_HOOP_493 = 493,
+
+        ROBO_HOULA_HOOP_494 = 494,
+
+        ELAGAGE_DE_TETE_496 = 496,
+
+        CALIN_497 = 497,
+
+        MALAXAGE_498 = 498,
+
+        APPEL_DE_LA_MAMA_499 = 499,
+
+        ELAGAGE_DE_COU_500 = 500,
+
+        INVOCATION_DE_KOLERAT_501 = 501,
+
+        EMMENTAL_502 = 502,
+
+        ROBLOCHON_ANCESTRAL_503 = 503,
+
+        INSTINCT_PRIMAIRE_504 = 504,
+
+        RAGE_PRIMAIRE_505 = 505,
+
+        ENLISEMENT_506 = 506,
+
+        CONVOCATION_GLUANTE_507 = 507,
+
+        SHINLARVOC_II_508 = 508,
+
+        SHINLARVOC_III_509 = 509,
+
+        DEGLUTITION_510 = 510,
+
+        PEAU_DE_GRANITE_511 = 511,
+
+        PIERRE_ETOURDISSANTE_512 = 512,
+
+        PEAU_DE_SILEX_513 = 513,
+
+        PIERRE_DE_STIMULATION_514 = 514,
+
+        PETIT_COUP_DE_PIOCHE_517 = 517,
+
+        ECUROUILLE_518 = 518,
+
+        ATTAQUE_NATURELLE_519 = 519,
+
+        RUSE_POURPRE_520 = 520,
+
+        RUSE_DU_KITSOUNE_521 = 521,
+
+        MARTELEMENT_522 = 522,
+
+        SOLLICITUDE_ELEMENTAIRE_FUMEUSE_523 = 523,
+
+        COMMUNION_ELEMENTAIRE_524 = 524,
+
+        ILLUSION_SPECTRALE_NAE_525 = 525,
+
+        PULSATION_526 = 526,
+
+        EQUARRISSAGE_527 = 527,
+
+        SUCCION_528 = 528,
+
+        KITSNITION_529 = 529,
+
+        WANSHAK_530 = 530,
+
+        WUXIA_PANDA_531 = 531,
+
+        BOKKEN_532 = 532,
+
+        SHINAI_533 = 533,
+
+        SUÇOTEMENT_534 = 534,
+
+        BULVOCATION_535 = 535,
+
+        BANZAI_536 = 536,
+
+        MIGI_537 = 537,
+
+        HIDARI_538 = 538,
+
+        SALVE_REGINA_539 = 539,
+
+        SOMMATION_540 = 540,
+
+        GUEPIER_541 = 541,
+
+        METAMOURPHOSE_542 = 542,
+
+        BULTOMBE_543 = 543,
+
+        BULBATION_545 = 545,
+
+        ILLUSION_SPECTRALE_NAKWA_546 = 546,
+
+        ILLUSION_SPECTRALE_NERE_547 = 547,
+
+        ILLUSION_SPECTRALE_NUFEU_548 = 548,
+
+        CORNES_DOFULGUR_549 = 549,
+
+        RENFORCEUMEULEUX_550 = 550,
+
+        MOTIVATION_551 = 551,
+
+        DICARNIO_552 = 552,
+
+        LEOFRAPPE_553 = 553,
+
+        HALEINE_DE_FAUVE_554 = 554,
+
+        KAMAE_555 = 555,
+
+        BUVERIE_556 = 556,
+
+        TANUSHI_557 = 557,
+
+        PHEROMONE_558 = 558,
+
+        TANUKICK_559 = 559,
+
+        BISE_ENFLAMMEE_560 = 560,
+
+        BISE_BAVEUSE_561 = 561,
+
+        BISE_TERREUSE_562 = 562,
+
+        BISE_AERIENNE_563 = 563,
+
+        POUSSE_POUSSE_564 = 564,
+
+        BISE_NEUTRE_565 = 565,
+
+        ABORDAGE_566 = 566,
+
+        INVOCATION_DE_BWAK_567 = 567,
+
+        INVOCATION_BAMBOUTO_568 = 568,
+
+        INVOCATION_DE_PANDAMANI_569 = 569,
+
+        OUVERTURE_HASARDEUSE_570 = 570,
+
+        INVOCATION_DE_BOUATE_DE_PANDORE_571 = 571,
+
+        MOT_ROVACH_572 = 572,
+
+        LOURDEUR_573 = 573,
+
+        OUVERTURE_HASARDEUSE_FANTME_574 = 574,
+
+        PHEROMONE_FANTME_575 = 575,
+
+        INVOCATION_DE_BOUATE_DE_FANTME_PANDORE_576 = 576,
+
+        BAMBOU_MUSICAL_577 = 577,
+
+        DICARNIOTO_578 = 578,
+
+        METAMOURPHOSE_FANTME_579 = 579,
+
+        CAMOUFLAGE_DU_PEKI_PEKI_580 = 580,
+
+        LAPINO_LES_COEURS_582 = 582,
+
+        INVOCATION_DE_CHAMPA_583 = 583,
+
+        MOTIVATION_SYLVESTRE_584 = 584,
+
+        SEVE_PARALYSANTE_585 = 585,
+
+        RACINE_PARALYSANTE_586 = 586,
+
+        SOIN_POUPESQUE_587 = 587,
+
+        FAIBLESSE_589 = 589,
+
+        PENDULE_590 = 590,
+
+        SUÇOTEMENT_PORCIN_591 = 591,
+
+        BAVE_SANGUINOLENTE_592 = 592,
+
+        MENOTAGE_593 = 593,
+
+        CHARGE_SANGUINAIRE_594 = 594,
+
+        INVOCATION_DE_COCHON_DE_FARLE_595 = 595,
+
+        VAMPIRISATION_COCHONNE_596 = 596,
+
+        TIRE_BOUFFON_597 = 597,
+
         PERFUSION_598 = 598,
-        UNLUCKY_BAMBOO_THROW = 599,
-        FEAST = 600,
-        SUMMONING_OF_MOUNTAIN = 601,
-        TOPAZ_SKIN = 602,
-        HEART_OF_A_CRACKLER = 603,
-        SUMMONING_OF_CAVE_GOBBALL = 604,
-        PEACE_PIPE = 605,
-        KOOLICH_CALL = 606,
-        KOOLICH_BREATH = 607,
-        GOBKOOL_KISS = 608,
-        FRIENDLY_TRANSPOSITION = 609,
-        DESTRUCTIVE_TRANSPOSITION = 610,
-        SADIDESQUE_SACRIFICE = 611,
-        DOLLISH_TRANSPOSITION = 612,
-        DOLLY_HUG = 613,
-        SMASH = 614,
-        MUSHD_STAIN = 615,
-        WINTER_BREATH = 616,
-        SMALL_PACKET = 617,
-        GIFT_THROWING = 618,
-        GARGOYLE_BREATH = 619,
-        GARGOYATION = 620,
-        PLISSKEN = 621,
-        KIKULE_DALERBE = 622,
-        SEARING_RAY = 623,
-        DESTABILISING_NOISE = 624,
-        TEARING = 625,
-        NIBBLE_626 = 626,
-        DARK_SANCTION = 627,
-        WINGED_LINK = 628,
-        SUMMONING_OF_CROBAK = 629,
-        CARAPACE_OF_WINGS = 630,
-        HITINIURLARS = 631,
-        CHARGE = 632,
-        KANIGER_S_LUCK = 633,
-        MAJESTIC_JUMP = 634,
-        DETERIORATION = 635,
-        SCURVION_POISON = 636,
-        TAIL_BUTT = 637,
-        INTESTINAL_TEARING = 638,
-        TESTICULAR_REMOVAL = 639,
-        DAMNED_CHAIN = 640,
-        WILD_BARK = 641,
-        ROYAL_CRUSHING = 642,
-        SPORIFICATION = 643,
-        SUMMONING_OF_MUSH_MUSH = 644,
-        MUSHEAL = 645,
-        IMPALEMENT_646 = 646,
-        UNHEALTHY_EUPHORIA_647 = 647,
-        PIROUETTE = 648,
-        LAMINATION = 649,
-        DISSIMULATION = 650,
-        FRENZY_651 = 651,
-        HEALING_SHELL = 652,
-        LARVETURE = 653,
-        PEEPERS = 654,
-        LARVING = 655,
-        KILLING_ARROW = 656,
-        LONG_RANGE_ARROW = 657,
-        SPEETWATEIR = 659,
-        SHAKE_660 = 660,
-        TRAINING_SPELL = 661,
-        LEMON_BONE = 662,
-        SUMMONING_OF_LEMON_JELLY = 663,
-        BLUE_BONE = 664,
-        SCARIFICATION = 665,
-        FURBELOW = 666,
-        FURIOUS = 667,
-        FURIBUND = 668,
-        LIGHTNING = 669,
-        FURLONG = 670,
-        FOUXRORE = 671,
-        OBJURGATION = 672,
+
+        LANCER_DE_BAMBOU_MALCHANCEUX_599 = 599,
+
+        FESTIN_600 = 600,
+
+        INVOCATION_MONTAGNARDE_601 = 601,
+
+        PEAU_DE_TOPAZE_602 = 602,
+
+        COEUR_DE_CRAQUELEUR_603 = 603,
+
+        INVOCATION_DE_BOUFTOU_DES_CAVERNES_604 = 604,
+
+        CALUMET_DE_LA_PAIX_605 = 605,
+
+        APPEL_DU_KOULOSSE_606 = 606,
+
+        SOUFFLE_DU_KOULOSSE_607 = 607,
+
+        BISE_DU_BOUFCOUL_608 = 608,
+
+        TRANSPOSITION_AMICALE_609 = 609,
+
+        TRANSPOSITION_DESTRUCTRICE_610 = 610,
+
+        SACRIFICE_SADIDESQUE_611 = 611,
+
+        TRANSPOSITION_POUPESQUE_612 = 612,
+
+        CALIN_POUPESQUE_613 = 613,
+
+        DEFONCE_614 = 614,
+
+        SOUILLURE_BOOEUSE_615 = 615,
+
+        SOUFFLE_HIVERNAL_616 = 616,
+
+        PETIT_PAQUET_617 = 617,
+
+        LANCER_DE_CADEAU_618 = 618,
+
+        SOUFFLE_GARGOUILLESQUE_619 = 619,
+
+        GARGOUILLI_620 = 620,
+
+        SERPENTIN_621 = 621,
+
+        KIKULE_DALERBE_622 = 622,
+
+        RAYON_FULGURANT_623 = 623,
+
+        CRI_DESTABILISATEUR_624 = 624,
+
+        DECHIQUETAGE_625 = 625,
+
+        PICORE_626 = 626,
+
+        SANCTION_TENEBREUSE_627 = 627,
+
+        LIEN_VOLATILE_628 = 628,
+
+        INVOCATION_DE_CORBAC_629 = 629,
+
+        CARAPACE_DAILES_630 = 630,
+
+        KOUDANLULK_631 = 631,
+
+        CHARGE_632 = 632,
+
+        CHANCE_DU_KANIGROU_633 = 633,
+
+        SAUT_MAJESTUEUX_634 = 634,
+
+        ALTERATION_635 = 635,
+
+        POISON_DU_SCORBUTE_636 = 636,
+
+        COUP_DE_QUEUE_637 = 637,
+
+        DECHIREMENT_INTESTINAL_638 = 638,
+
+        ABLATION_TESTICULAIRE_639 = 639,
+
+        CHAÎNE_CHIENNE_640 = 640,
+
+        ABOIEMENT_SAUVAGE_641 = 641,
+
+        ECRASEMENT_ROYAL_642 = 642,
+
+        SPORIFICATION_643 = 643,
+
+        INVOCATION_DE_CHAMPCHAMP_644 = 644,
+
+        CHAMPSOIN_645 = 645,
+
+        EMPALEMENT_646 = 646,
+
+        EUPHORIE_MALSAINE_647 = 647,
+
+        VIREVOLTE_648 = 648,
+
+        LAMINAGE_649 = 649,
+
+        DISSIMULATION_650 = 650,
+
+        FRENESIE_651 = 651,
+
+        COQUE_SOIN_652 = 652,
+
+        LARVURE_653 = 653,
+
+        MIRETTES_654 = 654,
+
+        LARVAGE_655 = 655,
+
+        FLECHE_TUEUSE_656 = 656,
+
+        FLECHE_LONGUE_PORTEE_657 = 657,
+
+        KRACHEAU_659 = 659,
+
+        SECOUSSE_660 = 660,
+
+        SORT_DENTRAINEMENT_661 = 661,
+
+        CITRON_OS_662 = 662,
+
+        INVOCATION_DE_GELEE_CITRON_663 = 663,
+
+        BLEU_OS_664 = 664,
+
+        SCARIFICATION_665 = 665,
+
+        FOURRE_TOUT_666 = 666,
+
+        FOUTAISE_667 = 667,
+
+        FOURRURE_668 = 668,
+
+        FOUDRE_669 = 669,
+
+        FOURRAGE_670 = 670,
+
+        FOUGUEFOUX_671 = 671,
+
+        OBJURGATION_672 = 672,
+
         OBLIGATION_673 = 673,
-        FURROW_674 = 674,
-        SERPULMONARY = 675,
+
+        FOUILLE_674 = 674,
+
+        MERULE_TIHME_675 = 675,
+
         OBLIGATION_676 = 676,
-        CLUMPECTOMY = 677,
-        OBJECTION = 678,
-        SPORKPIE = 679,
-        SPORKSWORD = 680,
-        FURBALL = 681,
-        HEEL = 682,
-        FURNACE_683 = 683,
-        CEP_TICK = 684,
-        FURTIVE = 685,
-        BOOZER_686 = 686,
-        BLAZING_FIST_687 = 687,
-        SCHNAPS_688 = 688,
-        TERROR_689 = 689,
-        ALCOHOLIC_BREATH_690 = 690,
-        VULNERABILITY_691 = 691,
-        DEBAUCHERY = 692,
-        KARCHAM_693 = 693,
-        VERTIGO_694 = 694,
-        STABILIZATION = 695,
-        EVICTION = 696,
-        TIPPLE_697 = 697,
-        STAIN_698 = 698,
-        PROPULSION = 699,
-        MELANCHOLY_700 = 700,
-        ZATOISHWAN_S_WRATH_701 = 701,
-        EXPLOSIVE_FLASK_702 = 702,
-        PANDATAK_703 = 703,
-        PANDINIURAS_704 = 704,
-        SPIRIT_BOND_705 = 705,
-        EMERALD_BOOH_M_RANG = 706,
-        SAPPHIRE_BOOH_M_RANG = 707,
-        RUBY_BOOH_M_RANG = 708,
-        DIAMOND_BOOH_M_RANG = 709,
-        ANOREXIANT = 710,
-        EXPLOSIVE_DIGESTION = 711,
-        SOOTHING_SAPPHIRE = 712,
-        SUMMONING_OF_MOTIVATING_TOTEM = 713,
-        SUPPORT_714 = 714,
-        EXPLOSION_ATTEMPT = 715,
-        SUMMONING_OF_EXPLOSIVE_TOTEM = 716,
-        SPANKING_717 = 717,
-        MAGIC_RECONSTRUCTION = 718,
-        SUMMONING_OF_HEALING_TOTEM = 719,
-        SUMMONING_OF_LETHAL_DOLL = 720,
-        TOTEMIZATION = 721,
-        MALICIOUS_RIDE = 722,
-        TEAM_SPIRIT = 723,
-        SCEPTRE_BLOW = 724,
-        REVENGE = 725,
-        MASS_UNSUMMONING = 726,
-        HARASSMENT_727 = 727,
-        FURVOUR = 728,
-        KALIK = 729,
-        STUCK = 730,
-        HOTHEAD_731 = 731,
-        SUMMONING_OF_MORELLO_CHERRY_BLOP = 732,
-        SUMMONING_OF_COCO_BLOP = 733,
-        SUMMONING_OF_INDIGO_BLOP = 734,
-        SUMMONING_OF_PIPPIN_BLOP = 735,
-        MORELLO_CHERRY_WEAKNESS = 736,
-        COCO_WEAKNESS = 737,
-        INDIGO_WEAKNESS = 738,
-        PIPPIN_WEAKNESS = 739,
-        DELIVERY_740 = 740,
-        FLIP = 741,
-        JOKE = 742,
-        CLUB = 743,
-        KALIPTUS_KISS = 744,
-        IMPLOSION = 745,
-        SUMMONING_OF_WORKETTE = 746,
-        SHORT_SIGHT = 747,
-        TELESCOPE_748 = 748,
-        FLICK = 749,
-        SHOCK_750 = 750,
-        BRILLIANT_SHOCK = 751,
-        BLOWPIPE = 752,
-        KALIPTUS_PUFF = 753,
-        BURIAL = 754,
-        CLOD = 755,
-        HEAD_ON_COLLISION = 756,
+
+        HOKULTEUR_677 = 677,
+
+        OBJECTION_678 = 678,
+
+        SPORE_DOEUVRE_679 = 679,
+
+        SPORE_TAFAUX_680 = 680,
+
+        FOURNEE_681 = 681,
+
+        GÎTE_682 = 682,
+
+        FOURAPIN_683 = 683,
+
+        CEPE_TIQUE_684 = 684,
+
+        FOURAILLE_685 = 685,
+
+        _687 = 687,
+
+        BOUH_MRANG_EMERAUDE_706 = 706,
+
+        BOUH_MRANG_SAPHIR_707 = 707,
+
+        BOUH_MRANG_RUBIS_708 = 708,
+
+        BOUH_MRANG_DIAMANT_709 = 709,
+
+        COUPE_FAIM_710 = 710,
+
+        DIGESTION_EXPLOSIVE_711 = 711,
+
+        SAPHIR_APAISANT_712 = 712,
+
+        INVOCATION_DE_TOTEM_MOTIVANT_713 = 713,
+
+        ENCOURAGEMENT_714 = 714,
+
+        TENTATIVE_DEXPLOSION_715 = 715,
+
+        INVOCATION_DE_TOTEM_EXPLOSIF_716 = 716,
+
+        BOTTAGE_DE_FESSES_717 = 717,
+
+        RECONSTITUTION_MAGIQUE_718 = 718,
+
+        INVOCATION_DE_TOTEM_SOIGNANT_719 = 719,
+
+        INVOCATION_DE_POUPEE_MORTELLE_720 = 720,
+
+        TOTEMISATION_721 = 721,
+
+        CHEVAUCHEE_MALICIEUSE_722 = 722,
+
+        ESPRIT_DEQUIPE_723 = 723,
+
+        COUP_DE_SCEPTRE_724 = 724,
+
+        VENGEANCE_725 = 725,
+
+        DESINVOCATION_DE_MASSE_726 = 726,
+
+        HARCELEMENT_727 = 727,
+
+        DEVOTION_728 = 728,
+
+        KALIK_729 = 729,
+
+        EMBOURBEMENT_730 = 730,
+
+        SANG_CHAUD_731 = 731,
+
+        INVOCATION_DE_BLOP_GRIOTTE_732 = 732,
+
+        INVOCATION_DE_BLOP_COCO_733 = 733,
+
+        INVOCATION_DE_BLOP_INDIGO_734 = 734,
+
+        INVOCATION_DE_BLOP_REINETTE_735 = 735,
+
+        DEFAILLANCE_GRIOTTE_736 = 736,
+
+        DEFAILLANCE_COCO_737 = 737,
+
+        DEFAILLANCE_INDIGO_738 = 738,
+
+        DEFAILLANCE_REINETTE_739 = 739,
+
+        ACCOUCHEMENT_740 = 740,
+
+        CHIQUENAUDE_741 = 741,
+
+        BOUTADE_742 = 742,
+
+        ASSOMMOIR_743 = 743,
+
+        BAISER_DE_KALIPTUS_744 = 744,
+
+        IMPLOSION_745 = 745,
+
+        INVOCATION_DE_WORKETTE_746 = 746,
+
+        CECITE_747 = 747,
+
+        VISION_LOINTAINE_748 = 748,
+
+        PICHENETTE_749 = 749,
+
+        DECHARGE_750 = 750,
+
+        DECHARGE_MAGISTRALE_751 = 751,
+
+        SARBAKANE_752 = 752,
+
+        SOUFFLETTE_DE_KALIPTUS_753 = 753,
+
+        ENTERREMENT_754 = 754,
+
+        MOTTE_DE_TERRE_755 = 755,
+
+        CHOC_FRONTAL_756 = 756,
+
         CORRECTION_757 = 757,
-        PREVENTION = 758,
-        MUMMY_S_CURSE = 759,
-        WATER_CLOCK_760 = 760,
-        ANCESTRAL_BANDAGE = 761,
-        MASTER_S_HIT = 762,
-        RECONCILIATION = 763,
-        WARMING = 764,
-        AIR_BITE = 765,
-        FIRE_BITE = 766,
-        NINJATTACK = 767,
-        EARTH_BITE = 768,
-        NEUTRAL_BITE = 769,
-        BELTING = 770,
-        CUTTING_DOWN_771 = 771,
-        PRUNING = 772,
-        UPROOTING_773 = 773,
-        REEL = 774,
-        BAIT = 775,
-        FISH_BLOW = 776,
-        FILTHIPINT_777 = 777,
-        POISONED_PEAT = 778,
-        KOALAK_CURSE = 779,
-        REAPING = 780,
-        PRIMITIVE_CEMETERY_BACKUP = 781,
-        PUNISHMENT_782 = 782,
-        VANISHING = 783,
-        STROKE = 784,
-        DISORIENTATION = 785,
-        GROUPED_VANISHING = 786,
-        LEAFY_CARE = 787,
-        PAT_A_PECK = 788,
-        POISONED_FOG = 789,
-        BIRTH = 790,
-        CALL_OF_THE_FIELDS = 791,
-        PIGGERY = 792,
-        GOTAM = 793,
-        CHICKEN_COOP_COMBUSTION = 794,
-        PECK_A_CAKE = 795,
-        POISONED_SEED = 796,
-        PROVOCATION = 797,
-        MASTERLY_PECK = 798,
-        BLINDING_FEATHER = 799,
-        SUMMONING_OF_BOMBERFU = 800,
-        BLESSING_OF_THE_TOFU_HOUSE = 801,
-        HYSTAIRIA_802 = 802,
-        DESTABILISING_DUSTER = 803,
-        DUSTERETTE = 804,
-        FEATHERY_SCRAMBLE = 805,
-        BEDDIEBYZE = 806,
-        REFRESHMENT_807 = 807,
-        SCROLLBOOST = 808,
-        CAWING = 809,
-        WARBLING = 810,
-        PLUCKING_811 = 811,
-        DESTINOS = 812,
-        MYTHOS = 813,
-        KITOS = 814,
-        COCKEDICE = 815,
-        TICKLE = 816,
-        PELLET = 817,
-        BELL = 818,
-        DESTABILISING_VENOM = 819,
-        CUTICLE = 820,
-        HORNOS = 821,
-        KANOPY = 822,
-        CURSE_OF_THE_MUMMINOTOR = 823,
-        EMBALMING = 824,
-        THROW_OF_JELLIDICE = 825,
-        STUNNING_BLOW = 826,
-        DUMMY_PACKET = 827,
-        MINOWRATH = 828,
-        MEDITATION_829 = 829,
-        SEVEN = 831,
-        CHILBLAIN = 832,
-        ICE_RINK = 833,
-        ICE_SKATING = 834,
-        KICK_A_SLED = 835,
-        SNOWBALLAPSING = 836,
-        BLIZZARD = 837,
-        MAIN_COURSE = 838,
-        SEASONING = 839,
-        BILLOO_S_LUCK = 840,
-        CHOW_DOWN = 841,
-        CHESTNUT_PUREE = 842,
-        SPORRIFY_843 = 843,
-        FROZEN_WALLOP = 844,
-        MOURNFUL_SNIFF = 845,
-        REFRIGERATED_HUG = 846,
-        TOFU_ICEFIELD = 847,
-        ICY_PATCH = 848,
-        SNOW_MUFFLER = 849,
-        ROLLINBALL = 851,
-        GAZER_NOMOS = 852,
-        KWISMAS_SPIRIT = 853,
-        SORBET = 854,
-        MASTOGOB_WRATH = 855,
-        MASTOGOB_SMASH = 856,
-        CALL_OF_THE_ICIKLE = 857,
-        SKI_LIFT = 858,
-        KWISMAS_SPIRITEFFECT_ = 859,
-        KWISMAS_GARLAND = 860,
-        SNOWFALL = 861,
-        THAWING = 862,
-        CALL_OF_THE_BOMBERFU = 863,
-        CAPON_BLESSING = 864,
-        MAJESTIC_FALL = 865,
-        PRICKY_HUG = 866,
-        GOBLIMPESQUE_EXALTATION = 867,
-        BASH = 868,
-        WRAPPING_869 = 869,
-        GOBLIMP_INSPIRATION = 870,
-        GOBLIMP_GIFT = 871,
-        PLECIOUS_MOTIVATION_ALCANUM = 872,
-        UPSET_PANDULUM_ALCANUM = 873,
-        BASIC_STONE_THLOW_ALCANUM = 874,
-        FAITHFUL_GUALD_OF_THE_COLD_ALCANUM = 875,
-        TLEATCHELOUS_ICY_PATCH_ALCANUM = 876,
-        CELESTIAL_FULIOUS_DLAGON_ALCANUM = 877,
-        KWIKWASH = 878,
-        ICE_PICK = 879,
-        HEAT_WAVE = 880,
-        DICHOTOMY = 881,
-        SUK_KIDDY = 882,
-        KWISMAZARD_PUDDING = 883,
-        CATCH_KIDDY = 884,
-        TRAK_KIDDY = 885,
-        SNACK = 886,
-        TITBIT = 887,
-        KRAKKEN = 888,
-        MATING_DISPLAY = 889,
-        WRAPPING_890 = 890,
-        DANCE_OF_THE_SEVEN_RIBBONS = 891,
-        LIKDADDY = 892,
-        PATHOLOGICAL_JEALOUSY = 893,
-        SZAD_SNEGGAH = 894,
-        FROZEN_COCOON = 895,
-        TEERTS_HAMMER = 896,
-        SNIBBOR_NIKSAB_HAMMER = 897,
-        KITSOU_NAKWATUS_S_THAW = 898,
-        BLACK_TIWABBITUS_S_THAW = 899,
-        KWAKUS_S_THAW = 900,
-        BENANDGERRIZ_HAMMER = 901,
-        GOBLIMP_UPPERCUT = 902,
-        EMPTY_BELLY = 903,
-        ROUGH_DIGESTION = 904,
-        ALCANUM_OF_THE_SLY_DALK_BLIZZALD = 905,
-        CONFETTI = 906,
-        IMMOBILIZATIONFECA_GLYPH_ = 907,
-        SILENCESRAM_TRAP_AND_FECA_GLYPH_ = 908,
-        IMMOBILIZATIONSRAM_TRAP_ = 909,
-        NE_PAS_TRADUIRE = 910,
-        KOKASTING = 911,
-        WHUPPIN = 912,
-        OLD_TOY_PARADE = 913,
-        SUMMONING_OF_THE_BROKEN_TOY = 914,
-        MAGNETISM_915 = 915,
-        DOPPLESQUE_ATTRACTION_916 = 916,
-        REVITALISING_CUTTING = 919,
-        DARK_MONKEY_BUSINESS = 920,
-        CH_BOOM = 929,
-        MASTOCATE = 931,
-        BOMBOMB_EXPLOSION = 932,
-        CAPOFF = 933,
-        HOOK = 934,
-        GREEDO_RUM = 935,
-        PLUNDER = 936,
-        FALLANSTER_S_HINDRANCE = 937,
-        TREACHEROUS_RHUM = 938,
-        SUMMONING_OF_BARREL = 939,
-        CANNONBALL_FOR_BALLSY_OPPONENTS = 940,
-        BOMBARD = 941,
-        SKIPIUR_TURNIOOBY = 942,
-        CHEERS_MATE = 943,
-        VREET_VREET = 944,
-        POLISHING = 945,
-        KILLER_ATTACK = 946,
-        SLOBBER_TRAIL = 947,
-        SLIDE = 948,
-        SLOBBER = 949,
-        CONJURING = 950,
-        STONES = 951,
-        MUFASSIC_ROAR = 952,
-        LITTLE_HEALING = 953,
-        MIGRATION = 954,
-        FLYING_SLING = 955,
-        START = 956,
-        DRAGOWRATH = 957,
-        SHAKING_958 = 958,
-        FLIRT = 959,
-        LOVE_AT_FIRST_SIGHT_960 = 960,
-        CHARM = 961,
-        SEDUCTION = 962,
-        STUNNING_METEORITE = 963,
-        BLINDING_METEORITE = 964,
-        DRAGOSS_BREATH = 965,
-        HORNOSS = 966,
-        WRIGGLOSS = 967,
-        PROTECTOSS = 968,
-        BLOWOSS = 969,
-        FREEDOSS = 970,
-        CROCABULIA_S_BREATH = 971,
-        CROCABULIA_S_ROAR = 972,
-        CROCABULIA_S_CALL = 973,
-        STAIN_974 = 974,
-        DEAD_ARACHNEE_THROWING = 975,
-        COMPLICITY = 976,
-        SYLVAN_ATTRACTION_977 = 977,
-        DARKNESS = 978,
-        REPULSION_979 = 979,
-        SLY_WAVE = 980,
-        DARK_CURE = 981,
-        HAZARDOUS_CURE = 982,
-        METEORION = 983,
-        WEREMUTATION = 984,
-        PEKI_PEKI_SLOBBER = 985,
-        WEREPEKI_S_SPIRIT = 986,
-        HARPOONING = 987,
-        SANDED_DISPERSAL = 988,
-        BREEZE = 989,
-        SCRUB = 990,
-        RINSE = 991,
-        SPONTANEOUS_REGENERATION = 992,
-        CALL_OF_THE_SEA = 993,
-        SALTING_994 = 994,
-        SHOT = 995,
+
+        PREVENTION_758 = 758,
+
+        MALEDICTION_DE_LA_MOMIE_759 = 759,
+
+        CLEPSYDRE_760 = 760,
+
+        BANDELETTE_ANCESTRALE_761 = 761,
+
+        FRAPPE_DU_MAÎTRE_762 = 762,
+
+        RECONCILIATION_763 = 763,
+
+        ECHAUFFEMENT_764 = 764,
+
+        MORSURE_DAIR_765 = 765,
+
+        MORSURE_DE_FEU_766 = 766,
+
+        NINJATTAQUE_767 = 767,
+
+        MORSURE_DE_TERRE_768 = 768,
+
+        MORSURE_NEUTRE_769 = 769,
+
+        TRIPOTEE_770 = 770,
+
+        ABATTAGE_771 = 771,
+
+        EBRANCHAGE_772 = 772,
+
+        DERACINAGE_773 = 773,
+
+        MOULINET_774 = 774,
+
+        AMORCE_775 = 775,
+
+        COUP_DE_POISSON_776 = 776,
+
+        BISTOUILLE_777 = 777,
+
+        TOURBE_EMPOISONNEE_778 = 778,
+
+        MALEDICTION_KOALAK_779 = 779,
+
+        FAUCHE_780 = 780,
+
+        RENFORT_DU_CIMETIERE_PRIMITIF_781 = 781,
+
+        PUNITION_SANGUINE_782 = 782,
+
+        DISPARITION_783 = 783,
+
+        CARESSE_784 = 784,
+
+        DESORIENTATION_785 = 785,
+
+        DISPARITION_GROUPEE_786 = 786,
+
+        SOIN_FEUILLU_787 = 787,
+
+        PICOTI_788 = 788,
+
+        BROUILLARD_EMPOISONNE_789 = 789,
+
+        NAISSANCE_790 = 790,
+
+        APPEL_DES_CHAMPS_791 = 791,
+
+        GOINFRAGE_792 = 792,
+
+        GOTAME_793 = 793,
+
+        DETONATION_DU_POULAILLER_794 = 794,
+
+        PICOTA_795 = 795,
+
+        GRAINE_EMPOISONNEE_796 = 796,
+
+        PROVOCATION_797 = 797,
+
+        COUP_DE_BEC_MAGISTRAL_798 = 798,
+
+        PLUMEAU_AVEUGLANT_799 = 799,
+
+        INVOCATION_DE_BOMBERFU_800 = 800,
+
+        BENEDICTION_DU_TOFULAILLER_801 = 801,
+
+        ENVOLUPTE_802 = 802,
+
+        PLUMEAU_DESTABILISANT_803 = 803,
+
+        PLUMETTE_804 = 804,
+
+        BOUSCULADE_PLUMEUSE_805 = 805,
+
+        DAUDOH_806 = 806,
+
+        BUVETTE_807 = 807,
+
+        PARCHOTAGE_808 = 808,
+
+        CROASSEMENT_809 = 809,
+
+        RAMAGE_810 = 810,
+
+        DEPLUMAGE_811 = 811,
+
+        DESTINOS_812 = 812,
+
+        MYTHOS_813 = 813,
+
+        KITOS_814 = 814,
+
+        DECASSE_815 = 815,
+
+        PAPOUILLE_816 = 816,
+
+        BOULETTE_817 = 817,
+
+        SONNETTE_818 = 818,
+
+        VENIN_DESTABILISATEUR_819 = 819,
+
+        CUTICULE_820 = 820,
+
+        CORNOS_821 = 821,
+
+        KANOPE_822 = 822,
+
+        MALEDICTION_DU_MOMINOTOR_823 = 823,
+
+        EMBAUMEMENT_824 = 824,
+
+        LANCER_DE_DEGELEE_825 = 825,
+
+        SOUFFLE_ETOURDISSANT_826 = 826,
+
+        COUP_DE_BOULET_827 = 827,
+
+        MINORAGE_828 = 828,
+
+        RECUEILLEMENT_829 = 829,
+
+        SEPT_831 = 831,
+
+        ENGELURE_832 = 832,
+
+        VERGLASSERIE_833 = 833,
+
+        PATINAGE_834 = 834,
+
+        POUSSEE_DEGUL_835 = 835,
+
+        EBOULEDENEIGEMENT_836 = 836,
+
+        BLIZZARD_837 = 837,
+
+        PLAT_DE_RESISTANCE_838 = 838,
+
+        ASSAISONNEMENT_839 = 839,
+
+        CHANCE_DU_BILLOU_840 = 840,
+
+        GUEULETON_841 = 841,
+
+        CREME_DE_MARRON_842 = 842,
+
+        SPORE_KEPIC_843 = 843,
+
+        TORGNOLE_GIVREE_844 = 844,
+
+        MORNIFLE_845 = 845,
+
+        CALIN_FRIGORIFIQUE_846 = 846,
+
+        BANKIZOU_DU_TOFU_847 = 847,
+
+        PLAQUE_DE_GLACE_848 = 848,
+
+        CACHE_NEIGE_849 = 849,
+
+        _850 = 850,
+
+        BOOLKIROUL_851 = 851,
+
+        NAMASPAMOUSS_852 = 852,
+
+        ESPRIT_DE_NOWEL_853 = 853,
+
+        GLASSALO_854 = 854,
+
+        FUREUR_DU_BOUFMOUTH_855 = 855,
+
+        DEFONCE_DU_BOUFMOUTH_856 = 856,
+
+        APPEL_DU_DE_GELE_857 = 857,
+
+        TIRE_FESSE_858 = 858,
+
+        ESPRIT_DE_NOWEL_EFFET_859 = 859,
+
+        ENGUIRLANDAGE_860 = 860,
+
+        TOMBEE_DE_NEIGE_861 = 861,
+
+        FONTE_DES_GLACES_862 = 862,
+
+        APPEL_DU_BOMBERFU_863 = 863,
+
+        BENEDICTION_DU_CHAPON_864 = 864,
+
+        CHUTE_MAJESTUEUSE_865 = 865,
+
+        CALIN_DU_KIPIK_866 = 866,
+
+        EXALTATION_GLUTINESQUE_867 = 867,
+
+        GNON_868 = 868,
+
+        EMPAQUETAGE_869 = 869,
+
+        INSPIRATION_GLUTINE_870 = 870,
+
+        DON_GLUTIN_871 = 871,
+
+        ALCANE_PLECIEUSE_DE_MOTIVATION_872 = 872,
+
+        ALCANE_DU_PANDULE_DELEGLE_873 = 873,
+
+        ALCANE_DU_VULGAILE_LANCER_DE_PIELLE_874 = 874,
+
+        ALCANE_DU_FIDELE_GALDIEN_DU_FLOID_875 = 875,
+
+        ALCANE_DE_LA_FOULBE_PLAQUE_DE_GLACE_876 = 876,
+
+        ALCANE_DU_FULIEUX_DLAGON_CELESTE_877 = 877,
+
+        DEBARBOUILLAGE_878 = 878,
+
+        PIC_DE_GLACE_879 = 879,
+
+        COUP_DE_CHAUD_880 = 880,
+
+        DICHOTOMIE_881 = 881,
+
+        ASPIRNENFAN_882 = 882,
+
+        EMBUCHE_DE_NOWEL_883 = 883,
+
+        ATTRAPNENFAN_884 = 884,
+
+        TRAKNENFAN_885 = 885,
+
+        GOUTER_886 = 886,
+
+        EN_CAS_887 = 887,
+
+        KRAKKEN_888 = 888,
+
+        PARADE_NUPTIALE_889 = 889,
+
+        EMBALLAGE_890 = 890,
+
+        DANSE_DES_SEPT_RUBANS_891 = 891,
+
+        KOMPAPA_892 = 892,
+
+        JALOUSIE_MALADIVE_893 = 893,
+
+        SAD_SNEGGAH_894 = 894,
+
+        COCON_GELE_895 = 895,
+
+        MARTEAU_DOKIM_896 = 896,
+
+        MARTEAU_DORELOS_897 = 897,
+
+        DEGEL_DU_KITSOU_NAKWATUS_898 = 898,
+
+        DEGEL_DU_BLACK_TIWABBITUS_899 = 899,
+
+        DEGEL_DU_KWAKUS_900 = 900,
+
+        MARTEAU_DE_MUNGAM_901 = 901,
+
+        UPPERCUT_GLUTIN_902 = 902,
+
+        PTIT_CREUX_903 = 903,
+
+        DIGESTION_MOUVEMENTEE_904 = 904,
+
+        ALCANE_DU_SOULNOIS_BLIZZALD_TENEBLEUX_905 = 905,
+
+        COTILLONS_906 = 906,
+
+        SILENCE_PIEGE_SRAM_ET_GLYPHE_FECA_908 = 908,
+
+        IMMOBILISATION_PIEGE_SRAM_909 = 909,
+
+        LAG_RALENTISSEMENT_POUR_GLYPHE_FECA_910 = 910,
+
+        KOKAPIK_911 = 911,
+
+        FWETAGE_912 = 912,
+
+        PARADE_DES_VIEUX_JOUETS_913 = 913,
+
+        INVOCATION_DE_JOUET_CASSE_914 = 914,
+
+        ATTRACTION_915 = 915,
+
+        ATTIRANCE_916 = 916,
+
+        BOUTURE_REVITALISANTE_919 = 919,
+
+        OBSCURE_SINGERIE_920 = 920,
+
+        _922 = 922,
+
+        CHBOUM_929 = 929,
+
+        MOURSURE_931 = 931,
+
+        EXPLOSION_DE_BOMBOMBE_932 = 932,
+
+        DECAPSULATION_933 = 933,
+
+        CROCHET_934 = 934,
+
+        GLOUTO_RHUM_935 = 935,
+
+        RAPINE_936 = 936,
+
+        ENTRAVE_DE_FALLANSTER_937 = 937,
+
+        RHUM_FOURBE_938 = 938,
+
+        INVOCATION_DE_TONNEAU_939 = 939,
+
+        UN_GROS_BOULET_SUR_UN_AUTRE_BOULET_940 = 940,
+
+        BOMBARDE_941 = 941,
+
+        PASSTON_TOURNOUBE_942 = 942,
+
+        TRINQUONS_ENSEMBLE_MOUSSAILLON__943 = 943,
+
+        VRÜT_VRÜT_944 = 944,
+
+        POLISSAGE_945 = 945,
+
+        ATTAQUE_TUEUSE_946 = 946,
+
+        TRAÎNEE_DE_BAVE_947 = 947,
+
+        GLISSADE_948 = 948,
+
+        BAVE_949 = 949,
+
+        PRESTIDIGITATION_950 = 950,
+
+        ROCAILLE_951 = 951,
+
+        RUGISSEMENT_MUFAFESQUE_952 = 952,
+
+        PETIT_SOIN_953 = 953,
+
+        MIGRATION_954 = 954,
+
+        FRONDE_VOLANTE_955 = 955,
+
+        SOUBRESAUT_956 = 956,
+
+        DRAGORAGE_957 = 957,
+
+        EBRANLEMENT_958 = 958,
+
+        DRAGUE_959 = 959,
+
+        COUP_DE_FOUDRE_960 = 960,
+
+        CHARME_961 = 961,
+
+        SEDUCTION_962 = 962,
+
+        METEORITE_ETOURDISSANTE_963 = 963,
+
+        METEORITE_AVEUGLANTE_964 = 964,
+
+        SOUFFLE_DU_DRAGOSS_965 = 965,
+
+        CORNOSS_966 = 966,
+
+        FRETILLOSS_967 = 967,
+
+        PROTECTOSS_968 = 968,
+
+        SOUFFLOSS_969 = 969,
+
+        LIBEROSS_970 = 970,
+
+        SOUFFLE_DE_CROCABULIA_971 = 971,
+
+        CRI_DE_CROCABULIA_972 = 972,
+
+        APPEL_DE_CROCABULIA_973 = 973,
+
+        SOUILLURE_SAUVAGE_974 = 974,
+
+        LANCER_DARAKNE_MORTE_975 = 975,
+
+        COMPLICITE_976 = 976,
+
+        ATTIRANCE_SYLVESTRE_977 = 977,
+
+        OBSCURITE_978 = 978,
+
+        REFLUX_979 = 979,
+
+        VAGUE_SOURNOISE_980 = 980,
+
+        SOIN_TENEBREUX_981 = 981,
+
+        SOIN_HASARDEUX_982 = 982,
+
+        METEORION_983 = 983,
+
+        GAROU_984 = 984,
+
+        BAVE_DU_PEKI_985 = 985,
+
+        ESPRIT_DU_PEKI_GAROU_986 = 986,
+
+        HARPONNAGE_987 = 987,
+
+        DISPERSION_SABLEE_988 = 988,
+
+        BRISE_989 = 989,
+
+        DEGRAISSAGE_990 = 990,
+
+        RINÇAGE_991 = 991,
+
+        REGENERATION_SPONTANEE_992 = 992,
+
+        APPEL_DU_LARGE_993 = 993,
+
+        SALAGE_994 = 994,
+
+        PIKOUZE_995 = 995,
+
         PURIFICATION_996 = 996,
-        CUTTING_997 = 997,
-        RAM_998 = 998,
-        RADICAL = 999,
-        SCRATCH_1000 = 1000,
-        RASP_1001 = 1001,
-        RABBLE = 1002,
-        RAVINE = 1003,
-        RAPTOR = 1004,
-        DOCTORAT = 1005,
-        KILLERAT = 1006,
-        KORRATTION = 1007,
-        RAMPAGE = 1008,
-        BLACK_PLAGUE = 1009,
-        SPRAT = 1010,
-        WHITE_PLAGUE = 1011,
-        RACK = 1012,
-        RAVAGES_1013 = 1013,
-        GRATE = 1014,
-        RAPIDITY = 1015,
-        SHORT_CUT = 1016,
-        RAZOR = 1017,
-        MUTAGEN = 1018,
-        KAWABUNGA = 1019,
-        ROOT = 1021,
-        GLEANING = 1022,
-        CORAL_ATTACK = 1023,
-        CORAL_THROWING = 1024,
-        CORALACTION = 1025,
-        MASTERLY_CORALACTION = 1026,
-        MASTERLY_CORAL_THROWING = 1027,
-        MASTERLY_CORAL_ATTACK = 1028,
-        A_ROLLING_STONE_GATHERS_NO_MOSS = 1029,
-        CORAL_PINCER = 1030,
-        CORAL_PROTECTION = 1031,
-        ISLAND_FLOWER = 1032,
-        RIP = 1033,
-        VALVE_1034 = 1034,
-        LOVE_TWEET = 1035,
-        BRISSKITS = 1036,
-        BRISS_TENDERS = 1037,
-        SHAVING = 1038,
-        HOLOLOL = 1039,
-        MUDDY_ATTRACTION = 1040,
+
+        BOUTURE_997 = 997,
+
+        RATATINAGE_998 = 998,
+
+        RADICAL_999 = 999,
+
+        RATURE_1000 = 1000,
+
+        RABOTAGE_1001 = 1001,
+
+        RAFFUT_1002 = 1002,
+
+        RAVIN_1003 = 1003,
+
+        RAPACE_1004 = 1004,
+
+        DOCTORAT_1005 = 1005,
+
+        KACKITU_1006 = 1006,
+
+        KACKISOIGNE_1007 = 1007,
+
+        RAFALE_1008 = 1008,
+
+        PESTE_NOIRE_1009 = 1009,
+
+        RASCASSE_1010 = 1010,
+
+        PESTE_BLANCHE_1011 = 1011,
+
+        RACLEE_1012 = 1012,
+
+        RAVAGE_1013 = 1013,
+
+        RAMONAGE_1014 = 1014,
+
+        RAPIDITE_1015 = 1015,
+
+        RACCOURCI_1016 = 1016,
+
+        RASOIR_1017 = 1017,
+
+        MUTAGEN_1018 = 1018,
+
+        KAWABUNGA_1019 = 1019,
+
+        ENRACINEMENT_1021 = 1021,
+
+        GLANAGE_1022 = 1022,
+
+        FRAPPE_DE_CORAIL_1023 = 1023,
+
+        LANCER_DE_CORAIL_1024 = 1024,
+
+        CORAILLEMENT_1025 = 1025,
+
+        CORAILLEMENT_MAGISTRAL_1026 = 1026,
+
+        LANCER_DE_CORAIL_MAGISTRAL_1027 = 1027,
+
+        FRAPPE_DE_CORAIL_MAGISTRALE_1028 = 1028,
+
+        PIERRE_QUI_ROULE_NAMASSE_PAS_MOUSSE_1029 = 1029,
+
+        PINCE_DE_CORAIL_1030 = 1030,
+
+        PROTECTION_DE_CORAIL_1031 = 1031,
+
+        FLEUR_DES_ÎLES_1032 = 1032,
+
+        DECHIRURE_1033 = 1033,
+
+        CLAPET_1034 = 1034,
+
+        CUICUI_DAMOUR_1035 = 1035,
+
+        BRISSKOTE_1036 = 1036,
+
+        BRISS_DEUNISS_1037 = 1037,
+
+        RASAGE_1038 = 1038,
+
+        HOLOLOLE_1039 = 1039,
+
+        ATTRACTION_BOUEUSE_1040 = 1040,
+
         MODERATION_1041 = 1041,
-        NERVURE = 1042,
-        PUTRID_BARK = 1043,
-        CRASH = 1044,
-        PUSH_AWAY = 1045,
-        NUTRITIOUS_SAP = 1046,
-        GALL = 1047,
-        CRITICAL_BITE = 1048,
-        EXPLOSIVE_BARK = 1049,
-        NASTY_BARK = 1050,
-        KATMINT = 1051,
-        WEED = 1052,
-        RECRUITMENT = 1053,
-        KIKISS = 1054,
-        CURSED_PISTIL = 1055,
-        LIBERTINE_STAMEN = 1056,
-        FLORAL_FLAGELLATION = 1057,
-        HIFF = 1058,
-        HELSE = 1059,
-        FOWRK = 1060,
-        SHELL_1061 = 1061,
-        LIFE_FRENZY = 1062,
-        ROTTEN_BREATH = 1063,
-        MOOPET_CHOH = 1064,
-        PERNICIOUS_TORNADO = 1066,
-        BRUISE = 1067,
-        RADICLE = 1068,
-        ROOTLET = 1069,
-        PERFIDIOUS_STALK = 1070,
-        BOOM_PRETTY_BOOM = 1071,
-        EVEN_GLYPH = 1072,
-        ODD_GLYPH = 1073,
-        SUMMONING_OF_DISCIPLE = 1074,
-        EVEN_STATE = 1075,
-        ODD_STATE = 1076,
-        EVEN_GLYPH_SPELL = 1077,
-        ODD_GLYPH_SPELL = 1078,
-        SYRUPY_MUD = 1079,
-        QUAGMIRE_1080 = 1080,
-        CONDITIONING_PEAT = 1081,
-        MALICIOUS_PEAT = 1082,
-        RETURN_OF_THE_KING = 1083,
-        STRIPPING_1084 = 1084,
-        UPROOTING_1085 = 1085,
-        TORTURE_1086 = 1086,
-        ZOTHOMAI = 1087,
-        TYRANNY = 1088,
-        CHILDISHNESS = 1089,
-        SKIRMISH = 1090,
-        MELEE = 1091,
-        BATTLE_FOR_THE_ZOTH_TERRITORY = 1092,
-        INCITEMENT = 1093,
-        TUMBLE = 1094,
-        GRIP_1095 = 1095,
-        FIRST_KRAKEN = 1096,
-        SECOND_KRAKEN = 1097,
-        THIRD_KRAKEN = 1098,
-        FOURTH_KRAKEN = 1099,
-        TENTACULAR_POISONING = 1100,
-        TENTACULAR_CURSE = 1101,
-        TENTACULAR_PARALYSIS = 1102,
-        KRAKEN = 1103,
-        SLOW_DOWN_SPEETWATEIR = 1104,
-        IMMOBILISING_SPEETWATEIR = 1105,
-        PEAT_VULNERABILITY = 1106,
-        SUMMONING_OF_FIRST_TENTACLE = 1107,
-        SUMMONING_OF_SECOND_TENTACLE = 1108,
-        SUMMONING_OF_THIRD_TENTACLE = 1109,
-        SUMMONING_OF_FOURTH_TENTACLE = 1110,
-        GRANITE_PROTECTION = 1112,
-        GOBBALL_FRENZY = 1114,
-        KIMBO_S_RAGE = 1115,
-        BAMBOO_BLOW = 1116,
+
+        NERVURE_1042 = 1042,
+
+        ECORCE_PUTRIDE_1043 = 1043,
+
+        PLANTAGE_1044 = 1044,
+
+        REPOUSSE_1045 = 1045,
+
+        SEVE_NOURRISSANTE_1046 = 1046,
+
+        GALLE_1047 = 1047,
+
+        MORSURE_CRITIQUE_1048 = 1048,
+
+        ECORCE_DETONANTE_1049 = 1049,
+
+        ECORCE_MALSAINE_1050 = 1050,
+
+        HERBE_HACHA_1051 = 1051,
+
+        MAUVAISE_HERBE_1052 = 1052,
+
+        RECRUTEMENT_1053 = 1053,
+
+        BISOUILLE_1054 = 1054,
+
+        PISTIL_ENSORCELE_1055 = 1055,
+
+        ETAMINES_LIBERTINES_1056 = 1056,
+
+        FLAGELLATION_FLORALE_1057 = 1057,
+
+        HIFFE_1058 = 1058,
+
+        HELSE_1059 = 1059,
+
+        FORQUE_1060 = 1060,
+
+        KOKILLE_1061 = 1061,
+
+        FUREUR_DE_VIVRE_1062 = 1062,
+
+        HALEINE_DE_VERS_1063 = 1063,
+
+        MEUPETTE_CHOH_1064 = 1064,
+
+        _1065 = 1065,
+
+        TORNADE_PERNICIEUSE_1066 = 1066,
+
+        MEURTRISSURE_1067 = 1067,
+
+        RADICULE_1068 = 1068,
+
+        RADICELLE_1069 = 1069,
+
+        PEDONCULE_PERFIDE_1070 = 1070,
+
+        BOUM_BOH_1071 = 1071,
+
+        GLYPHE_PAIR_1072 = 1072,
+
+        GLYPHE_IMPAIR_1073 = 1073,
+
+        INVOCATION_DU_DISCIPLE_1074 = 1074,
+
+        ETAT_PAIR_1075 = 1075,
+
+        ETAT_IMPAIR_1076 = 1076,
+
+        SORT_DE_LA_GLYPHE_PAIRE_1077 = 1077,
+
+        SORT_DE_LA_GLYPHE_IMPAIRE_1078 = 1078,
+
+        BOUE_SIRUPEUSE_1079 = 1079,
+
+        BOURBIER_1080 = 1080,
+
+        TOURBE_REPARATRICE_1081 = 1081,
+
+        TOURBE_MALVEILLANTE_1082 = 1082,
+
+        RETOUR_DU_ROI_1083 = 1083,
+
+        DEPOUILLAGE_1084 = 1084,
+
+        DECHAUSSAGE_1085 = 1085,
+
+        SUPPLICE_1086 = 1086,
+
+        ZOTHOMAÏ_1087 = 1087,
+
+        TYRANNIE_1088 = 1088,
+
+        GAMINERIE_1089 = 1089,
+
+        HECHAUD_FOURREE_1090 = 1090,
+
+        MELEE_1091 = 1091,
+
+        BATAILLE_POUR_LA_TERRE_DES_ZOTHS_1092 = 1092,
+
+        INCITATION_1093 = 1093,
+
+        KULBUTAGE_1094 = 1094,
+
+        EMPRISE_1095 = 1095,
+
+        KRAKEN_PRIMAIRE_1096 = 1096,
+
+        KRAKEN_SECONDAIRE_1097 = 1097,
+
+        KRAKEN_TERTIAIRE_1098 = 1098,
+
+        KRAKEN_QUATERNAIRE_1099 = 1099,
+
+        EMPOISONNEMENT_TENTACULAIRE_1100 = 1100,
+
+        MALEDICTION_TENTACULAIRE_1101 = 1101,
+
+        PARALYSIE_TENTACULAIRE_1102 = 1102,
+
+        KRAKEN_1103 = 1103,
+
+        KRACHEAU_RALENTISSANT_1104 = 1104,
+
+        KRACHEAU_IMMOBILISANT_1105 = 1105,
+
+        VULNERABILITE_DE_LA_TOURBIERE_1106 = 1106,
+
+        INVOCATION_DE_TENTACULE_PRIMAIRE_1107 = 1107,
+
+        INVOCATION_DE_TENTACULE_SECONDAIRE_1108 = 1108,
+
+        INVOCATION_DE_TENTACULE_TERTIAIRE_1109 = 1109,
+
+        INVOCATION_DE_TENTACULE_QUATERNAIRE_1110 = 1110,
+
+        PROTECTION_DE_GRANIT_1112 = 1112,
+
+        FRENESIE_DU_BOUFTOU_1114 = 1114,
+
+        FURIE_DU_KIMBO_1115 = 1115,
+
         DOOM_1117 = 1117,
-        KIMBO_TELEPORTATION = 1118,
-        SUEHAP = 1121,
-        YOU_RE_WELCOME = 1122,
-        SPIMUSH_TELEPORTATION = 1123,
-        COUNTRY_ATTRACTION = 1124,
-        MUSH_HIC = 1125,
-        MUSH_TASH = 1126,
-        OVA = 1127,
-        OTO_S_EXECUTION = 1128,
-        OTO_S_SOUL_DRAINER = 1129,
-        OTO_S_KILLER_INSTINCT = 1130,
-        OTO_S_DARK_CHAIN = 1131,
-        CRACK_1132 = 1132,
-        ELTURT_S_PREVENTION = 1133,
-        SABRAGE = 1134,
-        OTO_S_EVIL_PROTECTION = 1135,
-        PARALYSING_VOLVA = 1136,
-        JUMPY_BLOWER = 1137,
-        NEUTRALISING_THALLUS = 1138,
-        DOUBLE_WHAMMY = 1139,
-        FUNK_OO = 1140,
-        FUNGAL_INFECTION = 1141,
-        MILDEW_1142 = 1142,
-        AMANIT_ROGLYCERIN = 1143,
-        FUNGI_PARTY = 1144,
-        FUNGAL_PUNISHMENT = 1145,
-        FUNGAL_HEALING = 1148,
-        FUNGAL_PROTECTION = 1149,
-        SPOR_TAN = 1150,
-        MIKADA = 1151,
-        YEAST = 1152,
-        PUFFBRAWL = 1153,
-        FUNGAL_INVASION = 1157,
-        FUNGAL_EXPLOSION = 1158,
-        FUNG_OFF = 1159,
-        FUNGAL_ACCELERATION = 1160,
-        HALLUCINATION = 1161,
-        WEIRDNESS = 1162,
-        DETERMINATION_1163 = 1163,
-        GLUTINATION = 1164,
-        BLOBLO = 1165,
-        BLOPICTION = 1166,
-        BLOPZONE = 1167,
-        BLOPERATION = 1168,
-        ROYAL_BLOPUNISHMENT = 1169,
-        BLUMMONING = 1170,
-        BLOPROTECTION = 1171,
-        ROYAL_BLOPROTEST = 1172,
-        BLOPAGATION = 1173,
-        BLOPEACE = 1174,
-        QU_TAN_S_CURSE_1178 = 1178,
-        SADISTIC_BLOODSUCKING = 1179,
-        CRUEL_LACERATIONS = 1180,
-        DJAUL_S_BLOODY_HANDSHAKE = 1192,
-        JOKE_OF_SILT = 1193,
-        UNGODLY_BURNS_1196 = 1196,
-        DARK_BURNS = 1198,
-        ERZAL_S_BLESSING = 1201,
-        WELCOME_TO_YECH_TICKS = 1202,
+
+        TELEPORTATION_DU_KIMBO_1118 = 1118,
+
+        SOUAPE_1121 = 1121,
+
+        JE_VOUS_EN_PRIE_1122 = 1122,
+
+        TELEPORTATION_DU_CHAMPA_1123 = 1123,
+
+        ATTRACTION_CHAMPETRE_1124 = 1124,
+
+        CHAMP_HOMI_1125 = 1125,
+
+        CHAMP_HAGNE_1126 = 1126,
+
+        OVEUR_1127 = 1127,
+
+        EXECUTION_DOTO_1128 = 1128,
+
+        SIPHON_DAME_DOTO_1129 = 1129,
+
+        PULSION_MEURTRIERE_DOTO_1130 = 1130,
+
+        ENCHAÎNEMENT_NOIR_DOTO_1131 = 1131,
+
+        CREVASSE_1132 = 1132,
+
+        PREVENTION_DE_TURORTE_1133 = 1133,
+
+        SABRAGE_1134 = 1134,
+
+        PROTECTION_DEMONIAQUE_DOTO_1135 = 1135,
+
+        VOLVE_PARALYSANTE_1136 = 1136,
+
+        SOUFFLETTE_SPORADIQUE_1137 = 1137,
+
+        THALLE_NEUTRALISANT_1138 = 1138,
+
+        GRAPHIOSE_1139 = 1139,
+
+        FONG_KU_1140 = 1140,
+
+        MYCOSE_TOUJOURS_1141 = 1141,
+
+        MILDIOU_1142 = 1142,
+
+        AMANITE_ROGLICERINE_1143 = 1143,
+
+        CEPE_HARTI_1144 = 1144,
+
+        SANCTION_FONGIQUE_1145 = 1145,
+
+        SOIN_FONGIQUE_1148 = 1148,
+
+        PROTECTION_FONGIQUE_1149 = 1149,
+
+        SPORE_DE_COMBAT_1150 = 1150,
+
+        MIKOTA_1151 = 1151,
+
+        LEVURE_1152 = 1152,
+
+        FESSE_DE_LOUP_1153 = 1153,
+
+        INVASION_FONGIQUE_1157 = 1157,
+
+        EXPLOSION_FONGIQUE_1158 = 1158,
+
+        CHAMP_NEMAR_1159 = 1159,
+
+        ACCELERATION_FONGIQUE_1160 = 1160,
+
+        HALLUCINATION_1161 = 1161,
+
+        BIZARRERIE_1162 = 1162,
+
+        OPINIATRETE_1163 = 1163,
+
+        GLOUTAGE_1164 = 1164,
+
+        BLOBLO_1165 = 1165,
+
+        BLOPICTION_1166 = 1166,
+
+        BLOPZONE_1167 = 1167,
+
+        BLOPSOIN_1168 = 1168,
+
+        BLOPUNITION_ROYALE_1169 = 1169,
+
+        BLOVOCATION_1170 = 1170,
+
+        BLOTECTION_1171 = 1171,
+
+        BLOPOUTRAGE_ROYAL_1172 = 1172,
+
+        BLOPAGATION_1173 = 1173,
+
+        BLOPACIFICATION_1174 = 1174,
+
+        MALEDICTION_DE_QUTAN_1178 = 1178,
+
+        VAMPIRISATION_SADIQUE_1179 = 1179,
+
+        LACERATIONS_CRUELLES_1180 = 1180,
+
+        PACTE_SANGLANT_DE_DJAUL_1192 = 1192,
+
+        BLAGUE_VASEUSE_1193 = 1193,
+
+        BRULURES_IMPIES_1196 = 1196,
+
+        BRULURES_OBSCURES_1198 = 1198,
+
+        BENEDICTION_DERAZAL_1201 = 1201,
+
+        BIENVENUE_CHEZ_YECHTI_1202 = 1202,
+
         PENITENCE_1205 = 1205,
-        FEATHERY_FLIGHT_1206 = 1206,
-        SUMMON_OF_GRIMPIL_S_CLAW = 1235,
-        SIROP_SPORE = 1263,
-        FUNGAL_OVE = 1264,
-        FUNGEES_FEVER = 1265,
-        OVERWEIGHT = 1269,
-        CRUSHING_PEAT = 1279,
-        TRANSPEKISATION = 1280,
-        CRUEL_DEVASTATION = 1283,
-        CRUEL_SHOT = 1284,
-        SAVERNE_S_BLOW = 1285,
-        INFAMY = 1286,
-        THE_VILE_AGE = 1287,
-        CLOUD_DEVASTATION = 1288,
-        CLOUD_SHOT = 1289,
-        SWIFTNESS = 1290,
-        SIXTH_SENSE = 1291,
-        FIRE_DEVASTATION = 1292,
-        FIRE_SHOT = 1293,
-        FUSION = 1294,
-        SIGN = 1295,
-        WATER_DEVASTATION = 1296,
-        WATER_SHOT = 1297,
-        RESTORATION = 1298,
-        LADY_IN_THE_WATER = 1299,
-        EARTH_DEVASTATION = 1300,
-        EARTH_SHOT = 1301,
-        TOADABY = 1302,
-        UNBREAKABLE = 1303,
-        WONDERFUL_BLESSING = 1304,
-        NIGHTLIGHT = 1305,
-        SABRE_BLOW = 1306,
-        BURNING_LIQUID = 1307,
-        BLOODY_RAGE = 1308,
-        CHAOTIC_STRENGTH = 1309,
-        SWORD_OF_CHAOS = 1310,
-        WINDS_OF_CHAOS = 1311,
-        FLAMES_OF_CHAOS = 1312,
-        DISABLING_BLOW = 1313,
-        MORTAL_BLOW = 1314,
-        BLINDING_DUST = 1315,
-        WHINING_1316 = 1316,
-        SPATIAL_LASER = 1321,
-        BOMBARDMENT = 1322,
-        TELEPATHY_1323 = 1323,
-        LILGREY = 1324,
-        COLD_CATS = 1325,
-        RADIATION = 1326,
-        IRRADIATION = 1327,
-        LITTLE_GREEN_GIANT = 1328,
-        LOGISTICS = 1329,
+
+        VOL_DANS_LES_PLUMES_1206 = 1206,
+
+        GRIFFE_INVOCATRICE_DE_GRIMPILL_1235 = 1235,
+
+        SIROP_SPORE_1263 = 1263,
+
+        SPORE_HANCHAMBRE_1264 = 1264,
+
+        LES_COPRINS_DABORD_1265 = 1265,
+
+        SURPOIDS_1269 = 1269,
+
+        TOURBE_ECRASANTE_1279 = 1279,
+
+        TRANSPEKISATION_1280 = 1280,
+
+        DEVASTATION_CRUELLE_1283 = 1283,
+
+        TIR_CRUEL_1284 = 1284,
+
+        SOUFFLE_DE_SAVERNE_1285 = 1285,
+
+        INFAMIE_1286 = 1286,
+
+        LE_VIL_AGE_1287 = 1287,
+
+        DEVASTATION_NUAGEUSE_1288 = 1288,
+
+        TIR_NUAGEUX_1289 = 1289,
+
+        VELOCITE_1290 = 1290,
+
+        SIXIEME_SENS_1291 = 1291,
+
+        DEVASTATION_INCANDESCENTE_1292 = 1292,
+
+        TIR_INCANDESCENT_1293 = 1293,
+
+        FUSION_1294 = 1294,
+
+        SIGNE_1295 = 1295,
+
+        DEVASTATION_AQUEUSE_1296 = 1296,
+
+        TIR_AQUEUX_1297 = 1297,
+
+        RESTAURATION_1298 = 1298,
+
+        LA_JEUNE_FILLE_DE_LEAU_1299 = 1299,
+
+        DEVASTATION_TERRESTRE_1300 = 1300,
+
+        TIR_TERRESTRE_1301 = 1301,
+
+        CRAPAUTAGE_1302 = 1302,
+
+        INCASSABLE_1303 = 1303,
+
+        BENEDICTION_MERVEILLEUSE_1304 = 1304,
+
+        LUMIERE_VEILLEUSE_1305 = 1305,
+
+        COUP_DE_SABRE_1306 = 1306,
+
+        LIQUIDE_ENFLAMME_1307 = 1307,
+
+        RAGE_DU_CHAOS_1308 = 1308,
+
+        FORCE_DU_CHAOS_1309 = 1309,
+
+        EPEE_DU_CHAOS_1310 = 1310,
+
+        VENTS_DU_CHAOS_1311 = 1311,
+
+        FLAMMES_DU_CHAOS_1312 = 1312,
+
+        COUP_HANDICAPANT_1313 = 1313,
+
+        COUP_MORTEL_1314 = 1314,
+
+        POUSSIERE_AVEUGLANTE_1315 = 1315,
+
+        PLEURNICHAGE_1316 = 1316,
+
+        LASER_SPATIAL_1321 = 1321,
+
+        BOMBARDEMENT_1322 = 1322,
+
+        TELEPATHIE_1323 = 1323,
+
+        PTIGRI_1324 = 1324,
+
+        CHARCUTAGE_1325 = 1325,
+
+        RADIATION_1326 = 1326,
+
+        IRRADIATION_1327 = 1327,
+
+        PETIT_GEANT_VERT_1328 = 1328,
+
+        LOGISTIQUE_1329 = 1329,
+
         PULSAR_1330 = 1330,
-        ALIENATION = 1331,
-        CLOSE_ENCOUNTER_OF_THE_SECOND_KIND = 1332,
-        CLOSE_ENCOUNTER_OF_THE_THIRD_KIND = 1333,
-        HEALING_WATER = 1334,
-        INCENDIARY_BREATH = 1354,
-        REPTILIAN_CURSE = 1355,
-        THICK_SCALES = 1356,
-        REPULSIVE_CHEWING = 1357,
-        DJAUL_S_LACERATION = 1367,
-        DJAUL_S_ICY_CURSE = 1368,
-        DJAUL_S_BETRAYAL = 1369,
-        DJAUL_S_WINTRY_PROTECTION = 1370,
-        DJAUL_S_ICE_STORM = 1371,
-        DJAUL_S_ICY_LASH = 1372,
-        SILOUATE_S_RUINATION = 1373,
-        SILOUATE_S_HORNED_RUSH = 1374,
-        SILOUATE_S_BOVINE_INVOCATION = 1375,
-        SILOUATE_S_IRON_PUMPING = 1376,
-        SILOUATE_S_TREMOR = 1377,
-        LIBERATION_OF_SILOUATE = 1378,
-        SUMENS_S_LIVING_BAG = 1379,
-        SUMENS_S_SPECTRAL_SHOVEL = 1380,
-        SUMENS_S_SHOVEL_OF_SLAUGHTER = 1381,
-        SUMENS_S_REDUCING_KEY = 1382,
-        SUMENS_S_TREASURE = 1383,
-        SUMENS_S_ANATHOR = 1384,
-        SUMENS_S_RICHES = 1385,
-        SWORN_ENEMY = 1386,
-        ICY_PRISON = 1387,
-        FRUIT_OF_PASSION = 1388,
-        KILLING_JOKE = 1389,
-        POUCHECOT_S_SYLVAN_POWER = 1390,
-        POUCHECOT_S_LASHING_BRAMBLES = 1391,
-        TEARS_OF_POUCHECOT = 1392,
-        FRUIT_OF_POUCHECOT = 1393,
-        POUCHECOT_S_PEEL = 1394,
-        HECATE_S_PINCH = 1396,
-        HECATE_S_TAIL_WHIP = 1397,
-        THE_HECATE_HOOM = 1398,
-        HECATE_S_PROTECTION = 1400,
-        HECATE_S_BLESSING = 1401,
-        HECATE_S_SEED = 1402,
-        HECATE_S_CURSE = 1404,
-        HECATE_S_EVIL_EYE = 1405,
-        HECATE_S_SCALDING = 1406,
-        HECATE_S_MORPH = 1407,
-        HECATE_S_HEALING_WORD = 1408,
-        HECATE_S_PIERCING_WINGS = 1409,
-        NUTTY_TWIRL = 1478,
-        HERE_OR_THERE = 1479,
-        TELEKINESIS = 1480,
-        SUMMONS_FROM_THE_BEYOND = 1481,
-        MAGIC_MIRROR = 1482,
-        GET_OUTTA_THERE = 1483,
-        DECAPITATION = 1484,
-        FLIP_FLOP = 1485,
-        TRAP_PEZE = 1486,
-        DYSFUNCTION = 1489,
-        ROBO_MACE = 1490,
-        DARK_BOLT_1491 = 1491,
-        MASS_EXPLOSION = 1493,
-        SRAM_POISONING = 1495,
-        CRITICAL_SRAM_POISONING = 1496,
-        INSIDIOUS_TRAP_1497 = 1497,
-        SRAM_UNSUMMONING = 1498,
-        SRAM_LETHAL_TRAP = 1499,
-        CRITICAL_LETHAL_TRAP = 1500,
-        CRITICAL_SRAM_UNSUMMONING = 1501,
-        CRITICAL_SILENCE_OF_THE_SRAMS = 1502,
-        AGGRESSIVE_GLYPH_1503 = 1503,
-        CRITICAL_AGGRESSIVE_GLYPH = 1504,
-        SLOWING_GLYPH = 1505,
-        CRITICAL_SLOWING_GLYPH = 1506,
-        CRITICAL_BURNING_GLYPH = 1507,
-        CRITICAL_IMMOBILISING_GLYPH = 1508,
-        CRITICAL_SILENCE_GLYPH = 1509,
-        IRRITATION = 1510,
-        SWINDLING_CLUMSINESS = 1511,
-        INCENDARY_FLAME = 1512,
+
+        ALIENISATION_1331 = 1331,
+
+        RENCONTRE_DU_DEUXIEME_TYPE_1332 = 1332,
+
+        RENCONTRE_DU_TROISIEME_TYPE_1333 = 1333,
+
+        EAU_SOIGNANTE_1334 = 1334,
+
+        SOUFFLE_INCENDIAIRE_1354 = 1354,
+
+        MALEDICTION_REPTILIENNE_1355 = 1355,
+
+        ECAILLES_EPAISSES_1356 = 1356,
+
+        MASTICATION_REPOUSSANTE_1357 = 1357,
+
+        LACERATION_DE_DJAUL_1367 = 1367,
+
+        MALEDICTION_GLACIAIRE_DE_DJAUL_1368 = 1368,
+
+        PERFIDIE_DE_DJAUL_1369 = 1369,
+
+        PROTECTION_HIVERNALE_DE_DJAUL_1370 = 1370,
+
+        TEMPETE_DE_GLACE_DE_DJAUL_1371 = 1371,
+
+        MORSURE_GLACIALE_DE_DJAUL_1372 = 1372,
+
+        PULVERISATION_DE_SILOUATE_1373 = 1373,
+
+        CHARGE_CORNUE_DE_SILOUATE_1374 = 1374,
+
+        INVOCATION_BOVINE_DE_SILOUATE_1375 = 1375,
+
+        BODY_BUILDING_DE_SILOUATE_1376 = 1376,
+
+        TREMBLEMENT_DE_SILOUATE_1377 = 1377,
+
+        LIBERATION_DE_SILOUATE_1378 = 1378,
+
+        SAC_ANIME_DE_SUMENS_1379 = 1379,
+
+        PELLE_SPECTRALE_DE_SUMENS_1380 = 1380,
+
+        PELLE_MASSACRANTE_DE_SUMENS_1381 = 1381,
+
+        CLE_REDUCTRICE_DE_SUMENS_1382 = 1382,
+
+        TRESOR_DE_SUMENS_1383 = 1383,
+
+        ATHANOR_DE_SUMENS_1384 = 1384,
+
+        RICHESSES_DE_SUMENS_1385 = 1385,
+
+        ENNEMI_JURE_1386 = 1386,
+
+        PRISON_DE_GLACE_1387 = 1387,
+
+        FRUIT_DE_LA_PASSION_1388 = 1388,
+
+        BLAGUE_HILARANTE_1389 = 1389,
+
+        PUISSANCE_SYLVESTRE_DE_POUCHECOT_1390 = 1390,
+
+        RONCE_CINGLANTE_DE_POUCHECOT_1391 = 1391,
+
+        LARMES_DE_POUCHECOT_1392 = 1392,
+
+        LA_FRUITEE_DE_POUCHECOT_1393 = 1393,
+
+        PELURE_DE_POUCHECOT_1394 = 1394,
+
+        COUP_DE_PINCE_DHECATE_1396 = 1396,
+
+        COUP_DE_QUEUE_DHECATE_1397 = 1397,
+
+        HECATE_HOMBE_1398 = 1398,
+
+        PROTECTION_DHECATE_1400 = 1400,
+
+        BENEDICTION_DHECATE_1401 = 1401,
+
+        GRAINES_DHECATE_1402 = 1402,
+
+        MALEDICTION_DHECATE_1404 = 1404,
+
+        MAUVAIS_OEIL_DHECATE_1405 = 1405,
+
+        BRULURE_DHECATE_1406 = 1406,
+
+        ANAMORPHOSE_DHECATE_1407 = 1407,
+
+        MOT_DE_GUERISON_DHECATE_1408 = 1408,
+
+        AILES_PERFORANTES_DHECATE_1409 = 1409,
+
+        PIROUETTE_ET_CACAHUETE_1478 = 1478,
+
+        ICI_OU_LA_1479 = 1479,
+
+        TELEKINESIE_1480 = 1480,
+
+        INVOCATION_DOUTRE_TOMBE_1481 = 1481,
+
+        MIROIR_MAGIQUE_1482 = 1482,
+
+        BOUGE_DE_LA_1483 = 1483,
+
+        DECAPITATION_1484 = 1484,
+
+        FLIP_FLOP_1485 = 1485,
+
+        PIEGECTION_1486 = 1486,
+
+        DISFONCTION_1489 = 1489,
+
+        ROBO_FLEAU_1490 = 1490,
+
+        ECLAIR_OBSCUR_1491 = 1491,
+
+        EXPLOSION_DE_MASSE_1493 = 1493,
+
+        _1494 = 1494,
+
+        EMPOISONNEMENT_SRAM_1495 = 1495,
+
+        EMPOISONNEMENT_SRAM_CRITIQUE_1496 = 1496,
+
+        PIEGE_INSIDIEUX_1497 = 1497,
+
+        DESINVOCATION_SRAM_1498 = 1498,
+
+        PIEGE_MORTEL_SRAM_1499 = 1499,
+
+        PIEGE_MORTEL_CRITIQUE_1500 = 1500,
+
+        DESINVOCATION_CRITIQUE_SRAM_1501 = 1501,
+
+        SILENCE_CRITIQUE_DU_SRAM_1502 = 1502,
+
+        GLYPHE_AGRESSIF_CRITIQUE_1504 = 1504,
+
+        GLYPHE_RALENTISSANT_CRITIQUE_1506 = 1506,
+
+        GLYPHE_DE_FEU_CRITIQUE_1507 = 1507,
+
+        GLYPHE_IMMOBILISATION_CRITIQUE_1508 = 1508,
+
+        GLYPHE_SILENCE_CRITIQUE_1509 = 1509,
+
+        AGACEMENT_1510 = 1510,
+
+        MALADRESSE_FOURBESQUE_1511 = 1511,
+
+        FLAMME_INCENDIAIRE_1512 = 1512,
+
         ERUPTION_1513 = 1513,
-        PLAGUE_SHOT = 1514,
-        DARK_VENGEANCE = 1515,
-        ETHEREAL_GNIPPLE = 1516,
-        CALLING = 1517,
-        SHAG_PILE = 1518,
-        RONSEEL = 1519,
-        ESSENTIAL_BROILS = 1520,
-        SPARK_OLIFE = 1521,
-        GHOSTLY_PURIFICATION = 1522,
-        INFERNO_1523 = 1523,
-        FIERY_BREATH = 1524,
-        CONCUSSION = 1525,
-        EVIL_EYE = 1526,
-        MIRE_1527 = 1527,
-        CLAWS = 1528,
-        SPIT_1529 = 1529,
-        DASH = 1530,
-        BALANCE = 1531,
-        OSHIMIC_PUNCH = 1532,
-        OSHIMIC_WALLOP = 1533,
-        OSHIMIC_LIGHTING = 1534,
-        OSHIMIC_GUST = 1535,
-        OSHIMIC_BREATH = 1536,
-        OSHIMIC_PANIC = 1537,
-        OSHIMIC_DESTABILISATION = 1538,
-        OSHIMIC_PROTECTION = 1539,
-        GHOULIFICATION_1540 = 1540,
-        INFERNAL_BLADE = 1541,
-        ICY_BLADE = 1542,
-        STONY_BLADE = 1543,
-        HURTLING_BLADE = 1544,
-        BURNING_GASH = 1545,
-        ICY_GASH = 1546,
-        EARTHY_GASH = 1547,
-        WINDY_GASH = 1548,
-        FIRE_DUMMY = 1549,
-        ICE_DUMMY = 1550,
-        EARTH_DUMMY = 1551,
-        WIND_DUMMY = 1552,
-        FOOTLOOSE = 1553,
-        BANDIT_ACUITY = 1554,
-        QUANTUM_HOP = 1555,
-        FURROW = 1556,
-        FRIERHOSE = 1557,
-        MARTIAL_ARTHRITIS = 1558,
-        CRUEL_BLADE = 1559,
-        RATICAL_MEASURES = 1560,
-        ENFLAMED_SHOT = 1561,
-        ICY_SHOT = 1562,
-        SEISMIC_SHOT = 1563,
-        WINDY_SHOT = 1564,
-        FIERY_STREAK = 1565,
-        ICY_STREAK = 1566,
-        QUAKING_STREAK = 1567,
-        WINDY_STREAK = 1568,
-        INCENDIARY_MORTAL_SHOT = 1569,
-        POLAR_MORTAL_SHOT = 1570,
-        TERRESTRIAL_MORTAL_SHOT = 1571,
-        CELESTIAL_MORTAL_SHOT = 1572,
-        BUCKARAY = 1573,
-        TIGHTROPE = 1574,
-        WHITEOUT = 1575,
-        TIPTOWE = 1576,
-        STICKY_ARROW = 1577,
-        SENTINEL_1578 = 1578,
-        ARCHERY = 1579,
-        BONE_IDOL = 1580,
-        ENFLAMED_BLOW = 1581,
-        LIQUID_BLOW = 1582,
-        MINERAL_BLOW_1583 = 1583,
-        AERIAL_BLOW = 1584,
-        FLAME_BLOW = 1585,
-        WHACK_OICE = 1586,
-        WHACK_OEARTH = 1587,
-        WHACK_OWIND = 1588,
-        BURNING_CRUSH = 1589,
-        GLACIAL_CRUSH = 1590,
-        SEISMIC_CRUSH = 1591,
-        AERIAL_CRUSH = 1592,
-        BRIGANDINE = 1593,
-        FUMBLET = 1594,
-        WANDERER_S_FURY = 1595,
-        WHACK_OSHIELD = 1596,
-        SECOND_WIND = 1597,
-        TROUNCER = 1598,
-        MINI_JACK = 1599,
-        RATPACK = 1600,
-        MAGMANIC_METEORITE = 1601,
-        FROZEN_METEORITE = 1602,
-        SOLID_METEORITE = 1603,
-        GASEOUS_METEORITE = 1604,
-        FIERY_LIGHTING_BOLT = 1605,
-        WATERY_LIGHTING_BOLT = 1606,
-        MINERAL_BLOW_1607 = 1607,
-        WINDY_LIGHTING_BOLT = 1608,
-        BURNING_VITALITY = 1609,
-        FROZEN_VITALITY = 1610,
-        STONY_VITALITY = 1611,
-        WIND_VITALITY = 1612,
-        LOAFYLACTIC_1613 = 1613,
-        DEMYSTIFICATION = 1614,
-        ADRENALINE = 1615,
-        STAGGER = 1616,
-        SCAR_1617 = 1617,
-        NOT_THE_FACE = 1618,
-        STAFF_OF_THE_SORCERER = 1619,
-        RATTLE_ON_IN = 1620,
-        RATICENCE = 1621,
-        SOFT_CELL = 1622,
-        RATATURK = 1623,
-        STRENGTH_FROM_THE_BEYOND = 1624,
-        LAZZER_US = 1625,
-        STRIP_DIZEASE = 1626,
-        DEBUFFY_SUMMERS = 1627,
-        UP_THE_REEK = 1628,
-        HYPMEOWTISM = 1629,
-        KITTYKLES = 1630,
-        CAT_LL_TEACH_YOU = 1631,
-        CHARASMEOWTIC = 1632,
-        BLINDING_DARKNESS = 1633,
-        DARK_SERVANT = 1634,
-        BLOODY_LOVEBITE = 1635,
-        LEFT_JAB = 1636,
-        SULPHUROUS_BREATH = 1637,
-        FOGGY_SHAPE = 1638,
-        JET_OF_LARVA = 1639,
-        MOLTEN_BODY = 1640,
-        TERRESTRIAL_FOG = 1641,
-        SPANKING_1642 = 1642,
-        HEART_WARMING = 1643,
-        POX = 1644,
-        TO_THE_POINT = 1645,
-        WARTY_SKIN = 1646,
-        LETHARGIC_HEALING = 1647,
-        NORTH_WIND = 1648,
-        SOUTH_WIND = 1649,
-        HOT_AIR = 1650,
-        SPONGY_WART = 1651,
-        BINGE_1674 = 1674,
-        GENERAL_ROUND_1675 = 1675,
-        DOPPLESQUE_BOOZER = 1676,
-        DOPPLESQUE_PANDINIURAS_1677 = 1677,
-        DOPPLESQUE_STAIN_1678 = 1678,
-        SYLVAN_HEALING_OLD = 1687,
+
+        ENSORCELLEMENT_SOMBRE_1514 = 1514,
+
+        SOMBRE_VENGEANCE_1515 = 1515,
+
+        MORSURE_ETHEREE_1516 = 1516,
+
+        APPEL_1517 = 1517,
+
+        LAINE_EPAISSE_1518 = 1518,
+
+        BLOCAGE_1519 = 1519,
+
+        FEU_VITAL_1520 = 1520,
+
+        ETINCELLE_DE_VIE_1521 = 1521,
+
+        PURIFICATION_FANTMATIQUE_1522 = 1522,
+
+        BRASIER_1523 = 1523,
+
+        SOUFFLE_ENFLAMME_1524 = 1524,
+
+        CONCUSSION_1525 = 1525,
+
+        MAUVAIS_OEIL_1526 = 1526,
+
+        BOUE_1527 = 1527,
+
+        GRIFFES_1528 = 1528,
+
+        CRACHAT_1529 = 1529,
+
+        COURSE_1530 = 1530,
+
+        EQUILIBRE_1531 = 1531,
+
+        FRAPPE_DOSHIMA_1532 = 1532,
+
+        BAFFE_DOSHIMA_1533 = 1533,
+
+        ECLAIR_DOSHIMA_1534 = 1534,
+
+        BOURRASQUE_DOSHIMA_1535 = 1535,
+
+        SOUFFLE_DOSHIMA_1536 = 1536,
+
+        PANIQUE_DOSHIMA_1537 = 1537,
+
+        DESTABILISATION_DOSHIMA_1538 = 1538,
+
+        PROTECTION_DOSHIMA_1539 = 1539,
+
+        GOULIFICATION_1540 = 1540,
+
+        LAME_INCENDIAIRE_1541 = 1541,
+
+        LAME_GELEE_1542 = 1542,
+
+        LAME_ROCAILLEUSE_1543 = 1543,
+
+        LAME_VOLANTE_1544 = 1544,
+
+        ENTAILLE_BRULANTE_1545 = 1545,
+
+        ENTAILLE_GELEE_1546 = 1546,
+
+        ENTAILLE_TERRESTRE_1547 = 1547,
+
+        ENTAILLE_DE_VENT_1548 = 1548,
+
+        FEINTE_DE_FEU_1549 = 1549,
+
+        FEINTE_DE_GEL_1550 = 1550,
+
+        FEINTE_DE_TERRE_1551 = 1551,
+
+        FEINTE_DE_VENT_1552 = 1552,
+
+        PIEDS_LEGERS_1553 = 1553,
+
+        ACUITE_DU_BANDIT_1554 = 1554,
+
+        DEPLACEMENT_ECLAIR_1555 = 1555,
+
+        FOURBERIE_1556 = 1556,
+
+        DESARMEMENT_1557 = 1557,
+
+        LACETS_NOUES_1558 = 1558,
+
+        LAME_CRUELLE_1559 = 1559,
+
+        APPEL_RAT_DICAL_1560 = 1560,
+
+        TIR_ENFLAMME_1561 = 1561,
+
+        TIR_DE_GLACE_1562 = 1562,
+
+        TIR_SISMIQUE_1563 = 1563,
+
+        TIR_VENTEUX_1564 = 1564,
+
+        TRAIT_BRULANT_1565 = 1565,
+
+        TRAIT_GLACIAL_1566 = 1566,
+
+        TRAIT_SISMIQUE_1567 = 1567,
+
+        TRAIT_VENTEUX_1568 = 1568,
+
+        TIR_MORTEL_INCENDIAIRE_1569 = 1569,
+
+        TIR_MORTEL_POLAIRE_1570 = 1570,
+
+        TIR_MORTEL_TERRESTRE_1571 = 1571,
+
+        TIR_MORTEL_CELESTE_1572 = 1572,
+
+        RUADE_1573 = 1573,
+
+        CORDE_RAIDE_1574 = 1574,
+
+        FLASH_1575 = 1575,
+
+        FURTIVITE_1576 = 1576,
+
+        FLECHE_COLLANTE_1577 = 1577,
+
+        SENTINELLE_1578 = 1578,
+
+        ARCHERIE_1579 = 1579,
+
+        SAC_DOS_1580 = 1580,
+
+        FRAPPE_ENFLAMMEE_1581 = 1581,
+
+        FRAPPE_LIQUIDE_1582 = 1582,
+
+        FRAPPE_MINERALE_1583 = 1583,
+
+        FRAPPE_AERIENNE_1584 = 1584,
+
+        COUP_DE_FLAMME_1585 = 1585,
+
+        COUP_DE_GLACE_1586 = 1586,
+
+        COUP_TERRESTRE_1587 = 1587,
+
+        COUP_VENTEUX_1588 = 1588,
+
+        ECRASEMENT_BRULANT_1589 = 1589,
+
+        ECRASEMENT_GLAÇANT_1590 = 1590,
+
+        ECRASEMENT_SISMIQUE_1591 = 1591,
+
+        ECRASEMENT_AERIEN_1592 = 1592,
+
+        BRIGANDINE_1593 = 1593,
+
+        INEXPERIENCE_1594 = 1594,
+
+        FUREUR_DU_BAROUDEUR_1595 = 1595,
+
+        COUP_DE_BOUCLIER_1596 = 1596,
+
+        SECOND_SOUFFLE_1597 = 1597,
+
+        RUEE_1598 = 1598,
+
+        SCIENCE_MARTIALE_1599 = 1599,
+
+        A_LA_RAT_MASSE_1600 = 1600,
+
+        METEORE_MAGMATIQUE_1601 = 1601,
+
+        METEORE_GLACE_1602 = 1602,
+
+        METEORE_SOLIDE_1603 = 1603,
+
+        METEORE_GAZEUX_1604 = 1604,
+
+        ECLAIR_DE_FEU_1605 = 1605,
+
+        ECLAIR_DEAU_1606 = 1606,
+
+        ECLAIR_MINERAL_1607 = 1607,
+
+        ECLAIR_DE_VENT_1608 = 1608,
+
+        VITALITE_BRULANTE_1609 = 1609,
+
+        VITALITE_GLACEE_1610 = 1610,
+
+        VITALITE_DE_LA_PIERRE_1611 = 1611,
+
+        VITALITE_DU_VENT_1612 = 1612,
+
+        ABATTEMENT_1613 = 1613,
+
+        DEMYSTIFICATION_1614 = 1614,
+
+        ADRENALINE_1615 = 1615,
+
+        ETOURDISSEMENT_1616 = 1616,
+
+        CICATRICE_1617 = 1617,
+
+        PAS_LES_DENTS_1618 = 1618,
+
+        BAGUETTE_DU_SORCIER_1619 = 1619,
+
+        GARDE_NECROTIQUE_1620 = 1620,
+
+        RAT_DIOLOGUE_1621 = 1621,
+
+        SEMELLE_MOLLE_1622 = 1622,
+
+        RAT_NEMIQUE_1623 = 1623,
+
+        FORCE_DOUTRE_TOMBE_1624 = 1624,
+
+        MORDORSENE_1625 = 1625,
+
+        HEDITE_1626 = 1626,
+
+        ACHESSE_1627 = 1627,
+
+        CHAFOUETTE_1628 = 1628,
+
+        CHYPNOTISME_1629 = 1629,
+
+        CHACHATOUILLES_1630 = 1630,
+
+        CHATAPRENDRA_1631 = 1631,
+
+        CHACHARISMATIQUE_1632 = 1632,
+
+        OBSCURITE_AVEUGLANTE_1633 = 1633,
+
+        SOMBRE_SERVITEUR_1634 = 1634,
+
+        SUÇON_SANGLANT_1635 = 1635,
+
+        DIRECT_DU_GAUCHE_1636 = 1636,
+
+        HALEINE_SULFUREUSE_1637 = 1637,
+
+        FORME_DE_BRUME_1638 = 1638,
+
+        ECLAT_DE_LAVE_1639 = 1639,
+
+        CORPS_EN_FUSION_1640 = 1640,
+
+        BROUILLARD_TELLURIQUE_1641 = 1641,
+
+        FESSEE_1642 = 1642,
+
+        CHAUD_AU_CŒUR_1643 = 1643,
+
+        VEROLE_1644 = 1644,
+
+        DROIT_AU_BUT_1645 = 1645,
+
+        PEAU_VERRUQUEUSE_1646 = 1646,
+
+        SOIN_LETHARGIQUE_1647 = 1647,
+
+        VENT_DU_NORD_1648 = 1648,
+
+        VENT_DU_SUD_1649 = 1649,
+
+        DU_VENT__1650 = 1650,
+
+        VERRUE_SPONGIEUSE_1651 = 1651,
+
+        PICOLE_DU_DOPEUL_1676 = 1676,
+
+        PANDANLKU_DU_DOPEUL_1677 = 1677,
+
+        SOUILLURE_DU_DOPEUL_1678 = 1678,
+
+        _1679 = 1679,
+
+        SOIN_SYLVESTRE_OLD_1687 = 1687,
+
         REPULSION_1688 = 1688,
-        SUMMONING_OF_PLUMP_WYRMLING = 1696,
-        SACRIFICE_FOR_A_GOOD_CAUSE = 1699,
-        PAUNCHY_PRESPIC_SUMMONS = 1704,
-        LONE_WOLF = 1705,
-        BOAR = 1706,
-        BWORK_PUNISHMENT = 1707,
-        BWORK_THRASHING = 1708,
+
+        INVOCATION_DE_DRAGONNET_VENTRIPOTENT_1696 = 1696,
+
+        LA_SACRIFIEE_POUR_LA_BONNE_CAUSE_1699 = 1699,
+
+        INVOCATION_DE_PRESPIC_BEDONNANT_1704 = 1704,
+
+        LA_SOLITAIRE_1705 = 1705,
+
+        SANGLIER_1706 = 1706,
+
+        SANCTION_BWORK_1707 = 1707,
+
+        CORRECTION_BWORK_1708 = 1708,
+
         CONTUSION_1709 = 1709,
-        TEST = 1710,
-        BWAAARGH = 1711,
-        C_MERE = 1712,
-        TAYKEAHYKE = 1713,
-        SPEWIZFUN = 1714,
-        INYERFACE = 1715,
-        MARROW_SUCKING = 1716,
-        MALEVOLENT_STARE = 1717,
-        FLINTY_BLADE = 1718,
-        ROTTEN_TEETH = 1719,
-        BONE_CALL = 1720,
-        ZMARTZ_EH = 1721,
-        ZATZUX = 1722,
-        ZNOTFAIR = 1723,
-        ZNOTME = 1724,
-        ZGOODZAT = 1725,
-        REVULSION = 1726,
-        UTOPIA = 1727,
-        CAREBEAR_HUG = 1728,
-        BUTT_PLUG = 1729,
-        FAYE_PWORME_BOOT = 1730,
-        ON_THE_EDGE = 1731,
-        WYAYE_WATER = 1732,
-        DOOWATYA_WATER = 1733,
-        DONMENTIONDA_WATER = 1734,
-        LYKMUTHALYK_WATER = 1735,
-        TUNNEL = 1736,
-        ROCK_SLIDE = 1737,
-        BONANZA = 1738,
-        FIREDAMP_EXPLOSION = 1739,
-        HEADTORCH = 1740,
-        PSYCHOPATHIC_KLEPTOMANIA = 1741,
-        YOUR_MONEY_OR_YOUR_LIFE = 1742,
-        BARN_SHOVEL = 1743,
-        PHILOSOPHER_S_STONE = 1744,
-        CLIENT_VIRTUAL_GLYPH_SPELL = 1750,
-        FRIDENT = 1751,
-        PUTRID_CURSE = 1752,
-        EXTREMELY_EVIL_TOFU_KISS = 1753,
-        PUTRID_BLESSING = 1754,
-        WRONG_CHOICE = 1755,
-        RIGHT_CHOICE = 1756,
-        MINER_CHORD = 1757,
-        MISUNDERSTANDING = 1758,
-        HEEL_BAR = 1759,
-        TICK_TOCK_1760 = 1760,
-        BADABOOM = 1761,
-        TICK_TOCK_1762 = 1762,
-        TICK_TOCK = 1763,
-        HOCUS_POCUS = 1764,
-        PAIN_PERDU = 1765,
-        DUNDERBREAD = 1766,
-        BREADACHE = 1767,
-        BUDDY = 1768,
-        RAGAMUFFIN = 1769,
-        UNDERARMS = 1770,
-        TOASTER = 1771,
-        AMPUTATION = 1772,
-        SHRAPNEL = 1773,
-        INCENDIARY_SHRAPNEL = 1774,
-        CAUTERISATION_1775 = 1775,
-        RECKLESS_RAGE = 1776,
-        ARSONIST = 1777,
-        INCENDIARY_VULNERABILITY = 1778,
-        SKULLCRUSHER = 1779,
-        FORTRESS = 1780,
-        HEAVY_ARMOUR = 1781,
-        COME_TO_ME = 1782,
-        ATTILA = 1783,
-        GODSBANE = 1784,
-        ELEMENTALIST = 1785,
-        ELEMENTAL_PELLET = 1786,
-        SHATTERING_STONE = 1787,
-        HOWLING_MASS = 1788,
-        ELEMENTAL_SPIRIT = 1789,
-        AEROLIAN_BLESSING = 1790,
-        AEROLIAN_FURY = 1791,
-        HYDROLIAN_BLESSING = 1792,
-        HYDROLIAN_FURY = 1793,
-        PYROLIAN_BLESSING = 1794,
-        PYROLIAN_FURY = 1795,
-        GEOLIAN_BLESSING = 1796,
-        GEOLIAN_FURY = 1797,
-        AEROLANCE = 1798,
-        AQUALANCE = 1799,
-        BLUE_FAIRYWORK = 1800,
-        CRACKLING_BLUE_FAIRYWORK = 1801,
-        SPRINKLING_BLUE_FAIRYWORK = 1802,
-        WHIRLING_BLUE_FAIRYWORK = 1803,
-        TWIRLING_BLUE_FAIRYWORK = 1804,
-        YELLOW_FAIRYWORK = 1805,
-        CRACKLING_YELLOW_FAIRYWORK = 1806,
-        SPRINKLING_YELLOW_FAIRYWORK = 1807,
-        WHIRLING_YELLOW_FAIRYWORK = 1808,
-        TWIRLING_YELLOW_FAIRYWORK = 1809,
-        RED_FAIRYWORK = 1810,
-        CRACKLING_RED_FAIRYWORK = 1811,
-        SPRINKLING_RED_FAIRYWORK = 1812,
-        WHIRLING_RED_FAIRYWORK = 1813,
-        TWIRLING_RED_FAIRYWORK = 1814,
-        GREEN_FAIRYWORK = 1815,
-        CRACKLING_GREEN_FAIRYWORK = 1816,
-        SPRINKLING_GREEN_FAIRYWORK = 1817,
-        WHIRLING_GREEN_FAIRYWORK = 1818,
-        TWIRLING_GREEN_FAIRYWORK = 1819,
-        MULTICOLOURED_FAIRYWORK = 1820,
-        CRACKLING_MULTICOLOURED_FAIRYWORK = 1821,
-        SPRINKLING_MULTICOLOURED_FAIRYWORK = 1822,
-        WHIRLING_MULTICOLOURED_FAIRYWORK = 1823,
-        TWIRLING_MULTICOLOURED_FAIRYWORK = 1824,
-        TOFU_SUMMONING_FAIRYWORK = 1825,
-        HEART_SHAPED_FAIRYWORK = 1826,
-        CONTRARY_FAIRYWORK = 1827,
-        MAGIC_BLUE_BALLOON = 1828,
-        MAGIC_YELLOW_BALLOON = 1829,
-        MAGIC_RED_BALLOON = 1830,
-        MAGIC_GREEN_BALLOON = 1831,
-        HEART_SHAPED_BALLOON = 1832,
-        CLOUD_OF_SMOKE = 1833,
-        LARGE_BLUE_FAIRYWORK = 1834,
-        LARGE_CRACKLING_BLUE_FAIRYWORK = 1835,
-        LARGE_SPRINKLING_BLUE_FAIRYWORK = 1836,
-        LARGE_WHIRLING_BLUE_FAIRYWORK = 1837,
-        LARGE_TWIRLING_BLUE_FAIRYWORK = 1838,
-        LARGE_TOFU_SUMMONING_FAIRYWORK = 1839,
-        LARGE_YELLOW_FAIRYWORK = 1840,
-        LARGE_CRACKLING_YELLOW_FAIRYWORK = 1841,
-        LARGE_SPRINKLING_YELLOW_FAIRYWORK = 1842,
-        LARGE_WHIRLING_YELLOW_FAIRYWORK = 1843,
-        LARGE_TWIRLING_YELLOW_FAIRYWORK = 1844,
-        LARGE_MULTICOLOURED_FAIRYWORK = 1845,
-        LARGE_CRACKLING_MULTICOLOURED_FAIRYWORK = 1846,
-        LARGE_SPRINKLING_MULTICOLOURED_FAIRYWORK = 1847,
-        LARGE_WHIRLING_MULTICOLOURED_FAIRYWORK = 1848,
-        LARGE_TWIRLING_MULTICOLOURED_FAIRYWORK = 1849,
-        LARGE_RED_FAIRYWORK = 1850,
-        LARGE_CRACKLING_RED_FAIRYWORK = 1851,
-        LARGE_SPRINKLING_RED_FAIRYWORK = 1852,
-        LARGE_WHIRLING_RED_FAIRYWORK = 1853,
-        LARGE_TWIRLING_RED_FAIRYWORK = 1854,
-        LARGE_GREEN_FAIRYWORK = 1855,
-        LARGE_CRACKLING_GREEN_FAIRYWORK = 1856,
-        LARGE_SPRINKLING_GREEN_FAIRYWORK = 1857,
-        LARGE_WHIRLING_GREEN_FAIRYWORK = 1858,
-        LARGE_TWIRLING_GREEN_FAIRYWORK = 1859,
-        PYROFUEGO = 1860,
-        WHITE_FLEASTER_FAIRYWORK = 1878,
-        BLUE_FLEASTER_FAIRYWORK = 1880,
-        YELLOW_FLEASTER_FAIRYWORK = 1881,
-        GREEN_FLEASTER_FAIRYWORK = 1883,
-        RED_FLEASTER_FAIRYWORK = 1885,
-        PYROLANCE = 1900,
-        GEOLANCE = 1913,
-        GUSTY_PELLET = 1914,
-        MUGGY_PELLET = 1915,
-        INCENDIARY_PELLET = 1916,
-        ROCKY_PELLET = 1917,
-        PIERCING_ROCK = 1918,
-        POWERFUL_ROCK = 1919,
-        FLAMBOYANT_ROCK = 1920,
-        CRUSHING_ROCK = 1921,
-        TERRIFYING_SPIRIT = 1922,
-        AGGRESSIVE_SPIRIT = 1923,
-        DEVOTED_SPIRIT = 1924,
-        SPIRIT_GRACE = 1925,
-        AIR_SUMMON = 1926,
-        WATER_SUMMON = 1927,
-        FIRE_SUMMON = 1928,
-        EARTH_SUMMON = 1929,
-        AIR_PROTECTION = 1930,
-        WATER_PROTECTION = 1931,
-        FIRE_PROTECTION = 1932,
-        EARTH_PROTECTION = 1933,
-        EODUBATO_BLESSING = 1934,
-        EODUBATO_FURY = 1935,
-        AQUABOULVAR_BLESSING = 1936,
-        AQUABOULVAR_FURY = 1937,
-        PYROLESE_BLESSING = 1938,
-        PYROLESE_FURY = 1939,
-        GEOSEEKER_S_BLESSING = 1940,
-        GEOSEEKER_S_FURY = 1941,
-        ELEMENTAL_SUMMON = 1942,
-        FLATTENING = 1943,
-        SNOWBALL = 1944,
-        POLAR_HEAT = 1945,
-        ANAGLYPH = 1946,
-        ANAGLYPH_SPELL = 1947,
-        AUDACIOUS_GLYPH = 1948,
-        AUDACIOUS_GLYPH_SPELL = 1949,
-        AEROGLYPH = 1950,
-        AEROGLYPH_SPELL = 1951,
-        AQUAGLYPH = 1952,
-        AQUAGLYPH_SPELL = 1953,
-        PYROGLYPH = 1954,
-        PYROGLYPH_SPELL = 1955,
-        GEOGLYPH = 1956,
-        GEOGLYPH_SPELL = 1957,
-        WHITE_LIGHT_GLYPH = 1958,
-        WHITE_LIGHT_GLYPH_SPELL = 1959,
-        WEAKENING_SPORES = 1960,
-        CARNIVORE = 1961,
-        TREACHEROUS_BRAMBLE = 1962,
-        ALPHA_RADIATION = 1963,
-        FIRST_ALPHA_RADIATION = 1964,
-        SECOND_ALPHA_RADIATION = 1965,
-        THIRD_ALPHA_RADIATION = 1966,
-        BETA_RADIATION = 1967,
-        FIRST_BETA_RADIATION = 1968,
-        SECOND_BETA_RADIATION = 1969,
-        THIRD_BETA_RADIATION = 1970,
-        GAMMA_RADIATION = 1971,
-        FIRST_GAMMA_RADIATION = 1972,
-        SECOND_GAMMA_RADIATION = 1973,
-        THIRD_GAMMA_RADIATION = 1974,
-        DELTA_RADIATION = 1975,
-        FIRST_DELTA_RADIATION = 1976,
-        SECOND_DELTA_RADIATION = 1977,
-        THIRD_DELTA_RADIATION = 1978,
-        OMEGA_RADIATION = 1979,
-        SOOTHING_VINE = 1980,
-        INSOLENT_VINE = 1981,
-        SOFT_MARKET = 1982,
-        NASAL_DISCHARGE = 1983,
-        COWARDICE = 1984,
-        PLUN_DARR = 1985,
-        FLUFFING = 1986,
-        SPORELATION = 1987,
-        SPOILSPORE = 1988,
-        TRANSPORE = 1989,
-        SPORK_1990 = 1990,
-        LIVE_LONG_AND_PROSPORE = 1991,
-        CROBAK_CORPSE = 1992,
-        LASM_1993 = 1993,
-        SUMMON_SPECTRAL_TOFU = 1994,
-        SUMMON_SPECTRAL_BOAR = 1995,
-        SPECTRAL_MOTIVATION = 1996,
-        SPECTRAL_TOFU_PECK = 1997,
-        SPECTRAL_SKEWER = 1998,
-        KISS_OF_TOFU_1999 = 1999,
-        GOBBALL_BITE_2000 = 2000,
-        MOCKERY_2001 = 2001,
-        SKEWERING_2002 = 2002,
-        SERIAL_LIGHTNINGS_2003 = 2003,
-        TORNADO_2004 = 2004,
-        CRUSHING = 2005,
+
+        TEST_1710 = 1710,
+
+        BEUARH_1711 = 1711,
+
+        VIENLA_1712 = 1712,
+
+        TUMENERV_1713 = 1713,
+
+        VOMISEDROL_1714 = 1714,
+
+        DANTAFASS_1715 = 1715,
+
+        SUCE_MOELLE_1716 = 1716,
+
+        VISAGE_FUNESTE_1717 = 1717,
+
+        LAME_OS_TERRE_1718 = 1718,
+
+        MORD_BIDE_1719 = 1719,
+
+        AMIG_OS_1720 = 1720,
+
+        SAPIKHEIN_1721 = 1721,
+
+        OULAHSAKRAIN_1722 = 1722,
+
+        SPAJUSTE_1723 = 1723,
+
+        SEPAMOI_1724 = 1724,
+
+        SEBONSA_1725 = 1725,
+
+        REVULSION_1726 = 1726,
+
+        TOPI_NAMBOURE_1727 = 1727,
+
+        CALINOUNOURS_1728 = 1728,
+
+        TOUCHER_REKTOL_1729 = 1729,
+
+        BOTTE_DE_VERSO_LITAIRE_1730 = 1730,
+
+        SUR_LE_FIL_1731 = 1731,
+
+        EAU_TARIE_1732 = 1732,
+
+        EAU_CULTE_1733 = 1733,
+
+        LEAU_DE_LA_1734 = 1734,
+
+        EAU_SOLE_MIO_1735 = 1735,
+
+        TUNNEL_1736 = 1736,
+
+        EBOULIS_1737 = 1737,
+
+        FILON_1738 = 1738,
+
+        COUP_DE_GRIZOU_1739 = 1739,
+
+        LAMPE_DE_FRONT_1740 = 1740,
+
+        KLEPTOMANIE_PSYCHOPATHE_1741 = 1741,
+
+        LA_BOURSE_OU_LA_VIE_1742 = 1742,
+
+        LA_PELLE_DU_LARGE_1743 = 1743,
+
+        LA_PIERRE_PHILOSOPHALE_1744 = 1744,
+
+        CLIENT_VIRTUAL_GLYPH_SPELL_1750 = 1750,
+
+        FRIDENT_1751 = 1751,
+
+        MALEDICTION_PUTRIDE_1752 = 1752,
+
+        BECO_DU_TOFU_TRES_MALEFIQUE_1753 = 1753,
+
+        BENEDICTION_PUTRIDE_1754 = 1754,
+
+        MAUVAISE_PIOCHE_1755 = 1755,
+
+        BONNE_PIOCHE_1756 = 1756,
+
+        ACCORD_MINEUR_1757 = 1757,
+
+        MAUVAIS_ACCORD_1758 = 1758,
+
+        BARRE_A_MINE_1759 = 1759,
+
+        TIC_TAC_1760 = 1760,
+
+        BADABOUM_1761 = 1761,
+
+        TIC_TAC_1762 = 1762,
+
+        TIC_TAC_1763 = 1763,
+
+        TOUR_DE_PASSE_PASSE_1764 = 1764,
+
+        PAIN_PERDU_1765 = 1765,
+
+        PAIN_DES_PICES_1766 = 1766,
+
+        DISTRIBUTION_DE_PAINS_1767 = 1767,
+
+        COPAIN_1768 = 1768,
+
+        GALOPAIN_1769 = 1769,
+
+        SOUS_LES_AISSELLES_1770 = 1770,
+
+        GRILLE_PAIN_1771 = 1771,
+
+        AMPUTATION_1772 = 1772,
+
+        SHRAPNEL_1773 = 1773,
+
+        SHRAPNEL_INCENDIAIRE_1774 = 1774,
+
+        CAUTERE_1775 = 1775,
+
+        RAGE_INCONSIDEREE_1776 = 1776,
+
+        PYROMANE_1777 = 1777,
+
+        VULNERABILITE_INCENDIAIRE_1778 = 1778,
+
+        BRISE_CRANE_1779 = 1779,
+
+        FORTERESSE_1780 = 1780,
+
+        ARMURE_LOURDE_1781 = 1781,
+
+        VENEZ_A_MOI_1782 = 1782,
+
+        ATTILA_1783 = 1783,
+
+        FLEAU_DES_DIEUX_1784 = 1784,
+
+        ELEMENTALANCE_1785 = 1785,
+
+        BOULETTE_ELEMENTALE_1786 = 1786,
+
+        ROCHER_ECLATANT_1787 = 1787,
+
+        MASSE_HURLANTE_1788 = 1788,
+
+        ESPRIT_ELEMENTAL_1789 = 1789,
+
+        BENEDICTION_EOLIENNE_1790 = 1790,
+
+        FUREUR_EOLIENNE_1791 = 1791,
+
+        BENEDICTION_HYDROLIENNE_1792 = 1792,
+
+        FUREUR_HYDROLIENNE_1793 = 1793,
+
+        BENEDICTION_PYROLIENNE_1794 = 1794,
+
+        FUREUR_PYROLIENNE_1795 = 1795,
+
+        BENEDICTION_GEOLIENNE_1796 = 1796,
+
+        FUREUR_GEOLIENNE_1797 = 1797,
+
+        EOLANCE_1798 = 1798,
+
+        AQUALANCE_1799 = 1799,
+
+        FEE_DARTIFICE_BLEUE_1800 = 1800,
+
+        FEE_DARTIFICE_BLEUE_CREPITANTE_1801 = 1801,
+
+        FEE_DARTIFICE_BLEUE_FONTAINE_1802 = 1802,
+
+        FEE_DARTIFICE_BLEUE_TOURNOYANTE_1803 = 1803,
+
+        FEE_DARTIFICE_BLEUE_VIREVOLTANTE_1804 = 1804,
+
+        FEE_DARTIFICE_JAUNE_1805 = 1805,
+
+        FEE_DARTIFICE_JAUNE_CREPITANTE_1806 = 1806,
+
+        FEE_DARTIFICE_JAUNE_FONTAINE_1807 = 1807,
+
+        FEE_DARTIFICE_JAUNE_TOURNOYANTE_1808 = 1808,
+
+        FEE_DARTIFICE_JAUNE_VIREVOLTANTE_1809 = 1809,
+
+        FEE_DARTIFICE_ROUGE_1810 = 1810,
+
+        FEE_DARTIFICE_ROUGE_CREPITANTE_1811 = 1811,
+
+        FEE_DARTIFICE_ROUGE_FONTAINE_1812 = 1812,
+
+        FEE_DARTIFICE_ROUGE_TOURNOYANTE_1813 = 1813,
+
+        FEE_DARTIFICE_ROUGE_VIREVOLTANTE_1814 = 1814,
+
+        FEE_DARTIFICE_VERTE_1815 = 1815,
+
+        FEE_DARTIFICE_VERTE_CREPITANTE_1816 = 1816,
+
+        FEE_DARTIFICE_VERTE_FONTAINE_1817 = 1817,
+
+        FEE_DARTIFICE_VERTE_TOURNOYANTE_1818 = 1818,
+
+        FEE_DARTIFICE_VERTE_VIREVOLTANTE_1819 = 1819,
+
+        FEE_DARTIFICE_MULTICOLORE_1820 = 1820,
+
+        FEE_DARTIFICE_MULTICOLORE_CREPITANTE_1821 = 1821,
+
+        FEE_DARTIFICE_MULTICOLORE_FONTAINE_1822 = 1822,
+
+        FEE_DARTIFICE_MULTICOLORE_TOURNOYANTE_1823 = 1823,
+
+        FEE_DARTIFICE_MULTICOLORE_VIREVOLTANTE_1824 = 1824,
+
+        FEE_DARTIFICE_INVOCATRICE_DE_TOFU_1825 = 1825,
+
+        FEE_DARTIFICE_INVOCATRICE_DE_CŒURS_1826 = 1826,
+
+        FEE_DARTIFICE_HILLE_1827 = 1827,
+
+        BALLON_BLEU_MAGIQUE_1828 = 1828,
+
+        BALLON_JAUNE_MAGIQUE_1829 = 1829,
+
+        BALLON_ROUGE_MAGIQUE_1830 = 1830,
+
+        BALLON_VERT_MAGIQUE_1831 = 1831,
+
+        BALLON_CŒUR_1832 = 1832,
+
+        NUAGE_DE_FUMEE_1833 = 1833,
+
+        GRANDE_FEE_DARTIFICE_BLEUE_1834 = 1834,
+
+        GRANDE_FEE_DARTIFICE_BLEUE_CREPITANTE_1835 = 1835,
+
+        GRANDE_FEE_DARTIFICE_BLEUE_FONTAINE_1836 = 1836,
+
+        GRANDE_FEE_DARTIFICE_BLEUE_TOURNOYANTE_1837 = 1837,
+
+        GRANDE_FEE_DARTIFICE_BLEUE_VIREVOLTANTE_1838 = 1838,
+
+        GRANDE_FEE_DARTIFICE_INVOCATRICE_DE_TOFU_1839 = 1839,
+
+        GRANDE_FEE_DARTIFICE_JAUNE_1840 = 1840,
+
+        GRANDE_FEE_DARTIFICE_JAUNE_CREPITANTE_1841 = 1841,
+
+        GRANDE_FEE_DARTIFICE_JAUNE_FONTAINE_1842 = 1842,
+
+        GRANDE_FEE_DARTIFICE_JAUNE_TOURNOYANTE_1843 = 1843,
+
+        GRANDE_FEE_DARTIFICE_JAUNE_VIREVOLTANTE_1844 = 1844,
+
+        GRANDE_FEE_DARTIFICE_MULTICOLORE_1845 = 1845,
+
+        GRANDE_FEE_DARTIFICE_MULTICOLORE_CREPITANTE_1846 = 1846,
+
+        GRANDE_FEE_DARTIFICE_MULTICOLORE_FONTAINE_1847 = 1847,
+
+        GRANDE_FEE_DARTIFICE_MULTICOLORE_TOURNOYANTE_1848 = 1848,
+
+        GRANDE_FEE_DARTIFICE_MULTICOLORE_VIREVOLTANTE_1849 = 1849,
+
+        GRANDE_FEE_DARTIFICE_ROUGE_1850 = 1850,
+
+        GRANDE_FEE_DARTIFICE_ROUGE_CREPITANTE_1851 = 1851,
+
+        GRANDE_FEE_DARTIFICE_ROUGE_FONTAINE_1852 = 1852,
+
+        GRANDE_FEE_DARTIFICE_ROUGE_TOURNOYANTE_1853 = 1853,
+
+        GRANDE_FEE_DARTIFICE_ROUGE_VIREVOLTANTE_1854 = 1854,
+
+        GRANDE_FEE_DARTIFICE_VERTE_1855 = 1855,
+
+        GRANDE_FEE_DARTIFICE_VERTE_CREPITANTE_1856 = 1856,
+
+        GRANDE_FEE_DARTIFICE_VERTE_FONTAINE_1857 = 1857,
+
+        GRANDE_FEE_DARTIFICE_VERTE_TOURNOYANTE_1858 = 1858,
+
+        GRANDE_FEE_DARTIFICE_VERTE_VIREVOLTANTE_1859 = 1859,
+
+        PYROFUEGO_1860 = 1860,
+
+        _1861 = 1861,
+
+        _1862 = 1862,
+
+        _1863 = 1863,
+
+        _1864 = 1864,
+
+        _1865 = 1865,
+
+        _1866 = 1866,
+
+        _1867 = 1867,
+
+        _1868 = 1868,
+
+        _1869 = 1869,
+
+        _1870 = 1870,
+
+        _1871 = 1871,
+
+        _1872 = 1872,
+
+        _1873 = 1873,
+
+        _1874 = 1874,
+
+        _1875 = 1875,
+
+        _1876 = 1876,
+
+        _1877 = 1877,
+
+        FEE_DARTIFICE_BLANCHE_DE_PWAK_1878 = 1878,
+
+        _1879 = 1879,
+
+        FEE_DARTIFICE_BLEUE_DE_PWAK_1880 = 1880,
+
+        FEE_DARTIFICE_JAUNE_DE_PWAK_1881 = 1881,
+
+        _1882 = 1882,
+
+        FEE_DARTIFICE_VERTE_DE_PWAK_1883 = 1883,
+
+        _1884 = 1884,
+
+        FEE_DARTIFICE_ROUGE_DE_PWAK_1885 = 1885,
+
+        _1886 = 1886,
+
+        _1887 = 1887,
+
+        _1888 = 1888,
+
+        _1889 = 1889,
+
+        _1890 = 1890,
+
+        _1891 = 1891,
+
+        _1892 = 1892,
+
+        _1893 = 1893,
+
+        _1894 = 1894,
+
+        _1895 = 1895,
+
+        _1896 = 1896,
+
+        _1897 = 1897,
+
+        _1898 = 1898,
+
+        _1899 = 1899,
+
+        PYROLANCE_1900 = 1900,
+
+        _1901 = 1901,
+
+        _1902 = 1902,
+
+        _1903 = 1903,
+
+        _1904 = 1904,
+
+        _1905 = 1905,
+
+        _1906 = 1906,
+
+        _1907 = 1907,
+
+        _1908 = 1908,
+
+        _1909 = 1909,
+
+        _1910 = 1910,
+
+        _1911 = 1911,
+
+        _1912 = 1912,
+
+        GEOLANCE_1913 = 1913,
+
+        BOULETTE_VENTEUSE_1914 = 1914,
+
+        BOULETTE_POISSEUSE_1915 = 1915,
+
+        BOULETTE_INCENDIAIRE_1916 = 1916,
+
+        BOULETTE_ROCHEUSE_1917 = 1917,
+
+        ROCHER_TRANSPERÇANT_1918 = 1918,
+
+        ROCHER_PERCUTANT_1919 = 1919,
+
+        ROCHER_FLAMBOYANT_1920 = 1920,
+
+        ROCHER_ECRASANT_1921 = 1921,
+
+        ESPRIT_EFFRAYANT_1922 = 1922,
+
+        ESPRIT_BAGARREUR_1923 = 1923,
+
+        ESPRIT_DEVOUE_1924 = 1924,
+
+        GRACE_DES_ESPRITS_1925 = 1925,
+
+        INVOCATION_DAIR_1926 = 1926,
+
+        INVOCATION_DEAU_1927 = 1927,
+
+        INVOCATION_DE_FEU_1928 = 1928,
+
+        INVOCATION_DE_TERRE_1929 = 1929,
+
+        PROTECTION_DAIR_1930 = 1930,
+
+        PROTECTION_DEAU_1931 = 1931,
+
+        PROTECTION_DE_FEU_1932 = 1932,
+
+        PROTECTION_DE_TERRE_1933 = 1933,
+
+        BENEDICTION_EODUBATO_1934 = 1934,
+
+        FUREUR_EODUBATO_1935 = 1935,
+
+        BENEDICTION_AQUABOULVAR_1936 = 1936,
+
+        FUREUR_AQUABOULVAR_1937 = 1937,
+
+        BENEDICTION_PYROLYSE_1938 = 1938,
+
+        FUREUR_PYROLYSE_1939 = 1939,
+
+        BENEDICTION_GEOTROUVTOU_1940 = 1940,
+
+        FUREUR_GEOTROUVTOU_1941 = 1941,
+
+        INVOCATION_ELEMENTALE_1942 = 1942,
+
+        APLATISSAGE_1943 = 1943,
+
+        BOULE_DE_NEIGE_1944 = 1944,
+
+        CHALEUR_POLAIRE_1945 = 1945,
+
+        ANAGLYPHE_1946 = 1946,
+
+        SORT_ANAGLYPHE_1947 = 1947,
+
+        GLYPHE_DAUDACE_1948 = 1948,
+
+        SORT_GLYPHE_DAUDACE_1949 = 1949,
+
+        EOGLYPHE_1950 = 1950,
+
+        SORT_EOGLYPHE_1951 = 1951,
+
+        AQUAGLYPHE_1952 = 1952,
+
+        SORT_AQUAGLYPHE_1953 = 1953,
+
+        PYROGLYPHE_1954 = 1954,
+
+        SORT_PYROGLYPHE_1955 = 1955,
+
+        GEOGLYPHE_1956 = 1956,
+
+        SORT_GEOGLYPHE_1957 = 1957,
+
+        GLYPHE_DE_LUMIERE_BLANCHE_1958 = 1958,
+
+        SORT_DE_GLYPHE_DE_LUMIERE_BLANCHE_1959 = 1959,
+
+        SPORES_AFFAIBLISSANTS_1960 = 1960,
+
+        CARNIVORE_1961 = 1961,
+
+        RONCE_PERFIDE_1962 = 1962,
+
+        RAYONNEMENT_ALPHA_1963 = 1963,
+
+        PREMIER_RAYONNEMENT_ALPHA_1964 = 1964,
+
+        DEUXIEME_RAYONNEMENT_ALPHA_1965 = 1965,
+
+        TROISIEME_RAYONNEMENT_ALPHA_1966 = 1966,
+
+        RAYONNEMENT_BETA_1967 = 1967,
+
+        PREMIER_RAYONNEMENT_BETA_1968 = 1968,
+
+        DEUXIEME_RAYONNEMENT_BETA_1969 = 1969,
+
+        TROISIEME_RAYONNEMENT_BETA_1970 = 1970,
+
+        RAYONNEMENT_GAMMA_1971 = 1971,
+
+        PREMIER_RAYONNEMENT_GAMMA_1972 = 1972,
+
+        DEUXIEME_RAYONNEMENT_GAMMA_1973 = 1973,
+
+        TROISIEME_RAYONNEMENT_GAMMA_1974 = 1974,
+
+        RAYONNEMENT_DELTA_1975 = 1975,
+
+        PREMIER_RAYONNEMENT_DELTA_1976 = 1976,
+
+        DEUXIEME_RAYONNEMENT_DELTA_1977 = 1977,
+
+        TROISIEME_RAYONNEMENT_DELTA_1978 = 1978,
+
+        RAYONNEMENT_OMEGA_1979 = 1979,
+
+        VIGNE_APAISANTE_1980 = 1980,
+
+        VIGNE_INSOLENTE_1981 = 1981,
+
+        BOURSE_MOLLE_1982 = 1982,
+
+        CURAGE_DE_NEZ_1983 = 1983,
+
+        LACHETE_1984 = 1984,
+
+        RAPINOT_1985 = 1985,
+
+        RAPINE_DHUÎTRE_1986 = 1986,
+
+        SPORULATION_1987 = 1987,
+
+        SPOROTRICHE_1988 = 1988,
+
+        SPORE_TEMALHEUR_1989 = 1989,
+
+        SPORE_CHERIE_1990 = 1990,
+
+        SPORE_CELET_1991 = 1991,
+
+        CADAVRE_DE_CORBAC_1992 = 1992,
+
+        LASME_1993 = 1993,
+
+        INVOCATION_DE_TOFU_SPECTRAL_1994 = 1994,
+
+        INVOCATION_DE_SANGLIER_SPECTRAL_1995 = 1995,
+
+        MOTIVATION_SPECTRALE_1996 = 1996,
+
+        BECO_DU_TOFU_SPECTRAL_1997 = 1997,
+
+        EMBROCHEMENT_SPECTRAL_1998 = 1998,
+
+        BECO_DU_TOFU_1999 = 1999,
+
+        MORSURE_DU_BOUFTOU_2000 = 2000,
+
+        MOQUERIE_2001 = 2001,
+
+        EMBROCHEMENT_2002 = 2002,
+
+        ECLAIR_EN_SERIE_2003 = 2003,
+
+        TORNADE_2004 = 2004,
+
+        ECRASEMENT_2005 = 2005,
+
         SACRIFICE_2006 = 2006,
-        TRICKY_EXPLOSION = 2007,
-        BLAZING_FIST_2008 = 2008,
-        DOPPLESQUE_ROUGH_TONGUE = 2016,
-        VILE_MOUND = 2020,
-        AERIAL_LIFTING_WORD = 2021,
-        PETTY_PUNISHMENT = 2022,
-        FRONTAL_ASSAULT = 2023,
-        BAMBOO_HANGOVER = 2024,
-        INFLAMMATORY_EXPLOSIVE_FLASK = 2025,
-        SLEEPY_HANGOVER = 2026,
-        REVOLTING_STAIN = 2027,
-        CANINE_BLOW = 2028,
-        DOPPLESQUE_NATURAL_ATTACK = 2029,
-        DOPPLESQUE_BARRICADE = 2030,
-        DOPPLESQUE_FECA_SHIELD = 2031,
-        DOPPLESQUE_CLOUDY_ATTACK = 2032,
-        DOPPLESQUE_BURNING_GLYPH = 2033,
-        DOPPLESQUE_BLINDING_GLYPH = 2034,
-        DOPPLESQUE_REPULSION_GLYPH = 2035,
-        DOPPLESQUE_OPTIC_GLYPH = 2036,
-        DOPPLESQUE_AGGRESSIVE_GLYPH = 2037,
-        DOPPLESQUE_BUBBLE = 2038,
-        DOPPLESQUE_FORTIFICATION = 2039,
-        DOPPLESQUE_DRAGONIC = 2040,
-        DOPPLESQUE_CANINE = 2041,
-        DOPPLESQUE_HIGH_ENERGY_SHOT = 2042,
-        DOPPLESQUE_FOSSIL = 2043,
-        DOPPLESQUE_RED_WYRMLING = 2044,
-        DOPPLESQUE_DUSTER = 2045,
-        DOPPLESQUE_BLACK_TOFU = 2046,
-        DOPPLESQUE_GOBBALL = 2047,
-        DOPPLESQUE_CRACKLER_PUNCH = 2048,
-        DOPPLESQUE_PODGY_TOFU = 2050,
-        DOPPLESQUE_SUMMONING_OF_BWORK_MAGUS = 2051,
-        DOPPLESQUE_BLACK_GOBBALL = 2052,
-        DOPPLESQUE_LIVING_BAG_2053 = 2053,
-        DOPPLESQUE_FORTUNE = 2054,
-        DOPPLESQUE_SHOVEL_THROWING = 2055,
-        DOPPLESQUE_GHOSTLY_SHOVEL = 2056,
-        DOPPLESQUE_CLUMSINESS = 2057,
-        DOPPLESQUE_COINS_THROWING = 2058,
-        DOPPLESQUE_MASS_CLUMSINESS = 2059,
-        DOPPLESQUE_ACCELERATION = 2060,
-        DOPPLESQUE_SHOVEL_OF_JUDGEMENT = 2061,
-        DOPPLESQUE_LIVING_SHOVEL = 2062,
-        DOPPLESQUE_SLAUGHTERING_SHOVEL = 2063,
-        DOPPLESQUE_DEVIOUSNESS = 2064,
-        DOPPLESQUE_TRICKY_BLOW = 2065,
-        DOPPLESQUE_INSIDIOUS_POISON = 2066,
-        DOPPLESQUE_MISTAKE = 2067,
-        DOPPLESQUE_POISONED_TRAP = 2068,
-        DOPPLESQUE_INVISIBILITY = 2069,
-        DOPPLESQUE_LETHAL_ATTACK = 2070,
-        DOPPLESQUE_TRAP_OF_SILENCE = 2071,
-        DOPPLESQUE_MASS_TRAP = 2072,
-        DOPPLESQUE_SLOW_DOWN = 2073,
-        DOPPLESQUE_COUNTER = 2074,
-        DOPPLESQUE_HAND = 2075,
-        DOPPLESQUE_DEVOTION = 2076,
-        DOPPLESQUE_XELOR_S_PUNCH = 2077,
-        DOPPLESQUE_DARK_RAY = 2078,
-        DOPPLESQUE_CLOCK = 2079,
-        DOPPLESQUE_XELOR_S_DIAL = 2080,
-        DOPPLESQUE_TIME_THEFT = 2081,
-        DOPPLESQUE_XELOR_S_SANDGLASS = 2082,
-        DOPPLESQUE_ROULETTE = 2083,
-        DOPPLESQUE_CLOVER = 2084,
-        DOPPLESQUE_TOPKAJ = 2085,
-        DOPPLESQUE_BLUFF = 2086,
-        DOPPLESQUE_REKOP = 2087,
-        DOPPLESQUE_SMELL = 2088,
-        DOPPLESQUE_THUNDEROUS_WORD = 2089,
-        DOPPLESQUE_TURBULENT_WORD = 2090,
-        DOPPLESQUE_FORBIDDEN_WORD = 2091,
-        DOPPLESQUE_STIMULATING_WORD = 2092,
-        DOPPLESQUE_PREVENTING_WORD = 2093,
-        DOPPLESQUE_FRIENDSHIP_WORD_2094 = 2094,
-        DOPPLESQUE_REGENERATING_WORD = 2095,
-        DOPPLESQUE_WHIRLING_WORD = 2096,
-        DOPPLESQUE_BLARING_WORD = 2097,
-        DOPPLESQUE_PARALYSING_WORD = 2098,
-        DOPPLESQUE_LIFTING_WORD = 2099,
-        DOPPLESQUE_WORD_OF_SILENCE = 2100,
-        DOPPLESQUE_WORD_OF_RECOVERY = 2101,
-        DOPPLESQUE_PRESSURE = 2102,
-        DOPPLESQUE_JUMP = 2103,
-        DOPPLESQUE_DUEL = 2104,
-        DOPPLESQUE_SWORD_OF_FATE = 2105,
-        DOPPLESQUE_CUT = 2106,
-        DOPPLESQUE_POWER = 2107,
-        DOPPLESQUE_VITALITY = 2108,
-        DOPPLESQUE_STRENGTHSTORM = 2109,
-        DOPPLESQUE_IOP_S_WRATH = 2110,
-        DOPPLESQUE_SWORD_OF_IOP = 2111,
-        DOPPLESQUE_MAGIC_ARROW = 2112,
-        DOPPLESQUE_CRITICAL_SHOOTING = 2113,
-        DOPPLESQUE_FROZEN_ARROW = 2114,
-        DOPPLESQUE_POWERFUL_SHOOTING = 2115,
-        DOPPLESQUE_BAT_S_EYE = 2116,
-        DOPPLESQUE_RETREAT_ARROW = 2117,
-        DOPPLESQUE_PARALYSING_ARROW = 2118,
-        DOPPLESQUE_PUNITIVE_ARROW = 2119,
-        DOPPLESQUE_DISTANT_SHOOTING = 2120,
-        DOPPLESQUE_DESTRUCTIVE_ARROW = 2121,
-        DOPPLESQUE_TORMENTING_ARROW = 2122,
-        DOPPLESQUE_ABSORPTIVE_ARROW = 2123,
-        DOPPLESQUE_EXPLOSIVE_ARROW = 2124,
-        DOPPLESQUE_BOW_SKILL = 2125,
-        DOPPLESQUE_EARTHQUAKE = 2126,
-        DOPPLESQUE_MADOLL = 2127,
-        DOPPLESQUE_BRAMBLE = 2128,
-        DOPPLESQUE_WILD_GRASS = 2129,
-        DOPPLESQUE_ULTRA_POWERFUL = 2130,
-        DOPPLESQUE_INSOLENT_BRAMBLE = 2131,
-        DOPPLESQUE_SACRIFICIAL_DOLL = 2132,
-        DOPPLESQUE_INFLATABLE = 2133,
-        DOPPLESQUE_MANIFOLD_BRAMBLE = 2134,
-        DOPPLESQUE_SOOTHING_BRAMBLE = 2135,
-        DOPPLESQUE_BLOCK = 2136,
-        DOPPLESQUE_AGGRESSIVE_BRAMBLE = 2137,
-        DOPPLESQUE_TEAR = 2138,
-        DOPPLESQUE_POISONED_WIND = 2139,
-        DOPPLESQUE_SYLVAN_POWER = 2140,
-        DOPPLESQUE_DOLLY_SACRIFICE = 2141,
-        DOPPLESQUE_KNOWLEDGE_OF_DOLLS = 2142,
-        DOPPLESQUE_PARALYSING_POISON = 2143,
-        DOPPLESQUE_FORCED_PUNISHMENT = 2144,
-        DOPPLESQUE_SACRIER_S_FOOT = 2145,
-        DOPPLESQUE_BOLD_PUNISHMENT = 2146,
-        DOPPLESQUE_ATTRACTION_2147 = 2147,
-        DOPPLESQUE_ASSAULT = 2148,
-        DOPPLESQUE_NIMBLE_PUNISHMENT = 2149,
-        DOPPLESQUE_DISSOLUTION = 2150,
-        DOPPLESQUE_ABSORPTION = 2151,
-        DOPPLESQUE_SPIRITUAL_PUNISHMENT = 2152,
-        DOPPLESQUE_PUNISHMENT = 2153,
-        DOPPLESQUE_FURY_2154 = 2154,
-        DOPPLESQUE_SCHNAPS = 2155,
-        DOPPLESQUE_TERROR = 2156,
-        DOPPLESQUE_VULNERABILITY = 2157,
-        DOPPLESQUE_TIPPLE = 2158,
-        DOPPLESQUE_MELANCHOLY = 2159,
-        DOPPLESQUE_EXPLOSIVE_FLASK = 2160,
-        DOPPLESQUE_PANDATAK = 2161,
-        DOPPLESQUE_BLAZING_FIST = 2162,
-        DOPPLESQUE_ALCOHOLIC_BREATH = 2163,
-        DOPPLESQUE_HANGOVER = 2164,
-        DOPPLESQUE_STAIN_2165 = 2165,
-        DOPPLESQUE_PANDINIURAS_2166 = 2166,
-        DOPPLESQUE_SPIRIT_BOND = 2167,
-        DOPPLESQUE_FATE_OF_ECAFLIP = 2168,
-        DOPPLESQUE_CLAW_OF_CEANGAL = 2169,
-        DOPPLESQUE_FEAR = 2170,
-        PUNCH_2171 = 2171,
-        BREADSHOT = 2172,
-        STICKY_MOTIVATION = 2173,
-        SAUROSHOCK = 2174,
-        TAINTED_LOVE = 2186,
-        PATER_FAMILIAS = 2187,
-        BLAZING_FIST_2188 = 2188,
-        WHITE_HOT_VULNERABILITY = 2190,
-        GOURMAND = 2191,
-        IT_WAS_JUST_A_TOOTHACHE_AFTER_ALL_2192 = 2192,
-        IT_S_ALL_WET = 2193,
-        IT_S_LIP_SMACKING_GOOD = 2194,
-        SERVES_YOU_RIGHT = 2195,
-        I_KNOW_A_SONG_THAT_LL_GET_ON_YOUR_NERVES_2196 = 2196,
-        THAT_S_TRULY_ABOMINABLE = 2197,
-        IT_S_COLD_AND_WET = 2198,
-        AGGRESSIVE_DEFENCE = 2199,
-        PIGGY_CARNAGE = 2202,
-        PIGGY_BOOST = 2203,
-        PIGGY_HEALING = 2204,
-        FRIGSTY = 2205,
-        FRIGADELLEN = 2206,
-        FRIGHOGGING = 2207,
-        GURGLING = 2208,
-        KANIGREED = 2209,
-        FRIGOOGOL = 2210,
-        PINGWIND = 2211,
-        PINGWINNITS = 2212,
-        PINGWINDSCREEN = 2213,
-        PINGWINNOW = 2214,
-        PINGWINKER = 2215,
-        PINGWINO = 2216,
-        MASTITIS = 2217,
-        MASTINADE = 2218,
-        MASTOSTROKE = 2219,
-        MASTOMACHACHE = 2220,
-        MASTOSCHLAP = 2221,
-        UBERMAST = 2222,
-        MASTOHORNS = 2223,
-        MASTARD = 2224,
-        MOOBILITY = 2225,
-        MASTICKLE = 2226,
-        HYOACTIVE_RADIATION = 2228,
-        BERSERKGOB = 2229,
-        REGROUGOB = 2230,
-        LICHEGOB = 2231,
-        PINGWINDBAG = 2232,
-        PINGWINDSURF = 2233,
-        PINGWINGDINGS = 2234,
-        PINGWINDBURN = 2235,
-        PINGWINDSOCK = 2236,
-        PINGWINDSPREAD = 2237,
-        PINGWINGMAN = 2238,
-        PINGWHINE = 2239,
-        PINGWINNERISYOU = 2240,
-        PINGWINCH = 2241,
-        PINGWINTERKILL = 2242,
-        PINGWINSOME = 2243,
-        ICED_CHESTNUT = 2244,
-        PROPULSIVE_ACORN = 2245,
-        ACORN_BALANCING = 2246,
-        CLAWING = 2247,
-        WEAKENING = 2248,
-        ROAR_2249 = 2249,
-        HONEYDEW = 2250,
-        NECTAR = 2251,
-        POLLEN = 2252,
-        FRUCTOSE = 2253,
-        A_LOST_GLUCAUSE = 2254,
-        SACCHAROSE = 2255,
-        GATHERING_NECTAR = 2256,
-        TROPHALLAXIS = 2257,
-        PROPOLIS = 2258,
-        BEARBARGAIN = 2259,
-        BEARBARROW = 2260,
-        CATCH_UP = 2261,
-        CRACKERS = 2262,
-        CRACKITULATION = 2263,
-        CRACKTURE = 2264,
-        PROTHON = 2265,
-        DEMOCRITIC = 2266,
-        NEUTHRON = 2267,
-        FETISH = 2268,
-        FETTLE = 2269,
-        FETTUCCINE = 2270,
-        NOVARUPTA = 2271,
-        YELLOWSTONE = 2272,
-        NAMAFJALL = 2273,
-        BRIMSTONE = 2274,
-        FRASCH_2275 = 2275,
-        MERCAPTAN = 2276,
-        KANNONBALL = 2292,
-        BUOY = 2293,
-        BERTHA = 2294,
-        VIGILANCE = 2295,
-        VIGIL = 2296,
-        VIGINTILLION = 2297,
-        SHIP_MATE = 2298,
-        TURT_HELL = 2299,
-        COASTER = 2300,
-        PYROMANIAC = 2301,
-        PYJAMAS = 2302,
-        PYROLYSE = 2303,
-        SPANOKOPITA = 2304,
-        SPANK = 2305,
-        SPANDEX = 2306,
-        BARBARIAN = 2307,
-        BARRICADE_2308 = 2308,
-        BARBLING = 2309,
-        PYRO = 2310,
-        EMBER_2311 = 2311,
-        CHARCOAL = 2312,
+
+        EXPLOSION_SOURNOISE_2007 = 2007,
+
+        POING_ENFLAMME_2008 = 2008,
+
+        LANGUE_RAPEUSE_DU_DOPEUL_2016 = 2016,
+
+        REMBLAI_INFAME_2020 = 2020,
+
+        MOT_DENVOL_AERIEN_2021 = 2021,
+
+        PUNITION_MESQUINE_2022 = 2022,
+
+        ASSAUT_FRONTAL_2023 = 2023,
+
+        GUEULE_DE_BOIS_DE_BAMBOU_2024 = 2024,
+
+        FLASQUE_EXPLOSIVE_INCENDIAIRE_2025 = 2025,
+
+        GUEULE_DE_BOIS_DORMANT_2026 = 2026,
+
+        SOUILLURE_INFAME_2027 = 2027,
+
+        SOUFFLE_CANIN_2028 = 2028,
+
+        ATTAQUE_NATURELLE_DU_DOPEUL_2029 = 2029,
+
+        BARRICADE_DU_DOPEUL_2030 = 2030,
+
+        BOUCLIER_FECA_DU_DOPEUL_2031 = 2031,
+
+        ATTAQUE_NUAGEUSE_DU_DOPEUL_2032 = 2032,
+
+        GLYPHE_ENFLAMME_DU_DOPEUL_2033 = 2033,
+
+        GLYPHE_DAVEUGLEMENT_DU_DOPEUL_2034 = 2034,
+
+        GLYPHE_DE_REPULSION_DU_DOPEUL_2035 = 2035,
+
+        GLYPHE_OPTIQUE_DU_DOPEUL_2036 = 2036,
+
+        GLYPHE_AGRESSIF_DU_DOPEUL_2037 = 2037,
+
+        BULLE_DU_DOPEUL_2038 = 2038,
+
+        BASTION_DU_DOPEUL_2039 = 2039,
+
+        DRAGONIQUE_DU_DOPEUL_2040 = 2040,
+
+        CANINE_DU_DOPEUL_2041 = 2041,
+
+        PIQURE_MOTIVANTE_DU_DOPEUL_2042 = 2042,
+
+        FOSSILE_DU_DOPEUL_2043 = 2043,
+
+        DRAGONNET_ROUGE_DU_DOPEUL_2044 = 2044,
+
+        PLUMEAU_DU_DOPEUL_2045 = 2045,
+
+        TOFU_NOIR_DU_DOPEUL_2046 = 2046,
+
+        BOUFTOU_DU_DOPEUL_2047 = 2047,
+
+        FRAPPE_DU_CRAQUELEUR_DU_DOPEUL_2048 = 2048,
+
+        TOFU_DODU_DU_DOPEUL_2050 = 2050,
+
+        INVOCATION_DE_BWORK_MAGE_DU_DOPEUL_2051 = 2051,
+
+        BOUFTOU_NOIR_DU_DOPEUL_2052 = 2052,
+
+        SAC_ANIME_DU_DOPEUL_2053 = 2053,
+
+        CHANCE_DU_DOPEUL_2054 = 2054,
+
+        LANCER_DE_PELLE_DU_DOPEUL_2055 = 2055,
+
+        PELLE_FANTOMATIQUE_DU_DOPEUL_2056 = 2056,
+
+        MALADRESSE_DU_DOPEUL_2057 = 2057,
+
+        LANCER_DE_PIECES_DU_DOPEUL_2058 = 2058,
+
+        MALADRESSE_DE_MASSE_DU_DOPEUL_2059 = 2059,
+
+        ACCELERATION_DU_DOPEUL_2060 = 2060,
+
+        PELLE_DU_JUGEMENT_DU_DOPEUL_2061 = 2061,
+
+        PELLE_ANIMEE_DU_DOPEUL_2062 = 2062,
+
+        PELLE_MASSACRANTE_DU_DOPEUL_2063 = 2063,
+
+        SOURNOISERIE_DU_DOPEUL_2064 = 2064,
+
+        COUP_SOURNOIS_DU_DOPEUL_2065 = 2065,
+
+        POISON_INSIDIEUX_DU_DOPEUL_2066 = 2066,
+
+        FOURVOIEMENT_DU_DOPEUL_2067 = 2067,
+
+        PIEGE_EMPOISONNE_DU_DOPEUL_2068 = 2068,
+
+        INVISIBILITE_DU_DOPEUL_2069 = 2069,
+
+        ATTAQUE_MORTELLE_DU_DOPEUL_2070 = 2070,
+
+        PIEGE_DE_SILENCE_DU_DOPEUL_2071 = 2071,
+
+        PIEGE_DE_MASSE_DU_DOPEUL_2072 = 2072,
+
+        RALENTISSEMENT_DU_DOPEUL_2073 = 2073,
+
+        CONTRE_DU_DOPEUL_2074 = 2074,
+
+        AIGUILLE_DU_DOPEUL_2075 = 2075,
+
+        DEVOUEMENT_DU_DOPEUL_2076 = 2076,
+
+        FRAPPE_DE_XELOR_DU_DOPEUL_2077 = 2077,
+
+        RAYON_OBSCUR_DU_DOPEUL_2078 = 2078,
+
+        HORLOGE_DU_DOPEUL_2079 = 2079,
+
+        CADRAN_DE_XELOR_DU_DOPEUL_2080 = 2080,
+
+        VOL_DU_TEMPS_DU_DOPEUL_2081 = 2081,
+
+        SABLIER_DE_XELOR_DU_DOPEUL_2082 = 2082,
+
+        ROULETTE_DU_DOPEUL_2083 = 2083,
+
+        TREFLE_DU_DOPEUL_2084 = 2084,
+
+        TOPKAJ_DU_DOPEUL_2085 = 2085,
+
+        BLUFF_DU_DOPEUL_2086 = 2086,
+
+        REKOP_DU_DOPEUL_2087 = 2087,
+
+        ODORAT_DU_DOPEUL_2088 = 2088,
+
+        MOT_FRACASSANT_DU_DOPEUL_2089 = 2089,
+
+        MOT_TURBULENT_DU_DOPEUL_2090 = 2090,
+
+        MOT_INTERDIT_DU_DOPEUL_2091 = 2091,
+
+        MOT_STIMULANT_DU_DOPEUL_2092 = 2092,
+
+        MOT_DE_PREVENTION_DU_DOPEUL_2093 = 2093,
+
+        MOT_DAMITIE_DU_DOPEUL_2094 = 2094,
+
+        MOT_DE_REGENERATION_DU_DOPEUL_2095 = 2095,
+
+        MOT_TOURNOYANT_DU_DOPEUL_2096 = 2096,
+
+        MOT_ECLATANT_DU_DOPEUL_2097 = 2097,
+
+        MOT_DIMMOBILISATION_DU_DOPEUL_2098 = 2098,
+
+        MOT_DENVOL_DU_DOPEUL_2099 = 2099,
+
+        MOT_DE_SILENCE_DU_DOPEUL_2100 = 2100,
+
+        MOT_DE_RECONSTITUTION_DU_DOPEUL_2101 = 2101,
+
+        PRESSION_DU_DOPEUL_2102 = 2102,
+
+        BOND_DU_DOPEUL_2103 = 2103,
+
+        DUEL_DU_DOPEUL_2104 = 2104,
+
+        EPEE_DU_DESTIN_DU_DOPEUL_2105 = 2105,
+
+        COUPER_DU_DOPEUL_2106 = 2106,
+
+        PUISSANCE_DU_DOPEUL_2107 = 2107,
+
+        VITALITE_DU_DOPEUL_2108 = 2108,
+
+        TEMPETE_DE_PUISSANCE_DU_DOPEUL_2109 = 2109,
+
+        COLERE_DE_IOP_DU_DOPEUL_2110 = 2110,
+
+        EPEE_DE_IOP_DU_DOPEUL_2111 = 2111,
+
+        FLECHE_MAGIQUE_DU_DOPEUL_2112 = 2112,
+
+        TIR_CRITIQUE_DU_DOPEUL_2113 = 2113,
+
+        FLECHE_GLACEE_DU_DOPEUL_2114 = 2114,
+
+        TIR_PUISSANT_DU_DOPEUL_2115 = 2115,
+
+        OEIL_DE_TAUPE_DU_DOPEUL_2116 = 2116,
+
+        FLECHE_DE_RECUL_DU_DOPEUL_2117 = 2117,
+
+        FLECHE_DIMMOBILISATION_DU_DOPEUL_2118 = 2118,
+
+        FLECHE_PUNITIVE_DU_DOPEUL_2119 = 2119,
+
+        TIR_ELOIGNE_DU_DOPEUL_2120 = 2120,
+
+        FLECHE_DESTRUCTRICE_DU_DOPEUL_2121 = 2121,
+
+        FLECHE_PERSECUTRICE_DU_DOPEUL_2122 = 2122,
+
+        FLECHE_ABSORBANTE_DU_DOPEUL_2123 = 2123,
+
+        FLECHE_EXPLOSIVE_DU_DOPEUL_2124 = 2124,
+
+        MAÎTRISE_DE_LARC_DU_DOPEUL_2125 = 2125,
+
+        TREMBLEMENT_DU_DOPEUL_2126 = 2126,
+
+        LA_FOLLE_DU_DOPEUL_2127 = 2127,
+
+        RONCE_DU_DOPEUL_2128 = 2128,
+
+        HERBE_FOLLE_DU_DOPEUL_2129 = 2129,
+
+        LA_SURPUISSANTE_DU_DOPEUL_2130 = 2130,
+
+        RONCE_INSOLENTE_DU_DOPEUL_2131 = 2131,
+
+        LA_SACRIFIEE_DU_DOPEUL_2132 = 2132,
+
+        LA_GONFLABLE_DU_DOPEUL_2133 = 2133,
+
+        RONCES_MULTIPLES_DU_DOPEUL_2134 = 2134,
+
+        RONCE_APAISANTE_DU_DOPEUL_2135 = 2135,
+
+        LA_BLOQUEUSE_DU_DOPEUL_2136 = 2136,
+
+        RONCES_AGRESSIVES_DU_DOPEUL_2137 = 2137,
+
+        LARME_DU_DOPEUL_2138 = 2138,
+
+        VENT_EMPOISONNE_DU_DOPEUL_2139 = 2139,
+
+        PUISSANCE_SYLVESTRE_DU_DOPEUL_2140 = 2140,
+
+        SACRIFICE_POUPESQUE_DU_DOPEUL_2141 = 2141,
+
+        CONNAISSANCE_DES_POUPEES_DU_DOPEUL_2142 = 2142,
+
+        POISON_PARALYSANT_DU_DOPEUL_2143 = 2143,
+
+        CHATIMENT_FORCE_DU_DOPEUL_2144 = 2144,
+
+        PIED_DU_SACRIEUR_DU_DOPEUL_2145 = 2145,
+
+        CHATIMENT_OSE_DU_DOPEUL_2146 = 2146,
+
+        ATTIRANCE_DU_DOPEUL_2147 = 2147,
+
+        ASSAUT_DU_DOPEUL_2148 = 2148,
+
+        CHATIMENT_AGILE_DU_DOPEUL_2149 = 2149,
+
+        DISSOLUTION_DU_DOPEUL_2150 = 2150,
+
+        ABSORPTION_DU_DOPEUL_2151 = 2151,
+
+        CHATIMENT_SPIRITUEL_DU_DOPEUL_2152 = 2152,
+
+        PUNITION_DU_DOPEUL_2153 = 2153,
+
+        FURIE_DU_DOPEUL_2154 = 2154,
+
+        SCHNAPS_DU_DOPEUL_2155 = 2155,
+
+        EPOUVANTE_DU_DOPEUL_2156 = 2156,
+
+        VULNERABILITE_DU_DOPEUL_2157 = 2157,
+
+        ETHYLO_DU_DOPEUL_2158 = 2158,
+
+        VAGUE_A_LAME_DU_DOPEUL_2159 = 2159,
+
+        FLASQUE_EXPLOSIVE_DU_DOPEUL_2160 = 2160,
+
+        PANDATAK_DU_DOPEUL_2161 = 2161,
+
+        POING_ENFLAMME_DU_DOPEUL_2162 = 2162,
+
+        SOUFFLE_ALCOOLISE_DU_DOPEUL_2163 = 2163,
+
+        GUEULE_DE_BOIS_DU_DOPEUL_2164 = 2164,
+
+        SOUILLURE_DU_DOPEUL_2165 = 2165,
+
+        PANDANLKU_DU_DOPEUL_2166 = 2166,
+
+        LIEN_SPIRITUEUX_DU_DOPEUL_2167 = 2167,
+
+        DESTIN_DECAFLIP_DU_DOPEUL_2168 = 2168,
+
+        GRIFFE_DE_CEANGAL_DU_DOPEUL_2169 = 2169,
+
+        PEUR_DU_DOPEUL_2170 = 2170,
+
+        FLAGELLE_2171 = 2171,
+
+        PAIN_BOURPIF_2172 = 2172,
+
+        MOTIVATION_GLUANTE_2173 = 2173,
+
+        KOQUE_CHOK_2174 = 2174,
+
+        AMOUR_CORROMPU_2186 = 2186,
+
+        PATER_FAMILIAS_2187 = 2187,
+
+        COUP_DE_POING_ENFLAMME_2188 = 2188,
+
+        VULNERABILITE_INCANDESCENTE_2190 = 2190,
+
+        GOULAF_2191 = 2191,
+
+        AVOIR_MAUX_A_CHES_DINTS_2192 = 2192,
+
+        CHE_TOUT_FRAÎQUE_2193 = 2193,
+
+        CHEST_DU_LEQUE_MES_LOUPPES_2194 = 2194,
+
+        TI_TAS_BOU_2195 = 2195,
+
+        QUI_EST_MIEFFE_CTI_LA_2196 = 2196,
+
+        CHEST_VRAIMINT_ABOMINAP_2197 = 2197,
+
+        I_FAIT_CRU_2198 = 2198,
+
+        DEFENSE_AGRESSIVE_2199 = 2199,
+
+        SANGLANCORNAGE_2202 = 2202,
+
+        SANGLOBOUSTE_2203 = 2203,
+
+        SANGLOSOIN_2204 = 2204,
+
+        FRICOCHONCETE_2205 = 2205,
+
+        FRICADELLE_2206 = 2206,
+
+        FRICOTAGE_2207 = 2207,
+
+        GLOUGLOU_2208 = 2208,
+
+        KANIGLOUTON_2209 = 2209,
+
+        FRIGOGOL_2210 = 2210,
+
+        MANSOLUBLE_2211 = 2211,
+
+        MANSOPOUDRAGE_2212 = 2212,
+
+        MANSOLENOÏDE_2213 = 2213,
+
+        MANSONNETTE_2214 = 2214,
+
+        MANSOTISE_2215 = 2215,
+
+        MANSOVETAGE_2216 = 2216,
+
+        KROUTH_2217 = 2217,
+
+        KLOUGMOUTH_2218 = 2218,
+
+        MOUMOUTH_2219 = 2219,
+
+        KOUDBLOUZE_2220 = 2220,
+
+        BOUFBAFFE_2221 = 2221,
+
+        HUBERMOUTH_2222 = 2222,
+
+        KOUDKORN_2223 = 2223,
+
+        MOUTHARDE_2224 = 2224,
+
+        MOUBILITE_2225 = 2225,
+
+        BIZMOUTH_2226 = 2226,
+
+        RAYONNEMENT_HYOACTIF_2228 = 2228,
+
+        BERSERKMOUTH_2229 = 2229,
+
+        REGROUPMOUTH_2230 = 2230,
+
+        LICHEMOUTH_2231 = 2231,
+
+        MANSOTE_MOUTON_2232 = 2232,
+
+        MANSOVAGE_2233 = 2233,
+
+        MANSORCIER_2234 = 2234,
+
+        MANSOLOTAGE_2235 = 2235,
+
+        MANSOGRENU_2236 = 2236,
+
+        MANSOLDAT_2237 = 2237,
+
+        MANSOLEX_2238 = 2238,
+
+        MANSOVIETIK_2239 = 2239,
+
+        MANSOVEGARDE_2240 = 2240,
+
+        MANSORON_2241 = 2241,
+
+        MANSOLFATARE_2242 = 2242,
+
+        MANSOJA_2243 = 2243,
+
+        CHATAIGNE_GLACEE_2244 = 2244,
+
+        PROPULSOGLAND_2245 = 2245,
+
+        EQUILIBROGLAND_2246 = 2246,
+
+        GRIFFEMOUTH_2247 = 2247,
+
+        RAMOLIMOUTH_2248 = 2248,
+
+        HURLOMOUTH_2249 = 2249,
+
+        MIELLAT_2250 = 2250,
+
+        NECTAR_2251 = 2251,
+
+        POLLEN_2252 = 2252,
+
+        FRUCTOSE_2253 = 2253,
+
+        GLUCAUSE_PERDUE_2254 = 2254,
+
+        SACCHAROSE_2255 = 2255,
+
+        BUTINAGE_2256 = 2256,
+
+        TROPHALLAXIE_2257 = 2257,
+
+        PROPOLIS_2258 = 2258,
+
+        GLOURSONDULATION_2259 = 2259,
+
+        GLOURSOMBRE_2260 = 2260,
+
+        RATTRAPAGE_2261 = 2261,
+
+        CRAPOUTE_2262 = 2262,
+
+        CRAPITULATION_2263 = 2263,
+
+        CRAPTURE_2264 = 2264,
+
+        PROTHON_2265 = 2265,
+
+        DAIMOCRITIQUE_2266 = 2266,
+
+        NEUTHRON_2267 = 2267,
+
+        DUSLIPE_2268 = 2268,
+
+        DEMERE_2269 = 2269,
+
+        DEPERE_2270 = 2270,
+
+        FUMISTERIE_2271 = 2271,
+
+        FUMIGENE_2272 = 2272,
+
+        FUMOIR_2273 = 2273,
+
+        SOUFRE_HANCE_2274 = 2274,
+
+        SOUFRE_DOULEUR_2275 = 2275,
+
+        SOUFRE_LATTE_2276 = 2276,
+
+        BOULAY_2292 = 2292,
+
+        BOUHAY_2293 = 2293,
+
+        BERTHA_2294 = 2294,
+
+        ROCE_2295 = 2295,
+
+        HARDE_2296 = 2296,
+
+        HERISSAGE_2297 = 2297,
+
+        MOUSSE_HAILLON_2298 = 2298,
+
+        TORE_TUE_2299 = 2299,
+
+        FRERE_DE_LA_CTE_2300 = 2300,
+
+        HISSAGE_2301 = 2301,
+
+        HURE_2302 = 2302,
+
+        HOMISEUR_2303 = 2303,
+
+        CEDOINE_2304 = 2304,
+
+        BOULE_2305 = 2305,
+
+        KAKE_2306 = 2306,
+
+        BARRE_BARRE_2307 = 2307,
+
+        BARRE_HIKADE_2308 = 2308,
+
+        BARRE_BOTAGE_2309 = 2309,
+
+        PYRO_2310 = 2310,
+
+        BRAISE_2311 = 2311,
+
+        CHARBON_2312 = 2312,
+
         CARNAGE_2313 = 2313,
-        TOXIN = 2314,
-        SYMBIOTE = 2315,
-        GULON = 2316,
-        DEATHCLAW = 2317,
-        MANTIUM = 2318,
-        ACROBATICS_2319 = 2319,
-        SHADOW = 2320,
-        FUGUE = 2321,
-        CHEEKY_RASCAL_2322 = 2322,
-        YECH_IT = 2323,
-        WILD_STAMPEDE = 2324,
-        DUAL_BLADE = 2325,
-        QUATTRO = 2326,
-        AMBIDEXTERITY = 2327,
-        SHAVING_FOAM = 2328,
-        SUMMONING_OF_BULBYDRO = 2329,
-        BOILING_WATER = 2330,
-        STAGNANT_WATER = 2331,
-        AQUEOUS_ABSORPTION = 2332,
-        MIRACULOUS_WATER = 2333,
-        HEAVY_WATER = 2334,
-        BOILING_WATER_SPELL = 2335,
-        STAGNANT_WATER_SPELL = 2336,
-        AQUEOUS_ABSORPTION_SPELL = 2337,
-        MIRACULOUS_WATER_SPELL = 2338,
-        HEAT_THEFT = 2339,
-        TREACHEROUS_FLAMES = 2340,
-        MIND_NUMBING_FLAMES = 2341,
-        INFERNAL_FLAMES = 2342,
-        INFERNAL_STORM = 2343,
-        SALT_TAX = 2344,
-        LEASING = 2345,
-        TAX = 2346,
-        CONTRABAND = 2347,
-        ROBBERY = 2348,
-        NUMBER_OF_THE_BEAST = 2349,
-        HEXAKOSIOIHEXEKONTAHEXAPHOBIA = 2350,
-        BEAUTY_2351 = 2351,
-        BEAUTY_2352 = 2352,
-        CUJO = 2353,
-        RAVE = 2354,
-        RANDON = 2355,
-        INITIADON = 2356,
-        PINCERS = 2357,
-        SUCKER = 2358,
-        BRIQUETTE = 2359,
-        BEAKSLAP_2360 = 2360,
-        LUST = 2361,
-        ENTHUSIASM = 2362,
-        PUTRID_CANINE = 2363,
-        ICY_WHISKERS = 2364,
-        PROTECTIVE_CUSHION = 2365,
-        DRATNET = 2366,
-        RASP_2367 = 2367,
-        HUSTLING = 2368,
-        DOLLISH_MARTYR = 2369,
-        CLAWATTACK = 2370,
-        SCARAMOUCHE = 2371,
-        DOLLISH_MYOPIA = 2373,
-        NEIJ = 2375,
-        SVARTHOLM = 2376,
-        SUNDE = 2377,
-        MEEWT = 2378,
-        MOOVSTAR = 2379,
-        JEYUL = 2380,
-        ICE_AXE = 2381,
-        MORPHALLAXE = 2382,
-        BANJAXE = 2383,
-        YOUR_HEAD_A_SPLODE = 2384,
-        KA_BLOOEY = 2385,
-        GOBLOSION = 2386,
-        KILL_IT_WITH_WATER = 2387,
-        SKINNING_2388 = 2388,
-        TANNING = 2389,
-        MORTA = 2390,
-        PILFERING_2391 = 2391,
-        RETRACTION = 2392,
-        FILCHING = 2393,
-        CRIPPLA = 2394,
-        BOOSTA = 2395,
-        GERROVAERE = 2396,
-        MINING = 2397,
-        ROUTING = 2398,
-        PINCHING = 2399,
-        ETERNAL_WINTER = 2400,
-        HOARFROST = 2401,
-        ICEFIELD = 2402,
-        CYCLE = 2403,
-        INSTANT = 2404,
-        RHYTHM = 2405,
-        RESPITE = 2406,
-        OF_OLD = 2407,
-        ROCK_HARD = 2408,
-        GOBSTRUCTION = 2409,
-        GOBTIMISATION = 2410,
-        MOONESQUE_FRENZY_2411 = 2411,
-        MOONESQUE_INSPIRATION = 2412,
-        MOONESQUE_BLESSING_2413 = 2413,
-        FATTY_BUM_BUM_2414 = 2414,
-        DREMOAN_SEED = 2415,
-        CLAWED_HANDS = 2416,
-        DECAYING_ROOT = 2417,
-        ASSASSIN_ROOTS = 2418,
-        ACCELERATED_DECAY = 2419,
-        KNOTDERE = 2420,
-        PUTRID_ZOMBIFICATION = 2421,
-        ATOMISATION = 2422,
-        DEATH_SENTENCE = 2423,
-        BLACK_LIGHT = 2424,
-        JET_OF_LAVA = 2425,
-        ELUSIVE = 2426,
-        AIR_CURRENT = 2427,
-        MOLECULAR_EXCITATION = 2428,
-        FINE = 2429,
-        MOLECULAR_VIBRATION = 2430,
-        HONEY_I_SHRUNK_THE_KIDS = 2431,
-        PERFORATION = 2432,
-        PUSHER = 2433,
-        VAMPIRIC_HARPOONING = 2434,
-        SPIRITUAL_CARE = 2435,
-        CLEANING = 2436,
-        CLEAR_THE_DECK = 2437,
-        ASTRUBIAN_EXPLOSION = 2438,
-        SPIRITUAL_SHOCK = 2439,
-        SPIRITUAL_IMPACT = 2440,
-        MASTODON = 2441,
-        MASTICATE = 2442,
-        FROM_DUSK_TILL_DAWN = 2443,
-        SPOOKS = 2444,
-        ZOMBIE_HELL = 2445,
-        THE_DENTIST = 2446,
-        ENTANGLED_SPIRIT = 2447,
-        ENTANGLEMENT = 2448,
-        HEALING_HONEY = 2449,
-        RAMPANT_CORRUPTION = 2450,
-        SPIRITUAL_TRAP = 2451,
-        GROWING_PUTREFACTION = 2452,
-        EXPLOSIVE_PUTREFACTION = 2453,
-        RAPID_GROWTH = 2454,
-        INTERNAL_ROTTING = 2455,
-        VITAL_PUTREFACTION = 2456,
-        SLURRY = 2457,
-        SWEET_MELODY = 2458,
-        ROTTEN_INSIDE = 2459,
-        PANCAKES_WITH_HONEY = 2460,
-        BEARBARISM = 2461,
-        BEAR_NECESSITIES = 2462,
-        TEDDY_BEAR_S_PICNIC = 2463,
-        IMPROBABLE_LEAP = 2464,
-        BROCKUL = 2465,
-        STEEL_SKIN = 2466,
-        VISCERAL_DISEMBOWELMENT = 2467,
-        STATE_OF_SHOCK = 2468,
-        FOUNTAIN_OF_YOUTH = 2469,
-        RAZEPOUTINE = 2470,
-        FIRST_WAVE = 2471,
-        SECOND_WAVE = 2472,
-        THIRD_WAVE = 2473,
-        FOURTH_WAVE = 2474,
-        FIFTH_WAVE = 2475,
-        SIXTH_WAVE = 2476,
-        SEVENTH_WAVE = 2477,
-        EIGHTH_WAVE = 2478,
-        BAIKAL = 2479,
-        ILLYANA = 2480,
-        KIRBILI = 2481,
-        ACOLYTE = 2482,
-        CEREBRO = 2483,
-        HONEYCOMB = 2484,
-        INVERTASE = 2485,
-        ABOMINATION = 2486,
-        BEARBARBUT = 2487,
-        BEARBARNSTORM = 2488,
-        BEARBARHOP = 2489,
-        BEARBARMY = 2490,
-        BEARBARMAID = 2491,
-        BEARBARKING = 2492,
-        BEARBARLEYCORN = 2493,
-        BEARBARTENDER = 2494,
-        JIEM = 2495,
-        BUBBLE_BLOW = 2496,
-        AVENGING_ATTACK = 2497,
-        SPIRIT_OF_VENGEANCE = 2498,
-        BEARBAROGRAPH = 2499,
-        GO_GO_GADGET_UMBRELLA = 2500,
-        ICEBERG_SALOON = 2501,
-        COOL_MASQUERADE = 2502,
-        PLOT_TWIST = 2503,
-        LAVOCADO = 2504,
-        SANGUINE_EBULLIENCE = 2505,
-        MAGMAMIA = 2506,
-        GROOMIT_S_JUDGEMENT = 2507,
-        VILE_CORRUPTION = 2508,
-        BEARBARRISTER = 2509,
-        BEARBARONESS = 2510,
-        BEARBARBIE = 2511,
-        ALVELOLUS = 2512,
-        NECTAR_OF_THE_GODS = 2513,
-        BEARBARKENTINE = 2514,
-        BEARBARF = 2515,
-        LITTLE_BROWN_BEARBARIAN = 2516,
-        MAGNETO = 2517,
-        MORVELE = 2518,
-        ABOMINABLE_TRAGEDY = 2519,
-        STICK_WITH_IT = 2520,
-        BURNT_KWAKALARM = 2521,
-        FROSTEEZ = 2522,
-        PIAUTRE = 2523,
-        BURNT_KWAMITIN = 2524,
-        ELIATROPE_FANTASY = 2525,
-        POISONED_FUR = 2526,
-        POISONED_FUR_POISON = 2527,
-        BLOOD_POISONING = 2528,
-        TOXIC_EXHALATION = 2529,
-        SLASH_AND_BURN = 2530,
-        SURPRISE_TOXIN = 2531,
-        EFFECT_OF_BOILING_WATER = 2532,
-        EFFECT_OF_AQUEOUS_ABSORPTION = 2533,
-        CREAM_CRACKERED = 2534,
-        ANIMATED_PRESENT_THROWING = 2535,
-        KWISMAS_BLESSING = 2536,
-        KWISMAS_BLESSING_EFFECT = 2537,
-        KWISMAS_BLESSING_SPELL = 2538,
-        PRESENT_KISS = 2539,
-        SMALL_ANIMATED_PRESENT_SUMMONS = 2540,
-        KWISMAS_SURPRISE = 2541,
-        KWISMAS_SURPRISE_EFFECT_2542 = 2542,
-        KWISMAS_SURPRISE_EFFECT_2543 = 2543,
-        GAYMOVA = 2544,
-        BEARILLIANT = 2545,
-        BEARFISTED = 2546,
-        DART_DEVIL = 2547,
-        LASERBEAR = 2548,
-        SHANGHIVE_NOON = 2549,
-        HONEY_OF_YOUTH = 2550,
-        WELDON_NOOB = 2551,
-        SUPPRESSION = 2552,
-        GONAGAI = 2553,
-        TELEPATHY_2554 = 2554,
-        KWISMAS_ITZTING = 2555,
-        SACK_O_GOLD = 2556,
-        NAUGHTY_CHILD = 2557,
-        GODZIMPLOSION = 2559,
-        HYDROKINETICS = 2560,
-        THERMOKINETICS = 2561,
-        SPRING_FORTH = 2562,
-        BISTE = 2563,
-        HANKE = 2564,
-        ICEBERG = 2565,
-        SALTY_SPIT = 2568,
-        KWEST = 2569,
-        FURBISHING = 2570,
-        CHEEKY_RASCAL_2571 = 2571,
-        IT_WAS_JUST_A_TOOTHACHE_AFTER_ALL_2572 = 2572,
-        I_KNOW_A_SONG_THAT_LL_GET_ON_YOUR_NERVES_2573 = 2573,
-        NO_MOVE = 2574,
-        FURIOUS_RAGE = 2575,
-        CLOAK_OF_FLAMES = 2576,
-        TRAPPED = 2577,
-        GROUILLOT_S_TRAP = 2578,
-        CREEPING_FLAMES = 2579,
-        REGENERATIVE_STONE_SKIN = 2580,
-        FLAMES = 2585,
-        RANCHOR = 2591,
-        CANCHOR = 2592,
-        OIL_TANCHOR = 2593,
-        CH_BANG = 2594,
-        PINGWINDLASS = 2595,
-        CH_BAM = 2596,
-        SCARED_SHIPLESS = 2597,
-        PAYTANK = 2598,
-        SULPHEELING_BETTER = 2599,
-        NUKLEON = 2600,
-        SHUTOUT = 2601,
-        THWACK = 2602,
-        TAG = 2603,
-        FLIPFLOP = 2604,
-        PINGWINDJAMMER = 2607,
-        PINGWINDBREAK = 2608,
-        PINGWINCE = 2609,
-        PINGWINDCHILL = 2610,
-        BUCCANEERING = 2615,
-        SEA_SHANTY = 2616,
-        BARD_BOMB = 2617,
-        RUDDER = 2618,
-        SILICURSE = 2619,
-        ANDESPITE = 2620,
-        SILICUT = 2621,
-        BONE_SHAKING_ARROW = 2622,
-        CONTAGIOUS_ARROW = 2623,
-        BONE_DOCTOR = 2624,
-        BONER = 2625,
-        BONE_M_ARROW = 2626,
-        LITTLE_PEST = 2627,
-        SCROOGE = 2628,
-        ZIGGURAT = 2629,
-        RALLYING = 2630,
-        SUMMONING_OF_RAT_DAIM = 2631,
-        SUMMONING_OF_REINE_RATE = 2632,
-        EXPLOSIVE_KAWWOT_2633 = 2633,
-        INVEWSE_GWAVITY_GLYPH = 2634,
-        KWUNCH_MY_KAWWOT = 2635,
-        AWTHWITIC_TELEPOWTATION = 2636,
-        WABBIT_LEAP = 2637,
-        INVEWSE_GWAVITY = 2638,
-        LOCKUP = 2639,
-        COAT_OF_MAIL = 2640,
-        SCALLYWAG = 2641,
-        SNARE = 2642,
-        OUGICLE_S_SNARE = 2643,
-        MOANING_WIND = 2644,
-        CALL_OF_THE_WIND = 2645,
-        INSTINCT = 2646,
-        PRELIMINARIES = 2647,
-        SMASHEM_ALL = 2648,
-        BLAH_BLAH_BLAH = 2649,
-        RING_OF_SKULLS = 2650,
-        SUMMONING_OF_NASTY_LITTLE_LOUSY_PIG = 2651,
-        SKEWER = 2664,
-        HEADBUTT_2665 = 2665,
-        PUNCH_UP = 2666,
-        FURNITURE = 2668,
-        FLUX = 2669,
-        FULGURATION = 2670,
-        PROGENY = 2671,
-        MOTHER_S_MILK = 2673,
-        FURZY = 2674,
-        MOURNING = 2675,
-        MATERNAL_INSTINCT = 2676,
-        CROQUETTE = 2677,
-        FOXY_LADY = 2678,
-        FOULETTE = 2680,
-        WHEEL_OF_FOURTUNE = 2681,
-        ALL_OR_SNOTHING = 2682,
-        CRAZY_IN_LOVE = 2683,
-        FROZEN_FLEECE = 2684,
-        FROZEN_MALEVOLENCE = 2685,
-        MARASMIUS = 2686,
-        SPORK_2687 = 2687,
-        MICE_HELIUM = 2688,
-        SPORTHOLE = 2689,
-        VOLVARINE = 2690,
-        SPORIGAMI = 2691,
-        SPORCELAIN = 2692,
-        SPORTCULLIS = 2693,
-        CLUMPFISH = 2694,
-        CLUMPENPROLETARIAT = 2695,
-        SERPULCHRITUDE = 2696,
-        SERPULVERISE = 2697,
-        BACKROLL = 2698,
-        LOAD_HEADICE = 2699,
-        DEETWEN_TEA_GLYPH = 2700,
-        DEETEN_GLYPH = 2701,
-        REEROLE = 2702,
-        LOOTE = 2703,
-        AREPEE = 2704,
-        EKSPEE = 2705,
-        ENPEA_SEA = 2706,
-        AYDEEUN_DEE = 2707,
-        DEAFENING_ROW = 2712,
-        EERIE_PLUGS = 2713,
-        HORN_TO_HORN = 2714,
-        SILENT_VORTEX = 2715,
-        SILENT_DISTORTION = 2716,
-        SIGH = 2717,
-        LEFT_FOOT = 2718,
-        FAIRY_NUFF = 2719,
-        FIELD_OF_SAND = 2720,
-        RUDE_AWAKENING = 2721,
-        RISE_AND_SHINE = 2722,
-        LIE = 2723,
-        PARKED = 2724,
-        PYROMANIA = 2725,
-        FLAMBOYANT_BRUTE = 2726,
-        BURNING_NOMAD = 2727,
-        WILL_OTHE_WISP = 2728,
-        INCENDIARY_COLOSSUS = 2729,
+
+        TOXIN_2314 = 2314,
+
+        SYMBIOTE_2315 = 2315,
+
+        GLOUTON_2316 = 2316,
+
+        GRIFFEMORT_2317 = 2317,
+
+        MANTIUM_2318 = 2318,
+
+        ACROBATIE_2319 = 2319,
+
+        OMBRE_2320 = 2320,
+
+        FUGUE_2321 = 2321,
+
+        PTIO_QUINQUIN_2322 = 2322,
+
+        FE_YECH_2323 = 2323,
+
+        RUEE_SAUVAGE_2324 = 2324,
+
+        DOUBLE_LAME_2325 = 2325,
+
+        QUATTRO_2326 = 2326,
+
+        AMBIDEXTRIE_2327 = 2327,
+
+        MOUSSE_A_RASER_2328 = 2328,
+
+        INVOCATION_DE_BULBEAU_2329 = 2329,
+
+        EAU_BOUILLANTE_2330 = 2330,
+
+        EAU_STAGNANTE_2331 = 2331,
+
+        ABSORPTION_AQUEUSE_2332 = 2332,
+
+        EAU_MIRACULEUSE_2333 = 2333,
+
+        LOURDEAU_2334 = 2334,
+
+        SORT_DEAU_BOUILLANTE_2335 = 2335,
+
+        SORT_DEAU_STAGNANTE_2336 = 2336,
+
+        SORT_DABSORPTION_AQUEUSE_2337 = 2337,
+
+        SORT_DEAU_MIRACULEUSE_2338 = 2338,
+
+        VOL_DE_CHALEUR_2339 = 2339,
+
+        FLAMMES_DE_TRAÎTRISE_2340 = 2340,
+
+        FLAMMES_ABRUTISSANTES_2341 = 2341,
+
+        FLAMMES_INFERNALES_2342 = 2342,
+
+        TEMPETE_INFERNALE_2343 = 2343,
+
+        GABELLE_2344 = 2344,
+
+        AFFERMAGE_2345 = 2345,
+
+        TAXE_2346 = 2346,
+
+        CONTREBANDE_2347 = 2347,
+
+        BRIGANDAGE_2348 = 2348,
+
+        NOMBRE_DE_LA_BETE_2349 = 2349,
+
+        HEXAKOSIOIHEXEKONTAHEXAPHOBIE_2350 = 2350,
+
+        LA_BELLE_2351 = 2351,
+
+        BELLE_2352 = 2352,
+
+        GEVAUDAN_2353 = 2353,
+
+        RAVE_2354 = 2354,
+
+        ALEAMOUTH_2355 = 2355,
+
+        INIMOUTH_2356 = 2356,
+
+        PINCETTE_2357 = 2357,
+
+        SUCETTE_2358 = 2358,
+
+        BRIQUETTE_2359 = 2359,
+
+        KOUDBEC_2360 = 2360,
+
+        CONVOITISE_2361 = 2361,
+
+        ENTHOUSIASME_2362 = 2362,
+
+        CANINE_PUTRIDE_2363 = 2363,
+
+        MOUSSE_TACHE_2364 = 2364,
+
+        COUSSINET_PROTECTEUR_2365 = 2365,
+
+        RATISSAGE_2366 = 2366,
+
+        RABOT_2367 = 2367,
+
+        RACOLAGE_2368 = 2368,
+
+        MARTYR_POUPESQUE_2369 = 2369,
+
+        GRIFFATTAQUE_2370 = 2370,
+
+        SCOUMOUNE_2371 = 2371,
+
+        MYOPIE_POUPESQUE_2373 = 2373,
+
+        QUI_RIT_2375 = 2375,
+
+        QUI_PETE_2376 = 2376,
+
+        LITTERATURE_2377 = 2377,
+
+        MIOUTE_2378 = 2378,
+
+        MOUVETOILE_2379 = 2379,
+
+        JEYLE_2380 = 2380,
+
+        PIOLAID_2381 = 2381,
+
+        PIOCHEKOUR_2382 = 2382,
+
+        PIOCHETRON_2383 = 2383,
+
+        LIPOPETTE_2384 = 2384,
+
+        NOWEL_2385 = 2385,
+
+        GOBLOSION_2386 = 2386,
+
+        NICHEUZE_2387 = 2387,
+
+        DAIPE_2388 = 2388,
+
+        SHATTE_2389 = 2389,
+
+        KRAPE_2390 = 2390,
+
+        CHAPARDAGE_2391 = 2391,
+
+        ESCAMOTAGE_2392 = 2392,
+
+        FILOUTAGE_2393 = 2393,
+
+        DJATTE_2394 = 2394,
+
+        BENI_2395 = 2395,
+
+        LAUTTE_2396 = 2396,
+
+        MINAGE_2397 = 2397,
+
+        DETOURAGE_2398 = 2398,
+
+        CHAUPAGE_2399 = 2399,
+
+        FRIMAS_2400 = 2400,
+
+        GELEE_BLANCHE_2401 = 2401,
+
+        BANQUISE_2402 = 2402,
+
+        CYCLE_2403 = 2403,
+
+        INSTANT_2404 = 2404,
+
+        RYTHME_2405 = 2405,
+
+        REPIT_2406 = 2406,
+
+        JADIS_2407 = 2407,
+
+        DUR_COMME_LA_ROCHE_2408 = 2408,
+
+        GOBSTRUCTION_2409 = 2409,
+
+        GOBTIMISATION_2410 = 2410,
+
+        FRENESIE_MOONESQUE_2411 = 2411,
+
+        INSPIRATION_MOONESQUE_2412 = 2412,
+
+        BENEDICTION_MOONESQUE_2413 = 2413,
+
+        BOUBOULE_2414 = 2414,
+
+        GRAINE_DE_DREMOAN_2415 = 2415,
+
+        MAINS_CROCHUES_2416 = 2416,
+
+        RONCE_DE_DEPERISSEMENT_2417 = 2417,
+
+        RONCES_DE_LASSASSIN_2418 = 2418,
+
+        POURRISSEMENT_ACCELERE_2419 = 2419,
+
+        PULAH_2420 = 2420,
+
+        ZOMBIFICATION_PUTRIDE_2421 = 2421,
+
+        ATOMISATION_2422 = 2422,
+
+        SENTENCE_MORTELLE_2423 = 2423,
+
+        LUMIERE_NOIRE_2424 = 2424,
+
+        JET_DE_LAVE_2425 = 2425,
+
+        INSAISISSABLE_2426 = 2426,
+
+        COURANT_DAIR_2427 = 2427,
+
+        AGITATION_MOLECULAIRE_2428 = 2428,
+
+        AMENDE_2429 = 2429,
+
+        VIBRATION_MOLECULAIRE_2430 = 2430,
+
+        MIEL_EN_COLIQUE_2431 = 2431,
+
+        PERFORATION_2432 = 2432,
+
+        POUSSOIR_2433 = 2433,
+
+        HARPONNAGE_VAMPIRIQUE_2434 = 2434,
+
+        SOIN_SPIRITUEL_2435 = 2435,
+
+        NETTOYAGE_2436 = 2436,
+
+        DEGAGER_LE_PONT_2437 = 2437,
+
+        EXPLOSION_ASTRUBIENNE_2438 = 2438,
+
+        CHOC_SPIRITUEL_2439 = 2439,
+
+        IMPACT_SPIRITUEL_2440 = 2440,
+
+        MAMMOUTH_2441 = 2441,
+
+        GLOUTMOUTH_2442 = 2442,
+
+        UNE_NUIT_EN_ENFER_2443 = 2443,
+
+        FRAYEURS_2444 = 2444,
+
+        LENFER_DES_ZOMBIES_2445 = 2445,
+
+        LE_DENTISTE_2446 = 2446,
+
+        ESPRIT_EMPETRANT_2447 = 2447,
+
+        ENCHEVETREMENT_2448 = 2448,
+
+        MIEL_CICATRISANT_2449 = 2449,
+
+        CORRUPTION_RAMPANTE_2450 = 2450,
+
+        PIEGE_SPIRITUEL_2451 = 2451,
+
+        POURRITURE_CROISSANTE_2452 = 2452,
+
+        POURRITURE_EXPLOSIVE_2453 = 2453,
+
+        CROISSANCE_RAPIDE_2454 = 2454,
+
+        POURRITURE_DE_LINTERIEUR_2455 = 2455,
+
+        PUTREFACTION_VITALESQUE_2456 = 2456,
+
+        BOUE_FOND_2457 = 2457,
+
+        MIELODIE_2458 = 2458,
+
+        POURRITURE_INTERIEURE_2459 = 2459,
+
+        CREPE_AU_MIEL_2460 = 2460,
+
+        GLOURSONNERIE_2461 = 2461,
+
+        CARACTERE_DOURS_2462 = 2462,
+
+        TOURNEE_DE_MIEL_2463 = 2463,
+
+        BOND_IMPROBABLE_2464 = 2464,
+
+        BROUKEUL_2465 = 2465,
+
+        PEAU_DACIER_2466 = 2466,
+
+        EVENTRATION_VISCERALE_2467 = 2467,
+
+        ETAT_DE_CHOC_2468 = 2468,
+
+        JOUVENCE_2469 = 2469,
+
+        RAZEPOUTINE_2470 = 2470,
+
+        PREMIERE_VAGUE_2471 = 2471,
+
+        DEUXIEME_VAGUE_2472 = 2472,
+
+        TROISIEME_VAGUE_2473 = 2473,
+
+        QUATRIEME_VAGUE_2474 = 2474,
+
+        CINQUIEME_VAGUE_2475 = 2475,
+
+        SIXIEME_VAGUE_2476 = 2476,
+
+        SEPTIEME_VAGUE_2477 = 2477,
+
+        HUITIEME_VAGUE_2478 = 2478,
+
+        BAÏKAL_2479 = 2479,
+
+        ILLYANA_2480 = 2480,
+
+        KIRBILI_2481 = 2481,
+
+        ACOLYTE_2482 = 2482,
+
+        CEREBRO_2483 = 2483,
+
+        ALVEOLE_2484 = 2484,
+
+        INVERTASE_2485 = 2485,
+
+        ABOMINATION_2486 = 2486,
+
+        GLOURSONDE_2487 = 2487,
+
+        GLOURDAVU_2488 = 2488,
+
+        GLOURS_POURSUITE_2489 = 2489,
+
+        GLOURSCULADE_2490 = 2490,
+
+        GLOURS_CONTRE_LA_MONTRE_2491 = 2491,
+
+        GLOURSOMBILICAL_2492 = 2492,
+
+        GLOURSON_DE_CLOCHE_2493 = 2493,
+
+        HIGLOURS_2494 = 2494,
+
+        HAIMJI_2495 = 2495,
+
+        COUP_DE_BULLE_2496 = 2496,
+
+        ATTAQUE_VENGERESSE_2497 = 2497,
+
+        ESPRIT_DE_VENGEANCE_2498 = 2498,
+
+        GLOURMANDALE_2499 = 2499,
+
+        PARAPLUIE_GADGET_2500 = 2500,
+
+        ICEBERG_SALOON_2501 = 2501,
+
+        MASCARADE_ROCAMBOLESQUE_2502 = 2502,
+
+        MISE_EN_SCENE_TROMPEUSE_2503 = 2503,
+
+        LAVOCAT_2504 = 2504,
+
+        EBULLITION_SANGUINE_2505 = 2505,
+
+        MAGMAMIA_2506 = 2506,
+
+        JUGEMENT_DE_GROS_MED_2507 = 2507,
+
+        VILE_CORRUPTION_2508 = 2508,
+
+        GLOURMANDISE_2509 = 2509,
+
+        GLOURSBI_BOULGA_2510 = 2510,
+
+        GLOURSONGEUR_2511 = 2511,
+
+        ALVELOLE_2512 = 2512,
+
+        HYDROMEL_2513 = 2513,
+
+        GLOURSOMPTUEUX_2514 = 2514,
+
+        TACLOURS_2515 = 2515,
+
+        PETIT_GLOURS_BRUN_2516 = 2516,
+
+        MAGNETO_2517 = 2517,
+
+        MORVELE_2518 = 2518,
+
+        ABOMINABLE_TRAGEDIE_2519 = 2519,
+
+        STATUE_DE_MIEL_2520 = 2520,
+
+        KWAKALARME_BRULEE_2521 = 2521,
+
+        FROSTIZ_2522 = 2522,
+
+        PIAUTRE_2523 = 2523,
+
+        KWAMAGUEUL_BRULEE_2524 = 2524,
+
+        FANTAISIE_ELIATROPE_2525 = 2525,
+
+        PELAGE_EMPOISONNE_2526 = 2526,
+
+        POISON_DE_PELAGE_EMPOISONNE_2527 = 2527,
+
+        EMPOISONNEMENT_DU_SANG_2528 = 2528,
+
+        EXHALATION_TOXIQUE_2529 = 2529,
+
+        BRULIS_2530 = 2530,
+
+        TOXINE_SURPRISE_2531 = 2531,
+
+        EFFET_DEAU_BOUILLANTE_2532 = 2532,
+
+        EFFET_DABSORPTION_AQUEUSE_2533 = 2533,
+
+        TOURAPLAPLA_2534 = 2534,
+
+        LANCER_DE_CADEAU_ANIME_2535 = 2535,
+
+        BENEDICTION_DE_NOWEL_2536 = 2536,
+
+        EFFET_BENEDICTION_DE_NOWEL_2537 = 2537,
+
+        SORT_DE_BENEDICTION_DE_NOWEL_2538 = 2538,
+
+        BECO_DU_CADEAU_2539 = 2539,
+
+        INVOCATION_DE_PETIT_CADEAU_ANIME_2540 = 2540,
+
+        SURPRISE_DE_NOWEL_2541 = 2541,
+
+        EFFET_SURPRISE_DE_NOWEL_2542 = 2542,
+
+        EFFET_SURPRISE_DE_NOWEL_2543 = 2543,
+
+        GAYMOVEUR_2544 = 2544,
+
+        GLOURSOFULGUR_2545 = 2545,
+
+        GLOURSOPOING_2546 = 2546,
+
+        DARD_DES_VILLES_2547 = 2547,
+
+        GLOURSOLASER_2548 = 2548,
+
+        RUCHE_HOUR_2549 = 2549,
+
+        MIEL_DE_JOUVENCE_2550 = 2550,
+
+        BIENJOUAY_NOUBE_2551 = 2551,
+
+        _2552 = 2552,
+
+        GONAGAI_2553 = 2553,
+
+        TELEPATHIE_2554 = 2554,
+
+        SAPIK_DE_NOWEL_2555 = 2555,
+
+        HOTTE_DOR_2556 = 2556,
+
+        VILAIN_GARNEMENT_2557 = 2557,
+
+        GODZIMPLOSION_2559 = 2559,
+
+        HYDROKINESIE_2560 = 2560,
+
+        THERMOKINESIE_2561 = 2561,
+
+        DETENTE_2562 = 2562,
+
+        BISTE_2563 = 2563,
+
+        HANQUE_2564 = 2564,
+
+        ICEBERG_2565 = 2565,
+
+        CRACHAT_SALE_2568 = 2568,
+
+        KETE_2569 = 2569,
+
+        FOURBISSAGE_2570 = 2570,
+
+        PTIO_QUINQUIN_2571 = 2571,
+
+        AVOIR_MAUX_A_CHES_DINTS_2572 = 2572,
+
+        QUI_EST_MIEFFE_CTI_LA_2573 = 2573,
+
+        PAS_BOUGER_2574 = 2574,
+
+        FOLIE_FURIEUSE_2575 = 2575,
+
+        CAPE_ENFLAMMEE_2576 = 2576,
+
+        TOMBE_ET_RIS_2577 = 2577,
+
+        PIEGE_DE_GROUILLOT_2578 = 2578,
+
+        FLAMME_GRIMPANTE_2579 = 2579,
+
+        PEAU_DE_PIERRE_REGENERATRICE_2580 = 2580,
+
+        FLAMMES_2585 = 2585,
+
+        ANCRE_DECHINE_2591 = 2591,
+
+        ANCRE_HARTON_2592 = 2592,
+
+        JET_DANCRE_2593 = 2593,
+
+        CHBANG_2594 = 2594,
+
+        MANSOLDARTICHOT_2595 = 2595,
+
+        CHBAM_2596 = 2596,
+
+        PITROUILLE_2597 = 2597,
+
+        PAYTANK_2598 = 2598,
+
+        SOLFASOIN_2599 = 2599,
+
+        NUKLEON_2600 = 2600,
+
+        PIKETTE_2601 = 2601,
+
+        CLAKO_2602 = 2602,
+
+        TIKETTE_2603 = 2603,
+
+        CLAKETTE_2604 = 2604,
+
+        MANSOMURE_2607 = 2607,
+
+        MANSODAH_2608 = 2608,
+
+        MANSOMON_2609 = 2609,
+
+        MANSOMNAMBULE_2610 = 2610,
+
+        FLIBRUTE_2615 = 2615,
+
+        MATE_LEAU_2616 = 2616,
+
+        BON_BARDE_2617 = 2617,
+
+        GOUVERNE_AIL_2618 = 2618,
+
+        SCIE_LISSE_2619 = 2619,
+
+        ANDESITE_2620 = 2620,
+
+        SCIE_LICATE_2621 = 2621,
+
+        FLECHE_OSCILLANTE_2622 = 2622,
+
+        FLECHE_CONTAGIEUSE_2623 = 2623,
+
+        OS_TEOPATHE_2624 = 2624,
+
+        OS_TENTATION_2625 = 2625,
+
+        FLECHE_OSTEOLITE_2626 = 2626,
+
+        PETITE_PESTE_2627 = 2627,
+
+        RAPAGNON_2628 = 2628,
+
+        ZIGOUILLE_RATE_2629 = 2629,
+
+        RALLIEMENT_2630 = 2630,
+
+        INVOCATION_DE_RAT_DAIM_2631 = 2631,
+
+        INVOCATION_DE_REINE_RATE_2632 = 2632,
+
+        KAWOTTE_EXPLOSIVE_2633 = 2633,
+
+        GLYPHE_DE_GWAVITE_INVEWSEE_2634 = 2634,
+
+        CWOQUE_MA_CAWOTTE_2635 = 2635,
+
+        TELEPOWTATION_AWTHWITIQUE_2636 = 2636,
+
+        BOND_DU_WABBIT_2637 = 2637,
+
+        GWAVITE_INVEWSEE_2638 = 2638,
+
+        TACLE_VIOLENT_2639 = 2639,
+
+        COTTE_DE_MAILLES_2640 = 2640,
+
+        CHAÎNE_A_PANS_2641 = 2641,
+
+        POSE_DE_COLLET_2642 = 2642,
+
+        COLLET_DOUGICLE_2643 = 2643,
+
+        VENT_RALE_2644 = 2644,
+
+        APPEL_DANS_LE_VENT_2645 = 2645,
+
+        INSTINCT_2646 = 2646,
+
+        PRELIMINAIRES_2647 = 2647,
+
+        FRAPPEZ_LES_TOUS_2648 = 2648,
+
+        BLAH_BLAH_BLAH_2649 = 2649,
+
+        ANNEAU_CRANE_2650 = 2650,
+
+        INVOCATION_DE_VILAIN_PETIT_PORKASS_2651 = 2651,
+
+        EMBROCHEE_2664 = 2664,
+
+        COUDE_BOULE_2665 = 2665,
+
+        FRAPPERIE_2666 = 2666,
+
+        FOURNITURE_2668 = 2668,
+
+        FLOUTAGE_2669 = 2669,
+
+        FULGURATION_2670 = 2670,
+
+        PROGENITURE_2671 = 2671,
+
+        LAIT_MATERNEL_2673 = 2673,
+
+        FOUFOUX_2674 = 2674,
+
+        DEUIL_2675 = 2675,
+
+        INSTINCT_MATERNEL_2676 = 2676,
+
+        CROQUETTE_2677 = 2677,
+
+        FARCE_2678 = 2678,
+
+        FOULETTE_2680 = 2680,
+
+        FOUX_DE_LA_FORTUNE_2681 = 2681,
+
+        FOUX_OU_RIEN_2682 = 2682,
+
+        FOUX_DAMOUR_2683 = 2683,
+
+        TOISON_GIVREE_2684 = 2684,
+
+        MALICE_GLACEE_2685 = 2685,
+
+        MARASME_2686 = 2686,
+
+        SPORE_TEILLE_2687 = 2687,
+
+        AMI_CELIUM_2688 = 2688,
+
+        SPORE_HEOLE_2689 = 2689,
+
+        VOLVE_HERINE_2690 = 2690,
+
+        SPORE_HIGAMI_2691 = 2691,
+
+        SPORE_CELAINE_2692 = 2692,
+
+        SPORE_TAPORTE_2693 = 2693,
+
+        HIVATION_2694 = 2694,
+
+        HUSSE_2695 = 2695,
+
+        MERULE_SAIRE_2696 = 2696,
+
+        MERULE_TRAÇON_2697 = 2697,
+
+        BAQUERAULE_2698 = 2698,
+
+        DAIPIPAY_2699 = 2699,
+
+        GLYPHE_DAIVAIN_2700 = 2700,
+
+        GLYPHE_DAIDISSE_2701 = 2701,
+
+        RIRAULE_2702 = 2702,
+
+        LOUTE_2703 = 2703,
+
+        HAIRPAY_2704 = 2704,
+
+        PAIXE_2705 = 2705,
+
+        PEUNJ_2706 = 2706,
+
+        ADEHEDE_2707 = 2707,
+
+        FRACAS_SOURDISSANT_2712 = 2712,
+
+        BOULE_DE_KI_S_2713 = 2713,
+
+        COR_ACCORD_2714 = 2714,
+
+        VORTEX_MUET_2715 = 2715,
+
+        DISTORSION_SILENCIEUSE_2716 = 2716,
+
+        SOUPIR_2717 = 2717,
+
+        PIED_GAUCHE_2718 = 2718,
+
+        MORT_FEE_2719 = 2719,
+
+        CHAMP_DE_SABLE_2720 = 2720,
+
+        REVEIL_BRUTAL_2721 = 2721,
+
+        SAUT_DU_LIT_2722 = 2722,
+
+        MENT_2723 = 2723,
+
+        STATIONNEMENT_2724 = 2724,
+
+        PYROMANIE_2725 = 2725,
+
+        BRUTE_FLAMBOYANTE_2726 = 2726,
+
+        NOMADE_ARDENT_2727 = 2727,
+
+        FEU_FOLLET_2728 = 2728,
+
+        COLOSSE_INCENDIAIRE_2729 = 2729,
+
         IGNITION_2730 = 2730,
-        INTERFERENCE = 2731,
-        DISABLING_BURN = 2732,
-        TRANSMISSION = 2733,
-        POLYMORPHKICK = 2734,
-        TRAMPLED = 2735,
-        LONG_DISTANCE = 2736,
-        LIGHT_ON_YOUR_FEET = 2737,
-        ACHILLESHEEL = 2738,
-        TRAP_OF_NO_RETURN = 2740,
-        BEARDED_TRAP = 2741,
-        I_VE_GOT_YOU_YOU_VE_GOT_ME = 2742,
-        SELECTIVE_TRAP = 2743,
-        ALOPECIA = 2744,
-        TICK_TOCK_CROC = 2745,
-        CROCODYL_CROCKMAKER_SUMMONS = 2746,
-        COMPARTMENTALISATION = 2747,
-        MONOMANIA = 2748,
-        COAST_PLAY = 2749,
-        IDOLATRY = 2750,
-        NERF_PLOX = 2751,
-        EXPLOSIVE_HAIR = 2752,
-        TOFUPALE = 2761,
-        ROGUERY_2763 = 2763,
-        AVALANCHE = 2764,
-        PECKING_TOFU = 2765,
-        SPRAIN = 2766,
-        SNAP_N_STAB = 2767,
-        BLACK_AND_BLUE = 2768,
-        REINFORCED_STITCHES = 2769,
-        TRAUMA = 2770,
-        PADDING = 2771,
-        WABBIT_WUSE = 2772,
-        CUWSE_OF_THE_CAWWOT = 2773,
-        KWISMAS_CAWWOT = 2774,
-        PLAYFUL_RIBBON = 2775,
-        IMPATIENCE = 2776,
-        DETONATOR_2778 = 2778,
-        GLACIAL_CRUSHING = 2779,
-        BENUMBING_SEISMIC_PUNCH = 2780,
-        FROZEN_DISEMBOWELMENT = 2781,
-        KWAKOKUS = 2782,
-        WAKPOTUS = 2783,
-        SHIVERING_KITSNITION = 2785,
-        NAKWATUS_SPECTRAL_ILLUSION = 2786,
-        WINTRY_KITSOUNE_TRICK = 2787,
-        SMALL_FROSTY_WABEHAMEHA = 2788,
-        FRAPPUS = 2789,
-        LIMING_2790 = 2790,
-        WINTRY_KANIGER_S_LUCK = 2791,
-        INFANTIPHAGIA = 2792,
-        BACK_TO_ICE = 2793,
-        EXTRACTION_2794 = 2794,
-        KICKBACK_2795 = 2795,
-        GRENADO_2796 = 2796,
-        WATER_BOMB_2797 = 2797,
-        MAGNET_2801 = 2801,
-        BOOMERANG_DAGGERS_2802 = 2802,
-        DIRTY_TRICK_2803 = 2803,
-        CARBINE_2804 = 2804,
-        POWDER_2805 = 2805,
-        PULSAR_2806 = 2806,
-        DECEPTION_2807 = 2807,
-        EXPLOBOMB_2808 = 2808,
-        REMISSION_2809 = 2809,
-        LAST_BREATH_2810 = 2810,
-        COUNTDOWN_2811 = 2811,
-        OVERLOAD_2812 = 2812,
-        BLUNDERBUSS_2813 = 2813,
-        KABOOM_2815 = 2815,
-        EXHALER = 2818,
-        INHALER = 2819,
-        DETONATION = 2820,
-        INITIALISATION = 2821,
-        ROGUISH_EXPLOSION = 2822,
-        ROGUISH_EXPLOSIONTARGET_ = 2823,
-        ROGUISH_EXPLOSIONCHAIN_ = 2824,
-        WALL_OF_FIRE = 2825,
-        ROGUISH_TORNADOTARGET_ = 2827,
-        ROGUISH_TORNADOCHAIN_ = 2828,
-        WALL_OF_AIR = 2829,
-        ROGUISH_DOWNPOUR = 2830,
-        ROGUISH_DOWNPOURTARGET_ = 2831,
-        ROGUISH_DOWNPOURCHAIN_ = 2832,
-        WALL_OF_WATER = 2833,
-        POWDERY = 2841,
-        ROGUISH_TORNADO = 2845,
-        OBSTRUCTION = 2846,
-        DIFFRACTION = 2849,
-        DOPPLESQUE_EXTRACTION = 2850,
-        DOPPLESQUE_EXPLOBOMB = 2851,
-        DOPPLESQUE_DETONATOR = 2852,
-        DOPPLESQUE_GRENADO = 2853,
-        DOPPLESQUE_BOOMERANG_DAGGERS = 2854,
-        DOPPLESQUE_WATER_BOMB = 2855,
-        DOPPLESQUE_REMISSION = 2856,
-        DOPPLESQUE_KICKBACK = 2857,
-        DOPPLESQUE_ROGUERY = 2858,
-        DOPPLESQUE_DECEPTION = 2859,
-        DOPPLESQUE_PULSAR = 2860,
-        DOPPLESQUE_CARBINE = 2861,
-        DOPPLESQUE_BLUNDERBUSS = 2862,
-        DOPPLESQUE_BUSH_FIRE = 2864,
-        INTREPID_MASK = 2872,
-        COWARD_MASK_2879 = 2879,
-        PSYCHOPATH_MASK_2880 = 2880,
-        MARTELO_2881 = 2881,
-        RETENTION_2882 = 2882,
-        DECOY_2883 = 2883,
-        DISTANCE_2885 = 2885,
-        APATHY_2886 = 2886,
-        FURIA_2887 = 2887,
-        CAPERING_2888 = 2888,
-        BOLICHE_2889 = 2889,
-        PLASTRON_2890 = 2890,
-        TORTORUGA_2891 = 2891,
-        TRANCE_2892 = 2892,
-        BLING_2893 = 2893,
-        STAMPEDE_2894 = 2894,
-        ARDOUR_2895 = 2895,
-        REINFORCEMENT_2896 = 2896,
-        MASQUERADE_2897 = 2897,
-        PICADA_2899 = 2899,
-        LASM_2901 = 2901,
-        DOPPLESQUE_MARTELO = 2903,
-        DOPPLESQUE_REINFORCEMENT = 2904,
-        DOPPLESQUE_COWARD_MASK = 2905,
-        DOPPLESQUE_PICADA = 2906,
-        DOPPLESQUE_BLING = 2907,
-        DOPPLESQUE_TORTURUGA = 2908,
-        DOPPLESQUE_CLASSIC_MASK = 2909,
-        DOPPLESQUE_RETENTION = 2910,
-        DOPPLESQUE_PSYCHOPATH_MASK = 2911,
-        DOPPLESQUE_FURIA = 2912,
-        DOPPLESQUE_DISTANCE = 2913,
-        DOPPLESQUE_PLASTRON = 2914,
-        DOPPLESQUE_ARDOUR = 2915,
-        DOPPLESQUE_STAMPEDE = 2916,
-        DOPPLESQUE_CAPERING = 2917,
-        DOPPLESQUE_DECOY = 2918,
-        DOPPLESQUE_TRANCE = 2919,
-        DOPPLESQUE_APATHY = 2920,
-        DOPPLESQUE_BOLICHE = 2921,
-        DOPPLESQUE_MASQUERADE = 2922,
-        LEASING_SPELL = 2924,
-        CAVE_GOBBALL_BITE = 2926,
-        ROYAL_GOBBALL_BITE = 2927,
-        IGNITION_2928 = 2928,
-        TACHI_AI = 2932,
-        HEAVY_COOPERATION = 2933,
-        OSHI_ZUMO = 2934,
-        YOTSU_ZUMO = 2935,
-        GORGOYLE_GLYPH = 2936,
-        UPYURS = 2937,
-        JACKAL_BREATH = 2939,
-        SEPTICAEMIA = 2945,
-        STIFFENING_VENOM = 2946,
-        PACK_MENTALITY = 2947,
-        ELEMENTAL_FRENZY = 2948,
-        SLUGGISHNESS = 2949,
-        IMMUNODEFICIENCY = 2950,
-        MIRE_2951 = 2951,
-        MAD_DOGGEDNESS = 2952,
-        TANTRUM = 2953,
-        BLOSSOM = 2954,
-        PUNITIVE_REBOUND = 2955,
-        STABILISING_ATTRACTION = 2956,
-        ANAEMIA = 2957,
-        AGONY = 2958,
-        COUNTER_WEAKNESS = 2959,
-        QUARRY = 2960,
-        RECALCIFICATION = 2961,
-        INCUBATION = 2962,
-        HUMIDIFICATION = 2963,
-        DAMPENING_2964 = 2964,
-        HYDROPHILIA = 2965,
-        HYDROPHOBIA = 2966,
-        DROWNING = 2967,
-        PUDDLE = 2968,
-        SPLATTER = 2969,
-        DRYING_OUT = 2970,
-        DROUGHT = 2971,
-        EYE_OF_THE_STORM = 2972,
-        WHIRLWIND_2973 = 2973,
-        GAS_LEAK = 2974,
-        TOPPLING_HURRICANE = 2975,
-        CRASHING_BREATH = 2977,
-        TCHESSED = 2978,
-        AVARICE = 2979,
-        EXPLOSION = 2980,
-        FUSED_TOGETHER = 2982,
-        FISSION = 2984,
-        TYRANNISATION = 2986,
-        METEOR = 2987,
-        MATURATION = 2988,
-        IMMATURATION = 2989,
-        PEAS_IN_A_POD = 2990,
-        APOCALYPSE = 2991,
-        RUBILAX_SUMMON = 2992,
-        THE_SWORD_SUMMON = 2993,
-        DEMONISM = 2994,
-        DIABOLISM = 2995,
-        DIVISION = 3000,
-        IMMORTALITY = 3001,
-        INDESTRUCTABILITY = 3002,
-        CHAIN_REACTION = 3005,
-        LOW_GUARD = 3006,
-        BLADE = 3007,
-        HIGH_GUARD = 3009,
-        POINT_3010 = 3010,
-        BARBARISM = 3013,
-        GRAVITY = 3015,
-        MAGNETISM_3016 = 3016,
-        SLICING_EDGE = 3022,
-        POINT_3023 = 3023,
-        BREACH = 3024,
-        PARADE = 3025,
-        FENCING = 3026,
-        SHARPENING = 3027,
-        IMMUNISATION = 3028,
-        IZTERIK_FAIRYWORK = 3029,
-        GOULTARD_FLICK = 3030,
-        SILENCE_GLYPHDUPLICATED_ = 3034,
-        PULSE = 3035,
-        CALL_A_FRIEND = 3036,
-        DOLOMITE_BODY = 3037,
-        DESTROYED_MOUNTAIN = 3038,
-        MOUNTAIN_DESTRUCTION = 3039,
-        PAIN_CLONE = 3040,
-        PANDAWUSHU_PERMUTATION = 3041,
-        AERDALA_MARK = 3042,
-        AKWADALA_MARK = 3043,
-        FEUDALA_MARK = 3044,
-        TERRDALA_MARK = 3045,
-        PANDALA_MARK = 3046,
-        AERDALA_ANCESTRA_LANCE = 3047,
-        KOALAK_LIBERATION = 3049,
-        WARRIOR_S_RAGE = 3050,
-        WILD_INVISIBILITY = 3052,
-        WILD_INVISIBILITY_OF_OTHERS = 3053,
-        BLOODTHIRSTY_LIFE_TRANSFER = 3054,
-        BLOODTHIRSTY_PUNISHMENT = 3055,
-        PIRALAK_LEAP = 3056,
-        ABOMINABLE = 3060,
-        BALL_OF_COAL = 3087,
-        DEBILITATING_BLOW = 3088,
-        HEATING = 3089,
-        RUT = 3090,
-        RUNNINOZE = 3091,
-        RING_THE_BELLS = 3092,
-        CHITTEN = 3093,
-        ICY_GLYPH_3094 = 3094,
-        VIRULENT_SPITBALL = 3095,
-        VIRULENT_BITE = 3096,
-        IN_VOGUE = 3097,
-        INNER_BEAUTY = 3098,
-        ICY_SMILE = 3099,
-        BEETLAGE = 3100,
-        DEVIOUS_PRESENT = 3101,
-        IMMEDIATE_EXPLOSION = 3102,
-        INGESTION = 3103,
-        EXCRETION = 3104,
-        SPONTANEOUS_EXPLOSION = 3105,
-        THWEE_KING_SPRING = 3106,
-        PINGWIN_LAUNCHER = 3107,
-        BALT_HASAW_S_ARRIVAL_3108 = 3108,
-        BALT_HASAW_S_ARRIVAL_3109 = 3109,
-        CAS_PAW_S_ARRIVAL_3110 = 3110,
-        CAS_PAW_S_ARRIVAL_3111 = 3111,
-        UNWAVERING_FAITH = 3113,
-        HASTY_CONCLUSION = 3114,
-        PREJUDICE = 3115,
-        NO_WAY_OUT = 3116,
-        PREDICTION_GLYPH = 3117,
-        INCORRECT_PREDICTION = 3118,
-        KWISMAS_CURSE = 3119,
-        PREZLEY_SUMMONING = 3120,
-        HEART_COLOURING = 3121,
-        UNPLEASANT_SURPRISE = 3122,
-        UNWRAPPING = 3123,
-        EARTHY_SURPRISE = 3124,
-        FIERY_SURPRISE = 3125,
-        WATERY_SURPRISE = 3126,
-        WINDY_SURPRISE = 3127,
-        JERK_IN_THE_BOX = 3128,
-        WRAPPING_UP = 3129,
-        BADDIE_CATCHER = 3130,
-        BADDIE_PUSHER = 3131,
-        GOODIE_CATCHER = 3132,
-        GOODIE_PUSHER = 3133,
-        INK_JET = 3134,
-        HELL_S_BELLS = 3137,
-        ARMLOCK_3138 = 3138,
-        HAMBUSH = 3139,
-        FURIOUS_FEELERS = 3140,
-        INSECTRICITY = 3141,
-        SNOWBALL_FAIRYWORK = 3147,
-        KWISMAS_FAIRYWORK = 3148,
-        NUTCRACKER = 3162,
-        BUSHIDO = 3163,
-        KIKOHA = 3164,
-        BUNSHIN = 3165,
-        MJOLLNIR = 3166,
-        DO_FUS_RAH = 3167,
-        HEL = 3168,
-        HELHEIM = 3169,
-        CURARE = 3170,
-        KNIFE_SPEARIT = 3171,
-        ROBUSTNESS = 3172,
-        RIPOSTE_3180 = 3180,
-        BOBBIN = 3181,
-        CROCOBURIO_S_RELEASE = 3186,
-        WA_INSPIRATION = 3187,
-        CWUNCH_CWUNCH = 3188,
-        HEADBANGER = 3189,
-        MY_GRAIN = 3190,
-        HEAD_TO_HEAD = 3191,
-        DOPPLESQUE_FROSTBITE = 3192,
-        DOPPLESQUE_TEMPORAL_DUST = 3193,
-        HOSTILITY_3194 = 3194,
-        RIVETER = 3195,
+
+        INTERFERENCE_2731 = 2731,
+
+        BRULURE_HANDICAPANTE_2732 = 2732,
+
+        TRANSMISSION_2733 = 2733,
+
+        COUP_DEPIED_POLYMORPHE_2734 = 2734,
+
+        PIED_TINNE_2735 = 2735,
+
+        TALON_GDISTANCE_2736 = 2736,
+
+        PIED_LEGER_2737 = 2737,
+
+        TALON_DACHILLE_2738 = 2738,
+
+        PIEGE_DE_NON_RETOUR_2740 = 2740,
+
+        PIEGE_BARBU_2741 = 2741,
+
+        JE_TE_TIENS_TU_ME_TIENS_2742 = 2742,
+
+        PIEGE_SELECTIF_2743 = 2743,
+
+        CHUTE_DE_POILS_2744 = 2744,
+
+        TIC_TOC_CROC__2745 = 2745,
+
+        INVOCATION_DE_CROCODAILLE_HORLOGER_2746 = 2746,
+
+        CLOISONNEMENT_2747 = 2747,
+
+        MONOMANIE_2748 = 2748,
+
+        COSSE_PLAIE_2749 = 2749,
+
+        IDOLATRIE_2750 = 2750,
+
+        NERF_DEUX_2751 = 2751,
+
+        POILS_EXPLOSIFS_2752 = 2752,
+
+        TOFUPALE_2761 = 2761,
+
+        _2763 = 2763,
+
+        CHUTE_DE_NEIGE_2764 = 2764,
+
+        BECOTAGE_DU_TOFU_2765 = 2765,
+
+        ENTORSE_2766 = 2766,
+
+        PIQUE_COUIC_2767 = 2767,
+
+        ECCHYMOSE_2768 = 2768,
+
+        COUTURES_RENFORCEES_2769 = 2769,
+
+        TRAUMATISME_2770 = 2770,
+
+        REMBOURRAGE_2771 = 2771,
+
+        RUSE_DU_WABBIT_2772 = 2772,
+
+        MALEDICTION_DE_LA_CAWOTTE_2773 = 2773,
+
+        CAWOTTE_DE_NOWEL_2774 = 2774,
+
+        RUBAN_JOUEUR_2775 = 2775,
+
+        IMPATIENCE_2776 = 2776,
+
+        _2778 = 2778,
+
+        ECRASEMENT_GLACIAL_2779 = 2779,
+
+        FRAPPE_SISMIQUE_ENGOURDISSANTE_2780 = 2780,
+
+        EVENTRATION_GELEE_2781 = 2781,
+
+        KWAKOUKUS_2782 = 2782,
+
+        WAKPOTUS_2783 = 2783,
+
+        KITSNITION_FRISSONANTE_2785 = 2785,
+
+        ILLUSION_SPECTRALE_NAKWATUS_2786 = 2786,
+
+        RUSE_HIVERNALE_DU_KITSOUNE_2787 = 2787,
+
+        PETIT_WABEHAMEHA_FRISQUET_2788 = 2788,
+
+        FRAPPUS_2789 = 2789,
+
+        ENGLUAGE_2790 = 2790,
+
+        CHANCE_DU_KANIGROU_HIVERNAL_2791 = 2791,
+
+        INFANTOPHAGIE_2792 = 2792,
+
+        RETOUR_DE_GEL_2793 = 2793,
+
+        _2794 = 2794,
+
+        _2795 = 2795,
+
+        _2796 = 2796,
+
+        _2797 = 2797,
+
+        _2801 = 2801,
+
+        _2802 = 2802,
+
+        _2803 = 2803,
+
+        _2804 = 2804,
+
+        _2805 = 2805,
+
+        _2806 = 2806,
+
+        _2807 = 2807,
+
+        _2808 = 2808,
+
+        _2809 = 2809,
+
+        _2810 = 2810,
+
+        _2811 = 2811,
+
+        _2812 = 2812,
+
+        _2813 = 2813,
+
+        _2815 = 2815,
+
+        _2817 = 2817,
+
+        _2818 = 2818,
+
+        _2819 = 2819,
+
+        _2820 = 2820,
+
+        _2821 = 2821,
+
+        _2822 = 2822,
+
+        _2823 = 2823,
+
+        _2824 = 2824,
+
+        _2825 = 2825,
+
+        _2827 = 2827,
+
+        _2828 = 2828,
+
+        _2829 = 2829,
+
+        _2830 = 2830,
+
+        _2831 = 2831,
+
+        _2832 = 2832,
+
+        _2833 = 2833,
+
+        _2840 = 2840,
+
+        _2841 = 2841,
+
+        _2845 = 2845,
+
+        ENCOMBREMENT_2846 = 2846,
+
+        _2849 = 2849,
+
+        EXTRACTION_DU_DOPEUL_2850 = 2850,
+
+        EXPLOBOMBE_DU_DOPEUL_2851 = 2851,
+
+        DETONATEUR_DU_DOPEUL_2852 = 2852,
+
+        TORNABOMBE_DU_DOPEUL_2853 = 2853,
+
+        DAGUES_BOOMERANG_DU_DOPEUL_2854 = 2854,
+
+        BOMBE_A_EAU_DU_DOPEUL_2855 = 2855,
+
+        REMISSION_DU_DOPEUL_2856 = 2856,
+
+        BOTTE_DU_DOPEUL_2857 = 2857,
+
+        ROUBLARDISE_DU_DOPEUL_2858 = 2858,
+
+        RESQUILLE_DU_DOPEUL_2859 = 2859,
+
+        PULSAR_DU_DOPEUL_2860 = 2860,
+
+        ESPINGOLE_DU_DOPEUL_2861 = 2861,
+
+        TROMBLON_DU_DOPEUL_2862 = 2862,
+
+        FEU_DE_BROUSSE_DU_DOPEUL_2864 = 2864,
+
+        _2872 = 2872,
+
+        _2873 = 2873,
+
+        _2874 = 2874,
+
+        _2879 = 2879,
+
+        _2880 = 2880,
+
+        _2881 = 2881,
+
+        _2882 = 2882,
+
+        _2883 = 2883,
+
+        _2885 = 2885,
+
+        _2886 = 2886,
+
+        _2887 = 2887,
+
+        _2888 = 2888,
+
+        _2889 = 2889,
+
+        _2890 = 2890,
+
+        _2891 = 2891,
+
+        _2892 = 2892,
+
+        _2893 = 2893,
+
+        _2894 = 2894,
+
+        _2895 = 2895,
+
+        _2896 = 2896,
+
+        _2897 = 2897,
+
+        _2898 = 2898,
+
+        _2899 = 2899,
+
+        _2900 = 2900,
+
+        LASME_2901 = 2901,
+
+        MARTELO_DU_DOPEUL_2903 = 2903,
+
+        APPUI_DU_DOPEUL_2904 = 2904,
+
+        MASQUE_DU_PLEUTRE_DU_DOPEUL_2905 = 2905,
+
+        PICADA_DU_DOPEUL_2906 = 2906,
+
+        REUCHE_DU_DOPEUL_2907 = 2907,
+
+        TORTORUGA_DU_DOPEUL_2908 = 2908,
+
+        MASQUE_DE_CLASSE_DU_DOPEUL_2909 = 2909,
+
+        RETENTION_DU_DOPEUL_2910 = 2910,
+
+        MASQUE_DU_PSYCHOPATHE_DU_DOPEUL_2911 = 2911,
+
+        FURIA_DU_DOPEUL_2912 = 2912,
+
+        DISTANCE_DU_DOPEUL_2913 = 2913,
+
+        PLASTRON_DU_DOPEUL_2914 = 2914,
+
+        FOUGUE_DU_DOPEUL_2915 = 2915,
+
+        DEBANDADE_DU_DOPEUL_2916 = 2916,
+
+        CABRIOLE_DU_DOPEUL_2917 = 2917,
+
+        APPEAU_DU_DOPEUL_2918 = 2918,
+
+        TRANSE_DU_DOPEUL_2919 = 2919,
+
+        APATHIE_DU_DOPEUL_2920 = 2920,
+
+        BOLICHE_DU_DOPEUL_2921 = 2921,
+
+        MASCARADE_DU_DOPEUL_2922 = 2922,
+
+        SORT_DAFFERMAGE_2924 = 2924,
+
+        MORSURE_DU_BOUFTOU_DES_CAVERNES_2926 = 2926,
+
+        MORSURE_DU_BOUFTOU_ROYAL_2927 = 2927,
+
+        _2928 = 2928,
+
+        _2929 = 2929,
+
+        TACHI_AI_2932 = 2932,
+
+        LOURDE_COOPERATION_2933 = 2933,
+
+        OSHI_ZUM_2934 = 2934,
+
+        YOTSU_ZUM_2935 = 2935,
+
+        GLYPHE_DU_GORGOUILLE_2936 = 2936,
+
+        DAYTAYÇAY_2937 = 2937,
+
+        _2938 = 2938,
+
+        HALEINE_DE_CHACAL_2939 = 2939,
+
+        _2942 = 2942,
+
+        SEPTICEMIE_2945 = 2945,
+
+        VENIN_ANKYLOSANT_2946 = 2946,
+
+        ESPRIT_DE_MEUTE_2947 = 2947,
+
+        FRENESIE_ELEMENTALE_2948 = 2948,
+
+        ALANGUISSEMENT_2949 = 2949,
+
+        IMMUNODEFICIENCE_2950 = 2950,
+
+        FANGE_2951 = 2951,
+
+        ENTETEMENT_OBSESSIONNEL_2952 = 2952,
+
+        CAPRICE_2953 = 2953,
+
+        ECLOSION_2954 = 2954,
+
+        REBOND_PUNITIF_2955 = 2955,
+
+        ATTRACTION_STABILISANTE_2956 = 2956,
+
+        ANEMIE_2957 = 2957,
+
+        AGONIE_2958 = 2958,
+
+        CONTRE_FAIBLESSE_2959 = 2959,
+
+        CUREE_2960 = 2960,
+
+        RECALCIFICATION_2961 = 2961,
+
+        INCUBATION_2962 = 2962,
+
+        HUMIDIFICATION_2963 = 2963,
+
+        HUMECTATION_2964 = 2964,
+
+        HYDROPHILIE_2965 = 2965,
+
+        HYDROPHOBIE_2966 = 2966,
+
+        NOYADE_2967 = 2967,
+
+        FLAQUE_2968 = 2968,
+
+        ECLABOUSSURE_2969 = 2969,
+
+        ASSECHEMENT_2970 = 2970,
+
+        SECHERESSE_2971 = 2971,
+
+        ŒIL_DU_CYCLONE_2972 = 2972,
+
+        TOURBILLON_2973 = 2973,
+
+        FUITE_DE_GAZ_2974 = 2974,
+
+        OURAGAN_RENVERSANT_2975 = 2975,
+
+        SOUFFLE_PERCUTANT_2977 = 2977,
+
+        TCHAISTE_2978 = 2978,
+
+        AVIDITE_2979 = 2979,
+
+        EXPLOSION_2980 = 2980,
+
+        _2981 = 2981,
+
+        LIEN_FUSIONNEL_2982 = 2982,
+
+        FISSION_2984 = 2984,
+
+        TYRANNISATION_2986 = 2986,
+
+        METEORE_2987 = 2987,
+
+        MATURATION_2988 = 2988,
+
+        IMMATURATION_2989 = 2989,
+
+        ATOMES_CROCHUS_2990 = 2990,
+
+        APOCALYPSE_2991 = 2991,
+
+        INVOCATION_DE_RUBILAX_2992 = 2992,
+
+        INVOCATION_DE__LEPEE__2993 = 2993,
+
+        DEMONISME_2994 = 2994,
+
+        DIABOLISME_2995 = 2995,
+
+        _2999 = 2999,
+
+        DIVISION_3000 = 3000,
+
+        IMMORTALITE_3001 = 3001,
+
+        INDESTRUCTIBILITE_3002 = 3002,
+
+        REACTION_EN_CHAÎNE_3005 = 3005,
+
+        GARDE_BASSE_3006 = 3006,
+
+        TAILLE_3007 = 3007,
+
+        GARDE_HAUTE_3009 = 3009,
+
+        ESTOC_3010 = 3010,
+
+        BARBARIE_3013 = 3013,
+
+        GRAVITE_3015 = 3015,
+
+        MAGNETISME_3016 = 3016,
+
+        TRANCHANT_3022 = 3022,
+
+        POINTE_3023 = 3023,
+
+        BRECHE_3024 = 3024,
+
+        PARADE_3025 = 3025,
+
+        ESCRIME_3026 = 3026,
+
+        AFFUTAGE_3027 = 3027,
+
+        IMMUNISATION_3028 = 3028,
+
+        FEE_DARTIFICE_TERIK_3029 = 3029,
+
+        PICHENETTE_DE_GOULTARD_3030 = 3030,
+
+        _3032 = 3032,
+
+        GLYPHE_DE_SILENCE_DUPLIQUE_3034 = 3034,
+
+        APPEL_DES_POTES_3036 = 3036,
+
+        CORPS_DE_DOLOMITE_3037 = 3037,
+
+        MONTAGNE_DETRUITE_3038 = 3038,
+
+        DESTRUCTION_DE_LA_MONTAGNE_3039 = 3039,
+
+        PAUME_DE_PAIN_3040 = 3040,
+
+        PERMUTATION_PANDAWUSHU_3041 = 3041,
+
+        MARQUE_DAERDALA_3042 = 3042,
+
+        MARQUE_DAKWADALA_3043 = 3043,
+
+        MARQUE_DE_FEUDALA_3044 = 3044,
+
+        MARQUE_DE_TERRDALA_3045 = 3045,
+
+        MARQUE_DE_PANDALA_3046 = 3046,
+
+        LANCE_ESTRALE_AERDALA_3047 = 3047,
+
+        LIBERATION_KOALAK_3049 = 3049,
+
+        RAGE_DU_GUERRIER_3050 = 3050,
+
+        INVISIBILITE_FAROUCHE_3052 = 3052,
+
+        INVISIBILITE_FAROUCHE_DAUTRUI_3053 = 3053,
+
+        TRANSFERT_DE_VIE_SANGUIN_3054 = 3054,
+
+        CHATIMENT_SANGUIN_3055 = 3055,
+
+        BOND_DU_PIRALAK_3056 = 3056,
+
+        ABOMINABLE_3060 = 3060,
+
+        _3062 = 3062,
+
+        _3063 = 3063,
+
+        _3064 = 3064,
+
+        _3065 = 3065,
+
+        _3077 = 3077,
+
+        _3080 = 3080,
+
+        _3082 = 3082,
+
+        _3083 = 3083,
+
+        _3084 = 3084,
+
+        _3085 = 3085,
+
+        _3086 = 3086,
+
+        BOULE_DE_SUIE_ENFLAMMEE_3087 = 3087,
+
+        FRAPPE_HANDICAPANTE_3088 = 3088,
+
+        CHAUFFAGE_3089 = 3089,
+
+        RUT_3090 = 3090,
+
+        NEKICOUL_3091 = 3091,
+
+        SONNER_LES_CLOCHES_3092 = 3092,
+
+        CHITINE_3093 = 3093,
+
+        GLYPHE_GLACIAL_3094 = 3094,
+
+        ELECTRISATION_VIRULENTE_3095 = 3095,
+
+        ATTITUDE_VIRULENTE_3096 = 3096,
+
+        A_LA_MODE_3097 = 3097,
+
+        BEAUTE_INTERIEURE_3098 = 3098,
+
+        SOURIRE_GLACIAL_3099 = 3099,
+
+        CAFARDAGE_3100 = 3100,
+
+        PRESENT_PIEGE_3101 = 3101,
+
+        EXPLOSION_IMMEDIATE_3102 = 3102,
+
+        INGESTION_3103 = 3103,
+
+        EXCRETION_3104 = 3104,
+
+        EXPLOSION_SPONTANEE_3105 = 3105,
+
+        BOND_DU_WA_MAGE_3106 = 3106,
+
+        LANCE_MANSOT_3107 = 3107,
+
+        ARRIVEE_DE_BALT_AZAW_3108 = 3108,
+
+        ARRIVEE_DE_BALT_AZAW_3109 = 3109,
+
+        ARRIVEE_DE_GAS_PAWD_3110 = 3110,
+
+        ARRIVEE_DE_GAS_PAWD_3111 = 3111,
+
+        FOI_INEBRANLABLE_3113 = 3113,
+
+        CONCLUSION_HATIVE_3114 = 3114,
+
+        PREJUGE_3115 = 3115,
+
+        AUCUN_ECHAPPATOIRE_3116 = 3116,
+
+        GLYPHE_DE_PREDICTION_3117 = 3117,
+
+        PREDICTION_ERRONEE_3118 = 3118,
+
+        MALEDICTION_DE_NOWEL_3119 = 3119,
+
+        INVOCATION_DE_CADOBSTACLE_3120 = 3120,
+
+        COLORANT_CŒUR_3121 = 3121,
+
+        MAUVAISE_SURPRISE_3122 = 3122,
+
+        DEBALLAGE_3123 = 3123,
+
+        SURPRISE_TERRESTRE_3124 = 3124,
+
+        SURPRISE_INCANDESCENTE_3125 = 3125,
+
+        SURPRISE_AQUEUSE_3126 = 3126,
+
+        SURPRISE_VENTEUSE_3127 = 3127,
+
+        DIABLE_EN_BOÎTE_3128 = 3128,
+
+        REMBALLAGE_3129 = 3129,
+
+        ATTRAPE_VILAINS_3130 = 3130,
+
+        REPOUSSE_VILAINS_3131 = 3131,
+
+        ATTRAPE_GENTILS_3132 = 3132,
+
+        REPOUSSE_GENTILS_3133 = 3133,
+
+        JET_DENCRE_3134 = 3134,
+
+        TAPAGE_DE_CLOCHE_3137 = 3137,
+
+        CLEF_DE_BRAS_3138 = 3138,
+
+        COCHONAÏE_3139 = 3139,
+
+        ANTENNES_FOUDROYANTES_3140 = 3140,
+
+        INSECTRICITE_3141 = 3141,
+
+        _3143 = 3143,
+
+        _3144 = 3144,
+
+        FEE_DARTIFICE_BOULE_DE_NEIGE_3147 = 3147,
+
+        FEE_DARTIFICE_NOWEL_3148 = 3148,
+
+        _3149 = 3149,
+
+        _3150 = 3150,
+
+        _3151 = 3151,
+
+        _3152 = 3152,
+
+        _3153 = 3153,
+
+        _3156 = 3156,
+
+        _3157 = 3157,
+
+        _3158 = 3158,
+
+        _3160 = 3160,
+
+        _3161 = 3161,
+
+        CASSE_NOISETTES_3162 = 3162,
+
+        BUSHIDO_3163 = 3163,
+
+        KIKOHA_3164 = 3164,
+
+        BUNSHIN_3165 = 3165,
+
+        MJLLNIR_3166 = 3166,
+
+        DO_FUS_RAH__3167 = 3167,
+
+        HEL_3168 = 3168,
+
+        HELHEIM_3169 = 3169,
+
+        CURARE_3170 = 3170,
+
+        ELANCE_DE_COUTEAU_3171 = 3171,
+
+        ROBUSTESSE_3172 = 3172,
+
+        _3176 = 3176,
+
+        _3177 = 3177,
+
+        _3178 = 3178,
+
+        _3179 = 3179,
+
+        REPLIQUE_3180 = 3180,
+
+        BOBINE_3181 = 3181,
+
+        _3182 = 3182,
+
+        _3183 = 3183,
+
+        _3184 = 3184,
+
+        _3185 = 3185,
+
+        LIBERATION_CROCOBURIALE_3186 = 3186,
+
+        INSPIRATION_DES_WAS_3187 = 3187,
+
+        CWOQUE_CWOQUE_3188 = 3188,
+
+        CEPHALEINE_3189 = 3189,
+
+        MIGRE_HAINE_3190 = 3190,
+
+        TETE_A_TETE_3191 = 3191,
+
+        GELURE_DU_DOPEUL_3192 = 3192,
+
+        POUSSIERE_TEMPORELLE_DU_DOPEUL_3193 = 3193,
+
+        HOSTILITE_3194 = 3194,
+
+        RIVETEUSE_3195 = 3195,
+
         RIVET_3196 = 3196,
+
         RIVET_3197 = 3197,
-        PLASMID = 3198,
+
+        PLASMIDE_3198 = 3198,
+
         PERCUSSION_3199 = 3199,
+
         RUPTURE_3200 = 3200,
-        DRILLING_3201 = 3201,
-        SCAPHANDER_3202 = 3202,
-        TIDE_3203 = 3203,
-        BACKWASH_3204 = 3204,
-        TORRENT_3205 = 3205,
-        PILFER_3206 = 3206,
-        SURGE_3207 = 3207,
-        FROTH_3208 = 3208,
-        VAPOUR_3209 = 3209,
-        ANCHOR_3210 = 3210,
-        TRIDENT_3211 = 3211,
-        HARPOONER_3212 = 3212,
-        LIFESAVER_3213 = 3213,
-        TACTURRET_3214 = 3214,
-        EVOLUTION_3215 = 3215,
-        DREADNAUT = 3216,
-        SALT_ARMOUR_3217 = 3217,
-        AMBUSH_3218 = 3218,
-        FIRST_AID_3219 = 3219,
-        PERISCOPE_3220 = 3220,
-        GRAPNEL_3221 = 3221,
-        BOOMF = 3222,
-        BWOOM = 3223,
-        BOOME = 3224,
-        BOOBOOMF = 3231,
-        BWOOBWOOM = 3232,
-        KINETIX = 3233,
-        BOOBOOME = 3239,
-        TRANSKO_3240 = 3240,
-        MAINTENANCE = 3241,
-        RESCUE_3244 = 3244,
-        FRATRICIDE = 3247,
-        UGLY_KISS = 3248,
-        ARDENT_KISS = 3249,
-        CURSE_OF_THE_ROYAL_TOFU_HOUSE = 3250,
-        ORPHANAGE = 3251,
-        BAGRIFICE_3252 = 3252,
-        KWAYALTY = 3253,
-        WET_KWAMITIN = 3254,
-        EARTHED_KWAMITIN = 3255,
-        BLOWN_KWAMITIN = 3256,
-        BASIC_KWAMITIN = 3257,
-        WET_KWAKALARM = 3258,
-        EARTHED_KWAKALARM = 3259,
-        BLOWN_KWAKALARM = 3260,
-        BASIC_KWAKALARM = 3261,
-        BURNT_KWAKOUKAS = 3262,
-        WET_KWAKOUKAS = 3263,
-        EARTHED_KWAKOUKAS = 3264,
-        BLOWN_KWAKOUKAS = 3265,
-        BASIC_KWAKOUKAS = 3266,
-        BURNT_WAKPOT = 3267,
-        WET_WAKPOT = 3268,
-        EARTHED_WAKPOT = 3269,
-        BLOWN_WAKPOT = 3270,
-        BASIC_WAKPOT = 3271,
-        AKWADALA_ANCESTRA_LANCE = 3272,
-        FEUDALA_ANCESTRA_LANCE = 3273,
-        TERRDALA_ANCESTRA_LANCE = 3274,
-        PANDALA_ANCESTRA_LANCE = 3275,
-        DARK_POWER_3276 = 3276,
-        BREAKWATER_3277 = 3277,
-        SUMMONING_OF_TOFU_ALLY = 3279,
-        BREAKWATER_3280 = 3280,
-        EVOLUTION_II = 3281,
-        EVOLUTION_III = 3282,
-        HAMMERTIME = 3283,
-        DOPPLESQUE_PILFER = 3284,
-        DOPPLESQUE_ANCHOR = 3285,
-        DOPPLESQUE_TORRENT = 3286,
-        DOPPLESQUE_SALT_ARMOUR = 3287,
-        DOPPLESQUE_SCAPHANDER = 3288,
-        DOPPLESQUE_BACKWASH = 3289,
-        DOPPLESQUE_TIDE = 3290,
-        DOPPLESQUE_VAPOUR = 3291,
-        DOPPLESQUE_PERISCOPE = 3292,
-        DOPPLESQUE_FIRST_AID = 3293,
-        DOPPLESQUE_SURGE = 3294,
-        DOPPLESQUE_AMBUSH = 3295,
-        DOPPLESQUE_FROTH = 3296,
-        DOPPLESQUE_TRIDENT = 3297,
-        TOXIC_SEED = 3298,
-        REVITALISING_CRY = 3299,
-        CRY_OF_RECOVERY = 3300,
-        BWORK_TEMPORAL_DUST = 3301,
-        BWORK_SWORD = 3302,
-        BWORK_TEAR = 3303,
-        BWORK_CELESTIAL_SWORD = 3304,
-        SLOBBERY_COOPERATION = 3305,
-        AIRY_LEAP = 3306,
-        SELFLESSNESS = 3308,
-        PERMUTATION = 3309,
-        REFORMATION = 3310,
-        SANGUINE_ABSORPTION = 3312,
-        ARACHNIC_SLOW_DOWN = 3313,
-        VEGETARIAN_FEAR = 3314,
-        VEGETARIAN_POISONING = 3315,
-        SWORD_OF_PANIC = 3316,
-        VORACIOUS_TEARING = 3317,
-        EARTHY_HAIRS = 3318,
-        HAIRY_UNBEWITCHMENT = 3319,
-        GHOSTLY_REBOUND = 3320,
-        GHOSTLY_EXPLOSION = 3321,
-        GHOSTLY_ARROW = 3322,
-        GHOSTLY_STORM = 3323,
-        GHOSTLY_SWORD = 3324,
-        CROWBAR = 3325,
-        GHOSTLY_SKEWERING = 3326,
-        GHOSTLY_MOTIVATION = 3327,
-        SUMMONING_OF_FAMILIAR_SPIRITS = 3328,
-        GHOSTLY_ELEMENT = 3329,
-        GHOSTLY_SCARASTRENGTH = 3330,
-        SUMMONING_OF_GHOSTLY_EL_SCARADOR = 3331,
-        GHOSTLY_BLADE = 3332,
-        GHOSTLY_BRAVERY = 3333,
-        SUMMONING_OF_GHOSTLY_SPIRITS = 3334,
-        SUMMONING_OF_GHOSTLY_CROBAK = 3335,
-        OPERETTA_CRY = 3336,
-        FOUL_FEET = 3337,
-        SHIFTY = 3338,
-        WORMIFUGE = 3339,
-        SUBTERFUGE = 3340,
-        RAVING_MAD = 3341,
-        CRAZINESS = 3342,
-        PICKING = 3343,
-        ARACHNOBITE = 3344,
-        PUNKINWEB = 3345,
-        LIFE_THEFT = 3346,
-        BANDIT_BLOW = 3347,
-        FORCEFUL_SHOOTING = 3348,
-        DOPPLESQUE_BACKLASH = 3352,
-        DOPPLESQUE_REFLEX = 3353,
-        DOPPLESQUE_LIVING_BAG_3354 = 3354,
-        PUTSCH = 3355,
-        FRIKT = 3356,
-        ENTANGLE = 3357,
-        TERROR_3358 = 3358,
-        CALAMITY_3359 = 3359,
-        TORPOR_3360 = 3360,
-        ATTRAKESHUN = 3361,
-        HARVEST = 3362,
-        PESTY_SIDE = 3363,
-        ZOMBIE_PLANTS = 3364,
-        EXPLOSIVE_PUMPKWIN = 3365,
-        POUTCHICIDE = 3367,
-        EGGING = 3368,
-        WEAKENING_BITE = 3369,
-        BURNING_HYPNOSIS = 3370,
-        WEAKENING_LEAP = 3371,
-        SYLVAN_GLYPH = 3372,
-        SYLV_ = 3373,
-        STICKY_TREE = 3374,
-        AGGRESSIVE_BARK = 3375,
-        SLIPPERY_LEAP = 3376,
-        CALL_OF_THE_FOREST_3377 = 3377,
-        SNIFF_3378 = 3378,
-        PANDIBLUFF = 3379,
-        EXPLOSIVE_GOURD = 3380,
-        TORMENTING_PROJECTILE = 3381,
-        ARDENT_SANDGLASS = 3382,
-        BLUR = 3383,
-        FORCED_SLOW_DOWN = 3384,
-        PIROUETTING = 3385,
-        AZIMUTH_SHOVEL = 3386,
-        WOUND_CLOCK = 3387,
-        OILY_SOAK = 3388,
-        WATERY_SOAK = 3389,
-        FERMENTED_BREATH = 3390,
-        PLAIN_PROTECTION = 3391,
-        RATIONS = 3392,
-        FORCED_RATIONING = 3393,
-        RUG_MUNCHER = 3394,
-        RATATOUILLE = 3395,
-        BRATWORST = 3396,
-        RIFFRAFF = 3397,
-        PRATTLE = 3398,
-        ROYAL_TOFU_PECK = 3399,
-        BLESSING_OF_THE_ROYAL_TOFU_HOUSE = 3400,
-        LIBERATING_FLIGHT = 3401,
-        DRAGOBALL = 3402,
-        DRAGOTURKEY_STIMULATION = 3403,
-        DRAGOSPLASH = 3404,
-        DRAGOCRAZE = 3405,
-        CHARGRILL = 3406,
-        CAKE_SHOVEL_SLAP = 3407,
-        LEGENDARY_CRACKLER_PUNCH = 3408,
-        FLEASTAKOUKAS = 3409,
-        FEATHERY_FLIGHT_3410 = 3410,
-        FLEASTAPOT = 3411,
-        GUZZLER = 3412,
-        CHAV = 3413,
-        IMADOOYOO = 3414,
-        DELINQUENCY = 3415,
-        STONE_S_THROW = 3416,
-        CUTEMUP = 3417,
-        STEELY_WILLPOWER = 3418,
-        SHUPA_SHUP = 3419,
-        BLAZING_LEAP = 3420,
-        LIVELY_LEAP = 3421,
-        SAPPHIRESQUE_CAMOUFLAGE = 3422,
-        DOLLY_LEAP = 3423,
-        REGENERATING_SONG = 3424,
-        STIMULATING_SONG = 3425,
-        YOUTH_SONG = 3426,
-        PARALYSING_SONG = 3427,
-        LIGHTNING_SONG = 3428,
-        GOBKOOL_BITE = 3429,
-        MASTERFUL_TRANSPOSITION = 3431,
-        TONGUE_FLICK = 3432,
-        SCARACORNOS = 3433,
-        HEAVY_STING = 3434,
-        DODGY_STING = 3435,
-        REJUVENATING_PHEROMONES = 3436,
-        WEAKENING_POISON = 3437,
-        UNLUCKY_POISON = 3438,
-        LIVELY_POISON = 3439,
-        HOOFBEAT = 3440,
-        ENERGATOS = 3441,
-        TROOLISH_CRUSH = 3442,
-        GLACIAL_HEAL = 3443,
-        GLACIAL_MIST = 3444,
-        GLACIAL_RELEASE = 3445,
-        GLACIAL_ENTANGLEMENT = 3446,
-        GLACIAL_MOTIVATION = 3447,
-        GLACIAL_EROSION = 3448,
-        CRACK_3449 = 3449,
-        MASS_DOOM = 3450,
-        BARBED_ROOT = 3453,
-        CRUSHING_CROSS = 3454,
-        TRICKY_GOBLINRY = 3455,
-        REVITALISING_GOBLINRY = 3456,
-        STUNNING_GOBLINRY = 3457,
-        SNEAKY_IMPACT = 3458,
-        CAWWOT_SEED = 3459,
-        STWIKE = 3460,
-        TROOLOSER = 3461,
-        AGILIROLL = 3462,
-        WHIRLWING = 3463,
-        KNIGHTLY_ATTRACTION = 3464,
-        KNIGHTLY_LEAP = 3465,
-        METEORITIC_BOULDER = 3466,
-        BLUEBOLT = 3467,
-        DISDAIN = 3468,
-        LEATHERCUT = 3469,
-        INSOLENCE = 3470,
-        PRIDE = 3471,
-        VOMITO = 3472,
-        NERVEHERDER = 3473,
-        RAPID_DIGESTION = 3474,
-        TRANSIT = 3475,
-        HUPPERCUT = 3476,
-        SIR_CULAR = 3477,
-        TYZONE = 3478,
-        TAXIDERMY = 3479,
-        MULCHING = 3480,
-        GUNNY_SACK = 3481,
-        ODDBALL = 3482,
-        SWELLING_3483 = 3483,
-        PUFF_3484 = 3484,
-        SHAGREEN = 3485,
-        CARCASSACRE = 3486,
-        PEACHSKIN_GLYPH = 3487,
-        SIMMER = 3489,
-        MOUSTACHE_TRIMMER = 3490,
-        MOUSTACHIO = 3491,
-        ABDOMINATION = 3492,
-        DIRE_BEATIES = 3493,
-        BELLYACHE = 3494,
-        LIBERATING_BREATH = 3495,
-        PLEASED_AS_PAUNCH = 3496,
-        SIEGFREEZE = 3497,
-        GUARD_IMPACT = 3498,
-        BLEAKSPIN = 3499,
-        ICE_SLICER = 3500,
-        ELEMENTAL_BLYPH_3501 = 3501,
-        KOALAK_BLYPH = 3502,
-        CAVE_DRIBBLE = 3503,
-        CAVE_SPIT = 3504,
-        KARSKADE = 3505,
-        WEAPON_SKILL = 3506,
-        DART_ONION = 3507,
-        VOCAL_CORD = 3508,
-        ARMLOCK_3509 = 3509,
-        ARMADA = 3510,
-        ARMADILLO = 3511,
-        ARMAGEDDON = 3512,
-        BLADEMATE = 3513,
-        BREATH_OF_ICE = 3514,
-        SHUDDER = 3515,
-        SHIVERS = 3516,
-        SNOWDRIFT = 3517,
-        ICE_OF_SPADES = 3518,
-        CRYSTALLISATION_3519 = 3519,
-        ANTIFREEZE = 3520,
-        ICEN_MAIDEN = 3521,
-        ICY_TRAP = 3522,
-        COLD_BLOOD = 3523,
-        ICETROPHYSICS = 3524,
-        LOCH = 3525,
-        GUZZLE = 3526,
-        DRAKO = 3527,
-        WHELP_YELP = 3528,
-        SELF_HARM = 3529,
-        ICY_PELT = 3530,
-        ICIFY = 3531,
-        DODON_T = 3532,
-        CHAOTIC_EXPLOSION = 3533,
-        PLUNGEON = 3534,
-        DOWN_TIME = 3535,
-        FEATHERWET = 3536,
-        TERMOSTAT = 3537,
-        GLUSTICK = 3538,
-        HANDYMITE = 3539,
-        STYRINGE = 3540,
-        QUAGMIRE_3541 = 3541,
-        SCRAPEVINE = 3542,
-        WHOMP = 3543,
-        CLOCKWORK_SPORE_ANGE = 3544,
-        COHOBATION = 3545,
-        CHAOTIC_INSTABILITY = 3546,
-        FATAL_ATTRACTION = 3547,
-        FATAL_EXPLOSION = 3548,
-        DELAYED_FATAL_EXPLOSION = 3549,
-        CHAOS_GOBORALD = 3550,
-        ROBOTISATION = 3551,
-        EMERALD_RAY = 3552,
-        EGG_OF_DEATH = 3553,
-        POTENTIOMETER = 3554,
-        GLACIGLYPH_3555 = 3555,
-        GLACIGLYPH_3556 = 3556,
-        MEKSTABOOST_3557 = 3557,
-        MEKSTABOOST_3558 = 3558,
-        THE_BEST_DEFENCE_3559 = 3559,
-        THE_BEST_DEFENCE_3560 = 3560,
-        COOLING_LIQUID_3561 = 3561,
-        COOLING_LIQUID_3562 = 3562,
-        HYPERTENSION_3563 = 3563,
-        HYPERTENSION_3564 = 3564,
-        ALCHALINE_SOLUTION = 3565,
-        OVAGODRA = 3566,
-        ALCHESELTZER = 3567,
-        ALCHEM_IN_THE_MIDDLE = 3568,
-        FLOORINATION = 3569,
-        SPAGYRIA = 3570,
-        DON_T_MOVE = 3571,
-        FROM_THE_HEART = 3572,
-        BALL_ISTIC = 3573,
-        FLIGHT_OF_THE_SINISTRO = 3574,
-        HEART_TO_HEART = 3575,
-        GO_FRY_AN_EGG = 3576,
-        ENGUARD = 3577,
-        REFRESHMENT_3578 = 3578,
-        BLOW_ME_DOWN = 3579,
-        SOFTENING_BREATH = 3580,
-        SURVIVAL_OF_THE_WEAKEST = 3581,
-        ABSORBANT_BLADE = 3582,
-        KABALKALOID = 3583,
-        MOLAR_FRACTION = 3584,
-        DRY_ICE = 3585,
-        FAILING_SOLUTION = 3586,
-        MOLAL_DILEMMA = 3587,
-        MACHINCEPTION = 3588,
-        KAN_O_BLAST = 3589,
-        HISTORIC_RETURN = 3590,
-        NERVOUS_WRENCH = 3591,
-        SPINNER = 3592,
-        MENTALHEAD = 3593,
-        MENTALLICA = 3594,
-        QUACK_IN_THE_BOX = 3595,
-        SPRINGWIN = 3596,
-        WHIRLWINCH = 3597,
-        BLUBBERFLY = 3598,
-        ICENDICE = 3599,
-        BACKFIRE_3600 = 3600,
-        ROTAPUSH = 3601,
-        EXPULSAR = 3602,
-        LEMIGO = 3603,
-        BURNIE_AND_HURT = 3604,
-        POWER_OUTLET = 3605,
-        MANTELPIECE = 3606,
-        NECROMAGIC = 3607,
-        ZOMBABY = 3608,
-        PUNCHEON = 3609,
-        TEERTS_BLADE = 3610,
-        SNIBBOR_NIKSAB_BLADE = 3611,
-        BENANDGERRIZ_BLADE = 3612,
-        TORMENT_3613 = 3613,
-        TORMENT_3614 = 3614,
-        NOW_YOU_SEAMY = 3615,
+
+        FORAGE_3201 = 3201,
+
+        _3202 = 3202,
+
+        _3203 = 3203,
+
+        _3204 = 3204,
+
+        _3205 = 3205,
+
+        _3206 = 3206,
+
+        _3207 = 3207,
+
+        _3208 = 3208,
+
+        _3209 = 3209,
+
+        _3210 = 3210,
+
+        _3211 = 3211,
+
+        _3212 = 3212,
+
+        _3213 = 3213,
+
+        _3214 = 3214,
+
+        _3215 = 3215,
+
+        _3216 = 3216,
+
+        _3217 = 3217,
+
+        _3218 = 3218,
+
+        _3219 = 3219,
+
+        _3220 = 3220,
+
+        _3221 = 3221,
+
+        _3222 = 3222,
+
+        _3223 = 3223,
+
+        _3224 = 3224,
+
+        _3225 = 3225,
+
+        _3226 = 3226,
+
+        _3227 = 3227,
+
+        _3228 = 3228,
+
+        _3229 = 3229,
+
+        _3230 = 3230,
+
+        _3231 = 3231,
+
+        _3232 = 3232,
+
+        _3233 = 3233,
+
+        _3234 = 3234,
+
+        _3235 = 3235,
+
+        _3236 = 3236,
+
+        _3237 = 3237,
+
+        _3238 = 3238,
+
+        _3239 = 3239,
+
+        _3240 = 3240,
+
+        _3241 = 3241,
+
+        _3242 = 3242,
+
+        _3243 = 3243,
+
+        _3244 = 3244,
+
+        _3245 = 3245,
+
+        _3246 = 3246,
+
+        FRATRICIDE_3247 = 3247,
+
+        VILAIN_BECO_3248 = 3248,
+
+        BECO_ARDENT_3249 = 3249,
+
+        MALEDICTION_DU_TOFULAILLER_ROYAL_3250 = 3250,
+
+        ORPHELINAT_3251 = 3251,
+
+        KWAYAUTE_3253 = 3253,
+
+        KWAMAGUEUL_MOUILLEE_3254 = 3254,
+
+        KWAMAGUEUL_ATTERREE_3255 = 3255,
+
+        KWAMAGUEUL_SOUFFLEE_3256 = 3256,
+
+        KWAMAGUEUL_BANALE_3257 = 3257,
+
+        KWAKALARME_MOUILLEE_3258 = 3258,
+
+        KWAKALARME_ATTERREE_3259 = 3259,
+
+        KWAKALARME_SOUFFLEE_3260 = 3260,
+
+        KWAKALARME_BANALE_3261 = 3261,
+
+        KWAKOUKAS_BRULE_3262 = 3262,
+
+        KWAKOUKAS_MOUILLE_3263 = 3263,
+
+        KWAKOUKAS_ATTERRE_3264 = 3264,
+
+        KWAKOUKAS_SOUFFLE_3265 = 3265,
+
+        KWAKOUKAS_BANAL_3266 = 3266,
+
+        WAKPOT_BRULE_3267 = 3267,
+
+        WAKPOT_MOUILLE_3268 = 3268,
+
+        WAKPOT_ATTERRE_3269 = 3269,
+
+        WAKPOT_SOUFFLE_3270 = 3270,
+
+        WAKPOT_BANAL_3271 = 3271,
+
+        LANCE_ESTRALE_AKWADALA_3272 = 3272,
+
+        LANCE_ESTRALE_FEUDALA_3273 = 3273,
+
+        LANCE_ESTRALE_TERRDALA_3274 = 3274,
+
+        LANCE_ESTRALE_PANDALA_3275 = 3275,
+
+        PUISSANCE_OBSCURE_3276 = 3276,
+
+        _3277 = 3277,
+
+        _3278 = 3278,
+
+        INVOCATION_ROYALE_DE_TOFU_3279 = 3279,
+
+        _3280 = 3280,
+
+        _3281 = 3281,
+
+        _3282 = 3282,
+
+        COUDMARTO_3283 = 3283,
+
+        FLIBUSTE_DU_DOPEUL_3284 = 3284,
+
+        ANCRAGE_DU_DOPEUL_3285 = 3285,
+
+        COURANT_DU_DOPEUL_3286 = 3286,
+
+        ARMURE_DE_SEL_DU_DOPEUL_3287 = 3287,
+
+        SCAPHANDRE_DU_DOPEUL_3288 = 3288,
+
+        RESSAC_DU_DOPEUL_3289 = 3289,
+
+        MAREE_DU_DOPEUL_3290 = 3290,
+
+        VAPOR_DU_DOPEUL_3291 = 3291,
+
+        LONGUE_VUE_DU_DOPEUL_3292 = 3292,
+
+        SECOURISME_DU_DOPEUL_3293 = 3293,
+
+        SELPATRE_DU_DOPEUL_3294 = 3294,
+
+        EMBUSCADE_DU_DOPEUL_3295 = 3295,
+
+        ECUME_DU_DOPEUL_3296 = 3296,
+
+        FOENE_DU_DOPEUL_3297 = 3297,
+
+        GRAINE_TOXIQUE_3298 = 3298,
+
+        CRI_REVITALISANT_3299 = 3299,
+
+        CRI_DE_RECONSTITUTION_3300 = 3300,
+
+        POUSSIERE_TEMPORELLE_BWORK_3301 = 3301,
+
+        EPEE_DU_BWORK_3302 = 3302,
+
+        LARME_BWORK_3303 = 3303,
+
+        EPEE_CELESTE_BWORK_3304 = 3304,
+
+        COOPERATION_BAVEUSE_3305 = 3305,
+
+        BOND_AERIEN_3306 = 3306,
+
+        _3307 = 3307,
+
+        ABNEGATION_3308 = 3308,
+
+        PERMUTATION_3309 = 3309,
+
+        REFORMATION_3310 = 3310,
+
+        _3311 = 3311,
+
+        ABSORPTION_SANGUINE_3312 = 3312,
+
+        RALENTISSEMENT_ARAKNEEN_3313 = 3313,
+
+        PEUR_VEGETARIENNE_3314 = 3314,
+
+        EMPOISONNEMENT_VEGETARIEN_3315 = 3315,
+
+        EPEE_DE_PANIQUE_3316 = 3316,
+
+        DECHIQUETAGE_VORACE_3317 = 3317,
+
+        POILS_TERRESTRES_3318 = 3318,
+
+        DESENVOUTEMENT_POILU_3319 = 3319,
+
+        RENVOI_FANTMATIQUE_3320 = 3320,
+
+        EXPLOSION_FANTMATIQUE_3321 = 3321,
+
+        FLECHE_FANTMATIQUE_3322 = 3322,
+
+        TEMPETE_FANTMATIQUE_3323 = 3323,
+
+        EPEE_FANTMATIQUE_3324 = 3324,
+
+        CORBACAME_3325 = 3325,
+
+        EMBROCHEMENT_FANTMATIQUE_3326 = 3326,
+
+        MOTIVATION_FANTMATIQUE_3327 = 3327,
+
+        INVOCATION_DESPRITS_FAMILIERS_3328 = 3328,
+
+        ELEMENT_FANTMATIQUE_3329 = 3329,
+
+        SCARAFORCE_FANTMATIQUE_3330 = 3330,
+
+        INVOCATION_DEL_SCARADOR_FANTMATIQUE_3331 = 3331,
+
+        GLAIVE_FANTMATIQUE_3332 = 3332,
+
+        BRAVOURE_FANTMATIQUE_3333 = 3333,
+
+        INVOCATION_DE_FAMILIERS_FANTMATIQUES_3334 = 3334,
+
+        INVOCATION_DE_CORBAC_FANTMATIQUE_3335 = 3335,
+
+        CRI_DE_LOPERETTE_3336 = 3336,
+
+        PUS_DES_PIEDS_3337 = 3337,
+
+        FAUX_FUYANT_3338 = 3338,
+
+        VERMIFUGE_3339 = 3339,
+
+        SUBTERFUGE_3340 = 3340,
+
+        FRAPPE_A_DINGUES_3341 = 3341,
+
+        DINGUERIE_3342 = 3342,
+
+        CUEILLETTE_3343 = 3343,
+
+        MORT_SURE_3344 = 3344,
+
+        TOILE_TISSE_TROUILLE_3345 = 3345,
+
+        VOL_DE_MORT_3346 = 3346,
+
+        COUP_DU_BRIGAND_3347 = 3347,
+
+        TIR_DECUPLE_3348 = 3348,
+
+        RETOUR_DU_BATON_DU_DOPEUL_3352 = 3352,
+
+        REFLEXES_DU_DOPEUL_3353 = 3353,
+
+        SAC_ANIME_DU_DOPEUL_3354 = 3354,
+
+        _3355 = 3355,
+
+        _3356 = 3356,
+
+        EMBERLIFICOTEMENT_3357 = 3357,
+
+        TERREUR_3358 = 3358,
+
+        MALHEUR_3359 = 3359,
+
+        TORPEUR_3360 = 3360,
+
+        RATTIRANCE_3361 = 3361,
+
+        MOISSONNAGE_3362 = 3362,
+
+        PESTE_ISSYDE_3363 = 3363,
+
+        PLANTES_ZOMBIES_3364 = 3364,
+
+        CITWOUILLE_EXPLOSIVE_3365 = 3365,
+
+        POUTCHICIDE_3367 = 3367,
+
+        LANCER_DŒUF_3368 = 3368,
+
+        MORSURE_AFFAIBLISSANTE_3369 = 3369,
+
+        HYPNOSE_BRULANTE_3370 = 3370,
+
+        BOND_AFFAIBLISSANT_3371 = 3371,
+
+        GLYPHE_SYLVESTRE_3372 = 3372,
+
+        SYLVE_3373 = 3373,
+
+        ARBRE_COLLANT_3374 = 3374,
+
+        ECORCE_AGRESSIVE_3375 = 3375,
+
+        BOND_GLISSANT_3376 = 3376,
+
+        APPEL_DE_LA_FRET_3377 = 3377,
+
+        FLAIR_3378 = 3378,
+
+        PANDIBLUFF_3379 = 3379,
+
+        GOURDE_EXPLOSIVE_3380 = 3380,
+
+        PROJECTILE_PERSECUTEUR_3381 = 3381,
+
+        SABLIER_ARDENT_3382 = 3382,
+
+        TROUBLE_3383 = 3383,
+
+        RALENTISSEMENT_FORCE_3384 = 3384,
+
+        VIREVOLTAGE_3385 = 3385,
+
+        PELLE_AZIMUTH_3386 = 3386,
+
+        HORLOGE_FLASQUE_3387 = 3387,
+
+        TREMPAGE_HUILEUX_3388 = 3388,
+
+        TREMPAGE_AQUEUX_3389 = 3389,
+
+        SOUFFLE_FERMENTE_3390 = 3390,
+
+        PROTECTION_DE_LA_PLAINE_3391 = 3391,
+
+        RAFISTOLAGE_3392 = 3392,
+
+        TRANSFUSION_FORCEE_3393 = 3393,
+
+        RAJUSTEMENT_3394 = 3394,
+
+        RATATOUILLE_3395 = 3395,
+
+        RACLETTE_3396 = 3396,
+
+        RACKET_3397 = 3397,
+
+        RAMOLLI_3398 = 3398,
+
+        BECO_DU_TOFU_ROYAL_3399 = 3399,
+
+        BENEDICTION_DU_TOFULAILLER_ROYAL_3400 = 3400,
+
+        ENVOL_LIBERATEUR_3401 = 3401,
+
+        DINDOBOULE_3402 = 3402,
+
+        STIMULATION_DRAGODINDE_3403 = 3403,
+
+        DINDONEAU_3404 = 3404,
+
+        DRAGODINGUE_3405 = 3405,
+
+        CUIT_A_POINT_3406 = 3406,
+
+        COUP_DE_PELLE_A_TARTE_3407 = 3407,
+
+        FRAPPE_DU_CRAQUELEUR_LEGENDAIRE_3408 = 3408,
+
+        PWAKOUKAS_3409 = 3409,
+
+        VOL_DANS_LES_PLUMES_3410 = 3410,
+
+        PWAKPOT_3411 = 3411,
+
+        BWASANSWAF_3412 = 3412,
+
+        KASSOS_3413 = 3413,
+
+        JVETFUMAY_3414 = 3414,
+
+        DELINQUANCE_3415 = 3415,
+
+        LANCER_DE_CAILLASSE_3416 = 3416,
+
+        KOUPENDEU_3417 = 3417,
+
+        VOLONTE_INEBRANLABLE_3418 = 3418,
+
+        SHUSHUPE_3419 = 3419,
+
+        BOND_ETINCELANT_3420 = 3420,
+
+        BOND_RUBISANT_3421 = 3421,
+
+        CAMOUFLAGE_SAPHIRESQUE_3422 = 3422,
+
+        BOND_POUPESQUE_3423 = 3423,
+
+        CHANT_REGENERANT_3424 = 3424,
+
+        CHANT_STIMULANT_3425 = 3425,
+
+        CHANT_DE_JOUVENCE_3426 = 3426,
+
+        CHANT_IMMOBILISANT_3427 = 3427,
+
+        CHANT_FOUDROYANT_3428 = 3428,
+
+        MORSURE_DU_BOUFCOUL_3429 = 3429,
+
+        TRANSPOSITION_DU_MAÎTRE_3431 = 3431,
+
+        COUP_DE_LANGUE_3432 = 3432,
+
+        SCARACORNOS_3433 = 3433,
+
+        PIQURE_PESANTE_3434 = 3434,
+
+        PIQURE_ESQUIVANTE_3435 = 3435,
+
+        PHEROMONES_DE_JOUVENCE_3436 = 3436,
+
+        EMPOISONNEMENT_AFFAIBLISSANT_3437 = 3437,
+
+        EMPOISONNEMENT_POISSEUX_3438 = 3438,
+
+        EMPOISONNEMENT_MOUVEMENTE_3439 = 3439,
+
+        SABOTAGE_3440 = 3440,
+
+        MOTIVATOS_3441 = 3441,
+
+        ECRASEMENT_TROOLLESQUE_3442 = 3442,
+
+        SOIN_GLACIAL_3443 = 3443,
+
+        BRUME_GLACIALE_3444 = 3444,
+
+        LIBERATION_GLACIALE_3445 = 3445,
+
+        ENCHEVETREMENT_GLACIAL_3446 = 3446,
+
+        MOTIVATION_GLACIALE_3447 = 3447,
+
+        EROSION_GLACIALE_3448 = 3448,
+
+        CRAQUELURE_3449 = 3449,
+
+        DOOM_DE_MASSE_3450 = 3450,
+
+        RACINE_BARBELEE_3453 = 3453,
+
+        CROISEMENT_ECRASE_3454 = 3454,
+
+        GOBLINERIE_SOURNOISE_3455 = 3455,
+
+        GOBLINERIE_REVITALISANTE_3456 = 3456,
+
+        GOBLINERIE_ETOURDISSANTE_3457 = 3457,
+
+        IMPACT_SOURNOIS_3458 = 3458,
+
+        GWAINE_DE_CAWOTTE_3459 = 3459,
+
+        FWAPPE_3460 = 3460,
+
+        TROOLLAHONTE_3461 = 3461,
+
+        LAMINAGILE_3462 = 3462,
+
+        VIREVOLTIGE_3463 = 3463,
+
+        ATTIRANCE_CHEVALERESQUE_3464 = 3464,
+
+        BOND_CHEVALERESQUE_3465 = 3465,
+
+        BOULET_METEORITIQUE_3466 = 3466,
+
+        CAROTURIER_3467 = 3467,
+
+        DEDAIN_3468 = 3468,
+
+        COUPE_CUIR_3469 = 3469,
+
+        INSOLENCE_3470 = 3470,
+
+        FIERTE_3471 = 3471,
+
+        VOMITO_3472 = 3472,
+
+        NERF_DE_BOEUF_3473 = 3473,
+
+        DIGERER_POUR_MIEUX_REGNER_3474 = 3474,
+
+        TRANSIT_3475 = 3475,
+
+        IOUPERCUTE_3476 = 3476,
+
+        CIRE_CULAIRE_3477 = 3477,
+
+        TAYEZONE_3478 = 3478,
+
+        TAXIDERMIE_3479 = 3479,
+
+        PAILLAGE_3480 = 3480,
+
+        GROS_SAC_3481 = 3481,
+
+        MABOULE_3482 = 3482,
+
+        GONFLAGE_3483 = 3483,
+
+        BOUFFEE_3484 = 3484,
+
+        GALUCHAT_3485 = 3485,
+
+        CARCASSETAGNE_3486 = 3486,
+
+        GLYPHE_PEAU_DE_PECHE_3487 = 3487,
+
+        CUIR_A_FEU_DOUX_3489 = 3489,
+
+        CUIR_MOUSTACHE_3490 = 3490,
+
+        MOUSTACHERON_3491 = 3491,
+
+        ABDOMINATION_3492 = 3492,
+
+        VENTROMATISME_3493 = 3493,
+
+        BIDIOTISME_3494 = 3494,
+
+        SOUFFLE_LIBERATOIRE_3495 = 3495,
+
+        BIDYLLIQUE_3496 = 3496,
+
+        BRISE_LARMES_3497 = 3497,
+
+        LEGOGLACE_3498 = 3498,
+
+        ECULBUTE_3499 = 3499,
+
+        TRANCHAÎNEMENT_3500 = 3500,
+
+        BLYPHE_ELEMENT_3501 = 3501,
+
+        BLYPHE_KOALAK_3502 = 3502,
+
+        BAVOUILLE_DES_CAVERNES_3503 = 3503,
+
+        CRACHOUILLE_DES_CAVERNES_3504 = 3504,
+
+        KARKANCIEL_3505 = 3505,
+
+        MAÎTRISE_DARME_3506 = 3506,
+
+        DARD_TAGNAN_3507 = 3507,
+
+        CORDE_VOCALE_3508 = 3508,
+
+        BRAGUETTE_3509 = 3509,
+
+        BRALONG_3510 = 3510,
+
+        BRACONNAGE_3511 = 3511,
+
+        BRAQUAGE_3512 = 3512,
+
+        LAME_SOEUR_3513 = 3513,
+
+        SOUPIRSUTE_3514 = 3514,
+
+        GLACERBE_3515 = 3515,
+
+        GLACERE_3516 = 3516,
+
+        CONGERE_3517 = 3517,
+
+        GLACE_DE_PIC_3518 = 3518,
+
+        CRISTALLISATION_3519 = 3519,
+
+        ANTIGEL_3520 = 3520,
+
+        VERGLADIATEUR_3521 = 3521,
+
+        PIEGE_GLACIAL_3522 = 3522,
+
+        SANG_FROID_3523 = 3523,
+
+        GLACE_TROP_PHYSIQUE_3524 = 3524,
+
+        LOCH_3525 = 3525,
+
+        BAFRE_3526 = 3526,
+
+        DRAKO_3527 = 3527,
+
+        JAPPEMENT_DRAGOR_3528 = 3528,
+
+        MORSURE_DE_SOIE_3529 = 3529,
+
+        PELAGE_DE_GLACE_3530 = 3530,
+
+        FIGEL_3531 = 3531,
+
+        PICORECTION_3532 = 3532,
+
+        EXPLOSION_CHAOTIQUE_3533 = 3533,
+
+        PLIGEON_3534 = 3534,
+
+        DUVET_TERAN_3535 = 3535,
+
+        PLUMIDE_3536 = 3536,
+
+        DARD_DARD_3537 = 3537,
+
+        GLUSURE_3538 = 3538,
+
+        SERUM_A_TOUT_FAIRE_3539 = 3539,
+
+        DARD_CONTEMPORAIN_3540 = 3540,
+
+        CADUK_3541 = 3541,
+
+        STIGMATRAQUE_3542 = 3542,
+
+        BRACTERIE_3543 = 3543,
+
+        SPORANGE_MECANIQUE_3544 = 3544,
+
+        COHOBATION_3545 = 3545,
+
+        INSTABILITE_CHAOTIQUE_3546 = 3546,
+
+        ATTIRANCE_DE_LA_MORT_3547 = 3547,
+
+        EXPLOSION_DE_LA_MORT_3548 = 3548,
+
+        EXPLOSION_DE_LA_MORT_RETARDEE_3549 = 3549,
+
+        GOBUS_CHAOTIQUE_3550 = 3550,
+
+        ROBOTISATION_3551 = 3551,
+
+        RAYON_EMERAUDE_3552 = 3552,
+
+        ŒUF_DE_LA_MORT_3553 = 3553,
+
+        POTENTIOMETRE_3554 = 3554,
+
+        GLYGLYPHE_3555 = 3555,
+
+        GLYGLYPHE_3556 = 3556,
+
+        MEKABOUSTE_3557 = 3557,
+
+        MEKABOUSTE_3558 = 3558,
+
+        LA_DEFENSE_CEST_LATTAQUE_3559 = 3559,
+
+        LA_DEFENSE_CEST_LATTAQUE_3560 = 3560,
+
+        LIQUIDE_DE_REFROIDISSEMENT_3561 = 3561,
+
+        LIQUIDE_DE_REFROIDISSEMENT_3562 = 3562,
+
+        SURTENSION_3563 = 3563,
+
+        SURTENSION_3564 = 3564,
+
+        CHIFOUCHIMIE_3565 = 3565,
+
+        OVAGODRA_3566 = 3566,
+
+        ALCHIDE_CHITRIQUE_3567 = 3567,
+
+        ALCHYMNE_A_LA_JOIE_3568 = 3568,
+
+        GROMATION_3569 = 3569,
+
+        CARBA_GNION_3570 = 3570,
+
+        RESTE_A_TA_PLACE_3571 = 3571,
+
+        DU_FOND_DU_CŒUR_3572 = 3572,
+
+        ROULE_MA_BOULE_3573 = 3573,
+
+        SINISTRO_VOLE_3574 = 3574,
+
+        DE_BON_CŒUR_3575 = 3575,
+
+        VA_TE_FAIRE_CUIRE_UN_ŒUF_3576 = 3576,
+
+        GARDE_A_VOUS_3577 = 3577,
+
+        RAFRAÎCHISSEMENT_3578 = 3578,
+
+        SOUFFLER_NEST_PAS_JOUER_3579 = 3579,
+
+        SOUFFLE_AMOLLISSANT_3580 = 3580,
+
+        LA_FORCE_DU_FAIBLE_3581 = 3581,
+
+        TRANCHANT_ABSORBANT_3582 = 3582,
+
+        CABALCALOÏDE_3583 = 3583,
+
+        FRACTION_DE_MOLAIRE_3584 = 3584,
+
+        GLACE_SECHE_3585 = 3585,
+
+        LIQUEUR_DE_FEE_LING_3586 = 3586,
+
+        MOLALITE_ILLEPLOCHABLE_3587 = 3587,
+
+        MACHINE_CEPTION_3588 = 3588,
+
+        MARIONNETTOYAGE_3589 = 3589,
+
+        RETOUR_HISTORIQUE_3590 = 3590,
+
+        CLEF_EN_GLAISE_3591 = 3591,
+
+        CLEF_BATTUE_3592 = 3592,
+
+        CLEF_NERGUMENE_3593 = 3593,
+
+        CLEF_GIONNAIRE_3594 = 3594,
+
+        ENVOL_DE_MORT_3595 = 3595,
+
+        ENGRENAGE_DE_GLACE_3596 = 3596,
+
+        ROTAPLUMES_3597 = 3597,
+
+        ROTATIVERNAL_3598 = 3598,
+
+        DE_GRIPPANT_3599 = 3599,
+
+        PETARADE_3600 = 3600,
+
+        ROTAPOUSSE_3601 = 3601,
+
+        EXPULSAR_3602 = 3602,
+
+        DEGAGE_LIMITE_3603 = 3603,
+
+        BRULAGE_BETE_3604 = 3604,
+
+        VIDANGE_GARDIEN_3605 = 3605,
+
+        CHAMBRANLE_3606 = 3606,
+
+        NECROMIGNON_3607 = 3607,
+
+        ZOMBIDULE_3608 = 3608,
+
+        POINÇON_3609 = 3609,
+
+        LAME_DOKIM_3610 = 3610,
+
+        LAME_DORELOS_3611 = 3611,
+
+        LAME_DE_MUNGAM_3612 = 3612,
+
+        TOURMENT_3613 = 3613,
+
+        TOURMENT_3614 = 3614,
+
+        COUPE_JATTE_3615 = 3615,
+
         SENTENCE_3616 = 3616,
-        MORTAR = 3617,
-        BONDAGE = 3618,
-        STIMULATING_WHIPLASH = 3619,
-        RETURN_TO_SENDER = 3620,
-        IMPULSH = 3621,
-        BUBOTRANCE = 3622,
-        BUBOTORCH = 3623,
-        BUBOTWIRL = 3624,
-        BUBOBOOM = 3625,
-        HATREAD = 3626,
-        TREADMENDOUS = 3627,
-        TREDDIT = 3628,
-        TREADCHERY = 3629,
-        CYCLOBBER = 3630,
-        CYCLOPATH = 3631,
-        CYCLOSTROPHOBE = 3632,
-        STUNBEAM = 3633,
-        ROLLBEAK = 3634,
-        BEAKLIPSE_3635 = 3635,
-        HEATHAZE = 3636,
-        MECHANICAL_BURST = 3637,
-        OVERHEATING_3638 = 3638,
-        TIKI_TAKA = 3639,
-        CONIC_THUNDER = 3640,
-        AD_HOC_ALLIES_3641 = 3641,
-        CHIME_CHIME_CHEREE = 3642,
-        PENDULTIMATUM = 3643,
-        OUT_OF_TIME = 3644,
-        DOWNTIME_GLYPH = 3645,
-        TICKER = 3646,
-        TIME_WASTING = 3647,
-        HALF_TIME = 3648,
-        PENDUMONIUM = 3649,
-        KILLING_TIME = 3650,
-        LOCAL_TIME = 3651,
-        EPOCH = 3652,
-        BAD_TIMING = 3653,
-        MULTICOUNT = 3654,
-        JACQUEMART = 3655,
-        BACK_BURNER = 3656,
-        HARMPIT = 3657,
-        SPECTRAL_DEVIOUSNESS = 3658,
-        SPECTRAL_BLOW = 3659,
-        SPECTRAL_CAMOUFLAGE = 3660,
-        DJAULIAN_DUEL = 3661,
-        DJAULIAN_POWER = 3662,
-        DJAULIAN_STRENGTHSTORM = 3663,
-        LLL_OBJECTION = 3664,
-        LLL_THEFT = 3665,
-        LLL_CALL = 3666,
-        CRASH_OF_DESTINY = 3667,
-        BANG_OF_DESTINY = 3668,
-        WALLOP_OF_DESTINY = 3669,
-        RAIN_OF_SPORES = 3670,
-        GRIPPING_VINES = 3671,
-        VIRAL_BITE = 3672,
-        INVINCIBILITY = 3673,
-        EXORCISM = 3674,
-        PROTECTION_AGAINST_SPIRITS = 3675,
-        ANCESTRAL_SKATING = 3676,
-        GREAT_SNIBBOR_NIKSAB_HAMMER = 3677,
-        GREAT_TEERTS_HAMMER = 3678,
-        GREAT_BENANDGERRIZ_HAMMER = 3679,
-        LABOURER_S_FIRE = 3680,
-        LABOURER_S_SHIELD = 3681,
-        LABOURER_S_GLYPH = 3682,
-        LABOURER_S_REBOUND = 3683,
-        CHILLBERG_S_LIVING_BAG = 3684,
-        CHILLBERG_S_SHOVEL_THROWING = 3685,
-        CHILLBERG_S_COINS_THROWING = 3686,
-        CHILLBERG_S_SLAUGHTERING_SHOVEL = 3687,
-        WINTER_COAT = 3688,
-        ZOMBIGAWD = 3691,
-        MORTALLY_MORTAL_ATTACK = 3692,
-        VISUAL_INVISIBILITY = 3693,
-        INDISIOUSLY_POISONOUS_JINX = 3694,
-        PERCEPTIVE_DRAGLINE = 3695,
-        UNUSUAL_DOUBLE = 3696,
-        HORMONAL_INSTINCT = 3697,
-        STOLEN_SACRIFICE = 3698,
-        LEAP_3699 = 3699,
-        DISSENTAGLYPH = 3700,
-        YRREJ_NEB = 3701,
-        TWILIGHT_SHADOWS = 3703,
-        SHADOWY_PROJECTION_3704 = 3704,
-        DISUNION = 3705,
+
+        MORTIER_3617 = 3617,
+
+        BONDAGE_3618 = 3618,
+
+        FLAGELLATION_STIMULANTE_3619 = 3619,
+
+        RETOUR_A_LENVOYEUR_3620 = 3620,
+
+        DEGAGE_DE_QUALITE_3621 = 3621,
+
+        HIBOUFFONNERIE_3622 = 3622,
+
+        HIBOUGIE_3623 = 3623,
+
+        HIBOUMERANG_3624 = 3624,
+
+        HIBOUM_3625 = 3625,
+
+        STRICANNEMENT_3626 = 3626,
+
+        STRICTUS_3627 = 3627,
+
+        STRIDICULE_3628 = 3628,
+
+        STRIDENT_3629 = 3629,
+
+        CYCLORE_3630 = 3630,
+
+        CYCLOCHETTE_3631 = 3631,
+
+        CYCLAUSTROPHOBE_3632 = 3632,
+
+        SINISTERIE_3633 = 3633,
+
+        DILIGENCE_3634 = 3634,
+
+        BRUMIDITE_3635 = 3635,
+
+        BROUILLARDENT_3636 = 3636,
+
+        TONNERRE_MECANIQUE_3637 = 3637,
+
+        SURCHAUFFENSE_3638 = 3638,
+
+        TACTIQUE_DU_TIC_TAC_3639 = 3639,
+
+        ECLACONIQUE_3640 = 3640,
+
+        ALLIES_DE_CIRCONSTANCE_3641 = 3641,
+
+        CARILLON_3642 = 3642,
+
+        PENDULTIMATUM_3643 = 3643,
+
+        BON_VIEUX_TEMPS_3644 = 3644,
+
+        GLYPHE_TEMPS_MORT_3645 = 3645,
+
+        COMTOISE_3646 = 3646,
+
+        ALTERNANCE_3647 = 3647,
+
+        MI_TEMPS_3648 = 3648,
+
+        FUSEAU_3649 = 3649,
+
+        AIR_DU_TEMPS_3650 = 3650,
+
+        HEURE_LOCALE_3651 = 3651,
+
+        EPOQUE_3652 = 3652,
+
+        CONTRETEMPS_3653 = 3653,
+
+        MULTICOMTE_3654 = 3654,
+
+        JAQUEMART_3655 = 3655,
+
+        CUIR_A_FEUX_DOUX_3656 = 3656,
+
+        GOUSSET_3657 = 3657,
+
+        SOURNOISERIE_SPECTRALE_3658 = 3658,
+
+        COUP_SPECTRAL_3659 = 3659,
+
+        CAMOUFLAGE_SPECTRAL_3660 = 3660,
+
+        DUEL_DJAULIEN_3661 = 3661,
+
+        PUISSANCE_DJAULIENNE_3662 = 3662,
+
+        TEMPETE_DE_PUISSANCE_DJAULIENNE_3663 = 3663,
+
+        OBJECTION_DU_SLOP_3664 = 3664,
+
+        VOL_DU_SLOP_3665 = 3665,
+
+        APPEL_DU_SLOP_3666 = 3666,
+
+        FOURRAGE_DU_DESTIN_3667 = 3667,
+
+        FOURNEE_DU_DESTIN_3668 = 3668,
+
+        FOURAPIN_DU_DESTIN_3669 = 3669,
+
+        NUAGE_DE_SPORES_3670 = 3670,
+
+        VIGNES_AGRIPPANTES_3671 = 3671,
+
+        MORSURE_VIRULENTE_3672 = 3672,
+
+        INVINCIBILITE_3673 = 3673,
+
+        EXORCISME_3674 = 3674,
+
+        PROTECTION_CONTRE_LES_ESPRITS_3675 = 3675,
+
+        PATINAGE_ANCESTRAL_3676 = 3676,
+
+        GRAND_MARTEAU_DORELOS_3677 = 3677,
+
+        GRAND_MARTEAU_DOKIM_3678 = 3678,
+
+        GRAND_MARTEAU_DE_MUNGAM_3679 = 3679,
+
+        FEU_DE_LOUVRIER_3680 = 3680,
+
+        BOUCLIER_OUVRIER_3681 = 3681,
+
+        GLYPHE_DE_LOUVRIER_3682 = 3682,
+
+        RENVOI_DE_LOUVRIER_3683 = 3683,
+
+        SAC_ANIME_DE_SBERG_3684 = 3684,
+
+        LANCER_DE_PELLE_DE_SBERG_3685 = 3685,
+
+        LANCER_DE_PIECES_DE_SBERG_3686 = 3686,
+
+        PELLE_MASSACRANTE_DE_SBERG_3687 = 3687,
+
+        PELAGE_HIVERNAL_3688 = 3688,
+
+        ZOMBIGRE_3691 = 3691,
+
+        ATTAQUE_MORTELLEMENT_MORTELLE_3692 = 3692,
+
+        INVISIBILITE_VISUELLE_3693 = 3693,
+
+        POISSE_INSIDIEUSEMENT_EMPOISONNEE_3694 = 3694,
+
+        REPERAGE_PERCEPTIF_3695 = 3695,
+
+        DOUBLE_NON_CONFORME_3696 = 3696,
+
+        PULSION_HORMONALE_3697 = 3697,
+
+        SACRIFICE_VOLE_3698 = 3698,
+
+        SAUT_3699 = 3699,
+
+        SPAHUNGLIF_3700 = 3700,
+
+        YRREJ_NEB_3701 = 3701,
+
+        _3702 = 3702,
+
+        CREPUSCULE_OMBREUX_3703 = 3703,
+
+        PROJECTION_OMBREUSE_3704 = 3704,
+
+        DESUNION_3705 = 3705,
+
         IMPOSTURE_3706 = 3706,
-        SEIZE_3707 = 3707,
-        STRANGLING_3708 = 3708,
+
+        EMPOIGNE_3707 = 3707,
+
+        STRANGULATION_3708 = 3708,
+
         REUNION_3709 = 3709,
-        UNION = 3710,
-        SAURBIC_ACID = 3711,
-        THRASHBACK = 3712,
-        VOLLEY = 3713,
-        DOPPLESQUE_UNSUMMONING = 3714,
-        DOPPLESQUE_PRIME_OF_LIFE = 3715,
-        DOPPLESQUE_FANGS_OF_BOOWOLF = 3716,
-        DOPPLESQUE_DRAGLINE = 3717,
-        DOPPLESQUE_LETHAL_TRAP = 3718,
-        CAWWOT_FAIRYWORK = 3719,
-        WHITE_GOBBLY_SUMMONING_FAIRYWORK = 3720,
-        BLACK_GOBBLY_SUMMONING_FAIRYWORK = 3721,
-        MUSH_MUSH_FAIRYWORK = 3722,
-        LAZY_FAIRYWORK = 3724,
-        WEALTHY_FAIRYWORK = 3725,
-        RED_DEMONIC_ROSE_FAIRYWORK = 3726,
-        MIDGIE_SUMMONING_FAIRYWORK = 3732,
-        MUSICAL_FAIRYWORK = 3733,
-        ACORNTASTIC_FAIRYWORK = 3734,
-        STARRY_FAIRYWORK = 3735,
-        BRIEF_FAIRYWORK = 3736,
-        COMMUNION = 3737,
-        REFRACTION = 3738,
-        JUMP_OF_GOULTARD = 3739,
-        FLAMBOYANT_SWORD_OF_JUDGEMENT = 3740,
-        SWORD_OF_THE_MIND = 3741,
-        BRAKMARIAN_SACRIFICE = 3742,
-        PIROUETIQUETTE = 3743,
-        LAMINAGITATION = 3744,
-        VAMPIRISING_WORD = 3745,
-        FIGHT_LENGTHENING_WORD = 3746,
-        FORBIDDING_WORD = 3747,
-        FRIGHTFUL_WORD = 3748,
-        SUMMONING_OF_SWINDLING_SQUIRREL = 3749,
-        MASKED_INVISIBILITY = 3750,
-        BRAMBLE_OF_INSOLENCE = 3751,
-        PERFORATING_BLOW = 3752,
-        CONVEYOR = 3753,
-        ELEMENTAL_ARMOR = 3754,
-        BURNING_ATTACK = 3755,
-        EXTREME_CONCENTRATION = 3756,
-        DUELLITY = 3757,
-        MASTERED_POWER = 3758,
-        FELINE_REFLEX = 3759,
-        FELINE_BLUFF = 3760,
-        FELINE_PERCEPTION = 3761,
-        THE_CONDEMNED = 3762,
-        ULTRA_ABSORBANT_ARROW = 3763,
-        RECOIL_ARROW = 3764,
-        VERY_DISTANT_SHOOTING = 3765,
-        FAMISHED_BRAMBLES = 3766,
-        IMMOBILISING_BRAMBLE = 3767,
-        BRAMBLES = 3768,
-        PERSPICACITY = 3769,
-        HARSENIK_PULSAR = 3770,
-        WORDY_HEAL = 3771,
-        CRITICAL_ARROWS_3772 = 3772,
-        HIGH_ENERGY_JAB = 3773,
-        FROGGIE = 3774,
-        WUSHU_MELANCHOLY = 3775,
-        WUSHU_EXPLOSION = 3776,
-        WUSHU_PANDATAK = 3777,
-        ARACHNEE_SUMMONING_FAIRYWORK = 3778,
-        CLOUDY_FAIRYWORK = 3779,
-        WOYAL_AWMOUW = 3780,
-        WOYAL_CAWWOT = 3781,
-        WOYAL_HEAL = 3782,
-        PANIC_3783 = 3783,
-        WABBIT_PUNCH = 3784,
-        POTATO_SLAM = 3785,
-        CAWWOT_FAWANDOLE = 3786,
-        BUMP = 3787,
-        BUMPER = 3788,
-        MECHATTWACTION = 3789,
-        TWANSMUTATION = 3790,
-        MECHAWAPACE = 3791,
-        THWASHING = 3792,
-        WEBOUND = 3793,
-        WOUND_BELLY = 3794,
-        BWEATHE_IN = 3795,
-        BUWYING = 3796,
-        GWASP = 3797,
-        BUWDEN = 3798,
-        BLING_WING = 3799,
-        WOCKSLIDE = 3800,
-        WEVENGE = 3801,
-        MAWTYW = 3802,
-        SUPEW_CAWWOT = 3803,
-        CAWWOTY_MOTIVATION = 3804,
-        INFLEXIBILITY = 3805,
-        SUWPWISE = 3806,
-        STWUGGLE = 3807,
-        GET_BACK_HEWE = 3808,
-        MAGNETISATION = 3809,
-        APPETISING_LEAP = 3810,
-        GWEEDY_GUTS = 3811,
-        INDIGESTION = 3812,
-        TEETH_OFF = 3813,
-        GWIP = 3814,
-        BWIGHT_GLO = 3815,
-        DELAYED_DISAPPEAWANCE = 3816,
-        NO_HUWWY = 3817,
-        CWUSHING = 3818,
-        TEWATIVE = 3819,
-        CAWWOTY_GENEWOSITY = 3820,
-        REGENEWATION = 3821,
-        NUTWITIONAL_VALUE = 3822,
-        CAWWOT_THEOWY = 3823,
-        SUBSTITUTION = 3824,
-        WABEHA = 3825,
-        SUMMONING_OF_SKELETON_WABBIT = 3826,
-        CAWWOT_BUWIAL = 3827,
-        POISONED_CAWWOT = 3828,
-        WESUWWECTION = 3829,
-        PWINCELY_WABEHAMEHA = 3830,
-        PWOTECTION = 3831,
-        MOWBID_WAGE = 3832,
-        WEAWY = 3833,
-        WEVOLUTION = 3834,
-        WABBIT_WETURN = 3835,
-        CAWWOT_THWOW = 3836,
-        HEAD_BUTT = 3837,
-        ZINEZING = 3838,
-        GM_CAWWOT = 3839,
-        UNCONTWOLLABLE_BUMP = 3840,
-        ATTACK = 3841,
-        EYE_EYE = 3842,
-        PINK_GLYPH_3843 = 3843,
-        PINK_GLYPH_3844 = 3844,
-        TUTHARESKEW = 3845,
-        EVYDENSE = 3846,
-        KAPTIN = 3847,
-        SPANIEL = 3848,
-        SPANPIPES = 3849,
-        SPANTRY = 3850,
-        RHINODERM = 3851,
-        RHINOPHYMA = 3852,
-        RHINOPLASTY = 3853,
-        PUNT = 3854,
-        SUMMONING_OF_MARIONETTE = 3855,
-        HANDLING = 3856,
-        INTERLUDE = 3857,
-        PUPPET_3858 = 3858,
-        PUPPET_3859 = 3859,
-        SHOW_MUST_GO_ON = 3860,
-        LIVING_SHOW = 3861,
-        REHEARSAL = 3862,
-        BADINAGE = 3863,
-        MUPPET = 3864,
-        FLAMING_STAGE_3865 = 3865,
-        FLAMING_STAGE_3866 = 3866,
-        CATHARSIS = 3867,
-        CONTROL_BAR = 3868,
-        PUNCHEN_JUDY = 3869,
-        SEE_SAW = 3870,
-        PULLING_STRINGS = 3871,
-        PERFORMANCE_3872 = 3872,
-        PERFORMANCE_3873 = 3873,
-        SCRIPTING_3874 = 3874,
-        SCRIPTING_3875 = 3875,
-        SUMMONING_OF_WHITE_PUPPET = 3876,
-        SUMMONING_OF_BLUE_PUPPET = 3877,
-        SUMMONING_OF_RED_PUPPET = 3878,
-        SUMMONING_OF_GREEN_PUPPET = 3879,
-        SUMMONING_OF_GREY_PUPPET = 3880,
-        INCOGNITO = 3881,
-        SQUIRREL_REBOUND = 3882,
-        DETOBOOM = 3883,
-        GOBTERFUGE = 3884,
-        POWDERBOOM = 3885,
-        EXPLOBOOM = 3886,
-        NASTY_EXTRACTION = 3887,
-        NASTY_PULSAR = 3888,
-        NASTY_ROGUERY = 3889,
-        DEMONIC_PORTAL = 3890,
-        UNGODLY_BURNS_3891 = 3891,
-        ETERNAL_SERVITUDE = 3892,
-        NECROTIC_EXCRETIONS = 3893,
-        BODYBUILDING = 3894,
-        PLANTAR_CONSTRAINT = 3895,
-        FLAMES_OF_TORMENT = 3896,
-        DOOBIEDOO = 3897,
-        WHY_ME_3898 = 3898,
-        WHY_ME_3899 = 3899,
-        INJUSTICE = 3900,
-        LAMENT = 3901,
-        TALL_STORY_3902 = 3902,
-        TALL_STORY_3903 = 3903,
-        BLACK_HUMOUR = 3904,
-        FORMULA_1 = 3905,
-        TONED_AIR_3906 = 3906,
-        TONED_AIR_3907 = 3907,
-        FUNDER = 3908,
-        KAWAIIBUNGA = 3909,
-        EXPIATION = 3910,
-        FEATHERY_FLIGHT = 3911,
-        RECALL_TO_UNLIFE = 3912,
-        RECALL_TO_DEATH = 3913,
-        CAPE_OF_ASHES_3914 = 3914,
-        CAPE_OF_ASHES_3915 = 3915,
-        BURNING_ASHES_3916 = 3916,
-        BURNING_ASHES_3917 = 3917,
-        CLUMPED_ASHES_3918 = 3918,
-        CLUMPED_ASHES_3919 = 3919,
+
+        UNION_3710 = 3710,
+
+        KROKILLE_DE_NEUF_3711 = 3711,
+
+        ROSSEE_3712 = 3712,
+
+        VOLEE_3713 = 3713,
+
+        DESINVOCATION_DU_DOPEUL_3714 = 3714,
+
+        FORCE_DE_LAGE_DU_DOPEUL_3715 = 3715,
+
+        CROCS_DU_MULOU_DU_DOPEUL_3716 = 3716,
+
+        REPERAGE_DU_DOPEUL_3717 = 3717,
+
+        PIEGE_MORTEL_DU_DOPEUL_3718 = 3718,
+
+        FEE_DARTIFICE_CAWOTTE_3719 = 3719,
+
+        FEE_DARTIFICE_INVOCATRICE_DE_BOUFTON_BLANC_3720 = 3720,
+
+        FEE_DARTIFICE_INVOCATRICE_DE_BOUFTON_NOIR_3721 = 3721,
+
+        FEE_DARTIFICE_CHAMPOUF_3722 = 3722,
+
+        FEE_DARTIFICE_FEIGNANTE_3724 = 3724,
+
+        FEE_DARTIFICE_KAMAS_3725 = 3725,
+
+        FEE_DARTIFICE_ROSE_DEMONIAQUE_ROUGE_3726 = 3726,
+
+        FEE_DARTIFICE_INVOCATRICE_DE_MOUCHERONS_3732 = 3732,
+
+        FEE_DARTIFICE_MUSICALE_3733 = 3733,
+
+        FEE_DARTIFICE_GLANDIOSE_3734 = 3734,
+
+        FEE_DARTIFICE_ETOILEE_3735 = 3735,
+
+        FEE_DARTIFICE_CULOTTEE_3736 = 3736,
+
+        COMMUNION_3737 = 3737,
+
+        REFRACTION_3738 = 3738,
+
+        BOND_DE_GOULTARD_3739 = 3739,
+
+        EPEE_DU_JUGEMENT_FLAMBOYANT_3740 = 3740,
+
+        EPEE_DE_LESPRIT_3741 = 3741,
+
+        SACRIFICE_BRAKMARESQUE_3742 = 3742,
+
+        VIREVOLTAÏQUE_3743 = 3743,
+
+        LAMINAGITE_3744 = 3744,
+
+        MOT_VAMPIRISANT_3745 = 3745,
+
+        MOT_DE_RALLONGE_COMBAT_3746 = 3746,
+
+        MOT_DINTERDICTION_3747 = 3747,
+
+        MOT_EFFRAYANT_3748 = 3748,
+
+        INVOCATION_DECUREUIL_FOURBE_3749 = 3749,
+
+        INVISIBILITE_MASQUEE_3750 = 3750,
+
+        RONCE_DINSOLENCE_3751 = 3751,
+
+        COUP_PERFORANT_3752 = 3752,
+
+        CONVOYEUR_3753 = 3753,
+
+        ARMURE_ELEMENTALE_3754 = 3754,
+
+        ATTAQUE_BRULANTE_3755 = 3755,
+
+        CONCENTRATION_EXTREME_3756 = 3756,
+
+        DUELLISME_3757 = 3757,
+
+        PUISSANCE_MAÎTRISEE_3758 = 3758,
+
+        REFLEXES_FELINS_3759 = 3759,
+
+        BLUFF_FELIN_3760 = 3760,
+
+        PERCEPTION_FELINE_3761 = 3761,
+
+        LA_CONDAMNEE_3762 = 3762,
+
+        FLECHE_ULTRA_ABSORBANTE_3763 = 3763,
+
+        FLECHE_RECULANTE_3764 = 3764,
+
+        TIR_TRES_ELOIGNE_3765 = 3765,
+
+        RONCES_AFFAMEES_3766 = 3766,
+
+        RONCE_IMMOBILISANTE_3767 = 3767,
+
+        RONCES_3768 = 3768,
+
+        AUDITION_3769 = 3769,
+
+        PULSAR_SENIK_3770 = 3770,
+
+        SOIN_SENSUEL_3771 = 3771,
+
+        FLECHES_CRITIQUES_3772 = 3772,
+
+        PIQURE_ACTIVANTE_3773 = 3773,
+
+        GRENOUILLE_3774 = 3774,
+
+        VAGUE_WUSHU_3775 = 3775,
+
+        EXPLOSION_WUSHU_3776 = 3776,
+
+        PANDATAK_WUSHU_3777 = 3777,
+
+        FEE_DARTIFICE_INVOCATRICE_DARAKNE_3778 = 3778,
+
+        FEE_DARTIFICE_NUAGEUSE_3779 = 3779,
+
+        AWMUWE_WOYALE_3780 = 3780,
+
+        CAWOTTE_WOYALE_3781 = 3781,
+
+        SOIN_WOYALE_3782 = 3782,
+
+        PANIQUE_3783 = 3783,
+
+        FRAPPE_DES_WABBITS_3784 = 3784,
+
+        ENVOIE_LA_PATATE_3785 = 3785,
+
+        FARANDOLE_DE_CAWOTTES_3786 = 3786,
+
+        BUMP_3787 = 3787,
+
+        BUMPER_3788 = 3788,
+
+        MEKATTWACTION_3789 = 3789,
+
+        TWANSMUTATION_3790 = 3790,
+
+        MEKAWAPACE_3791 = 3791,
+
+        WOUSTE_3792 = 3792,
+
+        WEBOND_3793 = 3793,
+
+        VENTWE_WEBONDI_3794 = 3794,
+
+        ASPIWATION_3795 = 3795,
+
+        ENTEWWEMENT_3796 = 3796,
+
+        ETWEINTE_3797 = 3797,
+
+        LOUWDEUW_3798 = 3798,
+
+        WEUCHE_3799 = 3799,
+
+        GLISSEMENT_DE_TEWWAIN_3800 = 3800,
+
+        WEVANCHE_3801 = 3801,
+
+        MAWTYW_3802 = 3802,
+
+        CAWOTTE_SUWVITAMINEE_3803 = 3803,
+
+        MOTIVATION_CAWOTTIQUE_3804 = 3804,
+
+        INFLEXIBILITE_3805 = 3805,
+
+        SUWPWISE_3806 = 3806,
+
+        ECAWTELEMENT_3807 = 3807,
+
+        WEVIENS__3808 = 3808,
+
+        MAGNETISATION_3809 = 3809,
+
+        BOND_APPETISSANT_3810 = 3810,
+
+        GOINFWAGE_3811 = 3811,
+
+        INDIGESTION_3812 = 3812,
+
+        NE_PAS_CWOQUEW_3813 = 3813,
+
+        EMPWISE_3814 = 3814,
+
+        AVEUGLEMENT_LUMINESCENT_3815 = 3815,
+
+        DISPAWITION_WETAWDEE_3816 = 3816,
+
+        LENTEUW_3817 = 3817,
+
+        ECWASEMENT_3818 = 3818,
+
+        TEWATIF_3819 = 3819,
+
+        GENEWOSITE_CAWOTTIQUE_3820 = 3820,
+
+        WEGENEWATION_3821 = 3821,
+
+        APPOWT_NUTWITIONNEL_3822 = 3822,
+
+        THEOWIE_DE_LA_CAWOTTE_3823 = 3823,
+
+        SUBSTITUTION_3824 = 3824,
+
+        WABEHA_3825 = 3825,
+
+        INVOCATION_DE_WABBIT_SQUELETTE_3826 = 3826,
+
+        ENTEWWEMENT_DE_CAWOTTE_3827 = 3827,
+
+        CAWOTTE_EMPOISONNEE_3828 = 3828,
+
+        WEANIMATION_3829 = 3829,
+
+        WABEHAMEHA_PWINCIEW_3830 = 3830,
+
+        BOUCLIEW_3831 = 3831,
+
+        WAGE_MOWBIDE_3832 = 3832,
+
+        TOUWAPLAPLA_3833 = 3833,
+
+        WEVOLUTION_3834 = 3834,
+
+        WETOUW_DU_WABBIT_3835 = 3835,
+
+        LANCEW_DE_CAWOTTE_3836 = 3836,
+
+        COUP_DE_BOULE_3837 = 3837,
+
+        COUP_A_LA_WIZOU_3838 = 3838,
+
+        CAWOTTE_GM_3839 = 3839,
+
+        BUMP_INCOTWLABLE_3840 = 3840,
+
+        ATTAQUE__3841 = 3841,
+
+        MORZYLOEIL_3842 = 3842,
+
+        GLYPHE_ROSE_3843 = 3843,
+
+        GLYPHE_ROSE_3844 = 3844,
+
+        ALARESKOUSS_3845 = 3845,
+
+        EVIDENCE_3846 = 3846,
+
+        KAPTENE_3847 = 3847,
+
+        CLEF_A_PIPE_3848 = 3848,
+
+        CLEF_PLATE_3849 = 3849,
+
+        CLEF_DE_DOUZE_3850 = 3850,
+
+        RHINODERME_3851 = 3851,
+
+        RHINOPHARYNGITE_3852 = 3852,
+
+        RHINOPLASTIE_3853 = 3853,
+
+        COUP_DE_PIED_3854 = 3854,
+
+        INVOCATION_DE_PANTIN_3855 = 3855,
+
+        MANIPULATION_3856 = 3856,
+
+        ENTRACTE_3857 = 3857,
+
+        MARIONNETTE_3858 = 3858,
+
+        MARIONNETTE_3859 = 3859,
+
+        SOUFFRIR_POUR_LA_BONNE_CAUSE_3860 = 3860,
+
+        SPECTACLE_VIVANT_3861 = 3861,
+
+        PREPARATION_3862 = 3862,
+
+        MARIVAUDAGE_3863 = 3863,
+
+        FANTOCHE_3864 = 3864,
+
+        SCENE_EN_FLAMMES_3865 = 3865,
+
+        SCENE_EN_FLAMMES_3866 = 3866,
+
+        CATHARSIS_3867 = 3867,
+
+        CROIX_DATTELLE_3868 = 3868,
+
+        CASTELET_3869 = 3869,
+
+        BALANÇOIRE_3870 = 3870,
+
+        TIRER_LES_FICELLES_3871 = 3871,
+
+        REPRESENTATION_3872 = 3872,
+
+        REPRESENTATION_3873 = 3873,
+
+        MISE_EN_SCENE_3874 = 3874,
+
+        MISE_EN_SCENE_3875 = 3875,
+
+        INVOCATION_DE_MARIONNETTE_BLANCHE_3876 = 3876,
+
+        INVOCATION_DE_MARIONNETTE_BLEUE_3877 = 3877,
+
+        INVOCATION_DE_MARIONNETTE_ROUGE_3878 = 3878,
+
+        INVOCATION_DE_MARIONNETTE_VERTE_3879 = 3879,
+
+        INVOCATION_DE_MARIONNETTE_GRISE_3880 = 3880,
+
+        ENSECRET_3881 = 3881,
+
+        RENVOI_DE_LECUREUIL_3882 = 3882,
+
+        DETOBOUM_3883 = 3883,
+
+        GOBLOURLOUPE_3884 = 3884,
+
+        POUDRABOUM_3885 = 3885,
+
+        EXPLOBOUM_3886 = 3886,
+
+        VILE_EXTRACTION_3887 = 3887,
+
+        VIL_PULSAR_3888 = 3888,
+
+        VILE_ROUBLARDISE_3889 = 3889,
+
+        PORTAIL_DEMONIAQUE_3890 = 3890,
+
+        BRULURES_IMPIES_3891 = 3891,
+
+        SERVITUDE_ETERNELLE_3892 = 3892,
+
+        DEJECTIONS_NECROTIQUES_3893 = 3893,
+
+        CULTURISME_3894 = 3894,
+
+        ENTRAVE_PLANTAIRE_3895 = 3895,
+
+        FLAMMES_DU_TOURMENT_3896 = 3896,
+
+        CRAC_BOUM_HUE_3897 = 3897,
+
+        POURQUOI_MOI__3898 = 3898,
+
+        POURQUOI_MOI__3899 = 3899,
+
+        INJUSTICE_3900 = 3900,
+
+        COMPLAINTE_3901 = 3901,
+
+        GALEJADE_3902 = 3902,
+
+        GALEJADE_3903 = 3903,
+
+        HUMOUR_NOIR_3904 = 3904,
+
+        FORMULE_1_3905 = 3905,
+
+        TONNE_AIR_3906 = 3906,
+
+        TONNE_AIR_3907 = 3907,
+
+        FOUDRE_FATALE_3908 = 3908,
+
+        KAOUAÏE_3909 = 3909,
+
+        EXPIATION_3910 = 3910,
+
+        VOL_DANS_LES_PLUMES_3911 = 3911,
+
+        RAPPEL_A_LA_NON_VIE_3912 = 3912,
+
+        RAPPEL_A_LA_MORT_3913 = 3913,
+
+        CAPE_DE_CENDRES_3914 = 3914,
+
+        CAPE_DE_CENDRES_3915 = 3915,
+
+        CENDRES_BRULANTES_3916 = 3916,
+
+        CENDRES_BRULANTES_3917 = 3917,
+
+        CENDRES_AGGLOMERANTES_3918 = 3918,
+
+        CENDRES_AGGLOMERANTES_3919 = 3919,
+
         COMPASSION_3920 = 3920,
+
         COMPASSION_3921 = 3921,
-        WEIGHT_OF_DEATH = 3922,
-        DISTURBANCE_3923 = 3923,
-        DISTURBANCE_3924 = 3924,
-        REDEMPTION = 3925,
-        LANCE_BLOW_3926 = 3926,
-        LANCE_BLOW_3927 = 3927,
-        PERFORMANCE_OF_MIRACLES = 3928,
-        WE_ARE_ME_3929 = 3929,
-        BASH_FULL_3930 = 3930,
-        BASH_FULL_3931 = 3931,
-        BLOOD_DRIVE_3932 = 3932,
-        BLOOD_DRIVE_3933 = 3933,
-        PUNITIVE_BLOW_3934 = 3934,
-        PUNITIVE_BLOW_3935 = 3935,
-        BLESSING = 3936,
-        ERZAL_S_JUDGEMENT = 3937,
-        ANATHEMA = 3938,
-        CASTRAFIORE = 3939,
-        QU_TAN_S_CURSE_3940 = 3940,
-        PENTACLE = 3941,
-        PENTHOUSE = 3942,
-        FLINTLOCK = 3943,
-        INTYM_3944 = 3944,
-        INTYM_3945 = 3945,
-        INSYNC_3946 = 3946,
-        INSYNC_3947 = 3947,
-        PENTAGRAM = 3948,
-        HADDOCK = 3949,
-        THUNDERING_TYPHOON = 3950,
-        BLISTERING_BARNACLE = 3951,
-        ERZAL_S_MALEDICTION = 3952,
-        COMMOTION_3953 = 3953,
-        COMMOTION_3954 = 3954,
-        COMMOTION_3955 = 3955,
-        COMMOTION_3956 = 3956,
-        COMMOTION = 3957,
-        AERDALA_MELANCHOLY_WAVE = 3958,
-        AERDALA_EXPLOSIVE_FLASK = 3959,
-        THIS_IS_HOW_WE_DO_IT = 3960,
+
+        POIDS_DE_LA_MORT_3922 = 3922,
+
+        TAPAGE_3923 = 3923,
+
+        TAPAGE_3924 = 3924,
+
+        REDEMPTION_3925 = 3925,
+
+        COUP_DE_LANCE_3926 = 3926,
+
+        COUP_DE_LANCE_3927 = 3927,
+
+        THAUMATURGIE_3928 = 3928,
+
+        NOUS_SOMMES_MOI_3929 = 3929,
+
+        COGNEDUR_3930 = 3930,
+
+        COGNEDUR_3931 = 3931,
+
+        DON_DU_SANG_3932 = 3932,
+
+        DON_DU_SANG_3933 = 3933,
+
+        FRAPPE_PUNITIVE_3934 = 3934,
+
+        FRAPPE_PUNITIVE_3935 = 3935,
+
+        BENEDICTION_3936 = 3936,
+
+        JUGEMENT_DERAZAL_3937 = 3937,
+
+        ANATHEME_3938 = 3938,
+
+        CASTRAFIORE_3939 = 3939,
+
+        MALEDICTION_DE_QUTAN_3940 = 3940,
+
+        PENTACLE_3941 = 3941,
+
+        PENTHOUSE_3942 = 3942,
+
+        ESCOPETTE_3943 = 3943,
+
+        TIMOUT_3944 = 3944,
+
+        TIMOUT_3945 = 3945,
+
+        SYNC_3946 = 3946,
+
+        SYNC_3947 = 3947,
+
+        PENTAGRAMME_3948 = 3948,
+
+        HADDOCK_3949 = 3949,
+
+        TONNERRE_DE_BREST_3950 = 3950,
+
+        MILLE_SABORDS_3951 = 3951,
+
+        MALEDICTION_DERAZAL_3952 = 3952,
+
+        VACARME_3953 = 3953,
+
+        VACARME_3954 = 3954,
+
+        VACARME_3955 = 3955,
+
+        VACARME_3956 = 3956,
+
+        VACARME_3957 = 3957,
+
+        VAGUE_A_LAME_DAERDALA_3958 = 3958,
+
+        FLASQUE_EXPLOSIVE_DAERDALA_3959 = 3959,
+
+        AINSI_FONT_3960 = 3960,
+
         BUNRAKU_3961 = 3961,
+
         BUNRAKU_3962 = 3962,
-        RULER_SLAP = 3963,
-        NIBBLAGE = 3964,
-        CHOMP = 3965,
-        JAB = 3966,
-        TURE = 3967,
-        RID = 3968,
-        RISATION = 3969,
-        GRILL = 3970,
-        RENTIAL_STORM = 3971,
-        PANDASIMAN_FLASK = 3972,
-        VEG_MEN = 3973,
-        SPUD = 3974,
-        ROCKET = 3975,
-        EARTHCHILD = 3976,
-        SUMMONING_OF_PUMPERWINKLE = 3977,
-        VEGETICITY_3978 = 3978,
-        VEGETICITY_3979 = 3979,
-        SON_OF_THE_SUN = 3980,
-        CABBAGE_PUTSCH_3981 = 3981,
-        CABBAGE_PUTSCH_3982 = 3982,
-        CABBAGE_PUTSCH = 3983,
-        KNOYERONIONS = 3984,
-        MASHROOM = 3985,
-        SHOOTS_AND_LEAVES = 3986,
-        ILLUTATION = 3989,
-        ICKY_HICKEY = 3990,
-        SLUDGE = 3991,
-        CRUST = 3992,
-        MUSHDPUPPY = 3993,
-        MUDBATH = 3994,
-        LASHING_BRAMBLE = 3995,
-        LIVELY_BRAMBLE = 3996,
-        WEED_WHACKER = 3997,
-        VEGETAL_POISON = 3998,
-        VAMPIRIC_VINES = 3999,
-        BRAMBULATION_4000 = 4000,
-        THE_DIN = 4001,
-        PATIENCE = 4002,
-        GOOLASH = 4003,
-        SWAMPMATES = 4004,
-        VEGGIE_GROWTH = 4005,
-        SEA_YOUSOUN = 4006,
-        SEA_AN_ENEMY = 4007,
-        SEA_LEGS = 4008,
-        SEA_WORTHY = 4009,
-        ICE_AGEING = 4010,
-        BRONZE_AGENT = 4011,
-        LOW_TIDE = 4012,
-        BATHYSCAFF = 4013,
-        MOUTH_TO_MOUTH = 4014,
-        COLONEL_FLAME = 4015,
-        OVER_EAR = 4016,
-        ESCADRILL = 4017,
-        DRIP_DROPSHOT = 4018,
-        MARKSMAN = 4019,
-        CEASEFIRE = 4020,
-        HAPPY_CAMPER = 4021,
-        REEF_WAVE = 4022,
-        WIMP = 4023,
-        CLOSE_COMBAT_4024 = 4024,
-        KO = 4025,
-        AGAINST_THE_FLOW = 4026,
-        SURVIVAL = 4027,
-        OCTOPUS = 4028,
-        LAKAZAM = 4029,
-        POACH = 4030,
-        OCTIFICATION = 4031,
-        DOUBLE_EDGED = 4032,
-        OCTOPULL = 4033,
-        OCTOPUSH = 4034,
-        GOLDEN_CLAW = 4035,
-        INCINDICLAW = 4036,
-        PINCEPTION = 4037,
-        OCEAN_HAZE = 4038,
-        SECOND_CHANCE = 4039,
-        JOYLESS_MARAUDER = 4040,
-        TOMFUELERY_GLYPH = 4041,
-        TOMFUELERY = 4042,
-        KNAVERIPOSTE = 4043,
-        GLORY_HUNTER = 4044,
-        OOK_NOS = 4045,
-        FRYDAL_WAVE = 4046,
-        MONOCULOUSE = 4047,
-        SALTY_DAWG = 4048,
-        DO_NOT_DISTURB = 4049,
-        CHEAT = 4050,
-        ELECTRIC_ARC = 4051,
-        BUNKY_S_BRAWN = 4052,
-        VINE_EEBRYATED = 4053,
-        TREECKLER_HATCHLING = 4054,
-        TREECKLER_SEED = 4055,
-        TOFUEL_PECK = 4056,
-        SUMMONING_OF_TOFUEL = 4057,
-        GOBBOIL_CHOMP = 4058,
-        TOXIC_CONTUSION = 4059,
-        SUMMONING_OF_GOBBOIL = 4060,
-        BLACK_CLAW = 4061,
-        BLACK_TIDE = 4062,
-        ICY_GLYPH_4063 = 4063,
-        PRICKLY_FOREST_4067 = 4067,
-        PRICKLY_FOREST_4068 = 4068,
-        BRAMBULATION_4069 = 4069,
-        BUNK = 4070,
-        BRAMBULATION_4071 = 4071,
-        SHOULDER_SLAM = 4072,
-        BOULDER_BUSTER = 4073,
-        GRRR = 4074,
-        WIND_OF_DISCORD = 4075,
-        FLAME_SUMMONING = 4076,
-        WEAKEN_4077 = 4077,
-        CLAWHOOK = 4078,
-        BLINDING_CLAWS = 4079,
-        DUBIOUS_HYGIENE = 4080,
-        BIGGEST_BALLS = 4081,
-        LEAPING_BALLS = 4082,
-        ELECTRIC_SHOCK = 4083,
-        BLAZING_LANCE = 4084,
-        BLAZING_CLAWS = 4085,
-        KANIBLUES = 4086,
-        SPINNING_TOP = 4087,
-        SLICEBLADE = 4088,
-        COVER_UP = 4089,
-        BANZAIII = 4090,
-        MATRIARCHAL_ROAR = 4091,
-        CAPTIVATING_MOTIVATION = 4092,
-        ANIMAL_PHEROMONES = 4093,
-        ANIMAL_SMELL = 4094,
-        SAVAGERY = 4095,
-        MEPHITIC_DEATH = 4096,
-        WILD_PHEROMONES = 4097,
-        EPHEMERAL_SHOOTS = 4098,
-        ARACHNEEMAN_PHEROMONES = 4099,
-        ARACHNEEPHOBIA = 4100,
-        ANTHROPHOBIA = 4101,
-        REGENERATIVE_DESSICATION_4102 = 4102,
-        REGENERATIVE_DESSICATION_4103 = 4103,
-        EX_NIHILO = 4104,
-        LIGHTING_4105 = 4105,
-        SHADOWY_PROJECTION_4106 = 4106,
+
+        COUP_DE_LATTE_3963 = 3963,
+
+        MORDILLAGE_3964 = 3964,
+
+        COUP_DE_DENTS_3965 = 3965,
+
+        TAPE_3966 = 3966,
+
+        TURE_3967 = 3967,
+
+        HIDA_3968 = 3968,
+
+        RISATION_3969 = 3969,
+
+        GRILLADE_3970 = 3970,
+
+        RAGE_ELECTRIQUE_3971 = 3971,
+
+        FLASQUE_PANDASIMANE_3972 = 3972,
+
+        LES_GUMAN_3973 = 3973,
+
+        PATATE_3974 = 3974,
+
+        ROQUETTE_3975 = 3975,
+
+        ENFANT_DE_LA_TERRE_3976 = 3976,
+
+        INVOCATION_DE_CITWOUILLETTE_3977 = 3977,
+
+        LEGUMISATION_3978 = 3978,
+
+        LEGUMISATION_3979 = 3979,
+
+        FILS_DU_SOLEIL_3980 = 3980,
+
+        DANS_LES_CHOUX_3981 = 3981,
+
+        DANS_LES_CHOUX_3982 = 3982,
+
+        DANS_LES_CHOUX_3983 = 3983,
+
+        SPATEZOIGNONS_3984 = 3984,
+
+        CHATAIGNE_3985 = 3985,
+
+        POUSSES_EPHEMERES_3986 = 3986,
+
+        ILLUTATION_3989 = 3989,
+
+        SUÇON_SPONGIEUX_3990 = 3990,
+
+        VASE_3991 = 3991,
+
+        CROUTE_3992 = 3992,
+
+        BOOILLABAISSE_3993 = 3993,
+
+        BAIN_DE_BOO_3994 = 3994,
+
+        RONCE_VENENEUSE_3995 = 3995,
+
+        RONCE_ANIMEE_3996 = 3996,
+
+        DEBROUSSAILLEUSE_3997 = 3997,
+
+        POISON_VEGETAL_3998 = 3998,
+
+        VIGNES_VAMPIRIQUES_3999 = 3999,
+
+        STRANGURONCES_4000 = 4000,
+
+        LA_BEUGLANTE_4001 = 4001,
+
+        PATIENCE_4002 = 4002,
+
+        POT_AU_FEU_4003 = 4003,
+
+        ALLIES_MARECAGEUX_4004 = 4004,
+
+        CROISSANCE_VEGETALE_4005 = 4005,
+
+        MER_CENAIRE_4006 = 4006,
+
+        MER_CURE_4007 = 4007,
+
+        MER_VEILLE_4008 = 4008,
+
+        MER_KANTILE_4009 = 4009,
+
+        TORPILLAGE_DE_GLACE_4010 = 4010,
+
+        SONDAGE_DE_BRONZE_4011 = 4011,
+
+        MAREE_DESCENDANTE_4012 = 4012,
+
+        BAPHE_THYSCA_4013 = 4013,
+
+        BOUCHE_A_BOUCHE_4014 = 4014,
+
+        LES_FEUX_DE_LA_MER_4015 = 4015,
+
+        PAR_ICI_4016 = 4016,
+
+        PERFORAGE_4017 = 4017,
+
+        MOULE_CHOTE_4018 = 4018,
+
+        TIREUR_FRANC_4019 = 4019,
+
+        CESSEZ_LE_FEU_4020 = 4020,
+
+        CAMPEUR_ET_SANS_REPROCHES_4021 = 4021,
+
+        VAGUE_RECIF_4022 = 4022,
+
+        MAUVIETTE_4023 = 4023,
+
+        COMBAT_RAPPROCHE_4024 = 4024,
+
+        KO_4025 = 4025,
+
+        CONTRE_COURANT_4026 = 4026,
+
+        SURVIE_4027 = 4027,
+
+        POULPE_4028 = 4028,
+
+        LAKAZAM_4029 = 4029,
+
+        CONNIER_4030 = 4030,
+
+        POULPITATION_4031 = 4031,
+
+        DOUBLE_TRANCHANT_4032 = 4032,
+
+        ATTRACTION_POULPESQUE_4033 = 4033,
+
+        REPULSION_POULPESQUE_4034 = 4034,
+
+        PINCE_DOR_4035 = 4035,
+
+        PINCENDIE_4036 = 4036,
+
+        PINCEPTION_4037 = 4037,
+
+        FLOU_DE_MER_4038 = 4038,
+
+        SECONDE_CHANCE_4039 = 4039,
+
+        MARAUDE_A_LA_JOIE_4040 = 4040,
+
+        GLYPHE_GLYCOL_ROULE_4041 = 4041,
+
+        GLYCOL_ROULE_4042 = 4042,
+
+        FILOUTERIPOSTE_4043 = 4043,
+
+        PREDATEUR_DE_GLOIRE_4044 = 4044,
+
+        APNEE_CROCHUE_4045 = 4045,
+
+        GRAS_DE_MAREE_4046 = 4046,
+
+        CYCLOPORTE_4047 = 4047,
+
+        RELOU_DE_MER_4048 = 4048,
+
+        NE_PAS_DERANGER_4049 = 4049,
+
+        TRICHE_4050 = 4050,
+
+        ARC_ECLECTIQUE_4051 = 4051,
+
+        SUPERPUISSANCE_DE_BEURKY_4052 = 4052,
+
+        INTOXICATION_VEGETALE_4053 = 4053,
+
+        ECLOSION_DABRAKLEUR_4054 = 4054,
+
+        GRAINE_DABRAKLEUR_4055 = 4055,
+
+        BECO_DU_TOFIOUL_4056 = 4056,
+
+        INVOCATION_DE_TOFIOUL_4057 = 4057,
+
+        MORSURE_DU_BOUFTOXIK_4058 = 4058,
+
+        CONTUSION_TOXIQUE_4059 = 4059,
+
+        INVOCATION_DE_BOUFTOXIK_4060 = 4060,
+
+        GRIFFE_NOIRE_4061 = 4061,
+
+        MAREE_NOIRE_4062 = 4062,
+
+        GLYPHE_GLACIAL_4063 = 4063,
+
+        FORET_EPINEUSE_4067 = 4067,
+
+        FORET_EPINEUSE_4068 = 4068,
+
+        STRANGURONCES_4069 = 4069,
+
+        BEURK_4070 = 4070,
+
+        STRANGURONCES_4071 = 4071,
+
+        COUP_DEPAULE_4072 = 4072,
+
+        CASSE_CAILLOU_4073 = 4073,
+
+        GRRR_4074 = 4074,
+
+        VENT_DISCORDANT_4075 = 4075,
+
+        INVOCATION_DE_FLAMMES_4076 = 4076,
+
+        MISE_A_MAL_4077 = 4077,
+
+        GRIFFHANGER_4078 = 4078,
+
+        GRIFFES_AVEUGLANTES_4079 = 4079,
+
+        HYGIENE_DOUTEUSE_4080 = 4080,
+
+        GROS_BOULET_4081 = 4081,
+
+        BOULET_SAUTEUR_4082 = 4082,
+
+        CHOC_ELECTRIQUE_4083 = 4083,
+
+        LANCE_ENFLAMMEE_4084 = 4084,
+
+        GRIFFES_ENFLAMMEES_4085 = 4085,
+
+        KANIBLOUSE_4086 = 4086,
+
+        TOUPIE_4087 = 4087,
+
+        TRANCHLAME_4088 = 4088,
+
+        BOUBOU_4089 = 4089,
+
+        CHACHYENE_CINGLANTE_4090 = 4090,
+
+        RUGISSEMENT_MATRIARCAL_4091 = 4091,
+
+        MOTIVATION_CAPTIVANTE_4092 = 4092,
+
+        PHEROMONES_BESTIALES_4093 = 4093,
+
+        ODORAT_BESTIAL_4094 = 4094,
+
+        SAUVAGERIE_4095 = 4095,
+
+        MORT_MEPHITIQUE_4096 = 4096,
+
+        PHEROMONES_SAUVAGES_4097 = 4097,
+
+        POUSSES_EPHEMERES_4098 = 4098,
+
+        PHEROMONES_DARAKNEMANE_4099 = 4099,
+
+        ARAKNOPHOBIE_4100 = 4100,
+
+        ANDROPHOBIE_4101 = 4101,
+
+        DESSECHEMENT_REGENERANT_4102 = 4102,
+
+        DESSECHEMENT_REGENERANT_4103 = 4103,
+
+        EX_NIHILO_4104 = 4104,
+
+        ECLAIRAGE_4105 = 4105,
+
+        PROJECTION_OMBREUSE_4106 = 4106,
+
         REUNION_4107 = 4107,
-        CANCELLATION = 4108,
-        RESPONSE = 4109,
-        SEIZE_4110 = 4110,
-        STRANGLING_4111 = 4111,
-        LINK = 4112,
-        DISTORTION_4113 = 4113,
-        PENUMBRA = 4114,
-        INKERING = 4115,
-        OBSCURATION = 4116,
-        DETACHMENT = 4117,
-        GOOD_VIBRATIONS_4118 = 4118,
-        DIREFLY = 4119,
-        BALLIGAN = 4120,
-        HIDEAWAY_4121 = 4121,
-        HIDEAWAY_4122 = 4122,
-        VEND_HETTER = 4123,
-        PETTINESS_4124 = 4124,
-        PETTINESS_4125 = 4125,
-        PLOT_4126 = 4126,
-        PLOT_4127 = 4127,
-        BRUTALITY = 4128,
-        PETTY_PACT = 4129,
-        FOOTREST_4130 = 4130,
-        FOOTREST_4131 = 4131,
-        BEAKLIPSE_4132 = 4132,
-        FOUL_PLAY = 4133,
-        VAGARY = 4134,
+
+        ANNULATION_4108 = 4108,
+
+        REPONSE_4109 = 4109,
+
+        EMPOIGNE_4110 = 4110,
+
+        STRANGULATION_4111 = 4111,
+
+        LIAISON_4112 = 4112,
+
+        DISTORSION_4113 = 4113,
+
+        PENOMBRE_4114 = 4114,
+
+        ENCRAGE_4115 = 4115,
+
+        OBSCURANTISME_4116 = 4116,
+
+        DETACHEMENT_4117 = 4117,
+
+        BONNES_VIBRATIONS_4118 = 4118,
+
+        TIMATUM_4119 = 4119,
+
+        BOULIGANE_4120 = 4120,
+
+        PLANQUE_4121 = 4121,
+
+        PLANQUE_4122 = 4122,
+
+        VENT_DETAT_4123 = 4123,
+
+        MESQUINERIE_4124 = 4124,
+
+        MESQUINERIE_4125 = 4125,
+
+        MANIGANCE_4126 = 4126,
+
+        MANIGANCE_4127 = 4127,
+
+        BRUTALITE_4128 = 4128,
+
+        MESQUIN_PACTE_4129 = 4129,
+
+        DETENTRAVE_4130 = 4130,
+
+        DETENTRAVE_4131 = 4131,
+
+        BECLIPSE_4132 = 4132,
+
+        AIGRIFFURE_4133 = 4133,
+
+        VAGUICHAGE_4134 = 4134,
+
         RESONANCE_4135 = 4135,
+
         RESONANCE_4136 = 4136,
-        RIFT = 4137,
-        MIGHTY_OAK = 4138,
-        DISCRETION = 4139,
-        ARMLESS = 4140,
-        STELLIAR_HOOK = 4141,
-        STELLIAR_SHRIEK = 4142,
-        GOOD_VIBRATIONS_4143 = 4143,
-        HYPERBLUTZELL = 4144,
-        OGIVAULT = 4145,
-        OGIVOLTAIC = 4146,
-        OGIVOLLEY = 4147,
-        OLIVOLATILE = 4148,
-        OGIVOLOGRAM = 4149,
-        OGIVOLVERINE = 4150,
-        GOBLINRY = 4151,
-        HOLLOW_JAVELIN = 4152,
-        DILIGENCE = 4153,
-        RARING_TO_GO = 4154,
-        CURATIVE_ELIXIR = 4155,
-        FORBIDDEN_ELIXIR = 4156,
-        STIMULATING_ELIXIR = 4157,
-        REVITALISING_ELIXIR = 4158,
-        VAMPIRIC_ELIXIR = 4159,
-        THROWING_FISTS = 4160,
-        CYBERNETIC_RAGE = 4161,
-        OVERHEATING_4162 = 4162,
-        POISONED_ELIXIR = 4163,
-        CYBERBWORK = 4164,
-        IMPLACABLE = 4165,
-        DIRTY_BRATS_4166 = 4166,
-        DIRTY_BRATS_4167 = 4167,
-        ONIGAMI_4168 = 4168,
-        ONIGAMI_4169 = 4169,
-        ONIGIRI = 4170,
-        ONIONY = 4171,
-        ONISLEEPIN = 4172,
-        NOT_LONG_NOW = 4173,
-        HAMMERING_4174 = 4174,
-        STONY_ARMOUR = 4175,
-        SURTR = 4176,
-        ETERNAL_PUNISHMENT = 4177,
-        AERIAL_ASSAULT = 4178,
-        AQUEOUS_TRANSPOSITION = 4179,
-        BURNING_ABSORPTION = 4180,
-        PANDAWUSHU = 4181,
-        TWIRLING_BATON = 4182,
-        GREEN_FAIRY = 4183,
-        CLOUDY_VISION = 4184,
-        INCENDIARY_FLASK = 4185,
-        LIQUID_WRATH = 4186,
-        PUSHMAST = 4187,
-        GENTLEMAN_CRIMINAL = 4188,
-        JOVIALITY_4189 = 4189,
-        JOVIALITY_4190 = 4190,
-        A_THOUSAND_POMPOMS = 4191,
-        BLIND_JUSTICE = 4192,
-        ROBOTIC_SPIRIT_4193 = 4193,
-        ROBOTIC_SPIRIT_4194 = 4194,
-        SHELLOOGIE = 4195,
-        HYPERMAST = 4196,
-        SPITMAST = 4197,
-        GERGER = 4198,
-        FIREFOUX_BLOOD_4199 = 4199,
-        FIREFOUX_BLOOD_4200 = 4200,
-        RESTORATIVE_FLAME = 4201,
-        KAZAM = 4202,
-        GASH_4203 = 4203,
-        TAMBOURINO = 4204,
-        PUSHEAL = 4205,
-        ILLUMINATION = 4207,
-        SCAR_4208 = 4208,
-        SCREEN = 4209,
-        DIVERGENCE = 4210,
-        SCARALEAF_BLOOD_4211 = 4211,
-        SCARALEAF_BLOOD_4212 = 4212,
-        SCARACINDER = 4213,
-        BURNOUT = 4214,
-        SCORIA_TRAP = 4215,
-        SCORIA = 4216,
-        VADE_RETRO = 4217,
-        CHARBROIL = 4218,
-        SCARAFLAME = 4219,
-        SCARAWAY = 4220,
-        CUTICLE_OF_TERROR = 4221,
-        KRALOVE_BLOOD_4222 = 4222,
-        KRALOVE_BLOOD_4223 = 4223,
-        SEAFOOD = 4224,
-        SAMURASHI = 4225,
-        THALASSO = 4226,
-        TRUSSST_ME = 4227,
-        SCISSION = 4228,
-        SLIMESKALE = 4229,
-        CREEL = 4230,
-        DARKNESS_BLOOD_4231 = 4231,
-        DARKNESS_BLOOD_4232 = 4232,
-        CARTILAGE = 4233,
-        DIABOLO_CHISTE = 4234,
-        UMBROGLIO = 4235,
-        BLACK_WRATH = 4236,
-        NOCTURNAL_VENGEANCE = 4237,
-        NIGHTFALL_4238 = 4238,
-        CROBAK_BLOOD_4239 = 4239,
-        CROBAK_BLOOD_4240 = 4240,
-        SOAR_POINT = 4241,
-        FLIGHTY = 4242,
-        NIMBOSTRATUS_TRAP = 4243,
-        NIMBOSTRATUS = 4244,
-        RAZORBILL = 4245,
-        FEATHERWEIGHT = 4246,
-        SOUITCH = 4247,
-        TREECHNID_BLOOD_4248 = 4248,
-        TREECHNID_BLOOD_4249 = 4249,
-        SYLVAN_ATTRACTION_4250 = 4250,
-        MAPLE_SYRUP = 4251,
-        PROTECTIVE_BARK = 4252,
-        SPIN = 4253,
-        LOG_RHYTHM = 4254,
-        MARBUS_FRACTUS = 4255,
-        UPROOT = 4256,
-        SAVAGE_GRASS = 4257,
-        MULTIPLE_BARBED_ROOTS = 4258,
-        JUMPROPE = 4259,
-        WODLY_S_LAW = 4260,
-        WODDLING = 4261,
-        NINE_TAILS = 4262,
-        RIFE_BANDITRY = 4263,
-        FELINE_FINESSE = 4264,
-        PROTEST_4265 = 4265,
-        PROTEST_4266 = 4266,
-        PROTEST = 4267,
-        SLASH = 4268,
-        A_THOUSAND_DEATHBLOWS = 4269,
-        SEISMIC_JUMP = 4270,
-        TROUBLING_PUNISHMENT = 4271,
-        TRAITOROUS_BLOW = 4272,
-        BLOODY_ATTRACTION_4273 = 4273,
-        BLOODY_ATTRACTION_4274 = 4274,
-        SANGUINE_PERMUTATION = 4275,
-        WAVELET = 4276,
-        FAIRLY_LETHAL_BLUNDER = 4277,
-        STRAIGHT_THROUGH = 4278,
-        GOB_BOMB_4279 = 4279,
-        GOB_BOMB_4280 = 4280,
-        DIRTY_EXPLOSIVE_TRICK = 4281,
-        GOB_BOOM = 4282,
-        GOBLIN_MAGNET = 4283,
-        WET_FLOOR_4284 = 4284,
-        WET_FLOOR_4285 = 4285,
-        DANGEROUS_DEPLACEMENT = 4286,
-        WHINING_4287 = 4287,
-        WHINING = 4288,
-        MENACING_TRANSPOSITION = 4289,
-        ANOTHER_GULP = 4290,
-        A_GULP_TOO_MANY = 4291,
-        CHRONIC_DRUNKENNESS = 4292,
-        INEXACT_JUMP = 4293,
-        CROSSING_4294 = 4294,
-        SHOOTING_FROM_THE_HIP = 4295,
-        LUGUBRIOUS_JUMP = 4296,
-        //MELEE = 4297,
-        ANNOYANCE_4298 = 4298,
-        ANNOYANCE_4299 = 4299,
-        MUMMY_S_DEVOTION = 4300,
-        TEEPEEYING = 4301,
-        GROANER = 4302,
-        STAMPING_4303 = 4303,
-        CAWOBOT = 4304,
-        COMPROMISE = 4305,
-        DISENGAGING = 4306,
-        WET_FLOOR = 4307,
-        MOUNTING_PRESSURE = 4308,
-        DIAGONAL_FLAMES = 4309,
-        KILBURN_SWORD = 4310,
-        CYCLAIRVOYANCE = 4311,
-        ARDOUR_4312 = 4312,
-        FEROCITY_4313 = 4313,
-        VIVACITY_4314 = 4314,
-        VIGOUR_OF_YESTERYEAR = 4315,
-        COURAGE = 4316,
+
+        FAILLE_4137 = 4137,
+
+        GLANDU_4138 = 4138,
+
+        DISCRETION_4139 = 4139,
+
+        MANCHOT_4140 = 4140,
+
+        CROCHET_FRACASSANT_4141 = 4141,
+
+        CRI_FRACASSANT_4142 = 4142,
+
+        BONNES_VIBRATIONS_4143 = 4143,
+
+        HYPERLEUKOCYTINE_4144 = 4144,
+
+        OGIVOLTIGE_4145 = 4145,
+
+        OGIVOLTAÏQUE_4146 = 4146,
+
+        OGIVOLAGE_4147 = 4147,
+
+        OGIVOLATILISE_4148 = 4148,
+
+        OGIVOLOGRAMME_4149 = 4149,
+
+        OGIVOLVERINE_4150 = 4150,
+
+        GOBELINERIE_4151 = 4151,
+
+        JAVELINE_CREUSE_4152 = 4152,
+
+        A_PIED_DŒUVRE_4153 = 4153,
+
+        FUITE_ANTICIPEE_4154 = 4154,
+
+        ELIXIR_CURATIF_4155 = 4155,
+
+        ELIXIR_INTERDIT_4156 = 4156,
+
+        ELIXIR_STIMULANT_4157 = 4157,
+
+        ELIXIR_REVITALISANT_4158 = 4158,
+
+        ELIXIR_VAMPIRIQUE_4159 = 4159,
+
+        LANCER_DE_POING_4160 = 4160,
+
+        RAGE_CYBERNETIQUE_4161 = 4161,
+
+        SURCHAUFFE_4162 = 4162,
+
+        ELIXIR_EMPOISONNE_4163 = 4163,
+
+        CYBERBWORK_4164 = 4164,
+
+        IMPLACABLE_4165 = 4165,
+
+        SALE_MARMOT_4166 = 4166,
+
+        SALE_MARMOT_4167 = 4167,
+
+        ONICTIFIANT_4168 = 4168,
+
+        ONICTIFIANT_4169 = 4169,
+
+        ONIGIRI_4170 = 4170,
+
+        ONIGAUD_4171 = 4171,
+
+        ONIVOIRIEN_4172 = 4172,
+
+        BIENTT_LA_FIN_4173 = 4173,
+
+        MARTELAGE_4174 = 4174,
+
+        ARMURE_ROCAILLEUSE_4175 = 4175,
+
+        SURT_4176 = 4176,
+
+        CHATIMENT_ETERNEL_4177 = 4177,
+
+        ASSAUT_AERIEN_4178 = 4178,
+
+        TRANSPOSITION_AQUEUSE_4179 = 4179,
+
+        ABSORPTION_BRULANTE_4180 = 4180,
+
+        PANDAWUSHU_4181 = 4181,
+
+        BATON_VIREVOLTANT_4182 = 4182,
+
+        FEE_VERTE_4183 = 4183,
+
+        VUE_TROUBLE_4184 = 4184,
+
+        FLASQUE_INCENDIAIRE_4185 = 4185,
+
+        COLERE_LIQUIDE_4186 = 4186,
+
+        POUSSMOUTH_4187 = 4187,
+
+        GENTLEMAN_DU_CRIME_4188 = 4188,
+
+        JOVIALITE_4189 = 4189,
+
+        JOVIALITE_4190 = 4190,
+
+        MILLE_POMPONS_4191 = 4191,
+
+        JUSTICE_AVEUGLE_4192 = 4192,
+
+        ESPRIT_ROBOTIQUE_4193 = 4193,
+
+        ESPRIT_ROBOTIQUE_4194 = 4194,
+
+        CRACHAT_DE_COQUE_4195 = 4195,
+
+        HYPERMOUTH_4196 = 4196,
+
+        EMBROCHMOUTH_4197 = 4197,
+
+        GROUGROU_4198 = 4198,
+
+        SANG_DE_FIREFOUX_4199 = 4199,
+
+        SANG_DE_FIREFOUX_4200 = 4200,
+
+        FLAMME_REPARATRICE_4201 = 4201,
+
+        KAZAM_4202 = 4202,
+
+        BALAFRE_4203 = 4203,
+
+        TAMBOURINO_4204 = 4204,
+
+        POUSSOIN_4205 = 4205,
+
+        ILLUMINATION_4207 = 4207,
+
+        CICATRICE_4208 = 4208,
+
+        ECRAN_4209 = 4209,
+
+        DIVERGENCE_4210 = 4210,
+
+        SANG_DE_SCARAFEUILLE_4211 = 4211,
+
+        SANG_DE_SCARAFEUILLE_4212 = 4212,
+
+        SCARACENDRE_4213 = 4213,
+
+        CALCIN_4214 = 4214,
+
+        PIEGE_SCORIFICATION_4215 = 4215,
+
+        SCORIFICATION_4216 = 4216,
+
+        RECULADE_4217 = 4217,
+
+        CHARBO_4218 = 4218,
+
+        SCARAFLAMME_4219 = 4219,
+
+        SCARAPULSE_4220 = 4220,
+
+        CUTICULE_REPULSIVE_4221 = 4221,
+
+        SANG_DE_KRALAMOURE_4222 = 4222,
+
+        SANG_DE_KRALAMOURE_4223 = 4223,
+
+        FRUITS_DE_MER_4224 = 4224,
+
+        SAMOURASHI_4225 = 4225,
+
+        BETANE_4226 = 4226,
+
+        ALEVIN_4227 = 4227,
+
+        SCISSION_4228 = 4228,
+
+        COUP_DE_FILET_4229 = 4229,
+
+        NASSE_4230 = 4230,
+
+        SANG_TENEBREUX_4231 = 4231,
+
+        SANG_TENEBREUX_4232 = 4232,
+
+        CARTILAGE_4233 = 4233,
+
+        DIABOLO_CHISTE_4234 = 4234,
+
+        OMBROGLIO_4235 = 4235,
+
+        COLERE_NOIRE_4236 = 4236,
+
+        VENGEANCE_NOCTURNE_4237 = 4237,
+
+        CREPUSCULE_4238 = 4238,
+
+        SANG_DE_CORBAC_4239 = 4239,
+
+        SANG_DE_CORBAC_4240 = 4240,
+
+        BECQUETAGE_4241 = 4241,
+
+        ENVOLEE_4242 = 4242,
+
+        PIEGE_NIMBOSTRATUS_4243 = 4243,
+
+        NIMBOSTRATUS_4244 = 4244,
+
+        BEC_AIGUISE_4245 = 4245,
+
+        EXPLUMESSION_4246 = 4246,
+
+        SOUITCHE_4247 = 4247,
+
+        SANG_DABRAKNYDE_4248 = 4248,
+
+        SANG_DABRAKNYDE_4249 = 4249,
+
+        ATTRACTION_SYLVESTRE_4250 = 4250,
+
+        SIROP_DERABLE_4251 = 4251,
+
+        ECORCE_PROTECTRICE_4252 = 4252,
+
+        PIROUETTE_4253 = 4253,
+
+        BUCHETTE_4254 = 4254,
+
+        MARBUS_FRACTUS_4255 = 4255,
+
+        DEFLORAGE_4256 = 4256,
+
+        HERBE_SAUVAGE_4257 = 4257,
+
+        RACINES_BARBELEES_MULTIPLES_4258 = 4258,
+
+        TRANSGAMINERIE_4259 = 4259,
+
+        CHANCE_DU_CRAPOTEUR_4260 = 4260,
+
+        CRAPOTAGE_4261 = 4261,
+
+        NEUF_QUEUES_4262 = 4262,
+
+        GRAND_BANDITISME_4263 = 4263,
+
+        SENS_FELINS_4264 = 4264,
+
+        REVENDICATION_4265 = 4265,
+
+        REVENDICATION_4266 = 4266,
+
+        REVENDICATION_4267 = 4267,
+
+        TAILLADE_4268 = 4268,
+
+        MILLE_ESTOCADES_4269 = 4269,
+
+        BOND_SISMIQUE_4270 = 4270,
+
+        CHATIMENT_TROUBLE_4271 = 4271,
+
+        COUP_EN_TRAÎTRE_4272 = 4272,
+
+        ATTIRANCE_SANGUINAIRE_4273 = 4273,
+
+        ATTIRANCE_SANGUINAIRE_4274 = 4274,
+
+        PERMUTATION_SANGUINAIRE_4275 = 4275,
+
+        VAGUELETTE_4276 = 4276,
+
+        ETOURDERIE_QUASI_MORTELLE_4277 = 4277,
+
+        ET_A_TRAVERS_4278 = 4278,
+
+        GOBBOMBE_4279 = 4279,
+
+        GOBBOMBE_4280 = 4280,
+
+        ENTOURLOUPE_EXPLOSIVE_4281 = 4281,
+
+        GOBBOUM_4282 = 4282,
+
+        AIMANTATION_GOBELINE_4283 = 4283,
+
+        SOL_GLISSANT_4284 = 4284,
+
+        SOL_GLISSANT_4285 = 4285,
+
+        DEPLACEMENT_HASARDEUX_4286 = 4286,
+
+        PLEURNICHERIE_4287 = 4287,
+
+        PLEURNICHERIE_4288 = 4288,
+
+        TRANSPOSITION_MENAÇANTE_4289 = 4289,
+
+        UNE_GORGEE_DE_PLUS_4290 = 4290,
+
+        UNE_GORGEE_DE_TROP_4291 = 4291,
+
+        IVRESSE_CHRONIQUE_4292 = 4292,
+
+        BOND_IMPRECIS_4293 = 4293,
+
+        FRANCHISSEMENT_4294 = 4294,
+
+        CIBLAGE_APPROXIMATIF_4295 = 4295,
+
+        BOND_LUGUBRE_4296 = 4296,
+
+        CAC_4297 = 4297,
+
+        NOCIVITE_4298 = 4298,
+
+        NOCIVITE_4299 = 4299,
+
+        DEVOUEMENT_DE_LA_MOMIE_4300 = 4300,
+
+        PAPIETOILETIZATION_4301 = 4301,
+
+        GEMISSEMENTIQUES_4302 = 4302,
+
+        TAMPONNAGE_4303 = 4303,
+
+        CAWOBOT_4304 = 4304,
+
+        COMPROMIS_4305 = 4305,
+
+        DEGAGEMENT_4306 = 4306,
+
+        SOL_GLISSANT_4307 = 4307,
+
+        PRESSION_MONTANTE_4308 = 4308,
+
+        FLAMMES_DIAGONALES_4309 = 4309,
+
+        EPEE_KIBRUL_4310 = 4310,
+
+        CYCLAIRVOYANCE_4311 = 4311,
+
+        ARDEUR_4312 = 4312,
+
+        FEROCITE_4313 = 4313,
+
+        VIVACITE_4314 = 4314,
+
+        VIGUEUR_DANTAN_4315 = 4315,
+
+        COURAGE_4316 = 4316,
+
         CLAIRVOYANCE_4317 = 4317,
-        DIAGONAL = 4318,
-        SHORT_RANGE = 4319,
-        OCTAVARICE = 4320,
-        CUTTING_ENCHANTMENT = 4321,
-        BALESTRA = 4322,
-        NOITAVITOM = 4323,
-        TUCKITSCH = 4324,
-        INCISION = 4325,
-        SPEED = 4326,
-        POORLY_SHOD = 4327,
-        BULBRAMBLE = 4328,
-        SAPLING = 4329,
-        AGGRESSIVE_BULBRAMBLE = 4330,
-        BRAMBULATION_4331 = 4331,
-        OCCULTATION = 4332,
-        REPEATED_PERMUTATION_4333 = 4333,
-        HOSTERITY = 4334,
-        REPEATED_PERMUTATION_4335 = 4335,
-        REPEATED_PERMUTATION = 4336,
-        BIG_HEAD_4337 = 4337,
-        BONY_ATTRACTION = 4338,
-        BLOW_TO_THE_HEAD = 4339,
-        SEISMIC_SHOCK = 4341,
-        BEAK_AREFUL = 4342,
-        DAYLIGHT_STRICHERY = 4343,
-        STRICHING = 4344,
-        STRICHIO = 4367,
-        KICKSTRUTTER = 4369,
-        MOUTH_FARTS = 4372,
-        GASTRICH_TROUBLE = 4373,
-        HEAD_IN_THE_SAND = 4374,
-        STRUTHIO = 4375,
-        STRETCHIO = 4376,
-        SUDDEN_FLIGHT = 4377,
-        TOXIC_EMISSION = 4378,
-        STRETCH_FOOT = 4380,
-        COLLATERAL_DAMAGE_4382 = 4382,
-        COLLATERAL_DAMAGE_4384 = 4384,
-        WATCHATHIO = 4388,
-        LAXATIVE = 4389,
-        INTESTINAL_GOUT = 4390,
-        CONTAMINATED_INDIGESTION = 4391,
-        CONTAGIOUS_INDIGESTION = 4392,
-        CRIPPLING_DIARRHOEA = 4393,
-        TRUBOTHIO = 4394,
-        TURBOUT = 4395,
-        SLOBBERY_PELLET = 4396,
-        TRUBADOUR = 4397,
-        HOT_FLASH = 4398,
-        PATRICHIO_4399 = 4399,
-        //MOVE_IT = 4400,
-        BLURRY_VISION_4401 = 4401,
-        RESTORATIVE_RING = 4402,
-        MYOPIA_4403 = 4403,
-        STRICHEETHIO = 4404,
-        BEAKSLAP_4405 = 4405,
-        PARPLEBELCH = 4406,
-        SICKLY_BREATH = 4407,
-        SPECIES_SURVIVAL = 4408,
-        UNSTABLE_ZONE_GLYPH = 4411,
-        DIMENSIONAL_RIFT = 4412,
-        GRAVITOR = 4413,
-        BURN = 4414,
-        INVERSE_SACRIFICE = 4415,
-        DEVIATION = 4416,
-        FEINT = 4417,
-        INSTABILITY = 4418,
-        DISRUPTION_4419 = 4419,
-        ORBACK = 4420,
-        UNSTABLE_ZONE = 4421,
-        ARACHNIREE = 4424,
-        ARACHNENEE = 4425,
-        PREMONITION_4427 = 4427,
-        BOGGED_DOWN = 4428,
-        EJECTOR = 4429,
-        TIGROKOKO = 4430,
-        BIBLOBLOPITION = 4431,
-        BIG_BIBLOPPERY = 4432,
-        MORFOBOO = 4433,
-        MORFOSLURP = 4434,
+
+        DIAGONALE_4318 = 4318,
+
+        COURTE_PORTEE_4319 = 4319,
+
+        OCTAVARICE_4320 = 4320,
+
+        TRANCHANTEMENT_4321 = 4321,
+
+        BALESTRA_4322 = 4322,
+
+        HONSEMOTIV_4323 = 4323,
+
+        ESTOCARD_4324 = 4324,
+
+        BOUTONNIERE_4325 = 4325,
+
+        VITESSE_4326 = 4326,
+
+        MAL_CHAUSSE_4327 = 4327,
+
+        BULBRONCE_4328 = 4328,
+
+        BULBARBRE_4329 = 4329,
+
+        BULBRONCES_AGRESSIVES_4330 = 4330,
+
+        STRANGURONCES_4331 = 4331,
+
+        OS_CULTATION_4332 = 4332,
+
+        PERMUTATION_REPETEE_4333 = 4333,
+
+        OS_TERITE_4334 = 4334,
+
+        PERMUTATION_REPETEE_4335 = 4335,
+
+        PERMUTATION_REPETEE_4336 = 4336,
+
+        CRANEUR_4337 = 4337,
+
+        ATTRACTION_OSSEUSE_4338 = 4338,
+
+        COUP_DE_CRANE_4339 = 4339,
+
+        CHOC_SISMIQUE_4341 = 4341,
+
+        APLUCH_4342 = 4342,
+
+        CEST_DE_LA_TRUCHE_4343 = 4343,
+
+        TRUCHAGE_4344 = 4344,
+
+        STRUCHTHIO_4367 = 4367,
+
+        PRENDRE_SON_PIED_4369 = 4369,
+
+        FLATULENCES_BUCCALES_4372 = 4372,
+
+        DEGAZAGE_4373 = 4373,
+
+        TETE_DANS_LE_SABLE_4374 = 4374,
+
+        STRUTHIO_4375 = 4375,
+
+        SGRUCHTHIO_4376 = 4376,
+
+        ENVOLEE_BRUTALE_4377 = 4377,
+
+        REJET_TOXIQUE_4378 = 4378,
+
+        PIED_DE_GRUCHE_4380 = 4380,
+
+        DOMMAGES_COLLATERAUX_4382 = 4382,
+
+        DOMMAGES_COLLATERAUX_4384 = 4384,
+
+        SMUCHETHIO_4388 = 4388,
+
+        LAXATIF_4389 = 4389,
+
+        POURRITURE_INTESTINALE_4390 = 4390,
+
+        INDIGESTION_CONTAMINEE_4391 = 4391,
+
+        INDIGESTION_CONTAGIEUSE_4392 = 4392,
+
+        DIARRHEE_AFFAIBLISSANTE_4393 = 4393,
+
+        SDEURTHIO_4394 = 4394,
+
+        TRUCHIDAGE_4395 = 4395,
+
+        BOULETTE_BAVEUSE_4396 = 4396,
+
+        TRUCHENRUT_4397 = 4397,
+
+        BOUFFEE_DE_CHALEUR_4398 = 4398,
+
+        STINETHIO_4399 = 4399,
+
+        DEGAGE__4400 = 4400,
+
+        VISION_TROUBLE_4401 = 4401,
+
+        RONDELLE_REPARATRICE_4402 = 4402,
+
+        MYOPIE_4403 = 4403,
+
+        SONTHIO_4404 = 4404,
+
+        CLAQUE_DU_BEC_4405 = 4405,
+
+        PROUTOTO_4406 = 4406,
+
+        EXHALATION_CHETIVE_4407 = 4407,
+
+        SURVIE_DE_LESPECE_4408 = 4408,
+
+        ZONE_INSTABLE_GLYPHE_4411 = 4411,
+
+        FAILLE_DIMENSIONNELLE_4412 = 4412,
+
+        GRAVITE_RENFORCEE_4413 = 4413,
+
+        BRULURE_4414 = 4414,
+
+        SACRIFICE_INVERSE_4415 = 4415,
+
+        DEVIATION_4416 = 4416,
+
+        FEINTE_4417 = 4417,
+
+        INSTABILITE_4418 = 4418,
+
+        PERTURBATION_4419 = 4419,
+
+        ORBAQUE_4420 = 4420,
+
+        ZONE_INSTABLE_4421 = 4421,
+
+        ARAKNIRI_4424 = 4424,
+
+        ARAKNENE_4425 = 4425,
+
+        PRESCIENCE_4427 = 4427,
+
+        EMBOURBEMENT_REPUGNANT_4428 = 4428,
+
+        EJECTION_4429 = 4429,
+
+        TIGROKOKO_4430 = 4430,
+
+        BIBLOBLOPITION_4431 = 4431,
+
+        GROSSE_BIBLOPERIE_4432 = 4432,
+
+        KANZEBU_4433 = 4433,
+
+        ZEBUSOIF_4434 = 4434,
+
         CORROSION_4435 = 4435,
-        SHUSHU_GREED = 4436,
-        SORTUMMY = 4437,
-        SHUSHU_REPELLANT = 4438,
-        RIPLEY_SCOTT_S_INCANTATION = 4439,
-        SHUSHUPROOF = 4440,
-        ALPHA_BOWZAI = 4441,
-        INVIGORATING_GLYPH_GLYPH = 4442,
-        INVIGORATING_GLYPH = 4443,
-        HYDRATION = 4444,
-        VOODRYZL = 4445,
-        SUBVERTED_PAIN = 4446,
-        BENEFAITHFUL_ATTRACTION = 4447,
-        SPYRESTORE = 4448,
-        GHOSNEZE = 4449,
-        TREACHERY = 4450,
-        INTOXICATION = 4451,
-        ARDENT_CLOUD = 4452,
-        SOUL_IN_DAMNATION_4453 = 4453,
-        FUNERARY_SUMMONS = 4454,
-        WEAR_AND_TEAR_4455 = 4455,
-        PARALYSIS = 4456,
-        FUNERARY_SUBSTITUTION_4457 = 4457,
+
+        GLOUTONNERIE_SHUSHUESQUE_4436 = 4436,
+
+        MALOBIDE_4437 = 4437,
+
+        COUP_ANTI_SHUSHU_4438 = 4438,
+
+        INCANTATION_DE_RIPLEY_SCOTT_4439 = 4439,
+
+        PROTECTION_ANTI_SHUSHU_4440 = 4440,
+
+        CHACHYENE_DOMINANTE_4441 = 4441,
+
+        GLYPHE_REVIGORANT_GLYPHE_4442 = 4442,
+
+        GLYPHE_REVIGORANT_4443 = 4443,
+
+        HYDRATATION_4444 = 4444,
+
+        VAUDOUCHE_4445 = 4445,
+
+        DOULEUR_DETOURNEE_4446 = 4446,
+
+        ATTRACTION_BIENFAITRICE_4447 = 4447,
+
+        VENT_GARDE_4448 = 4448,
+
+        ETHERNUEMENT_4449 = 4449,
+
+        TRAÎTRISE_4450 = 4450,
+
+        INTOXICATION_4451 = 4451,
+
+        NUEE_ARDENTE_4452 = 4452,
+
+        AME_EN_PERDITION_4453 = 4453,
+
+        INVOCATIONS_FUNEBRES_4454 = 4454,
+
+        USURE_4455 = 4455,
+
+        PARALYSIE_4456 = 4456,
+
+        SUBSTITUTION_FUNEBRE_4457 = 4457,
+
         DETECTION_4458 = 4458,
+
         DETECTION_4459 = 4459,
-        SOUL_IN_DAMNATION_4460 = 4460,
-        AWAKENING_OF_LOST_SOULS_4461 = 4461,
-        AWAKENING_OF_LOST_SOULS_4462 = 4462,
+
+        AME_EN_PERDITION_4460 = 4460,
+
+        EVEIL_DES_AMES_PERDUES_4461 = 4461,
+
+        EVEIL_DES_AMES_PERDUES_4462 = 4462,
+
         DETECTION_4463 = 4463,
-        MIX_UP_4464 = 4464,
-        COUNTER_EFFLUVIA = 4465,
-        ETHEREAL_EFFLUVIA = 4466,
-        FUNERARY_FIRE = 4467,
-        MORTAL_SHACKLES = 4468,
-        COUNTER_HAUNTING = 4469,
-        HAUNTING = 4470,
-        COUNTER_BEAM = 4471,
-        LAZYBEAM_4472 = 4472,
-        COUNTER_CLAIRVOYANCE = 4473,
+
+        EMBROUILLE_4464 = 4464,
+
+        REPLIQUE_EFFLUVES_4465 = 4465,
+
+        EFFLUVES_SPECTRAUX_4466 = 4466,
+
+        FEU_FUNEBRE_4467 = 4467,
+
+        ENTRAVE_MORTELLE_4468 = 4468,
+
+        REPLIQUE_HANTISE_4469 = 4469,
+
+        HANTISE_4470 = 4470,
+
+        REPLIQUE_FAISCEAU_4471 = 4471,
+
+        FAISCEAU_4472 = 4472,
+
+        REPLIQUE_CLAIRVOYANCE_4473 = 4473,
+
         CLAIRVOYANCE_4474 = 4474,
-        RICOCHET = 4475,
-        DEMATERIALISATION = 4476,
+
+        RICOCHET_4475 = 4475,
+
+        DEMATERIALISATION_4476 = 4476,
+
         DETECTION_4477 = 4477,
-        POUCH_THEFT_4478 = 4478,
-        POUCH_THEFT_4479 = 4479,
-        POUCH_THEFT_4480 = 4480,
-        POISONED_GIFT = 4481,
-        POUCHIPINCH_4482 = 4482,
-        POUCHIPINCH_4483 = 4483,
-        POUCHIPINCH_4484 = 4484,
-        SWITCHING_SIDES_4485 = 4485,
-        NIDAS_TOUCH = 4486,
-        UNBOXING = 4487,
-        LIQUIDATION = 4488,
-        DISCORD = 4489,
-        CONFUSION = 4490,
-        REBEL_QUELL = 4491,
-        GLYPHYPHY_GLYPH = 4492,
-        CHED_DRHELLER = 4493,
-        MY_PRECIOUS = 4494,
-        ALIGNMENT = 4495,
-        GLYPHYPHY = 4496,
-        DRHELL_FOR_GLORY_4497 = 4497,
-        ABYSS = 4498,
-        DRHELLABITY = 4499,
-        LAVA_BATH = 4500,
-        LANDSLIDE = 4501,
-        EPICENTRE = 4502,
-        INTEREST = 4504,
-        OFFRINGOLD = 4505,
-        KA_FIRSS = 4506,
-        AYGOT_JA = 4507,
-        NONOUB_NOSKAM = 4508,
-        MIX_UP_4509 = 4509,
-        DRHELL_FOR_GLORY_4510 = 4510,
-        SWITCHING_SIDES_4512 = 4512,
-        BLISTRINBARNAK_4513 = 4513,
-        BLISTRINBARNAK_4514 = 4514,
-        BLINKING = 4515,
-        TORPOR_4516 = 4516,
-        BARBA_TRICK = 4517,
-        SUPER_SCIENCE = 4518,
-        TINY_BIG_BANG = 4519,
-        TOE_BUSKER_4520 = 4520,
-        TOE_BUSKER_4521 = 4521,
-        KAMA_HAMAHA = 4522,
-        HOT_BELLIED = 4523,
-        CLEMENCE = 4524,
-        GUYDEAL = 4525,
-        THE_KEY_TO_SUCCESS_4526 = 4526,
-        THE_KEY_TO_SUCCESS_4527 = 4527,
-        AUSTERITY_4528 = 4528,
-        AUSTERITY_4529 = 4529,
-        SLAP = 4530,
-        DEVASTATING_SMILE = 4531,
-        GLOTTAL = 4532,
-        TOURNIQUET = 4533,
-        BLINDING_PLUMAGE = 4534,
-        BRISSOTTO = 4535,
-        PUDDLAKE_GLYPH = 4536,
-        PUDDLAKE = 4537,
-        REPULSIVE_WAVE_GLYPH = 4538,
-        REPULSIVE_WAVE_4539 = 4539,
-        PROTECTION_ZONE_GLYPH = 4540,
-        CALL_FOR_HELP = 4541,
-        TUNNELLIPSE = 4542,
-        DRHELL_THRU = 4543,
-        TRANSFER = 4544,
-        RE_EDHUCATION = 4545,
-        DHISPERSION = 4546,
-        FRACTURGESCENCE = 4547,
-        MALDRHEHYDE = 4548,
-        DRHELLING = 4549,
-        DHEFENSE = 4550,
-        GIFT = 4551,
-        PERFUGITIVE = 4552,
-        BODHY = 4553,
-        DRHESSING = 4554,
-        SKERRDH = 4555,
-        DHRIG = 4556,
-        WAR_DHRIVE = 4557,
-        BAIL_OUT = 4558,
-        MODERATION_4559 = 4559,
-        TIC = 4560,
-        TACT = 4561,
-        MIMISSILE = 4562,
-        BLOWBACK = 4563,
-        MIMIRAGE = 4564,
-        BREAKERS = 4565,
+
+        VOL_DE_BOUBOURSE_4478 = 4478,
+
+        VOL_DE_BOUBOURSE_4479 = 4479,
+
+        VOL_DE_BOUBOURSE_4480 = 4480,
+
+        CADEAU_EMPOISONNE_4481 = 4481,
+
+        BOURSICOTAGE_4482 = 4482,
+
+        BOURSICOTAGE_4483 = 4483,
+
+        BOURSICOTAGE_4484 = 4484,
+
+        CHANGEMENT_DE_CAMP_4485 = 4485,
+
+        TOUCHER_DE_NIDAS_4486 = 4486,
+
+        DECOFFRAGE_4487 = 4487,
+
+        LIQUIDATION_4488 = 4488,
+
+        ZIZANIE_4489 = 4489,
+
+        CONFUSION_4490 = 4490,
+
+        ATTRAPE_MUTIN_4491 = 4491,
+
+        GLYPHIPHI_GLYPHE_4492 = 4492,
+
+        ROC_PHORREUR_4493 = 4493,
+
+        MON_PRECIEUX_4494 = 4494,
+
+        CENTRAGE_4495 = 4495,
+
+        GLYPHIPHI_4496 = 4496,
+
+        PHORREUR_DE_GLOIRE_4497 = 4497,
+
+        ABÎME_4498 = 4498,
+
+        PHORCE_4499 = 4499,
+
+        BAIN_DE_LAVE_4500 = 4500,
+
+        GLISSEMENT_4501 = 4501,
+
+        EPICENTRE_4502 = 4502,
+
+        INTERETS_4504 = 4504,
+
+        OFRANOR_4505 = 4505,
+
+        KA_DABOR_4506 = 4506,
+
+        CHTE_HU__4507 = 4507,
+
+        NONOUBE_NOHARNAK_4508 = 4508,
+
+        EMBROUILLE_4509 = 4509,
+
+        PHORREUR_DE_GLOIRE_4510 = 4510,
+
+        CHANGEMENT_DE_CAMP_4512 = 4512,
+
+        PARTOUTATICE_4513 = 4513,
+
+        PARTOUTATICE_4514 = 4514,
+
+        CLIGNOTEMENT_4515 = 4515,
+
+        ASSOMNOLENCE_4516 = 4516,
+
+        BARBE_A_TRUCS_4517 = 4517,
+
+        SUPER_SAILLANT_4518 = 4518,
+
+        PETIT_BIG_BANG_4519 = 4519,
+
+        REFLETS_PLACIDES_4520 = 4520,
+
+        REFLETS_PLACIDES_4521 = 4521,
+
+        KAMA_HAMEA_4522 = 4522,
+
+        VENT_TRIPOTANT_4523 = 4523,
+
+        CLEMENCE_4524 = 4524,
+
+        GUIDEAL_4525 = 4525,
+
+        LA_CLEF_DU_SUCCES_4526 = 4526,
+
+        LA_CLEF_DU_SUCCES_4527 = 4527,
+
+        AUSTERITE_4528 = 4528,
+
+        AUSTERITE_4529 = 4529,
+
+        CLAQUE_4530 = 4530,
+
+        SOURIRE_RAVAGEUR_4531 = 4531,
+
+        GLOTTE_4532 = 4532,
+
+        TOURNIQUET_4533 = 4533,
+
+        PLUMEAU_CECITANT_4534 = 4534,
+
+        BRISSOLETTE_4535 = 4535,
+
+        FLAQUEDUC_GLYPHE_4536 = 4536,
+
+        FLAQUEDUC_4537 = 4537,
+
+        ONDE_REPULSIVE_GLYPHE_4538 = 4538,
+
+        ONDE_REPULSIVE_4539 = 4539,
+
+        ZONE_DE_PROTECTION_GLYPHE_4540 = 4540,
+
+        APPEL_A_LAIDE_4541 = 4541,
+
+        TUNNELLIPSE_4542 = 4542,
+
+        PERPHORRAGE_4543 = 4543,
+
+        TRANSFERT_4544 = 4544,
+
+        PHORMATION_4545 = 4545,
+
+        DISPERSION_4546 = 4546,
+
+        FRACTURGESCENCE_4547 = 4547,
+
+        PHORMOL_4548 = 4548,
+
+        PHORRAGE_4549 = 4549,
+
+        DEFENSE_4550 = 4550,
+
+        CADEAU_4551 = 4551,
+
+        RALE_4552 = 4552,
+
+        MORPHORAGE_4553 = 4553,
+
+        PHORMAGE_4554 = 4554,
+
+        PHOBIE_4555 = 4555,
+
+        PHOUILLE_4556 = 4556,
+
+        EPHORT_DE_GUERRE_4557 = 4557,
+
+        RENFLOUAGE_4558 = 4558,
+
+        PONDERATION_4559 = 4559,
+
+        TIQUE_4560 = 4560,
+
+        TACT_4561 = 4561,
+
+        MIMISSILE_4562 = 4562,
+
+        POU_4563 = 4563,
+
+        MIMIRAGE_4564 = 4564,
+
+        DEFERLANTE_4565 = 4565,
+
         DECOMPRESSION_4566 = 4566,
+
         ERUPTION_4567 = 4567,
-        JUMP_FOR_JOY = 4568,
-        LANGUOR = 4569,
-        WHIPINCH = 4570,
-        CHOMPEFY = 4571,
-        TRUNK_ODOUR = 4572,
-        BONDULATIONS = 4573,
-        MODEST_WORD = 4574,
-        UPLIFTING_WORD = 4575,
-        MOBILISING_WORD = 4576,
-        FUYUMI = 4577,
-        ABOBOLITION = 4578,
-        KAIRATE = 4579,
-        AERDALA_REVOLUTION = 4580,
-        AKWADALA_REVOLUTION = 4581,
-        FEUDALA_REVOLUTION = 4582,
-        TERRDALA_REVOLUTION = 4583,
-        PANDALA_REVOLUTION = 4584,
-        CULTURE = 4585,
-        SPIRITED_LEAP = 4586,
-        KLUNFING = 4587,
-        PEEPIN = 4588,
-        PEKISATION = 4589,
-        PROTECTION_ZONE = 4590,
-        BULKING_UP = 4591,
-        NECESSARY_ROUGHNESS = 4592,
-        MACROWAVES = 4593,
-        ROMPAGE = 4594,
-        GRABITTER = 4595,
-        IMPALLADIUM = 4596,
-        SUSCEPTIBILITY_4597 = 4597,
-        SUSCEPTIBILITY_4598 = 4598,
-        SEALED_FATE = 4599,
-        MAGITATION = 4600,
-        ARMADA_CADAVRA = 4601,
-        BACK_TO_LIFE = 4602,
-        POUCH_RETURN = 4603,
-        POUCH_VERIFICATION = 4604,
-        SURVIVAL_RATION = 4607,
-        ELEMENTAL_EQUILIBRIUM = 4608,
-        MORTAL_DODGE_4609 = 4609,
-        ERODED_CURE = 4610,
-        ERODED_SHIELD = 4611,
-        LOW_BLOWS_4612 = 4612,
-        EXPLOSIVE_DISAPPEARANCE_4613 = 4613,
-        EXPLOSIVE_DISAPPEARANCE_4614 = 4614,
-        EXPLOSIVE_DISAPPEARANCE = 4615,
-        FALLEN_EXCHANGEL_4616 = 4616,
-        FALLEN_EXCHANGEL_4617 = 4617,
-        MEASURED_DISTANCE_4620 = 4620,
-        PHLEGM = 4621,
-        SPINY_PROTECTION_4622 = 4622,
-        SPINY_PROTECTION_4623 = 4623,
-        GLASSY_GRAVITY = 4624,
-        RHADICAL = 4626,
-        NECROMALDRHEHYDE = 4627,
-        ANIMATION = 4628,
-        TOOLS = 4629,
-        EMERGENCY_KIT = 4630,
-        SLEAZBAG = 4631,
-        BARAKAKA = 4632,
-        FIREBALL = 4633,
-        RUNNY_CHEESE = 4634,
-        ROCK_FORT = 4635,
-        KREEMCHEAS = 4636,
-        STRONGBOXER = 4637,
-        FLAMING_CLUMSINESS = 4638,
-        SUMMONING_OF_IMMATURE_DHREAMER = 4639,
-        CUTE = 4640,
-        BAD_OMEN_4641 = 4641,
-        BAD_OMEN_4642 = 4642,
-        BAD_OMEN_4643 = 4643,
-        SPINY_BARRIER_4645 = 4645,
-        VOLATILE_BLAZE = 4646,
-        MAJUS_OATH_4647 = 4647,
-        HAZARDOUS_ENCHANTMENT_4648 = 4648,
-        UNSUCCESSFUL_KAMA_HAMAHA = 4649,
-        SALTY_ARMOUR = 4650,
-        GUIDE_TO_BRAVERY = 4651,
-        FREEKDOUT_PLASTRON = 4652,
-        WIN_WIN_4653 = 4653,
-        WIN_WIN_4654 = 4654,
-        CYCLIC_POWER_4655 = 4655,
-        WEAR_AND_TEAR_4657 = 4657,
-        INCAPACITATING_MOVEMENT = 4658,
-        MORTAL_DODGE_4659 = 4659,
-        MORTAL_DODGE = 4660,
-        AGENT_WEDBETTER_S_REGENERATING_WORD = 4661,
-        AGENT_WEDBETTER_S_FORBIDDEN_WORD = 4662,
-        AGENT_WEDBETTER_S_CURATIVE_WORD = 4663,
-        BANDIT_S_DRAGLINE = 4664,
-        BANDIT_S_INVISIBILITY = 4665,
-        BANDIT_S_LETHAL_ATTACK = 4666,
-        CYCLIC_POWER_4667 = 4667,
-        POACHER_S_FLUNKING = 4668,
-        SHOVEL_OF_TREACHERY = 4669,
-        RAVOGADO_S_LIVING_BAG = 4670,
-        MOLERY_4671 = 4671,
-        MOLERY_4672 = 4672,
-        DRHEAMER_RECALL = 4673,
-        EARTH_TO_EARTH = 4674,
-        SPINY_PROTECTION = 4675,
-        LOW_BLOWS_4676 = 4676,
-        BOOBYTRAPPED_TREASURE_4677 = 4677,
-        MAJUS_OATH_4678 = 4678,
-        TREASURE_HUNT = 4679,
-        HELPING_HAND = 4680,
-        SPINY_BARRIER_4681 = 4681,
-        BOOBYTRAPPED_TREASURE_4682 = 4682,
-        //HEEL = 4683,
-        BOOBYTRAPPED_TREASURE = 4684,
-        HAZARDOUS_ENCHANTMENT_4685 = 4685,
-        HAZARDOUS_ENCHANTMENT = 4686,
-        SPINY_BARRIER_4687 = 4687,
-        SPINY_BARRIER_4688 = 4688,
+
+        SAUT_DE_JOIE_4568 = 4568,
+
+        LANGUEUR_4569 = 4569,
+
+        FOUETREINTE_4570 = 4570,
+
+        MORSURPRISE_4571 = 4571,
+
+        HALEINE_DE_COFFRE_4572 = 4572,
+
+        BONDULATIONS_4573 = 4573,
+
+        MOT_DESTE_4574 = 4574,
+
+        MOT_RALE_4575 = 4575,
+
+        MOT_BILISATION_4576 = 4576,
+
+        FUYUMI_4577 = 4577,
+
+        ABOBOLISSEMENT_4578 = 4578,
+
+        KAIRATE_4579 = 4579,
+
+        REVOLUTION_AERDALA_4580 = 4580,
+
+        REVOLUTION_AKWADALA_4581 = 4581,
+
+        REVOLUTION_FEUDALA_4582 = 4582,
+
+        REVOLUTION_TERRDALA_4583 = 4583,
+
+        REVOLUTION_PANDALA_4584 = 4584,
+
+        CULTURE_4585 = 4585,
+
+        BOND_POUR_LE_MORAL_4586 = 4586,
+
+        KROUTAGE_4587 = 4587,
+
+        PIAILLEMENT_4588 = 4588,
+
+        PEKISATION_4589 = 4589,
+
+        ZONE_DE_PROTECTION_4590 = 4590,
+
+        GONFLETTE_4591 = 4591,
+
+        DECOFFRAGE_BRUT_4592 = 4592,
+
+        MACRO_ONDES_4593 = 4593,
+
+        GALOPAGE_4594 = 4594,
+
+        AIGRIPPEMENT_4595 = 4595,
+
+        EMPALLADIUM_4596 = 4596,
+
+        SUSCEPTIBILITE_4597 = 4597,
+
+        SUSCEPTIBILITE_4598 = 4598,
+
+        SORT_SCELLE_4599 = 4599,
+
+        MAGITATION_4600 = 4600,
+
+        ARMADA_CADAVRA_4601 = 4601,
+
+        RETOUR_A_LA_VIE_4602 = 4602,
+
+        RETOUR_DE_BOUBOURSE_4603 = 4603,
+
+        VERIFICATION_DE_BOUBOURSE_4604 = 4604,
+
+        RATION_DE_SURVIE_4607 = 4607,
+
+        EQUILIBRE_ELEMENTAIRE_4608 = 4608,
+
+        FUITE_MORTELLE_4609 = 4609,
+
+        CURE_ERODEE_4610 = 4610,
+
+        BOUCLIER_ERODE_4611 = 4611,
+
+        COUPS_BAS_4612 = 4612,
+
+        DISPARITION_DETONANTE_4613 = 4613,
+
+        DISPARITION_DETONANTE_4614 = 4614,
+
+        DISPARITION_DETONANTE_4615 = 4615,
+
+        ECHANGE_DECHU_4616 = 4616,
+
+        ECHANGE_DECHU_4617 = 4617,
+
+        DISTANCE_MESUREE_4620 = 4620,
+
+        FLEGME_4621 = 4621,
+
+        PROTECTION_EPINEUSE_4622 = 4622,
+
+        PROTECTION_EPINEUSE_4623 = 4623,
+
+        LOURDEUR_LIMPIDE_4624 = 4624,
+
+        CROPHORTE_4626 = 4626,
+
+        NECROPHORMOL_4627 = 4627,
+
+        ANIMATION_4628 = 4628,
+
+        OUTILLAGE_4629 = 4629,
+
+        TROUSSE_DE_SECOURS_4630 = 4630,
+
+        TROUSSE_PET_4631 = 4631,
+
+        BARAKAKA_4632 = 4632,
+
+        BOULE_DE_FEU_4633 = 4633,
+
+        FROMAGE_COULANT_4634 = 4634,
+
+        MAGELENT_4635 = 4635,
+
+        BOULE_DEMOINE_4636 = 4636,
+
+        KOFFREFOR_4637 = 4637,
+
+        MALADRESSE_ENFLAMMEE_4638 = 4638,
+
+        INVOCATION_DE_PHORREVEUR_IMMATURE_4639 = 4639,
+
+        MIGNON_4640 = 4640,
+
+        MAUVAIS_AUGURE_4641 = 4641,
+
+        MAUVAIS_AUGURE_4642 = 4642,
+
+        MAUVAIS_AUGURE_4643 = 4643,
+
+        BARRIERE_DEPINES_4645 = 4645,
+
+        INCENDIE_VOLATILE_4646 = 4646,
+
+        MECHANTEMENT_4647 = 4647,
+
+        ENCHANTEMENT_HASARDEUX_4648 = 4648,
+
+        KAMA_HAMEA_RATE_4649 = 4649,
+
+        ARMURE_SALEE_4650 = 4650,
+
+        GUIDE_DE_BRAVOURE_4651 = 4651,
+
+        PLASTRON_PSYCHOTE_4652 = 4652,
+
+        GAGNANT_GAGNANT_4653 = 4653,
+
+        GAGNANT_GAGNANT_4654 = 4654,
+
+        PUISSANCE_CYCLIQUE_4655 = 4655,
+
+        A_LUSURE_4657 = 4657,
+
+        DEPLACEMENTS_INCAPACITANTS_4658 = 4658,
+
+        FUITE_MORTELLE_4659 = 4659,
+
+        FUITE_MORTELLE_4660 = 4660,
+
+        MOT_DE_REGENERATION_DE_LAGENT_TIYETTE_4661 = 4661,
+
+        MOT_INTERDIT_DE_LAGENT_TIYETTE_4662 = 4662,
+
+        MOT_CURATIF_DE_LAGENT_TIYETTE_4663 = 4663,
+
+        REPERAGE_DU_BRIGAND_4664 = 4664,
+
+        INVISIBILITE_DU_BRIGAND_4665 = 4665,
+
+        ATTAQUE_MORTELLE_DU_BRIGAND_4666 = 4666,
+
+        PUISSANCE_CYCLIQUE_4667 = 4667,
+
+        CROUTAGE_DU_BRACONNIER_4668 = 4668,
+
+        PELLE_DE_TRAÎTRISE_4669 = 4669,
+
+        SAC_ANIME_DE_RENE_4670 = 4670,
+
+        TAUPINIERE_4671 = 4671,
+
+        TAUPINIERE_4672 = 4672,
+
+        RAPPEL_DU_PHORREVEUR_4673 = 4673,
+
+        TERRE_A_TERRE_4674 = 4674,
+
+        PROTECTION_EPINEUSE_4675 = 4675,
+
+        COUPS_BAS_4676 = 4676,
+
+        TRESOR_PIEGE_4677 = 4677,
+
+        MECHANTEMENT_4678 = 4678,
+
+        CHASSE_AU_TRESOR_4679 = 4679,
+
+        COUP_DE_POUCE_4680 = 4680,
+
+        BARRIERE_DEPINES_4681 = 4681,
+
+        TRESOR_PIEGE_4682 = 4682,
+
+        AU_PIED__4683 = 4683,
+
+        TRESOR_PIEGE_4684 = 4684,
+
+        ENCHANTEMENT_HASARDEUX_4685 = 4685,
+
+        ENCHANTEMENT_HASARDEUX_4686 = 4686,
+
+        BARRIERE_DEPINES_4687 = 4687,
+
+        BARRIERE_DEPINES_4688 = 4688,
+
         NOVA_4689 = 4689,
+
         NOVA_4690 = 4690,
-        GUILTY_PLEASURE_4691 = 4691,
-        GUILTY_PLEASURE_4692 = 4692,
-        GUILTY_PLEASURE = 4693,
-        IMPENDING_DEATH = 4694,
-        FOG_GLYPH_4695 = 4695,
-        MIST_4696 = 4696,
-        MIST_4697 = 4697,
-        CRITICAL_HIT = 4698,
-        ACID_PROJECTION = 4700,
-        INVIGORATING_EXPLOSION = 4701,
-        DELICATE_MATERIAL = 4702,
-        ACID_PUDDLE_GLYPH = 4703,
-        ACID_PUDDLE = 4704,
-        INVIGORATING_PUDDLE_GLYPH = 4705,
-        INVIGORATING_PUDDLE = 4706,
-        INVIGORATING_FLASK = 4707,
-        ACID_FLASK = 4708,
-        ALCHEMY_4709 = 4709,
-        ALCHEMY_4710 = 4710,
-        CHEMICAL_ATTRACTION = 4711,
-        FLASKTIVATION_4712 = 4712,
-        FLASKTIVATION_4713 = 4713,
-        FLOOD_4716 = 4716,
-        FEINTRIGUE = 4717,
-        SLAPRESSURE = 4718,
-        PLANTONYM = 4719,
-        DIVEARTH = 4720,
-        PROGRESSIVE_THROW = 4721,
-        FUSE_4722 = 4722,
-        FUSE_4723 = 4723,
-        WINDBREAKER = 4724,
-        REEL_SLY = 4725,
-        SENSE_OF_DUTY_4726 = 4726,
-        SENSE_OF_DUTY_4727 = 4727,
-        ISOLATION_TRAP = 4728,
-        ISOLATION_4729 = 4729,
-        ISOLATION_4730 = 4730,
-        DIRTEBUCS_4731 = 4731,
-        EARTH_CROSS = 4732,
-        MOON_JUMP = 4733,
-        KIMARITE = 4734,
-        DIRTEBUCS_4735 = 4735,
-        INCURABLE_POISON_4736 = 4736,
-        INCURABLE_POISON_4737 = 4737,
-        POWERFUL_CUT = 4738,
-        SALIVERY = 4739,
-        TONGUAGEMENT_4740 = 4740,
-        TONGUAGEMENT_4741 = 4741,
-        BRAZIERO = 4742,
-        PERSONNEL_DROP = 4743,
-        SHIELDED_SHELL_4744 = 4744,
-        SHIELDED_SHELL_4745 = 4745,
-        SHIELDED_SHELL = 4746,
-        HOSTRETCHER = 4747,
-        PINSECT = 4748,
-        ARACHNEE_WEB_4749 = 4749,
-        ARACHNEE_WEB_4750 = 4750,
-        ARACHNEE_WEB = 4751,
-        BURNGENCE = 4752,
-        DRAIN = 4753,
-        B_ARBTAGNAN = 4754,
-        DAFFY_DEAL = 4755,
-        TARGETED_POWER_4756 = 4756,
-        TARGETED_POWER_4757 = 4757,
-        REPLACEMENT_4758 = 4758,
-        LABYRINTH_4759 = 4759,
-        EXIT = 4760,
-        LABYRINTH_4761 = 4761,
-        LABYRINTH_4762 = 4762,
-        WALL_4763 = 4763,
-        BEARTRAP_TRAP = 4764,
-        BEARTRAP = 4765,
-        STAY_DRY = 4766,
-        STRATETRAP_TRAP = 4767,
-        STRATETRAP_4768 = 4768,
-        STRATETRAP_4769 = 4769,
-        DANGEROUS_PROXIMITY_4770 = 4770,
-        BOMB_ILICAL = 4771,
-        CUTTING_THE_CORD = 4772,
-        DANGEROUS_PROXIMITY_4773 = 4773,
-        FUMERUS = 4774,
-        ATTACK_4775 = 4775,
-        DOUBLE_4776 = 4776,
-        DOUBLE_4777 = 4777,
-        TOWARD_THE_LIGHT = 4778,
-        GUILTY = 4779,
-        SPINUNDATE_4780 = 4780,
-        SPINUNDATE_4781 = 4781,
-        DEVASKULLTATION = 4782,
-        WARNING_4783 = 4783,
-        WARNING = 4784,
-        SKOUL_4785 = 4785,
-        SKOUL_4786 = 4786,
-        SKOUL = 4787,
-        LABYRINTH_4788 = 4788,
-        RAPID_MOVEMENT = 4789,
-        LIFTOFF = 4790,
-        RAGEQUIT = 4791,
-        SAVING_VENOM_4793 = 4793,
-        SAVING_VENOM_4794 = 4794,
-        TOXMOSIS_4795 = 4795,
-        TOXMOSIS_4796 = 4796,
-        VOLATILE_POISON_GLYPH = 4797,
-        VOLATILE_POISON_4798 = 4798,
-        VOLATILE_POISON_4799 = 4799,
-        VILE_RUSE = 4800,
-        PUDDLACK = 4801,
+
+        PECHE_MIGNON_4691 = 4691,
+
+        PECHE_MIGNON_4692 = 4692,
+
+        PECHE_MIGNON_4693 = 4693,
+
+        MORT_EN_SURSIS_4694 = 4694,
+
+        BRUME_GLYPHE_4695 = 4695,
+
+        BRUME_4696 = 4696,
+
+        BRUME_4697 = 4697,
+
+        COUP_CRITIQUE_4698 = 4698,
+
+        PROJECTION_DACIDE_4700 = 4700,
+
+        EXPLOSION_REVIGORANTE_4701 = 4701,
+
+        MATERIEL_FRAGILE_4702 = 4702,
+
+        FLAQUE_DACIDE_GLYPHE_4703 = 4703,
+
+        FLAQUE_DACIDE_4704 = 4704,
+
+        FLAQUE_REVIGORANTE_GLYPHE_4705 = 4705,
+
+        FLAQUE_REVIGORANTE_4706 = 4706,
+
+        FIOLE_REVIGORANTE_4707 = 4707,
+
+        FIOLE_DACIDE_4708 = 4708,
+
+        ALCHIMIE_4709 = 4709,
+
+        ALCHIMIE_4710 = 4710,
+
+        ATTIRANCE_CHIMIQUE_4711 = 4711,
+
+        FIOLIE_4712 = 4712,
+
+        FIOLIE_4713 = 4713,
+
+        DEBORDEMENT_4716 = 4716,
+
+        FEINTRIGUE_4717 = 4717,
+
+        COUPRESSION_4718 = 4718,
+
+        PLANTONYME_4719 = 4719,
+
+        DECROSSAGE_4720 = 4720,
+
+        TIR_PROGRESSIF_4721 = 4721,
+
+        AMORCE_4722 = 4722,
+
+        AMORCE_4723 = 4723,
+
+        COUPE_VENT_4724 = 4724,
+
+        MOULINET_SOURNOIS_4725 = 4725,
+
+        SENS_DU_DEVOIR_4726 = 4726,
+
+        SENS_DU_DEVOIR_4727 = 4727,
+
+        ISOLEMENT_PIEGE_4728 = 4728,
+
+        ISOLEMENT_4729 = 4729,
+
+        ISOLEMENT_4730 = 4730,
+
+        DECHARGE_EN_SALLE_4731 = 4731,
+
+        CROSSE_A_TERRE_4732 = 4732,
+
+        SAUT_DE_LUNE_4733 = 4733,
+
+        KIMARITE_4734 = 4734,
+
+        DECHARGE_EN_SALLE_4735 = 4735,
+
+        POISON_INCURABLE_4736 = 4736,
+
+        POISON_INCURABLE_4737 = 4737,
+
+        COUP_PERCUTANT_4738 = 4738,
+
+        SALIVRAISON_4739 = 4739,
+
+        LANGAGEMENT_4740 = 4740,
+
+        LANGAGEMENT_4741 = 4741,
+
+        BRAZERO_4742 = 4742,
+
+        LARGAGE_PERSONNEL_4743 = 4743,
+
+        CARAPACE_GARDEE_4744 = 4744,
+
+        CARAPACE_GARDEE_4745 = 4745,
+
+        CARAPACE_GARDEE_4746 = 4746,
+
+        OFFENSIVIERE_4747 = 4747,
+
+        PINSECTE_4748 = 4748,
+
+        ETOILE_DARAKNE_4749 = 4749,
+
+        ETOILE_DARAKNE_4750 = 4750,
+
+        ETOILE_DARAKNE_4751 = 4751,
+
+        BRULURGENCE_4752 = 4752,
+
+        DRAIN_4753 = 4753,
+
+        DARDAGNAN_4754 = 4754,
+
+        PLONGEON_QUILLE_4755 = 4755,
+
+        PUISANCE_CIBLE_4756 = 4756,
+
+        PUISSANCE_CIBLE_4757 = 4757,
+
+        REMPLACEMENT_4758 = 4758,
+
+        LABYRINTHE_4759 = 4759,
+
+        SORTIE_4760 = 4760,
+
+        LABYRINTHE_4761 = 4761,
+
+        LABYRINTHE_4762 = 4762,
+
+        MUR_4763 = 4763,
+
+        PIEGE_A_LE_OURS_PIEGE_4764 = 4764,
+
+        PIEGE_A_LE_OURS_4765 = 4765,
+
+        SANS_SE_MOUILLER_4766 = 4766,
+
+        STRAPIEGE_PIEGE_4767 = 4767,
+
+        STRAPIEGE_4768 = 4768,
+
+        STRAPIEGE_4769 = 4769,
+
+        RAPPROCHEMENT_DANGEREUX_4770 = 4770,
+
+        BOMBE_ILLICALE_4771 = 4771,
+
+        DECROCHAGE_DE_CORDON_4772 = 4772,
+
+        RAPPROCHEMENT_DANGEREUX_4773 = 4773,
+
+        FUMERUS_4774 = 4774,
+
+        ATTENTAT_4775 = 4775,
+
+        DOUBLAGE_4776 = 4776,
+
+        DOUBLAGE_4777 = 4777,
+
+        VERS_LA_LUMIERE_4778 = 4778,
+
+        COUPABLE_4779 = 4779,
+
+        TOURNOYADE_4780 = 4780,
+
+        TOURNOYADE_4781 = 4781,
+
+        CRANEANTISSEMENT_4782 = 4782,
+
+        AVERTISSEMENT_4783 = 4783,
+
+        AVERTISSEMENT_4784 = 4784,
+
+        CRAMES_4785 = 4785,
+
+        CRAMES_4786 = 4786,
+
+        CRAMES_4787 = 4787,
+
+        LABYRINTHE_4788 = 4788,
+
+        DEPLACEMENT_RAPIDE_4789 = 4789,
+
+        DECALAGE_4790 = 4790,
+
+        RAGEQUIT_4791 = 4791,
+
+        VENIN_SALVATEUR_4793 = 4793,
+
+        VENIN_SALVATEUR_4794 = 4794,
+
+        TOXMOSE_4795 = 4795,
+
+        TOXMOSE_4796 = 4796,
+
+        POISON_VOLATILE_GLYPHE_4797 = 4797,
+
+        POISON_VOLATILE_4798 = 4798,
+
+        POISON_VOLATILE_4799 = 4799,
+
+        VILE_RUSE_4800 = 4800,
+
+        FLACUNE_4801 = 4801,
+
         KUTCHA_LIBRE_4802 = 4802,
+
         KUTCHA_LIBRE_4803 = 4803,
-        KUTCHA_LIBRE = 4804,
-        STARING_CELL = 4805,
-        TURBULOL = 4806,
-        ENDANCEMENT = 4807,
-        FUMIGATION = 4808,
-        PLACIDITY = 4809,
-        RIPLEY_SCOTT_S_ENCHANTMENT = 4811,
-        WATERLOG_BOMB = 4812,
-        VENOM = 4813,
-        REPELLING_STING = 4814,
-        SPIRITUAL_POISONING = 4815,
-        ANNOYING_FANFARE = 4818,
-        LIVING_LUGGAGE = 4819,
-        MASS_BAGRIFICE = 4820,
-        DIVIDED_SWARM = 4821,
+
+        KUTCHA_LIBRE_4804 = 4804,
+
+        CASE_DEPART_4805 = 4805,
+
+        TOURBILAULE_4806 = 4806,
+
+        DANSORCELLEMENT_4807 = 4807,
+
+        ENFUMAGE_4808 = 4808,
+
+        PLACIDITE_4809 = 4809,
+
+        ENCHANTEMENT_DE_RIPLEY_SCOTT_4811 = 4811,
+
+        BOMBE_QUI_MOUILLE_4812 = 4812,
+
+        VENIN_4813 = 4813,
+
+        PIQURE_REPOUSSANTE_4814 = 4814,
+
+        EMPOISONNEMENT_SPIRITUEL_4815 = 4815,
+
+        FANFARE_AGAÇANTE_4818 = 4818,
+
+        BAGAGE_ANIME_4819 = 4819,
+
+        SAC_RIFICE_DE_MASSE_4820 = 4820,
+
+        NUEE_FRACTIONNEE_4821 = 4821,
+
         REPRESSION_4822 = 4822,
+
         REPRESSION_4823 = 4823,
-        CLAWVICE = 4824,
-        UNDURAYTING_4825 = 4825,
-        UNDURAYTING_4826 = 4826,
-        UNDURAYTING = 4827,
-        MASS_INSIDIOUS_POISON = 4828,
-        AGENT_DURANCE_S_FORCED_PUNISHMENT = 4829,
-        SWARM_4830 = 4830,
-        AGENT_DURANCE_S_FOOT = 4831,
-        AGENT_DURANCE_S_ATTRACTION = 4832,
-        SWARM_4833 = 4833,
-        SWARM_4834 = 4834,
-        HERD = 4835,
-        BOUNTY_HUNTER_MASK = 4836,
-        BOUNTY_HUNTER_FURIA = 4837,
-        BOUNTY_HUNTER_CAPER = 4838,
-        BOUNTY_HUNTER_ENERGY = 4839,
-        SPIRITUAL_LEASH_4840 = 4840,
-        GORGING_4841 = 4841,
-        GORGING_4842 = 4842,
-        GORGING = 4843,
-        AURA_BOMB = 4844,
-        TRAPPED_SLABS_4845 = 4845,
-        TRAPPED_SLABS_4846 = 4846,
-        CONFLAGRATION_4847 = 4847,
-        TRAPPED_SLABS = 4848,
-        CONFLAGRATION_4849 = 4849,
-        BOMBUSH = 4850,
-        SUBVERSION = 4851,
-        BOOTING = 4852,
-        AURA_BOMB_TRIGGERED = 4853,
-        SWARM_4854 = 4854,
-        BLOCKING_TRAP_4855 = 4855,
-        BLOCKING_TRAP_4856 = 4856,
-        NUMBING_DETACHMENT = 4857,
-        BLINDING_POWDER_4858 = 4858,
-        BLINDING_POWDER_4859 = 4859,
-        SNEAKY_ATTRACTION = 4860,
-        CIRCULAR_CUT = 4861,
-        SUBTLETY_4862 = 4862,
-        PROXIMITY_4863 = 4863,
-        PROXIMITY_4864 = 4864,
-        DANGEROUS_PROXIMITY = 4865,
-        COMPROMISED_RETREAT = 4866,
-        BINDING_BANDAGES = 4867,
-        SUDDEN_DEATH = 4868,
-        MEASURED_DISTANCE_4869 = 4869,
+
+        GRIFT_4824 = 4824,
+
+        RAYONDULE_4825 = 4825,
+
+        RAYONDULE_4826 = 4826,
+
+        RAYONDULE_4827 = 4827,
+
+        POISON_INSIDIEUX_DE_MASSE_4828 = 4828,
+
+        CHATIMENT_FORCE_DE_LAGENT_DURHAN_4829 = 4829,
+
+        ESSAIM_4830 = 4830,
+
+        PIED_DE_LAGENT_DURHAN_4831 = 4831,
+
+        ATTIRANCE_DE_LAGENT_DURHAN_4832 = 4832,
+
+        ESSAIM_4833 = 4833,
+
+        ESSAIM_4834 = 4834,
+
+        HERD_4835 = 4835,
+
+        MASQUE_DU_CHASSEUR_DE_PRIMES_4836 = 4836,
+
+        FURIA_DU_CHASSEUR_DE_PRIMES_4837 = 4837,
+
+        CABRIOLE_DU_CHASSEUR_DE_PRIMES_4838 = 4838,
+
+        FOUGUE_DU_CHASSEUR_DE_PRIMES_4839 = 4839,
+
+        _4840 = 4840,
+
+        GAVAGE_4841 = 4841,
+
+        GAVAGE_4842 = 4842,
+
+        GAVAGE_4843 = 4843,
+
+        AURA_BOMBE_4844 = 4844,
+
+        DALLES_PIEGEES_4845 = 4845,
+
+        DALLES_PIEGEES_4846 = 4846,
+
+        EMBRASEMENT_4847 = 4847,
+
+        DALLES_PIEGEES_4848 = 4848,
+
+        EMBRASEMENT_4849 = 4849,
+
+        BOMBUSCADE_4850 = 4850,
+
+        DETOURNEMENT_4851 = 4851,
+
+        BOTTAGE_4852 = 4852,
+
+        AURA_BOMBE_DECLENCHE_4853 = 4853,
+
+        ESSAIM_4854 = 4854,
+
+        PIEGE_BLOQUANT_4855 = 4855,
+
+        PIEGE_BLOQUANT_4856 = 4856,
+
+        DEGAGEMENT_ENGOURDISSANT_4857 = 4857,
+
+        POUDRE_AVEUGLANTE_4858 = 4858,
+
+        POUDRE_AVEUGLANTE_4859 = 4859,
+
+        ATTIRANCE_SOURNOISE_4860 = 4860,
+
+        COUPE_CIRCULAIRE_4861 = 4861,
+
+        SUBTILITE_4862 = 4862,
+
+        RAPPROCHEMENT_4863 = 4863,
+
+        RAPPROCHEMENT_4864 = 4864,
+
+        PROXIMITE_DANGEREUSE_4865 = 4865,
+
+        RETRAITE_COMPROMISE_4866 = 4866,
+
+        BANDELETTES_AGRIPPANTES_4867 = 4867,
+
+        MORT_SUBITE_4868 = 4868,
+
+        DISTANCE_MESUREE_4869 = 4869,
+
         BERSERKER_4870 = 4870,
+
         BERSERKER_4871 = 4871,
-        DANGEROUS_GAME_4872 = 4872,
-        DANGEROUS_GAME_4873 = 4873,
-        LARCENY_4874 = 4874,
+
+        JEU_DANGEREUX_4872 = 4872,
+
+        JEU_DANGEREUX_4873 = 4873,
+
+        LARCIN_4874 = 4874,
+
         EVASION_4875 = 4875,
+
         EVASION_4876 = 4876,
-        DANGEROUS_GAME_4877 = 4877,
-        SUBTLETY_4878 = 4878,
-        SPEEDING = 4879,
-        FLIES = 4880,
-        DIY_PROTECTION = 4881,
-        WOODEN_SWORD_4882 = 4882,
-        DISASSEMBLY_4883 = 4883,
-        FOUNTAIN_OF_TEARS = 4884,
-        SUFFERING_4885 = 4885,
-        SUFFERING_4886 = 4886,
-        AGONY_OF_DAMNATION = 4887,
-        SAD_SOUL = 4888,
-        TRENCHER = 4889,
-        BUTCHER_RAGE = 4890,
-        PYROBOOM_4891 = 4891,
-        PYROBOOM_4892 = 4892,
-        PYROBOOM = 4893,
-        AQUABOOM_4895 = 4895,
-        AQUABOOM_4896 = 4896,
-        AQUABOOM = 4897,
-        AEROBOOM_4898 = 4898,
-        AEROBOOM_4899 = 4899,
-        AEROBOOM = 4900,
-        GEOBOOM_4901 = 4901,
-        GEOBOOM_4902 = 4902,
-        GEOBOOM = 4903,
-        NEUTERBOOM_4904 = 4904,
-        NEUTERBOOM_4905 = 4905,
-        NEUTERBOOM = 4906,
-        TICKTOCKBOOM = 4907,
-        BANDITRY = 4908,
-        SERRATED_JAVELIN = 4909,
-        GUTTED = 4910,
-        EVISCERATION = 4911,
-        GUTTING_SHOVEL = 4912,
-        SLUGGISH_ACCELERATION = 4913,
-        VOICELESS = 4914,
-        MAUVE = 4915,
-        LENIENT_4916 = 4916,
-        LENIENT_4917 = 4917,
-        MINI_THROW = 4918,
-        MINI_JUMP = 4919,
-        POUCHIPINCH_4920 = 4920,
-        POUCH_THEFT_4921 = 4921,
-        FLAMING_SKEWER = 4922,
-        DISTANT_ARROW = 4923,
-        DRHELLER_EYE = 4924,
-        LENIENCY = 4925,
-        COMPLETE_EVASION = 4926,
-        LEAN = 4927,
-        SHURA_KEN = 4928,
-        NAN_JATO = 4929,
-        KAGI_NAWAK = 4930,
+
+        JEU_DANGEREUX_4877 = 4877,
+
+        SUBTILITE_4878 = 4878,
+
+        EXCES_DE_VITESSE_4879 = 4879,
+
+        MOUCHES_4880 = 4880,
+
+        PROTECTION_BRICOLEE_4881 = 4881,
+
+        EPEE_EN_BOIS_4882 = 4882,
+
+        DEMONTAGE_4883 = 4883,
+
+        FONTAINE_DE_LARMES_4884 = 4884,
+
+        SOUFFRANCE_4885 = 4885,
+
+        SOUFFRANCE_4886 = 4886,
+
+        SALE_AGONIE_4887 = 4887,
+
+        TRISTE_AME_4888 = 4888,
+
+        TRANCHOIR_4889 = 4889,
+
+        RAGE_BOUCHERE_4890 = 4890,
+
+        PYROBOUM_4891 = 4891,
+
+        PYROBOUM_4892 = 4892,
+
+        PYROBOUM_4893 = 4893,
+
+        AQUABOUM_4895 = 4895,
+
+        AQUABOUM_4896 = 4896,
+
+        AQUABOUM_4897 = 4897,
+
+        EOBOUM_4898 = 4898,
+
+        EOBOUM_4899 = 4899,
+
+        EOBOUM_4900 = 4900,
+
+        GEOBOUM_4901 = 4901,
+
+        GEOBOUM_4902 = 4902,
+
+        GEOBOUM_4903 = 4903,
+
+        NEUTERBOUM_4904 = 4904,
+
+        NEUTERBOUM_4905 = 4905,
+
+        NEUTERBOUM_4906 = 4906,
+
+        TICTACBOUM_4907 = 4907,
+
+        BANDITISME_4908 = 4908,
+
+        JAVELINE_DENTELEE_4909 = 4909,
+
+        VENTRU_4910 = 4910,
+
+        EVISCERATION_4911 = 4911,
+
+        PELLE_EVENTREUSE_4912 = 4912,
+
+        ACCELERATION_POUSSIVE_4913 = 4913,
+
+        APHONE_4914 = 4914,
+
+        MAUVE_4915 = 4915,
+
+        INDULGENT_4916 = 4916,
+
+        INDULGENT_4917 = 4917,
+
+        MINI_LANCER_4918 = 4918,
+
+        MINI_SAUT_4919 = 4919,
+
+        BOURSICOTAGE_4920 = 4920,
+
+        VOL_DE_BOUBOURSE_4921 = 4921,
+
+        BROCHETTE_ENFLAMMEE_4922 = 4922,
+
+        FLECHE_LOINTAINE_4923 = 4923,
+
+        ŒIL_DE_PHORREUR_4924 = 4924,
+
+        INDULGENCE_4925 = 4925,
+
+        ESQUIVE_TOTALE_4926 = 4926,
+
+        GITE_4927 = 4927,
+
+        SOURIT_KEN_4928 = 4928,
+
+        NAIN_JAT_4929 = 4929,
+
+        KAGI_NAWAK_4930 = 4930,
+
         DECELLULARISATION_4931 = 4931,
+
         DECELLULARISATION_4932 = 4932,
-        DECELLULARISATION = 4933,
+
+        DECELLULARISATION_4933 = 4933,
+
         DISLOCATION_4934 = 4934,
+
         DISLOCATION_4935 = 4935,
-        CURATIVE_RESTORATION_4936 = 4936,
-        CURATIVE_RESTORATION_4937 = 4937,
-        CURATIVE_RESTORATION_4938 = 4938,
-        SUBTLE_EXCHANGE = 4939,
-        GASTRIC_REFLUX = 4940,
-        PROXIMITY_RESTORATION_4941 = 4941,
-        PROXIMITY_RESTORATION_4942 = 4942,
-        INFLATION = 4943,
-        PROXIMITY_RESTORATION = 4944,
-        ACID_JET = 4945,
-        DISTANT_RESTORATION_4946 = 4946,
-        DISTANT_RESTORATION_4947 = 4947,
-        DISTANT_RESTORATION = 4948,
-        SECRETION = 4949,
-        REPULSIVE_DANCE = 4950,
-        MOBILE_RESTORATION_4951 = 4951,
-        MOBILE_RESTORATION_4952 = 4952,
-        MOBILE_RESTORATION = 4953,
-        CONTAMINATION = 4954,
-        VIRAL_BALL = 4955,
-        ELEMENTAL_RESTORATION_4956 = 4956,
-        ELEMENTAL_RESTORATION_4957 = 4957,
-        ELEMENTAL_RESTORATION = 4959,
-        HEARTBURN = 4961,
-        UNDERGROUND_ATTACK = 4963,
-        DISLOCATION = 4964,
-        KROBIAN_RESTORATION = 4965,
-        INFECTIOUS_PROTOGLYPH_4966 = 4966,
-        CELLULAR_ATTRACTION = 4967,
-        INFECTIOUS_PROTOGLYPH_4968 = 4968,
-        PROTOMATISM = 4969,
-        PHASE_DIFFERENCE_4970 = 4970,
-        PHASE_DIFFERENCE_4971 = 4971,
-        INFECTIOUS_RESTORATION_4972 = 4972,
-        JET_PROTO = 4973,
-        INFECTIOUS_RESTORATION_4974 = 4974,
-        ELECTROCUTION = 4975,
-        INFECTION = 4976,
-        DIMENSIONAL_DISORDER = 4980,
-        TRANSCENDENCE_4981 = 4981,
-        VOYAGE_OF_THE_PERCH_4982 = 4982,
-        VOYAGE = 4983,
-        MOLECULAR_INSTABILITY = 4984,
-        PERCH_JOURNEY = 4985,
-        VOYAGE_OF_THE_PERCH_4987 = 4987,
-        VOYAGE_OF_THE_PERCH_4988 = 4988,
-        CELESTIAL_MEDITATION_4989 = 4989,
-        CALL_OF_THE_PERCH = 4990,
-        VOYAGE_OF_THE_PERCH_4992 = 4992,
-        CELESTIAL_MEDITATION_4993 = 4993,
-        TRANSCENDENCE_4994 = 4994,
-        CELESTIAL_MEDITATION = 4995,
-        JETLAG_4996 = 4996,
-        ZEITGEIST_4997 = 4997,
-        ZEITGEIST_4998 = 4998,
-        ZEITGEIST_4999 = 4999,
-        TELEPORTATION_GLYPH_5000 = 5000,
-        TELEPORTATION_GLYPH_5001 = 5001,
-        TELEPORTATION_GLYPH_5002 = 5002,
+
+        RESTAURATION_CURATIVE_4936 = 4936,
+
+        RESTAURATION_CURATIVE_4937 = 4937,
+
+        RESTAURATION_CURATIVE_4938 = 4938,
+
+        ECHANGE_SUBTILE_4939 = 4939,
+
+        REMONTEE_GASTRIQUE_4940 = 4940,
+
+        RESTAURATION_DE_PROXIMITE_4941 = 4941,
+
+        RESTAURATION_DE_PROXIMITE_4942 = 4942,
+
+        GONFLEMENT_4943 = 4943,
+
+        RESTAURATION_DE_PROXIMITE_4944 = 4944,
+
+        JET_DACIDE_4945 = 4945,
+
+        RESTAURATION_ELOIGNEE_4946 = 4946,
+
+        RESTAURATION_ELOIGNEE_4947 = 4947,
+
+        RESTAURATION_ELOIGNEE_4948 = 4948,
+
+        SECRETION_4949 = 4949,
+
+        DANSE_REPULSIVE_4950 = 4950,
+
+        RESTAURATION_MOBILE_4951 = 4951,
+
+        RESTAURATION_MOBILE_4952 = 4952,
+
+        RESTAURATION_MOBILE_4953 = 4953,
+
+        CONTAMINATION_4954 = 4954,
+
+        BOULET_VIRAL_4955 = 4955,
+
+        RESTAURATION_ELEMENTAIRE_4956 = 4956,
+
+        RESTAURATION_ELEMENTAIRE_4957 = 4957,
+
+        _4958 = 4958,
+
+        RESTAURATION_ELEMENTAIRE_4959 = 4959,
+
+        _4960 = 4960,
+
+        BRULURE_DESTOMAC_4961 = 4961,
+
+        _4962 = 4962,
+
+        ATTAQUE_SOUTERRAINE_4963 = 4963,
+
+        DISLOCATION_4964 = 4964,
+
+        RESTAURATION_KROBIENNE_4965 = 4965,
+
+        PROTOGLYPHE_INFECTIEUX_4966 = 4966,
+
+        ATTRACTION_CELLULAIRE_4967 = 4967,
+
+        PROTOGLYPHE_INFECTIEUX_4968 = 4968,
+
+        PROTOMATISME_4969 = 4969,
+
+        DEPHASAGE_4970 = 4970,
+
+        DEPHASAGE_4971 = 4971,
+
+        RESTAURATION_INFECTIEUSE_4972 = 4972,
+
+        JET_PROTO_4973 = 4973,
+
+        RESTAURATION_INFECTIEUSE_4974 = 4974,
+
+        ELECTROCUTION_4975 = 4975,
+
+        INFECTION_4976 = 4976,
+
+        _4979 = 4979,
+
+        DESORDRE_DIMENSIONNEL_4980 = 4980,
+
+        TRANSCENDANCE_4981 = 4981,
+
+        VOYAGE_DU_PERCHOIR_4982 = 4982,
+
+        VOYAGE_4983 = 4983,
+
+        INSTABILITE_MOLECULAIRE_4984 = 4984,
+
+        VOYAGE_DU_PERCHOIR_4985 = 4985,
+
+        VOYAGE_DU_PERCHOIR_4987 = 4987,
+
+        VOYAGE_DU_PERCHOIR_4988 = 4988,
+
+        MEDITATION_CELESTE_4989 = 4989,
+
+        APPEL_DU_PERCHOIR_4990 = 4990,
+
+        VOYAGE_DU_PERCHOIR_4992 = 4992,
+
+        MEDITATION_CELESTE_4993 = 4993,
+
+        TRANSCENDANCE_4994 = 4994,
+
+        MEDITATION_CELESTE_4995 = 4995,
+
+        DECALAGE_HORAIRE_4996 = 4996,
+
+        HEURE_DU_TEMPS_4997 = 4997,
+
+        HEURE_DU_TEMPS_4998 = 4998,
+
+        HEURE_DU_TEMPS_4999 = 4999,
+
+        GLYPHE_TELEPORTEUR_5000 = 5000,
+
+        GLYPHE_TELEPORTEUR_5001 = 5001,
+
+        GLYPHE_TELEPORTEUR_5002 = 5002,
+
         VORTEXIPHAN_5003 = 5003,
-        ZEITGEIST_5005 = 5005,
+
+        HEURE_DU_TEMPS_5005 = 5005,
+
         VORTEXIPHAN_5006 = 5006,
+
         VORTEXIPHAN_5007 = 5007,
+
         VORTEXIPHAN_5008 = 5008,
-        VORTEXIPHAN = 5009,
-        TELEPORTATION_GLYPH_5011 = 5011,
-        TELEPORTATION_GLYPH_5012 = 5012,
-        WINGED_ATTRACTION_5013 = 5013,
-        WINGED_ATTRACTION_5014 = 5014,
-        WINGED_ATTRACTION = 5015,
-        RING_OF_FIRE = 5016,
-        DEADALOSS = 5017,
-        OPTIC_SHOTS = 5018,
-        DOUBLE_KROSS = 5019,
-        POISONED_ART_5020 = 5020,
-        POISONED_ART_5021 = 5021,
-        RAY_OF_PLIGHT = 5022,
-        SITTING_DUCK = 5023,
-        HYSTAIRIA_5024 = 5024,
-        TELEPORTATION_GLYPH_5025 = 5025,
-        ABSORBENT_SHIELD = 5026,
-        CRAZY_DRAIN = 5027,
-        MORCRUX = 5028,
-        PLACEMENT_5029 = 5029,
-        PLACEMENT_5030 = 5030,
-        TAKEOFF_5031 = 5031,
-        TAKEOFF_5032 = 5032,
-        NEUTRALISATION = 5033,
-        CTRL_ALT_RAGE_5034 = 5034,
-        RAY_BINDS = 5035,
-        MISSED_REBOUND = 5036,
-        CTRL_ALT_RAGE_5037 = 5037,
-        CTRL_ALT_RAGE_5038 = 5038,
-        MASSURANCE = 5039,
-        DISCONTENT = 5040,
-        CTRL_ALT_RAGE_5041 = 5041,
-        BRUTE_FORCE = 5042,
-        FISTACHIO = 5043,
-        CTRL_ALT_RAGE_5044 = 5044,
-        MORONIMO = 5045,
-        WALLOP = 5046,
-        CTRL_ALT_RAGE_5047 = 5047,
-        POISON_PUNCH = 5048,
-        HITHIKER = 5049,
-        CTRL_ALT_RAGE = 5050,
+
+        VORTEXIPHAN_5009 = 5009,
+
+        GLYPHE_TELEPORTEUR_5011 = 5011,
+
+        GLYPHE_TELEPORTEUR_5012 = 5012,
+
+        ATTRACTION_AILEE_5013 = 5013,
+
+        ATTRACTION_AILEE_5014 = 5014,
+
+        ATTRACTION_AILEE_5015 = 5015,
+
+        CERCLE_DE_FEU_5016 = 5016,
+
+        TERRE_MYTHE_5017 = 5017,
+
+        TIRS_OPTIQUES_5018 = 5018,
+
+        SUPERFIDIE_5019 = 5019,
+
+        PETIT_POISON_5020 = 5020,
+
+        PETIT_POISON_5021 = 5021,
+
+        RAYONIRIQUE_5022 = 5022,
+
+        PLUMIERE_5023 = 5023,
+
+        ENVOLUPTE_5024 = 5024,
+
+        GLYPHE_TELEPORTEUR_5025 = 5025,
+
+        BOUCLIER_ABSORBANT_5026 = 5026,
+
+        FEINTERCEPTION_5027 = 5027,
+
+        HOXOR_5028 = 5028,
+
+        MISE_EN_SITUATION_5029 = 5029,
+
+        MISE_EN_SITUATION_5030 = 5030,
+
+        DECOLLAGE_5031 = 5031,
+
+        DECOLLAGE_5032 = 5032,
+
+        NEUTRALISATION_5033 = 5033,
+
+        RAGE_MAHAL_5034 = 5034,
+
+        RAYONS_ENTRAVANTS_5035 = 5035,
+
+        REBOND_MANQUE_5036 = 5036,
+
+        RAGE_MAHAL_5037 = 5037,
+
+        RAGE_MAHAL_5038 = 5038,
+
+        MASSURANCE_5039 = 5039,
+
+        MECONTENTEMENT_5040 = 5040,
+
+        RAGE_MAHAL_5041 = 5041,
+
+        BRUTE_HALEINE_5042 = 5042,
+
+        POING_TERNE_5043 = 5043,
+
+        RAGE_MAHAL_5044 = 5044,
+
+        TOURBETE_5045 = 5045,
+
+        MASSUE_5046 = 5046,
+
+        RAGE_MAHAL_5047 = 5047,
+
+        POINZON_5048 = 5048,
+
+        TAPLAUDISSEMENT_5049 = 5049,
+
+        RAGE_MAHAL_5050 = 5050,
+
         FRAGMENTATION_5051 = 5051,
+
         FRAGMENTATION_5052 = 5052,
-        MASSASSIN = 5053,
-        INSTANT_TRANSMISSION = 5054,
-        DREAMY_WARMUP = 5055,
-        KLEPTORNADO = 5056,
-        CIRCLE_OF_LIGHT = 5057,
-        FARCE_DOWN_5058 = 5058,
-        FARCE_DOWN_5059 = 5059,
-        ACTION = 5060,
-        ALL_IN_GOOD_TIME_5061 = 5061,
-        ALL_IN_GOOD_TIME_5062 = 5062,
-        ZOMBIE_CONTAMINATION_5063 = 5063,
-        ZOMBIE_CONTAMINATION_5064 = 5064,
-        CLOCKROCK_5065 = 5065,
-        CLOCKROCK_5066 = 5066,
-        CLOCKROCK = 5067,
-        TIME_OUT = 5068,
-        VORMHOLE_5069 = 5069,
-        VORMHOLE_5070 = 5070,
-        COSMIC_GRAVITY = 5071,
-        REFLECTIVE_ARMOUR_5072 = 5072,
-        REFLECTIVE_ARMOUR_5073 = 5073,
-        REFLECTIVE_ARMOUR_5074 = 5074,
-        REFLECTIVE_ARMOUR_5075 = 5075,
-        REFLECTIVE_ARMOUR = 5076,
-        CHRONOCHARGE = 5077,
-        REJUVENATION = 5078,
-        LEAP_THROUGH_TIME = 5079,
-        YORTUFARAWAY_5080 = 5080,
-        YORTUFARAWAY_5081 = 5081,
-        YORTUKLOSS = 5082,
-        PUSH_PUSH = 5083,
+
+        MASSASSINE_5053 = 5053,
+
+        TRANSMISSION_INSTANTANEE_5054 = 5054,
+
+        ECHAUFFEMENT_SONGEUR_5055 = 5055,
+
+        TORNADHESIVE_5056 = 5056,
+
+        CERCLE_DE_LUMIERE_5057 = 5057,
+
+        FARCE_CACHEE_5058 = 5058,
+
+        FARCE_CACHEE_5059 = 5059,
+
+        ACTION__5060 = 5060,
+
+        EN_TEMPS_ET_EN_HEURE_5061 = 5061,
+
+        EN_TEMPS_ET_EN_HEURE_5062 = 5062,
+
+        CONTAMINATION_ZOMBIE_5063 = 5063,
+
+        CONTAMINATION_ZOMBIE_5064 = 5064,
+
+        HEURAGE_5065 = 5065,
+
+        HEURAGE_5066 = 5066,
+
+        HEURAGE_5067 = 5067,
+
+        HEURISTIQUE_5068 = 5068,
+
+        MORFAILLE_5069 = 5069,
+
+        MORFAILLE_5070 = 5070,
+
+        LOURDEUR_COSMIQUE_5071 = 5071,
+
+        ARMURE_REFLECHISSANTE_5072 = 5072,
+
+        ARMURE_REFLECHISSANTE_5073 = 5073,
+
+        ARMURE_REFLECHISSANTE_5074 = 5074,
+
+        ARMURE_REFLECHISSANTE_5075 = 5075,
+
+        ARMURE_REFLECHISSANTE_5076 = 5076,
+
+        CHRONOCHARGE_5077 = 5077,
+
+        RAJEUNISSEMENT_5078 = 5078,
+
+        SAUTE_HEURE_5079 = 5079,
+
+        TETROLOIN_5080 = 5080,
+
+        TETROLOIN_5081 = 5081,
+
+        TETROPRE_5082 = 5082,
+
+        POUSS_POUSS_5083 = 5083,
+
         DISTANSS_5084 = 5084,
-        MURDEROUS_AURA_5085 = 5085,
+
+        AURA_MEURTRIERE_5085 = 5085,
+
         DISTANSS_5086 = 5086,
-        SURPRISE_ATTACK = 5087,
-        DRIZZLY_PIXLAR = 5088,
+
+        ATTAQUE_SURPRISE_5087 = 5087,
+
+        PLUIXEL_5088 = 5088,
+
         ASSURANCE_5089 = 5089,
+
         ASSURANCE_5090 = 5090,
-        CLINGY_BUBBLE_5091 = 5091,
-        CLINGY_BUBBLE_5092 = 5092,
-        SMASH_BRO = 5093,
-        KLYROFF = 5094,
-        SEGMENTATION = 5095,
-        PALE_FIRE = 5096,
-        ANTI_HEAL_5097 = 5097,
-        ANTI_HEAL_5098 = 5098,
-        JETLAG_5099 = 5099,
-        ZEITGEIST_5100 = 5100,
-        ZEITGEIST_5101 = 5101,
-        CALL_MY_BUFF_5102 = 5102,
-        CALL_MY_BUFF_5103 = 5103,
-        ZEITGEIST_5104 = 5104,
-        CALL_MY_BUFF_5105 = 5105,
-        CALL_MY_BUFF_5106 = 5106,
-        JETLAG_5107 = 5107,
-        ZEITGEIST_5108 = 5108,
-        JETLAG_5109 = 5109,
-        ZEITGEIST_5110 = 5110,
-        ZEITGEIST_5111 = 5111,
-        FRAGMENTATION = 5112,
-        MASS_VORTEX = 5113,
-        MURDEROUS_AURA_5114 = 5114,
-        MURDEROUS_AURA = 5115,
-        DESTRUCTIVE_CHARGE = 5116,
-        SUPERPOWER = 5117,
-        ANNIHILATION = 5120,
-        BANTER = 5121,
-        DEMONIC_BREATH = 5122,
-        MALFUNCTION = 5123,
-        FLEETING_HEAT = 5124,
-        FRAKASSEE_5125 = 5125,
-        FRAKASSEE_5126 = 5126,
-        TEMPORAL_INSTABILITY_5127 = 5127,
-        AGGRESSION = 5128,
-        AGGRESSIVE_GLYPH_5158 = 5158,
-        BLINDING_GLYPH_5159 = 5159,
-        PARALYSING_GLYPH_5160 = 5160,
-        GRAVITATIONAL_GLYPH_5161 = 5161,
-        BURNING_GLYPH_5162 = 5162,
-        INVIGORATING_PUSHES = 5164,
-        LONG_RANGE_LIAISON = 5165,
-        STUNNING_SUMMONS = 5166,
-        HURTFUL_HINDRANCES = 5167,
-        INVIGORATING_SOLITUDE = 5168,
-        SOLIDARITY = 5169,
-        LOOKING_FOR_ACTION = 5170,
-        LEAP_GOBBALL = 5171,
-        GO_BACK = 5172,
-        FETTERED_ACTIONS = 5173,
-        MUMMIFYING_SOLITUDE = 5174,
-        TRANSKO_5177 = 5177,
-        TRANSCENDENCE = 5178,
-        CURATIVE_RESTORATION_5179 = 5179,
-        COURAGEOUS_FLIGHT_5180 = 5180,
-        SPORADIC_SHIELD_5181 = 5181,
-        BOOBYTRAPPED_BOMB = 5182,
-        CHOPPING = 5183,
-        CELESTIAL_SLICER = 5184,
-        BURNING_LEAP = 5185,
-        ZOMBIFIED_CHAFER_SLASH = 5186,
-        CHAFERNAL = 5187,
-        ZOMBIFIED_OILY_ARROW = 5188,
-        ZOMBIFIED_FIERY_ARROW = 5189,
-        ZOMBIFIED_CRITICAL_ARROWS = 5190,
-        ZOMBIFIED_DEVIOUSNESS = 5191,
-        ZOMBIFIED_CAMOUFLAGE = 5192,
-        ZOMBIFIED_CURARE = 5193,
-        ZOMBIFIED_KNIFE_SPEARIT = 5194,
-        ZOMBIFIED_ROBUSTNESS = 5195,
-        ZOMBIVALENT = 5196,
-        SOON_S_WRATH = 5198,
-        INFINITE_INVULNERABILITY_ON_OFF_ = 5199,
-        HYPNOTIC_GAZE = 5201,
-        COURAGEOUS_FLIGHT_5203 = 5203,
-        SPORADIC_SHIELD_5204 = 5204,
-        CELLULAW_WEGENEWATION = 5205,
-        PUTWID_BILE = 5206,
-        FOUNTAIN_OF_BILE = 5207,
-        TOOTH_MAWKS = 5208,
-        SWEEPING = 5209,
-        JUTSU_PARRY = 5210,
-        JUTSU_WHIRLWIND = 5211,
-        JUTSU_STAFF = 5212,
-        JUTSU_KAMEHA = 5213,
-        EXPLOSCHUN = 5214,
-        SNIP_SNIP = 5215,
-        SCHANKER_POISON = 5216,
-        TAILWHIP = 5217,
-        FRENZIED_SPORULATION = 5218,
-        FRONTAL_SPORULAR_SPRINKLING = 5219,
-        BICEPHALOUS_HAMMERING = 5220,
-        MURDEROUS_COMBAT_SPORE = 5221,
-        TRANSKO = 5223,
-        SPATIO_TEMPORAL_MAELSTROM = 5224,
-        SPATIAL_EXPLOSION = 5225,
-        SPATIO_TEMPORAL_EXPLOSION = 5226,
-        INEXORABLE_EXPLOSION = 5227,
-        MR_BALLISTA = 5228,
-        BOOMDRIVE = 5229,
-        BOOMATTRACT = 5230,
-        BOOMLEAP = 5231,
-        BELLE_ADRENNE_S_GRAVITOR = 5232,
-        BELLE_ADRENNE_S_BURN = 5233,
-        BELLE_ADRENNE_S_DISRUPTION = 5234,
-        AYE_BIBACK = 5235,
-        SAY_RACONNER = 5236,
-        ASTALAVISTA = 5237,
-        MEGATODE = 5238,
-        CAPRICIOUS_CONEY = 5239,
-        CONEYCALL_OF_DIAL = 5240,
-        CONEYCALL_OF_HAND = 5241,
-        DIAL_A_FLAME = 5242,
-        NEEDLING = 5243,
-        CONEYCALL_COMPLETE = 5244,
-        OYEAH = 5245,
-        WOO_HA = 5246,
-        WOOOAH = 5247,
-        SHHH = 5248,
-        YEEHA = 5249,
-        ALPHATODE = 5250,
-        SNEAKY_GLYPH = 5251,
-        BINDING_CRY = 5252,
-        PIERCING_CRY = 5253,
-        FORCED_CRY = 5254,
-        CONSPIRATORIAL_BENEFIT = 5255,
-        ROCK_AND_RULE = 5256,
-        VIZIVIG = 5257,
-        SUMMONING_OF_DIAL = 5258,
-        SANDBURST = 5259,
-        HERR_PEECE_S_ENCHANTMENT = 5260,
-        THE_BEAST_S_CURSE = 5261,
-        WANDERING_5262 = 5262,
-        WANDERING_EFFECT = 5263,
-        CONEY_PRESENT = 5269,
-        TOOTHPICK_SHOT = 5271,
-        TOOTHPICK_WHACK = 5272,
-        BURNING_BLOW = 5273,
-        PASSIONATE_INSECT_CRY = 5274,
-        MINI_IMPALEMENT = 5275,
-        BUTTONSHIELD_BLOW = 5276,
-        ROUNDHOUSE = 5277,
-        SUMMONING_OF_DUSTMIGHT = 5278,
-        CLOUD_OF_DUSTMIGHT = 5279,
-        SMEARWAX_5280 = 5280,
-        COTTON_BUD_CATCH = 5281,
-        WRECKROACH = 5282,
-        KICKROOLAHOOP = 5283,
-        SFVCR = 5284,
-        SMEARWAX_5285 = 5285,
-        DON_T_MISS_A_BEAT = 5287,
-        REMEMBER_THE_KORRIANDER = 5288,
-        FAMILY_JEWELS_5289 = 5289,
-        ECACHEET_S_CATATACK = 5290,
-        FAMILY_JEWELS_5291 = 5291,
-        POST_MORTEM = 5292,
-        ECACHEET_S_CUSHION = 5293,
+
+        BULLE_AGRIPPANTE_5091 = 5091,
+
+        BULLE_AGRIPPANTE_5092 = 5092,
+
+        EKLATLATETE_5093 = 5093,
+
+        SECOUST_5094 = 5094,
+
+        SEGMENTATION_5095 = 5095,
+
+        FEU_USE_5096 = 5096,
+
+        ANTI_SOIN_5097 = 5097,
+
+        ANTI_SOIN_5098 = 5098,
+
+        DECALAGE_HORAIRE_5099 = 5099,
+
+        HEURE_DU_TEMPS_5100 = 5100,
+
+        HEURE_DU_TEMPS_5101 = 5101,
+
+        BUFF_HEURE_5102 = 5102,
+
+        BUFF_HEURE_5103 = 5103,
+
+        HEURE_DU_TEMPS_5104 = 5104,
+
+        BUFF_HEURE_5105 = 5105,
+
+        BUFF_HEURE_5106 = 5106,
+
+        DECALAGE_HORAIRE_5107 = 5107,
+
+        HEURE_DU_TEMPS_5108 = 5108,
+
+        DECALAGE_HORAIRE_5109 = 5109,
+
+        HEURE_DU_TEMPS_5110 = 5110,
+
+        HEURE_DU_TEMPS_5111 = 5111,
+
+        FRAGMENTATION_5112 = 5112,
+
+        VORTEX_DE_MASSE_5113 = 5113,
+
+        AURA_MEURTRIERE_5114 = 5114,
+
+        AURA_MEURTRIERE_5115 = 5115,
+
+        CHARGE_DESTRUCTRICE_5116 = 5116,
+
+        SUPERPUISSANCE_5117 = 5117,
+
+        ANNIHILATION_5120 = 5120,
+
+        COQUETTERIE_5121 = 5121,
+
+        SOUFFLE_DEMONIAQUE_5122 = 5122,
+
+        DEREGLEMENT_5123 = 5123,
+
+        CHALEUR_FUGACE_5124 = 5124,
+
+        FRAKASSE_5125 = 5125,
+
+        FRAKASSE_5126 = 5126,
+
+        INSTABILITE_TEMPORELLE_5127 = 5127,
+
+        AGRESSION_5128 = 5128,
+
+        POUSSEES_REVIGORANTES_5164 = 5164,
+
+        LIAISON_LONGUE_PORTEE_5165 = 5165,
+
+        INVOCATIONS_INCAPACITANTES_5166 = 5166,
+
+        ENTRAVES_BLESSANTES_5167 = 5167,
+
+        SOLITUDE_REVIGORANTE_5168 = 5168,
+
+        SOLIDAIRES_5169 = 5169,
+
+        EN_QUETE_DACTION_5170 = 5170,
+
+        SAUTE_BOUFTOU_5171 = 5171,
+
+        RETOUR_ARRIERE_5172 = 5172,
+
+        ACTIONS_ENTRAVEES_5173 = 5173,
+
+        SOLITUDE_MOMIFIANTE_5174 = 5174,
+
+        _5177 = 5177,
+
+        TRANSCENDANCE_5178 = 5178,
+
+        RESTAURATION_CURATIVE_5179 = 5179,
+
+        COURAGE_FUYONS_5180 = 5180,
+
+        REMPART_INTERMITTENT_5181 = 5181,
+
+        BOMBE_PIEGEE_5182 = 5182,
+
+        HACHAGE_5183 = 5183,
+
+        TRANCHOIR_CELESTE_5184 = 5184,
+
+        BOND_BRULANT_5185 = 5185,
+
+        COUP_DU_CHAFER_ZOMBIFIE_5186 = 5186,
+
+        CHAFERMAL_5187 = 5187,
+
+        FLECHE_DHUILE_ZOMBIFIEE_5188 = 5188,
+
+        FLECHE_DE_FEU_ZOMBIFIEE_5189 = 5189,
+
+        FLECHES_CRITIQUES_ZOMBIFIEES_5190 = 5190,
+
+        SOURNOISERIE_ZOMBIFIEE_5191 = 5191,
+
+        CAMOUFLAGE_ZOMBIFIE_5192 = 5192,
+
+        CURARE_ZOMBIFIE_5193 = 5193,
+
+        ELANCE_DE_COUTEAU_ZOMBIFIE_5194 = 5194,
+
+        ROBUSTESSE_ZOMBIFIEE_5195 = 5195,
+
+        ZOMBIVALENT_5196 = 5196,
+
+        COLERE_DE_SOON_5198 = 5198,
+
+        INVULNERABILITE_INFINIE_ONOFF_5199 = 5199,
+
+        REGARD_HYPNOTIQUE_5201 = 5201,
+
+        COURAGE_FUYONS_5203 = 5203,
+
+        REMPART_INTERMITTENT_5204 = 5204,
+
+        WEGENEWATION_CELLULAIWE_5205 = 5205,
+
+        BILE_PUTWIDE_5206 = 5206,
+
+        FONTAINE_DE_BILE_5207 = 5207,
+
+        CWOQUE_MONSIEUW_5208 = 5208,
+
+        BALAYAGE_5209 = 5209,
+
+        ESQUIVE_JUTSU_5210 = 5210,
+
+        TOURBILLON_JUTSU_5211 = 5211,
+
+        BATON_JUTSU_5212 = 5212,
+
+        KAMEHA_JUTSU_5213 = 5213,
+
+        SCORPLOSIF_5214 = 5214,
+
+        PINCEPATTE_5215 = 5215,
+
+        POISON_DU_SCORPIQUE_5216 = 5216,
+
+        KEUCOUP_5217 = 5217,
+
+        SPORULATION_FRENETIQUE_5218 = 5218,
+
+        ASPERSION_SPORULAIRE_FRONTALE_5219 = 5219,
+
+        MARTELEMENT_BICEPHALOÏDE_5220 = 5220,
+
+        SPORE_DE_COMBAT_MEURTRIER_5221 = 5221,
+
+        TRANSKO_5223 = 5223,
+
+        MAELSTRM_SPATIO_TEMPOREL_5224 = 5224,
+
+        EXPLOSION_SPATIALE_5225 = 5225,
+
+        EXPLOSION_SPATIO_TEMPORELLE_5226 = 5226,
+
+        EXPLOSION_INEXORABLE_5227 = 5227,
+
+        TRAIT_DE_BALISTE_5228 = 5228,
+
+        ROUBLABOUTE_5229 = 5229,
+
+        ROUBLATTIRE_5230 = 5230,
+
+        ROUBLABOND_5231 = 5231,
+
+        GRAVITE_RENFORCEE_DE_BELLE_ADRENNE_5232 = 5232,
+
+        BRULURE_DE_BELLE_ADRENNE_5233 = 5233,
+
+        PERTURBATION_DE_BELLE_ADRENNE_5234 = 5234,
+
+        AÏEBIBAK_5235 = 5235,
+
+        SARAKOGNOR_5236 = 5236,
+
+        ASTALAVISTA_5237 = 5237,
+
+        CRAPAUMEGA_5238 = 5238,
+
+        LAPIMPREVISIBLE_5239 = 5239,
+
+        LAPINVOCATION_DE_CADRAN_5240 = 5240,
+
+        LAPINVOCATION_DAIGUILLE_5241 = 5241,
+
+        FLAMMES_DU_CADRAN_5242 = 5242,
+
+        COUP_DAIGUILLE_5243 = 5243,
+
+        LAPINVOCATION_TERMINEE_5244 = 5244,
+
+        OUAICH__5245 = 5245,
+
+        YOUPLA__5246 = 5246,
+
+        OUAAAH__5247 = 5247,
+
+        SHHHHH__5248 = 5248,
+
+        YEEAAH__5249 = 5249,
+
+        CRAPALPHA_5250 = 5250,
+
+        GLYPHE_FOURBE_5251 = 5251,
+
+        CRI_ENTRAVANT_5252 = 5252,
+
+        CRI_PERÇANT_5253 = 5253,
+
+        CRI_FORCE_5254 = 5254,
+
+        BIENFAIT_DE_LA_CABALE_5255 = 5255,
+
+        PRESSE_LES_5256 = 5256,
+
+        VIZIRETTE_5257 = 5257,
+
+        INVOCATION_DU_CADRAN_5258 = 5258,
+
+        DECHAÎNEMENT_DES_SABLES_5259 = 5259,
+
+        SORTILEGE_DALBERT_PAISSE_5260 = 5260,
+
+        SORTILEGE_DE_LA_BETE_5261 = 5261,
+
+        EGAREMENT_5262 = 5262,
+
+        EFFET_DEGAREMENT_5263 = 5263,
+
+        LAPRESENT_5269 = 5269,
+
+        TIR_DE_CURE_DENT_5271 = 5271,
+
+        COUP_DE_CURE_DENT_5272 = 5272,
+
+        SOUFFLE_BRULANT_5273 = 5273,
+
+        CRI_DE_LINSECTE_ARDENT_5274 = 5274,
+
+        MINI_EMPALEMENT_5275 = 5275,
+
+        COUP_DE_BOUTONCLIER_5276 = 5276,
+
+        FRAPPE_CIRCULAIRE_5277 = 5277,
+
+        INVOCATION_DE_POUPOUSSIERE_5278 = 5278,
+
+        NUAGE_DE_POUPOUSSIERE_5279 = 5279,
+
+        BADIGEONNAGE_DE_CERUMEN_5280 = 5280,
+
+        ATTRAPE_COTON_TIGE_5281 = 5281,
+
+        BLATHERATION_5282 = 5282,
+
+        KANKROULAHOUP_5283 = 5283,
+
+        SFVCR__5284 = 5284,
+
+        BADIGEONNAGE_DE_CERUMEN_5285 = 5285,
+
+        LE_RYTHME_DANS_LA_PEAU_5287 = 5287,
+
+        SOUVIENS_TOI_LE_KORRIANDRE_5288 = 5288,
+
+        PROTECTION_DES_RICHESSES_5289 = 5289,
+
+        CHATATAQUE_DECATCHIT_5290 = 5290,
+
+        PROTECTION_DES_RICHESSES_5291 = 5291,
+
+        POST_MORTEM_5292 = 5292,
+
+        COUSSINET_DECATCHIT_5293 = 5293,
+
         SPLASH_5294 = 5294,
-        ECACHEET_S_HEALING_BITE = 5295,
-        BINDING_FLUX = 5296,
-        MARY_REANKLE_S_LIVING_BAG = 5297,
-        DOUBLOONS_THROWING = 5298,
-        MARY_REANKLE_S_JUDGEMENT = 5299,
-        WILLY_S_FORTUNE = 5300,
-        WILD_POISON = 5322,
-        TELEPORTAL = 5325,
-        LETHAL_ATTACK_5356 = 5356,
-        SRAMOPHOBIA = 5357,
-        FRAKTOR_RAT_TRAP = 5358,
-        PORTAL = 5359,
-        RAT_TRAP = 5360,
-        INSULT_5361 = 5361,
-        SWASHBUCKLER = 5362,
-        SHARPENED_SENSES_5363 = 5363,
-        SHARPENED_SENSES_5364 = 5364,
-        BLACK_BLADE = 5365,
-        POISONED_BLADE_5366 = 5366,
-        LIGHTNING_FIST_5367 = 5367,
-        DISTRIBUTION_5368 = 5368,
-        DISTRIB_5369 = 5369,
-        WAKFU_RAY_5370 = 5370,
-        STRETCHING_5371 = 5371,
-        THERAPY_5372 = 5372,
-        INCANTAFIRE = 5373,
-        PIKE = 5374,
-        HALBERD_THROW = 5375,
-        STORM_5376 = 5376,
-        LOST_TIME_5378 = 5378,
-        CHILDISH_ATTRACTION = 5379,
-        CUTTING_5380 = 5380,
-        NEUTRAL_5381 = 5381,
-        SHOCK_5382 = 5382,
-        AFFLICTION_5383 = 5383,
-        NOMOBOOBOO = 5384,
-        STUPOR_5386 = 5386,
-        ORTAL = 5387,
-        HEALING_5388 = 5388,
-        OFFENCE_5389 = 5389,
-        ODYSSEY_5390 = 5390,
-        SNUB_5391 = 5391,
-        FOCUS = 5392,
-        THE_HUNTER_S_ABSORPTIVE_ARROW = 5393,
-        THE_HUNTER_S_RETREAT_ARROW = 5394,
-        THE_HUNTER_S_POWERFUL_SHOOTING = 5395,
-        THE_HUNTRESS_S_CURATIVE_WORD = 5396,
-        BULLYING_5397 = 5397,
-        THE_HUNTRESS_S_FORBIDDEN_WORD = 5398,
-        THE_HUNTRESS_S_WORD_OF_THORN = 5399,
-        AUDACIOUS_5400 = 5400,
-        PARASITE_5401 = 5401,
-        RIDICULE_5402 = 5402,
-        MUTUAL_ASSISTANCE_5403 = 5403,
-        SUCCESSFUL_TELEPORTAL = 5426,
-        TELEPORTATION_5427 = 5427,
-        COUNTER_5428 = 5428,
-        TELEFRAG_5429 = 5429,
-        PARADOX_5430 = 5430,
-        FLIGHT_5431 = 5431,
-        FLIGHT_5432 = 5432,
-        OSCILLATION = 5433,
-        SYNCHRONISATION = 5434,
-        END_OF_TIME = 5435,
-        ANCIENT_XELOR_S_DIAL = 5436,
-        ANCIENT_CLOCK = 5437,
-        ANCIENT_MUMMIFICATION = 5438,
-        ANCIENT_COUNTER = 5439,
-        ANCIENT_FLIGHT = 5440,
-        ANCIENT_DEVOTION = 5441,
-        ANCIENT_HOMING_HAND = 5442,
-        ANCIENT_TIME_THEFT = 5443,
-        ANCIENT_TEMPORAL_DUST = 5444,
-        ANCIENT_HAZINESS = 5445,
-        ANCIENT_SHRIVELLING = 5446,
-        ANCIENT_TELEPORTATION = 5447,
-        ANCIENT_DARK_RAY = 5448,
-        ANCIENT_XELOR_S_SANDGLASS = 5449,
-        ANCIENT_FROSTBITE = 5450,
-        ANCIENT_SLOW_DOWN = 5451,
-        ANCIENT_HAND = 5452,
-        WATCHERS_DOFUS = 5453,
-        CLOUDY_DOFUS = 5454,
-        WAR_SILENCE = 5455,
-        SOUL_IN_PAIN = 5456,
-        COORDINATION = 5457,
-        MURDERER = 5458,
-        FUNERARY_SUBSTITUTION_5459 = 5459,
-        AWAKENING_OF_LOST_SOULS = 5460,
-        DREGS = 5461,
-        LOGIC = 5462,
-        SKINNING_5463 = 5463,
-        MUTUAL_ASSISTANCE_5465 = 5465,
-        CALL_OF_THE_CRA_GLADIATOR = 5466,
-        CALL_OF_THE_FECA_GLADIATOR = 5467,
-        CALL_OF_THE_ECAFLIP_GLADIATOR = 5468,
-        TRAINING = 5469,
-        SPONGE = 5470,
-        TELLING_OFF = 5471,
-        GASTRIC_EVAPORATION = 5472,
-        DOPPLESQUE_INSULT = 5473,
-        DOPPLESQUE_AFFLICTION = 5474,
-        DOPPLESQUE_SHOCK = 5475,
-        DOPPLESQUE_WAKFU_RAY = 5476,
-        DOPPLESQUE_OFFENCE = 5477,
-        DOPPLESQUE_THERAPY = 5478,
-        DOPPLESQUE_BULLYING = 5479,
-        PORCINE_CHARGE = 5480,
-        DOPPLESQUE_HEALING = 5481,
-        DOPPLESQUE_LIGHTNING_FIST = 5482,
-        DOPPLESQUE_AUDACIOUS = 5483,
-        ATTRACTIVE_SNOT = 5484,
-        TELEFRAG_5486 = 5486,
-        TELEFRAG_5487 = 5487,
-        TELEFRAG_5488 = 5488,
-        TELEFRAG_5489 = 5489,
-        TELEFRAG_5490 = 5490,
-        TELEFRAG_5491 = 5491,
-        TELEFRAG_5492 = 5492,
-        TELEFRAG_5494 = 5494,
-        PARASITE_5495 = 5495,
-        CHEWING_5497 = 5497,
-        ARMOUR_PLATING_5498 = 5498,
-        EXECUTION = 5499,
-        PARALYSING_STING = 5500,
-        ACID_SECRETION = 5501,
-        LOST_TIME_5502 = 5502,
-        EGG_LAYING = 5503,
-        STUNNING_LEAP = 5504,
-        PRESSING = 5505,
-        PARALYSING_WEB_5506 = 5506,
-        PARALYSING_WEB_5507 = 5507,
-        PARALYSING_WEB = 5508,
-        STICKY_SILK = 5509,
-        SILK_PRISON = 5510,
-        DEATHBLOW = 5511,
-        MORTAL_WHIRLWIND = 5512,
-        SHEARING = 5513,
-        SILK_SHOWER = 5514,
-        ACCELERATED_INCUBATION_5515 = 5515,
-        SLAVE_HATCH = 5517,
-        QUEEN_S_PROTECTION = 5518,
-        SACRIFICE_FOR_THE_QUEEN_5519 = 5519,
-        QUEEN_S_CALLING = 5520,
+
+        MORSURE_CURATIVE_DECATCHIT_5295 = 5295,
+
+        FLUX_DENTRAVE_5296 = 5296,
+
+        SAC_ANIME_DE_MARIE_RIDE_5297 = 5297,
+
+        LANCER_DE_DOUBLONS_5298 = 5298,
+
+        JUGEMENT_DE_MARIE_RIDE_5299 = 5299,
+
+        CHANCE_DE_WILLY_5300 = 5300,
+
+        POISON_SAUVAGE_5322 = 5322,
+
+        _5325 = 5325,
+
+        ATTAQUE_LETALE_5356 = 5356,
+
+        SRAMOPHOBIE_5357 = 5357,
+
+        PIEGE_A_RAT_MORORA_5358 = 5358,
+
+        _5359 = 5359,
+
+        PIEGE_A_RAT_5360 = 5360,
+
+        _5361 = 5361,
+
+        BRETTEUR_5362 = 5362,
+
+        SENS_AIGUISES_5363 = 5363,
+
+        SENS_AIGUISES_5364 = 5364,
+
+        LAMENOIRE_5365 = 5365,
+
+        LAMENPOISONNEE_5366 = 5366,
+
+        _5367 = 5367,
+
+        _5368 = 5368,
+
+        _5369 = 5369,
+
+        _5370 = 5370,
+
+        _5371 = 5371,
+
+        _5372 = 5372,
+
+        INCANTAFEU_5373 = 5373,
+
+        PIQUE_5374 = 5374,
+
+        LANCER_DE_HALLEBARDE_5375 = 5375,
+
+        TEMPETE_5376 = 5376,
+
+        TEMPS_PERDU_5378 = 5378,
+
+        ATTRACTION_ENFANTINE_5379 = 5379,
+
+        COUPAGE_5380 = 5380,
+
+        _5381 = 5381,
+
+        _5382 = 5382,
+
+        _5383 = 5383,
+
+        APUBOBO_5384 = 5384,
+
+        _5386 = 5386,
+
+        _5387 = 5387,
+
+        _5388 = 5388,
+
+        _5389 = 5389,
+
+        _5390 = 5390,
+
+        _5391 = 5391,
+
+        _5392 = 5392,
+
+        FLECHE_ABSORBANTE_DU_CHASSEUR_5393 = 5393,
+
+        FLECHE_DE_RECUL_DU_CHASSEUR_5394 = 5394,
+
+        TIR_PUISSANT_DU_CHASSEUR_5395 = 5395,
+
+        MOT_CURATIF_DE_LA_CHASSEUSE_5396 = 5396,
+
+        _5397 = 5397,
+
+        MOT_INTERDIT_DE_LA_CHASSEUSE_5398 = 5398,
+
+        MOT_DEPINE_DE_LA_CHASSEUSE_5399 = 5399,
+
+        _5400 = 5400,
+
+        _5401 = 5401,
+
+        _5402 = 5402,
+
+        _5403 = 5403,
+
+        _5426 = 5426,
+
+        _5427 = 5427,
+
+        _5428 = 5428,
+
+        _5429 = 5429,
+
+        _5430 = 5430,
+
+        _5431 = 5431,
+
+        _5432 = 5432,
+
+        _5433 = 5433,
+
+        _5434 = 5434,
+
+        _5435 = 5435,
+
+        CADRAN_DE_XELOR_SECULAIRE_5436 = 5436,
+
+        HORLOGE_SECULAIRE_5437 = 5437,
+
+        MOMIFICATION_SECULAIRE_5438 = 5438,
+
+        CONTRE_SECULAIRE_5439 = 5439,
+
+        FUITE_SECULAIRE_5440 = 5440,
+
+        DEVOUEMENT_SECULAIRE_5441 = 5441,
+
+        AIGUILLE_CHERCHEUSE_SECULAIRE_5442 = 5442,
+
+        VOL_DU_TEMPS_SECULAIRE_5443 = 5443,
+
+        POUSSIERE_TEMPORELLE_SECULAIRE_5444 = 5444,
+
+        FLOU_SECULAIRE_5445 = 5445,
+
+        FLETRISSEMENT_SECULAIRE_5446 = 5446,
+
+        TELEPORTATION_SECULAIRE_5447 = 5447,
+
+        RAYON_OBSCUR_SECULAIRE_5448 = 5448,
+
+        SABLIER_DE_XELOR_SECULAIRE_5449 = 5449,
+
+        GELURE_SECULAIRE_5450 = 5450,
+
+        RALENTISSEMENT_SECULAIRE_5451 = 5451,
+
+        AIGUILLE_SECULAIRE_5452 = 5452,
+
+        DOFUS_DES_VEILLEURS_5453 = 5453,
+
+        DOFUS_NEBULEUX_5454 = 5454,
+
+        SILENCE_DE_GUERRE_5455 = 5455,
+
+        AME_EN_PEINE_5456 = 5456,
+
+        COORDINATION_5457 = 5457,
+
+        ASSASSINAT_5458 = 5458,
+
+        SUBSTITUTION_FUNEBRE_5459 = 5459,
+
+        EVEIL_DES_AMES_PERDUES_5460 = 5460,
+
+        LIE_5461 = 5461,
+
+        LOGIQUE_5462 = 5462,
+
+        ECHORCHAGE_5463 = 5463,
+
+        _5465 = 5465,
+
+        APPEL_DU_GLADIATEUR_CRA_5466 = 5466,
+
+        APPEL_DU_GLADIATEUR_FECA_5467 = 5467,
+
+        APPEL_DU_GLADIATEUR_ECAFLIP_5468 = 5468,
+
+        ENTRAÎNEMENT_5469 = 5469,
+
+        EPONGE_5470 = 5470,
+
+        ENGUEULADE_5471 = 5471,
+
+        EVAPORATION_GASTRIQUE_5472 = 5472,
+
+        AFFRONT_DU_DOPEUL_5473 = 5473,
+
+        AFFLICTION_DU_DOPEUL_5474 = 5474,
+
+        COMMOTION_DU_DOPEUL_5475 = 5475,
+
+        RAYON_DE_WAKFU_DU_DOPEUL_5476 = 5476,
+
+        OFFENSE_DU_DOPEUL_5477 = 5477,
+
+        THERAPIE_DU_DOPEUL_5478 = 5478,
+
+        BRIMADE_DU_DOPEUL_5479 = 5479,
+
+        CHARGE_PORCINE_5480 = 5480,
+
+        CICATRISATION_DU_DOPEUL_5481 = 5481,
+
+        POING_FULGURANT_DU_DOPEUL_5482 = 5482,
+
+        AUDACE_DU_DOPEUL_5483 = 5483,
+
+        MORVE_ATTRACTIVE_5484 = 5484,
+
+        _5485 = 5485,
+
+        _5486 = 5486,
+
+        _5487 = 5487,
+
+        _5488 = 5488,
+
+        _5489 = 5489,
+
+        _5490 = 5490,
+
+        _5491 = 5491,
+
+        _5492 = 5492,
+
+        _5494 = 5494,
+
+        _5495 = 5495,
+
+        _5496 = 5496,
+
+        MASTICATION_5497 = 5497,
+
+        BLINDAGE_5498 = 5498,
+
+        EXECUTION_5499 = 5499,
+
+        DARDS_PARALYSANTS_5500 = 5500,
+
+        SECRETION_ACIDE_5501 = 5501,
+
+        TEMPS_PERDU_5502 = 5502,
+
+        PONTE_DOEUF_5503 = 5503,
+
+        BOND_ETOURDISSANT_5504 = 5504,
+
+        PRESSAGE_5505 = 5505,
+
+        TOILE_PARALYSANTE_5506 = 5506,
+
+        TOILE_PARALYSANTE_5507 = 5507,
+
+        TOILE_PARALYSANTE_5508 = 5508,
+
+        FIL_COLLANT_5509 = 5509,
+
+        PRISON_DE_SOIE_5510 = 5510,
+
+        ESTOCADE_5511 = 5511,
+
+        TOURBILLON_MORTEL_5512 = 5512,
+
+        CISAILLAGE_5513 = 5513,
+
+        MITRAILLE_DE_SOIE_5514 = 5514,
+
+        INCUBATION_ACCELEREE_5515 = 5515,
+
+        ECLOSION_DU_SERVITEUR_5517 = 5517,
+
+        PROTECTION_DE_LA_REINE_5518 = 5518,
+
+        SACRIFICE_POUR_LA_REINE_5519 = 5519,
+
+        APPEL_DE_LA_REINE_5520 = 5520,
+
         KISSIFROTSIPIK_5523 = 5523,
-        TREECHNIDIAN_CRUSH = 5525,
-        TREECHNIDIAN_REGENERATION = 5526,
-        MUSH_RUST = 5527,
-        TOXSTOOL = 5528,
-        SPIDER_DRIVE = 5529,
-        WORLD_CUP = 5530,
-        TRUNK_CALL = 5531,
-        NYMPHAEACEAE_SPORES_5532 = 5532,
-        NYMPHAEACEAE_SPORES_5534 = 5534,
-        TREECHNIDIAN_SUMMONING = 5536,
-        LEGION = 5537,
-        CHAFER_CHEAT = 5538,
-        ALPHA_INVISIBILITY = 5539,
-        CHAFER_DEATHBLOW = 5540,
-        HYPER_KICK = 5565,
-        CONSTANT_PRESSURE = 5566,
-        FOLIAGE_5567 = 5567,
-        WARQUAKE_5568 = 5568,
-        SYLVAN_SHOOT = 5569,
-        EARTHQUAKE_5570 = 5570,
-        SYLVAN_UNBEWITCHMENT = 5572,
-        SYLVAN_HEALING = 5573,
-        SYLVAN_POWER_5574 = 5574,
-        SILENT_MURDERER = 5577,
-        FURTIVE_SUBSTITUTION = 5578,
-        DOLLISH_DECOCTION = 5579,
-        WARQUAKE_5580 = 5580,
-        DOLLISH_SUBSTITUTION = 5581,
-        DELAYED_MASSACRE_5583 = 5583,
-        MORNINGSTAR_5584 = 5584,
-        NOXIOUS_DISSIMULATION = 5585,
-        NATURAL_GIFT_5590 = 5590,
-        SUPER_PLACEMENT = 5598,
-        SUPER_PLACEMENTEFFECT_ = 5599,
-        DOLLISH_INFECTION_5605 = 5605,
-        SOOTHING_BRAMBLE_5607 = 5607,
-        INSOLENT_BRAMBLE_5610 = 5610,
-        POISONED_WIND_5615 = 5615,
-        ACCELERATED_INCUBATION_5616 = 5616,
-        DEVASTATING_BLOW_5617 = 5617,
-        DELAYED_MASSACRE_5618 = 5618,
-        FROZEN_HEADBUTT = 5619,
-        TEMPEST_BLADE_5624 = 5624,
-        PURIFYING_BLOW_5625 = 5625,
-        LOVE_AT_FIRST_SIGHT_5626 = 5626,
-        LOVE_AT_FIRST_SIGHT = 5631,
-        PURIFYING_BLOW_5632 = 5632,
-        TEMPEST_BLADE_5633 = 5633,
-        STICK_UP = 5634,
-        VENERABLE_CRUSH = 5635,
-        BRUSH_UP = 5636,
-        SUMMONING_OF_GLOOMY_SPIMUSH = 5637,
-        SUMMONING_OF_SHORT_TEMPERED_SPIMUSH = 5638,
-        EVENING_THE_SCORE_5639 = 5639,
-        EVENING_THE_SCORE_5640 = 5640,
-        MARKING = 5641,
-        LIGHTNING_POWER_5643 = 5643,
-        _1000_FISTS = 5644,
-        DEVASTATING_BLOW_5645 = 5645,
-        CLOSECOMBAT_5646 = 5646,
-        MORNINGSTAR_5647 = 5647,
-        CLOSECOMBAT_5648 = 5648,
-        POWERFUL_SWEEP = 5649,
-        FATAL_TUCK_5650 = 5650,
-        FATAL_TUCK_5652 = 5652,
-        AIRPORTAGE = 5653,
-        MOONBEAM = 5654,
-        MOON_POWER = 5655,
-        SUMMONING_OF_COCOLUNE = 5656,
+
+        ECRASEMENT_ABRAKNYDIEN_5525 = 5525,
+
+        RECONSTITUTION_ABRAKNYDIENNE_5526 = 5526,
+
+        CHAMP_HETRE_5527 = 5527,
+
+        CHAMP_OISONE_5528 = 5528,
+
+        POUTRAGE_5529 = 5529,
+
+        COUP_DU_MONDE_5530 = 5530,
+
+        TRONC_COMMUN_5531 = 5531,
+
+        SPORES_DE_NYMPHEACEE_5532 = 5532,
+
+        SPORES_DE_NYMPHEACEE_5534 = 5534,
+
+        INVOCATION_ABRAKNYDIENNE_5536 = 5536,
+
+        LEGION_5537 = 5537,
+
+        CHARNAQUE_5538 = 5538,
+
+        INVISIBILITE_ALPHA_5539 = 5539,
+
+        COUP_MORTEL_DU_CHAFER_5540 = 5540,
+
+        HYPER_KICK_5565 = 5565,
+
+        PRESSION_CONSTANTE_5566 = 5566,
+
+        TREMBLEMENT_DE_GUERRE_5568 = 5568,
+
+        ASSASSINAT_SILENCIEUX_5577 = 5577,
+
+        SUBSTITUTION_FURTIVE_5578 = 5578,
+
+        TREMBLEMENT_DE_GUERRE_5580 = 5580,
+
+        MASSACRE_A_RETARDEMENT_5583 = 5583,
+
+        ETOILE_DU_MATIN_5584 = 5584,
+
+        DISSIMULATION_NOCIVE_5585 = 5585,
+
+        SUPER_PLACEMENT_5598 = 5598,
+
+        SUPER_PLACEMENT_EFFET_5599 = 5599,
+
+        INCUBATION_ACCELEREE_5616 = 5616,
+
+        FRAPPE_DEVASTATRICE_5617 = 5617,
+
+        MASSACRE_A_RETARDEMENT_5618 = 5618,
+
+        COUP_DE_TETE_GIVRE_5619 = 5619,
+
+        _5623 = 5623,
+
+        LAME_TEMPETE_5624 = 5624,
+
+        FRAPPE_PURIFICATRICE_5625 = 5625,
+
+        COUP_DE_FOUDRE_5626 = 5626,
+
+        COUP_DE_FOUDRE_5631 = 5631,
+
+        FRAPPE_PURIFICATRICE_5632 = 5632,
+
+        LAME_TEMPETE_5633 = 5633,
+
+        ABRAKAGE_5634 = 5634,
+
+        ECRASEMENT_VENERABLE_5635 = 5635,
+
+        ABRAKNETTOYAGE_5636 = 5636,
+
+        INVOCATION_DE_CHAMPA_SOMBRE_5637 = 5637,
+
+        INVOCATION_DE_CHAMPA_IRASCIBLE_5638 = 5638,
+
+        A_ARMES_EGALES_5639 = 5639,
+
+        A_ARMES_EGALES_5640 = 5640,
+
+        MARQUAGE_5641 = 5641,
+
+        PUISSANCE_DE_LA_FOUDRE_5643 = 5643,
+
+        _1000_POINGS_5644 = 5644,
+
+        FRAPPE_DEVASTATRICE_5645 = 5645,
+
+        COMBAT_RAPPROCHE_5646 = 5646,
+
+        ETOILE_DU_MATIN_5647 = 5647,
+
+        COMBAT_RAPPROCHE_5648 = 5648,
+
+        PUISSANT_BALAYAGE_5649 = 5649,
+
+        ESTOC_FATAL_5650 = 5650,
+
+        ESTOC_FATAL_5652 = 5652,
+
+        AEROPORTAGE_5653 = 5653,
+
+        RAYONNEMENT_LUNAIRE_5654 = 5654,
+
+        PUISSANCE_LUNAIRE_5655 = 5655,
+
+        INVOCATION_DE_LA_COCOLUNE_5656 = 5656,
+
         CARNAGEDDON_5657 = 5657,
-        NEW_MOON = 5658,
-        INSTANTANEOUS_DEPLACEMENT_5659 = 5659,
+
+        NOUVELLE_LUNE_5658 = 5658,
+
+        DEPLACEMENT_INSTANTANE_5659 = 5659,
+
         SARUHARUHA_5660 = 5660,
-        MASTERFUL_UPPERCUT_5661 = 5661,
-        DIVERSION = 5662,
-        TREE_5663 = 5663,
-        LUNAR_ATTRACTION = 5664,
+
+        UPPERCUT_MAGISTRAL_5661 = 5661,
+
+        DIVERSION_5662 = 5662,
+
+        ATTRACTION_LUNAIRE_5664 = 5664,
+
         CARNAGEDDON_5665 = 5665,
-        DARK_CRUSH = 5666,
-        TREE_5667 = 5667,
-        SYLVAN_POWER_5668 = 5668,
-        DARK_SNIFF = 5669,
-        MUCUS = 5670,
-        SIMPLE_POISON = 5671,
-        SIMPLE_BRAMBLE = 5672,
-        CORNELIA_S_DISPERSING_ARROW = 5673,
-        CORNELIA_S_PARALYSING_ARROW = 5674,
-        DOPPLESQUE_HAZINESS = 5675,
-        DOPPLESQUE_TREE = 5676,
-        IRRITATING_HARASSMENT = 5677,
-        BULBIC_PURIFICATION = 5678,
-        LETHAL_BULBIC_ATTACK = 5679,
-        BULBIC_SHOT = 5680,
-        BULBIC_HEALING = 5681,
-        BULBIC_JUMP = 5682,
-        BITTER_SPINES = 5683,
-        EVIL_POWER = 5684,
-        SACRIFICE_FOR_THE_QUEEN_5685 = 5685,
-        COLOURBALL_FAIRYWORK = 5686,
+
+        ECRASEMENT_SOMBRE_5666 = 5666,
+
+        FLAIR_OBSCUR_5669 = 5669,
+
+        MUCUS_5670 = 5670,
+
+        POISON_SIMPLE_5671 = 5671,
+
+        RONCE_SIMPLE_5672 = 5672,
+
+        FLECHE_DE_DISPERSION_DE_CORNELIA_5673 = 5673,
+
+        FLECHE_DIMMOBILISATION_DE_CORNELIA_5674 = 5674,
+
+        FLOU_DU_DOPEUL_5675 = 5675,
+
+        ARBRE_DU_DOPEUL_5676 = 5676,
+
+        HARCELEMENT_AGAÇANT_5677 = 5677,
+
+        PURIFICATION_BULBIQUE_5678 = 5678,
+
+        ATTAQUE_BULBIQUE_MORTELLE_5679 = 5679,
+
+        PIKOUZE_BULBIQUE_5680 = 5680,
+
+        SOIN_BULBIQUE_5681 = 5681,
+
+        BOND_BULBIQUE_5682 = 5682,
+
+        EPINES_RANCUNIERES_5683 = 5683,
+
+        PUISSANCE_MALFAISANTE_5684 = 5684,
+
+        SACRIFICE_POUR_LA_REINE_5685 = 5685,
+
+        FEE_DARTIFICE_BOULE_DE_COULEURS_5686 = 5686,
+
         SARUHARUHA_5687 = 5687,
-        MASTERFUL_UPPERCUT_5688 = 5688,
-        INSTANTANEOUS_DEPLACEMENT_5689 = 5689,
-        AGGRESSIVE_RHIZOME_5690 = 5690,
-        NYMPHAEACEAE_SPORES = 5693,
-        DOLLISH_INFECTION_5695 = 5695,
-        DOLLISH_INFECTION_5696 = 5696,
-        AGGRESSIVE_BRAMBLE_5697 = 5697,
-        DOLLISH_INFECTION_5698 = 5698,
-        SWAMP = 5699,
-        SUMMONING_OF_LIPUT_5700 = 5700,
-        AGGRESSIVE_RHIZOME_5701 = 5701,
-        SUMMONING_OF_LIPUT_5702 = 5702,
-        ASTRAL_LEAP_5703 = 5703,
-        BOLGROT_S_FIRE = 5704,
-        FIRE = 5705,
-        EVENING_THE_SCORE = 5706,
-        DOUBLE_LEAP = 5707,
-        SCULL_KRUSH = 5718,
-        THE_EMANCIPATED_ULTRA_POWERFUL = 5719,
-        THE_EMANCIPATED_BLOCK = 5720,
-        THE_EMANCIPATED_INFLATABLE = 5721,
-        THE_EMANCIPATED_SACRIFICIAL_DOLL = 5722,
-        THE_EMANCIPATED_MADOLL = 5723,
-        DOLLISH_CARE_5724 = 5724,
-        CUTTING_5725 = 5725,
-        IMMOBILISM = 5730,
-        HALBERD = 5738,
-        CYANOPH_HIT_5740 = 5740,
-        CYANOPH_S_SUMMONS = 5741,
-        WRUCKUS_S_SUMMONS = 5742,
-        KELP_MOTIVATION_5743 = 5743,
-        KELP_S_SUMMONS = 5744,
-        NORIE_S_SUMMONS = 5745,
-        VERDEKELP_S_SUMMONS = 5746,
-        NORIE_EXPLOSION_5747 = 5747,
-        SLICE = 5748,
-        WRUCKUS_SLOWDOWN = 5749,
-        INFLAMMATION = 5750,
-        SWIFT_SKEWERING = 5751,
-        HARD_HEAD = 5752,
-        GRUMBLE = 5753,
-        MAK_THWACK = 5754,
-        FEU_DE_BOLGROT_GESTION_DE_L_ALEA = 5755,
-        PUSHED = 5756,
-        SHOCKWAVE = 5757,
-        PIERCED = 5758,
-        TOXICITY = 5760,
-        SPIRIT_EXECUTION = 5762,
-        SACRIFICE_RITUAL_5763 = 5763,
-        SACRIFICE_RITUAL_5767 = 5767,
-        GLYPHE_TUEUSE_D_INVOCS = 5768,
-        BOLGROT_STATE = 5771,
-        BOLGROT_GLYPH = 5776,
-        SPIRITUAL_TRANSCENDENCE_5777 = 5777,
-        SACRIFICE_RITUAL_5778 = 5778,
-        SPIRIT_RECALL = 5779,
-        POWER_SOURCE = 5780,
-        THRASHING = 5781,
-        SABBATHAGE = 5782,
-        SACRIFICE_RITUAL_5785 = 5785,
-        IMPROVED_CYANOPH_HIT_5790 = 5790,
-        VERDEKELP_S_PROTECTION_5791 = 5791,
-        WEAKEN_5792 = 5792,
-        IMPROVED_KELP_MOTIVATION_5794 = 5794,
-        SPIRITUAL_TRANSCENDENCE_5795 = 5795,
-        TEAR_OF_DESTINY = 5796,
-        IMPROVED_WRUCKUS_SLOWDOWN = 5801,
-        IMPROVED_NORIE_EXPLOSION_5802 = 5802,
-        TEMPORAL_COMPRESSION = 5803,
-        ASTRAL_LEAP_5808 = 5808,
-        CLOSE_COMBAT_5812 = 5812,
-        AD_HOC_ALLIES_5813 = 5813,
-        LIGHTNING_POWER_5814 = 5814,
-        BITING_ARROW = 5816,
-        REGRESSION = 5817,
-        KRUELLA_S_SUMMONS = 5820,
-        LOW_FLAME_THROWER = 5821,
-        MINOR_CELESTIAL_RECONSTITUTION = 5822,
-        MOTIVATIONAL_BREATH = 5825,
-        FIRE_RUNE_5828 = 5828,
-        FLAMETHROWER_5829 = 5829,
-        STALAGMITE = 5830,
-        TELLURIC_WAVE = 5831,
-        ETHER = 5832,
-        RUNIFICATION = 5833,
-        ELEMENTAL_COMBINATION_5835 = 5835,
-        ELEMENTAL_DRAIN_5836 = 5836,
-        WATER_RUNE_5837 = 5837,
-        STORM_5838 = 5838,
-        STRIKING_METEOR = 5839,
-        GLACIER = 5840,
-        ICY_SHARDS = 5841,
-        TRANSFIXING_GUST = 5842,
-        ASTRAL_BLADE = 5843,
-        BURNING_STROKE = 5844,
-        DEFLAGRATION = 5845,
-        ELEMENTAL_SHIELD_5846 = 5846,
-        JOURNEY = 5847,
-        RUNIC_TREATMENT = 5850,
-        KREPITUS = 5851,
-        KARDORIB_S_CALL = 5852,
-        SPECTRAL_BREATH = 5853,
-        CHAFER_SLASH_5854 = 5854,
-        THIEFIRE = 5855,
-        EVIL_BURN = 5856,
-        CAP_SMASH = 5857,
-        TENSIA_SPORE = 5858,
-        CELESTIAL_RECOVERY = 5861,
-        HIGH_HEAT_LAUNCHER = 5862,
-        RON_RON = 5863,
-        BONFIRE_SUMMONING = 5864,
-        PURRSNIKIT_SMASH = 5865,
-        LIGHT_BURN = 5866,
-        CELESTIAL_BREATH = 5867,
-        SPIRITUAL_PARTICLES = 5868,
-        PAINFUL_INCARNATION_5869 = 5869,
+
+        UPPERCUT_MAGISTRAL_5688 = 5688,
+
+        DEPLACEMENT_INSTANTANE_5689 = 5689,
+
+        RHIZOME_AGRESSIF_5690 = 5690,
+
+        SPORES_DE_NYMPHEACEE_5693 = 5693,
+
+        MARECAGE_5699 = 5699,
+
+        INVOCATION_DE_NUFOR_5700 = 5700,
+
+        RHIZOME_AGRESSIF_5701 = 5701,
+
+        INVOCATION_DE_NUFOR_5702 = 5702,
+
+        BOND_ASTRAL_5703 = 5703,
+
+        FEU_DE_BOLGROT_5704 = 5704,
+
+        FEU_5705 = 5705,
+
+        A_ARMES_EGALES_5706 = 5706,
+
+        BOND_DOUBLE_5707 = 5707,
+
+        CASSE_CRANE_5718 = 5718,
+
+        LA_SURPUISSANTE_EMANCIPEE_5719 = 5719,
+
+        LA_BLOQUEUSE_EMANCIPEE_5720 = 5720,
+
+        LA_GONFLABLE_EMANCIPEE_5721 = 5721,
+
+        LA_SACRIFIEE_EMANCIPEE_5722 = 5722,
+
+        LA_FOLLE_EMANCIPEE_5723 = 5723,
+
+        SOIN_POUPESQUE_5724 = 5724,
+
+        BOUTURE_5725 = 5725,
+
+        IMMOBILISME_5730 = 5730,
+
+        HALLEBARDE_5738 = 5738,
+
+        FRAPPE_DE_CYANOG_5740 = 5740,
+
+        INVOCATION_DE_CYANOG_5741 = 5741,
+
+        INVOCATION_DE_GOEMUS_5742 = 5742,
+
+        MOTIVATION_DE_KELPE_5743 = 5743,
+
+        INVOCATION_DE_KELPE_5744 = 5744,
+
+        INVOCATION_DE_NORIE_5745 = 5745,
+
+        INVOCATION_DE_VERAK_5746 = 5746,
+
+        EXPLOSION_DE_NORIE_5747 = 5747,
+
+        TRANCHER_5748 = 5748,
+
+        RALENTISSEMENT_DE_GOEMUS_5749 = 5749,
+
+        INFLAMMATION_5750 = 5750,
+
+        EMBROCHEMENT_VELOCE_5751 = 5751,
+
+        TETE_DE_LARD_5752 = 5752,
+
+        GROMMELLEMENT_5753 = 5753,
+
+        COUP_DE_MAK_5754 = 5754,
+
+        FEU_DE_BOLGROT___GESTION_DE_LALEA_5755 = 5755,
+
+        POUSSEE_5756 = 5756,
+
+        ONDE_DE_CHOC_5757 = 5757,
+
+        PERCEE_5758 = 5758,
+
+        TOXICITE_5760 = 5760,
+
+        EXECUTION_DES_ESPRITS_5762 = 5762,
+
+        RITUEL_DE_SACRIFICE_5763 = 5763,
+
+        RITUEL_DE_SACRIFICE_5767 = 5767,
+
+        GLYPHE_TUEUSE_DINVOCS_5768 = 5768,
+
+        BOLGROT___ETAT_5771 = 5771,
+
+        BOLGROT___GLYPHE_5776 = 5776,
+
+        TRANSCENDANCE_SPIRITUELLE_5777 = 5777,
+
+        RITUEL_DE_SACRIFICE_5778 = 5778,
+
+        RAPPEL_DE_LESPRIT_5779 = 5779,
+
+        SOURCE_DE_PUISSANCE_5780 = 5780,
+
+        TABASSAGE_5781 = 5781,
+
+        SABBATHAGE_5782 = 5782,
+
+        RITUEL_DE_SACRIFICE_5785 = 5785,
+
+        FRAPPE_DE_CYANOG_AMELIOREE_5790 = 5790,
+
+        PROTECTION_DE_VERAK_5791 = 5791,
+
+        AFFAIBLIR_5792 = 5792,
+
+        MOTIVATION_DE_KELPE_AMELIOREE_5794 = 5794,
+
+        TRANSCENDANCE_SPIRITUELLE_5795 = 5795,
+
+        LARME_DU_DESTIN_5796 = 5796,
+
+        RALENTISSEMENT_DE_GOEMUS_AMELIORE_5801 = 5801,
+
+        EXPLOSION_DE_NORIE_AMELIOREE_5802 = 5802,
+
+        COMPRESSION_TEMPORELLE_5803 = 5803,
+
+        BOND_ASTRAL_5808 = 5808,
+
+        COMBAT_RAPPROCHE_5812 = 5812,
+
+        ALLIES_DE_CIRCONSTANCE_5813 = 5813,
+
+        PUISSANCE_DE_LA_FOUDRE_5814 = 5814,
+
+        FLECHE_MORDANTE_5816 = 5816,
+
+        RETROGRADATION_5817 = 5817,
+
+        INVOCATION_DE_KRUELLA_5820 = 5820,
+
+        LANCER_DE_FEU_DOUX_5821 = 5821,
+
+        RECONSTITUTION_CELESTE_MINEURE_5822 = 5822,
+
+        SOUFFLE_MOTIVANT_5825 = 5825,
+
+        _5828 = 5828,
+
+        _5829 = 5829,
+
+        _5830 = 5830,
+
+        _5831 = 5831,
+
+        _5832 = 5832,
+
+        _5833 = 5833,
+
+        _5835 = 5835,
+
+        _5836 = 5836,
+
+        _5837 = 5837,
+
+        _5838 = 5838,
+
+        _5839 = 5839,
+
+        _5840 = 5840,
+
+        _5841 = 5841,
+
+        _5842 = 5842,
+
+        _5843 = 5843,
+
+        _5844 = 5844,
+
+        _5845 = 5845,
+
+        _5846 = 5846,
+
+        _5847 = 5847,
+
+        _5850 = 5850,
+
+        CRAQUEMENT_DOS_5851 = 5851,
+
+        APPEL_DE_KARDORIB_5852 = 5852,
+
+        SOUFFLE_SPECTRAL_5853 = 5853,
+
+        COUP_DU_CHAFER_5854 = 5854,
+
+        VOLFEU_5855 = 5855,
+
+        BRULURE_MALEFIQUE_5856 = 5856,
+
+        COUP_DE_PILEUS_5857 = 5857,
+
+        SPORE_TENSIA_5858 = 5858,
+
+        RECONSTITUTION_CELESTE_5861 = 5861,
+
+        LANCER_DE_FEU_VIF_5862 = 5862,
+
+        RON_RON_5863 = 5863,
+
+        INVOCATION_DE_FEU_DE_JOIE_5864 = 5864,
+
+        ECRASEMENT_DU_RONRONCHON_5865 = 5865,
+
+        BRULURE_LEGERE_5866 = 5866,
+
+        SOUFFLE_CELESTE_5867 = 5867,
+
+        PARTICULES_SPIRITUELLES_5868 = 5868,
+
+        INCARNATION_DOULOUREUSE_5869 = 5869,
+
         NYORO_5870 = 5870,
+
         NYORO_5872 = 5872,
+
         CAMOUFLAGE_5873 = 5873,
-        IMPALEMENT_5874 = 5874,
-        UNHEALTHY_EUPHORIA_5875 = 5875,
-        FIRE_ARROW_5876 = 5876,
-        CRITICAL_ARROWS_5877 = 5877,
-        PROXIMA = 5878,
-        OAF = 5879,
-        HORIZ = 5880,
-        BEHELIT = 5881,
-        DAGOB = 5882,
+
+        EMPALEMENT_5874 = 5874,
+
+        EUPHORIE_MALSAINE_5875 = 5875,
+
+        FLECHE_DE_FEU_5876 = 5876,
+
+        FLECHES_CRITIQUES_5877 = 5877,
+
+        PROXIMA_5878 = 5878,
+
+        BUTOR_5879 = 5879,
+
+        HORIZE_5880 = 5880,
+
+        BIHILETE_5881 = 5881,
+
+        DAGOB_5882 = 5882,
+
         SAK_5883 = 5883,
-        NEKINEKO = 5884,
-        DYNAMO = 5885,
-        PENITENT = 5886,
-        CORRODE = 5887,
-        CRITUS = 5888,
+
+        NEKINEKO_5884 = 5884,
+
+        DYNAMO_5885 = 5885,
+
+        PENITENT_5886 = 5886,
+
+        CORRODE_5887 = 5887,
+
+        CRITUS_5888 = 5888,
+
         BOBLE_5889 = 5889,
-        OUGAA = 5890,
-        MUTA = 5891,
-        NYAN = 5892,
-        HOSKAR = 5893,
-        DAKID = 5894,
+
+        OUGAH_5890 = 5890,
+
+        MUTA_5891 = 5891,
+
+        NYAN_5892 = 5892,
+
+        HOSKAR_5893 = 5893,
+
+        LEUKIDE_5894 = 5894,
+
         ZAIHN_5895 = 5895,
-        DJIM = 5896,
-        BINAR = 5897,
-        ORGNOBI = 5898,
-        SWORD_OF_FLAME = 5899,
-        KORRIA = 5900,
-        SUDDEN = 5901,
-        UNIQUE = 5902,
-        FRENZY_5903 = 5903,
-        SKEWERING = 5904,
-        DRAGOPI = 5907,
+
+        DJIM_5896 = 5896,
+
+        BINAR_5897 = 5897,
+
+        ORGNOBI_5898 = 5898,
+
+        ESTOCRAME_5899 = 5899,
+
+        KORRIA_5900 = 5900,
+
+        SUBITE_5901 = 5901,
+
+        UNICITE_5902 = 5902,
+
+        FRENESIE_5903 = 5903,
+
+        EMBROCHEMENT_5904 = 5904,
+
         HULHU_5908 = 5908,
-        YOSH = 5909,
-        KYOUB = 5910,
-        ROCHA_5911 = 5911,
-        AROUMB = 5912,
-        VOOD = 5913,
+
+        YOCHE_5909 = 5909,
+
+        KYOUB_5910 = 5910,
+
+        CAFRA_5911 = 5911,
+
+        AROUMB_5912 = 5912,
+
+        VAUDE_5913 = 5913,
+
         PETUNIA_5914 = 5914,
+
         RAPA_5915 = 5915,
-        ULTRAM = 5916,
+
+        ULTRAM_5916 = 5916,
+
         TELEB_5917 = 5917,
-        PAYO_5918 = 5918,
+
+        PEHO_5918 = 5918,
+
         DOMO_5919 = 5919,
-        NAHUATL = 5920,
+
+        NAHUATL_5920 = 5920,
+
         PIKMI_5921 = 5921,
-        SUMMONING_OF_MUSHD = 5924,
-        PAINFUL_INCARNATION_5925 = 5925,
-        CELESTIAL_PARTICLES = 5926,
-        RUN_THROUGH = 5927,
-        GUISARME = 5928,
-        VAMPIRIC_FLAMES = 5929,
-        BRAKMARIAN_FURY = 5930,
-        STIMULATION = 5931,
-        BURNING_SULPHUR = 5932,
-        DEBILITATING_FLAMES = 5933,
+
+        INVOCATION_BOOEUSE_5924 = 5924,
+
+        INCARNATION_CUISANTE_5925 = 5925,
+
+        PARTICULES_CELESTES_5926 = 5926,
+
+        TRANSPERCER_5927 = 5927,
+
+        GUISARME_5928 = 5928,
+
+        FLAMMES_VAMPIRIQUES_5929 = 5929,
+
+        FUREUR_BRAKMARIENNE_5930 = 5930,
+
+        STIMULATION_5931 = 5931,
+
+        SOUFRE_BRULANT_5932 = 5932,
+
+        FLAMMES_DEBILITANTES_5933 = 5933,
+
         BOBLE_5934 = 5934,
+
         ZAIHN_5935 = 5935,
+
         HULHU_5936 = 5936,
-        ROCHA_5937 = 5937,
-        ROCHA_5938 = 5938,
+
+        CAFRA_5937 = 5937,
+
+        CAFRA_5938 = 5938,
+
         PETUNIA_5939 = 5939,
+
         RAPA_5940 = 5940,
+
         TELEB_5941 = 5941,
-        TELEB = 5942,
-        PAYO_5943 = 5943,
+
+        TELEB_5942 = 5942,
+
+        PEHO_5943 = 5943,
+
         DOMO_5944 = 5944,
-        DOMO = 5945,
+
+        DOMO_5945 = 5945,
+
         PIKMI_5946 = 5946,
-        VAMPIRIC_SWELL = 5947,
-        BONTARIAN_FURY = 5948,
-        FREEZING_PUDDLE = 5949,
-        UNLUCKY_WATERS = 5950,
-        ASHY_SLOBBER = 5951,
-        TURQUOISE_DOFUS = 5952,
-        LUNG_OF_THE_PLAINS = 5953,
-        AZRA_S_PROTECTION = 5954,
-        RAAGRESSION = 5955,
-        SEISMIC_NEUTRALISATION = 5956,
-        RAAGE = 5957,
-        ELEMENTALAVA = 5958,
-        THE_BOOM = 5959,
-        ELEMENTAGMA = 5960,
-        RUPTURE = 5961,
-        SNORT = 5962,
-        POISONED_BREATH = 5963,
-        GLOOGLOOT = 5964,
-        SPLASH_5965 = 5965,
-        SPLOTCH = 5968,
-        BOMBOLA = 5970,
-        APPROXIMATE_EXPLOSION = 5971,
-        RENEGADE = 5972,
+
+        HOULE_VAMPIRIQUE_5947 = 5947,
+
+        FUREUR_BONTARIENNE_5948 = 5948,
+
+        FLAQUE_GIVRANTE_5949 = 5949,
+
+        EAUX_MALCHANCEUSES_5950 = 5950,
+
+        BAVE_CENDREE_5951 = 5951,
+
+        DOFUS_TURQUOISE_5952 = 5952,
+
+        POUMON_DES_PLAINES_5953 = 5953,
+
+        PROTECTION_DAZRA_5954 = 5954,
+
+        RAAGRESSION_5955 = 5955,
+
+        NEUTRALISATION_SISMIQUE_5956 = 5956,
+
+        RAAGE_5957 = 5957,
+
+        ELEMENTALAVE_5958 = 5958,
+
+        LA_BOUM_5959 = 5959,
+
+        ELEMENTAGMA_5960 = 5960,
+
+        EVENTRATION_5961 = 5961,
+
+        GROGNEMENT_5962 = 5962,
+
+        SOUFFLE_EMPOISONNE_5963 = 5963,
+
+        GLOUGLOUTTE_5964 = 5964,
+
+        PLOUF_5965 = 5965,
+
+        SPLOTCH_5968 = 5968,
+
+        BOMBOLA_5970 = 5970,
+
+        DETONATION_APPROXIMATIVE_5971 = 5971,
+
+        RENEGAT_5972 = 5972,
+
         SAK_5976 = 5976,
+
         SAK_5977 = 5977,
+
         SAK_5978 = 5978,
-        PINT_5988 = 5988,
-        RIKIKI_TROOLISH_CRUSH = 5994,
-        RIKIKI_TROOLISH_HIT = 5995,
-        ITBIG = 5996,
-        NOR_TREAT = 5997,
-        MUVYURBUT = 5998,
-        ALBROK = 5999,
-        DIRTY_CLAW = 6001,
-        SULLIED_MOVEMENT = 6002,
-        ROCHA_6003 = 6003,
-        ROCHA_6004 = 6004,
-        ROCHA_6005 = 6005,
-        ROSHAMBO_6006 = 6006,
-        ROSHAMBO_6007 = 6007,
-        ROSHAMBO_6008 = 6008,
-        ROSHAMBO_6009 = 6009,
-        ROSHAMBO_6010 = 6010,
-        SUMMONING_OF_SNAPPER = 6011,
-        PAINFUL_REPULSION = 6012,
-        LUCKY_FROTH = 6013,
-        HEAVY_WAVE = 6014,
-        SIREN_S_CHARMS = 6015,
-        WATER_OF_PAIN = 6016,
-        SEVERE_BURN = 6017,
-        PURGATIVE_GURGLES = 6018,
-        DAGGER_STRIKE = 6019,
-        ROSHAMBO_6020 = 6020,
-        GARGOYL_BREATH = 6021,
-        IRRITATING_SMOKE = 6022,
-        CAUTERIZING_FLAME = 6023,
-        VIOLENT_DEPRESSION = 6024,
-        CATATONIC_CHAGRIN = 6025,
-        PAINFUL_REGRETS = 6026,
-        SHADOW_SHELTER = 6027,
-        DARK_MIASME = 6028,
-        PETTY_CLOUD = 6029,
-        VENGEFUL_WRATH = 6030,
-        NIGHT_THEFT = 6031,
-        WIND_OF_TERROR = 6032,
-        ACCELERATING_DRAIN = 6034,
-        MENTAL_CLEAR = 6035,
-        HOTHEAD_6037 = 6037,
-        DAMPENING_6039 = 6039,
-        CUT_6040 = 6040,
-        ENVELOPING = 6041,
-        DOUBLE_PLAGUE = 6042,
-        WHIRLING_MASS = 6043,
-        REVIGORATING_SHOCK = 6044,
-        MONUMENTAL_SLAP = 6046,
-        STONE_THROW = 6047,
-        CALL_OF_THE_EARTH = 6048,
-        MINERAL_RAMPART = 6049,
-        BURNING_STONE = 6050,
-        OVERWHELMING_CRUSH = 6051,
-        OPPRESSIVE_CONSTRICTION = 6052,
-        SHADOW_INFLUENCE = 6053,
-        TWILIGHT_POWER = 6054,
-        APPRENTICE_YOUTH = 6055,
-        APPRENTICE_HEALING = 6056,
-        APPRENTICE_FIRE = 6057,
-        PIRATE_BOMB = 6058,
-        FIRETWERK = 6059,
-        BONTARIAN_ATTRACTION = 6060,
-        BONTARIAN_LEAP = 6061,
-        TORNADO_OF_BLADES = 6062,
-        STAMPING_6063 = 6063,
-        CUT_KNEE = 6064,
-        BONTARIAN_ELECTROSHOCK = 6065,
-        WHIRLING_CANNON = 6066,
-        BIGGEST_PIRATE_BALLS = 6067,
-        RUMOTOV_COCKTAIL = 6068,
-        SPIT_RUM = 6069,
-        AND_A_BOTTLE_OF_RUM = 6070,
-        DOWN_WITH_THE_ENEMY_6072 = 6072,
-        MORTAL_CUTTING = 6073,
-        TIGHT_PIROUETTE_6074 = 6074,
-        ELECTROMAGNETISM = 6075,
-        CRASS_PIRATION = 6076,
-        SWALLOWING_6077 = 6077,
-        SUMMONING_OF_DOUGH_DOUGH = 6078,
-        AMBUSHING_SHOT = 6079,
-        ATTACK_OF_THE_HUNTER = 6080,
-        KIDAKANNIBALL = 6081,
-        SAVAGE_CRY = 6083,
-        DODORAGE = 6084,
-        DUNDER = 6085,
-        WEAKENING_PECK = 6086,
-        DOTITIS = 6087,
-        DORAYME = 6088,
-        MATERNAL_PROTECTION = 6089,
-        ORMONE_PUSH = 6090,
-        DOMINATING_PECK = 6091,
-        DOSTROY = 6092,
-        POCKET_SLING = 6093,
-        VAUDOU_INSPIRATION = 6094,
-        COLLATERAL_SNEEZE_6095 = 6095,
-        FRIENDLY_PUSH = 6096,
-        LIGHTNING_JAVELIN = 6097,
-        IOUSHOLNOTPASS = 6098,
-        BATOU_KADA = 6099,
-        MOTIVATING_DRUM = 6100,
-        MASK_BLOW = 6101,
-        PRIMITIVE_ARCHERY = 6102,
-        PIRATE_CURSE_6103 = 6103,
-        CURSED_SABER_STRIKE_6104 = 6104,
-        MOUSSE_PUSH = 6105,
-        RUN_FAST = 6106,
-        MUGGY_EXPLOSION = 6107,
-        INCENDIESEL = 6108,
-        SEISMIC_SHOCKWAVE = 6109,
-        MORTAL_COLLAPSE = 6110,
-        FLAMMEKEUCHE = 6111,
-        BOTULISM = 6112,
-        WAVY_STRIKE = 6113,
-        SHADOW_BREATH = 6114,
-        PREPARE_TO_BOARD = 6115,
-        BASIL = 6116,
-        COLLOBOT = 6117,
-        CONJUNCTIVITIS = 6118,
-        SPECTRAL_TELEPORTATION_6119 = 6119,
-        SLIMY_BODY = 6120,
-        SPOON = 6121,
-        BUUURP = 6122,
-        PRRRT = 6123,
-        UNHINGING = 6124,
-        MORTAL_SABER = 6125,
-        PREPARE_TO_BOAAARD = 6126,
-        HELP_CREW = 6127,
-        RIPATE_FRACAS = 6128,
-        REFLECTIVE_SHELL = 6129,
-        AQUATIC_FIRE = 6131,
-        TURTLE_FIST = 6132,
-        TURTLE_LIGHTNING_STRIKE = 6133,
-        EXPLOSIVE_PAW = 6134,
-        PIERCING_WIND = 6135,
-        WHIRLING_PAW_STRIKE = 6136,
-        TERRESTRIAL_CRUSH = 6137,
-        INCANDESCENT_HAT = 6138,
-        INTERNAL_FIRE = 6139,
-        FELLING_PUNT = 6140,
-        FACE_DOWN = 6141,
-        CURSED_SABER_STRIKE_6142 = 6142,
-        DOWN_WITH_THE_ENEMY_6143 = 6143,
-        SPECTRAL_TELEPORTATION_6144 = 6144,
-        PIRATE_CURSE_6145 = 6145,
-        STONE = 6146,
-        PAPER = 6147,
-        SCISSORS = 6148,
-        DOKOKO = 6149,
-        IMPRISONMENT_RITUAL = 6150,
-        KOKOJUICE = 6151,
-        KOULRAOUL = 6152,
-        KOKOSUCK = 6153,
-        AQUABASH = 6162,
-        FIRE_TOTEM_6163 = 6163,
-        KELP_MOTIVATION_6164 = 6164,
-        EARTH_TOTEM_6165 = 6165,
-        AIR_TOTEM_6166 = 6166,
-        WATER_TOTEM_6167 = 6167,
-        TIGHT_PIROUETTE_6168 = 6168,
-        COLLATERAL_SNEEZE_6169 = 6169,
-        FATTY_BUM_BUM_6170 = 6170,
-        MOONESQUE_FRENZY_6171 = 6171,
-        MOONESQUE_BLESSING_6172 = 6172,
-        LOCKS = 6173,
-        TRANSMUTATION_RITUAL_6174 = 6174,
-        TRANSMUTATION_RITUAL_6175 = 6175,
-        UNSTABLE_FORMULA_6176 = 6176,
-        SECURITY_PERIMETER = 6177,
-        CYANOPH_HIT_6180 = 6180,
-        IMPROVED_CYANOPH_HIT_6181 = 6181,
-        NORIE_EXPLOSION_6182 = 6182,
-        IMPROVED_NORIE_EXPLOSION_6183 = 6183,
-        KELP_MOTIVATION = 6184,
-        VERDEKELP_S_PROTECTION_6185 = 6185,
-        IMPROVED_KELP_MOTIVATION_6186 = 6186,
-        AIR_RUNE_6190 = 6190,
-        EARTH_RUNE_6191 = 6191,
-        FIRE_RUNE_6192 = 6192,
-        WATER_RUNE_6193 = 6193,
-        AIR_RUNE_6194 = 6194,
-        EARTH_RUNE_6195 = 6195,
-        IT_ALL_ADDS_UP = 6198,
-        THE_END_IS_NIGH = 6199,
-        FROZEN_IN_TIME = 6200,
-        BACK_TO_SQUARE_ONE = 6201,
-        DON_T_STAND_THERE = 6202,
-        COFFER_GLYPH_6203 = 6203,
-        DRHUSH = 6204,
-        THE_COFFER_S_LIBERATION = 6205,
-        THE_COFFER_S_RESTRAINT = 6206,
-        THE_COFFER_S_HINDRANCE = 6207,
-        CATDOUNOWT = 6208,
-        PREDATION = 6209,
-        CATUQILS = 6210,
-        KITUNRULY = 6211,
-        TEMPORAL_IMMUNITY = 6212,
-        DELAY = 6213,
-        SPACIAL_TEMPORAL_ANCHOR = 6214,
-        GRANNIFICATION = 6215,
-        DRIP_DROP = 6216,
-        DROPLETTE = 6217,
-        PLIP = 6218,
-        PLOP = 6219,
-        SPLOSH = 6220,
-        SPLASH = 6221,
-        ELEMENTAL_RUNES = 6222,
-        AIR_MANIFESTATION_6223 = 6223,
-        AIR_MANIFESTATION_6224 = 6224,
-        PROPAGATION_6225 = 6225,
-        PROPAGATION_6226 = 6226,
-        POLARITY_6227 = 6227,
-        IMPRINT = 6228,
-        ELEMENTAL_SHIELD_6229 = 6229,
-        SLY_DEVIOUSNESS = 6230,
-        CATSEYE_GAME_6231 = 6231,
-        CATSEYE_GAME_6232 = 6232,
-        CATSEYE_GAME_6234 = 6234,
-        CATSEYE_GAME_6235 = 6235,
-        CATSEYE_GAME_6236 = 6236,
-        NO_EFFECT = 6237,
-        NEGATIVISM = 6238,
-        RED_AND_BLACK_6239 = 6239,
-        CATSEYE_GAME_6240 = 6240,
-        CATSEYE_GAME_6241 = 6241,
-        RED_AND_BLACK_6264 = 6264,
-        GUARD_NAH = 6266,
-        GARDENING = 6267,
-        GAS_RING = 6268,
-        BOLESH_S_CALL = 6269,
-        DEVOURING_HUNGER = 6270,
-        BOLESH_S_BITE = 6271,
-        BOLETISATION = 6272,
-        CORNERING = 6273,
-        CUTTING_UP = 6274,
-        SUNFLOWER_SUMMONING = 6275,
-        CRAFFTIBBOMB_SUMMONING = 6277,
-        LOUSPRING_6278 = 6278,
-        BOMB_VULNERABILITY = 6279,
-        BOMB_PUSH = 6280,
-        LOUSPRING_MUTATION_6281 = 6281,
-        LOUSPRING_MUTATION_6282 = 6282,
-        LOUSPRING_MUTATION_6283 = 6283,
-        TELEPORTABOMB = 6284,
-        UNAVOIDABLE_EXPLOSION = 6285,
-        ENTICING = 6286,
-        PARLOUR = 6287,
-        REJECTION_6288 = 6288,
-        LOUSY_PIGGISHNESS = 6289,
-        NEAWBY_PWOTECTION = 6290,
-        SECUWED = 6291,
-        EXPLOSIVE_SPEAW = 6292,
-        BOMBAWDING_WALLOP = 6293,
-        GRAVELINES = 6294,
-        WHILE_YOU_RE_TANK_IT = 6295,
-        GUNNER = 6296,
-        MANŒUVRE = 6297,
-        ECAFLIP_WASHROOM = 6298,
-        PRANK_AND_CATCH = 6299,
-        BIG_EYES = 6300,
-        THE_WHEETURN = 6301,
-        PIKE_THROW = 6302,
-        STRAIGHT_IN_THE_HEART = 6303,
-        SPADE_SNATCHER = 6304,
-        HEARTUOUS = 6305,
-        DIAMONTAGE = 6306,
-        DIAMUNDANE = 6307,
-        TURNCLAW_6308 = 6308,
-        TURNCLAW_6309 = 6309,
-        HEARTBREAKER_6310 = 6310,
-        HEARTBREAKER_6311 = 6311,
-        ROYAL_FLASH = 6312,
-        BRUTAL_KNIGHTING = 6313,
+
+        CHOPINE_5988 = 5988,
+
+        ECRASEMENT_TROOLLESQUE_RIKIKI_5994 = 5994,
+
+        COUP_TROOLLESQUE_RIKIKI_5995 = 5995,
+
+        TAPFOR_5996 = 5996,
+
+        RECULPA_5997 = 5997,
+
+        BOUJTOA_5998 = 5998,
+
+        TOUKACE_5999 = 5999,
+
+        GRIFFE_SOUILLEE_6001 = 6001,
+
+        DEPLACEMENT_SOUILLE_6002 = 6002,
+
+        CAFRA_6003 = 6003,
+
+        CAFRA_6004 = 6004,
+
+        CAFRA_6005 = 6005,
+
+        CHIFOUMI_6006 = 6006,
+
+        CHIFOUMI_6007 = 6007,
+
+        CHIFOUMI_6008 = 6008,
+
+        CHIFOUMI_6009 = 6009,
+
+        CHIFOUMI_6010 = 6010,
+
+        INVOCATION_DE_PICHON_6011 = 6011,
+
+        REFLUX_DOULOUREUX_6012 = 6012,
+
+        ECUME_CHANCEUSE_6013 = 6013,
+
+        VAGUE_PESANTE_6014 = 6014,
+
+        CHARME_DE_LA_SIRENE_6015 = 6015,
+
+        EAU_DE_DOULEUR_6016 = 6016,
+
+        BRULURE_SEVERE_6017 = 6017,
+
+        GARGOUILLIS_PURGATIF_6018 = 6018,
+
+        COUP_DE_DAGUE_6019 = 6019,
+
+        CHIFOUMI_6020 = 6020,
+
+        SOUFFLE_DE_LA_GARGROUILLE_6021 = 6021,
+
+        FUMEE_IRRITANTE_6022 = 6022,
+
+        FLAMME_CAUTERISANTE_6023 = 6023,
+
+        DEPRESSION_VIOLENTE_6024 = 6024,
+
+        CHAGRIN_CATATONIQUE_6025 = 6025,
+
+        REGRETS_DOULOUREUX_6026 = 6026,
+
+        ABRI_DES_OMBRES_6027 = 6027,
+
+        MIASME_OBSCUR_6028 = 6028,
+
+        NUAGE_MESQUIN_6029 = 6029,
+
+        COLERE_VENGERESSE_6030 = 6030,
+
+        VOL_DE_NUIT_6031 = 6031,
+
+        VENT_DE_TERREUR_6032 = 6032,
+
+        VIDANGE_ACCELERATRICE_6034 = 6034,
+
+        DEGAGE_MENTAL_6035 = 6035,
+
+        TETE_BRULEE_6037 = 6037,
+
+        EMOUSSAGE_6039 = 6039,
+
+        COUPE_6040 = 6040,
+
+        ENVELOPPAGE_6041 = 6041,
+
+        DUO_DE_FLEAUX_6042 = 6042,
+
+        MASSES_TOURNOYANTES_6043 = 6043,
+
+        CHOC_REVIGORANT_6044 = 6044,
+
+        CLAQUE_MONUMENTALE_6046 = 6046,
+
+        LANCER_DE_ROCHER_6047 = 6047,
+
+        APPEL_DE_LA_TERRE_6048 = 6048,
+
+        REMPART_MINERAL_6049 = 6049,
+
+        PIERRE_BRULANTE_6050 = 6050,
+
+        ECRASEMENT_ETOURDISSANT_6051 = 6051,
+
+        ETOUFFEMENT_OPPRESSANT_6052 = 6052,
+
+        EMPRISE_DES_TENEBRES_6053 = 6053,
+
+        PUISSANCE_CREPUSCULAIRE_6054 = 6054,
+
+        JOUVENCE_DE_LAPPRENTIE_6055 = 6055,
+
+        SOIN_DE_LAPPRENTIE_6056 = 6056,
+
+        FEU_DE_LAPPRENTIE_6057 = 6057,
+
+        BOMBE_PIRATE_6058 = 6058,
+
+        FEU_DARTIFESSE_6059 = 6059,
+
+        ATTIRANCE_BONTARIENNE_6060 = 6060,
+
+        BOND_BONTARIEN_6061 = 6061,
+
+        TORNADE_DE_LAMES_6062 = 6062,
+
+        POINÇONNAGE_6063 = 6063,
+
+        COUPE_GENOUX_6064 = 6064,
+
+        ELECTROCHOC_BONTARIEN_6065 = 6065,
+
+        CANON_TOURNOYANT_6066 = 6066,
+
+        GROS_BOULET_PIRATE_6067 = 6067,
+
+        COCKTAIL_RHUMOTOV_6068 = 6068,
+
+        CRACHAT_DE_RHUM_6069 = 6069,
+
+        ET_UNE_BOUTEILLE_DE_RHUM__6070 = 6070,
+
+        SUS_A_LENNEMI__6072 = 6072,
+
+        TRANCHAGE_MORTEL_6073 = 6073,
+
+        VIREVOLTAGE_COLLANT_6074 = 6074,
+
+        ELECTROMAGNETISME_6075 = 6075,
+
+        CRASSE_PIRATION_6076 = 6076,
+
+        GOBAGE_6077 = 6077,
+
+        INVOCATION_DE_DODOUNE_6078 = 6078,
+
+        TIR_EMBUSQUE_6079 = 6079,
+
+        LATTAQUE_DU_CHASSEUR_6080 = 6080,
+
+        SARBAKANNIBOUL_6081 = 6081,
+
+        CRI_SAUVAGE_6083 = 6083,
+
+        DORAGE_6084 = 6084,
+
+        DONNERRE_6085 = 6085,
+
+        COUP_DE_BEC_AFFAIBLISSANT_6086 = 6086,
+
+        DOTITE_6087 = 6087,
+
+        DOREMI_6088 = 6088,
+
+        PROTECTION_MATERNELLE_6089 = 6089,
+
+        POUSSEE_DORMONE_6090 = 6090,
+
+        COUP_DE_BEC_DOMINANT_6091 = 6091,
+
+        DOCHIRURE_6092 = 6092,
+
+        FRONDE_POCHE_6093 = 6093,
+
+        INSPIRATION_VAUDOU_6094 = 6094,
+
+        ETERNUEMENT_COLLATERAL_6095 = 6095,
+
+        POUSSEE_AMICALE_6096 = 6096,
+
+        JAVELINE_FULGURANTE_6097 = 6097,
+
+        IOUSHOLNOTPASSE_6098 = 6098,
+
+        BATOU_KADA_6099 = 6099,
+
+        TAMBOUR_MOTIVANT_6100 = 6100,
+
+        COUP_DE_MASQUE_6101 = 6101,
+
+        TIR_A_LARC_PRIMITIF_6102 = 6102,
+
+        MALEDICTION_PIRATE_6103 = 6103,
+
+        COUP_DE_SABRE_MAUDIT_6104 = 6104,
+
+        POUSSE_MOUSSE_6105 = 6105,
+
+        COURS_VITE_6106 = 6106,
+
+        EXPLOSION_POISSEUSE_6107 = 6107,
+
+        INCENDIESEL_6108 = 6108,
+
+        ONDE_SISMIQUE_6109 = 6109,
+
+        EBOULEMENT_MORTEL_6110 = 6110,
+
+        FLAMMEKUECHE_6111 = 6111,
+
+        BOTULISME_6112 = 6112,
+
+        FRAPPE_ONDULATOIRE_6113 = 6113,
+
+        SOUFFLE_DES_OMBRES_6114 = 6114,
+
+        A_LABORDAGE__6115 = 6115,
+
+        BASILIC_6116 = 6116,
+
+        COLLOBOT_6117 = 6117,
+
+        CONJONCTIVITE_6118 = 6118,
+
+        TELEPORTATION_SPECTRALE_6119 = 6119,
+
+        CORPS_GLUANT_6120 = 6120,
+
+        COUILLERE_6121 = 6121,
+
+        BEUUURP_6122 = 6122,
+
+        PRRRT_6123 = 6123,
+
+        DETRAQUAGE_6124 = 6124,
+
+        SABRE_MORTEL_6125 = 6125,
+
+        A_LABORDAAAGE__6126 = 6126,
+
+        A_MOI_LEQUIPAGE__6127 = 6127,
+
+        ACCROCHAGE_RIPATE_6128 = 6128,
+
+        CARAPACE_REFLECHISSANTE_6129 = 6129,
+
+        FEU_AQUATIQUE_6131 = 6131,
+
+        POING_DE_LA_TORTUE_6132 = 6132,
+
+        FRAPPE_ECLAIR_DE_LA_TORTUE_6133 = 6133,
+
+        PATTE_EXPLOSIVE_6134 = 6134,
+
+        VENTS_PERÇANTS_6135 = 6135,
+
+        COUP_DE_PATTE_TOURNOYANT_6136 = 6136,
+
+        ECRASEMENT_TERRESTRE_6137 = 6137,
+
+        CHAPEAU_INCANDESCENT_6138 = 6138,
+
+        FEU_INTERIEUR_6139 = 6139,
+
+        COUP_DE_PIED_TOMBANT_6140 = 6140,
+
+        FACE_CACHEE_6141 = 6141,
+
+        COUP_DE_SABRE_MAUDIT_6142 = 6142,
+
+        SUS_A_LENNEMI__6143 = 6143,
+
+        TELEPORTATION_SPECTRALE_6144 = 6144,
+
+        MALEDICTION_PIRATE_6145 = 6145,
+
+        PIERRE_6146 = 6146,
+
+        FEUILLE_6147 = 6147,
+
+        CISEAUX_6148 = 6148,
+
+        DOKOKO_6149 = 6149,
+
+        RITUEL_DEMPRISONNEMENT_6150 = 6150,
+
+        KOKOJUS_6151 = 6151,
+
+        KOULRAOUL_6152 = 6152,
+
+        KOKOSPIRATION_6153 = 6153,
+
+        _6154 = 6154,
+
+        _6155 = 6155,
+
+        _6156 = 6156,
+
+        _6157 = 6157,
+
+        _6158 = 6158,
+
+        _6159 = 6159,
+
+        _6160 = 6160,
+
+        _6161 = 6161,
+
+        AQUAFRAPPE_6162 = 6162,
+
+        TOTEM_DU_FEU_6163 = 6163,
+
+        MOTIVATION_DE_KELPE_6164 = 6164,
+
+        TOTEM_DE_LA_TERRE_6165 = 6165,
+
+        TOTEM_DE_LAIR_6166 = 6166,
+
+        TOTEM_DE_LEAU_6167 = 6167,
+
+        VIREVOLTAGE_COLLANT_6168 = 6168,
+
+        ETERNUEMENT_COLLATERAL_6169 = 6169,
+
+        BOUBOULE_6170 = 6170,
+
+        FRENESIE_MOONESQUE_6171 = 6171,
+
+        BENEDICTION_MOONESQUE_6172 = 6172,
+
+        ECLUSE_6173 = 6173,
+
+        RITUEL_DE_TRANSMUTATION_6174 = 6174,
+
+        RITUEL_DE_TRANSMUTATION_6175 = 6175,
+
+        FORMULE_INSTABLE_6176 = 6176,
+
+        PERIMETRE_DE_SECURITE_6177 = 6177,
+
+        FRAPPE_DE_CYANOG_6180 = 6180,
+
+        FRAPPE_DE_CYANOG_AMELIOREE_6181 = 6181,
+
+        EXPLOSION_DE_NORIE_6182 = 6182,
+
+        EXPLOSION_DE_NORIE_AMELIOREE_6183 = 6183,
+
+        MOTIVATION_DE_KELPE_6184 = 6184,
+
+        PROTECTION_DE_VERAK_6185 = 6185,
+
+        MOTIVATION_DE_KELPE_AMELIOREE_6186 = 6186,
+
+        _6190 = 6190,
+
+        _6191 = 6191,
+
+        _6192 = 6192,
+
+        _6193 = 6193,
+
+        _6194 = 6194,
+
+        _6195 = 6195,
+
+        LE_COMPTE_EST_BON_6198 = 6198,
+
+        LA_FIN_APPROCHE_6199 = 6199,
+
+        FIGE_DANS_LE_TEMPS_6200 = 6200,
+
+        RETOUR_A_LA_CASE_DEPART_6201 = 6201,
+
+        RESTE_PAS_LA_6202 = 6202,
+
+        GLYPHE_DE_COFFIOT_6203 = 6203,
+
+        PHONCE_6204 = 6204,
+
+        LIBERATION_DU_COFFIOT_6205 = 6205,
+
+        ENTRAVE_DU_COFFIOT_6206 = 6206,
+
+        GENE_DU_COFFIOT_6207 = 6207,
+
+        CHAFERIEN_6208 = 6208,
+
+        PREDATION_6209 = 6209,
+
+        CHAKITU_6210 = 6210,
+
+        CHAHUTEMENT_6211 = 6211,
+
+        IMMUNITE_TEMPORELLE_6212 = 6212,
+
+        TEMPORISATION_6213 = 6213,
+
+        ANCRE_SPATIO_TEMPORELLE_6214 = 6214,
+
+        MAMIFICATION_6215 = 6215,
+
+        GOUGOUTTE_6216 = 6216,
+
+        GLOUTELETTE_6217 = 6217,
+
+        PLOF_6218 = 6218,
+
+        PLAF_6219 = 6219,
+
+        SPLEUTCH_6220 = 6220,
+
+        SPLITCH_6221 = 6221,
+
+        _6222 = 6222,
+
+        _6223 = 6223,
+
+        _6224 = 6224,
+
+        _6225 = 6225,
+
+        _6226 = 6226,
+
+        _6227 = 6227,
+
+        _6228 = 6228,
+
+        _6229 = 6229,
+
+        SOURNOISERIE_FINAUDE_6230 = 6230,
+
+        JEU_DU_CHALŒIL_6231 = 6231,
+
+        JEU_DU_CHALŒIL_6232 = 6232,
+
+        JEU_DU_CHALŒIL_6234 = 6234,
+
+        JEU_DU_CHALŒIL_6235 = 6235,
+
+        JEU_DU_CHALŒIL_6236 = 6236,
+
+        SANS_EFFET_6237 = 6237,
+
+        NEGATIVISME_6238 = 6238,
+
+        ROUGE_ET_NOIR_6239 = 6239,
+
+        JEU_DU_CHALŒIL_6240 = 6240,
+
+        JEU_DU_CHALŒIL_6241 = 6241,
+
+        ROUGE_ET_NOIR_6264 = 6264,
+
+        GARDE_NE_6266 = 6266,
+
+        JARDINAGE_6267 = 6267,
+
+        ANNEAU_DE_GAZ_6268 = 6268,
+
+        APPEL_DE_BOLESH_6269 = 6269,
+
+        FAIM_DEVORANTE_6270 = 6270,
+
+        MORSURE_DE_BOLESH_6271 = 6271,
+
+        BOULETISATION_6272 = 6272,
+
+        ACCULEMENT_6273 = 6273,
+
+        DEBITAGE_6274 = 6274,
+
+        INVOCATION_DE_TOURNESOL_6275 = 6275,
+
+        INVOCATION_DE_BOMBIGNOLLES_6277 = 6277,
+
+        POUGENITURE_6278 = 6278,
+
+        VULNERABILITE_BOMBESQUE_6279 = 6279,
+
+        POUSSE_BOMBE_6280 = 6280,
+
+        MUTATION_DE_LA_POUGENITURE_6281 = 6281,
+
+        MUTATION_DE_LA_POUGENITURE_6282 = 6282,
+
+        MUTATION_DE_LA_POUGENITURE_6283 = 6283,
+
+        TELEPORTABOMBE_6284 = 6284,
+
+        EXPLOSION_INELUCTABLE_6285 = 6285,
+
+        AGUICHAGE_6286 = 6286,
+
+        SALON_6287 = 6287,
+
+        ECONDUIRE_6288 = 6288,
+
+        PORKASSERIE_6289 = 6289,
+
+        PWOTECTION_WAPPWOCHEE_6290 = 6290,
+
+        VEWWOUILLAGE_6291 = 6291,
+
+        WAVELOT_EXPLOSIF_6292 = 6292,
+
+        MASSUE_MATWAQUANTE_6293 = 6293,
+
+        GRAVELINES_6294 = 6294,
+
+        TANKAFAIR_6295 = 6295,
+
+        CANONNIER_6296 = 6296,
+
+        MANŒUVRE_6297 = 6297,
+
+        TOILETTE_ECAFLIP_6298 = 6298,
+
+        FARCE_ET_ATTRAPE_6299 = 6299,
+
+        GROS_YEUX_6300 = 6300,
+
+        LA_ROUTOURNE_6301 = 6301,
+
+        JET_DE_PIQUE_6302 = 6302,
+
+        EN_PLEIN_CŒUR_6303 = 6303,
+
+        PIQUEPOCKET_6304 = 6304,
+
+        EPIQUE_6305 = 6305,
+
+        CARREAUSILLON_6306 = 6306,
+
+        CARREAUTAGE_6307 = 6307,
+
+        TOURNE_GRIFFE_6308 = 6308,
+
+        TOURNE_GRIFFE_6309 = 6309,
+
+        CREVE_CŒUR_6310 = 6310,
+
+        CREVE_CŒUR_6311 = 6311,
+
+        LUEUR_ROYALE_6312 = 6312,
+
+        ADOUBEMENT_BRUTAL_6313 = 6313,
+
         KISSIFROTSIPIK_6314 = 6314,
-        DISCOVERY = 6315,
-        LOUSPRING_6316 = 6316,
-        COFFER_GLYPH_6317 = 6317,
-        COFFER_GLYPH_6318 = 6318,
-        COFFER_GLYPH_6319 = 6319,
-        COFFER_GLYPH = 6320,
-        LOUSPRING_6321 = 6321,
-        SURROUNDING = 6322,
-        OPENING_THE_COFFER_6323 = 6323,
-        OPENING_THE_COFFER_6324 = 6324,
-        FORCED_OPENING = 6325,
-        LOUSPRING_MUTATION_6326 = 6326,
-        LOUSPRING_6327 = 6327,
-        LOUSPRING_6328 = 6328,
-        CATSEYE_GAME_6329 = 6329,
-        CATSEYE_GAME_6330 = 6330,
-        PRECISION_SHOT = 6333,
-        BLINDING_ARROW = 6334,
-        BLINDING_MASK = 6335,
-        FLEEPULSION_6336 = 6336,
-        REPULSIVE_ARROW_6337 = 6337,
-        FLEETRIBUTION = 6338,
-        FORCED_SALE = 6339,
-        HAGGLING = 6340,
-        PALLY = 6341,
-        HEROIC_CHARGE_6342 = 6342,
-        LOUSSUCTION = 6343,
-        PARASITIC_INVASION_6344 = 6344,
-        BALL_WHIP = 6345,
-        LOUSSERK = 6346,
-        ECTOPARASITOSIS_6347 = 6347,
-        INFESTATION = 6348,
-        ELEMENTAL_FORCEFIELD = 6349,
-        POISONED_EXCRETION = 6350,
-        UBBERMAGIC_6351 = 6351,
-        AIR_HUPPERHIT_6352 = 6352,
-        AIR_HUPPERBLAST_6353 = 6353,
-        AIR_HUPPERHIT_6354 = 6354,
-        AIR_HUPPERBLAST_6355 = 6355,
-        UBBERMAGIC_6356 = 6356,
-        WATER_HUPPERHIT_6357 = 6357,
-        WATER_HUPPERBLAST_6358 = 6358,
-        SWARM_OF_TICKS = 6359,
-        WATER_HUPPERHIT_6360 = 6360,
-        WATER_HUPPERBLAST_6361 = 6361,
-        FIRE_HUPPERHIT_6362 = 6362,
-        FIRE_HUPPERBLAST_6363 = 6363,
-        FIRE_HUPPERHIT_6364 = 6364,
-        FIRE_HUPPERBLAST_6365 = 6365,
-        EARTH_HUPPERHIT_6366 = 6366,
-        EARTH_HUPPERBLAST_6367 = 6367,
-        EARTH_HUPPERHIT_6368 = 6368,
-        EARTH_HUPPERBLAST_6369 = 6369,
-        UBBERMAGIC = 6370,
-        REVITALISING_PUNCTURE = 6372,
-        HUPPERBLOW_6373 = 6373,
-        LEAP_FLEE_6374 = 6374,
-        HUPPERBLOW_6375 = 6375,
-        ELEMENTAL_CRACKLING = 6376,
-        ITCHINGS = 6377,
-        WATER_WORDS = 6378,
-        SHAKING_6379 = 6379,
-        SHARED_SAP = 6381,
-        DARK_GLYPH = 6382,
-        SHOOT_SUMMONING = 6383,
-        INVINCIBLE_SHOOT = 6384,
-        REPLANTING = 6385,
-        PLANTY_RESTRAINTS = 6386,
-        LEAFY_TORNADO = 6387,
-        HORNBEATING = 6388,
-        HELP_FROM_JORIS_6389 = 6389,
-        AILUROPHILIA_6390 = 6390,
-        AILUROPHILIA_6391 = 6391,
-        LICKING_6392 = 6392,
-        LICKING_6393 = 6393,
-        FELINE_CUDDLE = 6394,
-        UPHEAVAL_6395 = 6395,
-        UPHEAVAL_6396 = 6396,
-        FORTIFICATSION_6397 = 6397,
-        FORTIFICATSION_6398 = 6398,
-        HELP_FROM_JORIS_6399 = 6399,
-        KIKITTY_PAYBACK = 6400,
-        CATICELERATION = 6401,
-        ONE_INCH_SCRATCH_6402 = 6402,
-        MEOWASHIGERI = 6403,
-        WONDERFUL_SWORD = 6404,
-        POLARITY_6407 = 6407,
-        UNSTABLE_MOOD = 6408,
-        DINGOBALL = 6409,
-        DINGOBREATH = 6410,
-        DINGOPREVENTION = 6411,
-        CONTRIBUTION_6412 = 6412,
-        CONTRIBUTION_6413 = 6413,
-        SPRIRITUAL_LIGHT = 6414,
-        VENGEFUL_GLEAM = 6415,
-        BOOM = 6416,
-        BOOMBOOM = 6417,
-        ELEMENTAL_COMBINATION_6419 = 6419,
-        ELEMENTAL_COMBINATION_6420 = 6420,
-        ELEMENTAL_COMBINATION_6421 = 6421,
-        ELEMENTAL_COMBINATION_6422 = 6422,
-        ELEMENTAL_COMBINATION_6423 = 6423,
-        ELEMENTAL_COMBINATION = 6424,
-        UNSTABLE_FORMULA_6425 = 6425,
-        CHEMICAL_RESTRAINT = 6426,
-        BRAIN_DRAIN = 6427,
-        STELLAR_BLOW_TO_THE_HEAD = 6428,
-        DOPPLESQUE_TELLURIC_WAVE = 6430,
-        DOPPLESQUE_FLAMETHROWER = 6431,
-        DOPPLESQUE_RUNIFICATION = 6432,
-        DOPPLESQUE_STALAGMITE = 6433,
-        DOPPLESQUE_STORM = 6434,
-        DOPPLESQUE_ETHER = 6435,
-        DOPPLESQUE_DEFLAGRATION = 6436,
-        DOPPLESQUE_GLACIER = 6437,
-        DOPPLESQUE_STRIKING_METEOR = 6438,
-        DOPPLESQUE_ICY_SHARDS = 6439,
-        DISTRIB_6447 = 6447,
-        CATSEYE_GAME_6448 = 6448,
-        UNDULATING_SCRATCH = 6449,
-        MEOWING_6450 = 6450,
-        CATOMISATION = 6451,
-        PREMATURE_AGEING_6452 = 6452,
-        DUPLICATSION_6453 = 6453,
-        MEOWHACK = 6454,
-        CATSEYE_GAME_6455 = 6455,
-        CATSEYE_GAME_6459 = 6459,
-        RED_FLASH = 6461,
-        UNHEALTHY_PULSATION_6462 = 6462,
-        BLACK_HIT = 6463,
-        LOUSPRAY = 6464,
-        COLOUSSION = 6465,
-        LOUSPRING_6466 = 6466,
-        CATSEYE_GAME_6474 = 6474,
-        CATSEYE_GAME_6475 = 6475,
-        RO_SHAM_BO_6481 = 6481,
-        NINCHAKAT = 6482,
-        EXPLOSIVE_KITTYBAG = 6483,
-        MEOWTENANCE = 6484,
-        NINKATO = 6485,
-        SHURIKITEN = 6486,
-        MAKITTENSHI_6487 = 6487,
-        RO_SHAM_BO_6490 = 6490,
-        RO_SHAM_BO_6491 = 6491,
-        RO_SHAM_BO_6492 = 6492,
-        MAKITTENSHI_6493 = 6493,
-        RO_SHAM_BO = 6494,
-        PARASITING_6495 = 6495,
-        CATSEYE_GAME_6496 = 6496,
-        CATSEYE_GAME_6497 = 6497,
-        INNER_BURNING = 6499,
-        CLAWS_OF_THIRST = 6500,
-        RED_MAW = 6501,
-        MORE_GOTH = 6502,
-        DRHUAN = 6503,
-        DEFENSE_PENETRATOR = 6504,
-        TREASURE_FINDER = 6505,
-        TERRESTRIAL_SHOCK = 6506,
-        LEAP_FLEE_6507 = 6507,
-        PARASITIC_INVASION_6508 = 6508,
-        PARASITING_6509 = 6509,
-        ECTOPARASITOSIS_6510 = 6510,
-        BANDANG = 6511,
-        PREMATURE_AGEING_6512 = 6512,
-        FORTIFICATSION = 6513,
-        CAUTIOUS_ADVANCE = 6514,
-        CAT_LITTER = 6515,
-        BURNING_BREATH = 6516,
-        ONE_INCH_SCRATCH_6517 = 6517,
-        CRITICAL_REGENERATION = 6518,
-        PRIORITY_TARGET_6519 = 6519,
-        PRIORITY_TARGET_6520 = 6520,
-        HARPURRN_6521 = 6521,
-        HARPURRN_6522 = 6522,
-        HARPURRN_6523 = 6523,
-        HARPURRN_6524 = 6524,
-        MUDDY_GLYPH = 6525,
-        VOLLEY_OF_DARTS_6526 = 6526,
-        VOLLEY_OF_DARTS_6527 = 6527,
-        VOLLEY_OF_DARTS = 6528,
-        BOOBY_TRAPPED_ROOM = 6529,
-        PASSAGE = 6530,
-        ADVANCE = 6531,
-        TRAP_6532 = 6532,
-        CLEANING_CAT_LITTER = 6533,
-        FELINE_GROWTH = 6534,
-        TRAP_6535 = 6535,
-        SAFE_DISTANCE = 6536,
-        BONUS_CELL = 6537,
-        ELEMENTAL_ROULETTE = 6538,
-        LICKING = 6539,
-        ROYAL_CATZINO = 6542,
-        EXPULSION = 6543,
-        IRRITATING_LOUSSUCTION = 6545,
-        IRRITATING_FLEETRIBUTION = 6546,
-        SQUEAKING = 6547,
-        FRENZIED_BITE = 6548,
-        FERALUTATIONS_DUPLICATSION = 6549,
-        ECAFLEE_HATCH = 6550,
-        ECAFLEEBUSTER = 6551,
-        ECAFLEEPLAGUE = 6552,
-        FLEEPUSH = 6553,
-        FMRL_PROTOCOL = 6554,
-        GUARDIAN_S_FURY = 6555,
-        TERRIFYING_ROAR = 6556,
-        ULTWAVITAMIN_CAWWOT = 6557,
-        SLOW_MOTION = 6558,
-        ITSH_ITSH = 6559,
-        TRAP_6560 = 6560,
-        TRAP_6561 = 6561,
-        TRAP_6562 = 6562,
-        TRAP_6563 = 6563,
-        TRAP_6564 = 6564,
-        TRAP = 6565,
-        MEOWING_6566 = 6566,
-        MEOWING = 6567,
-        RED_AND_BLACK = 6568,
-        ECAFLIP_S_FORTUNE = 6571,
-        BOOBY_TRAPPED_WEB = 6572,
-        ECAFLIP_TRAP = 6576,
-        FRIENDSHIP_WORD_6589 = 6589,
-        AIR_WORDS = 6596,
-        PARALYSING_WORD_6597 = 6597,
-        TRIGGERED_WORD_OF_RECOVERY = 6600,
-        MOGGYMORPHOSIS_6604 = 6604,
-        MOGGYMORPHOSIS_6605 = 6605,
-        MOGGYMORPHOSIS_6606 = 6606,
-        AXE_BLOW = 6609,
-        LOG_THROW = 6610,
-        DEFORESTATION = 6611,
-        CYBARMOUR = 6612,
-        SELF_SACRIFICE = 6613,
-        FOLIAGE_6614 = 6614,
-        PSYBWORKINESIS = 6615,
-        CROSS_OF_FIRE = 6616,
-        EYE_TROUBLE = 6617,
-        CYBALL = 6618,
-        POISON_GAS = 6619,
-        CRUMBLING = 6620,
-        SHUMSEEAS = 6621,
-        LUGHAS = 6622,
-        BYKUREEAS = 6623,
-        HEART_RIPPER = 6624,
-        KALIMA_BLOOD = 6625,
-        SUMMONING_OF_VENOMICA = 6626,
-        PARADOX_6627 = 6627,
-        ANIMATED_WATER_AND_AIR_WORDS = 6629,
-        ANIMATED_WORD_OF_RECOVERY = 6630,
-        CRYPT = 6631,
-        EPITAPH = 6632,
-        JOSTLING_ARROW = 6633,
-        DIAMOBILISING = 6634,
-        IMPRUDENCE = 6635,
-        INTERMENT = 6636,
-        OPEN_GRAVE = 6637,
-        FRIENDSHIP_WORD_6638 = 6638,
-        BOOBY_TRAPPED_CRYPT = 6639,
-        CRYPT_TRAP = 6640,
-        ARACHNEE_BITE = 6641,
-        EGG_DEATH = 6642,
-        SUMMONING_OF_ARACHNEE_EGG = 6643,
-        LITTLE_RACE = 6644,
-        LITTLE_CHEWING = 6645,
-        LITTLE_STING = 6646,
-        LITTLE_DEATHBLOW = 6647,
-        TRAMPLING = 6648,
-        FLASKOLEUM = 6649,
-        FLASKILTER = 6650,
-        LENG_S_PASSAGE = 6651,
-        HEATWAVE = 6652,
-        THINGS_ARE_HEATING_UP = 6653,
-        DOOM_GLYPH = 6654,
-        VOLCANIC_HEALING = 6655,
-        STIMULATING_WORD_6656 = 6656,
-        MISSED_JUMP = 6657,
-        OPHTHALMIC_MIGRAINE = 6658,
-        POOF = 6659,
-        HAT_ENOUGH = 6660,
-        JOLT = 6661,
-        UNBEWITCHING_BLOW = 6662,
-        AMAZING_FEAT = 6663,
-        PYROTECHNICS = 6664,
-        SYMFIERY_6665 = 6665,
-        SYMFIERY_6666 = 6666,
-        SUMMONING_OF_WEB = 6667,
-        WEB_NETWORK = 6668,
-        SILKBALL = 6669,
-        ARACHNEE_HATCHING = 6670,
-        ARACHNOPHILE_6671 = 6671,
-        ARACHNOPHILE_6672 = 6672,
-        ARACHNOPHILE_6673 = 6673,
-        ARACHNOPHILE_6674 = 6674,
-        ARACHNOPHILE_6675 = 6675,
-        ARACHNOPHILE_6676 = 6676,
-        ARACHNOPHILE = 6677,
-        CRACKED_REINFORCEMENT = 6678,
-        FLAT_FOOT = 6679,
-        ROCK_THROW = 6680,
-        TELLURIC_SHIELD = 6681,
-        INFALLIBLE_SNIFF_6682 = 6682,
-        TIGHTLY_MARKED_6683 = 6683,
-        BONE_CUTTER = 6684,
-        FLAMING_CHAIN = 6685,
-        DOPPLESQUE_FRIENDSHIP_WORD_6686 = 6686,
-        LUMINOUS_ATTRACTION = 6687,
-        ENTWINING = 6688,
-        BACK_TO_BUBBLES_6689 = 6689,
-        ABYSSAL_SEDUCTION_6690 = 6690,
-        SIPHONING = 6691,
-        WHIRLWINTUN = 6692,
-        WATERY_PRISON_6693 = 6693,
-        WATERY_PRISON_6694 = 6694,
-        UNDERWATER_CAMOUFLAGE_6695 = 6695,
-        UNDERWATER_CAMOUFLAGE_6696 = 6696,
-        HARPOON_BOLT = 6697,
-        FRONTAL_CHARGE = 6698,
-        LIGHTNING_GLYPH_6699 = 6699,
-        HYDRAULIC_PROJECTION = 6700,
-        BOUNCY_FOUGOU_6701 = 6701,
-        BOUNCY_FOUGOU_6702 = 6702,
-        MORTAL_NUDGE_6703 = 6703,
-        MORTAL_NUDGE_6704 = 6704,
-        SOUL_SIPHONING = 6705,
-        TENTACULAR_DANCE_6706 = 6706,
-        TENTACULAR_DANCE_6707 = 6707,
-        CAWWOT_6708 = 6708,
-        EVIL_PACT_6709 = 6709,
-        EVIL_PACT_6710 = 6710,
-        EVIL_PACT_6711 = 6711,
-        EVIL_PACT_6712 = 6712,
-        EVIL_PACT_6713 = 6713,
-        EVIL_PACT_6714 = 6714,
-        SOUL_PRISON = 6715,
-        LIFTING_WORD_6717 = 6717,
-        TREE_6718 = 6718,
-        FOLIAGE = 6719,
-        EVIL_PACT_6721 = 6721,
-        DIMENSIONAL_INVULNERABILITY = 6722,
-        MADNESS_6723 = 6723,
-        MADNESS_6724 = 6724,
-        FETID_TENTACLES_6726 = 6726,
-        FETID_TENTACLES_6727 = 6727,
-        REPUGNANT_ATTRACTION = 6728,
-        CORROSIVE_SPHERE = 6729,
-        MIASMATIC_EXPULSION = 6730,
-        INFECTIOUS_EXHALATION = 6731,
-        BURYING = 6732,
-        PARALYSING_WHIPLASH = 6733,
-        DEMENTRIANGLE = 6734,
-        CURSED_SILHOUETTE_6735 = 6735,
-        HORRIFEYE = 6736,
-        CHAOTIC_SENSATION = 6737,
-        MORBIDRAIN = 6738,
-        GROTESQUE_DUPLICATION_6739 = 6739,
-        GROTESQUE_DUPLICATION_6740 = 6740,
-        UNSPEAKABLE_CRY_6741 = 6741,
-        UNSPEAKABLE_CRY_6742 = 6742,
-        PERNICIOUS_CHANT = 6743,
-        CRAZY_CACOPHONY = 6744,
-        DEMONIC_STRENGTH = 6745,
-        EVIL_PACT_6746 = 6746,
-        KOUTONIAN_BLOW = 6747,
-        WORRYING_PERMUTATION = 6748,
-        COSMIC_HORROR_6749 = 6749,
-        COSMIC_HORROR_6750 = 6750,
-        COSMIC_HORROR_6751 = 6751,
-        UNIVERSWAYING_6752 = 6752,
-        EVIL_PACT_6753 = 6753,
-        EVIL_PACT_6754 = 6754,
-        EVIL_PACT_6755 = 6755,
-        EVIL_PACT_6756 = 6756,
-        COOPERASHELL = 6757,
-        UNSTABLE_MUTATION_6758 = 6758,
-        UNSTABLE_MUTATION_6759 = 6759,
-        ACIDIC_SLOBBER = 6760,
-        STICKY_TRAIL = 6761,
-        ROLY_MOLY_6762 = 6762,
-        ROLY_MOLY_6763 = 6763,
-        ROLY_MOLY = 6764,
-        RIDICULOUS_GESTICULATION = 6765,
-        CRUSHING_CLAW = 6766,
-        YOLOSTYLE_6767 = 6767,
-        YOLOSTYLE_6768 = 6768,
-        YOLOSTYLE = 6769,
-        FRONTAL_SIDESTEP_6770 = 6770,
-        FRONTAL_SIDESTEP_6771 = 6771,
-        METEOR_FIST = 6772,
-        CHAIN_OF_NORMAL_PUNCHES_6773 = 6773,
-        CHAIN_OF_NORMAL_PUNCHES_6774 = 6774,
-        CHAIN_OF_NORMAL_PUNCHES = 6775,
-        DARK_BOLT_6776 = 6776,
-        ELECTROSHOCK = 6777,
-        MARINE_LIGHTNING_6778 = 6778,
-        MARINE_LIGHTNING_6779 = 6779,
-        MARINE_LIGHTNING = 6780,
-        PARASITIC_TRAP_6781 = 6781,
-        PARASITIC_TRAP_6782 = 6782,
-        ATTRACTIVE_SUCTION = 6783,
-        FILTERING_BITE_6784 = 6784,
-        FILTERING_BITE_6785 = 6785,
-        FILTERING_BITE = 6786,
-        WATER_BUTT = 6787,
-        SULLY = 6788,
-        SEEMYESTICATED = 6789,
-        GOLDEN_SEEMYOOL = 6790,
-        EBONY_SEEMYOOL = 6791,
-        INDIGO_SEEMYOOL = 6792,
-        CALL_OF_THE_DEEP_SEA_6793 = 6793,
-        ORCHID_SEEMYOOL = 6794,
-        CALL_OF_THE_DEEP_SEA_6795 = 6795,
-        CRIMSON_SEEMYOOL = 6796,
-        CRYSTALLISATION_6797 = 6797,
-        STASIS_BURST_6798 = 6798,
-        VOLATILE_MATERIAL_6799 = 6799,
-        VOLATILE_MATERIAL_6800 = 6800,
-        ABYSSAL_SEDUCTION_6802 = 6802,
-        COSMIC_HORROR_6803 = 6803,
-        CALL_OF_THE_DEEP_SEA_6804 = 6804,
-        CALL_OF_THE_DEEP_SEA_6808 = 6808,
-        SUMMONING_OF_THE_UNSPEAKABLE = 6809,
-        SUCKER_GLYPH = 6810,
-        ANSOHTERY = 6811,
-        CALL_OF_THE_DEEP_SEA_6812 = 6812,
-        CALL_OF_THE_DEEP_SEA_6813 = 6813,
-        CALL_OF_THE_DEEP_SEA = 6814,
-        EVIL_PACT_6819 = 6819,
-        KOUTOULOUESQUE_PROTECTION = 6820,
-        WALKING_SUCTION = 6821,
-        HOPELESS_HIT = 6822,
-        GURGLESQUE_CHOIR = 6823,
-        AQUATIC_BRAMBLE = 6824,
-        SUFFOCATING_POISON = 6825,
-        SHUSHUESQUE_SACRIFICE = 6826,
-        GROTESQUE_DUPLICATION = 6827,
-        ABYSSAL_DOFUS = 6828,
-        KROSMONOMICON_KNOWLEDGE = 6829,
-        DIMENSIONAL_TRAP = 6830,
-        UCTION = 6831,
-        HALFOCTO_HALFSHARK = 6832,
-        TITFORTAKO = 6833,
-        MAKOMAK = 6834,
-        INK = 6835,
-        UPPET = 6836,
-        FLAT_ENCEPHALOGRAM = 6837,
-        CRYSTALLISATION_6838 = 6838,
-        STASIS_BURST_6839 = 6839,
-        GUARDIAN_S_OBJECTION = 6840,
-        GUARDIAN_S_THEFT = 6841,
-        GUARDIAN_S_CALL = 6842,
-        SLOWED_SPIRIT = 6843,
-        STASIS_PUSH = 6844,
-        CRYSTALLINE_SHOCK = 6845,
-        STASIS_FLICK = 6846,
-        ENERGY_WAVE = 6847,
-        FORCEFIELD = 6848,
-        SUMMONING_OF_PIKMINE = 6849,
-        FOGGERNAUT_HARPOON = 6850,
-        MARINE_WAVE = 6851,
-        PIKMINE_EXPLOSION = 6852,
-        SIPHON_DEFENSE = 6853,
-        SIPHON_CLOSURE = 6854,
-        TURRET_REPAIR = 6855,
-        PIKMINE_CHARGE = 6856,
-        FOLLOWER_S_TEAR = 6857,
-        FISHY_WIND = 6858,
-        KOUTOULOU_S_GAZE = 6859,
-        SERED_S_POWER = 6860,
-        SUMMONING_OF_FLUTE_PLAYER = 6861,
-        OLD_GOB_S_HARPOON = 6862,
-        WARNING_SHOT = 6863,
-        NIGHTMARISH_VISION_6864 = 6864,
-        UNSPEAKABLE_ATTRACTION = 6865,
-        FOLLOWER_S_FOOT = 6866,
-        KOUTOULOU_S_WEIGHT = 6867,
-        FOLLOWER_S_VAPOUR = 6868,
-        FROTHING_AT_THE_MOUTH = 6869,
-        BACK_TO_BUBBLES_6870 = 6870,
-        FOLLOWER_S_BARRIER = 6871,
-        BUBBLE_OF_THE_ABYSSES = 6872,
-        LIGHTNING_GLYPH_6873 = 6873,
-        KOUTOULOU_S_DREAD = 6874,
-        ABOMINABLE_SHRIVELLING = 6875,
-        FOLLOWER_S_COUNTER = 6876,
-        KOUTOULOU_S_BREATH = 6877,
-        CAPTAIN_KICE_S_TRIDENT = 6878,
-        CAPTAIN_KICE_S_FROTH = 6879,
-        SALT_DIVING_SUIT = 6880,
-        SALTING_6881 = 6881,
-        GLAZED_EYE = 6882,
-        KOUTOULOU_S_INDESCRIBABLE_DREAD = 6883,
-        PRICKLY_CHARISMA = 6885,
-        EVIL_PACT_6886 = 6886,
-        COSMIC_HORROR = 6887,
-        TRITUN_TACTIC = 6889,
-        CURSED_SILHOUETTE_6901 = 6901,
-        EVIL_PACT = 6904,
-        SALVATORY_INK = 6909,
-        DRACHETAUCK = 6916,
-        SEA_SWELL_BATH = 6917,
-        HYPERCUT = 6918,
-        TELEPUNCH = 6919,
-        UNIVERSWAYING_6926 = 6926,
-        CONTROOL = 6927,
-        TROOLAGE = 6928,
-        TROOLFAYS = 6929,
-        TROOLOLO_6930 = 6930,
-        TROOLOLO_6931 = 6931,
-        TROOLZ = 6932,
-        PETTROOL = 6933,
-        STRONG_BLOW = 6934,
-        GRENABOMB = 6935,
-        MEGARMOUR = 6936,
-        PROVIZIONEL_IMPLANT = 6937,
-        APPROKSIMAT_SURGERY = 6938,
-        ATROSHUSS_PAIN = 6939,
-        BURNABWORK = 6940,
-        FLAM_B = 6941,
-        KREMASHUN = 6942,
-        BONFYRRR = 6943,
-        WOOOH = 6944,
-        NOGGIN_TEASER = 6945,
-        KRUNCH = 6946,
-        EXPLOWD = 6947,
-        SURPRISE = 6948,
-        LARVAPORTATION = 6949,
-        SWARMING = 6950,
-        SONG_OF_WATER_AND_OIL = 6951,
-        MELTING_LOOK = 6952,
-        BURNING_SPLUTTER = 6953,
-        LARVAL_COUGH = 6954,
-        BIZZ = 6955,
-        BUZZ = 6956,
-        BURNINOUT = 6957,
-        BLIBLI_ATTRACTION = 6958,
-        BLIBLAG = 6960,
-        BLIBLIPLICATION = 6961,
-        TEAR_TO_SHREDS = 6963,
-        ACORN_REAPING = 6964,
-        SCREAM_OF_RAGE_6965 = 6965,
-        EMOTIVE_CHARGE = 6966,
+
+        DECOUVERTE_6315 = 6315,
+
+        POUGENITURE_6316 = 6316,
+
+        GLYPHE_DE_COFFIOT_6317 = 6317,
+
+        GLYPHE_DE_COFFIOT_6318 = 6318,
+
+        GLYPHE_DE_COFFIOT_6319 = 6319,
+
+        GLYPHE_DE_COFFIOT_6320 = 6320,
+
+        POUGENITURE_6321 = 6321,
+
+        ENCERCLEMENT_6322 = 6322,
+
+        OUVERTURE_DE_COFFIOT_6323 = 6323,
+
+        OUVERTURE_DE_COFFIOT_6324 = 6324,
+
+        OUVERTURE_FORCEE_6325 = 6325,
+
+        MUTATION_DES_POUGENITURES_6326 = 6326,
+
+        POUGENITURE_6327 = 6327,
+
+        POUGENITURE_6328 = 6328,
+
+        JEU_DU_CHALŒIL_6329 = 6329,
+
+        JEU_DU_CHALŒIL_6330 = 6330,
+
+        _6332 = 6332,
+
+        TIR_PRECIS_6333 = 6333,
+
+        FLECHE_AVEUGLANTE_6334 = 6334,
+
+        MASQUE_AVEUGLANT_6335 = 6335,
+
+        PUPULSION_6336 = 6336,
+
+        FLECHE_REPOUSSANTE_6337 = 6337,
+
+        PUPUNITION_6338 = 6338,
+
+        VENTE_FORCEE_6339 = 6339,
+
+        MARCHANDAGE_6340 = 6340,
+
+        PALOUF_6341 = 6341,
+
+        CHARGE_HEROÏQUE_6342 = 6342,
+
+        PUPUSSUCCION_6343 = 6343,
+
+        INVASION_PARASITAIRE_6344 = 6344,
+
+        ROUPETKIFOUETTE_6345 = 6345,
+
+        MORZERK_6346 = 6346,
+
+        ECTOPARASITOSE_6347 = 6347,
+
+        INFESTATION_6348 = 6348,
+
+        CHAMP_DE_FORCE_ELEMENTAIRE_6349 = 6349,
+
+        DEJECTION_EMPOISONNEE_6350 = 6350,
+
+        ÜBBERMAGIE_6351 = 6351,
+
+        HUPPERFRAPPE_AIR_6352 = 6352,
+
+        HUPPERSOUFFLE_AIR_6353 = 6353,
+
+        HUPPERFRAPPE_AIR_6354 = 6354,
+
+        HUPPERSOUFFLE_AIR_6355 = 6355,
+
+        ÜBBERMAGIE_6356 = 6356,
+
+        HUPPERFRAPPE_EAU_6357 = 6357,
+
+        HUPPERSOUFFLE_EAU_6358 = 6358,
+
+        NUEE_DE_TIQUES_6359 = 6359,
+
+        HUPPERFRAPPE_EAU_6360 = 6360,
+
+        HUPPERSOUFFLE_EAU_6361 = 6361,
+
+        HUPPERFRAPPE_FEU_6362 = 6362,
+
+        HUPPERSOUFFLE_FEU_6363 = 6363,
+
+        HUPPERFRAPPE_FEU_6364 = 6364,
+
+        HUPPERSOUFFLE_FEU_6365 = 6365,
+
+        HUPPERFRAPPE_TERRE_6366 = 6366,
+
+        HUPPERSOUFFLE_TERRE_6367 = 6367,
+
+        HUPPERFRAPPE_TERRE_6368 = 6368,
+
+        HUPPERSOUFFLE_TERRE_6369 = 6369,
+
+        ÜBBERMAGIE_6370 = 6370,
+
+        PONCTION_REVITALISANTE_6372 = 6372,
+
+        HUPPERCOUP_6373 = 6373,
+
+        SAUT_DE_PUCE_6374 = 6374,
+
+        HUPPERCOUP_6375 = 6375,
+
+        GRESILLEMENT_ELEMENTAIRE_6376 = 6376,
+
+        DEMANGEAISONS_6377 = 6377,
+
+        SECOUAGE_6379 = 6379,
+
+        SEVE_PARTAGEE_6381 = 6381,
+
+        GLYPHE_SOMBRE_6382 = 6382,
+
+        INVOCATION_DE_POUSSE_6383 = 6383,
+
+        POUSSE_INVINCIBLE_6384 = 6384,
+
+        REPLANTATION_6385 = 6385,
+
+        ENTRAVES_VEGETALES_6386 = 6386,
+
+        TORNADE_FEUILLUE_6387 = 6387,
+
+        CHARMATRAQUE_6388 = 6388,
+
+        AIDE_DE_JORIS_6389 = 6389,
+
+        AILUROPHILIE_6390 = 6390,
+
+        AILUROPHILIE_6391 = 6391,
+
+        LECHOUILLE_6392 = 6392,
+
+        LECHOUILLE_6393 = 6393,
+
+        CALIN_FELIN_6394 = 6394,
+
+        CHAMBOULEMENT_6395 = 6395,
+
+        CHAMBOULEMENT_6396 = 6396,
+
+        FORTIFICHATION_6397 = 6397,
+
+        FORTIFICHATION_6398 = 6398,
+
+        AIDE_DE_JORIS_6399 = 6399,
+
+        RETOUR_DE_CHACHATON_6400 = 6400,
+
+        CHAKCELERATION_6401 = 6401,
+
+        GRIFFE_A_UN_POUCE_6402 = 6402,
+
+        MAWATOUGERI_6403 = 6403,
+
+        EPEE_MERVEILLEUSE_6404 = 6404,
+
+        _6407 = 6407,
+
+        HUMEUR_INSTABLE_6408 = 6408,
+
+        DINGOBOULE_6409 = 6409,
+
+        DINGOSOUFFLE_6410 = 6410,
+
+        DINGOPREVENTION_6411 = 6411,
+
+        _6412 = 6412,
+
+        _6413 = 6413,
+
+        LUMIERE_SPIRITUELLE_6414 = 6414,
+
+        LUEUR_VENGERESSE_6415 = 6415,
+
+        _6416 = 6416,
+
+        _6417 = 6417,
+
+        _6418 = 6418,
+
+        _6419 = 6419,
+
+        _6420 = 6420,
+
+        _6421 = 6421,
+
+        _6422 = 6422,
+
+        _6423 = 6423,
+
+        _6424 = 6424,
+
+        FORMULE_INSTABLE_6425 = 6425,
+
+        ENTRAVE_CHIMIQUE_6426 = 6426,
+
+        FUITE_DU_CERVEAU_6427 = 6427,
+
+        COUP_DE_TETE_FRACASSANT_6428 = 6428,
+
+        ONDE_TELLURIQUE_DU_DOPEUL_6430 = 6430,
+
+        LANCE_FLAMME_DU_DOPEUL_6431 = 6431,
+
+        RUNIFICATION_DU_DOPEUL_6432 = 6432,
+
+        STALAGMITE_DU_DOPEUL_6433 = 6433,
+
+        ORAGE_DU_DOPEUL_6434 = 6434,
+
+        ETHER_DU_DOPEUL_6435 = 6435,
+
+        DEFLAGRATION_DU_DOPEUL_6436 = 6436,
+
+        GLACIER_DU_DOPEUL_6437 = 6437,
+
+        METEORE_PERCUTANT_DU_DOPEUL_6438 = 6438,
+
+        ECLATS_GLACES_DU_DOPEUL_6439 = 6439,
+
+        _6440 = 6440,
+
+        _6447 = 6447,
+
+        JEU_DU_CHALŒIL_6448 = 6448,
+
+        GRIFFURE_ONDULANTE_6449 = 6449,
+
+        MIAOULEMENT_6450 = 6450,
+
+        CHATOMISATION_6451 = 6451,
+
+        VIEILLISSEMENT_PREMATURE_6452 = 6452,
+
+        DUPLICHATION_6453 = 6453,
+
+        QUEUE_DE_POING_6454 = 6454,
+
+        JEU_DU_CHALŒIL_6455 = 6455,
+
+        JEU_DU_CHALŒIL_6459 = 6459,
+
+        ECLAIR_ROUGE_6461 = 6461,
+
+        PULSATION_MALSAINE_6462 = 6462,
+
+        FRAPPE_NOIRE_6463 = 6463,
+
+        POULVERISATION_6464 = 6464,
+
+        POURRIFICATION_6465 = 6465,
+
+        POUGENITURE_6466 = 6466,
+
+        _6467 = 6467,
+
+        JEU_DU_CHALŒIL_6474 = 6474,
+
+        JEU_DU_CHALŒIL_6475 = 6475,
+
+        _6479 = 6479,
+
+        _6480 = 6480,
+
+        CHI_FOU_MI_6481 = 6481,
+
+        NINCHAKU_6482 = 6482,
+
+        CHAC_EXPLOSIF_6483 = 6483,
+
+        CHAPPUI_6484 = 6484,
+
+        NINCHATŌ_6485 = 6485,
+
+        CHARIKEN_6486 = 6486,
+
+        MAKIBICHA_6487 = 6487,
+
+        CHI_FOU_MI_6490 = 6490,
+
+        CHI_FOU_MI_6491 = 6491,
+
+        CHI_FOU_MI_6492 = 6492,
+
+        MAKIBICHA_6493 = 6493,
+
+        CHI_FOU_MI_6494 = 6494,
+
+        PARASITAGE_6495 = 6495,
+
+        JEU_DU_CHALŒIL_6496 = 6496,
+
+        JEU_DU_CHALŒIL_6497 = 6497,
+
+        FLAMME_INTERIEURE_6499 = 6499,
+
+        GRIFFES_DE_LA_SOIF_6500 = 6500,
+
+        GUEULE_ROUGE_6501 = 6501,
+
+        MORT_GOTH_6502 = 6502,
+
+        PHUAN_6503 = 6503,
+
+        PERCE_DEFENSE_6504 = 6504,
+
+        CHERCHE_TRESOR_6505 = 6505,
+
+        CHOC_TERRESTRE_6506 = 6506,
+
+        SAUT_DE_PUCE_6507 = 6507,
+
+        INVASION_PARASITAIRE_6508 = 6508,
+
+        PARASITAGE_6509 = 6509,
+
+        ECTOPARASITOSE_6510 = 6510,
+
+        GANGBANDE_6511 = 6511,
+
+        VIEILLISSEMENT_PREMATURE_6512 = 6512,
+
+        FORTIFICHATION_6513 = 6513,
+
+        AVANCEE_PRUDENTE_6514 = 6514,
+
+        LITIERE_6515 = 6515,
+
+        SOUFFLE_ARDENT_6516 = 6516,
+
+        GRIFFE_A_UN_POUCE_6517 = 6517,
+
+        REGENERATION_CRITIQUE_6518 = 6518,
+
+        CIBLE_PRIORITAIRE_6519 = 6519,
+
+        CIBLE_PRIORITAIRE_6520 = 6520,
+
+        CHARPON_6521 = 6521,
+
+        CHARPON_6522 = 6522,
+
+        CHARPON_6523 = 6523,
+
+        CHARPON_6524 = 6524,
+
+        GLYPHE_BOUEUX_6525 = 6525,
+
+        VOLEE_DE_FLECHETTES_6526 = 6526,
+
+        VOLEE_DE_FLECHETTES_6527 = 6527,
+
+        VOLEE_DE_FLECHETTES_6528 = 6528,
+
+        SALLE_PIEGEE_6529 = 6529,
+
+        PASSAGE_6530 = 6530,
+
+        AVANCE_6531 = 6531,
+
+        PIEGE_6532 = 6532,
+
+        LITIERE_NETTOYANTE_6533 = 6533,
+
+        CHAPOUSSE_6534 = 6534,
+
+        PIEGE_6535 = 6535,
+
+        BONNE_DISTANCE_6536 = 6536,
+
+        CASE_BONUS_6537 = 6537,
+
+        ROULETTE_ELEMENTAIRE_6538 = 6538,
+
+        LECHOUILLE_6539 = 6539,
+
+        CHAZINO_ROYALE_6542 = 6542,
+
+        EXPULSION_6543 = 6543,
+
+        PUPUSSUCCION_IRRITANTE_6545 = 6545,
+
+        PUPUNITION_IRRITANTE_6546 = 6546,
+
+        CHICOTEMENT_6547 = 6547,
+
+        MORSURE_FRENETIQUE_6548 = 6548,
+
+        DUPLICHATION_DE_CHALAMALEK_6549 = 6549,
+
+        ECLOSION_DECAFLIPUCE_6550 = 6550,
+
+        ECAFLIPUSTIER_6551 = 6551,
+
+        ECAFLIPESTE_6552 = 6552,
+
+        POUSSE_PUCE_6553 = 6553,
+
+        PROTOCOLE_FMR_6554 = 6554,
+
+        FUREUR_DU_GARDIEN_6555 = 6555,
+
+        RUGISSEMENT_TERRIFIANT_6556 = 6556,
+
+        CAWOTTE_ULTWAVITAMINEE_6557 = 6557,
+
+        RALENTI_6558 = 6558,
+
+        GRATH_GRATH_6559 = 6559,
+
+        PIEGE_6560 = 6560,
+
+        PIEGE_6561 = 6561,
+
+        PIEGE_6562 = 6562,
+
+        PIEGE_6563 = 6563,
+
+        PIEGE_6564 = 6564,
+
+        PIEGE_6565 = 6565,
+
+        MIAOULEMENT_6566 = 6566,
+
+        MIAOULEMENT_6567 = 6567,
+
+        ROUGE_ET_NOIR_6568 = 6568,
+
+        _6569 = 6569,
+
+        _6570 = 6570,
+
+        FORTUNE_DECAFLIP_6571 = 6571,
+
+        TOILE_PIEGEE_6572 = 6572,
+
+        _6573 = 6573,
+
+        _6574 = 6574,
+
+        _6575 = 6575,
+
+        PIEGE_ECAFLIP_6576 = 6576,
+
+        _6577 = 6577,
+
+        _6578 = 6578,
+
+        _6579 = 6579,
+
+        _6580 = 6580,
+
+        _6581 = 6581,
+
+        _6582 = 6582,
+
+        _6583 = 6583,
+
+        _6584 = 6584,
+
+        _6585 = 6585,
+
+        _6588 = 6588,
+
+        _6602 = 6602,
+
+        _6603 = 6603,
+
+        MATOUMORPHOSE_6604 = 6604,
+
+        MATOUMORPHOSE_6605 = 6605,
+
+        MATOUMORPHOSE_6606 = 6606,
+
+        COUP_DE_HACHE_6609 = 6609,
+
+        LANCER_DE_BUCHE_6610 = 6610,
+
+        DEBOISEMENT_6611 = 6611,
+
+        CYBARMURE_6612 = 6612,
+
+        DON_DE_SOI_6613 = 6613,
+
+        PSYBWORKINESIE_6615 = 6615,
+
+        CROIX_DE_FEU_6616 = 6616,
+
+        TROUBLE_OCULAIRE_6617 = 6617,
+
+        CIBOULET_6618 = 6618,
+
+        GAZ_DE_COMBAT_6619 = 6619,
+
+        EFFRITEMENT_6620 = 6620,
+
+        SHUMSEEAS_6621 = 6621,
+
+        LUGHAS_6622 = 6622,
+
+        BYKUREEAS_6623 = 6623,
+
+        ARRACHE_CŒUR_6624 = 6624,
+
+        SANG_DE_KALIMA_6625 = 6625,
+
+        INVOCATION_DE_DARDALAINE_6626 = 6626,
+
+        _6627 = 6627,
+
+        CAVEAU_6631 = 6631,
+
+        EPITAPHE_6632 = 6632,
+
+        FLECHE_BOUSCULANTE_6633 = 6633,
+
+        CARREAU_IMMOBILISANT_6634 = 6634,
+
+        IMPRUDENCE_6635 = 6635,
+
+        MISE_EN_TERRE_6636 = 6636,
+
+        A_TOMBE_OUVERTE_6637 = 6637,
+
+        CAVEAU_PIEGE_6639 = 6639,
+
+        PIEGE_DU_CAVEAU_6640 = 6640,
+
+        MORSURE_DARAKNE_6641 = 6641,
+
+        MORT_DŒUF_6642 = 6642,
+
+        INVOCATION_DŒUF_DARAKNE_6643 = 6643,
+
+        PETITE_COURSE_6644 = 6644,
+
+        PETITE_MASTICATION_6645 = 6645,
+
+        PETITS_DARDS_6646 = 6646,
+
+        PETITE_ESTOCADE_6647 = 6647,
+
+        PIETINEMENT_6648 = 6648,
+
+        FIOLEUM_6649 = 6649,
+
+        FLACONTREPIE_6650 = 6650,
+
+        PASSAGE_DE_LENG_6651 = 6651,
+
+        VAGUE_DE_CHALEUR_6652 = 6652,
+
+        ÇA_VA_CHAUFFER_6653 = 6653,
+
+        GLYPHE_MAUDIT_6654 = 6654,
+
+        GUERISON_VOLCANIQUE_6655 = 6655,
+
+        BOND_RATE_6657 = 6657,
+
+        MIGRAINE_OPHTALMIQUE_6658 = 6658,
+
+        POUF__6659 = 6659,
+
+        RAS_LA_KWASKETTE_6660 = 6660,
+
+        SURSAUT_6661 = 6661,
+
+        COUP_DESENVOUTANT_6662 = 6662,
+
+        TOUR_DE_FORCE_6663 = 6663,
+
+        PYROTEKNIE_6664 = 6664,
+
+        SYNFEUNIE_6665 = 6665,
+
+        SYNFEUNIE_6666 = 6666,
+
+        INVOCATION_DE_TOILE_6667 = 6667,
+
+        RESEAU_DE_TOILES_6668 = 6668,
+
+        BOULE_DE_SOIE_6669 = 6669,
+
+        ECLOSION_ARAKNEESQUE_6670 = 6670,
+
+        ARAKNOPHILE_6671 = 6671,
+
+        ARAKNOPHILE_6672 = 6672,
+
+        ARAKNOPHILE_6673 = 6673,
+
+        ARAKNOPHILE_6674 = 6674,
+
+        ARAKNOPHILE_6675 = 6675,
+
+        ARAKNOPHILE_6676 = 6676,
+
+        ARAKNOPHILE_6677 = 6677,
+
+        RENFORCEMENT_CRAQUELE_6678 = 6678,
+
+        PIED_PLAT_6679 = 6679,
+
+        JET_DE_ROCHER_6680 = 6680,
+
+        BOUCLIER_TELLURIQUE_6681 = 6681,
+
+        FLAIR_INFAILLIBLE_6682 = 6682,
+
+        MARQUE_A_LA_CULOTTE_6683 = 6683,
+
+        COUP_DEPEE_DANS_LOS_6684 = 6684,
+
+        CHAÎNE_ENFLAMMEE_6685 = 6685,
+
+        MOT_DAMITIE_DU_DOPEUL_6686 = 6686,
+
+        ATTRACTION_LUMINEUSE_6687 = 6687,
+
+        ENLACEMENT_6688 = 6688,
+
+        RETOUR_DE_BULLES_6689 = 6689,
+
+        SEDUCTION_ABYSSALE_6690 = 6690,
+
+        SIPHONAGE_6691 = 6691,
+
+        TOURBILLONEMENT_6692 = 6692,
+
+        PRISON_AQUEUSE_6693 = 6693,
+
+        PRISON_AQUEUSE_6694 = 6694,
+
+        CAMOUFLAGE_SOUS_MARIN_6695 = 6695,
+
+        CAMOUFLAGE_SOUS_MARIN_6696 = 6696,
+
+        HARPON_ECLAIR_6697 = 6697,
+
+        CHARGE_FRONTALE_6698 = 6698,
+
+        GLYPHE_FULGURANT_6699 = 6699,
+
+        PROJECTION_HYDRAULIQUE_6700 = 6700,
+
+        FOUGOU_REBONDISSANT_6701 = 6701,
+
+        FOUGOU_REBONDISSANT_6702 = 6702,
+
+        POUSSETTE_MORTELLE_6703 = 6703,
+
+        POUSSETTE_MORTELLE_6704 = 6704,
+
+        SIPHON_DAME_6705 = 6705,
+
+        DANSE_TENTACULAIRE_6706 = 6706,
+
+        DANSE_TENTACULAIRE_6707 = 6707,
+
+        CAWOTTE_6708 = 6708,
+
+        PACTE_MALEFIQUE_6709 = 6709,
+
+        PACTE_MALEFIQUE_6710 = 6710,
+
+        PACTE_MALEFIQUE_6711 = 6711,
+
+        PACTE_MALEFIQUE_6712 = 6712,
+
+        PACTE_MALEFIQUE_6713 = 6713,
+
+        PACTE_MALEFIQUE_6714 = 6714,
+
+        PRISON_DE_LAME_6715 = 6715,
+
+        PACTE_MALEFIQUE_6721 = 6721,
+
+        INVULNERABILITE_DIMENSIONNELLE_6722 = 6722,
+
+        FOLIE__6723 = 6723,
+
+        FOLIE__6724 = 6724,
+
+        TENTACULES_FETIDES_6726 = 6726,
+
+        TENTACULES_FETIDES_6727 = 6727,
+
+        ATTRACTION_REPUGNANTE_6728 = 6728,
+
+        SPHERE_CORROSIVE_6729 = 6729,
+
+        EXPULSION_MIASMATIQUE_6730 = 6730,
+
+        EXHALAISON_INFECTIEUSE_6731 = 6731,
+
+        ENFOUISSEMENT_6732 = 6732,
+
+        FLAGELLATION_PARALYSANTE_6733 = 6733,
+
+        TRIANGLE_DEMENT_6734 = 6734,
+
+        SILHOUETTE_MAUDITE_6735 = 6735,
+
+        ŒIL_HORRIFIANT_6736 = 6736,
+
+        SENSATION_CHAOTIQUE_6737 = 6737,
+
+        PONCTION_MORBIDE_6738 = 6738,
+
+        DUPLICATION_GROTESQUE_6739 = 6739,
+
+        DUPLICATION_GROTESQUE_6740 = 6740,
+
+        CRI_INDICIBLE_6741 = 6741,
+
+        CRI_INDICIBLE_6742 = 6742,
+
+        MELOPEE_PERNICIEUSE_6743 = 6743,
+
+        FOLLE_CACOPHONIE_6744 = 6744,
+
+        INTENSITE_DEMONIAQUE_6745 = 6745,
+
+        PACTE_MALEFIQUE_6746 = 6746,
+
+        FRAPPE_KOUTONIENNE_6747 = 6747,
+
+        PERMUTATION_INQUIETANTE_6748 = 6748,
+
+        HORREUR_COSMIQUE_6749 = 6749,
+
+        HORREUR_COSMIQUE_6750 = 6750,
+
+        HORREUR_COSMIQUE_6751 = 6751,
+
+        VACILLEMENT_DE_LUNIVERS_6752 = 6752,
+
+        PACTE_MALEFIQUE_6753 = 6753,
+
+        PACTE_MALEFIQUE_6754 = 6754,
+
+        PACTE_MALEFIQUE_6755 = 6755,
+
+        PACTE_MALEFIQUE_6756 = 6756,
+
+        COOQUILLATION_6757 = 6757,
+
+        MUTATION_INSTABLE_6758 = 6758,
+
+        MUTATION_INSTABLE_6759 = 6759,
+
+        BAVE_ACIDE_6760 = 6760,
+
+        TRAÎNEE_COLLANTE_6761 = 6761,
+
+        ROULEMBOULE_6762 = 6762,
+
+        ROULEMBOULE_6763 = 6763,
+
+        ROULEMBOULE_6764 = 6764,
+
+        GESTICULATION_RIDICULE_6765 = 6765,
+
+        PINCE_ECRASANTE_6766 = 6766,
+
+        YOLOSOUAGUE_6767 = 6767,
+
+        YOLOSOUAGUE_6768 = 6768,
+
+        YOLOSOUAGUE_6769 = 6769,
+
+        PAS_CHASSE_FRONTAL_6770 = 6770,
+
+        PAS_CHASSE_FRONTAL_6771 = 6771,
+
+        POING_METEORE_6772 = 6772,
+
+        ENCHAÎNEMENT_DE_COUPS_DE_POINGS_NORMAUX_6773 = 6773,
+
+        ENCHAÎNEMENT_DE_COUPS_DE_POINGS_NORMAUX_6774 = 6774,
+
+        ENCHAÎNEMENT_DE_COUPS_DE_POINGS_NORMAUX_6775 = 6775,
+
+        ECLAIR_OBSCUR_6776 = 6776,
+
+        ELECTROCHOC_6777 = 6777,
+
+        FOUDRE_MARINE_6778 = 6778,
+
+        FOUDRE_MARINE_6779 = 6779,
+
+        FOUDRE_MARINE_6780 = 6780,
+
+        PIEGE_PARASITE_6781 = 6781,
+
+        PIEGE_PARASITE_6782 = 6782,
+
+        SUCCION_ATTRACTIVE_6783 = 6783,
+
+        MORSURE_FILTRANTE_6784 = 6784,
+
+        MORSURE_FILTRANTE_6785 = 6785,
+
+        MORSURE_FILTRANTE_6786 = 6786,
+
+        COUP_DE_BOULDO_6787 = 6787,
+
+        SOUILLE_6788 = 6788,
+
+        MULDO_MESTIK_6789 = 6789,
+
+        MULDO_DORE_6790 = 6790,
+
+        MULDO_EBENE_6791 = 6791,
+
+        MULDO_INDIGO_6792 = 6792,
+
+        APPEL_DES_FONDS_MARINS_6793 = 6793,
+
+        MULDO_ORCHIDEE_6794 = 6794,
+
+        APPEL_DES_FONDS_MARINS_6795 = 6795,
+
+        MULDO_POURPRE_6796 = 6796,
+
+        CRYSTALISATION_6797 = 6797,
+
+        DECHAÎNEMENT_DE_STASIS_6798 = 6798,
+
+        MATIERE_VOLATILE_6799 = 6799,
+
+        MATIERE_VOLATILE_6800 = 6800,
+
+        SEDUCTION_ABYSSALE_6802 = 6802,
+
+        HORREUR_COSMIQUE_6803 = 6803,
+
+        APPEL_DES_FONDS_MARINS_6804 = 6804,
+
+        APPEL_DES_FONDS_MARINS_6808 = 6808,
+
+        INVOCATION_INDICIBLE_6809 = 6809,
+
+        GLYPHE_VENTOUSE_6810 = 6810,
+
+        ANSHTERIE_6811 = 6811,
+
+        APPEL_DES_FONDS_MARINS_6812 = 6812,
+
+        APPEL_DES_FONDS_MARINS_6813 = 6813,
+
+        APPEL_DES_FONDS_MARINS_6814 = 6814,
+
+        _6815 = 6815,
+
+        _6816 = 6816,
+
+        _6817 = 6817,
+
+        _6818 = 6818,
+
+        PACTE_MALEFIQUE_6819 = 6819,
+
+        PROTECTION_KOUTOULOUESQUE_6820 = 6820,
+
+        SUCCION_PEDESTRE_6821 = 6821,
+
+        COUP_DESESPERE_6822 = 6822,
+
+        CHORALE_GLOUGLOUTESQUE_6823 = 6823,
+
+        RONCE_AQUATIQUE_6824 = 6824,
+
+        POISON_SUFFOQUANT_6825 = 6825,
+
+        SACRIFICE_SHUSHUESQUE_6826 = 6826,
+
+        DUPLICATION_GROTESQUE_6827 = 6827,
+
+        DOFUS_ABYSSAL_6828 = 6828,
+
+        SAVOIR_DU_KROSMONOMICON_6829 = 6829,
+
+        PIEGE_DIMENSIONNEL_6830 = 6830,
+
+        UCTION_6831 = 6831,
+
+        MIPIEUVRE_MIREQUIN_6832 = 6832,
+
+        TAKOTAK_6833 = 6833,
+
+        MAKOMAK_6834 = 6834,
+
+        ENCRE_6835 = 6835,
+
+        IBOUILLE_6836 = 6836,
+
+        ENCEPHALOGRAMME_PLAT_6837 = 6837,
+
+        CRYSTALISATION_6838 = 6838,
+
+        DECHAÎNEMENT_DE_STASIS_6839 = 6839,
+
+        OBJECTION_DU_GARDIEN_6840 = 6840,
+
+        VOL_DU_GARDIEN_6841 = 6841,
+
+        APPEL_DU_GARDIEN_6842 = 6842,
+
+        ESPRIT_RALENTI_6843 = 6843,
+
+        POUSSEE_DE_STASIS_6844 = 6844,
+
+        CHOC_CRYSTALLIN_6845 = 6845,
+
+        PICHENETTE_DE_STASIS_6846 = 6846,
+
+        VAGUE_DENERGIE_6847 = 6847,
+
+        CHAMP_DE_FORCE_6848 = 6848,
+
+        INVOCATION_DE_PIKMINE_6849 = 6849,
+
+        HARPON_STEAMER_6850 = 6850,
+
+        ONDE_MARINE_6851 = 6851,
+
+        EXPLOSION_DE_PIKMINE_6852 = 6852,
+
+        DEFENSE_DU_SIPHON_6853 = 6853,
+
+        FERMETURE_DU_SIPHON_6854 = 6854,
+
+        REPARATION_DE_TOURELLE_6855 = 6855,
+
+        CHARGE_DE_PIKMINE_6856 = 6856,
+
+        LARME_DE_LADEPTE_6857 = 6857,
+
+        VENT_EMPOISSONNE_6858 = 6858,
+
+        REGARD_DE_KOUTOULOU_6859 = 6859,
+
+        PUISSANCE_DE_SERED_6860 = 6860,
+
+        INVOCATION_DU_JOUEUR_DE_FLUTE_6861 = 6861,
+
+        HARPON_DU_VIEUX_GOB_6862 = 6862,
+
+        COUP_DE_SEMONCE_6863 = 6863,
+
+        VISION_CAUCHEMARDESQUE_6864 = 6864,
+
+        ATTIRANCE_DE_LINDICIBLE_6865 = 6865,
+
+        PIED_DE_LADEPTE_6866 = 6866,
+
+        POIDS_DE_KOUTOULOU_6867 = 6867,
+
+        VAPOR_DE_LADEPTE_6868 = 6868,
+
+        ECUME_AUX_LEVRES_6869 = 6869,
+
+        RETOUR_DE_BULLES_6870 = 6870,
+
+        REMPART_DE_LADEPTE_6871 = 6871,
+
+        BULLE_DES_ABYSSES_6872 = 6872,
+
+        GLYPHE_FULGURANT_6873 = 6873,
+
+        ANGOISSE_DE_KOUTOULOU_6874 = 6874,
+
+        FLETRISSEMENT_ABOMINABLE_6875 = 6875,
+
+        CONTRE_DE_LADEPTE_6876 = 6876,
+
+        SOUFFLE_DE_KOUTOULOU_6877 = 6877,
+
+        FOENE_DU_CAPITAINE_SKAILLE_6878 = 6878,
+
+        ECUME_DU_CAPITAINE_SKAILLE_6879 = 6879,
+
+        SCAPHANDRE_DE_SEL_6880 = 6880,
+
+        SALAGE_6881 = 6881,
+
+        OEIL_VITREUX_6882 = 6882,
+
+        ANGOISSE_INDESCRIPTIBLE_DE_KOUTOULOU_6883 = 6883,
+
+        _6884 = 6884,
+
+        CHARISME_PIQUANT_6885 = 6885,
+
+        PACTE_MALEFIQUE_6886 = 6886,
+
+        HORREUR_COSMIQUE_6887 = 6887,
+
+        TACTIQUE_TRITHONNE_6889 = 6889,
+
+        _6897 = 6897,
+
+        SILHOUETTE_MAUDITE_6901 = 6901,
+
+        PACTE_MALEFIQUE_6904 = 6904,
+
+        ENCRE_SALVATRICE_6909 = 6909,
+
+        DRACHETAULQUE_6916 = 6916,
+
+        BAIN_DE_HOULE_6917 = 6917,
+
+        HYPERCUT_6918 = 6918,
+
+        TELEPUNCH_6919 = 6919,
+
+        VACILLEMENT_DE_LUNIVERS_6926 = 6926,
+
+        CONTROOLL_6927 = 6927,
+
+        TROOLLAGE_6928 = 6928,
+
+        TROOLLFESSE_6929 = 6929,
+
+        TROOLLOLO_6930 = 6930,
+
+        TROOLLOLO_6931 = 6931,
+
+        TROOLLZ_6932 = 6932,
+
+        PETTROOLL_6933 = 6933,
+
+        KOUP_PUISSANT_6934 = 6934,
+
+        GRENABOMBE_6935 = 6935,
+
+        MEGARMURE_6936 = 6936,
+
+        IMPLANT_PROVIZOAR_6937 = 6937,
+
+        CHIRURGIE_APPROKSIMATIV_6938 = 6938,
+
+        DOULEUR_ATROSS_6939 = 6939,
+
+        KRAMBWORK_6940 = 6940,
+
+        FLAN_B_6941 = 6941,
+
+        KREMASSION_6942 = 6942,
+
+        FEU_GRR_JOIE_6943 = 6943,
+
+        WOOOGH_6944 = 6944,
+
+        KASSKABOSH_6945 = 6945,
+
+        KROUNCH_6946 = 6946,
+
+        EXPLOZ_6947 = 6947,
+
+        SURPRISE_6948 = 6948,
+
+        LARVAPORTATION_6949 = 6949,
+
+        ESSAIMAGE_6950 = 6950,
+
+        CHANSON_DEAU_ET_DHUILE_6951 = 6951,
+
+        REGARD_FONDANT_6952 = 6952,
+
+        POSTILLON_BRULANT_6953 = 6953,
+
+        TOUSSOTEMENT_LARVESQUE_6954 = 6954,
+
+        BIZZ_6955 = 6955,
+
+        BUZZ_6956 = 6956,
+
+        KRAMTOU_6957 = 6957,
+
+        ATTIRANCE_DU_GLIGLI_6958 = 6958,
+
+        GLIGLAG_6960 = 6960,
+
+        GLIGLIPLICATION_6961 = 6961,
+
+        _6962 = 6962,
+
+        DILACERATION_6963 = 6963,
+
+        FAUCHAGE_DE_GLANDS_6964 = 6964,
+
+        CRI_DE_RAGE_6965 = 6965,
+
+        CHARGE_EMOTIVE_6966 = 6966,
+
         CONTRACTION_6967 = 6967,
-        REJECTION_6968 = 6968,
-        SCREWER_OWND = 6969,
-        PICK_ME_UP = 6970,
-        BURNING_FLUID = 6971,
-        TOFUSION = 6978,
-        GOBBALL_FUSION = 6979,
-        WYRMLING_FUSION = 6980,
-        BACK_TO_THE_PASTURE = 6983,
-        MIND_YOUR_BOTS = 6985,
-        WHIP_6988 = 6988,
-        WHIP_6989 = 6989,
-        WHIP_6990 = 6990,
-        TAKEOFF_6991 = 6991,
-        DUSTER_7007 = 7007,
-        SACRIFICIAL_FIRE_7017 = 7017,
-        CALL_TO_ORDER_7021 = 7021,
-        KISS_OF_TOFU_7034 = 7034,
-        PUSH_ME = 7035,
-        PUSH_MAY = 7036,
-        TOFU_BREATH = 7037,
-        UNREEL_TOURNAMENT = 7038,
-        MICROWAVE = 7039,
-        MACROWAVE = 7040,
-        CONTUSION_7041 = 7041,
-        GOBBALL_BITE = 7043,
-        LEGAL_ASSEMBLY = 7044,
-        BRICK_THROW = 7045,
-        CONSTRUCTION = 7046,
-        DISASSEMBLY_7047 = 7047,
-        DRAGOFIRE_7048 = 7048,
-        RED_DRAGOFIRE = 7049,
-        BLAST = 7050,
-        TURBINE = 7051,
-        BLACK_DRAGOFIRE = 7052,
-        TORNADO = 7053,
-        ANIMAL_LINK_7063 = 7063,
-        ANIMAL_LINK_7064 = 7064,
-        BLOPROJECTION = 7067,
-        BLOPIUM = 7070,
-        COMPLETE_RESENTMENT_7075 = 7075,
-        COMPLETE_RESENTMENT_7076 = 7076,
-        KNIFE = 7077,
-        NOSFURATAY = 7078,
-        FREE_MOVEMENT = 7079,
-        EVIL_PECK = 7081,
-        PUNKSNOTDEDD = 7082,
-        EVIL = 7083,
-        FRIGHTENING_CARESS = 7084,
-        SHYNESS = 7085,
-        BOOSHOVE = 7086,
-        UNMERGING_7101 = 7101,
-        GOBBALL_ATTRACTION = 7102,
-        TOFU_TRANSPOSITION = 7103,
-        DRAGOHEAL = 7104,
-        SEISMOLOGY = 7105,
-        TERRAPORTATION = 7106,
-        TERREPANATION = 7107,
-        SNYPEROCK = 7108,
-        ROCK_ENGRAVING = 7109,
-        SHOCKEDISAPPOINTED = 7110,
-        SNYPEROCK_TRAP = 7111,
-        FORCEDESTINY = 7114,
-        MULTIPLE_DISEMBOWELMENTS = 7115,
-        PLAINS_LARVAGE = 7116,
-        BLOODY_LANCE = 7117,
-        BUFFALO_JUMP = 7118,
-        SCOUTS = 7119,
-        TELLURIC_COAT = 7120,
-        TELLURIC_MOTIVATION = 7121,
-        STONING = 7122,
+
+        REJET_6968 = 6968,
+
+        GLAND_DOUIL_6969 = 6969,
+
+        REMONTANT_6970 = 6970,
+
+        FLUIDE_BRULANT_6971 = 6971,
+
+        _6978 = 6978,
+
+        _6979 = 6979,
+
+        _6980 = 6980,
+
+        RETOUR_VERS_LA_PATURE_6983 = 6983,
+
+        CHAUX_DEVANT_6985 = 6985,
+
+        _6988 = 6988,
+
+        _6989 = 6989,
+
+        _6990 = 6990,
+
+        _6991 = 6991,
+
+        _7007 = 7007,
+
+        _7017 = 7017,
+
+        _7021 = 7021,
+
+        _7034 = 7034,
+
+        POUSSE_MOI_7035 = 7035,
+
+        POUSSE_MI_7036 = 7036,
+
+        _7037 = 7037,
+
+        BARIL_TOURNOIEMENT_7038 = 7038,
+
+        MICRO_ONDE_7039 = 7039,
+
+        MACRO_ONDE_7040 = 7040,
+
+        _7041 = 7041,
+
+        _7043 = 7043,
+
+        ASSEMBLAGE_LEGAL_7044 = 7044,
+
+        JET_DE_BRIQUE_7045 = 7045,
+
+        CONSTRUCTION_7046 = 7046,
+
+        DESASSEMBLAGE_7047 = 7047,
+
+        _7048 = 7048,
+
+        _7049 = 7049,
+
+        BLAST_7050 = 7050,
+
+        TURBINE_7051 = 7051,
+
+        _7052 = 7052,
+
+        TORNADE_7053 = 7053,
+
+        _7063 = 7063,
+
+        _7064 = 7064,
+
+        BLOPROJECTION_7067 = 7067,
+
+        BLOPIUM_7070 = 7070,
+
+        RANCUNE_TOTALE_7075 = 7075,
+
+        RANCUNE_TOTALE_7076 = 7076,
+
+        COUTEAU_7077 = 7077,
+
+        NOSFURATE_7078 = 7078,
+
+        DEPLACEMENT_LIBRE_7079 = 7079,
+
+        BECO_MALEFIQUE_7081 = 7081,
+
+        PUNKSNOTDEDE_7082 = 7082,
+
+        MALEFICE_7083 = 7083,
+
+        CARESSE_EFFRAYANTE_7084 = 7084,
+
+        TIMIDITE_7085 = 7085,
+
+        BOORRADE_7086 = 7086,
+
+        _7101 = 7101,
+
+        _7102 = 7102,
+
+        _7103 = 7103,
+
+        _7104 = 7104,
+
+        SISMOLOGIE_7105 = 7105,
+
+        TERRAPORTATION_7106 = 7106,
+
+        TERPANATION_7107 = 7107,
+
+        SNAILLE_PIERRE_7108 = 7108,
+
+        GRAVURE_DANS_LA_ROCHE_7109 = 7109,
+
+        CHOC_DESSUS_7110 = 7110,
+
+        PIEGE_SNAILLE_PIERRE_7111 = 7111,
+
+        DESTIN_FORCE_7114 = 7114,
+
+        EVENTRATION_MULTIPLE_7115 = 7115,
+
+        LARVEMENT_CHAMPETRE_7116 = 7116,
+
+        LANCENGLANTE_7117 = 7117,
+
+        SAUT_DU_BISON_7118 = 7118,
+
+        ECLAIREURS_7119 = 7119,
+
+        MANTEAU_TELLURIQUE_7120 = 7120,
+
+        MOTIVATION_TELLURIQUE_7121 = 7121,
+
+        CAILLASSAGE_7122 = 7122,
+
         PERCUSSION_7123 = 7123,
-        PLAINITUDE = 7124,
-        STONE_GRILLING = 7125,
-        LARDBALEST = 7126,
-        SNORTING = 7127,
-        TRIDOTISSERIE = 7128,
-        CALL_OF_THE_LIGHTNING = 7129,
-        DEFORCES = 7130,
-        SEVERITY = 7131,
-        LOUSY_PIG_HEAD = 7132,
-        DEFENSIVE_BLOW = 7133,
-        HERDOUR = 7134,
-        MUSHEAL_MUSH = 7136,
-        PARADOXISM = 7137,
-        SUMMONING_OF_LITTLE_CANIASCAL = 7138,
-        INSTANTABILITY = 7139,
-        STONEQUAKE = 7140,
-        CAMEHAMEHA = 7141,
-        ART_OF_COMBAT = 7142,
-        BRUSH = 7143,
-        BIG_HEAD_7144 = 7144,
-        PULL_OVER_IZED = 7145,
-        GORING = 7146,
-        DRAGONIC_7168 = 7168,
-        DRAGONIC_7169 = 7169,
-        UNMERGING_7170 = 7170,
-        CANINE_7171 = 7171,
-        CANINE_7172 = 7172,
-        FOSSIL_7173 = 7173,
-        FOSSIL_7174 = 7174,
-        MACHINEDINA = 7175,
-        ELEMENTAL_BLYPH_7176 = 7176,
-        SABROTISSERIE = 7178,
-        OPTIC_CONFUSION = 7179,
-        TRANSCENDENT_SKEWERING = 7181,
-        CACTONET = 7183,
-        DRYING_SPORES = 7184,
-        EESPORES = 7186,
-        CACTANUS = 7187,
-        S_PYK_PELL = 7188,
-        BONUSTOMEL = 7189,
-        MOUERTO = 7190,
-        PIERSPINE = 7191,
-        CAMOCASTUC = 7192,
-        THOUSPINES = 7193,
-        WUNSPINE = 7194,
-        PAMPARS = 7195,
-        MELEERACA = 7196,
-        SALSA = 7197,
-        JOROPO = 7198,
-        GUERRILLA_7199 = 7199,
-        SPELEE = 7200,
-        POINKAPOINK = 7201,
-        BAMBA = 7202,
-        GUERRILLA_7203 = 7203,
-        ANIMAL_RABBLE = 7204,
-        CRA_S_CURSE = 7205,
-        ELEMENTAL_CONTROL_7208 = 7208,
-        ELEMENTAL_CONTROL_7209 = 7209,
-        ELEMENTAL_CONTROL_7210 = 7210,
-        TIGHTLY_MARKED_7212 = 7212,
-        SCREAM_OF_RAGE_7213 = 7213,
-        DOPPLESQUE_DRAGON_S_BREATH = 7214,
-        SANDY_BLOWGUN = 7217,
-        TUCKENROL = 7218,
-        CARAPASAND = 7219,
-        SIROCCO = 7220,
-        HYENMENT = 7221,
-        CERTAIN_DEATH = 7222,
-        SHIELD_GUARD = 7223,
-        DAMOSTING = 7224,
-        VICE_GRIP = 7225,
-        DESERT_TOMB = 7226,
-        PROVOCASPION = 7227,
-        POINKTATOR = 7228,
-        TIC_TACOTO = 7229,
-        SPINE_CELL = 7230,
-        CUCARACTUS = 7231,
-        BALL_LAUNCHER = 7232,
-        SPIKRATE = 7233,
-        HARDENING = 7234,
-        PAW_PINCH = 7238,
-        POISONED_STING = 7239,
-        DIG_SAND = 7240,
-        MASS_ASPIRATION = 7241,
-        VIOLENT_WHIRLWIND = 7242,
-        DEVASTATING_TEMPEST = 7243,
-        CACTICKLE = 7245,
-        CACTUS_FOREST = 7247,
-        QUICKSAND = 7257,
-        RECOGNITION = 7258,
-        SANDY_SHACKLE = 7259,
-        MOTIVATING_RAGE = 7260,
-        IOP = 7261,
-        PRIMARY = 7262,
-        SOUL_STRENGTH = 7263,
-        ELEMENTAL_CAPTURE = 7264,
-        BAM_YOU_RE_DEAD = 7266,
-        ELEMENTAL_ARROW_7267 = 7267,
-        SPICY_DEFENSIVE_BLOW = 7268,
-        SPICY_LARVAGE = 7269,
-        ELEMENTAL_CONTROL_7298 = 7298,
-        ELEMENTAL_CONTROL_7308 = 7308,
-        ELEMENTAL_CONTROL_7312 = 7312,
-        FURIOSA = 7321,
-        WAR_KID_ART = 7322,
-        FACIAL_CRUSHING = 7323,
-        FELINE_RAGE = 7324,
-        DOUBLE_FOOT = 7325,
-        FELINE_SURPRISE = 7326,
-        WARRIOR_S_DANCE = 7327,
-        FELINE_PROXIMITY = 7328,
-        FELINE_COMBO_7329 = 7329,
-        FELINE_COMBO_7330 = 7330,
-        DOFUSTEUSE = 7331,
-        PRISMATIC_BLOW = 7332,
-        PRISMATIC_ARMOUR = 7333,
-        PRISMATIC_EXPLOSION = 7334,
-        THUNDEROUS_CIRCLE = 7335,
-        WHIRLWIND_GUST = 7336,
-        STORMY_TIMES = 7337,
-        HEAT_VEIL = 7338,
-        HOWLING_OF_THE_WIND = 7339,
-        THIRSTY_BITE = 7340,
-        ELEMENTAL_CONTROL = 7341,
-        ELEMENTAL_ARROW_7342 = 7342,
-        CASTERROR_7343 = 7343,
-        PATERNALISM = 7344,
-        GLANCE = 7345,
-        BLINDING_OBVIOUSNESS = 7346,
-        WHIRLING_WIND = 7347,
-        UNCONTWOLLED_COMBUSTION_7348 = 7348,
-        UNCONTWOLLED_COMBUSTION_7349 = 7349,
-        EXPLOSIVE_WALLOP = 7350,
-        IMPLOSIVE_SPEAW = 7351,
-        CASTERROR_7353 = 7353,
-        CASTERROR = 7354,
-        GROUGALORAGRAN = 7355,
-        JORIS = 7356,
-        GOULTARD = 7357,
-        OTOMAI = 7358,
-        SLOW_DIGESTION_7367 = 7367,
-        SLOW_DIGESTION_7368 = 7368,
-        TRAUMATIC_DEATH = 7369,
-        EXPLOSIVE_DEATH = 7372,
-        ACCELERATED_DIGESTION = 7374,
-        SLOW_DIGESTION_7375 = 7375,
-        SLOW_DIGESTION_7376 = 7376,
-        SPORE_KESTRE = 7382,
-        SPORE_FUMED = 7384,
-        SPORE_FUMED_EFFECT = 7385,
-        GYROSKOPIK = 7387,
-        PIK_A_SLOW = 7388,
-        PIK_ER_WOOD_7389 = 7389,
-        PIK_ER_WOOD_7390 = 7390,
-        TONGUE_FLICKS = 7391,
-        ENGULFMENT = 7392,
-        BITTER_SPIT = 7393,
-        SPORE_TEE = 7394,
-        SANDING = 7395,
-        POP_UP_7396 = 7396,
-        POP_UP_7397 = 7397,
-        MOUTH_OF_THE_SANDS = 7398,
-        SANDY_MOVEMENT = 7399,
+
+        PLAINITUDE_7124 = 7124,
+
+        PIERRADE_7125 = 7125,
+
+        LARD_BAT_LAITE_7126 = 7126,
+
+        RENIFLEMENT_7127 = 7127,
+
+        TRIDEMBROCHEMENT_7128 = 7128,
+
+        APPEL_DE_LA_FOUDRE_7129 = 7129,
+
+        DEFONSES_7130 = 7130,
+
+        RUDESSE_7131 = 7131,
+
+        PORKASS_TETE_7132 = 7132,
+
+        COUP_DE_DEFENSES_7133 = 7133,
+
+        HARDEUR_7134 = 7134,
+
+        CHAMPI_CHAMPSOIN_7136 = 7136,
+
+        PARADOXISME_7137 = 7137,
+
+        INVOCATION_DE_PETIT_CANIAILLOU_7138 = 7138,
+
+        INSTANTABILITE_7139 = 7139,
+
+        TREMBLEMENT_DE_PIERRE_7140 = 7140,
+
+        QUAMEHAMEHA_7141 = 7141,
+
+        ART_DU_COMBAT_7142 = 7142,
+
+        BALAYETTE_7143 = 7143,
+
+        CRANEUR_7144 = 7144,
+
+        PULL_VERT_IZELE_7145 = 7145,
+
+        ENCORNEMENT_7146 = 7146,
+
+        _7168 = 7168,
+
+        _7169 = 7169,
+
+        _7170 = 7170,
+
+        _7171 = 7171,
+
+        _7172 = 7172,
+
+        _7173 = 7173,
+
+        _7174 = 7174,
+
+        MACHINEDINA_7175 = 7175,
+
+        BLYPHE_ELEMENT_7176 = 7176,
+
+        SABROCHEMENT_7178 = 7178,
+
+        CONFUSION_OPTIQUE_7179 = 7179,
+
+        EMBROCHEMENT_DEPHASE_7181 = 7181,
+
+        CACTEAU_7183 = 7183,
+
+        SPORES_ASSECHANTES_7184 = 7184,
+
+        _7185 = 7185,
+
+        ISPORES_7186 = 7186,
+
+        CACTANUS_7187 = 7187,
+
+        PIXOR_7188 = 7188,
+
+        BONUSSOCAC_7189 = 7189,
+
+        MOUERTE_7190 = 7190,
+
+        PERCEPINE_7191 = 7191,
+
+        CAMOCACTERRE_7192 = 7192,
+
+        MILEPINES_7193 = 7193,
+
+        UNEPINE_7194 = 7194,
+
+        COUCHE_PAMPARS_7195 = 7195,
+
+        MARACAC_7196 = 7196,
+
+        SALSA_7197 = 7197,
+
+        JOROPO_7198 = 7198,
+
+        GUERILLERO_7199 = 7199,
+
+        PIKAK_7200 = 7200,
+
+        PIKEPIK_7201 = 7201,
+
+        BAMBA_7202 = 7202,
+
+        GUERILLERO_7203 = 7203,
+
+        RAFFUT_BESTIAL_7204 = 7204,
+
+        MALEDICTION_DE_CRA_7205 = 7205,
+
+        CONTRLE_ELEMENTAIRE_7208 = 7208,
+
+        CONTRLE_ELEMENTAIRE_7209 = 7209,
+
+        CONTRLE_ELEMENTAIRE_7210 = 7210,
+
+        MARQUE_A_LA_CULOTTE_7212 = 7212,
+
+        CRI_DE_RAGE_7213 = 7213,
+
+        SOUFFLE_DU_DRAGON_DU_DOPEUL_7214 = 7214,
+
+        SABLACANE_7217 = 7217,
+
+        ROULO_BOULOS_7218 = 7218,
+
+        CARAPASSABLE_7219 = 7219,
+
+        SIROCCO_7220 = 7220,
+
+        HYAIGNEMENT_7221 = 7221,
+
+        MORT_SURE_7222 = 7222,
+
+        GARDE_BOUCLIER_7223 = 7223,
+
+        DARMOCLES_7224 = 7224,
+
+        FORCE_POIGNE_7225 = 7225,
+
+        TOMBEAU_DU_DESERT_7226 = 7226,
+
+        PROVOCASPION_7227 = 7227,
+
+        PIKTATURE_7228 = 7228,
+
+        TACO_TAK_7229 = 7229,
+
+        EPINES_ET_MIRAGES_7230 = 7230,
+
+        COUCALACTUS_7231 = 7231,
+
+        LANCE_BOULETTES_7232 = 7232,
+
+        PIQUE_RATE_7233 = 7233,
+
+        DURCISSEMENT_7234 = 7234,
+
+        PINCE_PATTES_7238 = 7238,
+
+        DARD_EMPOISONNE_7239 = 7239,
+
+        CREUSE_SABLE_7240 = 7240,
+
+        ASPIRATION_DE_MASSE_7241 = 7241,
+
+        TOURBILLON_VIOLENT_7242 = 7242,
+
+        TEMPETE_DEVASTATRICE_7243 = 7243,
+
+        CACTOUILLE_7245 = 7245,
+
+        FORET_DE_CACTUS_7247 = 7247,
+
+        _7248 = 7248,
+
+        _7249 = 7249,
+
+        _7250 = 7250,
+
+        _7251 = 7251,
+
+        _7255 = 7255,
+
+        SABLE_MOUVANT_7257 = 7257,
+
+        RECONNAISSANCE_7258 = 7258,
+
+        ENTRAVE_SABLEUSE_7259 = 7259,
+
+        ENRAGEMENT_MOTIVANT_7260 = 7260,
+
+        IOP_7261 = 7261,
+
+        PRIMAIRE_7262 = 7262,
+
+        FORCE_DAME_7263 = 7263,
+
+        CAPTURE_ELEMENTALE_7264 = 7264,
+
+        PAN__TES_MORT_7266 = 7266,
+
+        FLECHE_ELEMENTAIRE_7267 = 7267,
+
+        COUP_DE_DEFENSES_EPICE_7268 = 7268,
+
+        LARVEMENT_EPICE_7269 = 7269,
+
+        CONTRLE_ELEMENTAIRE_7298 = 7298,
+
+        CONTRLE_ELEMENTAIRE_7308 = 7308,
+
+        CONTRLE_ELEMENTAIRE_7312 = 7312,
+
+        FURIOSA_7321 = 7321,
+
+        ART_DES_GLOBULES_7322 = 7322,
+
+        ECRASEMENT_FACIAL_7323 = 7323,
+
+        RAGE_FELINE_7324 = 7324,
+
+        DOUBLE_PIED_7325 = 7325,
+
+        SURPRISE_FELINE_7326 = 7326,
+
+        DANSE_GUERRIERE_7327 = 7327,
+
+        RAPPROCHEMENT_FELIN_7328 = 7328,
+
+        COMBO_FELIN_7329 = 7329,
+
+        COMBO_FELIN_7330 = 7330,
+
+        DOFUSTEUSE_7331 = 7331,
+
+        COUP_PRISMATIQUE_7332 = 7332,
+
+        ARMURE_PRISMATIQUE_7333 = 7333,
+
+        EXPLOSION_PRISMATIQUE_7334 = 7334,
+
+        CERCLE_FOUDROYANT_7335 = 7335,
+
+        VENT_TOURBILLONNANT_7336 = 7336,
+
+        TEMPS_ORAGEUX_7337 = 7337,
+
+        VOILE_DE_CHALEUR_7338 = 7338,
+
+        HURLEMENT_DU_VENT_7339 = 7339,
+
+        MORSURE_ASSOIFFEE_7340 = 7340,
+
+        CONTRLE_ELEMENTAIRE_7341 = 7341,
+
+        FLECHE_ELEMENTAIRE_7342 = 7342,
+
+        CACTERREUR_7343 = 7343,
+
+        PATERNALISME_7344 = 7344,
+
+        COUP_DŒIL_7345 = 7345,
+
+        BIEN_VU_LAVEUGLE_7346 = 7346,
+
+        VENT_TOURNOYANT_7347 = 7347,
+
+        COMBUSTION_INCONTWLEE_7348 = 7348,
+
+        COMBUSTION_INCONTWLEE_7349 = 7349,
+
+        MASSUE_EXPLOSIVE_7350 = 7350,
+
+        WAVELOT_IMPLOSIF_7351 = 7351,
+
+        CACTERREUR_7353 = 7353,
+
+        CACTERREUR_7354 = 7354,
+
+        GROUGALORAGRAN_7355 = 7355,
+
+        JORIS_7356 = 7356,
+
+        GOULTARD_7357 = 7357,
+
+        OTOMAÏ_7358 = 7358,
+
+        DIGESTION_LENTE_7367 = 7367,
+
+        DIGESTION_LENTE_7368 = 7368,
+
+        DECES_TRAUMATISANT_7369 = 7369,
+
+        DECES_EXPLOSIF_7372 = 7372,
+
+        DIGESTION_ACCELEREE_7374 = 7374,
+
+        DIGESTION_LENTE_7375 = 7375,
+
+        DIGESTION_LENTE_7376 = 7376,
+
+        SPORE_KESTRE_7382 = 7382,
+
+        SPORE_DORANT_7384 = 7384,
+
+        EFFET_SPORE_DORANT_7385 = 7385,
+
+        GYROSKOPIK_7387 = 7387,
+
+        PIK_A_SAUT_7388 = 7388,
+
+        PIK_VER_7389 = 7389,
+
+        PIK_VER_7390 = 7390,
+
+        COUPS_DE_LANGUES_7391 = 7391,
+
+        AVALEMENT_7392 = 7392,
+
+        CRACHAT_AMER_7393 = 7393,
+
+        SPORE_TIFF_7394 = 7394,
+
+        ENSABLAGE_7395 = 7395,
+
+        SURGISSEMENT_7396 = 7396,
+
+        SURGISSEMENT_7397 = 7397,
+
+        GUEULE_DES_SABLES_7398 = 7398,
+
+        DEPLACEMENT_SABLONNEUX_7399 = 7399,
+
         HELIOPOLIS_7400 = 7400,
+
         HELIOPOLIS_7401 = 7401,
-        DUNGSHOT = 7402,
-        FIREDUNG = 7403,
-        DUNGROLL = 7404,
-        DUNGED_OFF = 7405,
-        DUNG_OUTTA_THERE = 7406,
-        STINKING_DUNG_7407 = 7407,
-        STINKING_DUNG_7408 = 7408,
-        STINKING_DUNG_7409 = 7409,
-        STINKING_DUNG_7410 = 7410,
-        STINKING_DUNG_7411 = 7411,
-        STINKING_DUNG_7413 = 7413,
-        EXPLOSIVE_PELLET = 7414,
-        STINKING_DUNG = 7415,
-        SUMMONING_OF_CRA_DOPPLE = 7416,
-        BOW_SKILL_7417 = 7417,
-        EXPLOSIVE_ARROW_7418 = 7418,
-        SLOW_DOWN_ARROW_7419 = 7419,
-        ABSORPTIVE_ARROW_7420 = 7420,
-        DESTRUCTIVE_ARROW_7421 = 7421,
-        LASHING_ARROW_7423 = 7423,
-        PLAGUING_ARROW_7424 = 7424,
-        POWERFUL_SHOOTING_7425 = 7425,
-        PUNITIVE_ARROW_7426 = 7426,
-        PARALYSING_ARROW_7427 = 7427,
-        CRITICAL_SHOOTING_7428 = 7428,
-        BAT_S_EYE_7429 = 7429,
-        ATONEMENT_ARROW_7430 = 7430,
-        DISTANT_SHOOTING_7431 = 7431,
-        BURNING_ARROW_7432 = 7432,
-        FROZEN_ARROW_7433 = 7433,
-        MAGIC_ARROW_7435 = 7435,
-        POISONED_ARROW_7436 = 7436,
-        HELIOPOLIS = 7437,
-        SUMMONING_OF_ECAFLIP_DOPPLE = 7452,
-        FATE_OF_ECAFLIP_7453 = 7453,
+
+        COUP_DE_BOUSE_7402 = 7402,
+
+        BOUSE_DE_FEU_7403 = 7403,
+
+        ROULE_BOUSE_7404 = 7404,
+
+        AVOIR_LES_BOUSES_7405 = 7405,
+
+        BOUSE_DE_LA_7406 = 7406,
+
+        BOUSE_PUANTE_7407 = 7407,
+
+        BOUSE_PUANTE_7408 = 7408,
+
+        BOUSE_PUANTE_7409 = 7409,
+
+        BOUSE_PUANTE_7410 = 7410,
+
+        BOUSE_PUANTE_7411 = 7411,
+
+        BOUSE_PUANTE_7413 = 7413,
+
+        BOULETTE_EXPLOSIVE_7414 = 7414,
+
+        BOUSE_PUANTE_7415 = 7415,
+
+        INVOCATION_DE_DOPEUL_CRA_7416 = 7416,
+
+        MAÎTRISE_DE_LARC_7417 = 7417,
+
+        FLECHE_EXPLOSIVE_7418 = 7418,
+
+        FLECHE_RALENTISSANTE_7419 = 7419,
+
+        FLECHE_ABSORBANTE_7420 = 7420,
+
+        FLECHE_DESTRUCTRICE_7421 = 7421,
+
+        FLECHE_CINGLANTE_7423 = 7423,
+
+        FLECHE_HARCELANTE_7424 = 7424,
+
+        TIR_PUISSANT_7425 = 7425,
+
+        FLECHE_PUNITIVE_7426 = 7426,
+
+        FLECHE_DIMMOBILISATION_7427 = 7427,
+
+        TIR_CRITIQUE_7428 = 7428,
+
+        ŒIL_DE_TAUPE_7429 = 7429,
+
+        FLECHE_DEXPIATION_7430 = 7430,
+
+        TIR_ELOIGNE_7431 = 7431,
+
+        FLECHE_ENFLAMMEE_7432 = 7432,
+
+        FLECHE_GLACEE_7433 = 7433,
+
+        FLECHE_MAGIQUE_7435 = 7435,
+
+        FLECHE_EMPOISONNEE_7436 = 7436,
+
+        HELIOPOLIS_7437 = 7437,
+
+        INVOCATION_DE_DOPEUL_ECAFLIP_7452 = 7452,
+
+        DESTIN_DECAFLIP_7453 = 7453,
+
         REKOP_7454 = 7454,
-        CLAW_OF_CEANGAL_7455 = 7455,
-        PLAYFUL_CLAW_7456 = 7456,
-        REFLEX_7457 = 7457,
-        SMELL_7458 = 7458,
-        CLOVER_7459 = 7459,
-        WHEEL_OF_FORTUNE_7461 = 7461,
-        ROUGH_TONGUE_7462 = 7462,
+
+        GRIFFE_DE_CEANGAL_7455 = 7455,
+
+        GRIFFE_JOUEUSE_7456 = 7456,
+
+        REFLEXES_7457 = 7457,
+
+        ODORAT_7458 = 7458,
+
+        TREFLE_7459 = 7459,
+
+        ROUE_DE_LA_FORTUNE_7461 = 7461,
+
+        LANGUE_RAPEUSE_7462 = 7462,
+
         TOPKAJ_7463 = 7463,
+
         ROULETTE_7464 = 7464,
-        ALL_OR_NOTHING_7465 = 7465,
-        SUMMONING_CLAW_7466 = 7466,
-        REPERCUSSION_7467 = 7467,
+
+        TOUT_OU_RIEN_7465 = 7465,
+
+        GRIFFE_INVOCATRICE_7466 = 7466,
+
+        CONTRECOUP_7467 = 7467,
+
         PERCEPTION_7468 = 7468,
-        HEADS_OR_TAILS_7469 = 7469,
-        CATNIP_7470 = 7470,
+
+        PILE_OU_FACE_7469 = 7469,
+
+        BOND_DU_FELIN_7470 = 7470,
+
         BLUFF_7471 = 7471,
-        ECAFLIP_S_LUCK_7472 = 7472,
-        SUMMONING_OF_ELIOTROPE_DOPPLE = 7473,
-        MUTUAL_ASSISTANCE = 7474,
-        RIDICULE_7475 = 7475,
+
+        CHANCE_DECAFLIP_7472 = 7472,
+
+        INVOCATION_DE_DOPEUL_ELIOTROPE_7473 = 7473,
+
+        ENTRAIDE_7474 = 7474,
+
+        RAILLERIE_7475 = 7475,
+
         PARASITE_7476 = 7476,
-        AUDACIOUS_7477 = 7477,
-        SNUB_7478 = 7478,
-        ODYSSEY_7479 = 7479,
-        LIGHTNING_FIST_7480 = 7480,
-        HEALING_7481 = 7481,
-        BULLYING_7482 = 7482,
-        STUPOR_7483 = 7483,
+
+        AUDACE_7477 = 7477,
+
+        CAMOUFLET_7478 = 7478,
+
+        ODYSSEE_7479 = 7479,
+
+        POING_FULGURANT_7480 = 7480,
+
+        CICATRISATION_7481 = 7481,
+
+        BRIMADE_7482 = 7482,
+
+        STUPEUR_7483 = 7483,
+
         DISTRIBUTION_7484 = 7484,
-        THERAPY_7485 = 7485,
-        STRETCHING_7486 = 7486,
-        OFFENCE_7487 = 7487,
+
+        THERAPIE_7485 = 7485,
+
+        ETIREMENT_7486 = 7486,
+
+        OFFENSE_7487 = 7487,
+
         NEUTRAL_7488 = 7488,
-        WAKFU_RAY_7489 = 7489,
-        SHOCK = 7490,
-        TACTICAL_PORTAL = 7491,
+
+        RAYON_DE_WAKFU_7489 = 7489,
+
+        COMMOTION_7490 = 7490,
+
+        PORTAIL_TACTIQUE_7491 = 7491,
+
         AFFLICTION_7492 = 7492,
-        INSULT_7493 = 7493,
-        SUMMONING_OF_ENIRIPSA_DOPPLE = 7494,
-        WORD_OF_RECOVERY_7495 = 7495,
-        REVITALISING_WORD_7496 = 7496,
-        LIFTING_WORD = 7497,
-        SILENCING_WORD = 7498,
-        THUNDEROUS_WORD_7499 = 7499,
-        WHIRLING_WORD_7500 = 7500,
-        PUZZLING_WORD_7501 = 7501,
-        PARALYSING_WORD = 7502,
-        REGENERATING_WORD_7503 = 7503,
-        PREVENTING_WORD_7504 = 7504,
-        BLARING_WORD_7505 = 7505,
-        SELECTIVE_WORD_7506 = 7506,
-        WORD_OF_YOUTH_7507 = 7507,
-        TURBULENT_WORD_7508 = 7508,
-        STIMULATING_WORD = 7509,
-        FRIGHTENING_WORD_7510 = 7510,
-        FORBIDDEN_WORD_7511 = 7511,
-        WOUNDING_WORD_7512 = 7512,
-        ALTERNATIVE_WORD_7513 = 7513,
-        FRIENDSHIP_WORD_7514 = 7514,
-        SUMMONING_OF_ENUTROF_DOPPLE = 7515,
-        LIVING_CHEST_7516 = 7516,
-        UNSUMMONING_7517 = 7517,
-        BRIBERY_7518 = 7518,
-        SLAUGHTERING_SHOVEL_7519 = 7519,
-        SHOVEL_OF_JUDGEMENT_7520 = 7520,
-        FORTUNE_7521 = 7521,
-        MASS_CLUMSINESS_7522 = 7522,
-        CLUMSINESS_7523 = 7523,
-        SHOVEL_KISS_7524 = 7524,
-        GREED_7525 = 7525,
-        LIVING_SHOVEL_7526 = 7526,
-        PRIME_OF_LIFE_7527 = 7527,
-        REDUCING_KEY_7528 = 7528,
-        MOUND_7529 = 7529,
-        PANDORA_S_BOX_7530 = 7530,
+
+        AFFRONT_7493 = 7493,
+
+        INVOCATION_DE_DOPEUL_ENIRIPSA_7494 = 7494,
+
+        MOT_DE_RECONSTITUTION_7495 = 7495,
+
+        MOT_REVITALISANT_7496 = 7496,
+
+        MOT_DENVOL_7497 = 7497,
+
+        MOT_DE_SILENCE_7498 = 7498,
+
+        MOT_FRACASSANT_7499 = 7499,
+
+        MOT_TOURNOYANT_7500 = 7500,
+
+        MOT_DEROUTANT_7501 = 7501,
+
+        MOT_DIMMOBILISATION_7502 = 7502,
+
+        MOT_DE_REGENERATION_7503 = 7503,
+
+        MOT_DE_PREVENTION_7504 = 7504,
+
+        MOT_ECLATANT_7505 = 7505,
+
+        MOT_SELECTIF_7506 = 7506,
+
+        MOT_DE_JOUVENCE_7507 = 7507,
+
+        MOT_TURBULENT_7508 = 7508,
+
+        MOT_STIMULANT_7509 = 7509,
+
+        MOT_DE_FRAYEUR_7510 = 7510,
+
+        MOT_INTERDIT_7511 = 7511,
+
+        MOT_BLESSANT_7512 = 7512,
+
+        MOT_ALTERNATIF_7513 = 7513,
+
+        MOT_DAMITIE_7514 = 7514,
+
+        INVOCATION_DE_DOPEUL_ENUTROF_7515 = 7515,
+
+        COFFRE_ANIME_7516 = 7516,
+
+        DESINVOCATION_7517 = 7517,
+
+        CORRUPTION_7518 = 7518,
+
+        PELLE_MASSACRANTE_7519 = 7519,
+
+        PELLE_DU_JUGEMENT_7520 = 7520,
+
+        CHANCE_7521 = 7521,
+
+        MALADRESSE_DE_MASSE_7522 = 7522,
+
+        MALADRESSE_7523 = 7523,
+
+        ROULAGE_DE_PELLE_7524 = 7524,
+
+        CUPIDITE_7525 = 7525,
+
+        PELLE_ANIMEE_7526 = 7526,
+
+        FORCE_DE_LAGE_7527 = 7527,
+
+        CLE_REDUCTRICE_7528 = 7528,
+
+        REMBLAI_7529 = 7529,
+
+        BOÎTE_DE_PANDORE_7530 = 7530,
+
         ACCELERATION_7531 = 7531,
-        GHOSTLY_SHOVEL_7532 = 7532,
-        COINS_THROWING_7533 = 7533,
-        SHOVEL_THROWING_7534 = 7534,
-        LIVING_BAG_7535 = 7535,
-        TRANSPOSITION_7536 = 7536,
-        TRANSPOSITION_7537 = 7537,
-        SUMMONING_OF_FECA_DOPPLE = 7538,
-        FECA_SHIELD_7539 = 7539,
-        BURNING_GLYPH_7540 = 7540,
-        GRAVITATIONAL_GLYPH = 7541,
-        PARALYSING_GLYPH = 7542,
-        SHIVER_7543 = 7543,
-        GLYPH_OF_BLINDNESS = 7544,
-        TRUCE_7545 = 7545,
-        GLYPH_OF_REPULSION = 7546,
-        TELEGLYPH_7547 = 7547,
-        BACKLASH_7548 = 7548,
+
+        PELLE_FANTOMATIQUE_7532 = 7532,
+
+        LANCER_DE_PIECES_7533 = 7533,
+
+        LANCER_DE_PELLE_7534 = 7534,
+
+        SAC_ANIME_7535 = 7535,
+
+        _7536 = 7536,
+
+        _7537 = 7537,
+
+        INVOCATION_DE_DOPEUL_FECA_7538 = 7538,
+
+        BOUCLIER_FECA_7539 = 7539,
+
+        GLYPHE_ENFLAMME_7540 = 7540,
+
+        GLYPHE_GRAVITATIONNEL_7541 = 7541,
+
+        GLYPHE_OPTIQUE_7542 = 7542,
+
+        FRISSON_7543 = 7543,
+
+        GLYPHE_DAVEUGLEMENT_7544 = 7544,
+
+        TREVE_7545 = 7545,
+
+        GLYPHE_DE_REPULSION_7546 = 7546,
+
+        TELEGLYPHE_7547 = 7547,
+
+        RETOUR_DU_BATON_7548 = 7548,
+
         BASTION_7549 = 7549,
-        CLOUDY_ATTACK_7550 = 7550,
-        LETHARGY_7551 = 7551,
-        AGGRESSIVE_GLYPH_7552 = 7552,
-        BARRICADE = 7553,
-        BUBBLE_7554 = 7554,
-        TYPHOON_7555 = 7555,
-        RAMPART_7556 = 7556,
-        BLINDNESS_7557 = 7557,
-        NATURAL_ATTACK = 7558,
-        SUMMONING_OF_IOP_DOPPLE = 7580,
-        IOP_S_WRATH_7581 = 7581,
-        SWORD_OF_FATE_7582 = 7582,
-        SWORD_OF_IOP_7583 = 7583,
-        CELESTIAL_SWORD_7584 = 7584,
-        STRENGTHSTORM_7585 = 7585,
+
+        ATTAQUE_NUAGEUSE_7550 = 7550,
+
+        LETHARGIE_7551 = 7551,
+
+        GLYPHE_AGRESSIF_7552 = 7552,
+
+        BARRICADE_7553 = 7553,
+
+        BULLE_7554 = 7554,
+
+        TYPHON_7555 = 7555,
+
+        REMPART_7556 = 7556,
+
+        AVEUGLEMENT_7557 = 7557,
+
+        ATTAQUE_NATURELLE_7558 = 7558,
+
+        INVOCATION_DE_DOPEUL_IOP_7580 = 7580,
+
+        COLERE_DE_IOP_7581 = 7581,
+
+        EPEE_DU_DESTIN_7582 = 7582,
+
+        EPEE_DE_IOP_7583 = 7583,
+
+        EPEE_CELESTE_7584 = 7584,
+
+        TEMPETE_DE_PUISSANCE_7585 = 7585,
+
         PRECIPITATION_7586 = 7586,
-        POWER_7587 = 7587,
-        SWORD_OF_JUDGEMENT_7588 = 7588,
+
+        PUISSANCE_7587 = 7587,
+
+        EPEE_DU_JUGEMENT_7588 = 7588,
+
         DUEL_7589 = 7589,
+
         FRICTION_7590 = 7590,
-        CUT = 7591,
+
+        COUPER_7591 = 7591,
+
         CONCENTRATION_7592 = 7592,
-        BLOW_7593 = 7593,
-        POUTCH = 7594,
-        DESTRUCTIVE_SWORD_7595 = 7595,
-        DIVINE_SWORD_7596 = 7596,
-        VITALITY_7597 = 7597,
-        JUMP_7598 = 7598,
-        PRESSURE_7599 = 7599,
+
+        SOUFFLE_7593 = 7593,
+
+        POUTCH_7594 = 7594,
+
+        EPEE_DESTRUCTRICE_7595 = 7595,
+
+        EPEE_DIVINE_7596 = 7596,
+
+        VITALITE_7597 = 7597,
+
+        BOND_7598 = 7598,
+
+        PRESSION_7599 = 7599,
+
         INTIMIDATION_7600 = 7600,
-        SUMMONING_OF_OSAMODAS_DOPPLE = 7601,
-        SYMBIOSA_7602 = 7602,
-        HIGH_ENERGY_SHOT_7603 = 7603,
-        RED_WYRMLING_7604 = 7604,
-        SACRIFICIAL_FIRE = 7605,
-        NATURAL_DEFENCE_7606 = 7606,
-        CRACKLER_PUNCH_7607 = 7607,
-        TAKEOFF = 7608,
-        DRAGON_S_BREATH_7609 = 7609,
-        BLACK_WYRMLING_7610 = 7610,
-        BLACK_GOBBALL_7611 = 7611,
-        DUSTER = 7612,
-        WHIP_7613 = 7613,
-        PODGY_TOFU_7614 = 7614,
-        CALL_TO_ORDER = 7615,
-        GOBBALL_7616 = 7616,
-        FOSSIL_7617 = 7617,
-        ANIMAL_LINK_7618 = 7618,
-        BLACK_TOFU_7619 = 7619,
-        DRAGONIC_7620 = 7620,
+
+        INVOCATION_DE_DOPEUL_OSAMODAS_7601 = 7601,
+
+        SYMBIOSE_7602 = 7602,
+
+        PIQURE_MOTIVANTE_7603 = 7603,
+
+        DRAGONNET_ROUGE_7604 = 7604,
+
+        FEU_SACRIFICIEL_7605 = 7605,
+
+        RESISTANCE_NATURELLE_7606 = 7606,
+
+        FRAPPE_DU_CRAQUELEUR_7607 = 7607,
+
+        ENVOL_7608 = 7608,
+
+        SOUFFLE_DU_DRAGON_7609 = 7609,
+
+        DRAGONNET_NOIR_7610 = 7610,
+
+        BOUFTOU_NOIR_7611 = 7611,
+
+        PLUMEAU_7612 = 7612,
+
+        FOUET_7613 = 7613,
+
+        TOFU_DODU_7614 = 7614,
+
+        RAPPEL_7615 = 7615,
+
+        BOUFTOU_7616 = 7616,
+
+        FOSSILE_7617 = 7617,
+
+        LIEN_ANIMAL_7618 = 7618,
+
+        TOFU_NOIR_7619 = 7619,
+
+        DRAGONIQUE_7620 = 7620,
+
         CANINE_7621 = 7621,
-        SUMMONING_OF_PANDAWA_DOPPLE = 7622,
-        SPIRIT_BOND_7623 = 7623,
-        PANDINIURAS_7624 = 7624,
+
+        INVOCATION_DE_DOPEUL_PANDAWA_7622 = 7622,
+
+        LIEN_SPIRITUEUX_7623 = 7623,
+
+        PANDANLKU_7624 = 7624,
+
         PANDATAK_7625 = 7625,
-        EXPLOSIVE_FLASK_7626 = 7626,
-        ZATOISHWAN_S_WRATH_7627 = 7627,
-        MELANCHOLY_7628 = 7628,
-        VULNERABILITY_7629 = 7629,
-        STAIN = 7630,
-        TIPPLE_7631 = 7631,
+
+        FLASQUE_EXPLOSIVE_7626 = 7626,
+
+        COLERE_DE_ZATOÏSHWAN_7627 = 7627,
+
+        VAGUE_A_LAME_7628 = 7628,
+
+        VULNERABILITE_7629 = 7629,
+
+        SOUILLURE_7630 = 7630,
+
+        ETHYLO_7631 = 7631,
+
         CHAMRAK_7632 = 7632,
-        STABILISATION = 7633,
-        VERTIGO_7634 = 7634,
+
+        STABILISATION_7633 = 7633,
+
+        VERTIGE_7634 = 7634,
+
         KARCHAM_7635 = 7635,
+
         SCHNAPS_7636 = 7636,
-        BAMBOO_MILK_7637 = 7637,
-        ALCOHOLIC_BREATH_7638 = 7638,
-        TERROR = 7639,
-        BLAZING_FIST_7640 = 7640,
-        BOOZER_7641 = 7641,
-        HANGOVER_7642 = 7642,
-        SUMMONING_OF_ROGUE_DOPPLE = 7643,
+
+        LAIT_DE_BAMBOU_7637 = 7637,
+
+        SOUFFLE_ALCOOLISE_7638 = 7638,
+
+        EPOUVANTE_7639 = 7639,
+
+        POING_ENFLAMME_7640 = 7640,
+
+        PICOLE_7641 = 7641,
+
+        GUEULE_DE_BOIS_7642 = 7642,
+
+        INVOCATION_DE_DOPEUL_ROUBLARD_7643 = 7643,
+
         KABOOM_7644 = 7644,
-        BLUNDERBUSS_7645 = 7645,
-        OVERLOAD_7646 = 7646,
-        COUNTDOWN_7647 = 7647,
-        LAST_BREATH_7648 = 7648,
-        CARBINE_7649 = 7649,
+
+        TROMBLON_7645 = 7645,
+
+        SURCHARGE_7646 = 7646,
+
+        REBOURS_7647 = 7647,
+
+        DERNIER_SOUFFLE_7648 = 7648,
+
+        ESPINGOLE_7649 = 7649,
+
         REMISSION_7650 = 7650,
-        POWDER_7651 = 7651,
-        PULSAR = 7652,
-        WATER_BOMB_7653 = 7653,
-        DECEPTION_7654 = 7654,
-        DIRTY_TRICK_7655 = 7655,
-        BOOMERANG_DAGGERS_7656 = 7656,
-        MAGNET_7657 = 7657,
-        GRENADO_7658 = 7658,
-        ROGUERY_7659 = 7659,
-        KICKBACK_7660 = 7660,
-        EXPLOBOMB_7661 = 7661,
-        DETONATOR_7662 = 7662,
+
+        POUDRE_7651 = 7651,
+
+        PULSAR_7652 = 7652,
+
+        BOMBE_A_EAU_7653 = 7653,
+
+        RESQUILLE_7654 = 7654,
+
+        ENTOURLOUPE_7655 = 7655,
+
+        DAGUES_BOOMERANG_7656 = 7656,
+
+        AIMANTATION_7657 = 7657,
+
+        TORNABOMBE_7658 = 7658,
+
+        ROUBLARDISE_7659 = 7659,
+
+        BOTTE_7660 = 7660,
+
+        EXPLOBOMBE_7661 = 7661,
+
+        DETONATEUR_7662 = 7662,
+
         EXTRACTION_7663 = 7663,
-        SUMMONING_OF_SACRIER_DOPPLE = 7664,
-        BLOODTHIRSTY_MADNESS_7665 = 7665,
-        LIFE_TRANSFER_7666 = 7666,
-        FLYING_SWORD_7667 = 7667,
-        FURY_7668 = 7668,
-        PUNISHMENT_7669 = 7669,
+
+        INVOCATION_DE_DOPEUL_SACRIEUR_7664 = 7664,
+
+        FOLIE_SANGUINAIRE_7665 = 7665,
+
+        TRANSFERT_DE_VIE_7666 = 7666,
+
+        EPEE_VOLANTE_7667 = 7667,
+
+        FURIE_7668 = 7668,
+
+        PUNITION_7669 = 7669,
+
         TRANSPOSITION_7670 = 7670,
+
         COOPERATION_7671 = 7671,
-        VITAL_PUNISHMENT = 7672,
+
+        CHATIMENT_VITALESQUE_7672 = 7672,
+
         ABSORPTION_7673 = 7673,
+
         SACRIFICE_7674 = 7674,
-        SPIRITUAL_PUNISHMENT = 7675,
-        BOLD_PUNISHMENT = 7676,
+
+        CHATIMENT_SPIRITUEL_7675 = 7675,
+
+        CHATIMENT_OSE_7676 = 7676,
+
         DISSOLUTION_7677 = 7677,
-        NIMBLE_PUNISHMENT = 7678,
-        ASSAULT_7679 = 7679,
-        SWAP = 7680,
-        EVASION_7681 = 7681,
-        ATTRACTION_7682 = 7682,
-        FORCED_PUNISHMENT = 7683,
-        SACRIER_S_FOOT = 7684,
-        SUMMONING_OF_SADIDA_DOPPLE = 7685,
-        THE_ULTRA_POWERFUL = 7686,
-        INSOLENT_BRAMBLE = 7687,
-        BUSH_FIRE_7688 = 7688,
-        WILD_GRASS_7689 = 7689,
-        AGGRESSIVE_BRAMBLE = 7690,
-        THE_INFLATABLE = 7691,
-        POISONED_WIND = 7692,
-        DOLLY_SACRIFICE_7693 = 7693,
-        MANIFOLD_BRAMBLE_7694 = 7694,
-        NATURAL_GIFT = 7695,
-        EARTHQUAKE = 7696,
-        THE_SACRIFICIAL_DOLL = 7697,
-        SYLVAN_POWER_7698 = 7698,
-        SOOTHING_BRAMBLE = 7699,
-        THE_MADOLL = 7700,
-        TEAR_7701 = 7701,
-        PARALYSING_POISON_7702 = 7702,
-        THE_BLOCK_7703 = 7703,
-        TREE = 7704,
-        BRAMBLE_7705 = 7705,
-        SUMMONING_OF_SRAM_DOPPLE = 7706,
-        LETHAL_TRAP_7707 = 7707,
-        LETHAL_ATTACK = 7708,
-        DRAGLINE = 7709,
-        CON_7710 = 7710,
-        FEAR_7711 = 7711,
-        REPELLING_TRAP_7712 = 7712,
-        TRAP_OF_SILENCE = 7713,
-        PARALYSING_TRAP_7714 = 7714,
-        CHAKRA_CONCENTRATION_7715 = 7715,
-        POISONED_TRAP_7716 = 7716,
-        INVISIBILITY_OF_OTHERS = 7717,
-        MASS_TRAP_7718 = 7718,
-        CHAKRA_IMPULSE = 7719,
+
+        CHATIMENT_AGILE_7678 = 7678,
+
+        ASSAUT_7679 = 7679,
+
+        DETOUR_7680 = 7680,
+
+        DEROBADE_7681 = 7681,
+
+        ATTIRANCE_7682 = 7682,
+
+        CHATIMENT_FORCE_7683 = 7683,
+
+        PIED_DU_SACRIEUR_7684 = 7684,
+
+        INVOCATION_DE_DOPEUL_SADIDA_7685 = 7685,
+
+        LA_SURPUISSANTE_7686 = 7686,
+
+        RONCE_INSOLENTE_7687 = 7687,
+
+        FEU_DE_BROUSSE_7688 = 7688,
+
+        HERBE_FOLLE_7689 = 7689,
+
+        RONCES_AGRESSIVES_7690 = 7690,
+
+        LA_GONFLABLE_7691 = 7691,
+
+        VENT_EMPOISONNE_7692 = 7692,
+
+        SACRIFICE_POUPESQUE_7693 = 7693,
+
+        RONCES_MULTIPLES_7694 = 7694,
+
+        DON_NATUREL_7695 = 7695,
+
+        TREMBLEMENT_7696 = 7696,
+
+        LA_SACRIFIEE_7697 = 7697,
+
+        PUISSANCE_SYLVESTRE_7698 = 7698,
+
+        RONCE_APAISANTE_7699 = 7699,
+
+        LA_FOLLE_7700 = 7700,
+
+        LARME_7701 = 7701,
+
+        POISON_PARALYSANT_7702 = 7702,
+
+        LA_BLOQUEUSE_7703 = 7703,
+
+        ARBRE_7704 = 7704,
+
+        RONCE_7705 = 7705,
+
+        INVOCATION_DE_DOPEUL_SRAM_7706 = 7706,
+
+        PIEGE_MORTEL_7707 = 7707,
+
+        ATTAQUE_MORTELLE_7708 = 7708,
+
+        REPERAGE_7709 = 7709,
+
+        ARNAQUE_7710 = 7710,
+
+        PEUR_7711 = 7711,
+
+        PIEGE_REPULSIF_7712 = 7712,
+
+        PIEGE_DE_SILENCE_7713 = 7713,
+
+        PIEGE_DIMMOBILISATION_7714 = 7714,
+
+        CONCENTRATION_DE_CHAKRA_7715 = 7715,
+
+        PIEGE_EMPOISONNE_7716 = 7716,
+
+        INVISIBILITE_DAUTRUI_7717 = 7717,
+
+        PIEGE_DE_MASSE_7718 = 7718,
+
+        PULSION_DE_CHAKRA_7719 = 7719,
+
         DOUBLE_7720 = 7720,
-        TRICKY_BLOW_7721 = 7721,
-        MISTAKE_7722 = 7722,
-        INSIDIOUS_POISON_7723 = 7723,
-        DEVIOUSNESS_7724 = 7724,
-        TRICKY_TRAP_7725 = 7725,
-        INVISIBILITY_7726 = 7726,
-        SUMMONING_OF_FOGGERNAUT_DOPPLE = 7727,
-        DREADNOUGHT = 7728,
-        TRIDENT_7729 = 7729,
-        FROTH_7730 = 7730,
-        AMBUSH_7731 = 7731,
-        SURGE_7732 = 7732,
-        FIRST_AID_7733 = 7733,
-        PERISCOPE_7734 = 7734,
-        TACTURRET_7735 = 7735,
-        GRAPNEL_7736 = 7736,
-        VAPOUR_7737 = 7737,
-        TIDE_7738 = 7738,
-        BACKWASH_7739 = 7739,
-        LIFESAVER_7740 = 7740,
-        SCAPHANDER_7741 = 7741,
-        SALT_ARMOUR_7742 = 7742,
-        TORRENT_7743 = 7743,
+
+        COUP_SOURNOIS_7721 = 7721,
+
+        FOURVOIEMENT_7722 = 7722,
+
+        POISON_INSIDIEUX_7723 = 7723,
+
+        SOURNOISERIE_7724 = 7724,
+
+        PIEGE_SOURNOIS_7725 = 7725,
+
+        INVISIBILITE_7726 = 7726,
+
+        INVOCATION_DE_DOPEUL_STEAMER_7727 = 7727,
+
+        CUIRASSE_7728 = 7728,
+
+        FOENE_7729 = 7729,
+
+        ECUME_7730 = 7730,
+
+        EMBUSCADE_7731 = 7731,
+
+        SELPATRE_7732 = 7732,
+
+        SECOURISME_7733 = 7733,
+
+        LONGUE_VUE_7734 = 7734,
+
+        TACTIRELLE_7735 = 7735,
+
+        ASPIRATION_7736 = 7736,
+
+        VAPOR_7737 = 7737,
+
+        MAREE_7738 = 7738,
+
+        RESSAC_7739 = 7739,
+
+        GARDIENNE_7740 = 7740,
+
+        SCAPHANDRE_7741 = 7741,
+
+        ARMURE_DE_SEL_7742 = 7742,
+
+        COURANT_7743 = 7743,
+
         EVOLUTION_7744 = 7744,
-        HARPOONER_7745 = 7745,
-        PILFER_7746 = 7746,
-        ANCHOR_7747 = 7747,
-        SUMMONING_OF_XELOR_DOPPLE = 7748,
-        MUMMIFICATION_7749 = 7749,
-        XELOR_S_PUNCH_7750 = 7750,
-        CLOCK_7751 = 7751,
-        COUNTER = 7752,
+
+        HARPONNEUSE_7745 = 7745,
+
+        FLIBUSTE_7746 = 7746,
+
+        ANCRAGE_7747 = 7747,
+
+        INVOCATION_DE_DOPEUL_XELOR_7748 = 7748,
+
+        MOMIFICATION_7749 = 7749,
+
+        FRAPPE_DE_XELOR_7750 = 7750,
+
+        HORLOGE_7751 = 7751,
+
+        CONTRE_7752 = 7752,
+
         SYNCHRO_7753 = 7753,
-        TEMPORAL_PARADOX_7754 = 7754,
-        LOSS_OF_MOTIVATION_7755 = 7755,
-        FLIGHT_7756 = 7756,
-        TEMPORAL_DUST_7757 = 7757,
-        HAZINESS_7758 = 7758,
-        TIME_THEFT_7759 = 7759,
-        XELOR_S_SANDGLASS_7760 = 7760,
-        FROSTBITE_7761 = 7761,
-        XELOR_S_DIAL_7762 = 7762,
-        DARK_RAY_7763 = 7763,
-        REWIND_7764 = 7764,
-        SHRIVELLING_7765 = 7765,
-        HAND_7766 = 7766,
-        TELEPORTATION = 7767,
-        SLOW_DOWN_7768 = 7768,
-        SUMMONING_OF_MASQUERAIDER_DOPPLE = 7769,
-        MASQUERADE_7770 = 7770,
+
+        PARADOXE_TEMPOREL_7754 = 7754,
+
+        DEMOTIVATION_7755 = 7755,
+
+        FUITE_7756 = 7756,
+
+        POUSSIERE_TEMPORELLE_7757 = 7757,
+
+        FLOU_7758 = 7758,
+
+        VOL_DU_TEMPS_7759 = 7759,
+
+        SABLIER_DE_XELOR_7760 = 7760,
+
+        GELURE_7761 = 7761,
+
+        CADRAN_DE_XELOR_7762 = 7762,
+
+        RAYON_OBSCUR_7763 = 7763,
+
+        REMBOBINAGE_7764 = 7764,
+
+        FLETRISSEMENT_7765 = 7765,
+
+        AIGUILLE_7766 = 7766,
+
+        TELEPORTATION_SYMETRIQUE_7767 = 7767,
+
+        RALENTISSEMENT_7768 = 7768,
+
+        INVOCATION_DE_DOPEUL_ZOBAL_7769 = 7769,
+
+        MASCARADE_7770 = 7770,
+
         BOLICHE_7771 = 7771,
-        APATHY_7772 = 7772,
-        TRANCE_7773 = 7773,
-        DECOY_7774 = 7774,
-        CAPERING_7775 = 7775,
-        STAMPEDE_7776 = 7776,
-        ARDOUR = 7777,
+
+        APATHIE_7772 = 7772,
+
+        TRANSE_7773 = 7773,
+
+        APPEAU_7774 = 7774,
+
+        CABRIOLE_7775 = 7775,
+
+        DEBANDADE_7776 = 7776,
+
+        FOUGUE_7777 = 7777,
+
         PLASTRON_7778 = 7778,
+
         DISTANCE_7779 = 7779,
+
         FURIA_7780 = 7780,
-        PSYCHOPATH_MASK_7781 = 7781,
+
+        MASQUE_DU_PSYCHOPATHE_7781 = 7781,
+
         RETENTION_7782 = 7782,
-        BLING_7783 = 7783,
+
+        REUCHE_7783 = 7783,
+
         TORTORUGA_7784 = 7784,
-        REINFORCEMENT_7785 = 7785,
-        CLASSIC_MASK_7786 = 7786,
+
+        APPUI_7785 = 7785,
+
+        MASQUE_DE_CLASSE_7786 = 7786,
+
         MARTELO_7787 = 7787,
+
         PICADA_7788 = 7788,
-        COWARD_MASK_7789 = 7789,
-        RETREAT_ARROW_7790 = 7790,
-        TORMENTING_ARROW_7791 = 7791,
-        WIND_ELEMENTAL_CHANNELLING = 7792,
-        ABSOLUTE_ACUTENESS_7814 = 7814,
-        FELINE_SPIRIT_7815 = 7815,
-        SUBDIVISION = 7816,
-        ELEMENTAL_SUMMONING = 7817,
-        PIK_ER_WOOD = 7818,
-        IN_THE_HEART_OF_THE_STORM = 7819,
-        ELEMENTAL_UNLEASHING = 7820,
-        ELEMENTAL_FUSION = 7821,
-        ATTRACTION_7822 = 7822,
-        ATTRACTION_7823 = 7823,
-        HARASSMENT_OF_THE_PYRAMID = 7824,
-        PYRAMID = 7825,
-        ARCHAIC_POWER_7826 = 7826,
-        ARCHAIC_POWER_7827 = 7827,
-        ARCHAIC_POWER = 7828,
-        EROSIVE_SNOT_7829 = 7829,
-        EROSIVE_SNOT_7830 = 7830,
-        HUG = 7831,
-        MUMMY_DANCE_7832 = 7832,
-        HUPPERMAGE_HERITAGE_7833 = 7833,
-        HUPPERMAGE_HERITAGE_7834 = 7834,
-        ELEMENTAL_PUNCH = 7835,
-        GARNETTRITION = 7836,
-        CURSED_REPLACEMENT = 7838,
-        SABRUPT = 7839,
-        CURSED_RHYTHM = 7840,
-        SOURCLAWS = 7841,
-        THUNDEROUS_ARRIVAL_7842 = 7842,
-        JAWS_OF_THE_SANDS_7845 = 7845,
-        JAWS_OF_THE_SANDS_7846 = 7846,
-        CRUNCHY_CHARGE = 7847,
-        SWIRLING_SAND = 7848,
-        REDDUR = 7849,
-        PUNISHMENT_7850 = 7850,
+
+        MASQUE_DU_PLEUTRE_7789 = 7789,
+
+        FLECHE_DE_RECUL_7790 = 7790,
+
+        FLECHE_PERSECUTRICE_7791 = 7791,
+
+        CANALISATION_DELEMENTAIRE_DE_VENT_7792 = 7792,
+
+        ACUITE_ABSOLUE_7814 = 7814,
+
+        ESPRIT_FELIN_7815 = 7815,
+
+        SUBDIVISION_7816 = 7816,
+
+        INVOCATION_DE_LELEMENTAIRE_7817 = 7817,
+
+        PIK_VER_7818 = 7818,
+
+        AU_COEUR_DE_LA_TEMPETE_7819 = 7819,
+
+        DECHAINEMENT_ELEMENTAIRE_7820 = 7820,
+
+        FUSION_ELEMENTAIRE_7821 = 7821,
+
+        _7822 = 7822,
+
+        _7823 = 7823,
+
+        HARCELEMENT_DE_LA_PYRAMIDE_7824 = 7824,
+
+        PYRAMIDE_7825 = 7825,
+
+        POUVOIR_ANTIQUE_7826 = 7826,
+
+        POUVOIR_ANTIQUE_7827 = 7827,
+
+        POUVOIR_ANTIQUE_7828 = 7828,
+
+        MORVE_EROSIVE_7829 = 7829,
+
+        MORVE_EROSIVE_7830 = 7830,
+
+        CALIN_7831 = 7831,
+
+        DANSE_COMME_UNE_MOMIE_7832 = 7832,
+
+        HERITAGE_HUPPERMAGE_7833 = 7833,
+
+        HERITAGE_HUPPERMAGE_7834 = 7834,
+
+        FRAPPE_ELEMENTAIRE_7835 = 7835,
+
+        GRENATTRITION_7836 = 7836,
+
+        REMPLACEMENT_MAUDIT_7838 = 7838,
+
+        SABRUPT_7839 = 7839,
+
+        RYTHME_MAUDIT_7840 = 7840,
+
+        AIGRIFFES_7841 = 7841,
+
+        ARRIVEE_FRACASSANTE_7842 = 7842,
+
+        LES_DENTS_DE_LA_MER_DE_SABLE_7845 = 7845,
+
+        LES_DENTS_DE_LA_MER_DE_SABLE_7846 = 7846,
+
+        CHARGE_CROQUANTE_7847 = 7847,
+
+        SABLE_TOURBILLONNANT_7848 = 7848,
+
+        PATTES_HARASSENT_7849 = 7849,
+
+        _7850 = 7850,
+
         LASCCAR_7851 = 7851,
+
         LASCCAR_7852 = 7852,
+
         LASCCAR_7853 = 7853,
+
         LASCCAR_7854 = 7854,
-        CEFLOWN = 7855,
-        VOLVATION = 7856,
-        GREEDY_ASPIRATION_7857 = 7857,
-        GREEDY_ASPIRATION_7858 = 7858,
-        BLOODTHIRSTY_7859 = 7859,
-        OW_CHEW_7865 = 7865,
-        GASTRIC_FLUID = 7866,
-        UNRULY_7867 = 7867,
-        CURSE_OF_THE_PYRAMID_7868 = 7868,
-        CURSE_OF_THE_PYRAMID_7869 = 7869,
-        CURE = 7878,
-        CONVERSION = 7881,
-        GET_THE_HAIR_OUT_OF_HERE = 7904,
-        SPINNING_7905 = 7905,
-        SPINNING_7906 = 7906,
-        SPINNING = 7907,
-        THRUGO_7908 = 7908,
-        THRUGO_7909 = 7909,
-        THRUGO = 7910,
-        ELEMENTAL_SUMMONING_SPELL = 7911,
-        CONEY_PROTECTION = 7926,
-        I_SEE_YOU = 7979,
-        CURSIFICATION_8049 = 8049,
-        CURSIFICATION_8050 = 8050,
-        HEAVY_GRAVITY = 8053,
-        ENERGY_BURN = 8054,
-        REPULSIVE_DISRUPTION = 8055,
-        CRACKLE_OF_SPARKS = 8057,
-        AHON_S_CURSE = 8058,
-        AHON_S_THRASHING = 8059,
-        BLOOD_BATH_8060 = 8060,
-        STARDUST_8061 = 8061,
-        STARDUST_8062 = 8062,
-        STARDUST_8063 = 8063,
-        STARDUST_8064 = 8064,
+
+        CEPHALONDE_7855 = 7855,
+
+        VOLVATION_7856 = 7856,
+
+        ASPIRATION_GOURMANDE_7857 = 7857,
+
+        ASPIRATION_GOURMANDE_7858 = 7858,
+
+        _7859 = 7859,
+
+        MACHE_OUILLE_7865 = 7865,
+
+        LIQUIDE_GASTRIQUE_7866 = 7866,
+
+        PAS_SAGE_7867 = 7867,
+
+        MALEDICTION_DE_LA_PYRAMIDE_7868 = 7868,
+
+        MALEDICTION_DE_LA_PYRAMIDE_7869 = 7869,
+
+        _7870 = 7870,
+
+        _7876 = 7876,
+
+        GUERISON_7878 = 7878,
+
+        CONVERSION_7881 = 7881,
+
+        CHEVEUX_PARTIR_DE_LA_7904 = 7904,
+
+        FILATURE_7905 = 7905,
+
+        FILATURE_7906 = 7906,
+
+        FILATURE_7907 = 7907,
+
+        TRANSE_PERSE_7908 = 7908,
+
+        TRANSE_PERSE_7909 = 7909,
+
+        TRANSE_PERSE_7910 = 7910,
+
+        SORT_INVOQUER_ELEMENTAIRE_7911 = 7911,
+
+        PROTECTION_DU_LAPINO_7926 = 7926,
+
+        JE_VOUS_VOIS_7979 = 7979,
+
+        MAUDIFICATION_8049 = 8049,
+
+        MAUDIFICATION_8050 = 8050,
+
+        GRAVITE_PESANTE_8053 = 8053,
+
+        BRULURE_DENERGIE_8054 = 8054,
+
+        PERTURBATION_REPOUSSANTE_8055 = 8055,
+
+        CREPITEMENT_DETINCELLES_8057 = 8057,
+
+        MALEDICTION_DAHON_8058 = 8058,
+
+        DEGELEE_DAHON_8059 = 8059,
+
+        _8060 = 8060,
+
+        POUSSIERE_DETOILE_8061 = 8061,
+
+        POUSSIERE_DETOILE_8062 = 8062,
+
+        POUSSIERE_DETOILE_8063 = 8063,
+
+        POUSSIERE_DETOILE_8064 = 8064,
+
         OURATE_8065 = 8065,
+
         OURATE_8066 = 8066,
-        OURATE = 8067,
-        INKLE = 8068,
+
+        OURATE_8067 = 8067,
+
+        OUNETTE_8068 = 8068,
+
         OUIWI_8069 = 8069,
+
         OUIWI_8070 = 8070,
-        ROBUST_8071 = 8071,
-        MUMMY_DANCE_8072 = 8072,
-        THUNDEROUS_ARRIVAL_8073 = 8073,
-        OW_CHEW_8074 = 8074,
-        OW_CHEW = 8075,
-        UNRULY_8078 = 8078,
-        UNRULY = 8080,
-        CURSE_OF_THE_PYRAMID_8082 = 8082,
-        CUTTING_8083 = 8083,
-        EMBALMING_OF_AHON = 8084,
-        FURY_8086 = 8086,
-        CURSE_OF_THE_PYRAMID_8139 = 8139,
-        DOPPLESQUE_RITUAL_BLOODLETTING = 8140,
-        DOPPLESQUE_MOTIVATING_PAIN = 8141,
-        DOPPLESQUE_BLOODTHIRSTY_PUNISHMENT = 8142,
-        PUNISHMENT_8143 = 8143,
-        PUNISHMENT_8144 = 8144,
-        CURSE_OF_THE_PYRAMID = 8145,
-        DOPPLESQUE_ROBUST_PUNISHMENT = 8146,
-        DOPPLESQUE_UNLEASHED = 8147,
-        DOPPLESQUE_PROJECTION = 8148,
-        DOPPLESQUE_SWIFT_PUNISHMENT = 8149,
-        DOPPLESQUE_FURY_8150 = 8150,
-        DOPPLESQUE_LIGHT_SPEED = 8151,
-        DOPPLESQUE_ATTRACTION = 8152,
-        SWIFT_CUTTING_UP = 8153,
-        ROBUST_CUTTING_UP = 8154,
-        BLOODTHIRSTY_CUTTING_UP = 8155,
-        ALTRUISM = 8157,
-        INTERVERSION = 8158,
-        CELLULAR_REGENERATION = 8159,
-        WALL_8160 = 8160,
-        MASS_AWKWARDNESS = 8161,
-        FRAUD_8162 = 8162,
-        KAMA_THROW = 8163,
-        STOCKADE = 8164,
-        STEAMY_ATTACK = 8165,
-        LIFELESSNESS_8166 = 8166,
-        BLISTER = 8167,
-        SPRINT = 8168,
-        FATAL_ATTACK = 8169,
-        FLAMING_ATTACK = 8170,
-        CATARACT_8171 = 8171,
-        CITADEL = 8172,
-        BLUEFF = 8173,
-        SHIELD = 8174,
-        ACROBATICS_8175 = 8175,
-        FELINE_BOUND = 8176,
-        ROTARY_LUCK = 8177,
-        VISUAL_REDUCTION = 8178,
-        ANGRY_WRATH = 8179,
-        CHAKRA_ACCUMULATION = 8180,
-        REPERCUSSION = 8181,
-        DEGRADATION = 8182,
-        SNEAKY_SLAP = 8183,
-        PRUNE = 8184,
-        RAPACITY = 8185,
-        BOOMERANG_KNIVES = 8186,
-        UNSUMMONINGATION = 8187,
-        PREDESTINED = 8188,
-        FUZE_8189 = 8189,
-        COPY = 8190,
-        JOUST = 8191,
-        CELESTIAL_BLADE = 8192,
-        IOP_S_BLADE = 8193,
-        DESTRUCTIVE_BLADE = 8194,
-        DIVINE_BLADE = 8195,
-        BLADE_OF_DESTINY = 8196,
-        BLADE_OF_JUDGEMENT = 8197,
-        ABSORBENT_STROKE = 8199,
-        LASHING_STROKE = 8200,
-        RETREAT_STROKE = 8201,
-        DESTRUCTIVE_STROKE = 8202,
-        ATONEMENT_STROKE = 8203,
-        IMMOBILISATION_STROKE = 8204,
-        POISONED_STROKE = 8205,
-        FLAMING_STROKE = 8206,
-        ICED_STROKE = 8207,
-        HARASSING_STOKE = 8208,
-        MAGIC_STROKE = 8209,
-        TORMENTING_STROKE = 8210,
-        PUNISHING_STROKE = 8211,
-        SLOWING_STROKE = 8212,
-        TRICKERY_8213 = 8213,
-        CRACKLAVA_PUNCH = 8214,
-        DELIRIOUS_GRASS = 8215,
-        FULMINATION = 8216,
-        INAPPEARANCE = 8217,
-        SPADE_THROW_8218 = 8218,
-        SCRAPER_TONGUE = 8219,
-        CRIES = 8220,
-        THROWN_WEAPON_MASTERY = 8221,
-        AWKWARDNESS = 8222,
-        PERIODIC_WORD = 8223,
-        DAMAGING_WORD = 8224,
-        YOUNG_WORD = 8225,
-        PROTECTING_WORD = 8226,
-        RESTORING_WORD = 8227,
-        MUTING_WORD = 8228,
-        STOPPING_WORD = 8229,
-        SLOWING_WORD = 8230,
-        SHATTERING_WORD = 8231,
-        EXCLUDED_WORD = 8232,
-        CROSSED_WORD = 8233,
-        EXCITING_WORD = 8234,
-        WHIRLWIND_WORD = 8235,
-        SPADE_OF_JUDGEMENT_8236 = 8236,
-        GHOSTLY_SPADE_8237 = 8237,
-        MASSACRING_SPADE = 8238,
-        EXPLOSIVE_VIAL = 8239,
-        PIRACY = 8240,
-        IMPRECISE = 8241,
-        WHINER = 8242,
-        ELDERSSTRENGTH = 8243,
-        XELORESQUE_PUNCH = 8244,
-        TELESCOPE_8245 = 8245,
-        EBB = 8246,
-        DISCERNMENT = 8247,
-        JITTER = 8248,
-        MOTIVATING_INJECTION = 8249,
-        LASHING_CLAW = 8250,
-        FLAMING_HAND = 8251,
-        SNEAKY_POISON = 8252,
-        BURNING_POISON = 8253,
-        BAD_LUCK = 8254,
-        PUNCHING_BAG = 8255,
+
+        _8071 = 8071,
+
+        DANSE_COMME_UNE_MOMIE_8072 = 8072,
+
+        ARRIVEE_FRACASSANTE_8073 = 8073,
+
+        MACHE_OUILLE_8074 = 8074,
+
+        MACHE_OUILLE_8075 = 8075,
+
+        PAS_SAGE_8078 = 8078,
+
+        PAS_SAGE_8080 = 8080,
+
+        MALEDICTION_DE_LA_PYRAMIDE_8082 = 8082,
+
+        _8083 = 8083,
+
+        EMBAUMEMENT_DAHON_8084 = 8084,
+
+        _8086 = 8086,
+
+        MALEDICTION_DE_LA_PYRAMIDE_8139 = 8139,
+
+        SAIGNEE_RITUELLE_DU_DOPEUL_8140 = 8140,
+
+        DOULEUR_MOTIVANTE_DU_DOPEUL_8141 = 8141,
+
+        CHATIMENT_SANGUINAIRE_DU_DOPEUL_8142 = 8142,
+
+        _8143 = 8143,
+
+        _8144 = 8144,
+
+        MALEDICTION_DE_LA_PYRAMIDE_8145 = 8145,
+
+        CHATIMENT_ROBUSTE_DU_DOPEUL_8146 = 8146,
+
+        DECHAINEMENT_DU_DOPEUL_8147 = 8147,
+
+        PROJECTION_DU_DOPEUL_8148 = 8148,
+
+        CHATIMENT_VELOCE_DU_DOPEUL_8149 = 8149,
+
+        FURIE_DU_DOPEUL_8150 = 8150,
+
+        FULGURANCE_DU_DOPEUL_8151 = 8151,
+
+        ATTIRANCE_DU_DOPEUL_8152 = 8152,
+
+        DECOUPAGE_VELOCE_8153 = 8153,
+
+        DECOUPAGE_ROBUSTE_8154 = 8154,
+
+        DECOUPAGE_SANGUINAIRE_8155 = 8155,
+
+        _8156 = 8156,
+
+        OBLATIVITE_8157 = 8157,
+
+        INTERVERSION_8158 = 8158,
+
+        RECONSTITUTION_CELLULAIRE_8159 = 8159,
+
+        MURAILLE_8160 = 8160,
+
+        GAUCHERIE_DE_MASSE_8161 = 8161,
+
+        ESCROQUERIE_8162 = 8162,
+
+        LANCER_DE_KAMAS_8163 = 8163,
+
+        PALISSADE_8164 = 8164,
+
+        ATTAQUE_VAPOREUSE_8165 = 8165,
+
+        ATONIE_8166 = 8166,
+
+        CLOQUE_8167 = 8167,
+
+        SPRINT_8168 = 8168,
+
+        ATTAQUE_FATALE_8169 = 8169,
+
+        ATTAQUE_ENFLAMMEE_8170 = 8170,
+
+        CATARACTE_8171 = 8171,
+
+        CITADELLE_8172 = 8172,
+
+        BLEUPH_8173 = 8173,
+
+        BOUCLIER_8174 = 8174,
+
+        VOLTIGE_8175 = 8175,
+
+        SAUT_DU_FELIN_8176 = 8176,
+
+        CHANCE_TOURNANTE_8177 = 8177,
+
+        REDUCTION_VISUELLE_8178 = 8178,
+
+        FACHE_COLERE_8179 = 8179,
+
+        ACCUMULATION_DE_CHAKRA_8180 = 8180,
+
+        REPERCUSSION_8181 = 8181,
+
+        AVILISSEMENT_8182 = 8182,
+
+        TALOCHE_SOURNOISE_8183 = 8183,
+
+        TAILLER_8184 = 8184,
+
+        RAPACITE_8185 = 8185,
+
+        COUTEAUX_BOOMERANG_8186 = 8186,
+
+        DESINVOCATIONNEMENT_8187 = 8187,
+
+        PREDESTINE_8188 = 8188,
+
+        ETOUPILLE_8189 = 8189,
+
+        COPIE_8190 = 8190,
+
+        JOUTE_8191 = 8191,
+
+        LAME_CELESTE_8192 = 8192,
+
+        LAME_DE_IOP_8193 = 8193,
+
+        LAME_DESTRUCTRICE_8194 = 8194,
+
+        LAME_DIVINE_8195 = 8195,
+
+        LAME_DU_DESTIN_8196 = 8196,
+
+        LAME_DU_JUGEMENT_8197 = 8197,
+
+        _8198 = 8198,
+
+        TRAIT_ABSORBANT_8199 = 8199,
+
+        TRAIT_CINGLANT_8200 = 8200,
+
+        TRAIT_DE_RECUL_8201 = 8201,
+
+        TRAIT_DESTRUCTEUR_8202 = 8202,
+
+        TRAIT_DEXPIATION_8203 = 8203,
+
+        TRAIT_DIMMOBILISATION_8204 = 8204,
+
+        TRAIT_EMPOISONNE_8205 = 8205,
+
+        TRAIT_ENFLAMME_8206 = 8206,
+
+        TRAIT_GLACE_8207 = 8207,
+
+        TRAIT_HARCELANT_8208 = 8208,
+
+        TRAIT_MAGIQUE_8209 = 8209,
+
+        TRAIT_PERSECUTEUR_8210 = 8210,
+
+        TRAIT_PUNITIF_8211 = 8211,
+
+        TRAIT_RALENTISSANT_8212 = 8212,
+
+        TROMPERIE_8213 = 8213,
+
+        FRAPPE_DU_CRAQUELAVE_8214 = 8214,
+
+        HERBE_DEMENTE_8215 = 8215,
+
+        FULMINATION_8216 = 8216,
+
+        INAPPARENCE_8217 = 8217,
+
+        LANCER_DE_BECHE_8218 = 8218,
+
+        LANGUE_RACLEUSE_8219 = 8219,
+
+        PLEURS_8220 = 8220,
+
+        MAÎTRISE_DES_ARMES_DE_JET_8221 = 8221,
+
+        GAUCHERIE_8222 = 8222,
+
+        MOT_PERIODIQUE_8223 = 8223,
+
+        MOT_LESANT_8224 = 8224,
+
+        MOT_DE_JEUNESSE_8225 = 8225,
+
+        MOT_DE_PROTECTION_8226 = 8226,
+
+        MOT_DE_RESTAURATION_8227 = 8227,
+
+        MOT_DE_MUTISME_8228 = 8228,
+
+        MOT_DARRET_8229 = 8229,
+
+        MOT_RETENTISSANT_8230 = 8230,
+
+        MOT_BRISANT_8231 = 8231,
+
+        MOT_EXCLU_8232 = 8232,
+
+        MOT_CROISE_8233 = 8233,
+
+        MOT_EXCITANT_8234 = 8234,
+
+        MOT_TOURBILLONNANT_8235 = 8235,
+
+        BECHE_DU_JUGEMENT_8236 = 8236,
+
+        BECHE_FANTOMATIQUE_8237 = 8237,
+
+        BECHE_MASSACRANTE_8238 = 8238,
+
+        FLACON_EXPLOSIF_8239 = 8239,
+
+        PIRATERIE_8240 = 8240,
+
+        IMPRECIS_8241 = 8241,
+
+        DIGON_8242 = 8242,
+
+        FORCE_DES_AÎNES_8243 = 8243,
+
+        FRAPPE_XELORESQUE_8244 = 8244,
+
+        LUNETTE_DAPPROCHE_8245 = 8245,
+
+        EBE_8246 = 8246,
+
+        DISCERNEMENT_8247 = 8247,
+
+        FROUSSE_8248 = 8248,
+
+        INJECTION_MOTIVANTE_8249 = 8249,
+
+        GRIFFE_CINGLANTE_8250 = 8250,
+
+        MAIN_ENFLAMMEE_8251 = 8251,
+
+        POISON_SOURNOIS_8252 = 8252,
+
+        POISON_BRULANT_8253 = 8253,
+
+        GUIGNON_8254 = 8254,
+
+        SAC_DE_FRAPPE_8255 = 8255,
+
         TENSION_8256 = 8256,
-        INTENSITY = 8257,
-        SYLVAN_INTENSITY = 8258,
-        WHACK_OFIRE = 8259,
-        CHAKRA_PUSH = 8260,
-        SANCTION = 8261,
-        DECREASE = 8262,
-        DARK_RAY = 8263,
-        LANTERN = 8264,
-        FRAUD_8265 = 8265,
-        STENCH = 8266,
-        STAFF_RETURN = 8267,
-        SPINY_STEM = 8268,
-        SOOTHING_STEM = 8269,
-        INSOLENT_STEM = 8270,
-        AGGRESSIVE_STEM = 8271,
-        WILINESS = 8272,
-        PUFF_8273 = 8273,
-        ALCOHOLIC_BREATH = 8274,
-        PANT_VOLLEY = 8275,
-        INTENSE_STORM = 8276,
-        CRITICAL_PROJECTILE = 8277,
-        POWERFUL_PROJECTILE = 8278,
-        BUCKSHOT = 8279,
-        SPOUT = 8280,
+
+        INTENSITE_8257 = 8257,
+
+        INTENSITE_SYLVESTRE_8258 = 8258,
+
+        COUP_DE_FEU_8259 = 8259,
+
+        POUSSEE_DE_CHAKRA_8260 = 8260,
+
+        SANCTION_8261 = 8261,
+
+        BAISSE_8262 = 8262,
+
+        RAYON_SOMBRE_8263 = 8263,
+
+        LANTERNE_8264 = 8264,
+
+        FRAUDE_8265 = 8265,
+
+        RELENT_8266 = 8266,
+
+        RETOUR_DE_BATON_8267 = 8267,
+
+        TIGE_EPINEUSE_8268 = 8268,
+
+        TIGE_APAISANTE_8269 = 8269,
+
+        TIGE_INSOLENTE_8270 = 8270,
+
+        TIGES_AGRESSIVES_8271 = 8271,
+
+        FINAUDERIE_8272 = 8272,
+
+        SOUFFLETTE_8273 = 8273,
+
+        HALEINE_ALCOOLISEE_8274 = 8274,
+
+        PANTALONNADE_8275 = 8275,
+
+        TEMPETE_INTENSE_8276 = 8276,
+
+        PROJECTILE_CRITIQUE_8277 = 8277,
+
+        PROJECTILE_PUISSANT_8278 = 8278,
+
+        CHEVROTINE_8279 = 8279,
+
+        TROMBE_8280 = 8280,
+
         SUPPORT_8281 = 8281,
-        MOISTENING = 8282,
-        FLUBBER = 8283,
-        SALT_DREADNAUT = 8284,
-        WAY_OUT = 8285,
-        BOLDNESS = 8286,
-        NIGHTCLUB = 8287,
-        BALLISH = 8288,
-        SOMERSAULT = 8289,
-        GODSEND_8290 = 8290,
-        RECOVERY = 8291,
-        BURSTING = 8292,
-        DOLL_KNOWLEDGE = 8293,
-        COLLAPSE = 8294,
-        GHOSTLY_CLAW_8295 = 8295,
-        BEAR_CRY = 8296,
-        ATTACK_8297 = 8297,
-        FRIGHT = 8298,
-        DOGGY_OR_NOTHING = 8299,
-        FELINE_THOUGHT = 8300,
-        ETHYLENE = 8301,
-        STICKS_FIRE = 8302,
-        FUROR = 8303,
-        ICE_SHEET = 8304,
-        CARTEL = 8305,
-        ANIMAL_BLESSING = 8306,
-        OUGINAK_RAGE_8307 = 8307,
-        ANIMAL_FORM = 8308,
-        OUGINAK_FORM_8309 = 8309,
-        PREY_8310 = 8310,
-        SNIFF_8311 = 8311,
-        YAPPER_TRIGGER_8312 = 8312,
-        RIPS_8313 = 8313,
-        RIPS_8314 = 8314,
-        TETANISATION = 8315,
-        CUTTING_DOWN_8316 = 8316,
-        TRACKING_8317 = 8317,
-        WATCHDOG = 8318,
-        MASTIFF_8319 = 8319,
-        CERBERUS = 8320,
-        ULNA_8321 = 8321,
-        ULNA_8322 = 8322,
-        MARROW_BONE_8323 = 8323,
-        MARROW_BONE_8324 = 8324,
-        TIBIA_8325 = 8325,
-        BLOODHOUND_8326 = 8326,
-        BLOODHOUND_8327 = 8327,
-        CARRION = 8328,
-        CARCASS_8329 = 8329,
-        CARCASS_8330 = 8330,
-        APPEASEMENT = 8331,
-        CONVERGENCE = 8332,
-        R_CANINE = 8333,
-        PROTECTIVE_PELT = 8334,
-        BARK = 8335,
-        YAPPER_LAUNCHER = 8336,
-        YAPPER_PROXIMITY = 8337,
-        ATTRACTION_8338 = 8338,
-        PARTICIPATION = 8339,
-        MEERSCHAUM = 8340,
-        TRAPSTER_8341 = 8341,
-        EXTIRPATION = 8342,
-        SPECULATIVE_CLAW = 8343,
-        ALERT = 8344,
-        THUNDER = 8345,
-        PANDASSAULT = 8346,
-        PINT_8347 = 8347,
-        RANDOM = 8348,
-        BRUSQUE_FIST = 8349,
-        REACTIVE = 8350,
-        ARABMAB = 8351,
-        BACKFILLING = 8352,
-        DELIVERY_8353 = 8353,
-        RUSHING = 8354,
-        WHEEL_OF_DESTINY = 8355,
-        SPADE_KISS_8356 = 8356,
-        BALL_GAME = 8357,
-        ASSIMILATION = 8358,
-        MANE_S_FOOT = 8359,
-        SNAPS = 8360,
-        AID = 8361,
-        TRATINE = 8362,
-        CROW = 8363,
-        TOPKCAJ = 8364,
-        CRASHING_WAVE = 8365,
-        DIZZINESS = 8366,
-        VIGOUR = 8367,
-        FRAGILITY = 8368,
-        OUGINAK_RAGE_8369 = 8369,
-        OUGINAK_RAGE = 8370,
-        INVIGORATING_PUNISHMENT = 8371,
-        FORTIFYING_PUNISHMENT = 8372,
-        REPULSIVE_GLYPH = 8373,
-        BURNING_GLYPH_8374 = 8374,
-        EARTHAPY = 8375,
-        SNEAKY_TRAP = 8376,
-        TOXIC_TRAP = 8377,
-        TRANQUIL_TRAP = 8378,
-        AREA_OF_EFFECT_TRAP = 8379,
-        FATAL_TRAP = 8380,
-        TORTOISE_SHELL = 8381,
-        MARTELO_BAIXO = 8382,
-        FANGS_OF_BOOWOLF = 8383,
-        DRUMSTICK = 8384,
-        STABILITY = 8385,
-        ANKLE_BOOT = 8386,
-        CLASSIC_MASK_8387 = 8387,
-        POLTROON_MASK_8388 = 8388,
-        GOLIATH_MASK = 8389,
-        IMPERSONATION = 8390,
-        RUNIFY = 8391,
-        TRANSFUSION = 8392,
-        EMERALD_DOFUS = 8393,
-        OCHRE_DOFUS = 8394,
-        CRIMSON_DOFUS = 8395,
-        VULBIS_DOFUS = 8396,
-        TIBIA_8397 = 8397,
-        SNIFF = 8398,
-        PANIC_8399 = 8399,
-        PANIC = 8400,
-        BAGRIFICE_8401 = 8401,
-        OSURC_S_LIVING_BAG = 8402,
-        FOLLOWER_S_LIVING_BAG = 8403,
-        DOLLISH_TRAINING = 8404,
-        RESIGNATION = 8405,
-        GINK_S_SACRIFICIAL_DOLL = 8406,
-        RAPID_CUTTING_8407 = 8407,
-        RAPID_CUTTING_8408 = 8408,
-        YADRUTAS_S_FLYING_SWORD = 8409,
-        SUMMONING_OF_PAINDEP_S_BWORK_MAGUS = 8410,
-        SUMMONING_OF_ABOUB_S_TOFU = 8411,
-        SUMMONING_OF_CRUEL_TOFU = 8412,
-        SUMMONING_OF_SEDIERTA_OTEL_S_TOFU = 8413,
-        SUMMONING_OF_ABOUB_S_PRESPIC = 8414,
-        SUMMONING_OF_ADOUB_S_BOAR = 8415,
-        SUMMONING_OF_CRUEL_CRACKLER = 8416,
-        SUMMONING_OF_SEDIERTA_OTEL_S_CRACKLER = 8417,
-        CAWWOT_DOFUS = 8418,
-        CALL_OF_THE_PACK = 8471,
-        BOOWOLF_HOWL = 8472,
-        RAGENERATION = 8473,
-        MASTIFF_8474 = 8474,
+
+        MOUILLAGE_8282 = 8282,
+
+        MOLLESSE_8283 = 8283,
+
+        CUIRASSE_DE_SEL_8284 = 8284,
+
+        ECHAPPATOIRE_8285 = 8285,
+
+        HARDIESSE_8286 = 8286,
+
+        BOÎTE_DE_NUIT_8287 = 8287,
+
+        BOULICHE_8288 = 8288,
+
+        GALIPETTE_8289 = 8289,
+
+        AUBAINE_8290 = 8290,
+
+        RETABLISSEMENT_8291 = 8291,
+
+        ECLATEMENT_8292 = 8292,
+
+        CONNAISSANCE_DES_POUPEES_8293 = 8293,
+
+        EFFONDREMENT_8294 = 8294,
+
+        GRIFFE_SPECTRALE_8295 = 8295,
+
+        CRI_DE_LOURS_8296 = 8296,
+
+        ATTAQUE_8297 = 8297,
+
+        EFFROI_8298 = 8298,
+
+        TOUTOU_RIEN_8299 = 8299,
+
+        PENSEE_FELINE_8300 = 8300,
+
+        ETHYLENE_8301 = 8301,
+
+        FEU_DE_CAMBROUSSE_8302 = 8302,
+
+        FUROR_8303 = 8303,
+
+        INLANDSIS_8304 = 8304,
+
+        CARTEL_8305 = 8305,
+
+        BENEDICTION_ANIMALE_8306 = 8306,
+
+        ATTIREMENT_8338 = 8338,
+
+        PARTICIPATION_8339 = 8339,
+
+        SEPIOLITE_8340 = 8340,
+
+        TRAQUENARD_8341 = 8341,
+
+        EXTIRPATION_8342 = 8342,
+
+        GRIFFE_SPECULATRICE_8343 = 8343,
+
+        ALERTE_8344 = 8344,
+
+        TONNERRE_8345 = 8345,
+
+        PANDASSAUT_8346 = 8346,
+
+        PINTE_8347 = 8347,
+
+        AU_HASARD_8348 = 8348,
+
+        POING_BRUSQUE_8349 = 8349,
+
+        REACTIF_8350 = 8350,
+
+        ARABMAB_8351 = 8351,
+
+        REMBLAYAGE_8352 = 8352,
+
+        REMISE_8353 = 8353,
+
+        RUEMENT_8354 = 8354,
+
+        ROUE_DU_DESTIN_8355 = 8355,
+
+        ROULAGE_DE_BECHE_8356 = 8356,
+
+        JEU_DE_LA_BOULE_8357 = 8357,
+
+        ASSIMILATION_8358 = 8358,
+
+        PIED_DU_MANE_8359 = 8359,
+
+        SNAPS_8360 = 8360,
+
+        SECOURS_8361 = 8361,
+
+        TRINE_8362 = 8362,
+
+        CORBEAU_8363 = 8363,
+
+        ELOTCAP_8364 = 8364,
+
+        LAME_DE_FOND_8365 = 8365,
+
+        TOURNIS_8366 = 8366,
+
+        VIGUEUR_8367 = 8367,
+
+        FRAGILITE_8368 = 8368,
+
+        CHATIMENT_VIVIFIANT_8371 = 8371,
+
+        CHATIMENT_FORTIFIANT_8372 = 8372,
+
+        GLYPHE_REPULSIF_8373 = 8373,
+
+        GLYPHE_BRULANT_8374 = 8374,
+
+        TERRE_A_PI_8375 = 8375,
+
+        PIEGE_FOURBE_8376 = 8376,
+
+        PIEGE_TOXIQUE_8377 = 8377,
+
+        PIEGE_DE_TRANQUILLITE_8378 = 8378,
+
+        PIEGE_DE_ZONE_8379 = 8379,
+
+        PIEGE_FATAL_8380 = 8380,
+
+        CARAPACE_DE_TORTUE_8381 = 8381,
+
+        MARTELO_BAIXO_8382 = 8382,
+
+        CROCS_DU_MULOU_8383 = 8383,
+
+        AIGUILLETTE_8384 = 8384,
+
+        STABILITE_8385 = 8385,
+
+        BOTTINE_8386 = 8386,
+
+        MASQUE_DE_LA_CLASSE_8387 = 8387,
+
+        MASQUE_DU_COUARD_8388 = 8388,
+
+        MASQUE_DU_FORCENE_8389 = 8389,
+
+        TARTUFERIE_8390 = 8390,
+
+        RUNIFIER_8391 = 8391,
+
+        TRANSFUSION_8392 = 8392,
+
+        DOFUS_EMERAUDE_8393 = 8393,
+
+        DOFUS_OCRE_8394 = 8394,
+
+        DOFUS_POURPRE_8395 = 8395,
+
+        DOFUS_VULBIS_8396 = 8396,
+
+        SAC_RIFICES_8401 = 8401,
+
+        SAC_ANIME_DOSURC_8402 = 8402,
+
+        SAC_ANIME_DE_LADEPTE_8403 = 8403,
+
+        ENTRAÎNEMENT_POUPESQUE_8404 = 8404,
+
+        RESIGNATION_8405 = 8405,
+
+        LA_SACRIFIEE_DE_GINK_8406 = 8406,
+
+        DECOUPAGE_RAPIDE_8407 = 8407,
+
+        DECOUPAGE_RAPIDE_8408 = 8408,
+
+        EPEE_VOLANTE_DIDEMAS_8409 = 8409,
+
+        INVOCATION_DE_BWORK_MAGE_DE_PAINDEP_8410 = 8410,
+
+        INVOCATION_DE_TOFU_DABOUB_8411 = 8411,
+
+        INVOCATION_DE_TOFU_CRUEL_8412 = 8412,
+
+        INVOCATION_DE_TOFU_DE_SEDIERTA_OTEL_8413 = 8413,
+
+        INVOCATION_DE_PRESPIC_DABOUB_8414 = 8414,
+
+        INVOCATION_DE_SANGLIER_DABOUB_8415 = 8415,
+
+        INVOCATION_DE_CRAQUELEUR_CRUEL_8416 = 8416,
+
+        INVOCATION_DE_CRAQUELEUR_DE_SEDIERTA_OTEL_8417 = 8417,
+
+        DOFUS_CAWOTTE_8418 = 8418,
+
+        _8421 = 8421,
+
+        APPEL_DE_LA_MEUTE_8471 = 8471,
+
+        HURLEMENT_DU_MULOU_8472 = 8472,
+
+        RAGENERATION_8473 = 8473,
+
+        MATIN_8474 = 8474,
+
         RADIUS_8477 = 8477,
-        SERENITY = 8478,
-        POISONOUS_BREATH = 8479,
-        LUPIN_CAMOUFLAGE = 8480,
-        OUGINAK_FORM_8482 = 8482,
-        YAPPER_TRIGGER_8483 = 8483,
-        DOPPLESQUE_WATCHDOG = 8485,
-        DOPPLESQUE_ULNA = 8486,
-        DOPPLESQUE_CARCASS = 8487,
-        DOPPLESQUE_PREY = 8488,
-        DOPPLESQUE_PROTECTIVE_PELT = 8489,
-        DOPPLESQUE_TIBIA = 8490,
-        DOPPLESQUE_APPEASEMENT = 8491,
-        DOPPLESQUE_BLOODHOUND = 8492,
-        DOPPLESQUE_CERBERUS = 8493,
-        TRACKING_8494 = 8494,
-        PREY_8495 = 8495,
-        SAUTEED_MEAT = 8497,
-        GROUND_MEAT_8498 = 8498,
-        LURE_8499 = 8499,
-        SHOT_IN_THE_DARK = 8500,
-        SUMMONING_OF_RUNNING_BOW_WOW = 8501,
-        SIT_STAY = 8502,
-        PANDABECK = 8503,
-        TAILING_8504 = 8504,
-        OFF_THE_TRAIL = 8505,
-        SOAKED_TO_THE_GROAN = 8506,
-        CORROSIVE_TRAP_8507 = 8507,
-        BLINDING_TRAP_8508 = 8508,
-        FIRST_BLOOD = 8509,
-        BLUE_LAMP = 8510,
-        URANUS = 8511,
-        DANGEROUS_GAME_8512 = 8512,
-        SHOVELLISTA = 8513,
-        ARSHOVELAGO_8514 = 8514,
-        NO_POACHERS = 8515,
-        EXPLOSIVE_VAPOURS = 8516,
-        CORROSIVE_TRAP_8517 = 8517,
-        BLINDING_TRAP_8518 = 8518,
-        BLUE_LIGHT = 8519,
-        BLOOD_RESEARCH = 8520,
-        FRACAS_8521 = 8521,
-        FRACAS_8522 = 8522,
-        FRACAS_8523 = 8523,
-        FRACAS_8524 = 8524,
-        FRACAS_8525 = 8525,
-        FRACAS_8526 = 8526,
-        DANGEROUS_GAME_8527 = 8527,
-        DANGEROUS_GAME_8529 = 8529,
-        MONOKEROS = 8530,
-        IMPURITY = 8531,
-        RAINBOW_BLESSING = 8532,
-        IMPURE_DEATH = 8533,
-        CAPTIVITY = 8535,
-        CALL_OF_HUNGER = 8536,
-        ARSHOVELAGO_8537 = 8537,
-        HUNTING_TROPHY = 8538,
-        HASTY_JUMP = 8539,
-        BIG_PAW = 8540,
-        FELINE_PREY = 8541,
-        THIRST_FOR_BLOOD = 8542,
-        RAPHEL_MAI = 8543,
-        HANDS_OFF_MY_COATS = 8545,
-        BOOWOLF_TRAP = 8546,
-        CARVING_UP_8547 = 8547,
-        BIG_GAME_RIFLE = 8548,
-        ELEMENTAL_SIPHONING = 8550,
-        ENERGY_ASSIMILATION = 8551,
-        DEMONIC_SLOUGHING = 8552,
-        CRUSHING_CURSE = 8553,
-        FIST_OF_SWEEPING_TREMORS = 8554,
-        FIST_OF_BURNING_WINDS = 8555,
-        FRAGILE_WEB = 8557,
-        ACID_WASTE = 8558,
-        DUST_SHOT = 8559,
-        SCARY_LOOK = 8560,
-        HIGH_GNOLL = 8561,
-        GNAWING = 8562,
-        FIELD_PROTECTION = 8563,
-        FLEE_WRETCHED_FOOLS = 8564,
-        WEED_KILLER = 8565,
-        FERTILISER = 8566,
-        MALICE = 8567,
-        SHAKES = 8568,
-        ACORN_SPOT = 8569,
-        WINDY_FLURRY = 8570,
-        CROSS_EYED = 8571,
-        PROLIFIC_MUTATION = 8575,
-        ERRANT_DEATHBLOW = 8576,
-        PSYCHIC_CONCENTRATION = 8577,
-        CORROSIVE_LURE = 8578,
-        AGGLUTINATIVE_BLOW = 8579,
-        VOMITURKEY = 8580,
-        DRAGOTURKEY_PROTECTION = 8581,
-        SUMMONING_OF_MORONGREL_8582 = 8582,
-        SWAMPY_SWIRL = 8583,
-        STIMULATING_VENOM = 8584,
-        SUMMONING_OF_MORONGREL_8585 = 8585,
-        GOBTICAL_CAMOUFLAGE_8586 = 8586,
-        GOPPRESED = 8587,
-        GOBTICAL_CAMOUFLAGE_8588 = 8588,
-        ME_HUNT_CREATURES = 8589,
-        GOBLITERATING_MINE_8590 = 8590,
-        GOBURIAL = 8591,
-        GOBLITERATING_MINE_8592 = 8592,
-        SUMMONING_OF_THE_VORPAL_SWORD = 8593,
-        INDESTRUCTIBLE_METAL = 8594,
-        SNIKER_SNAC = 8595,
-        MOUV_DUNOT = 8596,
-        VORPAL_VELOCITY_GLYPH_8597 = 8597,
-        HUNTING_GLYPH_8598 = 8598,
-        HUNTING_GLYPH_8599 = 8599,
-        VORPAL_VELOCITY_GLYPH_8600 = 8600,
-        VORPAL_VELOCITY_GLYPH = 8601,
-        METALLIC_CONVERGENCE = 8602,
-        HAUNAU_BOW_MEOW_DANCE = 8603,
-        MYOL_NEER = 8604,
-        HAIRBALL = 8605,
-        NIBBLE_8606 = 8606,
-        SHORT_SIGHTED = 8607,
-        MUDDLING = 8608,
-        BARITUNA = 8609,
-        WASTELAND = 8610,
-        GNNNH = 8611,
-        MUSHEAL_MUSHA = 8612,
-        MUSHEAL_MUSHO = 8613,
-        GROUND_MEAT_8614 = 8614,
-        BLINDING_TRAP = 8615,
-        WEAKENING_ASPIRATION = 8616,
-        GHOSTLY_MOCKERY = 8617,
-        GHOSTLY_RIPOSTE = 8618,
-        ERIKROBAK = 8619,
-        TRANSFIXATION = 8620,
-        OOH = 8621,
-        ELITE_BLOW = 8622,
-        WEAKENING_BLOW = 8623,
-        GUMMY_BITE = 8624,
-        DIFFUSE_HEAL = 8625,
-        CANINE_UNBEWITCHMENT = 8626,
-        DRAVEINE = 8627,
-        CATUBODUA = 8628,
-        YAWN = 8629,
-        TAKE_MY_PLACE_8630 = 8630,
-        TAKE_MY_PLACE_8631 = 8631,
-        SIT = 8632,
-        VINRIKTUS = 8633,
-        DETRIKTUS = 8634,
-        BANG = 8635,
-        IN_THE_BOX_8636 = 8636,
-        RUBBER_SKIN = 8637,
-        OKEY_DOKEY = 8638,
-        EXPLOSIVE_ROCKET = 8639,
-        UNICYCLE = 8640,
-        HOTTIE = 8641,
-        BLAZING_BREATH_8642 = 8642,
-        INFERNAL_ROULETTE = 8643,
-        HUBCAP = 8644,
-        ERIKTION = 8645,
-        PAINTWORK = 8646,
-        BOOBY_TRAPPED_BALL_8647 = 8647,
-        BOOBY_TRAPPED_BALL_8648 = 8648,
-        HEADSTAND_8649 = 8649,
-        HEADSTAND_8650 = 8650,
-        JUGGLING_8651 = 8651,
-        JUGGLING_8652 = 8652,
-        GUTTING = 8653,
-        RESTORATIVE_RAGE = 8654,
-        MORTALLA = 8655,
-        CLACLAWS = 8656,
-        BOOLANTHROPY_8657 = 8657,
-        BOOLANTHROPY_8658 = 8658,
-        RIPRIFF_8659 = 8659,
-        RIPRIFF_8660 = 8660,
-        BURDENSOMETAL = 8661,
-        BYKER = 8662,
-        CAESAREAN = 8663,
-        ACCELERATED_HEAL = 8664,
-        LONG_TEETH_8665 = 8665,
-        LONG_TEETH_8666 = 8666,
-        BOOWOLF_HUNGER = 8667,
-        BIG_BAD = 8668,
-        ANIMAL_RUSH = 8669,
-        VENGEFUL_SPIRITS = 8670,
-        BOOWOLF_COLD = 8671,
-        MAGRAND = 8672,
-        BOOWOLF_FEAR = 8673,
-        RIDINGHOOD = 8674,
-        PURSUIT_8675 = 8675,
-        PURSUIT_8676 = 8676,
-        FAKLEAVER = 8677,
-        CHOPPER = 8678,
-        ELEMENTARY_PROXIMITY = 8679,
-        IMMOLATION = 8680,
-        AQUEOUS_ELEMENTAL_SOLICITUDE = 8681,
-        WINDY_ELEMENTAL_SOLICITUDE = 8682,
-        EARTHY_ELEMENTAL_SOLICITUDE = 8683,
-        FLEEPULSION_8684 = 8684,
-        RAGE_8685 = 8685,
-        RAGE_8686 = 8686,
-        RAGE = 8687,
-        DISEMBOWELING = 8688,
-        BWAKITORI = 8689,
-        BWAKOOKIN_8690 = 8690,
-        WAKOLANTERN = 8691,
-        WATDAFWEAN = 8692,
-        SNOTTY_BLOW = 8693,
-        DARK_PHLEGM = 8694,
-        SNOTTY_PECK = 8695,
-        TAKEOFF_ATTEMPT = 8696,
-        RIDICULOUS_STRIKE = 8697,
-        SMALL_WEB = 8698,
-        FLYING_PARRY = 8699,
-        MUSHTATO = 8700,
-        VENOMUSH = 8701,
-        SPORRIFY_8702 = 8702,
-        SCREAMING = 8703,
-        WAR_BITE = 8704,
-        ZIZOU = 8705,
-        SUMMONING_OF_GROSSEWER_KOLERAT = 8706,
-        GROSSEWER_EMMENTAL = 8707,
-        GROSSEWER_ROBLOCHON = 8708,
-        PINKY_PECK = 8709,
-        TOFUESQUE_ARDOUR = 8710,
-        BATOFU_KISS = 8711,
-        TRANSIENCE = 8712,
-        FLEETING_TOFU_THROWING = 8713,
-        FREEDOM = 8714,
-        PHONIFICATION = 8715,
-        GOULALA = 8716,
-        BORBASH_8717 = 8717,
-        BORBASH_8718 = 8718,
-        SLICE_AIR = 8719,
-        GHOULISH_TICKLE_8720 = 8720,
-        SCRABBLING = 8721,
-        IN_YOUR_FIEND_8722 = 8722,
-        DECIGHOUL_POINT_8723 = 8723,
-        STEALTH_MOVEMENT = 8724,
-        EVERY_BAT_FOR_ITSELF = 8725,
-        GHOULISH_MARCH_8726 = 8726,
-        VAMPIRIC_RESILIENCE = 8727,
-        GHOULIFICATION_8728 = 8728,
-        GHOULIFICATION = 8729,
-        VAMPIRISM = 8730,
+
+        SERENITE_8478 = 8478,
+
+        HALEINE_EMPOISONNEE_8479 = 8479,
+
+        CAMOUFLAGE_LUPIN_8480 = 8480,
+
+        _8484 = 8484,
+
+        MOLOSSE_DU_DOPEUL_8485 = 8485,
+
+        CUBITUS_DU_DOPEUL_8486 = 8486,
+
+        CARCASSE_DU_DOPEUL_8487 = 8487,
+
+        PROIE_DU_DOPEUL_8488 = 8488,
+
+        PELAGE_PROTECTEUR_DU_DOPEUL_8489 = 8489,
+
+        TIBIA_DU_DOPEUL_8490 = 8490,
+
+        APAISEMENT_DU_DOPEUL_8491 = 8491,
+
+        LIMIER_DU_DOPEUL_8492 = 8492,
+
+        CERBERE_DU_DOPEUL_8493 = 8493,
+
+        _8496 = 8496,
+
+        SAUTE_DE_VIANDE_8497 = 8497,
+
+        VIANDE_HACHEE_8498 = 8498,
+
+        APPATER_8499 = 8499,
+
+        TIR_AU_JUGE_8500 = 8500,
+
+        INVOCATION_DE_CHIENCHIEN_COURANT_8501 = 8501,
+
+        DRESSAGE_8502 = 8502,
+
+        PANDANOIS_8503 = 8503,
+
+        PISTAGE_8504 = 8504,
+
+        HORS_PISTE_8505 = 8505,
+
+        TREMPE_JUSQUA_LEAU_8506 = 8506,
+
+        PIEGE_EROSIF_8507 = 8507,
+
+        PIEGE_EBLOUISSANT_8508 = 8508,
+
+        PREMIER_SANG_8509 = 8509,
+
+        LAMPE_BLEUE_8510 = 8510,
+
+        URANUS_8511 = 8511,
+
+        JEU_DANGEREUX_8512 = 8512,
+
+        PELLISTE_8513 = 8513,
+
+        ARCHI_PELLE_8514 = 8514,
+
+        CHASSE_GARDEE_8515 = 8515,
+
+        VAPEURS_EXPLOSIVES_8516 = 8516,
+
+        PIEGE_EROSIF_8517 = 8517,
+
+        PIEGE_EBLOUISSANT_8518 = 8518,
+
+        LUMIERE_BLEUE_8519 = 8519,
+
+        RECHERCHE_AU_SANG_8520 = 8520,
+
+        ACCROCHAGE_8521 = 8521,
+
+        ACCROCHAGE_8522 = 8522,
+
+        ACCROCHAGE_8523 = 8523,
+
+        ACCROCHAGE_8524 = 8524,
+
+        ACCROCHAGE_8525 = 8525,
+
+        ACCROCHAGE_8526 = 8526,
+
+        JEU_DANGEREUX_8527 = 8527,
+
+        _8528 = 8528,
+
+        JEU_DANGEREUX_8529 = 8529,
+
+        MONOKEROS_8530 = 8530,
+
+        IMPURETE_8531 = 8531,
+
+        BENEDICTION_ARC_EN_CIEL_8532 = 8532,
+
+        MORT_IMPURE_8533 = 8533,
+
+        CAPTIVITE_8535 = 8535,
+
+        APPEL_DE_LA_FAIM_8536 = 8536,
+
+        ARCHI_PELLE_8537 = 8537,
+
+        TROPHEE_DE_CHASSE_8538 = 8538,
+
+        SAUT_PRECIPITE_8539 = 8539,
+
+        GROSSE_PAPATTE_8540 = 8540,
+
+        PROIE_FELINE_8541 = 8541,
+
+        SOIF_DE_SANG_8542 = 8542,
+
+        RAPHEL_MAI_8543 = 8543,
+
+        PAS_TOUCHE_A_MES_MANTEAUX__8545 = 8545,
+
+        PIEGE_A_MULOU_8546 = 8546,
+
+        DEPEÇAGE_8547 = 8547,
+
+        CARABINE_A_GROS_GIBIER_8548 = 8548,
+
+        SIPHONAGE_ELEMENTAIRE_8550 = 8550,
+
+        ASSIMILATION_DENERGIES_8551 = 8551,
+
+        MUE_DEMONIAQUE_8552 = 8552,
+
+        MALEDICTION_CUISANTE_8553 = 8553,
+
+        POING_DES_SECOUSSES_DEFERLANTES_8554 = 8554,
+
+        POING_DES_VENTS_BRULANTS_8555 = 8555,
+
+        _8556 = 8556,
+
+        TOILE_FRAGILE_8557 = 8557,
+
+        REJET_ACIDE_8558 = 8558,
+
+        JET_DE_POUSSIERE_8559 = 8559,
+
+        REGARD_EFFRAYANT_8560 = 8560,
+
+        GNOLL_HAUT_8561 = 8561,
+
+        RONGEMENT_8562 = 8562,
+
+        PROTECTION_DES_CHAMPS_8563 = 8563,
+
+        FUYEZ__PAUVRES_FOUS__8564 = 8564,
+
+        DESHERBANT_8565 = 8565,
+
+        ENGRAIS_8566 = 8566,
+
+        MALVEILLANCE_8567 = 8567,
+
+        SECOUSSES_8568 = 8568,
+
+        TAIE_DE_GLAND_8569 = 8569,
+
+        RAFALE_VENTEUSE_8570 = 8570,
+
+        BIGLE_8571 = 8571,
+
+        MUTATION_PROLIFIQUE_8575 = 8575,
+
+        ESTOCADE_ERRANTE_8576 = 8576,
+
+        CONCENTRATION_PSYCHIQUE_8577 = 8577,
+
+        LUEUR_CORROSIVE_8578 = 8578,
+
+        COUP_AGGLUTINANT_8579 = 8579,
+
+        DINDOVOMISSEMENT_8580 = 8580,
+
+        PROTECTION_DRAGODINDE_8581 = 8581,
+
+        INVOCATION_DE_BOULEDOGRE_8582 = 8582,
+
+        REMOUS_MARECAGEUX_8583 = 8583,
+
+        VENIN_DOPANT_8584 = 8584,
+
+        INVOCATION_DE_BOULEDOGRE_8585 = 8585,
+
+        CAMOUFLAGE_GOBPTIQUE_8586 = 8586,
+
+        GOPPRESSE_8587 = 8587,
+
+        CAMOUFLAGE_GOBPTIQUE_8588 = 8588,
+
+        MOA_CHASSER_BESTIOLES__8589 = 8589,
+
+        MINE_GOBLITERANTE_8590 = 8590,
+
+        GOBSEQUES_8591 = 8591,
+
+        MINE_GOBLITERANTE_8592 = 8592,
+
+        INVOCATION_DE_LEPEE_VORPALE_8593 = 8593,
+
+        METAL_INDESTRUCTIBLE_8594 = 8594,
+
+        SNIKER_SNAC_8595 = 8595,
+
+        TUBE_OUJEPA_8596 = 8596,
+
+        GLYPHE_DE_CELERITE_VORPALE_8597 = 8597,
+
+        GLYPHE_DE_CHASSE_8598 = 8598,
+
+        GLYPHE_DE_CHASSE_8599 = 8599,
+
+        GLYPHE_DE_CELERITE_VORPALE_8600 = 8600,
+
+        GLYPHE_DE_CELERITE_VORPALE_8601 = 8601,
+
+        CONVERGENCE_METALLIQUE_8602 = 8602,
+
+        DANSE_DE_TCHA_CHACHA_8603 = 8603,
+
+        MIAULE_NIR_8604 = 8604,
+
+        BOULE_DE_POILS_8605 = 8605,
+
+        MORDILLE_8606 = 8606,
+
+        BIGLEUX_8607 = 8607,
+
+        EMBROUILLEMENT_8608 = 8608,
+
+        BARYTHON_8609 = 8609,
+
+        TERRAIN_VAGUE_8610 = 8610,
+
+        GNNNH_8611 = 8611,
+
+        CHAMPA_CHAMPSOIN_8612 = 8612,
+
+        CHAMPO_CHAMPSOIN_8613 = 8613,
+
+        VIANDE_HACHEE_8614 = 8614,
+
+        PIEGE_EBLOUISSANT_8615 = 8615,
+
+        ASPIRATION_FRAGILISANTE_8616 = 8616,
+
+        MOQUERIE_FANTMATIQUE_8617 = 8617,
+
+        REPLIQUE_FANTMATIQUE_8618 = 8618,
+
+        ERIKORBAC_8619 = 8619,
+
+        TRANSPERCEMENT_8620 = 8620,
+
+        AOUH__8621 = 8621,
+
+        COUP_DELITE_8622 = 8622,
+
+        COUP_AFFAIBLISSANT_8623 = 8623,
+
+        MORD_MOLLET_8624 = 8624,
+
+        SOIN_DIFFUS_8625 = 8625,
+
+        DESENVOUTEMENT_CANIN_8626 = 8626,
+
+        DRAVEINE_8627 = 8627,
+
+        CATUBODUA_8628 = 8628,
+
+        BAILLEMENT_8629 = 8629,
+
+        PRENDS_MA_PLACE_8630 = 8630,
+
+        PRENDS_MA_PLACE_8631 = 8631,
+
+        RESTE_ASSIS_8632 = 8632,
+
+        VINRIKTUS_8633 = 8633,
+
+        DETRIKTUS_8634 = 8634,
+
+        BANG_8635 = 8635,
+
+        DANS_LA_BOÎTE_8636 = 8636,
+
+        BAUDRUCHE_8637 = 8637,
+
+        ROULE_MA_POULE_8638 = 8638,
+
+        FUSEE_EXPLOSIVE_8639 = 8639,
+
+        MONOCYCLE_8640 = 8640,
+
+        CHAUDASSE_8641 = 8641,
+
+        HALEINE_ARDENTE_8642 = 8642,
+
+        ROULETTE_INFERNALE_8643 = 8643,
+
+        CHAPEAU_DE_ROUE_8644 = 8644,
+
+        ERIKTION_8645 = 8645,
+
+        PEINTURES_8646 = 8646,
+
+        BALLE_PIEGEE_8647 = 8647,
+
+        BALLE_PIEGEE_8648 = 8648,
+
+        POIRIER_8649 = 8649,
+
+        POIRIER_8650 = 8650,
+
+        JONGLERIE_8651 = 8651,
+
+        JONGLERIE_8652 = 8652,
+
+        ETRIPAGE_8653 = 8653,
+
+        RAGE_RECONSTITUANTE_8654 = 8654,
+
+        MORT_RALE_8655 = 8655,
+
+        GRIGRIFFES_8656 = 8656,
+
+        MULANTHROPIE_8657 = 8657,
+
+        MULANTHROPIE_8658 = 8658,
+
+        RIFFES_8659 = 8659,
+
+        RIFFES_8660 = 8660,
+
+        METALOUR_8661 = 8661,
+
+        BAÏKEUR_8662 = 8662,
+
+        CESARIENNE_8663 = 8663,
+
+        SOIN_ACCELERE_8664 = 8664,
+
+        DENTS_LONGUES_8665 = 8665,
+
+        DENTS_LONGUES_8666 = 8666,
+
+        FAIM_DE_MULOU_8667 = 8667,
+
+        GRAND_MECHANT_8668 = 8668,
+
+        RUEE_BESTIALE_8669 = 8669,
+
+        ESPRITS_VENGEURS_8670 = 8670,
+
+        FROID_DE_MULOU_8671 = 8671,
+
+        MERGRAN_8672 = 8672,
+
+        PEUR_DU_MULOU_8673 = 8673,
+
+        CHAPERON_8674 = 8674,
+
+        POURSUITE_8675 = 8675,
+
+        POURSUITE_8676 = 8676,
+
+        FAUCHOIR_8677 = 8677,
+
+        COUPERET_8678 = 8678,
+
+        RAPPROCHEMENT_ELEMENTAIRE_8679 = 8679,
+
+        IMMOLATION_8680 = 8680,
+
+        SOLLICITUDE_ELEMENTAIRE_AQUEUSE_8681 = 8681,
+
+        SOLLICITUDE_ELEMENTAIRE_VENTEUSE_8682 = 8682,
+
+        SOLLICITUDE_ELEMENTAIRE_TERREUSE_8683 = 8683,
+
+        PUPULSION_8684 = 8684,
+
+        FUREUR_8685 = 8685,
+
+        FUREUR_8686 = 8686,
+
+        FUREUR_8687 = 8687,
+
+        EVENTREMENT_8688 = 8688,
+
+        BWAKITORI_8689 = 8689,
+
+        BWAKIKUI_8690 = 8690,
+
+        WAKOLANTERNE_8691 = 8691,
+
+        WAKZEFEUTE_8692 = 8692,
+
+        FRAPPE_MORVEUSE_8693 = 8693,
+
+        GLAIRE_OBSCURE_8694 = 8694,
+
+        BECO_MORVEUX_8695 = 8695,
+
+        TENTATIVE_DENVOL_8696 = 8696,
+
+        FRAPPE_RIDICULE_8697 = 8697,
+
+        PETITE_TOILE_8698 = 8698,
+
+        ESQUIVE_VOLANTE_8699 = 8699,
+
+        CHAMPATATE_8700 = 8700,
+
+        CHAMPOISONNEMENT_8701 = 8701,
+
+        SPORE_KEPIK_8702 = 8702,
+
+        GUEULEMENT_8703 = 8703,
+
+        MORSURE_DE_GUERRE_8704 = 8704,
+
+        ZIZOU_8705 = 8705,
+
+        INVOCATION_DE_KOLERAT_DEGOUTANT_8706 = 8706,
+
+        EMMENTAL_DEGOUTANT_8707 = 8707,
+
+        ROBLOCHON_DEGOUTANT_8708 = 8708,
+
+        BECO_ROSIF_8709 = 8709,
+
+        FOUGUE_TOFUESQUE_8710 = 8710,
+
+        BECO_DE_BATOFU_8711 = 8711,
+
+        FUGACITE_8712 = 8712,
+
+        LANCER_DE_TOFU_FUGACE_8713 = 8713,
+
+        LIBERTE_8714 = 8714,
+
+        BIDONNAGE_8715 = 8715,
+
+        GOULALA_8716 = 8716,
+
+        CHAUFFETAGE_8717 = 8717,
+
+        CHAUFFETAGE_8718 = 8718,
+
+        TRANCHE_AIR_8719 = 8719,
+
+        GOULI_GOULI_8720 = 8720,
+
+        GRIFFOUILLE_8721 = 8721,
+
+        DANTAGOULE_8722 = 8722,
+
+        POINGS_VIRE_GOULE_8723 = 8723,
+
+        DEPLACEMENT_FURTIF_8724 = 8724,
+
+        CHAUFFE_KIPEU_8725 = 8725,
+
+        MARCHE_DES_GOULES_8726 = 8726,
+
+        RESILIENCE_VAMPYRIQUE_8727 = 8727,
+
+        GOULIFICATION_8728 = 8728,
+
+        GOULIFICATION_8729 = 8729,
+
+        VAMPYRISME_8730 = 8730,
+
         COOPERATION_8731 = 8731,
-        BLOODTHIRSTY_APPETITE = 8732,
-        ARDENT_SYMBIOSA = 8770,
-        FROZEN_SYMBIOSA = 8771,
-        FLAMMABLE_COPRINUS = 8772,
-        FUNGAL_CONVERGENCE = 8774,
-        FUNGAL_DIVERGENCE = 8776,
-        CEP_ULKRAL = 8778,
-        KARAMYL_SPORE = 8779,
-        SELECTIVE_SHRIVEL = 8780,
-        ELEMENTAL_REINFORCEMENT = 8793,
-        ELEMENTAL_DRAIN_8794 = 8794,
-        DEMONIC_EMANATION = 8795,
-        PROTECTIVE_REPULSION = 8796,
-        RAVI_IVE = 8797,
-        RAVOUR = 8798,
-        RAVI_YOLI = 8799,
-        RAVI_AGER = 8800,
-        WITHHELD = 8805,
-        COVERING = 8806,
-        SHORT_SIGHT_GLYPH = 8807,
-        SPIRIT_LINK = 8808,
-        PYROMANCY = 8809,
-        PYROMANCY_GLYPH = 8810,
-        PYROMANCY_TRAP = 8811,
-        CRYSTALLISATION_8812 = 8812,
-        OUGAA_S_BLESSING = 8813,
-        NIGHTMARISH_VISION_8819 = 8819,
-        MACIAN_CRY = 8821,
-        POISONED_AMBUSH = 8823,
-        LIGHTING_8830 = 8830,
-        RIDDIE_S_SENSE_OF_SMELL = 8847,
-        RIDDIE_S_ANIMAL_FORM = 8848,
-        RIDDIE_S_RAGE = 8849,
-        RIDDIE_S_TRACKING = 8850,
-        RIDDIE_S_WATCHDOG = 8851,
-        RIDDIE_S_CARRION = 8852,
-        RIDDIE_S_MASTIFF = 8853,
-        COOPERATION = 8854,
-        GHOULISH_TICKLE_8855 = 8855,
-        IN_YOUR_FIEND_8856 = 8856,
-        DECIGHOUL_POINT_8857 = 8857,
-        EUKARYOTE = 8858,
-        MYCETE = 8859,
-        SPOROCARP = 8860,
-        MILDEW_8861 = 8861,
-        FIERY_TONGUE_8862 = 8862,
-        RICKMORTAR_S_BLESSING = 8863,
-        FURNACE_8864 = 8864,
-        FURNACE_8865 = 8865,
-        FURNACE_8866 = 8866,
-        FURNACE = 8867,
-        GLADIATOR = 8868,
-        RIDDIE_S_OUGINAK_FORM = 8869,
-        SUMMONING_OF_TORMENTOR_8872 = 8872,
-        SUMMONING_OF_TORMENTOR_8873 = 8873,
-        SIXMAGUNI = 8874,
-        MYSTIC_PACK_8875 = 8875,
-        MYSTIC_PACK_8876 = 8876,
-        GASHLASH = 8877,
-        CHEWING_8878 = 8878,
-        CONFLUENCE = 8879,
-        VICTIM = 8880,
-        PROTECTIVE_FLEECE = 8881,
-        TRACKER = 8882,
-        CHEMICAL_REPULSION = 8883,
-        CATACUMBRA_CAMOUFLAGE_8884 = 8884,
-        TOXINISTROS_8885 = 8885,
-        SACWED_GWENADE = 8889,
-        GHOULISH_MARCH_8890 = 8890,
-        IN_THE_BOX_8891 = 8891,
-        BWAYUCK = 8892,
-        FREE_WILL = 8895,
-        //MAD_RUSH = 8896,
-        CRIPPLING_BLAST = 8898,
-        FLAMES_OF_WRATH = 8899,
-        SPORROR = 8901,
-        SPOROT = 8902,
-        SPORTIME = 8903,
-        SPOROFF = 8904,
-        DOSHROOM = 8905,
-        FIERY_TONGUE_8908 = 8908,
-        RAINIKRON_S_CHALLENGE_8915 = 8915,
-        RAINIKRON_S_CHALLENGE_8916 = 8916,
-        RAINIKRON_S_CHALLENGE = 8917,
-        HIGH_PIROUETTE = 8918,
-        RIGHT_PIROUETTE = 8919,
-        LOW_PIROUETTE = 8920,
-        LEFT_PIROUETTE = 8921,
-        MAJESTIC_PIROUETTE = 8922,
-        STICKY_BREATH_IN = 8923,
-        CONJUNTIVSPRYTUS = 8924,
-        BLACK_DISTANT_RESTORATION_8925 = 8925,
-        BENDER = 8926,
-        UNQUENCHABLE_THIRST = 8927,
-        BLACK_MOBILE_RESTORATION_8928 = 8928,
-        GENERAL_ROUND_8929 = 8929,
-        THE_NIGHT_OF_THE_WINEAU = 8930,
-        CELLULAR_RECONSTRUCTION = 8931,
-        VIRAL_INJECTION = 8932,
-        BINGE_8934 = 8934,
-        DEAD_TO_THE_WORM = 8935,
-        BLACK_SUMMON_RESTORATION_8937 = 8937,
-        KETCHPUP = 8938,
-        GERMINAL_IMPACT = 8939,
-        BLACK_DISTANT_RESTORATION_8940 = 8940,
-        BLACK_KROBIAN_RESTORATION = 8941,
-        BLACK_MOBILE_RESTORATION_8942 = 8942,
-        BLACK_SUMMON_RESTORATION_8943 = 8943,
-        ARROCHAEOLOGY = 8944,
-        PAELEOLITIGATION = 8945,
-        GRID_REFERENCE = 8946,
-        MASTABA = 8947,
-        BLOOD_FLOOD_8948 = 8948,
-        GOURDINETTE_PLAGUE = 8949,
-        WARM_LIGHTNING = 8950,
-        BLOODY_OVERFLOW = 8951,
-        SKALAMITY = 8953,
-        BLOOD_TRANSFUSION = 8954,
-        BLUD_LETT = 8955,
-        MUSHELLPIT = 8956,
-        SKARCASS = 8958,
-        SKATTRACTION = 8959,
-        PUTRID_BELL = 8960,
-        SKAFFLICTION = 8961,
-        DOOMWHEEL_OF_FORTUNE = 8962,
-        ESHINCITY = 8963,
-        SHRINKRAT = 8964,
-        SKATASTROPHE = 8965,
-        FRIEDRIK_SNIKCH = 8966,
-        CAPTAIN_S_RUSE = 8967,
-        PANTY_PARTY = 8968,
-        INFERNAL_WALTZ = 8969,
-        HARASSMENT_8971 = 8971,
-        ERZAL_S_ENSLAVEMENT = 8972,
-        A_GHOST_IN_THE_MIRROR = 8973,
-        FORTUNE = 8974,
-        JIG = 8975,
-        RAINBARRAGE = 8976,
-        TORMENT = 8977,
-        FROM_MOO_TO_YOU = 8978,
-        DAIRY_PRODUCE = 8979,
-        TORTURE_8980 = 8980,
-        PURE_BY_NATURE = 8981,
-        MILKY_FOUNTAIN = 8982,
-        DAIRY_THROW = 8983,
-        BLACK_SMOKE = 8984,
-        SEEING_BLACK = 8985,
-        LOST_VIVACITY = 8986,
-        ZHOSTILE = 8987,
-        THE_MOORS_BOOK = 8988,
-        RED_BOW_WOW = 8989,
-        KANIG_KANIG = 8990,
-        KAA_KAA_HUNTING = 8991,
-        INVULNERABILITY = 8992,
-        PANTHAIR = 8993,
-        MOOR_DANCE = 8994,
-        HOSTILE_MOORS = 8995,
-        PACK_PROTECTION = 8996,
-        BLOOD_FLOOD_8997 = 8997,
-        PILGRIMAGE_8998 = 8998,
-        BLOOD_FLOOD = 8999,
-        PILGRIMAGE_9000 = 9000,
-        GNIRDMALG = 9001,
-        FIRE_RING_9002 = 9002,
-        FIRE_RING_9003 = 9003,
-        GREYDALF = 9004,
-        GHOST = 9005,
-        GRIME = 9006,
-        HAUNTED_PLACE = 9007,
-        FRIENDLY = 9008,
-        OH_PIE_YUM = 9009,
-        FOG_YOU_CAN_CUT_WITH_A_KNIFE_9010 = 9010,
-        FOG_YOU_CAN_CUT_WITH_A_KNIFE_9011 = 9011,
-        FOG_YOU_CAN_CUT_WITH_A_KNIFE_9012 = 9012,
-        FOG_YOU_CAN_CUT_WITH_A_KNIFE_9013 = 9013,
-        FOG_YOU_CAN_CUT_WITH_A_KNIFE_9014 = 9014,
-        FOG_YOU_CAN_CUT_WITH_A_KNIFE_9015 = 9015,
-        FOG_GLYPH_AURA_9016 = 9016,
-        FOG_GLYPH_AURA_9017 = 9017,
-        FOG_GLYPH_AURA_9018 = 9018,
-        FOG_GLYPH_AURA_9019 = 9019,
-        FOG_GLYPH_AURA_9020 = 9020,
-        FOG_GLYPH_AURA_9021 = 9021,
-        FOG_GLYPH_9022 = 9022,
-        FOG_GLYPH_9023 = 9023,
-        FOG_GLYPH_9024 = 9024,
-        FOG_GLYPH_9025 = 9025,
-        FOG_GLYPH_9026 = 9026,
-        FOG_GLYPH = 9027,
-        BAD_DREAM = 9028,
-        MUSHFUME_9029 = 9029,
-        MUSHFUME_9030 = 9030,
-        IN_A_DAZE = 9031,
-        WHAT_S_YOURS_IS_MINE = 9032,
-        MISTY_BREATH = 9033,
-        MASS_GRAVE = 9035,
-        DEBONING = 9036,
-        JUMBHAFF = 9037,
-        HOBONE = 9038,
-        BONE_VOYAGE = 9039,
-        TROMBONE = 9040,
-        THIS_GRAVE_WILL_BE_YOUR_GRAVE = 9041,
-        DECREPITUDE = 9042,
-        TOSS_A_BONE = 9043,
-        BACK_FROM_BEYOND_THE_GRAVE = 9044,
-        FIRE_WITH_FIRE = 9045,
-        KINGSGUARD_9046 = 9046,
+
+        APPETIT_SANGUINAIRE_8732 = 8732,
+
+        _8766 = 8766,
+
+        SYMBIOSE_ARDENTE_8770 = 8770,
+
+        SYMBIOSE_GIVREE_8771 = 8771,
+
+        COPRIN_FLAMMABLE_8772 = 8772,
+
+        CONVERGENCE_FONGIQUE_8774 = 8774,
+
+        DIVERGENCE_FONGIQUE_8776 = 8776,
+
+        CEPE_AGRAV_8778 = 8778,
+
+        SPORE_OKARAMAYL_8779 = 8779,
+
+        FLETRI_SELECTIF_8780 = 8780,
+
+        RENFORCEMENT_ELEMENTAIRE_8793 = 8793,
+
+        DRAINAGE_ELEMENTAIRE_8794 = 8794,
+
+        EMANATION_DEMONIAQUE_8795 = 8795,
+
+        REPULSION_PROTECTRICE_8796 = 8796,
+
+        RAV_IVER_8797 = 8797,
+
+        RAV_ALEMENT_8798 = 8798,
+
+        RAV_YOLI_8799 = 8799,
+
+        RAV_AGE_8800 = 8800,
+
+        _8804 = 8804,
+
+        RETENUE_8805 = 8805,
+
+        REVETEMENT_8806 = 8806,
+
+        GLYPHE_DE_CECITE_8807 = 8807,
+
+        LIEN_DE_LESPRIT_8808 = 8808,
+
+        PYROMANCIE_8809 = 8809,
+
+        GLYPHE_DE_PYROMANCIE_8810 = 8810,
+
+        PIEGE_DE_PYROMANCIE_8811 = 8811,
+
+        CRYSTALISATION_8812 = 8812,
+
+        BENEDICTION_DOUGAH_8813 = 8813,
+
+        VISION_CAUCHEMARDESQUE_8819 = 8819,
+
+        CRI_DE_MACIEN_8821 = 8821,
+
+        EMBUSCADE_EMPOISONNEE_8823 = 8823,
+
+        ECLAIRAGE_8830 = 8830,
+
+        _8837 = 8837,
+
+        _8839 = 8839,
+
+        _8840 = 8840,
+
+        _8843 = 8843,
+
+        FLAIR_DE_RIDDIE_8847 = 8847,
+
+        FORME_BESTIALE_DE_RIDDIE_8848 = 8848,
+
+        RAGE_DE_RIDDIE_8849 = 8849,
+
+        TRAQUE_DE_RIDDIE_8850 = 8850,
+
+        MOLOSSE_DE_RIDDIE_8851 = 8851,
+
+        CHAROGNE_DE_RIDDIE_8852 = 8852,
+
+        DOGUE_DE_RIDDIE_8853 = 8853,
+
+        COOPERATION_8854 = 8854,
+
+        GOULI_GOULI_8855 = 8855,
+
+        DANTAGOULE_8856 = 8856,
+
+        POINGS_VIRE_GOULE_8857 = 8857,
+
+        EUCARYOTE_8858 = 8858,
+
+        MYCETE_8859 = 8859,
+
+        SPOROPHORE_8860 = 8860,
+
+        MOISISSURE_8861 = 8861,
+
+        LANGUE_DE_FEU_8862 = 8862,
+
+        BENEDICTION_DE_SURRU_8863 = 8863,
+
+        FOURNAISE_8864 = 8864,
+
+        FOURNAISE_8865 = 8865,
+
+        FOURNAISE_8866 = 8866,
+
+        FOURNAISE_8867 = 8867,
+
+        GLADIATEUR_8868 = 8868,
+
+        FORME_OUGINAK_DE_RIDDIE_8869 = 8869,
+
+        INVOCATION_DE_HARCELEUR_8872 = 8872,
+
+        INVOCATION_DE_HARCELEUR_8873 = 8873,
+
+        SEISMAGUNI_8874 = 8874,
+
+        MEUTE_MYSTIQUE_8875 = 8875,
+
+        MEUTE_MYSTIQUE_8876 = 8876,
+
+        ENTAILLADE_8877 = 8877,
+
+        MACHONNAGE_8878 = 8878,
+
+        CONFLUENCE_8879 = 8879,
+
+        VICTIME_8880 = 8880,
+
+        TOISON_PROTECTRICE_8881 = 8881,
+
+        PISTEUR_8882 = 8882,
+
+        REPULSION_CHIMIQUE_8883 = 8883,
+
+        CAMOUFLAGE_DES_CATACOMBRES_8884 = 8884,
+
+        TOXINISTROSE_8885 = 8885,
+
+        SACWEE_GWENADE_8889 = 8889,
+
+        MARCHE_DES_GOULES_8890 = 8890,
+
+        DANS_LA_BOÎTE_8891 = 8891,
+
+        POUAPWOUERK_8892 = 8892,
+
+        LIBERTE_DAGIR_8895 = 8895,
+
+        RUEE_VIOLENTE_8896 = 8896,
+
+        SOUFFLE_HANDICAPANT_8898 = 8898,
+
+        FLAMMES_COLERIQUES_8899 = 8899,
+
+        SPORE_HEURE_8901 = 8901,
+
+        SPORE_DURE_8902 = 8902,
+
+        SPORE_LOGE_8903 = 8903,
+
+        SPORE_TENSION_8904 = 8904,
+
+        CHAMPOGNON_8905 = 8905,
+
+        LANGUE_DE_FEU_8908 = 8908,
+
+        EPREUVE_DE_LA_RAINIKRONE_8915 = 8915,
+
+        EPREUVE_DE_LA_RAINIKRONE_8916 = 8916,
+
+        EPREUVE_DE_LA_RAINIKRONE_8917 = 8917,
+
+        PIROUETTE_HAUT_8918 = 8918,
+
+        PIROUETTE_DROITE_8919 = 8919,
+
+        PIROUETTE_BAS_8920 = 8920,
+
+        PIROUETTE_GAUCHE_8921 = 8921,
+
+        PIROUETTE_MAJESTUEUSE_8922 = 8922,
+
+        ASPIRATION_GLUANTE_8923 = 8923,
+
+        CONJONCTI_VITE_8924 = 8924,
+
+        RESTAURATION_ELOIGNEE_NOIRE_8925 = 8925,
+
+        MURGE_8926 = 8926,
+
+        SOIF_INEXTINGUIBLE_8927 = 8927,
+
+        RESTAURATION_MOBILE_NOIRE_8928 = 8928,
+
+        TOURNEE_GENERALE_8929 = 8929,
+
+        LA_NUIT_DU_POIVROT_8930 = 8930,
+
+        RECONSTRUCTION_CELLULAIRE_8931 = 8931,
+
+        INJECTION_VIRALE_8932 = 8932,
+
+        BEUVERIE_8934 = 8934,
+
+        LE_VER_DE_TROP_8935 = 8935,
+
+        RESTAURATION_DINVOCATION_NOIRE_8937 = 8937,
+
+        PATAU_BEUR_8938 = 8938,
+
+        IMPACT_GERMINAL_8939 = 8939,
+
+        RESTAURATION_ELOIGNEE_NOIRE_8940 = 8940,
+
+        RESTAURATION_KROBIENNE_NOIRE_8941 = 8941,
+
+        RESTAURATION_MOBILE_NOIRE_8942 = 8942,
+
+        RESTAURATION_DINVOCATION_NOIRE_8943 = 8943,
+
+        ARC_ET_OLOGIE_8944 = 8944,
+
+        PALEOLITIGE_8945 = 8945,
+
+        CARROYAGE_8946 = 8946,
+
+        MASTABA_8947 = 8947,
+
+        TROP_PLEIN_DE_SANG_8948 = 8948,
+
+        GOURDINETTE_DE_LA_PESTE_8949 = 8949,
+
+        MOLLEFOUDRE_8950 = 8950,
+
+        DEBORDEMENT_SANGUINOLENT_8951 = 8951,
+
+        SKALAMITE_8953 = 8953,
+
+        TRANSFUSION_SANGUINE_8954 = 8954,
+
+        ENMANK_DESSAN_8955 = 8955,
+
+        MOLLEFOSSE_8956 = 8956,
+
+        SKAROGNE_8958 = 8958,
+
+        SKATTIRANCE_8959 = 8959,
+
+        CLOCHE_PUTRIDE_8960 = 8960,
+
+        SKAFFLICTION_8961 = 8961,
+
+        ROUTOURNE_INFERNALE_8962 = 8962,
+
+        ESHINCITY_8963 = 8963,
+
+        RAT_CORNI_8964 = 8964,
+
+        SKATASTROPHE_8965 = 8965,
+
+        FRIEDRISH_SNIKCH_8966 = 8966,
+
+        RUSE_DU_CAPTAIN_8967 = 8967,
+
+        LA_FETE_DU_SLIP_8968 = 8968,
+
+        VALSE_INFERNALE_8969 = 8969,
+
+        HARCELEMENT_8971 = 8971,
+
+        ASSERVISSEMENT_DERAZAL_8972 = 8972,
+
+        UN_FANTME_DANS_LE_MIROIR_8973 = 8973,
+
+        FORTUNE_8974 = 8974,
+
+        JIG_8975 = 8975,
+
+        LANCE_EN_CIEL_8976 = 8976,
+
+        TOURMENT_8977 = 8977,
+
+        AMIS_POUR_LA_VIE_8978 = 8978,
+
+        LAITAGE_8979 = 8979,
+
+        SUPPLICE_8980 = 8980,
+
+        SENSATIONS_PURES_8981 = 8981,
+
+        FONTAINE_LAITEUSE_8982 = 8982,
+
+        JET_LAITEUX_8983 = 8983,
+
+        FUMEE_NOIRE_8984 = 8984,
+
+        VUE_EN_NOIR_8985 = 8985,
+
+        VIVACITE_PERDUE_8986 = 8986,
+
+        ZHOSTILE_8987 = 8987,
+
+        LE_LIVRE_DE_LA_LANDE_8988 = 8988,
+
+        CHIENCHIEN_ROUGE_8989 = 8989,
+
+        AU_KANIG__8990 = 8990,
+
+        LA_CHASSE_DE_KAA_KAA_8991 = 8991,
+
+        INVULNERABILITE_8992 = 8992,
+
+        PANTHAIR_8993 = 8993,
+
+        DANSE_DES_LANDES_8994 = 8994,
+
+        LANDES_HOSTILES_8995 = 8995,
+
+        PROTECTION_DE_LA_MEUTE_8996 = 8996,
+
+        TROP_PLEIN_DE_SANG_8997 = 8997,
+
+        PELERINAGE_8998 = 8998,
+
+        TROP_PLEIN_DE_SANG_8999 = 8999,
+
+        PELERINAGE_9000 = 9000,
+
+        GNIRDMALG_9001 = 9001,
+
+        ANNEAU_DE_FEU_9002 = 9002,
+
+        ANNEAU_DE_FEU_9003 = 9003,
+
+        GRISAILLE_9004 = 9004,
+
+        FANTME_9005 = 9005,
+
+        CRASSE_9006 = 9006,
+
+        LIEU_HANTE_9007 = 9007,
+
+        AMICAL_9008 = 9008,
+
+        EAU_MYOPE_9009 = 9009,
+
+        BROUILLARD_A_COUPER_AU_COUTEAU_9010 = 9010,
+
+        BROUILLARD_A_COUPER_AU_COUTEAU_9011 = 9011,
+
+        BROUILLARD_A_COUPER_AU_COUTEAU_9012 = 9012,
+
+        BROUILLARD_A_COUPER_AU_COUTEAU_9013 = 9013,
+
+        BROUILLARD_A_COUPER_AU_COUTEAU_9014 = 9014,
+
+        BROUILLARD_A_COUPER_AU_COUTEAU_9015 = 9015,
+
+        GLYPHE_AURA_BROUILLARD_9016 = 9016,
+
+        GLYPHE_AURA_BROUILLARD_9017 = 9017,
+
+        GLYPHE_AURA_BROUILLARD_9018 = 9018,
+
+        GLYPHE_AURA_BROUILLARD_9019 = 9019,
+
+        GLYPHE_AURA_BROUILLARD_9020 = 9020,
+
+        GLYPHE_AURA_BROUILLARD_9021 = 9021,
+
+        GLYPHE_BROUILLARD_9022 = 9022,
+
+        GLYPHE_BROUILLARD_9023 = 9023,
+
+        GLYPHE_BROUILLARD_9024 = 9024,
+
+        GLYPHE_BROUILLARD_9025 = 9025,
+
+        GLYPHE_BROUILLARD_9026 = 9026,
+
+        GLYPHE_BROUILLARD_9027 = 9027,
+
+        MAUVAIS_REVE_9028 = 9028,
+
+        CHAMPFUIIIT_9029 = 9029,
+
+        CHAMPFUIIIT_9030 = 9030,
+
+        DANS_LES_VAPES_9031 = 9031,
+
+        CE_QUI_EST_A_TOI_EST_A_MOI_9032 = 9032,
+
+        SOUFFLE_EMBRUME_9033 = 9033,
+
+        CHARNIER_9035 = 9035,
+
+        DESOSSAGE_9036 = 9036,
+
+        DEMI_MOHL_9037 = 9037,
+
+        OS_TERITE_9038 = 9038,
+
+        OS_TILITE_9039 = 9039,
+
+        OS_HUAIRE_9040 = 9040,
+
+        CE_TOMBEAU_SERA_VOTRE_TOMBEAU_9041 = 9041,
+
+        DECREPITUDE_9042 = 9042,
+
+        PERDRE_LES_OS_9043 = 9043,
+
+        RETOUR_DOUTRE_TOMBE_9044 = 9044,
+
+        LE_FEU_PAR_LE_FEU_9045 = 9045,
+
+        DEFENSE_DES_ROIS_9046 = 9046,
+
         POSSESSION_9047 = 9047,
-        KINGSGUARD_9048 = 9048,
+
+        DEFENSE_DES_ROIS_9048 = 9048,
+
         POSSESSION_9049 = 9049,
+
         ERADICATION_9050 = 9050,
+
         ERADICATION_9051 = 9051,
-        POSSESSION = 9052,
-        INTO_THE_DARKNESS_9053 = 9053,
-        INTO_THE_DARKNESS_9054 = 9054,
-        CAST_TERROR = 9055,
-        SPOOKINDRED_SPIRIT = 9056,
-        FLAMICABLE_SPIRIT_9057 = 9057,
-        FLAMICABLE_SPIRIT_9058 = 9058,
-        BOILING_POINT = 9059,
-        DOUBLADE_SPIRIT = 9060,
-        CHAIN_COMBUSTION_9061 = 9061,
-        CHAIN_COMBUSTION_9062 = 9062,
-        BREATHTAKER = 9063,
-        SPONTANEOUS_COMBUSTION_9064 = 9064,
-        SPONTANEOUS_COMBUSTION_9065 = 9065,
-        SLOP = 9066,
-        SOUL_CUTTER = 9067,
-        SPECTRAL_SENSE_9068 = 9068,
-        SPECTRAL_SENSE_9069 = 9069,
-        APPEARANCE_9070 = 9070,
-        APPEARANCE_9071 = 9071,
-        CRITICAL_FIRE = 9072,
-        SPEKTRA = 9073,
-        WATER_BALL = 9074,
+
+        POSSESSION_9052 = 9052,
+
+        VERS_LES_TENEBRES_9053 = 9053,
+
+        VERS_LES_TENEBRES_9054 = 9054,
+
+        LANCE_DE_LEFFROI_9055 = 9055,
+
+        HANTAME_9056 = 9056,
+
+        FLAMI_9057 = 9057,
+
+        FLAMI_9058 = 9058,
+
+        EBULLITION_9059 = 9059,
+
+        DOUBLAME_9060 = 9060,
+
+        COMBUSTIONS_EN_CHAÎNE_9061 = 9061,
+
+        COMBUSTIONS_EN_CHAÎNE_9062 = 9062,
+
+        COUPE_SOUFFLE_9063 = 9063,
+
+        COMBUSTION_SPONTANEE_9064 = 9064,
+
+        COMBUSTION_SPONTANEE_9065 = 9065,
+
+        BOUILLIE_9066 = 9066,
+
+        TRANCHE_AME_9067 = 9067,
+
+        SENS_SPECTRAL_9068 = 9068,
+
+        SENS_SPECTRAL_9069 = 9069,
+
+        APPARITION_SPECTRALE_9070 = 9070,
+
+        APPARITION_SPECTRALE_9071 = 9071,
+
+        FEU_CRITIQUE_9072 = 9072,
+
+        REVENANT_9073 = 9073,
+
+        BOULE_DEAU_9074 = 9074,
+
         FRUSTRATION_9075 = 9075,
-        CAST_LIGHT_9076 = 9076,
-        CAST_LIGHT_9077 = 9077,
-        SOUL_BLAZER_9078 = 9078,
-        SOUL_BLAZER_9079 = 9079,
-        TEST_SPLASH_ONLY = 9080,
-        CALL_OF_THE_BOTTLE = 9081,
+
+        LANCE_LUMIERE_9076 = 9076,
+
+        LANCE_LUMIERE_9077 = 9077,
+
+        BRULE_AME_9078 = 9078,
+
+        BRULE_AME_9079 = 9079,
+
+        TEST_SPLASH_ONLY_9080 = 9080,
+
+        APPEL_DE_LA_BOUTEILLE_9081 = 9081,
+
         FRUSTRATION_9082 = 9082,
+
         INVASION_9083 = 9083,
+
         INVASION_9084 = 9084,
-        INVASION = 9085,
-        BOUND = 9086,
-        HYRKULEAN_BLOW_9087 = 9087,
-        IVORY_DOFUS_9088 = 9088,
-        IVORY_DOFUS_9089 = 9089,
-        SCRUSHED = 9090,
-        RAINIKRON_S_CHALLENGE_YELLOW = 9091,
-        AURORA_9093 = 9093,
+
+        INVASION_9085 = 9085,
+
+        ENTRAVE_9086 = 9086,
+
+        FRAPPE_HYRKULEENNE_9087 = 9087,
+
+        DOFUS_IVOIRE_9088 = 9088,
+
+        DOFUS_IVOIRE_9089 = 9089,
+
+        CETASSEZ_9090 = 9090,
+
+        EPREUVE_DE_LA_RAINIKRONE___JAUNE_9091 = 9091,
+
+        AURORE_9093 = 9093,
+
         ZENITH_9094 = 9094,
-        NIGHTFALL_9095 = 9095,
-        SOLAR_RACE = 9096,
-        SOLAR_WIND = 9097,
-        SUPERNOVA = 9098,
-        ZARMATERASU = 9099,
-        SOLARISATION = 9100,
-        MATINAL_GLORY = 9101,
-        ECLIPSE = 9102,
-        SUN_KING_S_WRATH = 9103,
-        HYRKULEAN_POWER_9104 = 9104,
-        HYRKULEAN_POWER_9105 = 9105,
-        HYRKULEAN_POWER_9106 = 9106,
-        RAINIKRON_S_CHALLENGE_GREEN = 9115,
-        RAINIKRON_S_CHALLENGE_RED = 9116,
-        RAINIKRON_S_CHALLENGE_PINK = 9117,
-        RAINIKRON_S_CHALLENGE_BLACK = 9118,
-        EXTERNAM_STRIKE = 9119,
-        PETRIFYING_POISON = 9120,
-        FETID_BRAMBLE = 9121,
-        INTRUSIVE_GRASS = 9122,
-        STYNKOLE = 9123,
-        ORAL_DEJECTION = 9124,
-        GASTRATOMIC_BOMB = 9125,
-        STYNK_S_ABNEGATION = 9126,
-        STYNKO = 9127,
-        POOSTRON = 9128,
-        SHARING_9129 = 9129,
-        CONSTIPATING_WORD = 9130,
-        DIURETIC_WORD = 9131,
-        DEODORISING_WORD = 9132,
-        EXTERNAMINATION = 9133,
-        APPROACHING_CREAPER = 9134,
-        SPIRITSWRATH = 9135,
-        SPIRITUAL_EXPLOSION = 9136,
-        EVANESCENCE = 9137,
-        GRAVE_WABEHAMEHA = 9138,
-        LETHAL_HEADBUTT = 9139,
-        CURSE_OF_THE_TOMB = 9140,
-        OBSTINATION = 9141,
-        SPECTRAL_DAO = 9142,
-        SOLIDAWITY = 9143,
-        KOMPULSION = 9144,
-        ALEC_READING = 9145,
-        HUGH_SHALE_NOTEPAZ = 9146,
-        BOOK_KLUB_MEETING = 9147,
-        GHOSTLY_HIDARI = 9148,
-        SPECTRAL_MIGI = 9149,
-        SPECTRAL_BANZAI = 9150,
-        SEAL_OF_INVULNERABILITY_9151 = 9151,
-        SEAL_OF_INVULNERABILITY_9152 = 9152,
-        SEAL_OF_INVULNERABILITY_9153 = 9153,
-        SEAL_OF_INVULNERABILITY_9154 = 9154,
-        FANATICISM = 9155,
-        OBLITERAGONE = 9156,
-        CHAOTIC_HEAL_9157 = 9157,
-        CHAOTIC_HEAL_9158 = 9158,
-        LURE_9159 = 9159,
-        CLAW_OF_MEOWZRAEL = 9160,
-        BATHORY = 9161,
-        BLOOD_BOILING = 9162,
-        BLOODTHIRSTY_RAGE = 9163,
-        SUMMONING_OF_BLOOD_WELL = 9164,
-        BLOOD_WELL = 9165,
-        SIZEABLE_BLOW = 9166,
-        SKELETAL_STRUCTURE = 9167,
-        MAGIHILATION = 9168,
-        BRUTONE = 9169,
-        DARK_EXHALATION = 9170,
-        QUICK_MARCH = 9171,
-        ASHPLOSION_9172 = 9172,
-        ASHPLOSION_9173 = 9173,
-        ASHPLOSION_9174 = 9174,
-        ASHPLOSION_9175 = 9175,
-        MATTER_OF_LIFE_AND_DEATH = 9176,
-        LIFELESS = 9177,
-        USELESS = 9178,
-        SLOWNESS = 9179,
-        SPECTRAL_SHOCK_9180 = 9180,
-        SPECTRAL_SHOCK_9181 = 9181,
-        IN_MY_PLACE = 9182,
-        CURSE_OF_THE_GRAVES_9183 = 9183,
-        CURSE_OF_THE_GRAVES_9184 = 9184,
-        CURSE_OF_THE_GRAVES = 9185,
-        POPHORN = 9186,
-        PAPAWS = 9187,
-        QUIETUDE = 9188,
-        SCRATCH_9189 = 9189,
-        MAGNETISM = 9190,
-        METEORA = 9191,
-        GRAVITATIONAL_RAY = 9192,
-        HYRKULEAN_BLOW_9193 = 9193,
-        GRAVITO = 9194,
-        FERVOUR_OF_THE_VALIANT_HEART = 9195,
-        TORNADO_OF_THE_BRAVE = 9197,
-        HEROIC_CHARGE_9198 = 9198,
-        EARTHQUAKE_OF_THE_JUST = 9199,
-        HELP_FROM_THE_CENTORORS_OF_THE_VALIANT_HEART = 9201,
-        ARRIVAL_OF_THE_CREAPER = 9202,
-        CELESTIAL_REPULSION = 9203,
-        SHAKY_GROUND = 9205,
-        SPECTRAL_EXCAVATION = 9206,
-        KAMATITIS = 9207,
-        DIRE_ARROW = 9208,
-        TOXIC_ARROW = 9209,
-        REPULSIVE_SHOT = 9210,
-        KATNIPP = 9211,
-        A_WELL_KEPT_TREASURE = 9213,
-        DIRTY_BOARDING = 9214,
-        SABRICOT = 9215,
-        BEDWETTER = 9216,
-        BONEPLATE = 9217,
-        AQUATIC_POWDER = 9218,
-        HANDCRAFTED_BOMB = 9219,
-        TRUMPBLE = 9220,
-        WET_FIRECRACKER = 9221,
-        JOLLY_CHAFER = 9222,
-        SEA_RUM = 9223,
-        FOLK_RUM = 9224,
-        SPECKED_RUM = 9225,
-        PERMEATING_BLACKNESS_9226 = 9226,
-        PERMEATING_BLACKNESS_9227 = 9227,
-        NECROPORTATION = 9228,
-        NECROGALVANISATION = 9229,
-        NECROEXALTATION = 9230,
-        WALL_OF_BONES = 9231,
-        DRAU_GRIN_9232 = 9232,
-        DRAU_GRIN_9233 = 9233,
-        VICIOUS_BLOW = 9234,
-        CHAFER_LUNGE = 9235,
-        LETHAL_FRENZY = 9236,
-        TERROR_OF_THE_CRYPT = 9237,
-        DEADSIGHT = 9238,
-        SLICING_BLADE = 9239,
-        TIRELESS_PURSUIT = 9240,
-        DISABLING_UNBEWITCHMENT = 9241,
-        CHAOTIC_FIGHTING = 9242,
-        RANDOM_BLOW = 9243,
-        HORNED_SKULL = 9244,
-        DEATHLY_WIND = 9245,
-        GROVE_PROTECTION = 9246,
-        THE_WOODS_HAVE_EYES = 9247,
-        BOW_MEOW_S_TOMB = 9248,
-        GIFT_YOU_CAN_T_REFUSE = 9249,
-        GHOSTLY_CLAW_9250 = 9250,
-        GHOSTLY_FANGS = 9251,
-        DEATH_OFFERING = 9252,
-        RAINING_COINS = 9253,
-        CLAM = 9254,
-        CRUCIKNIFE = 9255,
-        FLYING_PENKNIVES = 9256,
-        FISHING_FOR_EXPLOSIVES = 9257,
-        ROUT = 9258,
-        SPECTRAL_RIPOSTE = 9259,
-        SUMMONING_OF_SPECTRAL_CROBAK = 9260,
-        SUMMONING_OF_SPECTRAL_YOUNG_WILD_BOAR = 9261,
-        YOUR_EUCARYOTE_IS_COOKED = 9262,
-        PURIFIED_BY_FIRE = 9263,
-        PURIFICATION_BY_FIRE_9264 = 9264,
-        FUNGAL_BLOW = 9265,
-        PURIFICATION_BY_FIRE_GLYPH = 9266,
-        PURIFICATION_BY_FIRE_9267 = 9267,
-        PURIFICATION_BY_FIRE_9268 = 9268,
-        PURIFICATION_BY_FIRE_9269 = 9269,
-        PURIFICATION_BY_FIRE_9270 = 9270,
-        PURIFICATION_BY_FIRE_9271 = 9271,
-        FUNGAL_PROLIFERATION = 9272,
-        DEFUSING = 9273,
-        DISABLING_TRAP = 9274,
-        SENTINEL_TURRET = 9275,
-        PULSARPOON = 9276,
-        WOUNDING_TRAP = 9277,
-        OVERSEER_TURRET = 9278,
-        DISABLING_HARPOON = 9279,
-        STOP_THE_SCRAP = 9280,
-        EXCEPTIONAL_ZEAL = 9281,
-        HONOURABLE_SERVITUDE_9282 = 9282,
-        HONOURABLE_SERVITUDE_9283 = 9283,
-        WAKIZAKITTY = 9284,
-        WANDERING_9285 = 9285,
-        MEOWNAIGRETTE = 9286,
-        STIMULATING_PAIN = 9287,
-        WABBIT_SOLIDAWITY = 9288,
-        HYRKULEAN_POWER_9289 = 9289,
-        WE_ARE_ME_9290 = 9290,
-        AVID_RAGE = 9291,
-        ELECTRIFYING_AIR = 9292,
-        THUNDEROUS_RAGE = 9293,
-        SUMMONING_OF_PURSEY = 9294,
-        ROHICHI = 9295,
-        HASTY_VENALITY = 9296,
-        ROHICHIED_AWAY = 9297,
-        TRUE_FACE = 9298,
-        VENALITY = 9299,
-        DARK_DISRUPTION = 9300,
-        CONCENTRATION_ARROW = 9301,
-        EROSIVE_ARROW = 9302,
-        WITHDRAWAL_ARROW = 9303,
-        PARALYSING_ARROW = 9304,
-        REPULSIVE_ARROW_9305 = 9305,
-        ABSOLUTE_ACUTENESS_9306 = 9306,
-        REDEMPTION_ARROW = 9307,
-        CRUSHING_ARROW_9308 = 9308,
-        RECALL_BEACON_9309 = 9309,
-        ASSAILING_ARROW_9310 = 9310,
-        ARROW_OF_JUDGEMENT = 9311,
-        TACTICAL_BEACON_9312 = 9312,
-        SLAUGHTERING_ARROW = 9313,
-        CURATIVE_ARROW = 9314,
-        TYRANNICAL_ARROW_9315 = 9315,
-        BARRICADE_SHOT = 9316,
-        DEVOURING_ARROW_9317 = 9317,
-        STRIKING_ARROW_9318 = 9318,
-        FULMINATING_ARROW_9319 = 9319,
-        SENTINEL_9320 = 9320,
-        REPRISAL_9321 = 9321,
-        GODSEND_9322 = 9322,
-        NERVE = 9323,
-        LEAP_9324 = 9324,
-        HEADS_OR_TAILS = 9325,
-        ROAR_9326 = 9326,
-        COROLLARY = 9327,
-        SUMMONING_STROKE = 9328,
-        PERIL_9329 = 9329,
-        SPELL_STRIKE_9330 = 9330,
-        YOWLING_9331 = 9331,
-        LAPPING_UP_9332 = 9332,
-        PUSSYCAT = 9333,
-        PAWPADS = 9334,
-        LUCKY_STAR_9335 = 9335,
-        REDISTRIBUTION_9336 = 9336,
-        BRAVADO_9337 = 9337,
-        MISADVENTURE = 9338,
-        MISFORTUNE = 9339,
-        TRICKERY_9340 = 9340,
-        ECAFLIP_S_AUDACITY_9341 = 9341,
-        KRAPS = 9342,
-        STRIKING_ARROW_9343 = 9343,
-        FULMINATING_ARROW_9344 = 9344,
-        RECALL_BEACON_9345 = 9345,
-        DEVOURING_ARROW_9346 = 9346,
-        TACTICAL_BEACON_9347 = 9347,
-        NECRONYX = 9348,
-        NOTDEADYET_9349 = 9349,
-        NOTDEADYET_9350 = 9350,
-        NECROPETRIFICATION = 9351,
+
+        CREPUSCULE_9095 = 9095,
+
+        COURSE_SOLAIRE_9096 = 9096,
+
+        VENT_SOLAIRE_9097 = 9097,
+
+        SUPERNOVAE_9098 = 9098,
+
+        ZARMATERASU_9099 = 9099,
+
+        SOLARISATION_9100 = 9100,
+
+        GLOIRE_MATINALE_9101 = 9101,
+
+        ECLIPSE_9102 = 9102,
+
+        COURROUX_DU_ROI_SOLEIL_9103 = 9103,
+
+        PUISSANCE_HYRKULEENNE_9104 = 9104,
+
+        PUISSANCE_HYRKULEENNE_9105 = 9105,
+
+        PUISSANCE_HYRKULEENNE_9106 = 9106,
+
+        EPREUVE_DE_LA_RAINIKRONE___VERT_9115 = 9115,
+
+        EPREUVE_DE_LA_RAINIKRONE___ROUGE_9116 = 9116,
+
+        EPREUVE_DE_LA_RAINIKRONE___ROSE_9117 = 9117,
+
+        EPREUVE_DE_LA_RAINIKRONE___NOIR_9118 = 9118,
+
+        FRAPPE_DEXTERNAM_9119 = 9119,
+
+        POISON_TROUILLOTANT_9120 = 9120,
+
+        RONCES_FETIDES_9121 = 9121,
+
+        HERBE_ENVAHISSANTE_9122 = 9122,
+
+        TRUKIPETE_9123 = 9123,
+
+        DEJECTION_BUCCALE_9124 = 9124,
+
+        BOMBE_GASTROMIQUE_9125 = 9125,
+
+        ABNEGATION_DE_TRUKI_9126 = 9126,
+
+        TRUKITAPE_9127 = 9127,
+
+        PLASSETRON_9128 = 9128,
+
+        PARTAGE_9129 = 9129,
+
+        MOT_DE_CONSTIPATION_9130 = 9130,
+
+        MOT_DIURETIQUE_9131 = 9131,
+
+        MOT_DESODORISANT_9132 = 9132,
+
+        EXTERNAMINATION_9133 = 9133,
+
+        FAUCHEUR_EN_APPROCHE_9134 = 9134,
+
+        COLERE_DES_ESPRITS_9135 = 9135,
+
+        EXPLOSION_SPIRITUELLE_9136 = 9136,
+
+        EVANESCENCE_9137 = 9137,
+
+        WABEHAMEHA_DU_TOMBEAU_9138 = 9138,
+
+        COUP_DE_TETE_LETAL_9139 = 9139,
+
+        MALEDICTION_DU_TOMBEAU_9140 = 9140,
+
+        OBSTINATION_9141 = 9141,
+
+        DAO_SPECTRAL_9142 = 9142,
+
+        SOLIDAWITE_9143 = 9143,
+
+        KOMPULSION_9144 = 9144,
+
+        JEHM_LYRH_9145 = 9145,
+
+        YOUCHAUL_NAUTPASSE_9146 = 9146,
+
+        REUNION_DU_KLUB_DE_LEKTURE_9147 = 9147,
+
+        HIDARI_SPECTRAL_9148 = 9148,
+
+        MIGI_SPECTRAL_9149 = 9149,
+
+        BANZAI_SPECTRAL_9150 = 9150,
+
+        SCEAU_DINVULNERABILITE_9151 = 9151,
+
+        SCEAU_DINVULNERABILITE_9152 = 9152,
+
+        SCEAU_DINVULNERABILITE_9153 = 9153,
+
+        SCEAU_DINVULNERABILITE_9154 = 9154,
+
+        FANATISME_9155 = 9155,
+
+        OUBLITERATION_9156 = 9156,
+
+        SOIN_CHAOTIQUE_9157 = 9157,
+
+        SOIN_CHAOTIQUE_9158 = 9158,
+
+        APPAT_9159 = 9159,
+
+        GRIFFE_DE_CHAZRAEL_9160 = 9160,
+
+        BATHORY_9161 = 9161,
+
+        BOUILLONNEMENT_DU_SANG_9162 = 9162,
+
+        RAGE_SANGUINAIRE_9163 = 9163,
+
+        INVOCATION_DE_PUITS_DE_SANG_9164 = 9164,
+
+        PUITS_DE_SANG_9165 = 9165,
+
+        FRAPPE_DE_TAILLE_9166 = 9166,
+
+        OSSATURE_9167 = 9167,
+
+        MAGIHILATION_9168 = 9168,
+
+        BRUTOS_9169 = 9169,
+
+        EXHALATION_OBSCURE_9170 = 9170,
+
+        MARCHE_RAPIDE_9171 = 9171,
+
+        EXPLOCENDRE_9172 = 9172,
+
+        EXPLOCENDRE_9173 = 9173,
+
+        EXPLOCENDRE_9174 = 9174,
+
+        EXPLOCENDRE_9175 = 9175,
+
+        A_LA_VIE_A_LA_MORT_9176 = 9176,
+
+        NON_VIE_9177 = 9177,
+
+        INUTILE_9178 = 9178,
+
+        LENTEUR_9179 = 9179,
+
+        CHOC_SPECTRAL_9180 = 9180,
+
+        CHOC_SPECTRAL_9181 = 9181,
+
+        A_MA_PLACE_9182 = 9182,
+
+        MALEDICTION_DES_FOSSES_9183 = 9183,
+
+        MALEDICTION_DES_FOSSES_9184 = 9184,
+
+        MALEDICTION_DES_FOSSES_9185 = 9185,
+
+        POPCORNES_9186 = 9186,
+
+        PAPATTES_9187 = 9187,
+
+        QUIETUDE_9188 = 9188,
+
+        GRIFFURE_9189 = 9189,
+
+        MAGNETISME_9190 = 9190,
+
+        METEORA_9191 = 9191,
+
+        RAYON_GRAVITATIONNEL_9192 = 9192,
+
+        FRAPPE_HYRKULEENNE_9193 = 9193,
+
+        GRAVITO_9194 = 9194,
+
+        DEVOTION_DU_COEUR_VAILLANT_9195 = 9195,
+
+        TORNADE_DU_BRAVE_9197 = 9197,
+
+        CHEVAUCHEE_HEROÏQUE_9198 = 9198,
+
+        SEISME_DU_JUSTE_9199 = 9199,
+
+        AIDE_DES_CENTORORS_DU_COEUR_VAILLANT_9201 = 9201,
+
+        ARRIVEE_DU_FAUCHEUR_9202 = 9202,
+
+        REPULSION_CELESTE_9203 = 9203,
+
+        TERRAIN_GLISSANT_9205 = 9205,
+
+        EXCAVATION_SPECTRALE_9206 = 9206,
+
+        AVARICELLE_9207 = 9207,
+
+        FLECHE_FUNESTE_9208 = 9208,
+
+        FLECHE_TOXIQUE_9209 = 9209,
+
+        TIR_REPULSIF_9210 = 9210,
+
+        ERBASHA_9211 = 9211,
+
+        UN_TRESOR_BIEN_GARDE_9213 = 9213,
+
+        SALE_ABORDAGE_9214 = 9214,
+
+        SABRICOT_9215 = 9215,
+
+        PISSOLI_9216 = 9216,
+
+        PLOSTRON_9217 = 9217,
+
+        POUDRE_AQUATIQUE_9218 = 9218,
+
+        BOMBE_ARTISANALE_9219 = 9219,
+
+        PETBULLE_9220 = 9220,
+
+        PETARD_MOUILLE_9221 = 9221,
+
+        CHAFER_ROUGE_9222 = 9222,
+
+        RHUM_STEAK_9223 = 9223,
+
+        RHUM_ANTIQUE_9224 = 9224,
+
+        RHUM_MARIN_9225 = 9225,
+
+        IMPREGNATION_NOIRE_9226 = 9226,
+
+        IMPREGNATION_NOIRE_9227 = 9227,
+
+        NECROPORTATION_9228 = 9228,
+
+        NECROGALVANISATION_9229 = 9229,
+
+        NECROEXALTATION_9230 = 9230,
+
+        MUR_DOS_9231 = 9231,
+
+        DRAUGR_RIT_9232 = 9232,
+
+        DRAUGR_RIT_9233 = 9233,
+
+        COUP_VICIEUX_9234 = 9234,
+
+        ESTOC_DU_CHAFER_9235 = 9235,
+
+        FRENESIE_MORTELLE_9236 = 9236,
+
+        TERREUR_DU_CAVEAU_9237 = 9237,
+
+        VISION_MORTE_9238 = 9238,
+
+        LAME_TRONÇONNANTE_9239 = 9239,
+
+        POURSUITE_INLASSABLE_9240 = 9240,
+
+        DESENVOUTEMENT_HANDICAPANT_9241 = 9241,
+
+        COMBAT_CHAOTIQUE_9242 = 9242,
+
+        COUP_ALEATOIRE_9243 = 9243,
+
+        CRANE_CORNE_9244 = 9244,
+
+        BRISE_MORTUAIRE_9245 = 9245,
+
+        PROTECTION_DU_BOSQUET_9246 = 9246,
+
+        LA_FORET_A_DES_YEUX_9247 = 9247,
+
+        LA_TOMBE_DU_CHACHA_9248 = 9248,
+
+        UN_CADEAU_ÇA_NE_SE_REFUSE_PAS_9249 = 9249,
+
+        GRIFFE_FANTOMATIQUE_9250 = 9250,
+
+        CROCS_FANTOMATIQUES_9251 = 9251,
+
+        MORT_OFFRANDE_9252 = 9252,
+
+        PLUIE_DE_PIECES_9253 = 9253,
+
+        PALOURDE_9254 = 9254,
+
+        CRUCINIF_9255 = 9255,
+
+        CANIFS_VOLANTS_9256 = 9256,
+
+        PECHE_AUX_EXPLOSIFS_9257 = 9257,
+
+        TOUPILLER_9258 = 9258,
+
+        REPLIQUE_SPECTRALE_9259 = 9259,
+
+        INVOCATION_DE_CORBAC_SPECTRAL_9260 = 9260,
+
+        INVOCATION_DE_MARCASSIN_SPECTRAL_9261 = 9261,
+
+        LES_EUCARYOTES_SONT_CUITES_9262 = 9262,
+
+        PURIFIE_PAR_LE_FEU_9263 = 9263,
+
+        PURIFICATION_PAR_LE_FEU_9264 = 9264,
+
+        FRAPPE_FONGIQUE_9265 = 9265,
+
+        GLYPHE_DE_PURIFICATION_PAR_LE_FEU_9266 = 9266,
+
+        PURIFICATION_PAR_LE_FEU_9267 = 9267,
+
+        PURIFICATION_PAR_LE_FEU_9268 = 9268,
+
+        PURIFICATION_PAR_LE_FEU_9269 = 9269,
+
+        PURIFICATION_PAR_LE_FEU_9270 = 9270,
+
+        PURIFICATION_PAR_LE_FEU_9271 = 9271,
+
+        PROLIFERATION_FONGIQUE_9272 = 9272,
+
+        DESAMORÇAGE_9273 = 9273,
+
+        PIEGE_HANDICAPANT_9274 = 9274,
+
+        TOURELLE_SENTINELLE_9275 = 9275,
+
+        PULSARPON_9276 = 9276,
+
+        PIEGE_BLESSANT_9277 = 9277,
+
+        TOURELLE_SURVEILLANTE_9278 = 9278,
+
+        HANDIARPON_9279 = 9279,
+
+        HALTE_AU_GRABUGE__9280 = 9280,
+
+        ZELE_EXCEPTIONNEL_9281 = 9281,
+
+        SERVITUDE_HONORABLE_9282 = 9282,
+
+        SERVITUDE_HONORABLE_9283 = 9283,
+
+        WAKICHASHI_9284 = 9284,
+
+        ERRANCE_9285 = 9285,
+
+        SAUCE_CHAMOURAÏ_9286 = 9286,
+
+        DOULEUR_STIMULANTE_9287 = 9287,
+
+        SOLIDAWITE_WABBIT_9288 = 9288,
+
+        PUISSANCE_HYRKULEENNE_9289 = 9289,
+
+        NOUS_SOMMES_MOI_9290 = 9290,
+
+        RAGE_AVIDE_9291 = 9291,
+
+        AIR_ELECTRIFIANT_9292 = 9292,
+
+        RAGE_FOUDROYANTE_9293 = 9293,
+
+        INVOCATION_DE_BAK_9294 = 9294,
+
+        ROHICHI_9295 = 9295,
+
+        VENALITE_HATIVE_9296 = 9296,
+
+        VOYAGE_DE_ROHICHI_9297 = 9297,
+
+        VRAI_VISAGE_9298 = 9298,
+
+        VENALITE_9299 = 9299,
+
+        DISRUPTION_OBSCURE_9300 = 9300,
+
+        NECRONYX_9348 = 9348,
+
+        PADECEDE_9349 = 9349,
+
+        PADECEDE_9350 = 9350,
+
+        NECROPETRIFICATION_9351 = 9351,
+
         PYROZOMB_9352 = 9352,
-        NOTDEADYET_9353 = 9353,
+
+        PADECEDE_9353 = 9353,
+
         PYROZOMB_9354 = 9354,
+
         PYROZOMB_9355 = 9355,
+
         PYROZOMB_9356 = 9356,
-        SWORDBURST = 9357,
-        VOLCANIC_CONJURATION = 9358,
-        MAGMAGIC_9359 = 9359,
-        SEMMERSWORD = 9360,
-        SHIELD_CHARGE = 9361,
-        INEXORABLE_ADVANCE = 9362,
-        MAGMAXE = 9363,
-        BLAZING_BREATH_9365 = 9365,
-        SULPHISION = 9366,
-        THUNDER_CRASH_BOMB = 9367,
-        STICKY_GRENADE = 9368,
-        BOILER = 9369,
-        GEOASSAULT = 9370,
-        FLAMETHROWER_9371 = 9371,
-        HEAT_AND_RUN = 9372,
-        CONTEMPT_9373 = 9373,
-        TRIBULATION = 9374,
-        FLEXIBLE_PORTAL = 9375,
-        CONVULSION = 9376,
-        LAZYBEAM_9377 = 9377,
-        INTERRUPTION = 9378,
-        AFFRONT = 9379,
-        CONTRACTION_9380 = 9380,
-        SINECURE = 9381,
-        DIFFUSION_9382 = 9382,
-        DISTORTION_9383 = 9383,
-        CORRECTION_9384 = 9384,
-        CONJURATION_9385 = 9385,
-        CURATIVE_PALM_9386 = 9386,
-        EXODUS = 9387,
-        CABAL = 9388,
-        COMPOSURE = 9389,
-        VIRUS_9390 = 9390,
-        PERSIFLAGE = 9391,
-        COALITION = 9392,
-        CONFLAGRATION_9393 = 9393,
-        AFFECTIONATE_WORD_9394 = 9394,
-        STRIKING_WORD = 9395,
-        SLIGHTING_WORD = 9396,
-        TABOO_WORD = 9397,
-        SEDUCTIVE_WORD = 9398,
-        SELF_SACRIFICING_WORD = 9399,
-        MISCHIEVOUS_WORD = 9400,
-        DEFENSIVE_WORD = 9401,
-        IMPARTIAL_WORD_9402 = 9402,
-        RESOUNDING_WORD = 9403,
-        AGONISING_WORD_9404 = 9404,
-        REGENERATING_MARK = 9405,
-        LIFE_GIVING_WORD = 9406,
-        FURIOUS_WORD_9407 = 9407,
-        WHIRLING_WORD = 9408,
-        OVERWHELMING_WORD = 9409,
-        SACRIFICIAL_WORD_9410 = 9410,
-        RALLYING_WORD_9411 = 9411,
-        GALVANISING_WORD_9412 = 9412,
-        UNITING_WORD_9413 = 9413,
-        PERNICIOUS_WORD_9414 = 9414,
-        SOLAR_CYCLE = 9415,
-        OBSEEN_9416 = 9416,
-        EARLY_BIRD_9417 = 9417,
-        MORNING_BASHING_9418 = 9418,
-        MIDDAY_DEMON = 9419,
-        SUNBURN = 9420,
-        SOLAR_ERUPTION_9421 = 9421,
-        SUNDOWN = 9422,
-        EVENING_CLASS = 9423,
-        THE_BIG_NIGHT = 9424,
-        MIDNIGHT_DEMONS = 9425,
-        ALL_NIGHTER = 9426,
-        PROTECTOR_OF_THRILLS = 9427,
-        OBSEEN_9428 = 9428,
-        EARLY_BIRD_9429 = 9429,
-        MORNING_BASHING_9430 = 9430,
-        MORNING_BASHING = 9431,
-        SOLAR_ERUPTION_9432 = 9432,
-        PURRING = 9433,
-        SPELL_STRIKE_9434 = 9434,
-        SPELL_STRIKE_9435 = 9435,
-        AURORA_9436 = 9436,
+
+        EPERUPTION_9357 = 9357,
+
+        CONJURATION_VOLCANIQUE_9358 = 9358,
+
+        MAGMAGIQUE_9359 = 9359,
+
+        GLAIVE_SOMMAIRE_9360 = 9360,
+
+        CHARGE_AU_BOUCLIER_9361 = 9361,
+
+        AVANCEE_INEXORABLE_9362 = 9362,
+
+        MAGMACHE_9363 = 9363,
+
+        HALEINE_ENFLAMMEE_9365 = 9365,
+
+        VISIOSOUFRE_9366 = 9366,
+
+        ZHEN_TIAN_LEI_9367 = 9367,
+
+        GRENADE_COLLANTE_9368 = 9368,
+
+        CHAUDIERE_9369 = 9369,
+
+        GEOASSAUT_9370 = 9370,
+
+        LANCE_FLAMMES_9371 = 9371,
+
+        CHAUFFARD_9372 = 9372,
+
+        _9373 = 9373,
+
+        _9374 = 9374,
+
+        _9375 = 9375,
+
+        _9376 = 9376,
+
+        _9377 = 9377,
+
+        _9378 = 9378,
+
+        _9379 = 9379,
+
+        _9380 = 9380,
+
+        _9381 = 9381,
+
+        _9382 = 9382,
+
+        _9383 = 9383,
+
+        _9384 = 9384,
+
+        _9385 = 9385,
+
+        _9386 = 9386,
+
+        _9387 = 9387,
+
+        _9388 = 9388,
+
+        _9389 = 9389,
+
+        _9390 = 9390,
+
+        _9391 = 9391,
+
+        _9392 = 9392,
+
+        _9393 = 9393,
+
+        CYCLE_SOLAIRE_9415 = 9415,
+
+        AUBE_SAINE_9416 = 9416,
+
+        LEVE_TT_9417 = 9417,
+
+        ROSSEE_MATINALE_9418 = 9418,
+
+        DEMON_DE_MIDI_9419 = 9419,
+
+        COUP_DE_SOLEIL_9420 = 9420,
+
+        ERUPTION_SOLAIRE_9421 = 9421,
+
+        COUCHER_DE_SOLEIL_9422 = 9422,
+
+        COURS_DU_SOIR_9423 = 9423,
+
+        LE_GRAND_SOIR_9424 = 9424,
+
+        DEMONS_DE_MINUIT_9425 = 9425,
+
+        NUIT_BLANCHE_9426 = 9426,
+
+        PROTECTEUR_DEMOI_9427 = 9427,
+
+        AUBE_SAINE_9428 = 9428,
+
+        LEVE_TT_9429 = 9429,
+
+        ROSSEE_MATINALE_9430 = 9430,
+
+        ROSSEE_MATINALE_9431 = 9431,
+
+        ERUPTION_SOLAIRE_9432 = 9432,
+
+        AURORE_9436 = 9436,
+
         ZENITH_9437 = 9437,
-        NIGHTFALL = 9438,
-        NADIR = 9439,
-        AURORA_GLYPH = 9440,
-        ZENITH_GLYPH = 9441,
-        NIGHTFALL_GLYPH = 9442,
-        NADIR_GLYPH = 9443,
-        NIGHTFALL_NASTINESS = 9444,
-        SPELL_STRIKE_9445 = 9445,
-        TRICKERY = 9446,
-        DISTORTION_9447 = 9447,
-        DISTORTION_9448 = 9448,
-        CONFLAGRATION_9449 = 9449,
+
+        CREPUSCULE_9438 = 9438,
+
+        NADIR_9439 = 9439,
+
+        GLYPHE_AURORE_9440 = 9440,
+
+        GLYPHE_ZENITH_9441 = 9441,
+
+        GLYPHE_CREPUSCULE_9442 = 9442,
+
+        GLYPHE_NADIR_9443 = 9443,
+
+        CONTRE_CREPUSCULAIRE_9444 = 9444,
+
+        _9447 = 9447,
+
+        _9448 = 9448,
+
+        _9449 = 9449,
+
         AQUAZOMB_9450 = 9450,
+
         AQUAZOMB_9451 = 9451,
-        MULTIPLE_SLAP = 9452,
-        SIPHON = 9453,
-        AQUAPONY = 9454,
-        CROSSING_9455 = 9455,
-        MONODENT = 9456,
-        STAITHER = 9457,
+
+        CUMUL_DES_MANDALES_9452 = 9452,
+
+        SIPHON_9453 = 9453,
+
+        AQUAPONEY_9454 = 9454,
+
+        FRANCHISSEMENT_9455 = 9455,
+
+        MONODENT_9456 = 9456,
+
+        RESTOUTE_9457 = 9457,
+
         TALION_9458 = 9458,
-        OCEAN_DEPTHS = 9459,
-        PRICKLY = 9460,
-        MORTALLUSK = 9461,
-        HYDROZOA = 9462,
-        MAGELLANAVAL = 9463,
-        MARINE_PUTREFACTION = 9464,
-        PINCER_STRIKE = 9465,
-        STEAM = 9466,
-        REPULSIVE_ARROW = 9467,
-        SPADE_THROW_9468 = 9468,
-        HARD_CASH = 9469,
-        LIVING_SATCHEL = 9470,
-        GHOSTLY_SPADE_9471 = 9471,
-        WANDERING_9472 = 9472,
-        TOOLBOX_9473 = 9473,
-        PEAT_BOG = 9474,
-        ARMLOCK = 9475,
-        OBSOLESCENCE = 9476,
-        LIVING_SPADE = 9477,
-        MISERLINESS = 9478,
-        SPADE_KISS_9479 = 9479,
-        VIVACITY_9480 = 9480,
-        LOAFYLACTIC_9481 = 9481,
-        OPPORTUNENESS = 9482,
-        SPADE_OF_JUDGEMENT_9483 = 9483,
-        CARNIVORE_SPADE_9484 = 9484,
-        DECADENCE_9485 = 9485,
-        CORRECTION = 9486,
-        REGENERATING_CHEST = 9487,
-        LAST_RESORT_9488 = 9488,
-        CONTRACTION = 9489,
-        STRIKING_GLYPH = 9490,
-        FLASKTIVATION_9491 = 9491,
-        FLASKTIVATION_9492 = 9492,
-        IMPARTIAL_WORD_9494 = 9494,
-        AGONISING_WORD_9495 = 9495,
-        REGENERATING_GLYPH = 9496,
-        MINIRUPTION = 9497,
-        CLOUD_OF_SULPHUR = 9498,
-        ROCKY_HARDENING = 9499,
-        DISSIPAQUATION = 9500,
-        AQUATIC_WAVE_9501 = 9501,
-        MARINE_INTOXICATION = 9502,
-        ZOMBAQUA = 9503,
-        HARASSING_ASSAULT = 9504,
-        CRUSHING_GRAVITY = 9505,
-        OPTICAL_VISION = 9506,
-        FURIOUS_WORD_9507 = 9507,
-        FURIOUS_WORD = 9508,
-        NOTDEADYET_9509 = 9509,
-        SACRIFICIAL_WORD_9511 = 9511,
-        RALLYING_WORD_9512 = 9512,
-        UNITING_WORD_9513 = 9513,
-        UNITING_WORD_9514 = 9514,
-        UNITING_WORD_9515 = 9515,
-        PERNICIOUS_WORD_9516 = 9516,
-        TYRANNICAL_ARROW_9517 = 9517,
-        TYRANNICAL_ARROW = 9518,
-        REPRISAL_9519 = 9519,
-        NATURAL_ATTRACTION = 9520,
-        DAZZLING = 9521,
-        FORTIFICATION = 9522,
-        GUST = 9523,
-        SWELLING_9524 = 9524,
-        MANOEUVRE = 9525,
-        FULMINATING_GLYPH_9526 = 9526,
-        LIFELESSNESS_9527 = 9527,
-        STORMY_ATTACK = 9528,
-        PAVISE_9529 = 9529,
-        TETANY = 9530,
-        AEGIS = 9531,
-        BARRIER_9532 = 9532,
-        REINFORCEMENT = 9533,
-        PROTECTIVE_GLYPH_9534 = 9534,
-        TENSION_9535 = 9535,
-        ROAMING_GLYPH_9536 = 9536,
-        EXCURSION_GLYPH_9537 = 9537,
-        PERCEPTION_GLYPH_9538 = 9538,
-        INERTIA_9539 = 9539,
-        ATARAXIA_9540 = 9540,
-        SENTINEL_9541 = 9541,
-        UNSPEAKABLE_CONTRACT_9542 = 9542,
-        UNSPEAKABLE_CONTRACT_9543 = 9543,
-        PANTANG = 9544,
-        PROSECUTION_9545 = 9545,
-        PROSECUTION_9546 = 9546,
-        PROSECUTION_9547 = 9547,
-        PROSECUTION_9548 = 9548,
-        SHARING_9549 = 9549,
-        WANDERING_9551 = 9551,
-        MONOLITHIC_OFFERING_9552 = 9552,
-        MONOLITHIC_OFFERING_9553 = 9553,
-        MONOLITHIC_OFFERING = 9554,
-        STARFISH = 9555,
-        FRASCH_9556 = 9556,
-        SPADE_STRIKE = 9557,
-        TENTACLE_SHACKLE = 9558,
-        HIEROGLYPHS_9559 = 9559,
-        HIEROGLYPHS_9560 = 9560,
-        HIEROGLYPHS = 9561,
-        SPADE_KISS = 9562,
-        PERIL_9563 = 9563,
-        PERIL = 9564,
-        REDISTRIBUTION_9565 = 9565,
-        FRIGHTENING_PRESENCE = 9566,
-        ECAFLIP_S_AUDACITY_9567 = 9567,
-        SCALDING_BREATH = 9568,
-        CARNIVORE_SPADE_9569 = 9569,
-        AQUATIC_CHARGE = 9570,
-        DISOBEDIENCE = 9571,
-        CONJURATION_9572 = 9572,
-        REGENERATION_9573 = 9573,
-        EVAPORATION = 9574,
-        REGENERATION = 9575,
-        LAST_RESORT_9576 = 9576,
-        CELESTIAL_WAVE = 9577,
-        STINGER = 9578,
-        MANIFESTATION_9579 = 9579,
-        CATARACT_9580 = 9580,
-        EMBER_9581 = 9581,
-        MORPH_9582 = 9582,
-        HURRICANE = 9583,
-        TELLURIC_BLADE = 9584,
-        QUADRAMENTAL_CURRENT = 9585,
-        STALACTITE = 9586,
-        VOLCANO = 9587,
-        ELEMENTAL_TRAP_9588 = 9588,
-        ELEMENTAL_GUARDIAN = 9589,
-        FLOOD_9590 = 9590,
-        ELEMENTAL_CYCLE = 9591,
-        SUN_LANCE = 9592,
-        RUNIC_OVERCHARGE = 9593,
-        TECTONIC_BREACH = 9594,
-        COMET = 9595,
-        CREATION = 9596,
-        RUNIC_REPULSION_9597 = 9597,
-        AFFECTIONATE_WORD_9598 = 9598,
-        FULMINATING_GLYPH_9599 = 9599,
-        IMPARTIAL_WORD = 9601,
-        GALVANISING_WORD_9602 = 9602,
-        BARRIER_9603 = 9603,
-        UNITING_WORD = 9604,
-        BARRIER_9605 = 9605,
-        PROTECTIVE_GLYPH_9606 = 9606,
-        ROAMING_GLYPH_9608 = 9608,
-        EXCURSION_GLYPH_9610 = 9610,
-        PERCEPTION_GLYPH_9611 = 9611,
-        VISION_GLYPH = 9613,
-        INERTIA_9614 = 9614,
-        ATARAXIA_9615 = 9615,
-        DIFFUSION_9616 = 9616,
-        WATER_QUADRAMENTAL_CURRENT = 9617,
-        EARTH_QUADRAMENTAL_CURRENT = 9618,
-        FIRE_QUADRAMENTAL_CURRENT = 9619,
-        AIR_QUADRAMENTAL_CURRENT = 9620,
-        ELEMENTAL_TRAP_9621 = 9621,
-        SANCTUARY = 9622,
-        QUADRAMENTAL_RADIUS = 9623,
-        BRAVADO_9624 = 9624,
-        ROAR = 9625,
-        THREAT = 9626,
-        POUNDING = 9627,
-        DETERMINATION_9628 = 9628,
-        ENDURANCE = 9629,
-        CLEAVER_9630 = 9630,
-        DESTRUCTIVE_RING = 9631,
-        GATHERING_9632 = 9632,
-        VIOLENCE_9633 = 9633,
-        ACCUMULATION_9634 = 9634,
-        FRACTURE = 9635,
-        FIGHT_BACK_9636 = 9636,
-        GRIP_9637 = 9637,
-        VIRTUE = 9639,
-        AGITATION_9640 = 9640,
-        TUMULT_9641 = 9641,
-        ZENITH = 9642,
-        PYGMACHIA = 9643,
-        SENTENCE_9644 = 9644,
-        CONQUEST = 9645,
-        CLEAVER_9646 = 9646,
-        GATHERING_9647 = 9647,
-        VIOLENCE_9648 = 9648,
-        FIGHT_BACK_9650 = 9650,
-        REPULSIVE_FANG_9651 = 9651,
-        AQUATIC_WAVE_9652 = 9652,
-        ALBINO_TOFU = 9653,
-        ANIMAL_UNION = 9654,
-        SEDIMENTATION = 9655,
-        WHIRLWIND_9656 = 9656,
-        PROTECTIVE_BALM = 9657,
-        ALBINO_TOAD = 9658,
-        CROP = 9659,
-        PLUCKING_9660 = 9660,
-        GOBBLY = 9661,
-        ALBINO_WYRMLING = 9662,
-        DRAGON_HEART_9663 = 9663,
-        BLACK_TOAD = 9664,
-        CONSTRICTION = 9665,
-        GEYSER = 9666,
-        SLIMY_TOAD = 9667,
-        RELAY_9668 = 9668,
-        FAVOURITISM_9669 = 9669,
-        REPLACEMENT_9670 = 9670,
-        ANIMAL_COMMUNION_9671 = 9671,
-        CONDEMNATION = 9672,
-        TUMULT_9673 = 9673,
-        SENTENCE = 9674,
-        FIT_OF_RAGE_9675 = 9675,
-        IOP_STRATEGY = 9676,
-        LAPPING_UP_9677 = 9677,
-        YOWLING_9678 = 9678,
-        DETERMINATION_9679 = 9679,
-        REPULSIVE_FANG_9680 = 9680,
-        WYRMLING_UNION = 9681,
-        GOBBALL_UNION = 9682,
-        VENISON = 9683,
-        JAW_9684 = 9684,
-        CALCANEUS_9685 = 9685,
-        STRIPPING_9686 = 9686,
-        WOOF_9687 = 9687,
-        TOFU_UNION = 9688,
-        AFFECTION_9689 = 9689,
-        GANGRENE = 9690,
-        MUZZLE_9691 = 9691,
-        HUMERUS = 9692,
-        HUNT_9693 = 9693,
-        BEATEN_9694 = 9694,
-        SNUGGLETOOTH = 9695,
-        FEROCITY_9696 = 9696,
-        RADIUS_9697 = 9697,
-        VERTEBRA = 9698,
-        PURSUIT_9699 = 9699,
-        AMAROK_9700 = 9700,
-        GNAW_9701 = 9701,
-        CARVING_UP_9702 = 9702,
-        DETERMINATION_9703 = 9703,
-        TAILING_9704 = 9704,
-        PLUCKING = 9705,
-        RELAY_9706 = 9706,
-        FAVOURITISM_9707 = 9707,
-        REPLACEMENT = 9708,
-        TOAD_UNION = 9711,
-        ALBINO_TOFU_PECK_9712 = 9712,
-        GOBBLY_SPIT = 9713,
-        WHITE_DRAGOFIRE = 9714,
-        SIALOQUENTOAD = 9715,
-        TOXITOAD = 9716,
-        TOAD_SLOBBER_9717 = 9717,
-        WHIRLWIND = 9718,
-        FIRE_MANIFESTATION_9720 = 9720,
-        FIRE_MANIFESTATION_9721 = 9721,
-        WATER_MANIFESTATION_9722 = 9722,
-        WATER_MANIFESTATION_9723 = 9723,
-        EARTH_MANIFESTATION_9724 = 9724,
-        EARTH_MANIFESTATION_9725 = 9725,
-        MANIFESTATION_9726 = 9726,
-        MORPH_9727 = 9727,
-        TOADED = 9728,
-        CALCANEUS_9729 = 9729,
-        STRIPPING = 9730,
-        WOOF_9731 = 9731,
-        MUZZLE_9732 = 9732,
-        BEATEN_9733 = 9733,
-        PURSUIT_9734 = 9734,
-        AMAROK_9735 = 9735,
-        HANGOVER_9739 = 9739,
-        BLOW_OUT = 9740,
-        BURNING_CIRCLE = 9741,
-        CONSOLATION = 9742,
-        NUMBNESS = 9743,
-        BRANDY = 9744,
-        LIQUEUR = 9745,
-        CHAMRAK_9746 = 9746,
-        WATERFALL_9747 = 9747,
-        POISONED_UNDERGROWTH_9748 = 9748,
-        LEAFY_TREE = 9749,
-        THE_BLOCK_9750 = 9750,
-        PROXIMITY_POISON_9751 = 9751,
-        RISE_OF_SAP = 9752,
-        MADOLL = 9753,
-        REPOTTING_9754 = 9754,
-        VEGETAL_INFLUENCE = 9755,
-        SACRIFICIAL_DOLL = 9756,
-        SHERPA_9757 = 9757,
-        SHAKE_9758 = 9758,
-        INOCULATION_9759 = 9759,
-        FORCE_OF_NATURE_9760 = 9760,
-        BANE_9761 = 9761,
-        VEGETAL_ALTRUISM_9762 = 9762,
-        INFLATABLE = 9763,
-        SHERPA_9764 = 9764,
-        PLAGUING_BRAMBLE_9765 = 9765,
-        CONTAGION_9766 = 9766,
-        VOODOO_CURSE_9767 = 9767,
-        PARALYSING_BRAMBLE_9768 = 9768,
-        ULTRA_POWERFUL = 9769,
-        HARMONY_9770 = 9770,
-        NAUSEA = 9771,
-        DISTILLATION = 9772,
-        BREWING = 9773,
-        PROHIBITION = 9774,
-        HOOCH = 9775,
-        FERMENTATION = 9776,
-        ABSINTHE = 9777,
-        FILTHIPINT_9778 = 9778,
-        STRETCHER_9779 = 9779,
-        STRETCHER_9780 = 9780,
-        BAMBOO = 9781,
-        BAMBOO_CLIMBING = 9782,
-        INEBRIATION = 9783,
-        POURING = 9784,
-        JAW_9785 = 9785,
-        FEROCITY = 9786,
-        PROXIMITY_POISON_9787 = 9787,
-        REPOTTING_9788 = 9788,
-        SHAKE = 9789,
-        INOCULATION_9790 = 9790,
-        FORCE_OF_NATURE_9791 = 9791,
-        VEGETAL_ALTRUISM_9792 = 9792,
-        MIST_9793 = 9793,
-        PERFIDIOUS_TRAP_9794 = 9794,
-        PITFALL = 9795,
+
+        PROFONDEURS_MARINES_9459 = 9459,
+
+        PIQUANTS_9460 = 9460,
+
+        MORLUSQUE_9461 = 9461,
+
+        HYDRAIRE_9462 = 9462,
+
+        NAGELLAN_9463 = 9463,
+
+        PUTREFACTION_MARINE_9464 = 9464,
+
+        COUP_DE_PINCE_9465 = 9465,
+
+        VAPEUR_9466 = 9466,
+
+        _9489 = 9489,
+
+        FIOLIE_9491 = 9491,
+
+        MINIRUPTION_9497 = 9497,
+
+        NUAGE_DE_SOUFRE_9498 = 9498,
+
+        DURCISSEMENT_ROCHEUX_9499 = 9499,
+
+        DISSIPEAUTION_9500 = 9500,
+
+        ONDE_AQUATIQUE_9501 = 9501,
+
+        INTOXICATION_MARINE_9502 = 9502,
+
+        EOZOMB_9503 = 9503,
+
+        ASSAUT_HARCELANT_9504 = 9504,
+
+        GRAVITE_ECRASANTE_9505 = 9505,
+
+        VISION_OPTIQUE_9506 = 9506,
+
+        PADECEDE_9509 = 9509,
+
+        CONTRAT_INDICIBLE_9542 = 9542,
+
+        CONTRAT_INDICIBLE_9543 = 9543,
+
+        PANTANG_9544 = 9544,
+
+        VINDICTE_9545 = 9545,
+
+        VINDICTE_9546 = 9546,
+
+        VINDICTE_9547 = 9547,
+
+        VINDICTE_9548 = 9548,
+
+        OFFRANDE_MONOLITHIQUE_9552 = 9552,
+
+        OFFRANDE_MONOLITHIQUE_9553 = 9553,
+
+        OFFRANDE_MONOLITHIQUE_9554 = 9554,
+
+        ETOILE_DE_MER_9555 = 9555,
+
+        ENTRAVE_TENTACULAIRE_9558 = 9558,
+
+        HIEROGLYPHES_9559 = 9559,
+
+        HIEROGLYPHES_9560 = 9560,
+
+        HIEROGLYPHES_9561 = 9561,
+
+        PRESENCE_EFFRAYANTE_9566 = 9566,
+
+        SOUFFLE_CHAUD_9568 = 9568,
+
+        CHARGE_AQUATIQUE_9570 = 9570,
+
+        INSOUMISSION_9571 = 9571,
+
+        _9572 = 9572,
+
+        EVAPORATION_9574 = 9574,
+
+        _9577 = 9577,
+
+        _9578 = 9578,
+
+        _9579 = 9579,
+
+        _9580 = 9580,
+
+        _9581 = 9581,
+
+        _9582 = 9582,
+
+        _9583 = 9583,
+
+        _9584 = 9584,
+
+        _9585 = 9585,
+
+        _9586 = 9586,
+
+        _9587 = 9587,
+
+        _9588 = 9588,
+
+        _9589 = 9589,
+
+        _9590 = 9590,
+
+        _9591 = 9591,
+
+        _9592 = 9592,
+
+        _9593 = 9593,
+
+        _9594 = 9594,
+
+        _9595 = 9595,
+
+        _9596 = 9596,
+
+        _9597 = 9597,
+
+        _9616 = 9616,
+
+        _9617 = 9617,
+
+        _9618 = 9618,
+
+        _9619 = 9619,
+
+        _9620 = 9620,
+
+        _9621 = 9621,
+
+        _9623 = 9623,
+
+        _9626 = 9626,
+
+        _9627 = 9627,
+
+        _9628 = 9628,
+
+        _9629 = 9629,
+
+        _9630 = 9630,
+
+        _9631 = 9631,
+
+        _9632 = 9632,
+
+        _9633 = 9633,
+
+        _9634 = 9634,
+
+        _9635 = 9635,
+
+        _9636 = 9636,
+
+        _9637 = 9637,
+
+        _9639 = 9639,
+
+        _9640 = 9640,
+
+        _9641 = 9641,
+
+        _9642 = 9642,
+
+        _9643 = 9643,
+
+        _9644 = 9644,
+
+        _9645 = 9645,
+
+        _9646 = 9646,
+
+        _9647 = 9647,
+
+        _9648 = 9648,
+
+        _9650 = 9650,
+
+        _9651 = 9651,
+
+        _9652 = 9652,
+
+        _9653 = 9653,
+
+        _9654 = 9654,
+
+        _9655 = 9655,
+
+        _9656 = 9656,
+
+        _9657 = 9657,
+
+        _9658 = 9658,
+
+        _9659 = 9659,
+
+        _9660 = 9660,
+
+        _9661 = 9661,
+
+        _9662 = 9662,
+
+        _9663 = 9663,
+
+        _9664 = 9664,
+
+        _9665 = 9665,
+
+        _9666 = 9666,
+
+        _9667 = 9667,
+
+        _9668 = 9668,
+
+        _9669 = 9669,
+
+        _9670 = 9670,
+
+        _9671 = 9671,
+
+        _9672 = 9672,
+
+        _9673 = 9673,
+
+        _9674 = 9674,
+
+        _9675 = 9675,
+
+        _9676 = 9676,
+
+        _9679 = 9679,
+
+        _9680 = 9680,
+
+        _9681 = 9681,
+
+        _9682 = 9682,
+
+        _9688 = 9688,
+
+        _9705 = 9705,
+
+        _9706 = 9706,
+
+        _9707 = 9707,
+
+        _9708 = 9708,
+
+        _9711 = 9711,
+
+        _9712 = 9712,
+
+        _9713 = 9713,
+
+        _9714 = 9714,
+
+        _9715 = 9715,
+
+        _9716 = 9716,
+
+        _9717 = 9717,
+
+        _9718 = 9718,
+
+        _9720 = 9720,
+
+        _9721 = 9721,
+
+        _9722 = 9722,
+
+        _9723 = 9723,
+
+        _9724 = 9724,
+
+        _9725 = 9725,
+
+        _9726 = 9726,
+
+        _9727 = 9727,
+
+        _9728 = 9728,
+
+        BRUME_9793 = 9793,
+
+        PIEGE_PERFIDE_9794 = 9794,
+
+        CHAUSSE_TRAPPE_9795 = 9795,
+
         TOXINES_9796 = 9796,
-        RAIDING_9797 = 9797,
-        CUT_THROAT = 9798,
-        PLOTTER = 9799,
-        LARCENY_9800 = 9800,
-        TRAPSTER_9801 = 9801,
-        AMBUSH_9802 = 9802,
-        TOXIC_INJECTION_9803 = 9803,
-        FRAGMENTATION_TRAP_9804 = 9804,
-        PLAGUING_BRAMBLE_9805 = 9805,
-        DRIFT_TRAP_9806 = 9806,
-        EPIDEMIC_9807 = 9807,
-        REPELLING_TRAP_9808 = 9808,
-        CONTEMPT_9809 = 9809,
-        PROXIMITY_TRAP_9810 = 9810,
+
+        PILLAGE_9797 = 9797,
+
+        COUPE_GORGE_9798 = 9798,
+
+        COMPLOTEUR_9799 = 9799,
+
+        LARCIN_9800 = 9800,
+
+        TRAQUENARD_9801 = 9801,
+
+        GUET_APENS_9802 = 9802,
+
+        INJECTION_TOXIQUE_9803 = 9803,
+
+        PIEGE_A_FRAGMENTATION_9804 = 9804,
+
+        PIEGE_DE_DERIVE_9806 = 9806,
+
+        EPIDEMIE_9807 = 9807,
+
+        PIEGE_REPOUSSANT_9808 = 9808,
+
+        MEPRISE_9809 = 9809,
+
+        PIEGE_DE_PROXIMITE_9810 = 9810,
+
         PERQUISITION_9811 = 9811,
-        MALEVOLENT_TRAP_9812 = 9812,
-        PERFIDY = 9813,
-        CALAMITY_9814 = 9814,
-        CONTAGION_9815 = 9815,
-        INFECTIOUS_CONTAGION = 9816,
-        PARALYSING_BRAMBLE_9817 = 9817,
-        BARRIER_9818 = 9818,
-        SYLVAN_SHACKLE_9819 = 9819,
-        SYLVAN_ATTRACTION = 9820,
-        AFFECTION_9821 = 9821,
-        MIST_9822 = 9822,
-        PERFIDIOUS_TRAP_9823 = 9823,
-        AMBUSH_9824 = 9824,
-        FRAGMENTATION_TRAP_9825 = 9825,
-        DRIFT_TRAP_9826 = 9826,
-        EPIDEMIC_9827 = 9827,
-        REPELLING_TRAP_9828 = 9828,
-        CONTEMPT = 9829,
-        PROXIMITY_TRAP_9830 = 9830,
+
+        PIEGE_FUNESTE_9812 = 9812,
+
+        PERFIDIE_9813 = 9813,
+
+        CALAMITE_9814 = 9814,
+
+        BRUME_9822 = 9822,
+
+        PIEGE_PERFIDE_9823 = 9823,
+
+        GUET_APENS_9824 = 9824,
+
+        PIEGE_A_FRAGMENTATION_9825 = 9825,
+
+        PIEGE_DE_DERIVE_9826 = 9826,
+
+        EPIDEMIE_9827 = 9827,
+
+        PIEGE_REPOUSSANT_9828 = 9828,
+
+        MEPRISE_9829 = 9829,
+
+        PIEGE_DE_PROXIMITE_9830 = 9830,
+
         PERQUISITION_9831 = 9831,
-        RAIDING_9832 = 9832,
-        MALEVOLENT_TRAP_9833 = 9833,
-        CALAMITY = 9834,
-        EXPLOSION_OF_THE_DOUBLE = 9835,
-        ACCUMULATION_9836 = 9836,
-        ACCUMULATION = 9837,
-        AGITATION_9838 = 9838,
-        FIT_OF_RAGE_9839 = 9839,
-        FIT_OF_RAGE = 9840,
-        RUNIC_REPULSION_9841 = 9841,
-        FIGHT_BACK = 9842,
-        WATERFALL_9843 = 9843,
+
+        PILLAGE_9832 = 9832,
+
+        PIEGE_FUNESTE_9833 = 9833,
+
+        CALAMITE_9834 = 9834,
+
+        EXPLOSION_DU_DOUBLE_9835 = 9835,
+
+        _9836 = 9836,
+
+        _9837 = 9837,
+
+        _9838 = 9838,
+
+        _9839 = 9839,
+
+        _9840 = 9840,
+
+        _9841 = 9841,
+
+        _9842 = 9842,
+
         TOXINES_9844 = 9844,
-        PLOT = 9845,
-        TRAPS_9846 = 9846,
-        TRAPS_9847 = 9847,
-        BANE_INFECTION = 9848,
-        POISONED_UNDERGROWTH_9849 = 9849,
-        FORCE_OF_NATURE_INFECTION = 9850,
-        VOODOO_CURSE_9851 = 9851,
-        MOORING = 9852,
-        SCUTTLE = 9853,
-        TRAWLER = 9854,
-        TRANSITION = 9855,
-        HARMATTAN = 9856,
-        ASSISTANCE_9857 = 9857,
-        ARMOUR_PLATING_9858 = 9858,
-        DRILL = 9859,
-        TORPEDO = 9860,
-        CORROSION_9861 = 9861,
-        VALVE_9862 = 9862,
-        HYPERTENSION = 9863,
-        BATHYSCAPHE = 9864,
-        PERISCOPE = 9865,
-        RESCUE_9866 = 9866,
-        SHORT_CIRCUIT_9867 = 9867,
-        SONAR_9868 = 9868,
-        NAUTILUS = 9869,
-        SEIZING = 9870,
-        RECURSIVENESS_9871 = 9871,
-        COMPASS_9872 = 9872,
-        ASSISTANCE_9873 = 9873,
-        GERARD_S_BAIT = 9874,
-        SHORT_CIRCUIT_9875 = 9875,
-        SONAR_9876 = 9876,
-        RECURSIVENESS_9877 = 9877,
-        COMPASS_9878 = 9878,
-        TRAWLING = 9879,
-        DOUBLE_GERMAN_9880 = 9880,
-        DOUBLE_GERMAN_9881 = 9881,
-        DRILLING_9882 = 9882,
-        EXCAVATION_9883 = 9883,
-        EXCAVATION_9884 = 9884,
-        DIVING_SUIT = 9885,
-        DECOMPRESSION_9886 = 9886,
-        DECOMPRESSION = 9887,
-        SOUVENIR = 9888,
-        SPONTANEOUS_RETURN = 9889,
-        COG = 9890,
-        DRYING_UP_9891 = 9891,
-        REFLECT = 9892,
-        SHADOWY_BEAM_9893 = 9893,
-        ACCOMPLICE = 9894,
-        DISRUPTION = 9895,
-        TEMPORAL_DISTORTION = 9896,
-        PETRIFICATION_9897 = 9897,
-        CONSERVATION_9898 = 9898,
-        TEMPORAL_SUSPENSION = 9899,
-        PREMONITION_9900 = 9900,
-        PENDULUM_9901 = 9901,
-        TIME_RIFT_9902 = 9902,
-        DESYNCHRONISATION_9903 = 9903,
-        TEMPORAL_OOP_SHIELD_9904 = 9904,
-        WATER_CLOCK_9905 = 9905,
-        GEAR = 9906,
-        KNELL_9907 = 9907,
-        TEMPORAL_INSTABILITY_9908 = 9908,
-        DRYING_UP_9909 = 9909,
-        SHADOWY_BEAM_9910 = 9910,
-        PETRIFICATION_9911 = 9911,
-        PENDULUM = 9912,
-        CAST_PENDULUM_02 = 9913,
-        TIME_RIFT_9914 = 9914,
-        TIME_RIFT = 9915,
-        DESYNCHRONISATION_9916 = 9916,
-        TEMPORAL_OOP_SHIELD_9917 = 9917,
-        WATER_CLOCK = 9918,
-        TEMPORAL_INSTABILITY_9919 = 9919,
-        POLTROON_MASK_9920 = 9920,
-        AGULAR = 9921,
-        PARAFUSO = 9922,
-        TIRELESS_MASK = 9923,
-        PIVOT = 9924,
-        ARMADUR = 9925,
-        SCUDO = 9926,
-        ESTRELIA = 9927,
-        HYSTERICAL_MASK_9928 = 9928,
-        CAVALCADE = 9929,
-        ATABAK = 9930,
-        GINGA = 9931,
-        COMEDY = 9932,
-        BOCCIARA = 9933,
-        CATALEPSY = 9934,
-        APOSTASY = 9935,
-        PONTEIRA = 9936,
-        INFERNO_9937 = 9937,
-        GRIMACE_9938 = 9938,
-        BRINCADERIA = 9939,
-        NEUROSIS = 9940,
-        DECADENCE_9941 = 9941,
-        GRIMACE_9942 = 9942,
-        SUFFERING_EVOLUTION = 9943,
-        BLOODTHIRSTY_9944 = 9944,
-        BLOODTHIRSTY = 9945,
-        ROBUST_9946 = 9946,
-        ROBUST = 9947,
-        FURY = 9948,
-        TOXIC_INJECTION_9952 = 9952,
-        CONSERVATION_9953 = 9953,
-        PREMONITION_9954 = 9954,
-        KNELL_9955 = 9955,
-        LIGHT_SPEED = 9956,
-        TORTURE = 9957,
-        PROJECTION = 9958,
-        NERVOUSNESS = 9959,
-        STASE = 9960,
-        INFLUX = 9961,
-        MAGIC_POTION = 9962,
-        MOTIVATING_PAIN = 9963,
-        DECIMATION = 9964,
-        BLOOD_BATH_9965 = 9965,
-        ASSAULT_9966 = 9966,
-        ABSORPTION_9967 = 9967,
-        ATTRACTION_9968 = 9968,
-        TRANSPOSITION_9969 = 9969,
-        MUTILATION = 9970,
-        LIFE_TRANSFER_9971 = 9971,
-        SACRIFICE_9972 = 9972,
-        CONVALESCENCE_9973 = 9973,
-        LARD_LEAP = 9974,
-        RETRIBUTION = 9975,
-        EVASION_9976 = 9976,
-        BERSERK_9977 = 9977,
-        FLYING_SWORD_9978 = 9978,
-        SOLAR_IS_RIGHT = 9979,
-        ADORA = 9980,
-        SUN_DANCE_9981 = 9981,
-        SUN_DANCE_9984 = 9984,
-        CHARRED_PALM = 9987,
-        CONDENSATION_9988 = 9988,
-        RAVAGES_9989 = 9989,
-        CAUTERISATION_9990 = 9990,
-        RITUAL_BLOODLETTING = 9991,
-        AVERSION = 9992,
-        SLAUGHTER_9993 = 9993,
-        GASH_9994 = 9994,
-        CARNAGE_9995 = 9995,
-        DESOLATION_9996 = 9996,
-        RIPOSTE_9997 = 9997,
-        CLOBBERING = 9998,
-        HOSTILITY_9999 = 9999,
-        DISSOLUTION_10000 = 10000,
-        PERFUSION_10001 = 10001,
-        COAGULATION_10002 = 10002,
-        PUNISHMENT_10003 = 10003,
-        BLOODTHIRSTY_MADNESS_10004 = 10004,
-        BLOOD_PACT_10005 = 10005,
-        FLUCTUATION = 10006,
-        PENITENCE_10007 = 10007,
-        SWIFT_SWORD = 10008,
-        SOLAR_ASSAULT = 10010,
-        LASSOLAR = 10011,
-        MAGMATTACK = 10012,
-        SLAUGHTER = 10013,
-        PERFUSION = 10014,
-        BLOOD_PACT_10015 = 10015,
-        PENITENCE = 10016,
-        RIPOSTE = 10017,
-        OBLITERATION_10018 = 10018,
-        FUZE_10019 = 10019,
-        LATENT_EXPLOBOMB = 10020,
-        RUSE = 10021,
-        MUSKET = 10022,
-        LATENT_GRENADO = 10023,
-        CADENCE_10024 = 10024,
-        STRATEGY = 10025,
-        STOLEN_GOODS = 10026,
-        LATENT_WATER_BOMB = 10027,
-        GLUING_EXPLOBOMB_10028 = 10028,
-        CROSSING = 10029,
-        ARQUEBUS = 10031,
-        MACHINE_GUN = 10032,
-        MAGNETIC_TRAP_10033 = 10033,
-        MAGNETIC_TRAP_10034 = 10034,
-        LATENT_SEISMOBOMB = 10035,
-        WALKING_BOMB = 10036,
-        WEIGH_DOWN_10037 = 10037,
-        IMPOSTURE_10038 = 10038,
-        MEGABOMB = 10039,
-        SEISMOBOMB = 10041,
-        LATENT_BOMBS_RUNE = 10042,
-        MIMESIS_10043 = 10043,
-        MIMESIS_10044 = 10044,
-        MIMESIS = 10045,
-        EXPLOSIVE_ABSORPTION_10046 = 10046,
-        EXPLOSIVE_ABSORPTION_10047 = 10047,
-        MEGATTACK = 10048,
-        MEGABOOM_10049 = 10049,
-        MEGABOOM_10050 = 10050,
-        VOODOO_CURSE_10051 = 10051,
-        VOODOO_CURSE_10052 = 10052,
-        HARMONY_10053 = 10053,
-        HUNT_10054 = 10054,
-        GNAW_10055 = 10055,
-        QUAIL_CALL = 10056,
-        VERIUN_DEAD_VEIL = 10057,
-        MAGYPUS_TORPOR_10058 = 10058,
-        LOST_LOVE = 10059,
-        PETRIFIED_HEART = 10060,
-        VOLATILE_INFLAMMATION = 10061,
-        LEAPING_DISAPPEARANCE = 10062,
-        MAGYPUS_TORPOR_10063 = 10063,
-        EARTH_WALL = 10064,
-        ROGUISH_AVALANCHECHAIN_ = 10065,
-        ROGUISH_AVALANCHETARGET_ = 10066,
-        ROGUISH_AVALANCHE = 10067,
-        CADENCE_10068 = 10068,
-        KAMEGAMIKAZE = 10069,
-        VERIUN_DEAD_PLANT = 10070,
-        SOLAR_HEAL = 10071,
-        GLUING_EXPLOBOMB_10072 = 10072,
-        SUN_CREAM = 10073,
-        BACK_TO_EARTH = 10074,
-        PUTRID_WATER = 10075,
-        PUSH_UP_THE_DAISIES = 10076,
-        CREST = 10077,
-        LIQUID_BODY = 10078,
-        STILL_WATER = 10079,
-        PYROZOMBIGNEOUS = 10080,
-        FURY_MASK = 10081,
-        BOOMA = 10082,
-        BOOMBOOMA = 10083,
-        DRILLING_10084 = 10084,
-        DRILLING_10085 = 10085,
-        DRILLING_10086 = 10086,
-        DRILLING_10087 = 10087,
-        TOAD_FUSION = 10088,
-        KARCHAMRAK_10089 = 10089,
-        ECAFLIP_10090 = 10090,
-        WEIGH_DOWN_10091 = 10091,
-        PERCEPTION = 10092,
-        ROULETTE = 10093,
-        ANCESTRAL_CALL = 10094,
-        PARASITE_10095 = 10095,
-        TREE_OF_LIFE = 10096,
-        XELOR_S_SANDGLASS = 10097,
-        TEMPORAL_DUST = 10098,
-        BAMBOO_SHERPA = 10099,
-        DRAGON_HEART_10100 = 10100,
-        CONDENSATION_10101 = 10101,
-        HYSTERICAL_MASK_10102 = 10102,
-        BIG_HARPOON = 10103,
-        CINETOK = 10104,
-        HP_BOOST = 10105,
-        TELEFRAG_10106 = 10106,
-        TELEFRAG_10107 = 10107,
-        TELEFRAG_10108 = 10108,
-        TELEFRAG_10109 = 10109,
-        TELEFRAG_10110 = 10110,
-        MORTAL_SACRIFICE = 10111,
-        WAVE_CALL = 10112,
-        SUFFERING_OF_THE_DROWNED = 10113,
-        GANG_GATHERING_10115 = 10115,
-        GANG_GATHERING_10116 = 10116,
-        FULMINATING_ARROW = 10117,
-        RUSHU = 10118,
+
+        COMPLOT_9845 = 9845,
+
+        PIEGES_9846 = 9846,
+
+        PIEGES_9847 = 9847,
+
+        _9852 = 9852,
+
+        _9853 = 9853,
+
+        _9854 = 9854,
+
+        _9855 = 9855,
+
+        _9856 = 9856,
+
+        _9857 = 9857,
+
+        _9858 = 9858,
+
+        _9859 = 9859,
+
+        _9860 = 9860,
+
+        _9861 = 9861,
+
+        _9862 = 9862,
+
+        _9863 = 9863,
+
+        _9864 = 9864,
+
+        _9865 = 9865,
+
+        _9866 = 9866,
+
+        _9867 = 9867,
+
+        _9868 = 9868,
+
+        _9869 = 9869,
+
+        _9870 = 9870,
+
+        _9871 = 9871,
+
+        _9872 = 9872,
+
+        _9873 = 9873,
+
+        APPAT_DE_GERARD_9874 = 9874,
+
+        _9875 = 9875,
+
+        _9876 = 9876,
+
+        _9877 = 9877,
+
+        _9878 = 9878,
+
+        _9879 = 9879,
+
+        _9880 = 9880,
+
+        _9881 = 9881,
+
+        _9882 = 9882,
+
+        _9883 = 9883,
+
+        _9884 = 9884,
+
+        _9885 = 9885,
+
+        _9886 = 9886,
+
+        _9887 = 9887,
+
+        _9888 = 9888,
+
+        _9889 = 9889,
+
+        _9890 = 9890,
+
+        _9891 = 9891,
+
+        _9892 = 9892,
+
+        _9893 = 9893,
+
+        _9894 = 9894,
+
+        _9895 = 9895,
+
+        _9896 = 9896,
+
+        _9897 = 9897,
+
+        _9898 = 9898,
+
+        _9899 = 9899,
+
+        _9900 = 9900,
+
+        _9901 = 9901,
+
+        _9902 = 9902,
+
+        _9903 = 9903,
+
+        _9904 = 9904,
+
+        _9905 = 9905,
+
+        _9906 = 9906,
+
+        _9907 = 9907,
+
+        _9908 = 9908,
+
+        _9909 = 9909,
+
+        _9910 = 9910,
+
+        _9911 = 9911,
+
+        _9912 = 9912,
+
+        _9913 = 9913,
+
+        _9914 = 9914,
+
+        _9915 = 9915,
+
+        _9916 = 9916,
+
+        _9917 = 9917,
+
+        _9918 = 9918,
+
+        _9919 = 9919,
+
+        _9920 = 9920,
+
+        _9921 = 9921,
+
+        _9922 = 9922,
+
+        _9923 = 9923,
+
+        _9924 = 9924,
+
+        _9925 = 9925,
+
+        _9926 = 9926,
+
+        _9927 = 9927,
+
+        _9928 = 9928,
+
+        _9929 = 9929,
+
+        _9930 = 9930,
+
+        _9931 = 9931,
+
+        _9932 = 9932,
+
+        _9933 = 9933,
+
+        _9934 = 9934,
+
+        _9935 = 9935,
+
+        _9936 = 9936,
+
+        _9937 = 9937,
+
+        _9938 = 9938,
+
+        _9939 = 9939,
+
+        _9940 = 9940,
+
+        _9942 = 9942,
+
+        _9943 = 9943,
+
+        _9944 = 9944,
+
+        _9945 = 9945,
+
+        _9946 = 9946,
+
+        _9947 = 9947,
+
+        _9948 = 9948,
+
+        INJECTION_TOXIQUE_9952 = 9952,
+
+        _9953 = 9953,
+
+        _9954 = 9954,
+
+        _9955 = 9955,
+
+        _9956 = 9956,
+
+        _9957 = 9957,
+
+        _9958 = 9958,
+
+        _9959 = 9959,
+
+        _9960 = 9960,
+
+        _9961 = 9961,
+
+        _9963 = 9963,
+
+        _9964 = 9964,
+
+        _9965 = 9965,
+
+        _9966 = 9966,
+
+        _9967 = 9967,
+
+        _9968 = 9968,
+
+        _9969 = 9969,
+
+        _9970 = 9970,
+
+        _9971 = 9971,
+
+        _9972 = 9972,
+
+        _9973 = 9973,
+
+        SAUT_LARD_9974 = 9974,
+
+        _9975 = 9975,
+
+        _9976 = 9976,
+
+        _9977 = 9977,
+
+        _9978 = 9978,
+
+        SOLAR_A_RAISON__9979 = 9979,
+
+        ADORA_9980 = 9980,
+
+        DANSE_DU_SOLEIL_9981 = 9981,
+
+        DANSE_DU_SOLEIL_9984 = 9984,
+
+        CALCIPAUME_9987 = 9987,
+
+        _9988 = 9988,
+
+        _9989 = 9989,
+
+        _9990 = 9990,
+
+        _9991 = 9991,
+
+        _9992 = 9992,
+
+        _9993 = 9993,
+
+        _9994 = 9994,
+
+        _9995 = 9995,
+
+        _9996 = 9996,
+
+        _9997 = 9997,
+
+        _9998 = 9998,
+
+        _9999 = 9999,
+
+        _10000 = 10000,
+
+        _10001 = 10001,
+
+        _10002 = 10002,
+
+        _10003 = 10003,
+
+        _10004 = 10004,
+
+        _10005 = 10005,
+
+        _10006 = 10006,
+
+        _10007 = 10007,
+
+        _10008 = 10008,
+
+        ASSAUT_LARD_10010 = 10010,
+
+        LASSO_LARD_10011 = 10011,
+
+        MAGMATAK_10012 = 10012,
+
+        _10013 = 10013,
+
+        _10014 = 10014,
+
+        _10015 = 10015,
+
+        _10016 = 10016,
+
+        _10017 = 10017,
+
+        _10018 = 10018,
+
+        _10019 = 10019,
+
+        _10020 = 10020,
+
+        _10021 = 10021,
+
+        _10022 = 10022,
+
+        _10023 = 10023,
+
+        _10024 = 10024,
+
+        _10025 = 10025,
+
+        _10026 = 10026,
+
+        _10027 = 10027,
+
+        _10028 = 10028,
+
+        _10029 = 10029,
+
+        _10030 = 10030,
+
+        _10031 = 10031,
+
+        _10032 = 10032,
+
+        _10033 = 10033,
+
+        _10034 = 10034,
+
+        _10035 = 10035,
+
+        _10036 = 10036,
+
+        _10037 = 10037,
+
+        _10038 = 10038,
+
+        _10039 = 10039,
+
+        _10041 = 10041,
+
+        _10042 = 10042,
+
+        _10043 = 10043,
+
+        _10044 = 10044,
+
+        _10045 = 10045,
+
+        _10046 = 10046,
+
+        _10047 = 10047,
+
+        _10048 = 10048,
+
+        _10049 = 10049,
+
+        _10050 = 10050,
+
+        COURCAILLET_10056 = 10056,
+
+        VOILE_DU_TREPAMORT_10057 = 10057,
+
+        TORPEUR_DU_MAGYPUS_10058 = 10058,
+
+        AMOUR_PERDU_10059 = 10059,
+
+        CŒUR_PETRIFIE_10060 = 10060,
+
+        INFLAMMATION_VOLATILE_10061 = 10061,
+
+        DISPARITION_BONDISSANTE_10062 = 10062,
+
+        TORPEUR_DU_MAGYPUS_10063 = 10063,
+
+        _10064 = 10064,
+
+        _10065 = 10065,
+
+        _10066 = 10066,
+
+        _10067 = 10067,
+
+        _10068 = 10068,
+
+        _10069 = 10069,
+
+        PLANTE_TREPAMORTE_10070 = 10070,
+
+        SOIN_SOLAIRE_10071 = 10071,
+
+        _10072 = 10072,
+
+        CREME_SOLAIRE_10073 = 10073,
+
+        RETOUR_A_LA_TERRE_10074 = 10074,
+
+        EAU_PUTRIDE_10075 = 10075,
+
+        PAR_LA_RACINE_10076 = 10076,
+
+        AIGRETTE_10077 = 10077,
+
+        CORPS_LIQUIDE_10078 = 10078,
+
+        EAU_PLATE_10079 = 10079,
+
+        PYROZOMBIGNE_10080 = 10080,
+
+        MASQUE_DU_FURIEUX_10081 = 10081,
+
+        _10082 = 10082,
+
+        _10083 = 10083,
+
+        _10084 = 10084,
+
+        _10085 = 10085,
+
+        _10086 = 10086,
+
+        _10087 = 10087,
+
+        _10088 = 10088,
+
+        _10091 = 10091,
+
+        APPEL_ANCESTRAL_10094 = 10094,
+
+        _10095 = 10095,
+
+        _10097 = 10097,
+
+        _10098 = 10098,
+
+        _10100 = 10100,
+
+        _10101 = 10101,
+
+        _10102 = 10102,
+
+        GROS_HARPON_10103 = 10103,
+
+        CINETOK_10104 = 10104,
+
+        GAIN_DE_VIE_10105 = 10105,
+
+        _10106 = 10106,
+
+        _10107 = 10107,
+
+        _10108 = 10108,
+
+        _10109 = 10109,
+
+        _10110 = 10110,
+
+        SACRIFICE_MORTEL_10111 = 10111,
+
+        APPEL_DE_LA_VAGUE_10112 = 10112,
+
+        SOUFFRANCE_DU_NOYE_10113 = 10113,
+
+        RASSEMBLEMENT_DU_GANG_10115 = 10115,
+
+        RASSEMBLEMENT_DU_GANG_10116 = 10116,
+
+        RUSHU_10118 = 10118,
+
         ECAFLIP_10119 = 10119,
-        ENIRIPSA = 10120,
-        CRA = 10121,
-        FECA = 10122,
-        SACRIER = 10123,
-        SADIDA = 10124,
-        OSAMODAS = 10125,
-        ENUTROF = 10126,
-        SRAM = 10127,
-        XELOR = 10128,
-        PANDAWA = 10129,
-        ADVANCED_TURRET = 10130,
-        EMERGENCY_REPAIR = 10131,
-        AQUAZOMB = 10132,
-        CHARRING = 10133,
-        CHARRED_MAGMAXE = 10134,
-        CHARRED_BREATH = 10135,
-        CHARRED_SULPHISION = 10136,
-        EXPLOSIVE_TEMPER = 10137,
-        MIRY_TRAP_10138 = 10138,
-        TENTACLE_TERROR_10139 = 10139,
-        TENTACLE_TERROR_10140 = 10140,
-        EXPLOSIVE_ARROW = 10141,
-        SLOW_DOWN_ARROW = 10142,
-        UNHEALTHY_PULSATION_10143 = 10143,
-        ANIMAL_COMMUNION_10144 = 10144,
-        DEADLY_SECRETION = 10145,
-        PANIC_ATTACK = 10146,
-        MICROCELLULAR_DIFFUSION = 10147,
-        BREAKNECK_SPEED = 10148,
-        CONFLAVAGRATE = 10149,
-        MAGMAGIC_10150 = 10150,
-        MAGMAGIC_10151 = 10151,
-        MAGMAGIC_10152 = 10152,
-        INFERNAL_PROLIFERATION = 10153,
-        SHARP_REVENGE = 10154,
-        DEADLY_DAGGER = 10155,
-        REVELATION = 10156,
-        SHADOW_CONSOLATION = 10157,
-        MINDMUNCH = 10158,
-        PETRIFYING_SPITTLE = 10159,
-        TIDAL_REGENERATION = 10160,
-        WHIP_10161 = 10161,
-        SENTINEL_10162 = 10162,
-        INSTABILITY_TELEFRAG = 10163,
-        LAVASMITH_DOFUS = 10164,
-        HARD_WATER = 10165,
-        MEAN_BOW_WOW = 10166,
-        REPULSIVE_WAVE_10167 = 10167,
+
+        ENIRIPSA_10120 = 10120,
+
+        CRA_10121 = 10121,
+
+        FECA_10122 = 10122,
+
+        SACRIEUR_10123 = 10123,
+
+        SADIDA_10124 = 10124,
+
+        OSAMODAS_10125 = 10125,
+
+        ENUTROF_10126 = 10126,
+
+        SRAM_10127 = 10127,
+
+        XELOR_10128 = 10128,
+
+        PANDAWA_10129 = 10129,
+
+        TOURELLE_AVANCEE_10130 = 10130,
+
+        REPARATION_DURGENCE_10131 = 10131,
+
+        AQUAZOMB_10132 = 10132,
+
+        CALCINATION_10133 = 10133,
+
+        MAGMACHE_CALCINEE_10134 = 10134,
+
+        HALEINE_CALCINEE_10135 = 10135,
+
+        VISIOSOUFRE_CALCINE_10136 = 10136,
+
+        TEMPERAMENT_EXPLOSIF_10137 = 10137,
+
+        PIEGE_FANGEUX_10138 = 10138,
+
+        TERREUR_TENTACULAIRE_10139 = 10139,
+
+        TERREUR_TENTACULAIRE_10140 = 10140,
+
+        PULSATION_MALSAINE_10143 = 10143,
+
+        _10144 = 10144,
+
+        SECRETION_MORTELLE_10145 = 10145,
+
+        CRISE_DE_PANIQUE_10146 = 10146,
+
+        DIFFUSION_MICRO_CELLULAIRE_10147 = 10147,
+
+        A_TOUTE_VITESSE_10148 = 10148,
+
+        BRULAVE_10149 = 10149,
+
+        MAGMAGIQUE_10150 = 10150,
+
+        MAGMAGIQUE_10151 = 10151,
+
+        MAGMAGIQUE_10152 = 10152,
+
+        PROLIFERATION_INFERNALE_10153 = 10153,
+
+        VENGEANCE_AIGUISEE_10154 = 10154,
+
+        DAGUE_MORTELLE_10155 = 10155,
+
+        REVELATION_10156 = 10156,
+
+        CONSOLATION_DES_OMBRES_10157 = 10157,
+
+        MANGESPRIT_10158 = 10158,
+
+        CRACHAT_PETRIFIANT_10159 = 10159,
+
+        MAREGENERATION_10160 = 10160,
+
+        _10161 = 10161,
+
+        _10163 = 10163,
+
+        DOFUS_FORGELAVE_10164 = 10164,
+
+        EAU_DURE_10165 = 10165,
+
+        CHIENCHIEN_MECHANT_10166 = 10166,
+
+        VAGUE_REPULSIVE_10167 = 10167,
+
         TALION_10168 = 10168,
-        CATACUMBRA_CAMOUFLAGE_10169 = 10169,
-        TOXINISTROS_10170 = 10170,
-        KARCHAM = 10171,
-        CHAMRAK = 10172,
-        TELEFRAG = 10173,
-        WOODEN_SWORD_10174 = 10174,
-        LANCESTRAL = 10175,
-        ANCESTRAL_QUAKE = 10176,
-        EXCURSION_GLYPH = 10177,
-        TRAPS_10178 = 10178,
-        TRAPS_10179 = 10179,
-        TRAPS_10180 = 10180,
-        TRAPS_10181 = 10181,
-        DUEL = 10182,
-        COUNTDOWN = 10183,
-        WINK = 10184,
-        TEMPORAL_INSTABILITY_10186 = 10186,
-        VIRUS_10188 = 10188,
-        BAMBOO_MILK_10189 = 10189,
-        BOOZER = 10190,
-        BERSERK_10191 = 10191,
-        BLOODTHIRSTY_MADNESS = 10192,
-        CRUSHING_ARROW_10193 = 10193,
-        KARCHAMRAK_10194 = 10194,
-        CLAUDERISATION = 10197,
-        DISABLING_SPLUTTER = 10198,
-        PROTECTION_BUBBLE = 10199,
-        STICKY_SLOBBER = 10200,
-        DISSUASION = 10201,
-        BLINDING_SPLUTTER = 10202,
-        SPONGY_BODY = 10203,
-        WEAKENING_SLOBBER = 10204,
-        CAUTERISING_SPLUTTER = 10205,
-        JOEK = 10206,
-        ANTIKS = 10207,
-        PUFF_OF_AIR = 10208,
-        EARTHLY_SWIM = 10209,
-        RESISTIVITY = 10210,
-        BURNING_SAND = 10211,
-        SEA_SALT = 10212,
-        INFURIATING_WAVE = 10213,
-        POISONED_PETAL = 10214,
-        SPINY_ROSE = 10215,
-        PIVOTING_ROOT = 10216,
-        MANDIBLES = 10217,
-        SURROGATE_10218 = 10218,
-        PRECOCITY = 10219,
-        TOXIC_MANDIBLES = 10220,
-        SURROGATE_10221 = 10221,
-        SWISS_CHEESE = 10222,
-        LANCE_THROWING = 10223,
-        POISONED_AIR = 10224,
-        WOOLLY_DREADNAUT = 10225,
-        DE_ENTRAILING = 10226,
-        AGGRAVATED_FLAIR = 10227,
-        HIDE_AND_SEEK = 10228,
-        BLADDER_PIERCER = 10229,
-        FORCED_CHARGE = 10230,
-        WOBBLY_HAMMER = 10231,
-        WALL_OF_SPADES = 10232,
-        PEBBLE_THROWING = 10233,
-        PEBBLE_TRAP = 10234,
-        TIGHTENING_UP = 10235,
-        STEAM_TRAP = 10236,
-        PICKAXED = 10237,
-        FOOT_TRAP = 10238,
-        MOP = 10239,
-        DISINTERMENT = 10240,
-        BEWARE_OF_GLYPHS = 10241,
-        SOFTENING_HARDNESS = 10242,
-        SALTACELLO = 10243,
-        ABSCESS = 10244,
-        BLUBBLE = 10245,
-        SHELL_10246 = 10246,
-        SAND_SPIT = 10247,
-        GROUP_HEAL = 10248,
-        FUZE = 10249,
-        OBLITERATION_10250 = 10250,
-        FULMINATION_DUPLIQUE = 10251,
-        CONVALESCENCE_10252 = 10252,
-        KNELL = 10253,
-        SYLVAN_SHACKLE_10254 = 10254,
-        TELEPORTNOT = 10255,
-        MOGGYMORPHOSIS_10265 = 10265,
-        DUPLICATSION_10266 = 10266,
-        MOGGYMORPHOSIS_10267 = 10267,
-        MOGGYMORPHOSIS_10268 = 10268,
-        SILVER_DOFUS = 10269,
-        PECKING = 10270,
-        TOFOUTOFHERE = 10271,
-        STREAM_OF_HITS = 10272,
-        BAMBOOMMONS = 10273,
-        RAIDING = 10274,
-        PILLAGE_10275 = 10275,
-        PILFERING_10276 = 10276,
-        PROFANATION = 10277,
-        TOMB_OLAH = 10278,
-        RATATHROSK_S_BREATH = 10279,
-        DRAGON_S_TAIL = 10280,
-        HP_RENEWAL = 10281,
-        CLOVER_FAIRYWORK = 10282,
-        BWORK_REGENERATION = 10283,
-        BOW_WOW_BITE = 10284,
-        MURDEROUS_INSTINCT = 10285,
-        F_URSA = 10286,
-        THE_DIE_IS_CAST = 10287,
-        BEARMAN_CLAW = 10288,
-        BEAR_S_RAGE = 10289,
-        ARTAND_S_WRATH = 10290,
-        MURDEROUS_RUPTURE = 10291,
-        PROVOCATIVE_ROAR = 10292,
-        ARTAND_S_ROULETTE = 10293,
-        CARTRACTION = 10294,
-        EXPLOSPADE = 10295,
-        REVOLUTION_DANCE = 10296,
-        DISCO = 10297,
-        SKINNING = 10298,
-        BODY_PEELING = 10299,
-        SAFEKEEPING = 10300,
-        ASBLADESTOS = 10301,
-        FASCINATION_WITH_FIRE = 10302,
-        INCINERATION = 10303,
-        CUTTING_10304 = 10304,
-        TWO_IN_ONE = 10305,
-        PAIN_THEFT = 10306,
-        ANCESTRAL_LYMESWOLD = 10307,
-        ALBINO_TOFU_PECK_10308 = 10308,
-        CONFLAGRATION = 10309,
-        CRIMSON_SCALES = 10310,
-        ELECTRIC_CLAWS = 10311,
-        SNOOT_BOOP = 10312,
-        WHO_GOES_THERE = 10313,
-        GHOSTLY_BREATH = 10314,
-        KOMBAT_56 = 10315,
-        TAMER = 10316,
-        ABWAKWADABWA = 10317,
-        GARGLOHIC = 10318,
-        SACRED_HURT = 10319,
-        INSOLENT_LUCK = 10320,
-        RHINEETAPACE_10321 = 10321,
-        EVOLUTION_STATE_5 = 10322,
-        RHINEETAPACE_10323 = 10323,
-        RHINEETORPTION = 10324,
-        EVOLUTION_STATE_10 = 10325,
-        RHINEETAPACE_10326 = 10326,
-        RHINEETRACE = 10327,
-        RHINEETAPACE_10328 = 10328,
-        RHINEETAIN = 10329,
-        STUBBYGERNESS_10332 = 10332,
-        TRIPPLE_ATTACK = 10333,
-        YOBARMOUR = 10334,
-        YINFLUENCE_10335 = 10335,
-        STUBBYGERNESS_10336 = 10336,
-        SLINGSHOT_10337 = 10337,
-        YOBDURATE = 10338,
-        HORN_BUTT_10339 = 10339,
-        RAM_10340 = 10340,
-        STEAMAMMER_10341 = 10341,
-        YOBPULSION = 10342,
-        HASH = 10343,
-        YOBPLANTATION_10344 = 10344,
-        GIGANTIOSITY = 10345,
-        STUBBYGERNESS_10346 = 10346,
-        STUBBYGERNESS_10347 = 10347,
-        ROYAL_IMPALEMENT = 10348,
-        YOBFILTRATION = 10349,
-        YOBTREPIDITY = 10350,
-        RHINEETLE_CAPTURE = 10351,
-        RHINEETAPACE = 10352,
-        RHINARDOUR = 10353,
-        RHINANGER = 10354,
+
+        CAMOUFLAGE_DES_CATACOMBRES_10169 = 10169,
+
+        TOXINISTROSE_10170 = 10170,
+
+        _10173 = 10173,
+
+        EPEE_EN_BOIS_10174 = 10174,
+
+        LANCESTRAL_10175 = 10175,
+
+        SEISME_ANCESTRAL_10176 = 10176,
+
+        PIEGES_10178 = 10178,
+
+        PIEGES_10179 = 10179,
+
+        PIEGES_10180 = 10180,
+
+        PIEGES_10181 = 10181,
+
+        _10182 = 10182,
+
+        _10183 = 10183,
+
+        CLIGNEMENT_10184 = 10184,
+
+        _10186 = 10186,
+
+        _10188 = 10188,
+
+        _10191 = 10191,
+
+        _10192 = 10192,
+
+        _10195 = 10195,
+
+        _10196 = 10196,
+
+        CLAUDERISATION_10197 = 10197,
+
+        POSTILLON_HANDICAPANT_10198 = 10198,
+
+        BULLE_DE_PROTECTION_10199 = 10199,
+
+        BAVE_COLLANTE_10200 = 10200,
+
+        DISSUASION_10201 = 10201,
+
+        POSTILLON_AVEUGLANT_10202 = 10202,
+
+        CORPS_SPONGIEUX_10203 = 10203,
+
+        BAVE_AFFAIBLISSANTE_10204 = 10204,
+
+        POSTILLON_CAUTERISANT_10205 = 10205,
+
+        BLAG_10206 = 10206,
+
+        KLOUNERIE_10207 = 10207,
+
+        BOUFFEE_DAIR_10208 = 10208,
+
+        NAGE_TERRESTRE_10209 = 10209,
+
+        RESISTIVITE_10210 = 10210,
+
+        SABLE_BRULANT_10211 = 10211,
+
+        SEL_MARIN_10212 = 10212,
+
+        ONDE_ENRAGEANTE_10213 = 10213,
+
+        PETALE_EMPOISONNE_10214 = 10214,
+
+        ROSE_EPINEUSE_10215 = 10215,
+
+        RACINE_PIVOTANTE_10216 = 10216,
+
+        MANDIBULES_10217 = 10217,
+
+        MERE_PORTEUSE_10218 = 10218,
+
+        PRECOCITE_10219 = 10219,
+
+        MANDIBULES_TOXIQUES_10220 = 10220,
+
+        MERE_PORTEUSE_10221 = 10221,
+
+        TROU_DEMMENTAL_10222 = 10222,
+
+        LANCER_DE_LANCE_10223 = 10223,
+
+        AIR_EMPOISONNE_10224 = 10224,
+
+        CUIRASSE_LAINEUSE_10225 = 10225,
+
+        DEBOYAUTAGE_10226 = 10226,
+
+        FLAIR_EXACERBE_10227 = 10227,
+
+        CACHE_CACHE_10228 = 10228,
+
+        PERCE_VESSIE_10229 = 10229,
+
+        CHARGE_FORCEE_10230 = 10230,
+
+        MARTEAU_BRANLANT_10231 = 10231,
+
+        MUR_DE_PELLES_10232 = 10232,
+
+        LANCER_DE_CAILLOU_10233 = 10233,
+
+        PIEGE_DE_CAILLOUX_10234 = 10234,
+
+        VISSAGE_10235 = 10235,
+
+        PIEGE_DE_VAPEUR_10236 = 10236,
+
+        PIOCHAGE_10237 = 10237,
+
+        PIEGE_A_PIEDS_10238 = 10238,
+
+        SERPILLIERE_10239 = 10239,
+
+        DETERRAGE_10240 = 10240,
+
+        GARE_AUX_GLYPHES_10241 = 10241,
+
+        DURETE_RAMOLLISSANTE_10242 = 10242,
+
+        VIOLON_SEL_10243 = 10243,
+
+        CHANCRE_10244 = 10244,
+
+        BUBULLE_10245 = 10245,
+
+        COQUILLE_10246 = 10246,
+
+        CRACHAT_DE_SABLE_10247 = 10247,
+
+        SOIN_GROUPE_10248 = 10248,
+
+        _10249 = 10249,
+
+        _10250 = 10250,
+
+        FULMINATION_DUPLIQUE_10251 = 10251,
+
+        _10252 = 10252,
+
+        _10253 = 10253,
+
+        _10255 = 10255,
+
+        MATOUMORPHOSE_10265 = 10265,
+
+        DUPLICHATION_10266 = 10266,
+
+        MATOUMORPHOSE_10267 = 10267,
+
+        MATOUMORPHOSE_10268 = 10268,
+
+        DOFUS_ARGENTE_10269 = 10269,
+
+        BECO_10270 = 10270,
+
+        TOFULEKAN_10271 = 10271,
+
+        DELUGE_DE_COUPS_10272 = 10272,
+
+        BAMBINVOCATION_10273 = 10273,
+
+        PILLAGE_10274 = 10274,
+
+        SACCAGE_10275 = 10275,
+
+        MARAUDE_10276 = 10276,
+
+        PROFANATION_10277 = 10277,
+
+        TOMBE_OLAH_10278 = 10278,
+
+        SOUFFLE_DE_RATHROSK_10279 = 10279,
+
+        QUEUE_DU_DRAGON_10280 = 10280,
+
+        REGAIN_DE_VIE_10281 = 10281,
+
+        FEE_DARTIFICE_TREFLE_10282 = 10282,
+
+        RECONSTITUTION_BWORK_10283 = 10283,
+
+        MORSURE_DU_CHIENCHIEN_10284 = 10284,
+
+        INSTINCT_MEURTRIER_10285 = 10285,
+
+        FOURRURSIDE_10286 = 10286,
+
+        LES_DES_SONT_JETES_10287 = 10287,
+
+        GRIFFE_DE_LHOMME_OURS_10288 = 10288,
+
+        RAGE_DE_LOURS_10289 = 10289,
+
+        COURROUX_DARTAND_10290 = 10290,
+
+        EVENTRATION_MEURTRIERE_10291 = 10291,
+
+        RUGISSEMENT_PROVOCATEUR_10292 = 10292,
+
+        ROULETTE_DARTAND_10293 = 10293,
+
+        CARTTIRANCE_10294 = 10294,
+
+        EXPLOPIQUE_10295 = 10295,
+
+        DANSE_REVOLUTION_10296 = 10296,
+
+        DISCO_10297 = 10297,
+
+        ECORCHAGE_10298 = 10298,
+
+        DEPIAUTAGE_10299 = 10299,
+
+        GARDIENNAGE_10300 = 10300,
+
+        LAMIANTE_10301 = 10301,
+
+        FASCINATION_DU_FEU_10302 = 10302,
+
+        INCINERATION_10303 = 10303,
+
+        COUPURES_10304 = 10304,
+
+        DEUX_EN_UN_10305 = 10305,
+
+        VOL_DE_DOULEUR_10306 = 10306,
+
+        COMTE_ANCESTRAL_10307 = 10307,
+
+        _10308 = 10308,
+
+        _10309 = 10309,
+
+        ECAILLES_POURPRES_10310 = 10310,
+
+        GRIFFES_ELECTRIQUES_10311 = 10311,
+
+        COUP_DE_BOUTOIR_10312 = 10312,
+
+        HALTE_LA__10313 = 10313,
+
+        SOUFFLE_FANTMATIQUE_10314 = 10314,
+
+        KONBAH_56_10315 = 10315,
+
+        _6_TEMAH_10316 = 10316,
+
+        ABWAKWADABWA_10317 = 10317,
+
+        GARGLOHIC_10318 = 10318,
+
+        LOPITAL_10319 = 10319,
+
+        CHANCE_INSOLENTE_10320 = 10320,
+
+        VOLKARAPACE_10321 = 10321,
+
+        EVOLUTION_ETAT_5_10322 = 10322,
+
+        VOLKARAPACE_10323 = 10323,
+
+        VOLKABSORPTION_10324 = 10324,
+
+        EVOLUTION_ETAT_10_10325 = 10325,
+
+        VOLKARAPACE_10326 = 10326,
+
+        VOLKOURSE_10327 = 10327,
+
+        VOLKARAPACE_10328 = 10328,
+
+        VOLKINTAINE_10329 = 10329,
+
+        NIMPATIENCE_10332 = 10332,
+
+        TRIPLE_ATTAQUE_10333 = 10333,
+
+        NINRMURE_10334 = 10334,
+
+        NINFLUENCE_10335 = 10335,
+
+        NIMPATIENCE_10336 = 10336,
+
+        LANCE_PIERRE_10337 = 10337,
+
+        FORTE_TETE_10338 = 10338,
+
+        COUP_DE_CORNES_10339 = 10339,
+
+        BELIER_10340 = 10340,
+
+        MARTEAU_PILLON_10341 = 10341,
+
+        NIMPULSION_10342 = 10342,
+
+        HACHIS_10343 = 10343,
+
+        NIMPLANTATION_10344 = 10344,
+
+        GIGANTOSITE_10345 = 10345,
+
+        NIMPATIENCE_10346 = 10346,
+
+        NIMPATIENCE_10347 = 10347,
+
+        EMPALEMENT_ROYAL_10348 = 10348,
+
+        NINFLITRATION_10349 = 10349,
+
+        NINTREPIDITE_10350 = 10350,
+
+        CAPTURE_DE_VOLKORNE_10351 = 10351,
+
+        VOLKARAPACE_10352 = 10352,
+
+        VOLKARDEUR_10353 = 10353,
+
+        VOLKOLERE_10354 = 10354,
+
         CREMATION_10355 = 10355,
-        RHINAIR = 10356,
-        RHINEETROLE = 10357,
-        RHINATTRACTION = 10358,
-        RHINACALM = 10359,
-        RHINADIANCE = 10360,
-        RHINOWD = 10361,
-        RHINAFFLE_10362 = 10362,
-        RHINWAVE = 10363,
-        MINER_S_LIVING_BAG = 10364,
-        WORMIFICATION = 10365,
-        SUBMERSION = 10366,
-        SLINGSHOT_10367 = 10367,
-        SLINGSHOT = 10368,
-        HORN_BUTT_10369 = 10369,
-        HORN_BUTT = 10370,
-        STEAMAMMER_10371 = 10371,
-        STEAMAMMER = 10372,
-        YOBPLANTATION_10404 = 10404,
-        YINFLUENCE_10410 = 10410,
-        RHINAFFLE_10411 = 10411,
-        UNDWARFABLE = 10425,
+
+        VOLKAIR_10356 = 10356,
+
+        VOLKONTRLE_10357 = 10357,
+
+        VOLKATTIRANCE_10358 = 10358,
+
+        VOLKALME_10359 = 10359,
+
+        VOLKECLAT_10360 = 10360,
+
+        VOLKOHUE_10361 = 10361,
+
+        VOLKONFUSION_10362 = 10362,
+
+        VOLKONDE_10363 = 10363,
+
+        SAC_ANIME_DU_MINEUR_10364 = 10364,
+
+        VERRIFICATION_10365 = 10365,
+
+        SUBMERSION_10366 = 10366,
+
+        LANCE_PIERRE_10367 = 10367,
+
+        LANCE_PIERRE_10368 = 10368,
+
+        COUP_DE_CORNES_10369 = 10369,
+
+        COUP_DE_CORNES_10370 = 10370,
+
+        MARTEAU_PILLON_10371 = 10371,
+
+        MARTEAU_PILLON_10372 = 10372,
+
+        NIMPLANTATION_10404 = 10404,
+
+        NINFLUENCE_10410 = 10410,
+
+        VOLKONFUSION_10411 = 10411,
+
+        NINVULNERABLE_10425 = 10425,
+
         CREMATION_10431 = 10431,
-        FIGHT_CANCELLED = 10704,
-        ASSAILING_ARROW_10706 = 10706,
-        LUCKY_STAR_10707 = 10707,
-        TOOLBOX_10708 = 10708,
-        PAVISE_10709 = 10709,
-        LAST_RUNE_STATE = 10710,
-        CONEY_TP = 10711,
-        DESTRUCTIVE_SWORD = 10712,
-        TOAD_SLOBBER_10713 = 10713,
-        COAGULATION_10714 = 10714,
-        DESOLATION_10715 = 10715,
-        SACRIFICE_10716 = 10716,
-        TOXINES = 10717,
-        TRIDENT = 10718,
-        TEMPORAL_INSTABILITY = 10719,
-        SELECTIVE_WORD = 10720,
-        SPECTRAL_SHOCK = 10721,
-        KILL_EACH_OTHER_10722 = 10722,
-        KILL_EACH_OTHER_10723 = 10723,
-        GREY_FIST = 10724,
-        DEICIDAL_BREATH = 10725,
-        VAGABOND_FIST = 10730,
-        RATATHROSK_S_TRIAL = 10731,
-        INFECTION_COUNTER = 10732,
-        INFECTION_RESET = 10733,
-        KILL_EACH_OTHER = 10734,
-        CURATIVE_PALM_10736 = 10736,
-        MORTAL_INSPIRATION = 10744,
-        DEMON_F = 10747,
-        DEMONIC_PRESENCE = 10748,
-        CALL_OF_THE_MINOR_DEMONS = 10749,
-        BULAK_NATTAHNAMTRIGGERED_ = 10750,
-        BULAK_NATTAHNAM = 10751,
-        AGNI_PARIKSHATRIGGERED_ = 10752,
-        AGNI_PARIKSHA = 10753,
-        ANGRA_MAINYU = 10754,
-        IFRIKTTRIGGERED_ = 10755,
-        IFRIKT = 10756,
-        DEMONIC_SERVITUDE = 10757,
-        BULAK_LUSTER = 10758,
-        BULAK_BULAK_TUN_DA_DA_DA = 10759,
-        DEMONS_AND_WONDERS = 10774,
-        SHUSHUIC_EXPLOSION = 10775,
-        DEMONIC_AURA = 10776,
-        LAIRCENOUS_DEMON = 10780,
-        SHUSHOUP = 10781,
-        PILLAGE_10782 = 10782,
-        FINAL_DESTINATION = 10783,
-        DEARMON = 10784,
-        DEVASTATION = 10785,
-        SHUPASTRY = 10786,
-        DEMON_STRAIGHTS = 10787,
-        DESTRUCTION = 10788,
-        EMISSARY_OF_DESTINY_10789 = 10789,
-        KERFAIRTRIGGERED_ = 10790,
-        KERFAIR_10791 = 10791,
-        KEROSENE = 10792,
-        KERTCH = 10793,
-        GOLDEN_DRAGON_FIRE = 10794,
-        BLESSING_OF_THE_TWELVE = 10795,
-        WITCH_S_CURSE = 10796,
-        CROCOBURIO_S_STRENGTH = 10800,
-        CROCOBURIO_S_POWER = 10801,
-        CROCOBURIO_S_SPIRIT = 10802,
-        SOUL_SEALING_RITUAL = 10803,
-        WELCOMING_CROCOMMITTEE = 10804,
-        LIMBO_SWAMP = 10805,
-        LIMBO_SWAMPTRIGGERED_ = 10806,
-        QUAGMIRE = 10807,
-        QUAGMIRETRIGGERED_ = 10808,
-        CROCOLLISION = 10809,
-        CROCMARE = 10810,
-        CROCORYZA = 10811,
-        SCALY_SHIELD = 10812,
-        CROCHOLER = 10813,
-        CROCONFLICT = 10814,
+
+        _10486 = 10486,
+
+        _10487 = 10487,
+
+        _10488 = 10488,
+
+        _10489 = 10489,
+
+        _10490 = 10490,
+
+        _10492 = 10492,
+
+        _10494 = 10494,
+
+        _10500 = 10500,
+
+        _10501 = 10501,
+
+        _10506 = 10506,
+
+        _10508 = 10508,
+
+        _10510 = 10510,
+
+        _10515 = 10515,
+
+        _10572 = 10572,
+
+        _10574 = 10574,
+
+        _10590 = 10590,
+
+        _10600 = 10600,
+
+        _10602 = 10602,
+
+        _10653 = 10653,
+
+        _10654 = 10654,
+
+        _10659 = 10659,
+
+        _10665 = 10665,
+
+        _10666 = 10666,
+
+        _10667 = 10667,
+
+        _10668 = 10668,
+
+        _10669 = 10669,
+
+        _10670 = 10670,
+
+        _10673 = 10673,
+
+        _10677 = 10677,
+
+        _10679 = 10679,
+
+        _10680 = 10680,
+
+        _10681 = 10681,
+
+        _10682 = 10682,
+
+        _10683 = 10683,
+
+        _10684 = 10684,
+
+        _10685 = 10685,
+
+        _10686 = 10686,
+
+        _10687 = 10687,
+
+        _10700 = 10700,
+
+        _10701 = 10701,
+
+        _10702 = 10702,
+
+        COMBAT_ANNULE_10704 = 10704,
+
+        _10710 = 10710,
+
+        _10712 = 10712,
+
+        _10713 = 10713,
+
+        _10714 = 10714,
+
+        _10715 = 10715,
+
+        TOXINES_10717 = 10717,
+
+        _10718 = 10718,
+
+        _10719 = 10719,
+
+        CHOC_SPECTRAL_10721 = 10721,
+
+        ENTRETUEZ_VOUS__10722 = 10722,
+
+        ENTRETUEZ_VOUS__10723 = 10723,
+
+        POING_GRIS_10724 = 10724,
+
+        SOUFFLE_DEICIDE_10725 = 10725,
+
+        POING_VAGABOND_10730 = 10730,
+
+        EPREUVE_DE_RATHROSK_10731 = 10731,
+
+        ENTRETUEZ_VOUS__10734 = 10734,
+
+        _10736 = 10736,
+
+        _10737 = 10737,
+
+        _10738 = 10738,
+
+        _10739 = 10739,
+
+        _10740 = 10740,
+
+        _10741 = 10741,
+
+        _10742 = 10742,
+
+        _10743 = 10743,
+
+        INSPIRATION_MORTELLE_10744 = 10744,
+
+        DEMON_F_10747 = 10747,
+
+        PRESENCE_DEMONIAQUE_10748 = 10748,
+
+        APPEL_DES_DEMONS_MINEURS_10749 = 10749,
+
+        BULAK_NATTAHNAM_DECLENCHE_10750 = 10750,
+
+        BULAK_NATTAHNAM_10751 = 10751,
+
+        AGNI_PARIKSHA_DECLENCHE_10752 = 10752,
+
+        AGNI_PARIKSHA_10753 = 10753,
+
+        ANGRA_MAINYU_10754 = 10754,
+
+        IFRIKT_DECLENCHE_10755 = 10755,
+
+        IFRIKT_10756 = 10756,
+
+        SERVITUDE_DEMONIAQUE_10757 = 10757,
+
+        BULAK_LEMAN_10758 = 10758,
+
+        BULAK_BULAK_TUN_DA_DA_DA_10759 = 10759,
+
+        DEMONS_ET_MERVEILLES_10774 = 10774,
+
+        EXPLOSION_SHUSHESQUE_10775 = 10775,
+
+        AURA_DEMONIAQUE_10776 = 10776,
+
+        DEMON_TANLERE_10780 = 10780,
+
+        SOUPOSHU_10781 = 10781,
+
+        SACCAGE_10782 = 10782,
+
+        DESTINATION_FINALE_10783 = 10783,
+
+        DEMON_SHERY_10784 = 10784,
+
+        DEVASTATION_10785 = 10785,
+
+        PATASHU_10786 = 10786,
+
+        DEMON_PARNASSE_10787 = 10787,
+
+        DESTRUCTION_10788 = 10788,
+
+        ENVOYEE_DU_DESTIN_10789 = 10789,
+
+        KERMES_DECLENCHE_10790 = 10790,
+
+        KERMES_10791 = 10791,
+
+        KEROZENE_10792 = 10792,
+
+        KERBAH_10793 = 10793,
+
+        FEU_DU_DRAGON_DOR_10794 = 10794,
+
+        BENEDICTION_DES_DOUZE_10795 = 10795,
+
+        MALEDICTION_DE_LA_SORCIERE_10796 = 10796,
+
+        FORCE_DE_CROCOBURIO_10800 = 10800,
+
+        PUISSANCE_DE_CROCOBURIO_10801 = 10801,
+
+        ESPRIT_DE_CROCOBURIO_10802 = 10802,
+
+        RITUEL_DE_SCELLEMENT_DE_LAME_10803 = 10803,
+
+        CROCOMITE_DACCUEIL_10804 = 10804,
+
+        MARECAGE_DES_LIMBES_10805 = 10805,
+
+        MARECAGE_DES_LIMBES_DECLENCHE_10806 = 10806,
+
+        BOURBIER_10807 = 10807,
+
+        BOURBIER_10808 = 10808,
+
+        CROCOLLISION_10809 = 10809,
+
+        CROCAUCHEMAR_10810 = 10810,
+
+        CROCORYZA_10811 = 10811,
+
+        BOUCLIER_DECAILLES_10812 = 10812,
+
+        CROCOLERE_10813 = 10813,
+
+        CROCONFLIT_10814 = 10814,
+
         CROCOBUR_10816 = 10816,
-        CROCOBUR_S_APPETITE_10817 = 10817,
-        SOUL_RECALLTRIGGERED_1_ = 10818,
-        SOUL_RECALL = 10819,
-        PLUNGE_CROCOBUR = 10820,
-        RECOVER_CROCOBUR = 10821,
-        SOUL_SEALING = 10822,
-        KARDORIM_S_DREAM = 10823,
-        KARDORIM_S_PARADOX_10824 = 10824,
-        KARDORIM_S_NIGHTMARE = 10825,
-        FAMISHED_SUNFLOWER_S_DREAM = 10826,
-        FAMISHED_SUNFLOWER_S_PARADOX = 10827,
-        FAMISHED_SUNFLOWER_S_NIGHTMARE = 10828,
-        SPONGE_MOB_S_DREAM = 10829,
-        RECOVER_CROCOBURTRIGGERED_ = 10830,
-        SPONGE_MOB_S_PARADOX = 10831,
-        SPONGE_MOB_S_NIGHTMARE = 10832,
-        ROYAL_GOBBALL_S_DREAM_10833 = 10833,
-        ROYAL_GOBBALL_S_PARADOX = 10834,
-        ROYAL_GOBBALL_S_NIGHTMARE = 10835,
-        KICKROACH_S_DREAM = 10836,
-        KICKROACH_S_PARADOX = 10837,
-        KICKROACH_S_NIGHTMARE = 10838,
-        CROCOBURIO_S_ATTRIBUTESTRIGGER_ = 10839,
-        GOLDEN_SCARABUGLY_S_DREAM = 10840,
-        GOLDEN_SCARABUGLY_S_PARADOX = 10842,
-        GOLDEN_SCARABUGLY_S_NIGHTMARE = 10843,
-        BOOSTACHE_S_DREAM = 10844,
-        BOOSTACHE_S_PARADOX = 10845,
-        BOOSTACHE_S_NIGHTMARE = 10846,
-        BATOFU_S_DREAM_10847 = 10847,
-        BATOFU_S_PARADOX = 10848,
-        BATOFU_S_NIGHTMARE = 10849,
-        RONIN_CHAFER_S_DREAM = 10850,
-        RONIN_CHAFER_S_PARADOX = 10851,
-        RONIN_CHAFER_S_NIGHTMARE = 10852,
-        SHIN_LARVA_S_DREAM = 10853,
-        SHIN_LARVA_S_PARADOX = 10854,
-        SHIN_LARVA_S_NIGHTMARE = 10855,
-        SOUL_RECALLTRIGGERED_2_ = 10856,
-        SMITHSCHEST_S_DREAM = 10857,
-        SMITHSCHEST_S_PARADOX = 10858,
-        SMITHSCHEST_S_NIGHTMARE = 10859,
-        GREAT_CORALATOR_S_DREAM = 10860,
-        GREAT_CORALATOR_S_PARADOX = 10861,
-        GREAT_CORALATOR_S_NIGHTMARE = 10862,
-        BULBIG_BROTHA_S_DREAM = 10863,
-        BULBIG_BROTHA_S_PARADOX = 10864,
-        NEW_TRIGGER_TEST = 10866,
-        BULBIG_BROTHA_S_NIGHTMARE = 10872,
-        BWORKETTE_S_DREAM = 10873,
-        BWORKETTE_S_PARADOX = 10874,
-        BWORKETTE_S_NIGHTMARE = 10875,
-        KWAKWA_S_DREAM = 10876,
-        KWAKWA_S_PARADOX = 10877,
-        KWAKWA_S_NIGHTMARE = 10878,
-        ROYAL_BLOPSDREAM = 10879,
-        ROYAL_BLOPSPARADOX = 10880,
-        ROYAL_BLOPSNIGHTMARE = 10881,
-        KANNIBALL_ANDCHAIN_S_DREAM = 10882,
-        KANNIBALL_ANDCHAIN_S_PARADOX = 10883,
-        KANNIBALL_ANDCHAIN_S_NIGHTMARE = 10884,
-        ROYAL_JELLIESDREAM = 10885,
-        ROYAL_JELLIESPARADOX_10886 = 10886,
-        ROYAL_JELLIESNIGHTMARE_10887 = 10887,
-        WA_WABBIT_S_DREAM = 10888,
-        WA_WABBIT_S_PARADOX = 10889,
-        WA_WABBIT_S_NIGHTMARE = 10890,
-        GOURLO_THE_TERRIBLE_S_DREAM = 10891,
-        GOURLO_THE_TERRIBLE_S_PARADOX = 10892,
-        GOURLO_THE_TERRIBLE_S_NIGHTMARE = 10893,
-        NELWEEN_S_DREAM = 10894,
-        NELWEEN_S_PARADOX = 10895,
-        NELWEEN_S_NIGHTMARE = 10896,
-        LEGENDARY_CRACKLER_S_DREAM = 10897,
-        LEGENDARY_CRACKLER_S_PARADOX = 10898,
-        LEGENDARY_CRACKLER_S_NIGHTMARE = 10899,
-        NORRDEAL = 10900,
-        PREMONITION_10901 = 10901,
-        MANTISCORE_S_DREAM = 10902,
-        FATUM = 10903,
-        FATEFUL_DESTINY_10904 = 10904,
-        MANTISCORE_S_PARADOX = 10905,
-        MANTISCORE_S_NIGHTMARE = 10906,
-        PETRIFYING_LOOK = 10907,
-        DAGGERO_S_DREAM = 10908,
-        URDNONA_S_WRATH = 10909,
-        INESCAPABLE_DESTINY = 10910,
-        DECIMANDI_S_WRATH = 10911,
-        SKULDMORT_S_WRATH = 10912,
-        INEXORABLE_DESTINY = 10913,
-        UNAVOIDABLE_DESTINY_10914 = 10914,
-        KROSMIC_BALANCE = 10915,
-        DAGGERO_S_PARADOX_10916 = 10916,
-        KERFAIR_10917 = 10917,
-        DAGGERO_S_PARADOX_10918 = 10918,
-        THREAD_OF_DESTINY_10919 = 10919,
-        BOBBIN_OF_DESTINY_10920 = 10920,
-        OWN_WILL = 10921,
-        DARK_LITANY = 10922,
-        CONTINUUM_PROTECTION = 10923,
-        DEVOTION_TO_THE_TWELVE = 10924,
-        DEVOTION_TO_RUSHU = 10925,
-        SPINDLE_OF_DESTINY_10926 = 10926,
-        DESTRUCTION_OF_THE_WORLD = 10927,
-        MORBID_ATTRACTION = 10928,
-        CHISELS_OF_DESTINY = 10929,
-        ELEMENTAL_FRAGMENTATION = 10930,
-        DAGGERO_S_NIGHTMARE = 10931,
-        WA_WOBOT_S_DREAM = 10932,
-        WA_WOBOT_S_PARADOX = 10933,
-        WA_WOBOT_S_NIGHTMARE = 10934,
-        LECHOUQUE_S_DREAM = 10935,
-        LECHOUQUE_S_PARADOX = 10936,
-        LECHOUQUE_S_NIGHTMARE = 10937,
-        HARBINGER_OF_DEATH = 10938,
-        ANCESTRAL_TREECHNID_S_DREAM = 10939,
-        ANCESTRAL_TREECHNID_S_PARADOX = 10940,
-        ANCESTRAL_TREECHNID_S_NIGHTMARE = 10941,
-        UNAVOIDABLE_DESTINY_10942 = 10942,
-        CAULDINI_S_DREAM = 10943,
-        INEXORABLE_DESTINYTRIGGERED_2_ = 10944,
-        CAULDINI_S_PARADOX = 10945,
-        CAULDINI_S_NIGHTMARE = 10946,
-        ARCANE_TRANSFER = 10947,
-        ROSEMANTIC = 10948,
-        RAC_QUEEN_S_DREAM = 10949,
-        RAC_QUEEN_S_PARADOX = 10950,
-        RAC_QUEEN_S_NIGHTMARE = 10951,
-        BRUTATAX_S_DREAM = 10952,
-        HARMONIOUS_STRIDE = 10953,
-        BRUTATAX_S_NIGHTMARE_10954 = 10954,
-        ASHEN_BREATH = 10955,
-        DRAGON_S_CRY = 10956,
-        ANKYLOSE = 10957,
-        BRUTATAX_S_NIGHTMARE_10958 = 10958,
-        BRUTATAX_S_NIGHTMARE = 10959,
-        VAGABOND_PATH = 10960,
-        REPTILIAN_INVASION = 10961,
-        REPTILIAN_INVASIONTRIGGERED_ = 10962,
-        WATCHERSFLAME = 10963,
-        CLOCKWISE_ROTATION = 10964,
-        VISION_OF_ETERNITY = 10965,
-        HEADLONG_RUSH = 10966,
+
+        APPETIT_DE_CROCOBUR_10817 = 10817,
+
+        RAPPEL_DE_LAME_DECLENCHE_1_10818 = 10818,
+
+        RAPPEL_DE_LAME_10819 = 10819,
+
+        PLANTER_CROCOBUR_10820 = 10820,
+
+        RECUPERER_CROCOBUR_10821 = 10821,
+
+        SCELLEMENT_DE_LAME_10822 = 10822,
+
+        REVE_DE_KARDORIM_10823 = 10823,
+
+        PARADOXE_DE_KARDORIM_1_10824 = 10824,
+
+        CAUCHEMAR_DE_KARDORIM_10825 = 10825,
+
+        REVE_DU_TOURNESOL_AFFAME_10826 = 10826,
+
+        PARADOXE_DU_TOURNESOL_AFFAME_10827 = 10827,
+
+        CAUCHEMAR_DU_TOURNESOL_AFFAME_10828 = 10828,
+
+        REVE_DE_MOB_LEPONGE_10829 = 10829,
+
+        RECUPERER_CROCOBUR_DECLENCHE_10830 = 10830,
+
+        PARADOXE_DE_MOB_LEPONGE_10831 = 10831,
+
+        CAUCHEMAR_DE_MOB_LEPONGE_10832 = 10832,
+
+        REVE_DU_BOUFTOU_ROYAL_10833 = 10833,
+
+        PARADOXE_DU_BOUFTOU_ROYAL_10834 = 10834,
+
+        CAUCHEMAR_DU_BOUFTOU_ROYAL_10835 = 10835,
+
+        REVE_DE_KANKREBLATH_10836 = 10836,
+
+        PARADOXE_DE_KANKREBLATH_10837 = 10837,
+
+        CAUCHEMAR_DE_KANKREBLATH_10838 = 10838,
+
+        ATTRIBUTS_DE_CROCOBURIO_DECLENCHEUR_10839 = 10839,
+
+        REVE_DU_SCARABOSSE_DORE_10840 = 10840,
+
+        PARADOXE_DU_SCARABOSSE_DORE_10842 = 10842,
+
+        CAUCHEMAR_DU_SCARABOSSE_DORE_10843 = 10843,
+
+        REVE_DU_BOOSTACHE_10844 = 10844,
+
+        PARADOXE_DU_BOOSTACHE_10845 = 10845,
+
+        CAUCHEMAR_DU_BOOSTACHE_10846 = 10846,
+
+        REVE_DE_BATOFU_10847 = 10847,
+
+        PARADOXE_DE_BATOFU_10848 = 10848,
+
+        CAUCHEMAR_DE_BATOFU_10849 = 10849,
+
+        REVE_DU_CHAFER_RŌNIN_10850 = 10850,
+
+        PARADOXE_DU_CHAFER_RŌNIN_10851 = 10851,
+
+        CAUCHEMAR_DU_CHAFER_RŌNIN_10852 = 10852,
+
+        REVE_DE_SHIN_LARVE_10853 = 10853,
+
+        PARADOXE_DE_SHIN_LARVE_10854 = 10854,
+
+        CAUCHEMAR_DE_SHIN_LARVE_10855 = 10855,
+
+        RAPPEL_DE_LAME_DECLENCHE_2_10856 = 10856,
+
+        REVE_DU_COFFRE_DES_FORGERONS_10857 = 10857,
+
+        PARADOXE_DU_COFFRE_DES_FORGERONS_10858 = 10858,
+
+        CAUCHEMAR_DU_COFFRE_DES_FORGERONS_10859 = 10859,
+
+        REVE_DU_CORAILLEUR_MAGISTRAL_10860 = 10860,
+
+        PARADOXE_DU_CORAILLEUR_MAGISTRAL_10861 = 10861,
+
+        CAUCHEMAR_DU_CORAILLEUR_MAGISTRAL_10862 = 10862,
+
+        REVE_DU_BULBIG_BROZEUR_10863 = 10863,
+
+        PARADOXE_DU_BULBIG_BROZEUR_10864 = 10864,
+
+        CAUCHEMAR_DU_BULBIG_BROZEUR_10872 = 10872,
+
+        REVE_DE_LA_BWORKETTE_10873 = 10873,
+
+        PARADOXE_DE_LA_BWORKETTE_10874 = 10874,
+
+        CAUCHEMAR_DE_LA_BWORKETTE_10875 = 10875,
+
+        REVE_DU_KWAKWA_10876 = 10876,
+
+        PARADOXE_DU_KWAKWA_10877 = 10877,
+
+        CAUCHEMAR_DU_KWAKWA_10878 = 10878,
+
+        REVE_DES_BLOPS_ROYAUX_10879 = 10879,
+
+        PARADOXE_DES_BLOPS_ROYAUX_10880 = 10880,
+
+        CAUCHEMAR_DES_BLOPS_ROYAUX_10881 = 10881,
+
+        REVE_DU_KANNIBOUL_EBIL_10882 = 10882,
+
+        PARADOXE_DU_KANNIBOUL_EBIL_10883 = 10883,
+
+        CAUCHEMAR_DU_KANNIBOUL_EBIL_10884 = 10884,
+
+        REVE_DES_GELEES_ROYALES_10885 = 10885,
+
+        PARADOXE_DES_GELEES_ROYALES_10886 = 10886,
+
+        CAUCHEMAR_DES_GELEES_ROYALES_10887 = 10887,
+
+        REVE_DU_WA_WABBIT_10888 = 10888,
+
+        PARADOXE_DU_WA_WABBIT_10889 = 10889,
+
+        CAUCHEMAR_DU_WA_WABBIT_10890 = 10890,
+
+        REVE_DE_GOURLO_LE_TERRIBLE_10891 = 10891,
+
+        PARADOXE_DE_GOURLO_LE_TERRIBLE_10892 = 10892,
+
+        CAUCHEMAR_DE_GOURLO_LE_TERRIBLE_10893 = 10893,
+
+        REVE_DE_NELWEEN_10894 = 10894,
+
+        PARADOXE_DE_NELWEEN_10895 = 10895,
+
+        CAUCHEMAR_DE_NELWEEN_10896 = 10896,
+
+        REVE_DU_CRAQUELEUR_LEGENDAIRE_10897 = 10897,
+
+        PARADOXE_DU_CRAQUELEUR_LEGENDAIRE_10898 = 10898,
+
+        CAUCHEMAR_DU_CRAQUELEUR_LEGENDAIRE_10899 = 10899,
+
+        NORDALIE_10900 = 10900,
+
+        PRESCIENCE_10901 = 10901,
+
+        REVE_DU_MANTISCORE_10902 = 10902,
+
+        FATUM_10903 = 10903,
+
+        DESTIN_FUNESTE_10904 = 10904,
+
+        PARADOXE_DU_MANTISCORE_10905 = 10905,
+
+        CAUCHEMAR_DU_MANTISCORE_10906 = 10906,
+
+        REGARD_PETRIFIANT_10907 = 10907,
+
+        REVE_DE_DAÏGORO_10908 = 10908,
+
+        COLERE_DE_CLOTHURDE_10909 = 10909,
+
+        DESTIN_INELUCTABLE_10910 = 10910,
+
+        COLERE_DE_LACHANDI_10911 = 10911,
+
+        COLERE_DATROSKULDA_10912 = 10912,
+
+        DESTIN_INEXORABLE_10913 = 10913,
+
+        DESTIN_IMPLACABLE_10914 = 10914,
+
+        EQUILIBRE_KROSMIQUE_10915 = 10915,
+
+        PARADOXE_DE_DAÏGORO_10916 = 10916,
+
+        KERMES_10917 = 10917,
+
+        FIL_DU_DESTIN_10919 = 10919,
+
+        BOBINE_DE_LA_DESTINEE_10920 = 10920,
+
+        LIBRE_ARBITRE_10921 = 10921,
+
+        LITANIE_OBSCURE_10922 = 10922,
+
+        PROTECTION_DU_KONTINUUM_10923 = 10923,
+
+        DEVOTION_AUX_DOUZE_10924 = 10924,
+
+        DEVOTION_A_RUSHU_10925 = 10925,
+
+        FUSEAU_DE_LA_DESTINEE_10926 = 10926,
+
+        DESTRUCTION_DU_MONDE_10927 = 10927,
+
+        ATTIRANCE_MORBIDE_10928 = 10928,
+
+        CISEAUX_DE_LA_DESTINEE_10929 = 10929,
+
+        FRAGMENTATION_ELEMENTAIRE_10930 = 10930,
+
+        CAUCHEMAR_DE_DAÏGORO_10931 = 10931,
+
+        REVE_DU_WA_WOBOT_10932 = 10932,
+
+        PARADOXE_DU_WA_WOBOT_10933 = 10933,
+
+        CAUCHEMAR_DU_WA_WOBOT_10934 = 10934,
+
+        REVE_DU_CHOUQUE_10935 = 10935,
+
+        PARADOXE_DU_CHOUQUE_10936 = 10936,
+
+        CAUCHEMAR_DU_CHOUQUE_10937 = 10937,
+
+        MESSAGERE_DE_LA_MORT_10938 = 10938,
+
+        REVE_DE_LABRAKNYDE_ANCESTRAL_10939 = 10939,
+
+        PARADOXE_DE_LABRAKNYDE_ANCESTRAL_10940 = 10940,
+
+        CAUCHEMAR_DE_LABRAKNYDE_ANCESTRAL_10941 = 10941,
+
+        DESTIN_IMPLACABLE_10942 = 10942,
+
+        REVE_DE_CHOUDINI_10943 = 10943,
+
+        DESTIN_INEXORABLE_DECLENCHE_2_10944 = 10944,
+
+        PARADOXE_DE_CHOUDINI_10945 = 10945,
+
+        CAUCHEMAR_DE_CHOUDINI_10946 = 10946,
+
+        TRANSFERT_ARCANIQUE_10947 = 10947,
+
+        AMAUROSE_10948 = 10948,
+
+        REVE_DE_LA_REINE_NYEE_10949 = 10949,
+
+        PARADOXE_DE_LA_REINE_NYEE_10950 = 10950,
+
+        CAUCHEMAR_DE_LA_REINE_NYEE_10951 = 10951,
+
+        REVE_DE_MALLEFISK_10952 = 10952,
+
+        FOULEE_HARMONIEUSE_10953 = 10953,
+
+        CAUCHEMAR_DE_MALLEFISK_10954 = 10954,
+
+        SOUFFLE_DE_CENDRES_10955 = 10955,
+
+        CRI_DU_DRAGON_10956 = 10956,
+
+        ANKYLOSE_10957 = 10957,
+
+        CAUCHEMAR_DE_MALLEFISK_10958 = 10958,
+
+        CAUCHEMAR_DE_MALLEFISK_10959 = 10959,
+
+        SENTIER_VAGABOND_10960 = 10960,
+
+        INVASION_REPTILIENNE_10961 = 10961,
+
+        INVASION_REPTILIENNE_DECLENCHE_10962 = 10962,
+
+        FLAMME_DES_VEILLEURS_10963 = 10963,
+
+        ROTATION_HORAIRE_10964 = 10964,
+
+        VISION_DETERNITE_10965 = 10965,
+
+        FUITE_EN_AVANT_10966 = 10966,
+
         PURIFICATION_10967 = 10967,
-        GUARDIAN_OF_THE_SOUTH_S_REPULSION = 10968,
-        SWAMP_CURSE = 10969,
-        DIVINATION = 10970,
-        EMBER_BLOW = 10971,
-        BAD_INFLUENCE = 10972,
-        CRUSHING_BLOW = 10973,
-        DEMONIC_APPEARANCE = 10974,
-        DISENCHANTMENT = 10975,
-        CALL_OF_DESTINY = 10976,
-        MACABRE_ORACLE = 10977,
-        BAD_OMEN_10978 = 10978,
-        KOOLICH_S_DREAM = 10979,
-        FATEFUL_DESTINY_10980 = 10980,
-        DRAGON_PIG_S_PARADOX = 10986,
-        DRAGON_PIG_S_NIGHTMARE_10987 = 10987,
-        DRAGON_PIG_S_NIGHTMARE_10988 = 10988,
-        ROYAL_GOBBALL_S_DREAM_10989 = 10989,
-        SOUL_SEALING_RITUALTRIGGERED_ = 10991,
-        MOON_S_DREAM_10994 = 10994,
-        MOON_S_DREAM_10995 = 10995,
-        MOON_S_DREAM = 10996,
-        MOON_S_PARADOX = 10998,
-        MOON_S_NIGHTMARE_11000 = 11000,
-        MOON_S_NIGHTMARE_11002 = 11002,
-        MOOWOLF_S_DREAM_11003 = 11003,
-        SILF_THE_GREATER_BHERB_S_DREAM = 11004,
-        MOOWOLF_S_DREAM_11005 = 11005,
-        SILF_THE_GREATER_BHERB_S_NIGHTMARE = 11006,
-        SILF_THE_GREATER_BHERB_S_PARADOX_11007 = 11007,
-        SILF_THE_GREATER_BHERB_S_PARADOX_11008 = 11008,
-        MOOWOLF_S_PARADOX_11009 = 11009,
-        MOOWOLF_S_PARADOX_11010 = 11010,
-        WHITE_RAT_S_DREAM = 11011,
-        MOOWOLF_S_NIGHTMARE_11012 = 11012,
-        MOOWOLF_S_NIGHTMARE_11013 = 11013,
-        WHITE_RAT_S_NIGHTMARE = 11014,
-        MOOWOLF_S_NIGHTMARE_11015 = 11015,
-        BLACK_RAT_S_DREAM_11016 = 11016,
-        WHITE_RAT_S_PARADOX = 11017,
-        BLACK_RAT_S_DREAM_11018 = 11018,
-        LORD_CROW_S_DREAM = 11019,
-        BLACK_RAT_S_PARADOX = 11020,
-        LORD_CROW_S_PARADOX = 11021,
-        LORD_CROW_S_NIGHTMARE = 11022,
-        COLOUSSES_S_DREAM = 11023,
-        COLOUSSES_S_PARADOX = 11024,
-        BLACK_RAT_S_NIGHTMARE_11025 = 11025,
-        BLACK_RAT_S_NIGHTMARE_11026 = 11026,
-        COLOUSSES_S_NIGHTMARE = 11027,
-        BLACK_RAT_S_NIGHTMARE = 11028,
-        SKEUNK_S_PARADOX_11029 = 11029,
-        SKEUNK_S_PARADOX_11031 = 11031,
-        MINOTOROR_S_DREAM = 11034,
-        SKEUNK_S_NIGHTMARE = 11035,
-        MINOTOROR_S_PARADOX = 11036,
-        MINOTOROR_S_NIGHTMARE = 11037,
-        FRAKTAL_S_DREAM = 11038,
-        FRAKTAL_S_PARADOX_11039 = 11039,
-        FRAKTAL_S_PARADOX_11040 = 11040,
-        FRAKTAL_S_NIGHTMARE = 11041,
-        TANUKOUI_SAN_S_DREAM = 11044,
-        TANUKOUI_SAN_S_PARADOX = 11045,
-        TANUKOUI_SAN_S_NIGHTMARE_11046 = 11046,
-        TANUKOUI_SAN_S_NIGHTMARE_11047 = 11047,
-        TANUKOUI_SAN_S_NIGHTMARE = 11048,
-        ROYAL_TOFU_S_DREAM_11049 = 11049,
-        ROYAL_TOFU_S_DREAM_11050 = 11050,
-        ROYAL_RAINBOW_BLOP_S_DREAM = 11051,
-        ROYAL_RAINBOW_BLOP_S_PARADOX = 11052,
-        ROYAL_TOFU_S_PARADOX = 11053,
-        ROYAL_RAINBOW_BLOP_S_NIGHTMARE = 11054,
-        ROYAL_TOFU_S_NIGHTMARE_11055 = 11055,
-        CROCABULIA_S_DREAM = 11057,
-        CROCABULIA_S_PARADOX = 11058,
-        CROCABULIA_S_NIGHTMARE = 11059,
-        PANDORA_MASTER_S_DREAM_11060 = 11060,
-        ROYAL_MASTOGOB_S_DREAM_11063 = 11063,
-        ROYAL_MASTOGOB_S_PARADOX = 11064,
-        ROYAL_MASTOGOB_S_NIGHTMARE = 11065,
-        PANDORA_MASTER_S_NIGHTMARE = 11066,
-        CAPTAIN_SCARLIGHT_S_DREAM = 11067,
-        EL_PIKO_S_DREAM_11068 = 11068,
-        CAPTAIN_SCARLIGHT_S_PARADOX_11069 = 11069,
-        CAPTAIN_SCARLIGHT_S_NIGHTMARE = 11070,
-        CROSS_STRICH_S_DREAM = 11071,
-        CROSS_STRICH_S_PARADOX = 11072,
-        CROSS_STRICH_S_NIGHTMARE_11074 = 11074,
-        EL_PIKO_S_PARADOX_11075 = 11075,
-        TYNRILSDREAM = 11076,
-        TYNRILSPARADOX = 11077,
-        TYNRILSNIGHTMARE = 11078,
-        EL_PIKO_S_NIGHTMARE_11079 = 11079,
-        SOFT_OAK_S_DREAM_11080 = 11080,
-        SOFT_OAK_S_DREAM_11082 = 11082,
-        SOFT_OAK_S_PARADOX = 11083,
-        SOFT_OAK_S_NIGHTMARE = 11084,
-        SPHINCTER_CELL_S_DREAM_11087 = 11087,
-        SPHINCTER_CELL_S_PARADOX_11088 = 11088,
-        SPHINCTER_CELL_S_PARADOX_11089 = 11089,
-        SPHINCTER_CELL_S_PARADOX_11090 = 11090,
-        DRHOSSIL_S_DREAM = 11091,
-        DRHOSSIL_S_PARADOX = 11092,
-        DRHOSSIL_S_NIGHTMARE = 11093,
-        KIMBO_S_DREAM_11094 = 11094,
-        KIMBO_S_PARADOX_11095 = 11095,
-        KIMBO_S_NIGHTMARE_11096 = 11096,
-        EMISSARY_OF_DESTINY_11097 = 11097,
-        ROYAL_MASTOGOB_S_DREAM_11098 = 11098,
-        MINOTOT_S_DREAM = 11099,
-        MINOTOT_S_PARADOX_11100 = 11100,
-        MINOTOT_S_NIGHTMARE = 11102,
-        USH_GALESH_S_DREAM = 11103,
-        USH_GALESH_S_PARADOX = 11106,
-        USH_GALESH_S_NIGHTMARE_11107 = 11107,
-        USH_GALESH_S_NIGHTMARE_11108 = 11108,
-        KANIGRULA_S_DREAM = 11109,
-        KANIGRULA_S_PARADOX = 11110,
-        KANIGRULA_S_NIGHTMARE = 11111,
-        XLII_S_DREAM = 11112,
-        ROYAL_PINGWIN_S_DREAM_11113 = 11113,
-        ROYAL_PINGWIN_S_PARADOX = 11114,
-        ROYAL_PINGWIN_S_NIGHTMARE_11115 = 11115,
-        XLII_S_PARADOX = 11116,
-        WURMLORD_S_DREAM_11117 = 11117,
-        WURMLORD_S_DREAM_11118 = 11118,
-        XLII_S_NIGHTMARE_11119 = 11119,
-        XLII_S_NIGHTMARE_11120 = 11120,
-        XLII_S_NIGHTMARE = 11121,
-        WURMLORD_S_PARADOX_11122 = 11122,
-        WURMLORD_S_PARADOX_11123 = 11123,
-        TOXOLIATH_S_DREAM = 11124,
-        WURMLORD_S_NIGHTMARE_11125 = 11125,
-        TOXOLIATH_S_PARADOX = 11126,
-        WURMLORD_S_NIGHTMARE_11127 = 11127,
-        TOXOLIATH_S_NIGHTMARE_11128 = 11128,
-        BUCK_ANEAR_S_DREAM_11129 = 11129,
-        BUCK_ANEAR_S_DREAM_11130 = 11130,
-        BUCK_ANEAR_S_PARADOX_11131 = 11131,
-        BUCK_ANEAR_S_PARADOX_11132 = 11132,
-        BWORKER_S_DREAM = 11133,
-        BWORKER_S_PARADOX = 11134,
-        BWORKER_S_NIGHTMARE = 11135,
-        OUGAA_S_DREAM = 11136,
-        OUGAA_S_PARADOX_11137 = 11137,
-        OUGAA_S_NIGHTMARE = 11138,
-        GROHLUM_S_DREAM = 11139,
-        BUCK_ANEAR_S_NIGHTMARE = 11141,
-        GROHLUM_S_PARADOX = 11142,
-        GROHLUM_S_NIGHTMARE = 11144,
-        SHADOW_S_DREAM_11146 = 11146,
-        SHADOW_S_PARADOX = 11149,
-        SHADOW_S_NIGHTMARE = 11150,
-        OBSIDEMON_S_DREAM_11151 = 11151,
-        OBSIDEMON_S_DREAM_11152 = 11152,
-        OBSIDEMON_S_PARADOX = 11153,
-        OBSIDEMON_S_NIGHTMARE = 11154,
-        FUJI_SNOWFOUX_S_DREAM_11155 = 11155,
-        FUJI_SNOWFOUX_S_DREAM_11156 = 11156,
-        FUJI_SNOWFOUX_S_DREAM_11157 = 11157,
-        FUJI_SNOWFOUX_S_PARADOX = 11158,
-        FUJI_SNOWFOUX_S_NIGHTMARE_11159 = 11159,
-        AVATAR_AID = 11160,
-        PROFESSOR_XA_S_DREAM = 11161,
-        PROFESSOR_XA_S_PARADOX_11162 = 11162,
-        PROFESSOR_XA_S_PARADOX_11163 = 11163,
-        TENGU_SNOWFOUX_S_DREAM = 11164,
-        PROFESSOR_XA_S_NIGHTMARE = 11165,
-        CELESTIAL_BEARBARIAN_S_DREAM = 11166,
-        TENGU_SNOWFOUX_S_PARADOX = 11167,
-        CELESTIAL_BEARBARIAN_S_PARADOX = 11168,
-        TENGU_SNOWFOUX_S_NIGHTMARE_11169 = 11169,
-        TENGU_SNOWFOUX_S_NIGHTMARE_11170 = 11170,
-        CELESTIAL_BEARBARIAN_S_NIGHTMARE = 11172,
-        DAZAHK_FREEZAMMER_S_DREAM_11173 = 11173,
-        DAZAHK_FREEZAMMER_S_DREAM_11174 = 11174,
-        KOLOSSO_S_DREAM = 11175,
-        DAZAHK_FREEZAMMER_S_PARADOX_11176 = 11176,
-        DAZAHK_FREEZAMMER_S_PARADOX_11177 = 11177,
-        DAZAHK_FREEZAMMER_S_PARADOX_11178 = 11178,
-        KOLOSSO_S_PARADOX = 11179,
-        DAZAHK_FREEZAMMER_S_NIGHTMARE_11180 = 11180,
-        KOLOSSO_S_NIGHTMARE = 11181,
-        SOLAR_S_DREAM = 11182,
-        ILYZAELLE_S_DREAM = 11183,
-        ILYZAELLE_S_PARADOX = 11185,
-        SOLAR_S_PARADOX = 11188,
-        ILYZAELLE_S_NIGHTMARE_11189 = 11189,
-        SOLAR_S_NIGHTMARE = 11190,
-        CAPTAIN_MENO_S_DREAM = 11194,
-        CAPTAIN_MENO_S_PARADOX = 11195,
-        CAPTAIN_MENO_S_NIGHTMARE = 11196,
-        KOUTOULOU_LARVA_S_DREAM = 11197,
-        NILEZA_S_DREAM_11198 = 11198,
-        KOUTOULOU_LARVA_S_PARADOX_11199 = 11199,
-        NILEZA_S_PARADOX = 11200,
-        NILEZA_S_NIGHTMARE_11201 = 11201,
-        KOUTOULOU_LARVA_S_NIGHTMARE = 11202,
-        DANTINEA_S_DREAM_11203 = 11203,
-        DANTINEA_S_DREAM_11204 = 11204,
-        DANTINEA_S_DREAM_11205 = 11205,
-        DANTINEA_S_DREAM_11206 = 11206,
-        MERKATOR_S_DREAM_11207 = 11207,
-        DANTINEA_S_PARADOX_11208 = 11208,
-        DANTINEA_S_PARADOX_11209 = 11209,
-        MERKATOR_S_DREAM_11210 = 11210,
-        MERKATOR_S_PARADOX = 11214,
-        DANTINEA_S_NIGHTMARE_11215 = 11215,
-        MERKATOR_S_NIGHTMARE = 11216,
-        BETHEL_AKARNA_S_DREAM_11217 = 11217,
-        TAL_KASHA_S_DREAM = 11218,
-        TAL_KASHA_S_PARADOX = 11219,
-        BETHEL_AKARNA_S_PARADOX_11220 = 11220,
-        TAL_KASHA_S_NIGHTMARE = 11221,
-        BETHEL_AKARNA_S_NIGHTMARE_11222 = 11222,
-        VORTEX_S_DREAM = 11223,
-        CATSEYE_S_DREAM_11224 = 11224,
-        CATSEYE_S_DREAM_11226 = 11226,
-        VORTEX_S_PARADOX_11227 = 11227,
-        VORTEX_S_PARADOX_11228 = 11228,
-        CATSEYE_S_PARADOX_11229 = 11229,
-        CATSEYE_S_PARADOX_11230 = 11230,
-        VORTEX_S_NIGHTMARE_11231 = 11231,
-        CATSEYE_S_NIGHTMARE_11232 = 11232,
-        CATSEYE_S_NIGHTMARE_11233 = 11233,
-        CATSEYE_S_NIGHTMARE_11234 = 11234,
-        ANERICE_THE_SHUSHESS_S_DREAM = 11235,
-        ANERICE_THE_SHUSHESS_S_PARADOX = 11236,
-        ANERICE_THE_SHUSHESS_S_NIGHTMARE = 11237,
-        CATSEYE_S_NIGHTMARE_11238 = 11238,
-        QUEEN_OF_THIEVES_S_DREAM = 11239,
-        QUEEN_OF_THIEVES_S_PARADOX = 11240,
-        COUNT_HAREBOURG_S_DREAM = 11241,
-        QUEEN_OF_THIEVES_S_NIGHTMARE = 11242,
-        COUNT_HAREBOURG_S_PARADOX_11243 = 11243,
-        COUNT_HAREBOURG_S_PARADOX_11244 = 11244,
-        SYLARGH_S_DREAM = 11245,
-        MISSIZ_FREEZZ_S_DREAM = 11246,
-        SYLARGH_S_PARADOX = 11247,
-        SYLARGH_S_NIGHTMARE = 11248,
-        MISSIZ_FREEZZ_S_PARADOX_11249 = 11249,
-        MISSIZ_FREEZZ_S_PARADOX_11250 = 11250,
-        KLIME_S_DREAM = 11251,
-        KLIME_S_PARADOX = 11252,
-        KLIME_S_NIGHTMARE = 11253,
-        KING_NIDAS_S_DREAM = 11254,
-        KING_NIDAS_S_PARADOX = 11255,
-        KING_NIDAS_S_NIGHTMARE = 11256,
-        MISSIZ_FREEZZ_S_PARADOX_11257 = 11257,
-        MISSIZ_FREEZZ_S_NIGHTMARE = 11258,
-        KORRIANDER_S_DREAM = 11259,
-        KORRIANDER_S_PARADOX = 11260,
-        KORRIANDER_S_NIGHTMARE = 11262,
-        PUPPET_MASTER_S_DREAM = 11263,
-        PEKI_PEKI_S_DREAM = 11264,
-        PEKI_PEKI_S_PARADOX = 11265,
-        PUPPET_MASTER_S_PARADOX = 11266,
-        PEKI_PEKI_S_NIGHTMARE = 11267,
-        PUPPET_MASTER_S_NIGHTMARE = 11268,
-        GIANT_KRALOVE_S_DREAM = 11270,
-        GIANT_KRALOVE_S_PARADOX = 11271,
-        ITZTING_S_DREAM = 11272,
-        ITZTING_S_PARADOX_11273 = 11273,
-        GIANT_KRALOVE_S_NIGHTMARE_11274 = 11274,
-        ITZTING_S_PARADOX_11276 = 11276,
-        ITZTING_S_NIGHTMARE = 11277,
-        GIANT_KRALOVE_S_NIGHTMARE_11279 = 11279,
-        FATHER_KWISMAS_S_DREAM_11280 = 11280,
-        FATHER_KWISMAS_S_DREAM_11281 = 11281,
-        GIANT_KRALOVE_S_NIGHTMARE = 11282,
-        FATHER_KWISMAS_S_PARADOX_11283 = 11283,
-        FATHER_WHUPPER_S_DREAM = 11284,
-        FATHER_WHUPPER_S_PARADOX = 11285,
-        FATHER_KWISMAS_S_NIGHTMARE_11286 = 11286,
-        FATHER_WHUPPER_S_NIGHTMARE = 11287,
-        AL_HOWIN_S_DREAM = 11289,
-        AL_HOWIN_S_PARADOX = 11290,
-        AL_HOWIN_S_NIGHTMARE = 11291,
-        KOOLICH_S_PARADOX = 11295,
-        DRAGON_PIG_S_DREAM = 11299,
-        ROYAL_PINGWIN_S_DREAM_11300 = 11300,
-        ROYAL_PINGWIN_S_NIGHTMARE_11301 = 11301,
-        WURMLORD_S_PARADOX = 11302,
-        WURMLORD_S_NIGHTMARE_11303 = 11303,
-        WURMLORD_S_NIGHTMARE_11304 = 11304,
-        BUCK_ANEAR_S_DREAM = 11305,
-        BUCK_ANEAR_S_PARADOX = 11306,
-        FUJI_SNOWFOUX_S_DREAM_11309 = 11309,
-        FUJI_SNOWFOUX_S_NIGHTMARE_11311 = 11311,
-        TENGU_SNOWFOUX_S_NIGHTMARE = 11312,
-        DAZAHK_FREEZAMMER_S_PARADOX_11313 = 11313,
-        DAZAHK_FREEZAMMER_S_NIGHTMARE_11314 = 11314,
-        NILEZA_S_DREAM_11315 = 11315,
-        NILEZA_S_NIGHTMARE_11316 = 11316,
-        DANTINEA_S_DREAM_11317 = 11317,
-        DANTINEA_S_DREAM_11318 = 11318,
-        TOXOLIATH_S_NIGHTMARE_11320 = 11320,
-        BETHEL_AKARNA_S_DREAM_11321 = 11321,
-        BETHEL_AKARNA_S_DREAM = 11322,
-        BETHEL_AKARNA_S_PARADOX_11323 = 11323,
-        BETHEL_AKARNA_S_NIGHTMARE_11324 = 11324,
-        CATSEYE_S_DREAM = 11325,
-        CATSEYE_S_PARADOX = 11326,
-        SPHINCTER_CELL_S_NIGHTMARE_11327 = 11327,
-        SPHINCTER_CELL_S_NIGHTMARE_11328 = 11328,
-        SPHINCTER_CELL_S_NIGHTMARE = 11329,
-        COUNT_HAREBOURG_S_PARADOX = 11331,
-        MISSIZ_FREEZZ_S_PARADOX_11332 = 11332,
-        SPHINCTER_CELL_S_DREAM_11334 = 11334,
-        SHADOW_S_DREAM_11337 = 11337,
-        FATHER_KWISMAS_S_DREAM_11340 = 11340,
-        FATHER_KWISMAS_S_DREAM_11341 = 11341,
-        FATHER_KWISMAS_S_PARADOX_11342 = 11342,
-        FATHER_KWISMAS_S_PARADOX_11343 = 11343,
-        FATHER_KWISMAS_S_PARADOX_11344 = 11344,
-        FATHER_KWISMAS_S_NIGHTMARE_11346 = 11346,
-        MOOWOLF_S_NIGHTMARE_11348 = 11348,
-        PANDORA_MASTER_S_DREAM_11349 = 11349,
-        EL_PIKO_S_DREAM_11350 = 11350,
-        EL_PIKO_S_NIGHTMARE_11351 = 11351,
-        CROCOBUR_S_APPETITE_11352 = 11352,
-        NOVAMAIRE_COLD = 11355,
-        SPHINCTER_CELL_S_PARADOX_11356 = 11356,
-        BUHORADO_FEATHER = 11357,
-        FALLANSTER_S_RECTITUDE_11358 = 11358,
-        DEATH_DEFYING_11359 = 11359,
-        KING_UNDER_THE_MOUNTAIN_11360 = 11360,
-        GANYMEDE_S_WISDOM = 11361,
-        DANTINEA_S_PARADOX = 11362,
-        RYKKE_ERREL_S_BRAVERY_11363 = 11363,
-        DANTINEA_S_NIGHTMARE_11364 = 11364,
-        ELEMENTAL_ASSIMILATION_11365 = 11365,
-        THOUSAND_LEAGUES = 11366,
-        THE_KICKED_ASSES = 11367,
-        DODGE_S_AUDACITY_11368 = 11368,
-        LADY_JHESSICA_S_COURAGE_11369 = 11369,
-        FATHER_KWISMAS_S_NIGHTMARE = 11370,
-        ROYAL_TOFU_S_DREAM = 11373,
-        ROYAL_TOFU_S_NIGHTMARE_11374 = 11374,
-        SPHINCTER_CELL_S_PARADOX = 11376,
-        KOOLICH_S_NIGHTMARE = 11379,
-        OUGAA_S_PARADOX_11380 = 11380,
-        PRIMORDIAL_PHOENIX_S_WRATH = 11381,
-        FIFTH_SUN = 11382,
-        ASTRAL_SPARK = 11383,
-        NUCLEAR_CHAOSTRIGGERED_ = 11384,
-        NUCLEAR_CHAOS = 11385,
-        WANTON_DESTRUCTION = 11386,
-        RATATHROSK_S_TRIALTRIGGERED_1_ = 11388,
-        GOBLIMPRISING = 11389,
-        GOBLIMP_RALLYING_11390 = 11390,
-        GOBLIMP_RALLYING_11391 = 11391,
-        LONG_LIVE_KWISMAS = 11392,
-        RESOUNDING_HOOF = 11393,
-        PRIMORDIAL_PHOENIX_S_WRATHTRIGGERED_ = 11394,
-        SUDDEN_CHILL = 11395,
-        GOBLIMBOW = 11396,
-        GOBLIMPACT = 11397,
-        GOBLIMPEDO = 11399,
-        GOBLIMSPARK = 11400,
-        RATATHROSK_S_TRIALTRIGGERED_2_ = 11401,
-        DOUBLE_VITALITY = 11403,
-        INTERMITTENT_INVULNERABILITY = 11404,
-        RECURRENT_REGENERATION = 11405,
-        OFFENSIVE_HEALS = 11406,
-        MURDERER_IN_THE_MAKING = 11407,
-        RICKSHAW_11408 = 11408,
-        CRITICALS_GUARANTEED = 11409,
-        INTERMITTENT_POWER = 11410,
-        IMPROVED_INDIRECT_DAMAGE = 11411,
-        FREEDOM_OF_MOVEMENT = 11412,
-        GOBLIMP_AGGLUTINATION = 11413,
-        ILYZAELLE_S_NIGHTMARE_11414 = 11414,
-        INEXORABLE_DESTINYTRIGGERED_3_ = 11415,
-        THREAD_OF_DESTINY_11417 = 11417,
-        KERFAIR = 11418,
-        PROFESSOR_XA_S_PARADOX = 11419,
-        MINOTOT_S_PARADOX_11422 = 11422,
-        HARMFUL_INCANTATION = 11423,
-        KIMBO_S_DREAM_11424 = 11424,
-        CROSS_STRICH_S_NIGHTMARE_11425 = 11425,
-        AVATAR_DEATH = 11426,
-        KOUTOULOU_LARVA_S_PARADOX_11428 = 11428,
-        NIGHTMARISH_PURSUIT = 11429,
-        QUADRAMENTAL_CHIMERIC_FURY = 11431,
-        QUADRAMENTAL_CHIMERIC_BREATH = 11432,
-        RUDE_WAKENING = 11433,
-        AEROPOKE = 11434,
-        AEROTHING = 11435,
-        AQUAPOKE = 11436,
-        AQUATHING = 11437,
-        PYROPOKE = 11438,
-        PYROTHING = 11439,
-        GEOPOKE = 11440,
-        GEOTHING = 11441,
-        AEROCHIM_11442 = 11442,
-        AEROCHIM_11443 = 11443,
+
+        REPULSION_DE_LA_GARDIENNE_DU_SUD_10968 = 10968,
+
+        MALEDICTION_DU_MARAIS_10969 = 10969,
+
+        DIVINATION_10970 = 10970,
+
+        SOUFFLE_DE_BRAISE_10971 = 10971,
+
+        INFLUENCE_NEFASTE_10972 = 10972,
+
+        COUPS_ECRASANTS_10973 = 10973,
+
+        APPARITION_DEMONIAQUE_10974 = 10974,
+
+        DESENCHANTEMENT_10975 = 10975,
+
+        APPEL_DU_DESTIN_10976 = 10976,
+
+        ORACLE_MACABRE_10977 = 10977,
+
+        MAUVAIS_AUGURE_10978 = 10978,
+
+        REVE_DU_KOULOSSE_10979 = 10979,
+
+        DESTIN_FUNESTE_10980 = 10980,
+
+        PARADOXE_DU_DRAGON_COCHON_10986 = 10986,
+
+        CAUCHEMAR_DU_DRAGON_COCHON_10987 = 10987,
+
+        CAUCHEMAR_DU_DRAGON_COCHON_10988 = 10988,
+
+        REVE_DU_BOUFTOU_ROYAL_10989 = 10989,
+
+        _10990 = 10990,
+
+        RITUEL_DE_SCELLEMENT_DE_LAME_DECLENCHE_10991 = 10991,
+
+        REVE_DE_MOON_10994 = 10994,
+
+        REVE_DE_MOON_10995 = 10995,
+
+        REVE_DE_MOON_10996 = 10996,
+
+        PARADOXE_DE_MOON_10998 = 10998,
+
+        CAUCHEMAR_DE_MOON_11000 = 11000,
+
+        CAUCHEMAR_DE_MOON_11002 = 11002,
+
+        REVE_DU_MEULOU_11003 = 11003,
+
+        REVE_DE_SILF_LE_RASBOUL_MAJEUR_11004 = 11004,
+
+        REVE_DU_MEULOU_11005 = 11005,
+
+        CAUCHEMAR_DE_SILF_LE_RASBOUL_MAJEUR_11006 = 11006,
+
+        PARADOXE_DE_SILF_LE_RASBOUL_MAJEUR_11007 = 11007,
+
+        PARADOXE_DU_MEULOU_11009 = 11009,
+
+        PARADOXE_DU_MEULOU_11010 = 11010,
+
+        REVE_DU_RAT_BLANC_11011 = 11011,
+
+        CAUCHEMAR_DU_MEULOU_11012 = 11012,
+
+        CAUCHEMAR_DU_MEULOU_11013 = 11013,
+
+        CAUCHEMAR_DU_RAT_BLANC_11014 = 11014,
+
+        CAUCHEMAR_DU_MEULOU_11015 = 11015,
+
+        REVE_DU_RAT_NOIR_11016 = 11016,
+
+        PARADOXE_DU_RAT_BLANC_11017 = 11017,
+
+        REVE_DU_RAT_NOIR_11018 = 11018,
+
+        REVE_DU_MAÎTRE_CORBAC_11019 = 11019,
+
+        PARADOXE_DU_RAT_NOIR_11020 = 11020,
+
+        PARADOXE_DU_MAÎTRE_CORBAC_11021 = 11021,
+
+        CAUCHEMAR_DU_MAÎTRE_CORBAC_11022 = 11022,
+
+        REVE_DU_POUNICHEUR_11023 = 11023,
+
+        PARADOXE_DU_POUNICHEUR_11024 = 11024,
+
+        CAUCHEMAR_DU_RAT_NOIR_11025 = 11025,
+
+        CAUCHEMAR_DU_RAT_NOIR_11026 = 11026,
+
+        CAUCHEMAR_DU_POUNICHEUR_11027 = 11027,
+
+        CAUCHEMAR_DU_RAT_NOIR_11028 = 11028,
+
+        PARADOXE_DE_SKEUNK_11029 = 11029,
+
+        PARADOXE_DE_SKEUNK_11031 = 11031,
+
+        REVE_DU_MINOTOROR_11034 = 11034,
+
+        CAUCHEMAR_DE_SKEUNK_11035 = 11035,
+
+        PARADOXE_DU_MINOTOROR_11036 = 11036,
+
+        CAUCHEMAR_DU_MINOTOROR_11037 = 11037,
+
+        PARADOXE_DE_FRAKTALE_11038 = 11038,
+
+        REVE_DE_FRAKTALE_11039 = 11039,
+
+        REVE_DE_FRAKTALE_11040 = 11040,
+
+        CAUCHEMAR_DE_FRAKTALE_11041 = 11041,
+
+        REVE_DU_TANUKOUÏ_SAN_11044 = 11044,
+
+        PARADOXE_DU_TANUKOUÏ_SAN_11045 = 11045,
+
+        CAUCHEMAR_DU_TANUKOUÏ_SAN_11046 = 11046,
+
+        CAUCHEMAR_DU_TANUKOUÏ_SAN_11047 = 11047,
+
+        CAUCHEMAR_DU_TANUKOUÏ_SAN_11048 = 11048,
+
+        REVE_DU_TOFU_ROYAL_11049 = 11049,
+
+        REVE_DU_TOFU_ROYAL_11050 = 11050,
+
+        REVE_DU_BLOP_MULTICOLORE_ROYAL_11051 = 11051,
+
+        PARADOXE_DU_BLOP_MULTICOLORE_ROYAL_11052 = 11052,
+
+        PARADOXE_DU_TOFU_ROYAL_11053 = 11053,
+
+        CAUCHEMAR_DU_BLOP_MULTICOLORE_ROYAL_11054 = 11054,
+
+        CAUCHEMAR_DU_TOFU_ROYAL_11055 = 11055,
+
+        REVE_DE_CROCABULIA_11057 = 11057,
+
+        PARADOXE_DE_CROCABULIA_11058 = 11058,
+
+        CAUCHEMAR_DE_CROCABULIA_11059 = 11059,
+
+        REVE_DU_MAÎTRE_PANDORE_11060 = 11060,
+
+        REVE_DU_ROYALMOUTH_11063 = 11063,
+
+        PARADOXE_DU_ROYALMOUTH_11064 = 11064,
+
+        CAUCHEMAR_DU_ROYALMOUTH_11065 = 11065,
+
+        CAUCHEMAR_DU_MAÎTRE_PANDORE_11066 = 11066,
+
+        REVE_DU_CAPITAINE_EKARLATTE_11067 = 11067,
+
+        REVE_DEL_PIKO_11068 = 11068,
+
+        PARADOXE_DU_CAPITAINE_EKARLATTE_11069 = 11069,
+
+        CAUCHEMAR_DU_CAPITAINE_EKARLATTE_11070 = 11070,
+
+        REVE_DE_LA_HAUTE_TRUCHE_11071 = 11071,
+
+        PARADOXE_DE_LA_HAUTE_TRUCHE_11072 = 11072,
+
+        CAUCHEMAR_DE_LA_HAUTE_TRUCHE_11074 = 11074,
+
+        PARADOXE_DEL_PIKO_11075 = 11075,
+
+        REVE_DES_TYNRILS_11076 = 11076,
+
+        PARADOXE_DES_TYNRILS_11077 = 11077,
+
+        CAUCHEMAR_DES_TYNRILS_11078 = 11078,
+
+        CAUCHEMAR_DEL_PIKO_11079 = 11079,
+
+        REVE_DU_CHENE_MOU_11080 = 11080,
+
+        _11081 = 11081,
+
+        REVE_DU_CHENE_MOU_11082 = 11082,
+
+        PARADOXE_DU_CHENE_MOU_11083 = 11083,
+
+        CAUCHEMAR_DU_CHENE_MOU_11084 = 11084,
+
+        REVE_DE_SPHINCTER_CELL_11087 = 11087,
+
+        PARADOXE_DE_SPHINCTER_CELL_11088 = 11088,
+
+        PARADOXE_DE_SPHINCTER_CELL_11089 = 11089,
+
+        PARADOXE_DE_SPHINCTER_CELL_11090 = 11090,
+
+        REVE_DU_PHOSSILE_11091 = 11091,
+
+        PARADOXE_DU_PHOSSILE_11092 = 11092,
+
+        CAUCHEMAR_DU_PHOSSILE_11093 = 11093,
+
+        REVE_DU_KIMBO_11094 = 11094,
+
+        PARADOXE_DU_KIMBO_11095 = 11095,
+
+        CAUCHEMAR_DU_KIMBO_11096 = 11096,
+
+        ENVOYEE_DU_DESTIN_11097 = 11097,
+
+        REVE_DU_ROYALMOUTH_11098 = 11098,
+
+        REVE_DU_MINOTOT_11099 = 11099,
+
+        PARADOXE_DU_MINOTOT_11100 = 11100,
+
+        CAUCHEMAR_DU_MINOTOT_11102 = 11102,
+
+        REVE_DE_USH_GALESH_11103 = 11103,
+
+        PARADOXE_DE_USH_GALESH_11106 = 11106,
+
+        CAUCHEMAR_DE_USH_GALESH_11107 = 11107,
+
+        CAUCHEMAR_DE_USH_GALESH_11108 = 11108,
+
+        REVE_DE_KANIGROULA_11109 = 11109,
+
+        PARADOXE_DE_KANIGROULA_11110 = 11110,
+
+        CAUCHEMAR_DE_KANIGROULA_11111 = 11111,
+
+        REVE_DE_XLII_11112 = 11112,
+
+        REVE_DU_MANSOT_ROYAL_11113 = 11113,
+
+        PARADOXE_DU_MANSOT_ROYAL_11114 = 11114,
+
+        CAUCHEMAR_DU_MANSOT_ROYAL_11115 = 11115,
+
+        PARADOXE_DE_XLII_11116 = 11116,
+
+        REVE_DU_PERE_VER_11117 = 11117,
+
+        REVE_DU_PERE_VER_11118 = 11118,
+
+        CAUCHEMAR_DE_XLII_11119 = 11119,
+
+        CAUCHEMAR_DE_XLII_11120 = 11120,
+
+        CAUCHEMAR_DE_XLII_11121 = 11121,
+
+        PARADOXE_DU_PERE_VER_11122 = 11122,
+
+        PARADOXE_DU_PERE_VER_11123 = 11123,
+
+        REVE_DU_TOXOLIATH_11124 = 11124,
+
+        CAUCHEMAR_DU_PERE_VER_11125 = 11125,
+
+        PARADOXE_DU_TOXOLIATH_11126 = 11126,
+
+        CAUCHEMAR_DU_PERE_VER_11127 = 11127,
+
+        CAUCHEMAR_DU_TOXOLIATH_11128 = 11128,
+
+        REVE_DE_BEN_LE_RIPATE_11129 = 11129,
+
+        REVE_DE_BEN_LE_RIPATE_11130 = 11130,
+
+        PARADOXE_DE_BEN_LE_RIPATE_11131 = 11131,
+
+        PARADOXE_DE_BEN_LE_RIPATE_11132 = 11132,
+
+        REVE_DU_BWORKER_11133 = 11133,
+
+        PARADOXE_DU_BWORKER_11134 = 11134,
+
+        CAUCHEMAR_DU_BWORKER_11135 = 11135,
+
+        REVE_DOUGAH_11136 = 11136,
+
+        PARADOXE_DOUGAH_11137 = 11137,
+
+        CAUCHEMAR_DOUGAH_11138 = 11138,
+
+        REVE_DE_GROLLOUM_11139 = 11139,
+
+        CAUCHEMAR_DE_BEN_LE_RIPATE_11141 = 11141,
+
+        PARADOXE_DE_GROLLOUM_11142 = 11142,
+
+        CAUCHEMAR_DE_GROLLOUM_11144 = 11144,
+
+        REVE_DOMBRE_11146 = 11146,
+
+        PARADOXE_DOMBRE_11149 = 11149,
+
+        CAUCHEMAR_DOMBRE_11150 = 11150,
+
+        REVE_DE_LOBSIDIANTRE_11151 = 11151,
+
+        REVE_DE_LOBSIDIANTRE_11152 = 11152,
+
+        PARADOXE_DE_LOBSIDIANTRE_11153 = 11153,
+
+        CAUCHEMAR_DE_LOBSIDIANTRE_11154 = 11154,
+
+        REVE_DE_FUJI_GIVREFOUX_11155 = 11155,
+
+        REVE_DE_FUJI_GIVREFOUX_11156 = 11156,
+
+        REVE_DE_FUJI_GIVREFOUX_11157 = 11157,
+
+        PARADOXE_DE_FUJI_GIVREFOUX_11158 = 11158,
+
+        CAUCHEMAR_DE_FUJI_GIVREFOUX_11159 = 11159,
+
+        AIDE_DE_LAVATAR_11160 = 11160,
+
+        REVE_DU_PROFESSEUR_XA_11161 = 11161,
+
+        PARADOXE_DU_PROFESSEUR_XA_11162 = 11162,
+
+        PARADOXE_DU_PROFESSEUR_XA_11163 = 11163,
+
+        REVE_DE_TENGU_GIVREFOUX_11164 = 11164,
+
+        CAUCHEMAR_DU_PROFESSEUR_XA_11165 = 11165,
+
+        REVE_DU_GLOURSELESTE_11166 = 11166,
+
+        PARADOXE_DE_TENGU_GIVREFOUX_11167 = 11167,
+
+        PARADOXE_DU_GLOURSELESTE_11168 = 11168,
+
+        CAUCHEMAR_DE_TENGU_GIVREFOUX_11169 = 11169,
+
+        CAUCHEMAR_DE_TENGU_GIVREFOUX_11170 = 11170,
+
+        CAUCHEMAR_DU_GLOURSELESTE_11172 = 11172,
+
+        REVE_DE_DAZAK_MARTEGEL_11173 = 11173,
+
+        REVE_DE_DAZAK_MARTEGEL_11174 = 11174,
+
+        REVE_DU_KOLOSSO_11175 = 11175,
+
+        PARADOXE_DE_DAZAK_MARTEGEL_11176 = 11176,
+
+        PARADOXE_DE_DAZAK_MARTEGEL_11177 = 11177,
+
+        PARADOXE_DE_DAZAK_MARTEGEL_11178 = 11178,
+
+        PARADOXE_DU_KOLOSSO_11179 = 11179,
+
+        CAUCHEMAR_DE_DAZAK_MARTEGEL_11180 = 11180,
+
+        CAUCHEMAR_DU_KOLOSSO_11181 = 11181,
+
+        REVE_DE_SOLAR_11182 = 11182,
+
+        REVE_DILYZAELLE_11183 = 11183,
+
+        PARADOXE_DILYZAELLE_11185 = 11185,
+
+        PARADOXE_DE_SOLAR_11188 = 11188,
+
+        CAUCHEMAR_DILYZAELLE_11189 = 11189,
+
+        CAUCHEMAR_DE_SOLAR_11190 = 11190,
+
+        REVE_DU_CAPITAINE_MENO_11194 = 11194,
+
+        PARADOXE_DU_CAPITAINE_MENO_11195 = 11195,
+
+        CAUCHEMAR_DU_CAPITAINE_MENO_11196 = 11196,
+
+        REVE_DE_LA_LARVE_DE_KOUTOULOU_11197 = 11197,
+
+        REVE_DE_NILEZA_11198 = 11198,
+
+        PARADOXE_DE_LA_LARVE_DE_KOUTOULOU_11199 = 11199,
+
+        PARADOXE_DE_NILEZA_11200 = 11200,
+
+        CAUCHEMAR_DE_NILEZA_11201 = 11201,
+
+        CAUCHEMAR_DE_LA_LARVE_DE_KOUTOULOU_11202 = 11202,
+
+        REVE_DE_DANTINEA_11203 = 11203,
+
+        REVE_DE_DANTINEA_11204 = 11204,
+
+        REVE_DE_DANTINEA_11205 = 11205,
+
+        REVE_DE_DANTINEA_11206 = 11206,
+
+        REVE_DE_MERKATOR_11207 = 11207,
+
+        PARADOXE_DE_DANTINEA_11208 = 11208,
+
+        PARADOXE_DE_DANTINEA_11209 = 11209,
+
+        REVE_DE_MERKATOR_11210 = 11210,
+
+        PARADOXE_DE_MERKATOR_11214 = 11214,
+
+        CAUCHEMAR_DE_DANTINEA_11215 = 11215,
+
+        CAUCHEMAR_DE_MERKATOR_11216 = 11216,
+
+        REVE_DE_BETHEL_AKARNA_11217 = 11217,
+
+        REVE_DE_TAL_KASHA_11218 = 11218,
+
+        PARADOXE_DE_TAL_KASHA_11219 = 11219,
+
+        PARADOXE_DE_BETHEL_AKARNA_11220 = 11220,
+
+        CAUCHEMAR_DE_TAL_KASHA_11221 = 11221,
+
+        CAUCHEMAR_DE_BETHEL_AKARNA_11222 = 11222,
+
+        REVE_DE_VORTEX_11223 = 11223,
+
+        REVE_DU_CHALŒIL_11224 = 11224,
+
+        REVE_DU_CHALŒIL_11226 = 11226,
+
+        PARADOXE_DE_VORTEX_11227 = 11227,
+
+        PARADOXE_DE_VORTEX_11228 = 11228,
+
+        PARADOXE_DU_CHALŒIL_11229 = 11229,
+
+        PARADOXE_DU_CHALŒIL_11230 = 11230,
+
+        CAUCHEMAR_DE_VORTEX_11231 = 11231,
+
+        CAUCHEMAR_DU_CHALŒIL_11232 = 11232,
+
+        CAUCHEMAR_DU_CHALŒIL_11233 = 11233,
+
+        CAUCHEMAR_DU_CHALŒIL_11234 = 11234,
+
+        REVE_DANERICE_LA_SHUSHESS_11235 = 11235,
+
+        PARADOXE_DANERICE_LA_SHUSHESS_11236 = 11236,
+
+        CAUCHEMAR_DANERICE_LA_SHUSHESS_11237 = 11237,
+
+        CAUCHEMAR_DU_CHALŒIL_11238 = 11238,
+
+        REVE_DE_LA_REINE_DES_VOLEURS_11239 = 11239,
+
+        PARADOXE_DE_LA_REINE_DES_VOLEURS_11240 = 11240,
+
+        REVE_DU_COMTE_HAREBOURG_11241 = 11241,
+
+        CAUCHEMAR_DE_LA_REINE_DES_VOLEURS_11242 = 11242,
+
+        PARADOXE_DU_COMTE_HAREBOURG_11243 = 11243,
+
+        PARADOXE_DU_COMTE_HAREBOURG_11244 = 11244,
+
+        REVE_DE_SYLARGH_11245 = 11245,
+
+        REVE_DE_MISSIZ_FRIZZ_11246 = 11246,
+
+        PARADOXE_DE_SYLARGH_11247 = 11247,
+
+        CAUCHEMAR_DE_SYLARGH_11248 = 11248,
+
+        PARADOXE_DE_MISSIZ_FRIZZ_11249 = 11249,
+
+        PARADOXE_DE_MISSIZ_FRIZZ_11250 = 11250,
+
+        REVE_DE_KLIME_11251 = 11251,
+
+        PARADOXE_DE_KLIME_11252 = 11252,
+
+        CAUCHEMAR_DE_KLIME_11253 = 11253,
+
+        REVE_DU_ROI_NIDAS_11254 = 11254,
+
+        PARADOXE_DU_ROI_NIDAS_11255 = 11255,
+
+        CAUCHEMAR_DU_ROI_NIDAS_11256 = 11256,
+
+        PARADOXE_DE_MISSIZ_FRIZZ_11257 = 11257,
+
+        CAUCHEMAR_DE_MISSIZ_FRIZZ_11258 = 11258,
+
+        REVE_DU_KORRIANDRE_11259 = 11259,
+
+        PARADOXE_DU_KORRIANDRE_11260 = 11260,
+
+        CAUCHEMAR_DU_KORRIANDRE_11262 = 11262,
+
+        REVE_DU_MAÎTRE_DES_PANTINS_11263 = 11263,
+
+        REVE_DU_PEKI_PEKI_11264 = 11264,
+
+        PARADOXE_DU_PEKI_PEKI_11265 = 11265,
+
+        PARADOXE_DU_MAÎTRE_DES_PANTINS_11266 = 11266,
+
+        CAUCHEMAR_DU_PEKI_PEKI_11267 = 11267,
+
+        CAUCHEMAR_DU_MAÎTRE_DES_PANTINS_11268 = 11268,
+
+        REVE_DU_KRALAMOUR_GEANT_11270 = 11270,
+
+        PARADOXE_DU_KRALAMOUR_GEANT_11271 = 11271,
+
+        REVE_DE_SAPIK_11272 = 11272,
+
+        PARADOXE_DE_SAPIK_11273 = 11273,
+
+        CAUCHEMAR_DU_KRALAMOUR_GEANT_11274 = 11274,
+
+        PARADOXE_DE_SAPIK_11276 = 11276,
+
+        CAUCHEMAR_DE_SAPIK_11277 = 11277,
+
+        CAUCHEMAR_DU_KRALAMOUR_GEANT_11279 = 11279,
+
+        REVE_DU_PAPA_NOWEL_11280 = 11280,
+
+        REVE_DU_PAPA_NOWEL_11281 = 11281,
+
+        CAUCHEMAR_DU_KRALAMOUR_GEANT_11282 = 11282,
+
+        PARADOXE_DU_PAPA_NOWEL_11283 = 11283,
+
+        REVE_DU_PERE_FWETAR_11284 = 11284,
+
+        PARADOXE_DU_PERE_FWETAR_11285 = 11285,
+
+        CAUCHEMAR_DU_PAPA_NOWEL_11286 = 11286,
+
+        CAUCHEMAR_DU_PERE_FWETAR_11287 = 11287,
+
+        REVE_DHALOUINE_11289 = 11289,
+
+        PARADOXE_DHALOUINE_11290 = 11290,
+
+        CAUCHEMAR_DHALOUINE_11291 = 11291,
+
+        PARADOXE_DU_KOULOSSE_11295 = 11295,
+
+        _11296 = 11296,
+
+        _11297 = 11297,
+
+        _11298 = 11298,
+
+        REVE_DU_DRAGON_COCHON_11299 = 11299,
+
+        REVE_DU_MANSOT_ROYAL_11300 = 11300,
+
+        CAUCHEMAR_DU_MANSOT_ROYAL_11301 = 11301,
+
+        PARADOXE_DU_PERE_VER_11302 = 11302,
+
+        CAUCHEMAR_DU_PERE_VER_11303 = 11303,
+
+        CAUCHEMAR_DU_PERE_VER_11304 = 11304,
+
+        REVE_DE_BEN_LE_RIPATE_11305 = 11305,
+
+        PARADOXE_DE_BEN_LE_RIPATE_11306 = 11306,
+
+        REVE_DE_FUJI_GIVREFOUX_11309 = 11309,
+
+        CAUCHEMAR_DE_FUJI_GIVREFOUX_11311 = 11311,
+
+        CAUCHEMAR_DE_TENGU_GIVREFOUX_11312 = 11312,
+
+        PARADOXE_DE_DAZAK_MARTEGEL_11313 = 11313,
+
+        CAUCHEMAR_DE_DAZAK_MARTEGEL_11314 = 11314,
+
+        REVE_DE_NILEZA_11315 = 11315,
+
+        CAUCHEMAR_DE_NILEZA_11316 = 11316,
+
+        REVE_DE_DANTINEA_11317 = 11317,
+
+        REVE_DE_DANTINEA_11318 = 11318,
+
+        CAUCHEMAR_DU_TOXOLIATH_11320 = 11320,
+
+        REVE_DE_BETHEL_AKARNA_11321 = 11321,
+
+        REVE_DE_BETHEL_AKARNA_11322 = 11322,
+
+        PARADOXE_DE_BETHEL_AKARNA_11323 = 11323,
+
+        CAUCHEMAR_DE_BETHEL_AKARNA_11324 = 11324,
+
+        PARADOXE_DU_CHALŒIL_11326 = 11326,
+
+        CAUCHEMAR_DE_SPHINCTER_CELL_11327 = 11327,
+
+        CAUCHEMAR_DE_SPHINCTER_CELL_11328 = 11328,
+
+        CAUCHEMAR_DE_SPHINCTER_CELL_11329 = 11329,
+
+        PARADOXE_DU_COMTE_HAREBOURG_11331 = 11331,
+
+        PARADOXE_DE_MISSIZ_FRIZZ_11332 = 11332,
+
+        REVE_DE_SPHINCTER_CELL_11334 = 11334,
+
+        REVE_DOMBRE_11337 = 11337,
+
+        REVE_DU_PAPA_NOWEL_11340 = 11340,
+
+        REVE_DU_PAPA_NOWEL_11341 = 11341,
+
+        PARADOXE_DU_PAPA_NOWEL_11342 = 11342,
+
+        PARADOXE_DU_PAPA_NOWEL_11343 = 11343,
+
+        PARADOXE_DU_PAPA_NOWEL_11344 = 11344,
+
+        CAUCHEMAR_DU_MEULOU_11348 = 11348,
+
+        REVE_DU_MAÎTRE_PANDORE_11349 = 11349,
+
+        REVE_DEL_PIKO_11350 = 11350,
+
+        CAUCHEMAR_DEL_PIKO_11351 = 11351,
+
+        APPETIT_DE_CROCOBUR_11352 = 11352,
+
+        DESTIN_FATIDIQUE_11354 = 11354,
+
+        PARADOXE_DE_SPHINCTER_CELL_11356 = 11356,
+
+        PLUME_DE_BUHORADO_11357 = 11357,
+
+        DROITURE_DE_FALLANSTER_11358 = 11358,
+
+        TROMPE_LA_MORT_11359 = 11359,
+
+        ROI_SOUS_LA_MONTAGNE_11360 = 11360,
+
+        SAGESSE_DE_GANYMEDE_11361 = 11361,
+
+        PARADOXE_DE_DANTINEA_11362 = 11362,
+
+        BRAVOURE_DE_RYKKE_ERREL_11363 = 11363,
+
+        CAUCHEMAR_DE_DANTINEA_11364 = 11364,
+
+        ASSIMILATION_ELEMENTAIRE_11365 = 11365,
+
+        MILLE_LIEUES_11366 = 11366,
+
+        LES_CULS_BOTTES_11367 = 11367,
+
+        AUDACE_DE_DODGE_11368 = 11368,
+
+        COURAGE_DE_DAME_JHESSICA_11369 = 11369,
+
+        REVE_DU_TOFU_ROYAL_11373 = 11373,
+
+        CAUCHEMAR_DU_TOFU_ROYAL_11374 = 11374,
+
+        _11375 = 11375,
+
+        PARADOXE_DE_SPHINCTER_CELL_11376 = 11376,
+
+        _11377 = 11377,
+
+        _11378 = 11378,
+
+        CAUCHEMAR_DU_KOULOSSE_11379 = 11379,
+
+        PARADOXE_DOUGAH_11380 = 11380,
+
+        COURROUX_DU_PHENIX_PRIMORDIAL_11381 = 11381,
+
+        CINQUIEME_SOLEIL_11382 = 11382,
+
+        ETINCELLE_ASTRALE_11383 = 11383,
+
+        CHAOS_NUCLEAIRE_DECLENCHE_11384 = 11384,
+
+        CHAOS_NUCLEAIRE_11385 = 11385,
+
+        DESTRUCTION_AVEUGLE_11386 = 11386,
+
+        EPREUVE_DE_RATHROSK_DECLENCHE_1_11388 = 11388,
+
+        GLUTINERIE_11389 = 11389,
+
+        RALLIEMENT_GLUTIN_11390 = 11390,
+
+        RALLIEMENT_GLUTIN_11391 = 11391,
+
+        VIVE_NOWEL_11392 = 11392,
+
+        SABOT_RESONNANT_11393 = 11393,
+
+        COURROUX_DU_PHENIX_PRIMORDIAL_DECLENCHE_11394 = 11394,
+
+        COUP_DE_FROID_11395 = 11395,
+
+        GLUTARC_11396 = 11396,
+
+        GLUTIMPACT_11397 = 11397,
+
+        GLUTORPILLE_11399 = 11399,
+
+        GLUTINCELLE_11400 = 11400,
+
+        EPREUVE_DE_RATHROSK_DECLENCHE_2_11401 = 11401,
+
+        VITALITE_DOUBLEE_11403 = 11403,
+
+        INVULNERABILITE_INTERMITTENTE_11404 = 11404,
+
+        REGENERATION_RECURRENTE_11405 = 11405,
+
+        SOINS_OFFENSIFS_11406 = 11406,
+
+        ASSASSIN_EN_PUISSANCE_11407 = 11407,
+
+        POUSSE_POUSSE_11408 = 11408,
+
+        CRITIQUES_ASSURES_11409 = 11409,
+
+        PUISSANCE_INTERMITTENTE_11410 = 11410,
+
+        DOMMAGES_INDIRECTS_AMELIORES_11411 = 11411,
+
+        LIBRE_CIRCULATION_11412 = 11412,
+
+        AGGLUTINATION_GLUTINE_11413 = 11413,
+
+        CAUCHEMAR_DILYZAELLE_11414 = 11414,
+
+        DESTIN_INEXORABLE_DECLENCHE_3_11415 = 11415,
+
+        DESTIN_INEVITABLE_11416 = 11416,
+
+        FIL_DU_DESTIN_11417 = 11417,
+
+        KERMES_11418 = 11418,
+
+        PARADOXE_DU_PROFESSEUR_XA_11419 = 11419,
+
+        PARADOXE_DU_MINOTOT_11422 = 11422,
+
+        INCANTATION_NEFASTE_11423 = 11423,
+
+        REVE_DU_KIMBO_11424 = 11424,
+
+        CAUCHEMAR_DE_LA_HAUTE_TRUCHE_11425 = 11425,
+
+        MORT_AVATARS_11426 = 11426,
+
+        PARADOXE_DE_LA_LARVE_DE_KOUTOULOU_11428 = 11428,
+
+        POURSUITE_CAUCHEMARDESQUE_11429 = 11429,
+
+        _11430 = 11430,
+
+        FURIE_QUADRAMENTALE_CHIMERIQUE_11431 = 11431,
+
+        SOUFFLE_QUADRAMENTALE_CHIMERIQUE_11432 = 11432,
+
+        EVEIL_BRUTAL_11433 = 11433,
+
+        EOPOKE_11434 = 11434,
+
+        EOTRUC_11435 = 11435,
+
+        AQUAPOKE_11436 = 11436,
+
+        AQUATRUC_11437 = 11437,
+
+        PYROPOKE_11438 = 11438,
+
+        PYROTRUC_11439 = 11439,
+
+        GEOPOKE_11440 = 11440,
+
+        GEOTRUC_11441 = 11441,
+
+        EOCHIM_11442 = 11442,
+
+        EOCHIM_11443 = 11443,
+
         AQUACHIM_11444 = 11444,
+
         AQUACHIM_11445 = 11445,
+
         PYROCHIM_11446 = 11446,
+
         PYROCHIM_11447 = 11447,
+
         GEOCHIM_11448 = 11448,
+
         GEOCHIM_11449 = 11449,
+
         PRYSCHIM_11450 = 11450,
+
         PRYSCHIM_11451 = 11451,
-        PRYSCHIM = 11452,
-        OMNIPOTENCE = 11453,
-        COUNT_RAZOF_S_DREAM = 11454,
-        COUNT_RAZOF_S_PARADOX = 11455,
-        COUNT_RAZOF_S_NIGHTMARE = 11456,
-        SHELLMENT_11457 = 11457,
-        TOFU_THROWING_11458 = 11458,
-        TOFU_THROWING = 11459,
-        GEOCHIM = 11460,
-        PYROCHIM = 11461,
-        CAPTAIN_SCARLIGHT_S_PARADOX_11462 = 11462,
-        VORTEX_S_NIGHTMARE_11463 = 11463,
-        VORTEX_S_NIGHTMARE = 11464,
-        ROYAL_JELLIESNIGHTMARE_11465 = 11465,
-        BRUTATAX_S_PARADOX = 11466,
-        FALLANSTER_S_RECTITUDE_11467 = 11467,
-        DEATH_DEFYING_11468 = 11468,
-        RYKKE_ERREL_S_BRAVERY_11469 = 11469,
-        ELEMENTAL_ASSIMILATION_11470 = 11470,
-        KING_UNDER_THE_MOUNTAIN_11471 = 11471,
-        SPARKLING_SILVER_DOFUS = 11472,
-        EBONY_DOFUS_11473 = 11473,
-        LADY_JHESSICA_S_COURAGE_11474 = 11474,
-        BATOFU_S_DREAM_11475 = 11475,
-        SKEUNK_S_DREAM = 11476,
-        GOBLIMP_SENSITIVITY = 11477,
-        EL_PIKO_S_PARADOX_11479 = 11479,
-        EL_PIKO_S_PARADOX = 11480,
-        KIMBO_S_PARADOX_11489 = 11489,
-        KIMBO_S_NIGHTMARE_11490 = 11490,
-        EBONY_DOFUSBONUS_PER_CHARGE_ = 11491,
-        COUNT_HAREBOURG_S_NIGHTMARE = 11492,
-        EBONY_DOFUSCAST_POISON_FROM_CASTER_ = 11497,
-        EBONY_DOFUSEFFECT_DEBUFF_ = 11498,
-        TEST_NOUVEAUX_DECLENCHEURS_MELEE = 11499,
-        TEST_NOUVEAUX_DECLENCHEURS = 11500,
-        EBONY_DOFUSTARGETING_ = 11501,
-        EBONY_DOFUSCHOICE_OF_TARGET_ = 11502,
-        EBONY_DOFUSCHOSEN_TARGET_OK_ = 11503,
-        PANDORA_MASTER_S_PARADOX = 11504,
-        EBONY_DOFUSPOISONS_ = 11505,
-        EBONY_DOFUS_11507 = 11507,
-        NOVAMAIRE_COLDTARGETING_3_ = 11510,
-        NOVAMAIRE_COLDTARGETING_2_ = 11511,
-        NOVAMAIRE_COLDHEAL_AROUND_THE_TARGET_ = 11513,
-        NOVAMAIRE_COLDTARGETING_1_ = 11514,
-        IOP_STRATEGYEXECUTION_ORDER_TEST_ = 11515,
-        EBONY_DOFUSCLOSE_COMBAT_RANGED_COUNTER_BLOCKING_ = 11517,
-        AREA_1_A = 11518,
-        AREA_1_B = 11519,
-        AREA_1_C = 11520,
-        AREA_1_D = 11521,
-        AREA_2_A = 11522,
-        AREA_2_B = 11523,
-        EBONY_DOFUSCASTER_S_ATTACK_ELEMENT_ = 11524,
-        AREA_2_C = 11525,
-        AREA_2_D = 11526,
-        AREA_3_A = 11527,
-        AREA_3_B = 11528,
-        AREA_3_C = 11529,
-        AREA_3_D = 11530,
-        AREA_4_A = 11531,
-        AREA_4_B = 11532,
-        AREA_4_C = 11533,
-        AREA_4_D = 11534,
-        AREA_5_A = 11535,
-        AREA_5_B = 11536,
-        AREA_5_C = 11537,
-        AREA_5_D = 11538,
-        AREA_6_A = 11539,
-        AREA_6_B = 11540,
-        AREA_6_C = 11541,
-        AREA_6_D = 11542,
-        RANDOM_AREA_A = 11543,
-        EBONY_DOFUSAIR_POISON_ = 11544,
-        RANDOM_AREA_B = 11545,
-        EBONY_DOFUSFIRE_POISON_ = 11546,
-        EBONY_DOFUSWATER_POISON_ = 11547,
-        EBONY_DOFUSEARTH_POISON_ = 11548,
-        RANDOM_AREA_C = 11549,
-        EBONY_DOFUSNEUTRAL_POISON_ = 11550,
-        RANDOM_AREA_D = 11551,
-        SEMI_RANDOM_PILLAR_PLACEMENT = 11552,
-        SUMMONING_OF_CROCOBURIOTRIGGERED_ = 11553,
-        SUMMONING_OF_TOTEMSTRIGGERED_ = 11555,
-        SUMMONING_OF_POINTERSTRIGGERED_ = 11556,
-        SORTS_GL1234 = 11558,
-        SORT_GL0 = 11559,
-        POSE_GL1234 = 11560,
-        POSE_GL0 = 11561,
-        EBONY_DOFUSRANGED_COUNTER_MANAGEMENT_ = 11562,
-        POUSSE_DU_CURSEUR_TP1DECLENCHE_ = 11563,
-        INDECISION = 11564,
-        POUSSE_DU_CURSEUR_TP2DECLENCHE_ = 11565,
-        POUSSE_DU_CURSEUR_POUSSEDECLENCHE_ = 11566,
-        POUSSE_DU_CURSEUR_ATTIRANCEDECLENCHE_ = 11567,
-        REFLECTION = 11568,
-        REJECTION = 11569,
-        ATTRACTION_11570 = 11570,
-        FIXER_CD_SO_TP1_EN_FONCTION_DE_L_ETAT_DE_C_TP1 = 11571,
-        ATTIRANCE_DU_CURSEUR_TP_1DECLENCHE_ = 11573,
-        _X_P_TP1TO_PUSH_C_TP1 = 11574,
-        ATTIRANCE_DU_CURSEUR_TP_2DECLENCHE_ = 11575,
-        _X_P_TP2TO_PUSH_C_TP2 = 11577,
-        ATTIRANCE_DU_CURSEUR_POUSSEDECLENCHE_ = 11578,
-        _X_P_POUSSETO_PUSH_C_POUSSE = 11579,
-        ATTIRANCE_DU_CURSEUR_ATTIRANCEDECLENCHE_ = 11580,
-        _X_P_ATTIRANCETO_PUSH_C_ATTIRANCE = 11581,
-        DECLENCHE_LES_GLYPHES = 11582,
-        RETIRE_L_ETAT_Y = 11584,
-        SORT_QUI_FAIT_REAGIR_CROCOBURIO_A_L_ETAT_Y = 11585,
-        SA_FB_CR_A_INVOQUE = 11587,
-        SA_FB_CR_A_TP_FRISE = 11588,
-        THAT_WHICH_WAS_HAS_COME_UNDONE_11591 = 11591,
-        CYCLAGE_DES_SORTS_DE_GROUG = 11595,
-        WATER_DIVINER_S_LIBERATION = 11596,
-        THAT_WHICH_WAS_HAS_COME_UNDONE_11597 = 11597,
-        SOURCE_OF_FAILURE = 11598,
-        WATER_DIVINER_LIFE_TRANSFER = 11600,
-        TIME_STOOD_STILL = 11602,
-        DEJA_VU = 11603,
-        GL_TP_FORCE_CASE_1 = 11605,
-        GL_TP_FORCE_CASE_3 = 11606,
-        GL_TP_FORCE_CASE_5 = 11607,
-        GL_TP_FORCE_CASE_7 = 11608,
-        ANCESTRAL_GURGLING = 11609,
-        KANIFEAST = 11610,
-        FRIGLOO = 11611,
-        BONTARIAN_ZEAL = 11612,
-        AQUATIC_LAMINATION = 11613,
-        BRAKMARIAN_ZEAL = 11614,
-        INCANDESCENT_LAMINATION = 11615,
-        POSE_GL_TP_FORCE = 11616,
-        GUARDIAN_S_BLARING_WORD = 11617,
-        GUARDIAN_S_WOUNDING_WORD = 11618,
-        GUARDIAN_S_ALTERNATIVE_WORD = 11619,
-        GUARDIAN_S_PUNISHMENT = 11620,
-        TP_GR_FRISE = 11621,
-        TP_CR_A_FRISE = 11622,
-        GUARDIAN_S_PARALYSING_WORD = 11623,
-        GUARDIAN_S_LIGHT_SPEED = 11624,
-        GUARDIAN_S_ATTRACTION = 11625,
-        GUARDIAN_S_PROJECTION = 11626,
-        EYES_OPEN = 11627,
-        SORT_EXECUTE_SI_GROUG_EST_DANS_L_ETAT_Y_EN_FIN_DE_TOURDECLENCHE_ = 11628,
-        SORT_EXECUTE_SI_GROUG_N_EST_PAS_DANS_L_ETAT_Y_EN_FIN_DE_TOURDECLENCHE_ = 11629,
-        TIME_SHALL_STAND_STILL_11631 = 11631,
-        THAT_WHICH_WILL_BE_HAS_COME_UNDONE_11632 = 11632,
-        TIME_SHALL_STAND_STILLTRIGGERED_ = 11633,
-        OBSTACLE_TO_DESTINY_11634 = 11634,
-        GUARDIAN_S_HAZINESS = 11635,
-        GUARDIAN_S_CLOCK = 11636,
-        GUARDIAN_S_HAND = 11637,
-        GUARDIAN_S_FROSTBITE = 11638,
-        DESTINY_KICKS_IN = 11639,
-        GUARDIAN_S_FURIA = 11640,
-        GUARDIAN_S_PLASTRON = 11641,
-        GUARDIAN_S_PICADA = 11642,
-        EBONY_DOFUSAPPLIES_CASTER_S_ATTACK_ELEMENT_ = 11643,
-        GUARDIAN_S_STAMPEDE = 11644,
-        SPINNING_WHEEL_BARRICADE = 11645,
-        SI_P_INDECIS = 11646,
-        DESTINY_KICKS_INTRIGGERED_ = 11647,
-        EDTARGETING_REAPPLICATION_ = 11648,
-        SI_P_REFLECHISSANT = 11649,
-        SI_P_REJETE = 11650,
-        SI_P_ATTRAYANT = 11651,
-        ANCIENT_CLAWING = 11652,
-        SHRIVELLIGOB = 11653,
-        PRIMITIVE_ROAR = 11654,
-        DEPLACEMENT_DE_GROUG_OU_DU_JOUEUR_SUR_LA_FRISE = 11655,
-        TP_CR_J_SUR_SA_CASE_DE_DEBUT_DE_COMBAT = 11657,
-        TP_GR_SUR_SA_CASE_DE_DEPART = 11658,
-        SI_CR_J = 11659,
-        SI_C_INDECIS = 11660,
-        CELESTIAL_BURN_11661 = 11661,
-        CELESTIAL_BURN_11662 = 11662,
-        CELESTIAL_BURN_11663 = 11663,
-        CELESTIAL_BURN_11664 = 11664,
-        CELESTIAL_BURN_11665 = 11665,
-        FIXER_CD_SO_TP2_EN_FONCTION_DE_L_ETAT_DE_C_TP2 = 11666,
-        SI_C_REFLECHISSANT = 11667,
-        FIXER_CD_SO_POUSSE_EN_FONCTION_DE_L_ETAT_DE_C_POUSSE = 11668,
-        SI_C_REJETE = 11669,
-        FIXER_CD_SO_ATTIRANCE_EN_FONCTION_DE_L_ETAT_DE_C_ATTIRANCE = 11670,
-        SI_C_ATTRAYANT = 11671,
-        CELESTIAL_BURN_11673 = 11673,
-        CELESTIAL_BURN_11674 = 11674,
-        CELESTIAL_BURN_11675 = 11675,
-        CELESTIAL_BURN_11676 = 11676,
-        CELESTIAL_BURN_11677 = 11677,
-        PROTECTOR_S_WEAKNESS = 11678,
-        CLEAR_THE_UNDERGROWTH = 11679,
-        PROTECTIVE_MOTIVATION = 11680,
-        CELESTIAL_BURN_11681 = 11681,
-        CELESTIAL_BURN_11682 = 11682,
-        CELESTIAL_BURN_11683 = 11683,
-        INVOC_DU_DE = 11686,
-        SA_FB_TP_CR_J = 11687,
-        CELESTIAL_BURN_11689 = 11689,
-        DECLENCHE_LES_RUNES = 11690,
-        DECLENCHEMENT_DES_RUNES_PENDANT_LE_TOUR_DE_GROUGALORASALAR = 11691,
-        DISSIPE_LES_RUNES_EN_DEBUT_DE_TOUR = 11692,
-        CELESTIAL_BURN_11693 = 11693,
-        YOU_SHALL_NOT_PASS = 11694,
-        LANCEMENT_DU_SORT_DE_DISSIPATION_DES_RUNES = 11695,
-        THREE_CARD_MONTE_11696 = 11696,
-        TIME_SHALL_STAND_STILL_11697 = 11697,
-        THAT_WHICH_IS_HAS_COME_UNDONE_11698 = 11698,
-        TEMPORARY_PROXIMITY_11699 = 11699,
-        THREE_CARD_MONTETRIGGERED_ = 11700,
-        CELESTIAL_BURN_11701 = 11701,
-        TEMPORARY_PROXIMITY_11702 = 11702,
-        CRACKGLASS = 11703,
-        APPLICATION_DU_SORT_DE_DISSIPATION_DES_RUNES_SUR_LE_JOUEUR = 11704,
-        SORT_QUI_TUE_LES_PILIERS_ET_QUI_JOUE_L_ANIM_DE_HIT_SUR_LES_PILIERS = 11705,
-        POSE_UN_GLYPHE_DE_FIN_DE_TOUR_SOUS_CR_J = 11706,
-        SORT_POUR_JOUER_L_ANIMATION_D_ATTAQUE_DE_CROCOBURIO_SUR_LES_PILIERS_ET_LES_TUER = 11707,
-        DODGE_S_AUDACITY_11709 = 11709,
-        DODGE_S_AUDACITY_11710 = 11710,
-        DODGE_S_AUDACITY_11712 = 11712,
-        THREE_CARD_MONTE_11713 = 11713,
-        THAT_WHICH_IS_HAS_COME_UNDONE_11714 = 11714,
-        SO_CR_J_TB_POUR_POSER_UNE_RUNE = 11715,
-        ROYAL_JELLIESPARADOX_11717 = 11717,
-        THE_DICE_OF_DESTINY_ARE_CAST = 11718,
-        FELINE_ATTRACTION = 11719,
-        ARTAND_S_MISADVENTURE = 11720,
-        SORT_POUR_PROC_L_ANIMATION_DU_DOFUS_EBENE_GR = 11723,
-        WATERING = 11724,
-        FATEFUL_IMMUNITY = 11725,
-        FAILING_EYESIGHT = 11726,
-        PUPPET_EVASION = 11727,
-        PUPPET_JUMP = 11728,
-        FATEFUL_HINDRANCE = 11729,
-        PRODIGIOUS_MAGNET = 11730,
-        FATEFUL_BLOW = 11731,
-        PUPPET_LARCENY = 11732,
-        OBSTACLE = 11733,
-        ARSENIC = 11734,
-        TWIST_OF_FATE = 11735,
-        PUPPET_CORROSION = 11736,
-        GLYPHES_DECLENCHES = 11737,
-        SOMMATION_DE_GROUGALORASALAR = 11738,
-        SI_GR_NEW = 11739,
-        MISE_EN_PLACE_DU_COMBAT = 11740,
-        GROUGALORASALAR_S_EXHORTATION = 11741,
-        DISPUTE_11742 = 11742,
-        SORT_POUR_QUE_CROCOBURIO_FIXE_LE_DOFUS_EBENE = 11744,
-        THIS_ROUND_S_ON_ME = 11745,
-        BRUCE_THWACK = 11746,
-        LIQUOROUS_ATTRACTION = 11747,
-        ALCOOLSENSE_11748 = 11748,
-        ALCOOLSENSE_11750 = 11750,
+
+        PRYSCHIM_11452 = 11452,
+
+        OMNIPOTENCE_11453 = 11453,
+
+        REVE_DU_COMTE_RAZOF_11454 = 11454,
+
+        PARADOXE_DU_COMTE_RAZOF_11455 = 11455,
+
+        CAUCHEMAR_DU_COMTE_RAZOF_11456 = 11456,
+
+        COQUILLEMENT_11457 = 11457,
+
+        LANCER_DE_TOFU_11458 = 11458,
+
+        LANCER_DE_TOFU_11459 = 11459,
+
+        GEOCHIM_11460 = 11460,
+
+        PYROCHIM_11461 = 11461,
+
+        PARADOXE_DU_CAPITAINE_EKARLATTE_11462 = 11462,
+
+        CAUCHEMAR_DE_VORTEX_11463 = 11463,
+
+        CAUCHEMAR_DE_VORTEX_11464 = 11464,
+
+        CAUCHEMAR_DES_GELEES_ROYALES_11465 = 11465,
+
+        PARADOXE_DE_MALLEFISK_11466 = 11466,
+
+        DROITURE_DE_FALLANSTER_11467 = 11467,
+
+        TROMPE_LA_MORT_11468 = 11468,
+
+        BRAVOURE_DE_RYKKE_ERREL_11469 = 11469,
+
+        ASSIMILATION_ELEMENTAIRE_11470 = 11470,
+
+        ROI_SOUS_LA_MONTAGNE_11471 = 11471,
+
+        DOFUS_ARGENTE_SCINTILLANT_11472 = 11472,
+
+        DOFUS_EBENE_11473 = 11473,
+
+        COURAGE_DE_DAME_JHESSICA_11474 = 11474,
+
+        REVE_DE_BATOFU_11475 = 11475,
+
+        REVE_DE_SKEUNK_11476 = 11476,
+
+        SENSIBILITE_GLUTINE_11477 = 11477,
+
+        PARADOXE_DEL_PIKO_11479 = 11479,
+
+        PARADOXE_DEL_PIKO_11480 = 11480,
+
+        PARADOXE_DU_KIMBO_11489 = 11489,
+
+        CAUCHEMAR_DU_KIMBO_11490 = 11490,
+
+        DOFUS_EBENE_11491 = 11491,
+
+        CAUCHEMAR_DU_COMTE_HAREBOURG_11492 = 11492,
+
+        DOFUS_EBENE_CAST_POISON_DEPUIS_CASTER_11497 = 11497,
+
+        DOFUS_EBENE_DEBUFF_EFFETS_11498 = 11498,
+
+        DOFUS_EBENE_CIBLAGE_11501 = 11501,
+
+        DOFUS_EBENE_CHOIX_DE_LA_CIBLE_11502 = 11502,
+
+        _11503 = 11503,
+
+        PARADOXE_DU_MAÎTRE_PANDORE_11504 = 11504,
+
+        DOFUS_EBENE_POISONS_11505 = 11505,
+
+        CAUCHEMAR_DE_BEN_LE_RIPATE_11506 = 11506,
+
+        DOFUS_EBENE_11507 = 11507,
+
+        STRATEGIE_IOP_TEST_ORDRE_EXECUTION_11515 = 11515,
+
+        DOFUS_EBENE_BLOQUAGE_COMPTEUR_DISTANCEMELEE_11517 = 11517,
+
+        ZONE_1_A_11518 = 11518,
+
+        ZONE_1_B_11519 = 11519,
+
+        ZONE_1_C_11520 = 11520,
+
+        ZONE_1_D_11521 = 11521,
+
+        ZONE_2_A_11522 = 11522,
+
+        ZONE_2_B_11523 = 11523,
+
+        _11524 = 11524,
+
+        ZONE_2_C_11525 = 11525,
+
+        ZONE_2_D_11526 = 11526,
+
+        ZONE_3_A_11527 = 11527,
+
+        ZONE_3_B_11528 = 11528,
+
+        ZONE_3_C_11529 = 11529,
+
+        ZONE_3_D_11530 = 11530,
+
+        ZONE_4_A_11531 = 11531,
+
+        ZONE_4_B_11532 = 11532,
+
+        ZONE_4_C_11533 = 11533,
+
+        ZONE_4_D_11534 = 11534,
+
+        ZONE_5_A_11535 = 11535,
+
+        ZONE_5_B_11536 = 11536,
+
+        ZONE_5_C_11537 = 11537,
+
+        ZONE_5_D_11538 = 11538,
+
+        ZONE_6_A_11539 = 11539,
+
+        ZONE_6_B_11540 = 11540,
+
+        ZONE_6_C_11541 = 11541,
+
+        ZONE_6_D_11542 = 11542,
+
+        ALEATOIRE_ZONE_A_11543 = 11543,
+
+        DOFUS_EBENE_POISON_AIR_11544 = 11544,
+
+        ALEATOIRE_ZONE_B_11545 = 11545,
+
+        DOFUS_EBENE_POISON_FEU_11546 = 11546,
+
+        DOFUS_EBENE_POISON_EAU_11547 = 11547,
+
+        DOFUS_EBENE_POISON_TERRE_11548 = 11548,
+
+        ALEATOIRE_ZONE_C_11549 = 11549,
+
+        DOFUS_EBENE_POISON_NEUTRE_11550 = 11550,
+
+        ALEATOIRE_ZONE_D_11551 = 11551,
+
+        POSE_SEMI_ALEATOIRE_DES_PILIERS_11552 = 11552,
+
+        INVOC_CR_A_DECLENCHE_11553 = 11553,
+
+        INVOC_T_DECLENCHE_11555 = 11555,
+
+        INVOC_C_DECLENCHE_11556 = 11556,
+
+        SORTS_GL1234_11558 = 11558,
+
+        SORT_GL0_11559 = 11559,
+
+        POSE_GL1234_11560 = 11560,
+
+        POSE_GL0_11561 = 11561,
+
+        DOFUS_EBENE_GESTION_RANGE_COMPTEUR_11562 = 11562,
+
+        POUSSE_DU_CURSEUR_TP1_DECLENCHE_11563 = 11563,
+
+        INDECISION_11564 = 11564,
+
+        POUSSE_DU_CURSEUR_TP2_DECLENCHE_11565 = 11565,
+
+        POUSSE_DU_CURSEUR_POUSSE_DECLENCHE_11566 = 11566,
+
+        POUSSE_DU_CURSEUR_ATTIRANCE_DECLENCHE_11567 = 11567,
+
+        REFLET_11568 = 11568,
+
+        REJET_11569 = 11569,
+
+        ATTRAIT_11570 = 11570,
+
+        FIXER_CD_SO_TP1_EN_FONCTION_DE_LETAT_DE_C_TP1_11571 = 11571,
+
+        ATTIRANCE_DU_CURSEUR_TP_1_DECLENCHE_11573 = 11573,
+
+        X_P_TP1_TO_PUSH_C_TP1_11574 = 11574,
+
+        ATTIRANCE_DU_CURSEUR_TP_2_DECLENCHE_11575 = 11575,
+
+        X_P_TP2_TO_PUSH_C_TP2_11577 = 11577,
+
+        ATTIRANCE_DU_CURSEUR_POUSSE_DECLENCHE_11578 = 11578,
+
+        X_P_POUSSE_TO_PUSH_C_POUSSE_11579 = 11579,
+
+        ATTIRANCE_DU_CURSEUR_ATTIRANCE_DECLENCHE_11580 = 11580,
+
+        X_P_ATTIRANCE_TO_PUSH_C_ATTIRANCE_11581 = 11581,
+
+        GLYPHE_DE_FIN_DE_TOUR_11583 = 11583,
+
+        RETIRE_LETAT_Y_11584 = 11584,
+
+        SORT_QUI_FAIT_REAGIR_CROCOBURIO_A_LETAT_Y_11585 = 11585,
+
+        SORT_APPLIQUE_AUX_PILIERS_POUR_FIXER_LETAT_Y_AUTOUR_DEUX_11586 = 11586,
+
+        SA_FB_CR_A_INVOQUE_11587 = 11587,
+
+        SA_FB_CR_A_TP_FRISE_11588 = 11588,
+
+        CE_QUI_A_ETE_SEST_DEFAIT_11591 = 11591,
+
+        LIBERATION_DU_SOURCIER_11596 = 11596,
+
+        CE_QUI_A_ETE_SEST_DEFAIT_11597 = 11597,
+
+        SOURCE_DE_DEFAILLANCE_11598 = 11598,
+
+        TRANSFERT_DE_VIE_DU_SOURCIER_11600 = 11600,
+
+        LE_TEMPS_SE_FIGEAIT_11602 = 11602,
+
+        DEJA_VU_11603 = 11603,
+
+        GL_TP_FORCE_CASE_1_11605 = 11605,
+
+        GL_TP_FORCE_CASE_3_11606 = 11606,
+
+        GL_TP_FORCE_CASE_5_11607 = 11607,
+
+        GL_TP_FORCE_CASE_7_11608 = 11608,
+
+        GLOUGLOU_ANCESTRAL_11609 = 11609,
+
+        KANIFESTIN_11610 = 11610,
+
+        FRIGLOO_11611 = 11611,
+
+        ZELE_BONTARIEN_11612 = 11612,
+
+        LAMINAGE_AQUATIQUE_11613 = 11613,
+
+        ZELE_BRAKMARIEN_11614 = 11614,
+
+        LAMINAGE_INCANDESCENT_11615 = 11615,
+
+        POSE_GL_TP_FORCE_11616 = 11616,
+
+        MOT_ECLATANT_DU_GARDIEN_11617 = 11617,
+
+        MOT_BLESSANT_DU_GARDIEN_11618 = 11618,
+
+        MOT_ALTERNATIF_DU_GARDIEN_11619 = 11619,
+
+        PUNITION_DU_GARDIEN_11620 = 11620,
+
+        TP_GR_FRISE_11621 = 11621,
+
+        TP_CR_A_FRISE_11622 = 11622,
+
+        MOT_DIMMOBILISATION_DU_GARDIEN_11623 = 11623,
+
+        FULGURANCE_DU_GARDIEN_11624 = 11624,
+
+        ATTIRANCE_DU_GARDIEN_11625 = 11625,
+
+        PROJECTION_DU_GARDIEN_11626 = 11626,
+
+        SUIS_LE_DES_YEUX_11627 = 11627,
+
+        SORT_EXECUTE_SI_GROUG_EST_DANS_LETAT_Y_EN_FIN_DE_TOUR_DECLENCHE_11628 = 11628,
+
+        SORT_EXECUTE_SI_GROUG_NEST_PAS_DANS_LETAT_Y_EN_FIN_DE_TOUR_DECLENCHE_11629 = 11629,
+
+        LE_TEMPS_SE_FIGERA_11631 = 11631,
+
+        CE_QUI_SERA_SEST_DEFAIT_11632 = 11632,
+
+        LE_TEMPS_SE_FIGERA_DECLENCHE_11633 = 11633,
+
+        OBSTACLE_A_LA_DESTINEE_11634 = 11634,
+
+        FLOU_DE_LA_GARDIENNE_11635 = 11635,
+
+        HORLOGE_DE_LA_GARDIENNE_11636 = 11636,
+
+        AIGUILLE_DE_LA_GARDIENNE_11637 = 11637,
+
+        GELURE_DE_LA_GARDIENNE_11638 = 11638,
+
+        LE_DESTIN_SE_MET_EN_MARCHE_11639 = 11639,
+
+        FURIA_DE_LA_GARDIENNE_11640 = 11640,
+
+        PLASTRON_DE_LA_GARDIENNE_11641 = 11641,
+
+        PICADA_DE_LA_GARDIENNE_11642 = 11642,
+
+        DOFUS_EBENE_APPLICATION_ELEMENT_DATTAQUE_CASTER_11643 = 11643,
+
+        DEBANDADE_DE_LA_GARDIENNE_11644 = 11644,
+
+        BARRAGE_DU_ROUET_11645 = 11645,
+
+        SI_P_INDECIS_11646 = 11646,
+
+        LE_DESTIN_SE_MET_EN_MARCHE_DECLENCHE_11647 = 11647,
+
+        DE_REAPLICATION_CIBLAGE_11648 = 11648,
+
+        SI_P_REFLECHISSANT_11649 = 11649,
+
+        SI_P_REJETE_11650 = 11650,
+
+        SI_P_ATTRAYANT_11651 = 11651,
+
+        GRIFFEMOUTH_ANTIQUE_11652 = 11652,
+
+        RABOUGRIMOUTH_11653 = 11653,
+
+        HURLOMOUTH_PRIMITIF_11654 = 11654,
+
+        DEPLACEMENT_DE_GROUG_OU_DU_JOUEUR_SUR_LA_FRISE_11655 = 11655,
+
+        _11656 = 11656,
+
+        TP_CR_J_SUR_SA_CASE_DE_DEBUT_DE_COMBAT_11657 = 11657,
+
+        TP_GR_SUR_SA_CASE_DE_DEPART_11658 = 11658,
+
+        SI_CR_J_11659 = 11659,
+
+        SI_C_INDECIS_11660 = 11660,
+
+        BRULURE_CELESTE_11661 = 11661,
+
+        BRULURE_CELESTE_11662 = 11662,
+
+        BRULURE_CELESTE_11663 = 11663,
+
+        BRULURE_CELESTE_11664 = 11664,
+
+        BRULURE_CELESTE_11665 = 11665,
+
+        FIXER_CD_SO_TP2_EN_FONCTION_DE_LETAT_DE_C_TP2_11666 = 11666,
+
+        SI_C_REFLECHISSANT_11667 = 11667,
+
+        FIXER_CD_SO_POUSSE_EN_FONCTION_DE_LETAT_DE_C_POUSSE_11668 = 11668,
+
+        SI_C_REJETE_11669 = 11669,
+
+        FIXER_CD_SO_ATTIRANCE_EN_FONCTION_DE_LETAT_DE_C_ATTIRANCE_11670 = 11670,
+
+        SI_C_ATTRAYANT_11671 = 11671,
+
+        BRULURE_CELESTE_11673 = 11673,
+
+        BRULURE_CELESTE_11674 = 11674,
+
+        BRULURE_CELESTE_11675 = 11675,
+
+        BRULURE_CELESTE_11676 = 11676,
+
+        BRULURE_CELESTE_11677 = 11677,
+
+        FAIBLESSE_DU_PROTECTEUR_11678 = 11678,
+
+        ABRALAYAGE_11679 = 11679,
+
+        MOTIVATION_PROTECTRICE_11680 = 11680,
+
+        BRULURE_CELESTE_11681 = 11681,
+
+        BRULURE_CELESTE_11682 = 11682,
+
+        BRULURE_CELESTE_11683 = 11683,
+
+        INVOC_DU_DE_11686 = 11686,
+
+        SA_FB_TP_CR_J_11687 = 11687,
+
+        BRULURE_CELESTE_11689 = 11689,
+
+        BRULURE_CELESTE_11693 = 11693,
+
+        VOUS_NE_PASSEREZ_PAS__11694 = 11694,
+
+        BONNETEAU_11696 = 11696,
+
+        LE_TEMPS_SE_FIGE_11697 = 11697,
+
+        CE_QUI_EST_SEST_DEFAIT_11698 = 11698,
+
+        RAPPROCHEMENT_TEMPORAIRE_11699 = 11699,
+
+        BONNETEAU_DECLENCHE_11700 = 11700,
+
+        BRULURE_CELESTE_11701 = 11701,
+
+        RAPPROCHEMENT_TEMPORAIRE_11702 = 11702,
+
+        CRAQUEGLASS_11703 = 11703,
+
+        SORT_QUI_TUE_LES_PILIERS_ET_QUI_JOUE_LANIM_DE_HIT_SUR_LES_PILIERS_11705 = 11705,
+
+        POSE_UN_GLYPHE_DE_FIN_DE_TOUR_SOUS_CR_J_11706 = 11706,
+
+        SORT_POUR_JOUER_LANIMATION_DATTAQUE_DE_CROCOBURIO_SUR_LES_PILIERS_ET_LES_TUER_11707 = 11707,
+
+        DEBUG_TRIGGER_DEFRAGLAÇON_11708 = 11708,
+
+        AUDACE_DE_DODGE_11709 = 11709,
+
+        AUDACE_DE_DODGE_11710 = 11710,
+
+        AUDACE_DE_DODGE_11712 = 11712,
+
+        BONNETEAU_11713 = 11713,
+
+        CE_QUI_EST_SEST_DEFAIT_11714 = 11714,
+
+        PARADOXE_DES_GELEES_ROYALES_11717 = 11717,
+
+        LES_DES_DU_DESTIN_SONT_JETES_11718 = 11718,
+
+        ATTRACTION_FELINE_11719 = 11719,
+
+        MESAVENTURE_DARTAND_11720 = 11720,
+
+        SORT_POUR_PROC_LANIMATION_DU_DOFUS_EBENE_GR_11723 = 11723,
+
+        ARROSAGE_11724 = 11724,
+
+        IMMUNITE_DU_DESTIN_11725 = 11725,
+
+        VISION_DEFAILLANTE_11726 = 11726,
+
+        EVASION_DE_LA_MARIONNETTE_11727 = 11727,
+
+        SAUT_DE_LA_MARIONNETTE_11728 = 11728,
+
+        ENTRAVE_DU_DESTIN_11729 = 11729,
+
+        AIMANTATION_PRODIGIEUSE_11730 = 11730,
+
+        COUP_DU_DESTIN_11731 = 11731,
+
+        LARCIN_DE_LA_MARIONNETTE_11732 = 11732,
+
+        OBSTACLE_11733 = 11733,
+
+        ARSENIC_11734 = 11734,
+
+        REVERS_DU_DESTIN_11735 = 11735,
+
+        CORROSION_DE_LA_MARIONNETTE_11736 = 11736,
+
+        GLYPHES_DECLENCHES_11737 = 11737,
+
+        SOMMATION_DE_GROUGALORASALAR_11738 = 11738,
+
+        SI_GR_NEW_11739 = 11739,
+
+        MISE_EN_PLACE_DU_COMBAT_11740 = 11740,
+
+        SOMMATION_DE_GROUGALORASALAR_11741 = 11741,
+
+        CONTESTATION_11742 = 11742,
+
+        SORT_POUR_QUE_CROCOBURIO_FIXE_LE_DOFUS_EBENE_11744 = 11744,
+
+        CEST_MA_TOURNEE__11745 = 11745,
+
+        MANDALE_DE_BRUCE_11746 = 11746,
+
+        ATTIRANCE_SPIRITUEUSE_11747 = 11747,
+
+        ALCOOLTEST_11748 = 11748,
+
+        BLOPRET_ROYAL_11749 = 11749,
+
+        ALCOOLTEST_11750 = 11750,
+
         CROCOBUR_11751 = 11751,
+
         DIGESTION_11752 = 11752,
+
         DIGESTION_11753 = 11753,
-        EXOTHERMIA = 11754,
-        THERMODYNAMIC_PROJECTION = 11755,
-        AWAKENING = 11756,
-        CRACKGLASS_REPAIR_11757 = 11757,
-        SWAMP_BLADE = 11758,
-        ENTHALPY_VARIATION = 11759,
-        SO_QUI_FIXE_L_ETAT_Y_SUR_GR = 11760,
-        SORT_POUR_PROC_L_ANIMATION_DU_DOFUS_EBENE_CR_A = 11761,
-        TRANSFERT_D_INVOCATEUR = 11762,
-        PLAY_WITH_FIRE_AND_FEEL_THE_BURN = 11763,
-        BACKFIRE = 11764,
-        INCENDIARY_DRIVE = 11765,
-        CROCOCON = 11766,
-        AQUAFUGE = 11767,
-        MAD_RUSH = 11768,
-        SCARPER_DROP = 11769,
-        SO_ENLEVE_L_ETAT_873 = 11770,
-        CRACKGLASS_REPLACE_11771 = 11771,
-        AND_CRACK = 11772,
-        SO_FB_ZONES = 11773,
-        SWAMP_SPREAD = 11774,
-        SWAMP_PROTECTION = 11775,
-        SWAMPY_WEAKNESS = 11776,
-        MUDDY_MISSILE = 11777,
-        ENGLOOTMENT = 11778,
-        I_AM_GLOOT = 11779,
-        ANCIENT_KNIFE_SPEARIT = 11780,
-        ANCIENT_CURARE = 11781,
-        ANCIENT_ROBUSTNESS = 11782,
-        CHAFER_CHEAT_OF_THE_CENTURY = 11783,
-        ANCIENT_INVISIBILITY = 11784,
-        ANCIENT_BONE_RATTLE = 11785,
-        SO_DECLENCHE_PAR_SI_DE_KILL_GR = 11786,
-        SO_GR_KILL = 11787,
-        ANCIENT_WEAKENING = 11789,
-        ANCIENT_CHAFER_SLASH = 11790,
-        ANCIENT_LARCENY = 11791,
-        STICKY_MASS = 11792,
-        GREEDOVASPIRATION = 11793,
-        SWALLOWING_11794 = 11794,
-        FAMISHED_GREEDOVORE_BREATH = 11795,
-        SI_DE = 11796,
-        DEMOTIVATING_SHOT = 11797,
-        DENGURAZY_SHOT = 11798,
-        SO_POUR_ANIM_ATTERISSAGE_GR = 11799,
-        MOSZIKA = 11800,
-        SO_DECLENCHE_PAR_SI_DE_KILL_CR_J_CR_A = 11801,
-        CRACKGLASS_REPAIR_11802 = 11802,
-        CRACKGLASS_REPAIR_11803 = 11803,
-        CRACKGLASS_REPAIR_11804 = 11804,
-        CRACKGLASS_REPAIR = 11805,
-        POISONED_BLADE_11806 = 11806,
-        BLAZING_BREATH = 11807,
-        CROCODYL_SKIN = 11808,
-        SO_CR_A_KILL = 11809,
-        CRACKGLASS_REPLACE_11810 = 11810,
-        SMISSE_CLAN_BOOMERANG_DAGGERS = 11811,
-        BLAK_S_CARBINE = 11812,
-        SMISSE_ROGUERY = 11813,
-        RIVER_BOMB = 11814,
-        BLINDING_SPHERE = 11815,
-        SMISSE_IMPOSTURE = 11816,
-        SMISSE_DRIVE = 11817,
-        SMISSE_CLAN_EXTRACTION = 11818,
-        SMISSE_COUNTDOWN_11819 = 11819,
-        SMISSE_COUNTDOWN_11820 = 11820,
-        WEIGH_DOWN = 11821,
-        SMISSE_WEIGH_DOWN = 11822,
-        SMISSE_CLAN_DISENCHANTMENT = 11823,
-        SMISSEISMIC_BOMB = 11824,
-        OUTTA_PETROL = 11825,
-        TWO_SPEED_GEAR = 11826,
-        EXTENSOMETRICS = 11827,
-        SMOKEY_RESURRECTION = 11828,
-        VOLCANIC_FALLOUT = 11829,
-        VOLUBLE_POWER = 11830,
-        STIMULATING_BREATH = 11831,
-        TOXIC_ATTRACTION = 11832,
-        TOXIC_FLATULENCE = 11833,
-        STEAMY_DECELERATION = 11834,
-        REINVIGORATING_EXHALATION = 11835,
-        IRRITATING_GAS = 11836,
-        PINGWOBSTINATION = 11837,
-        PINGWILEAP = 11838,
-        PINGWISCHIEF = 11839,
-        PINGWIJOSTLE = 11840,
-        PINGWISORPTION = 11841,
-        PINGWACROBATICS = 11842,
-        PINGWIHEAL = 11843,
-        PINGWIDIOCY = 11844,
-        PINGWISOAP = 11845,
-        MATTY_HAMMERING = 11846,
-        PINGWARREST = 11847,
-        MATTY_PINGWINDBAG = 11848,
-        VOLTAGING_PICK = 11849,
-        GOBELIN_PROTECTION = 11850,
-        MASTER_OF_EVISCERATION = 11851,
-        BWORK_BRUTALITY = 11852,
-        STRATEGIC_DEPORTATION = 11853,
-        INFALLIBLE_SNIFF_11854 = 11854,
-        GHOSTLY_SLAUGHTER = 11855,
-        SPECTRAL_ROAR = 11856,
-        CRIMSON_DAWN_RECRUITMENT = 11857,
-        ELITE_BUTTONSHIELD_BLOW = 11858,
-        ELITE_IMPALEMENT = 11859,
-        ELITE_SPLUTTER = 11860,
-        ELITE_COTTON_BUD_CATCH = 11861,
-        SMEARWAX_11862 = 11862,
-        SMEARWAX_11863 = 11863,
-        ELITE_SALUTE = 11864,
-        ELITE_TOOTHPICK_WHACK = 11865,
-        ELITE_TOOTHPICK_SHOT = 11866,
-        ELITIST_MARKING = 11867,
-        LAMENTATION = 11868,
-        SOBBY_POURING = 11869,
-        FLOOD_OF_TEARS = 11870,
-        SOBBY_ASPIRATION = 11871,
-        SALTY_GLOOGLOOT = 11872,
-        PATRICHIO_11873 = 11873,
-        MOVE_IT = 11874,
-        MYOPIA_11875 = 11875,
-        BLURRY_VISION_11876 = 11876,
-        OBSTACLE_TO_DESTINY_11877 = 11877,
-        KARDORIM_S_PARADOX_11878 = 11878,
-        OBSTACLE_TO_DESTINY = 11879,
-        DISPUTE_11881 = 11881,
-        DRAGON_EXHORTATION = 11882,
-        PRIMORDIAL_FLAME = 11883,
-        AH_JUST_THE_RIGHT_AMOUNT_OF_JORIS_11884 = 11884,
-        AH_JUST_THE_RIGHT_AMOUNT_OF_JORIS_11885 = 11885,
-        THREE_CARD_MONTE = 11886,
-        AH_JUST_THE_RIGHT_AMOUNT_OF_JORIS = 11887,
-        DIZZY_MIGI = 11892,
-        DIZZY_HIDARI = 11893,
-        DIZZY_KAMAE = 11894,
-        DIZZY_BLUFF = 11895,
-        SI_MILICIENS_POUR_FIXER_LEUR_ETAT_AU_CAPITAINE_A_LEUR_MORTDECLENCHE_ = 11897,
-        SI_BILICIEN = 11898,
-        SI_DILICIEN = 11899,
-        SI_SILICIEN = 11900,
-        SI_PILICIEN = 11901,
-        GAIN_DE_BOUCLIER_SI_DANS_L_ETAT_941 = 11904,
-        AUGMENTE_LA_PUISSSANCE_DES_MILICIENS = 11908,
-        SUR_RECEPTION_DE_SOINDECLENCHE_ = 11910,
-        CRAQUEGLASS_REMPLACEDECLENCHE_ = 11911,
-        CRAQUEGLASSCYCLES_DES_ETATS_ = 11912,
-        CELESTIAL_BURN = 11913,
-        TEMPORARY_PROXIMITY = 11914,
-        HARBINGERS_OF_DEATH = 11916,
-        BOBBIN_OF_DESTINY_11917 = 11917,
-        SPINDLE_OF_DESTINY_11918 = 11918,
-        SCISSORS_OF_DESTINY = 11919,
-        OTTO = 11921,
-        HELLO = 11922,
-        THAT_WHICH_WAS_HAS_COME_UNDONE_11923 = 11923,
-        THAT_WHICH_WAS_HAS_COME_UNDONE_11924 = 11924,
-        THAT_WHICH_WILL_BE_HAS_COME_UNDONE_11925 = 11925,
-        SCUFFLE = 11926,
-        NEW_EBONY_DOFUS_SPELL_A = 11931,
-        NEW_EBONY_DOFUS_SPELL_B = 11932,
-        MORT_CROCOBUR_RECUPERATION_CD = 11935,
-        BWORKETTE_S_PARADOX_11936 = 11936,
-        BWORKETTE_S_PARADOX_11937 = 11937,
-        TEST_SHERPA_TRIGGERED_02 = 11941,
-        SHERPA = 11942,
-        SPARKLING_SILVER_DOFUS_11949 = 11949,
-        CHOCOLAT_SPERGER = 11973,
-        CHOCOMMANDEMENT = 11974,
-        CACAOBSTRUCTION = 11975,
-        TORREADOR = 11976,
-        TORREFACTION = 11977,
-        PADBRA = 11978,
-        HYDROLYSE = 11979,
-        CHOCOCLIER = 11980,
-        GLACAGE_11981 = 11981,
-        GLACAGE_11982 = 11982,
-        CHOC_THERMIQUE = 11983,
-        REFROIDISSEMENT = 11984,
-        SURCHAUFFE = 11985,
+
+        EXOTHERMIE_11754 = 11754,
+
+        PROJECTION_THERMODYNAMIQUE_11755 = 11755,
+
+        EVEIL_11756 = 11756,
+
+        CRAQUEGLASS_REPARE_11757 = 11757,
+
+        LAME_DES_MARAIS_11758 = 11758,
+
+        VARIATION_DENTHALPIE_11759 = 11759,
+
+        SO_QUI_FIXE_LETAT_Y_SUR_GR_11760 = 11760,
+
+        SORT_POUR_PROC_LANIMATION_DU_DOFUS_EBENE_CR_A_11761 = 11761,
+
+        TRANSFERT_DINVOCATEUR_11762 = 11762,
+
+        QUI_SY_FROTTE_SY_BRULE_11763 = 11763,
+
+        RETOUR_DE_FLAMME_11764 = 11764,
+
+        PULSION_INCENDIAIRE_11765 = 11765,
+
+        ESCROCOBUR_11766 = 11766,
+
+        AQUAFUGE_11767 = 11767,
+
+        SAUVE_QUI_PEUT__11768 = 11768,
+
+        GOUTTE_DESCAMPETTE_11769 = 11769,
+
+        SO_ENLEVE_LETAT_873_11770 = 11770,
+
+        CRAQUEGLASS_REMPLACE_11771 = 11771,
+
+        ET_CRACK__11772 = 11772,
+
+        SO_FB_ZONES_11773 = 11773,
+
+        DEMULTIPLICATION_DU_MARECAGE_11774 = 11774,
+
+        PROTECTION_DU_MARECAGE_11775 = 11775,
+
+        FAIBLESSE_MARECAGEUSE_11776 = 11776,
+
+        MISSILE_BOUEUX_11777 = 11777,
+
+        ENGLOOTISSEMENT_11778 = 11778,
+
+        JE_SAPPELLE_GLOOT_11779 = 11779,
+
+        ELANCE_DE_COUTEAU_MILLENAIRE_11780 = 11780,
+
+        CURARE_MILLENAIRE_11781 = 11781,
+
+        ROBUSTESSE_MILLENAIRE_11782 = 11782,
+
+        CHARNAQUE_DU_SIECLE_11783 = 11783,
+
+        INVISIBILITE_MILLENAIRE_11784 = 11784,
+
+        CLAQUEMENT_DOS_MILLENAIRE_11785 = 11785,
+
+        SO_DECLENCHE_PAR_SI_DE_KILL_GR_11786 = 11786,
+
+        SO_GR_KILL_11787 = 11787,
+
+        AFFAIBLISSEMENT_MILLENAIRE_11789 = 11789,
+
+        COUP_DU_CHAFER_MILLENAIRE_11790 = 11790,
+
+        LARCIN_MILLENAIRE_11791 = 11791,
+
+        MASSE_GLUANTE_11792 = 11792,
+
+        GLOUTOVASPISRATION_11793 = 11793,
+
+        GOBAGE_11794 = 11794,
+
+        HALEINE_DU_GLOUTOVORE_AFFAME_11795 = 11795,
+
+        SI_DE_11796 = 11796,
+
+        PIQURE_DEMOTIVANTE_11797 = 11797,
+
+        PIQURE_DE_DENGUE_11798 = 11798,
+
+        SA_ANMIATION_ATTERRISSAGE_GR_11799 = 11799,
+
+        MOSZIKA_11800 = 11800,
+
+        SO_DECLENCHE_PAR_SI_DE_KILL_CR_JCR_A_11801 = 11801,
+
+        CRAQUEGLASS_REPARE_11802 = 11802,
+
+        CRAQUEGLASS_REPARE_11803 = 11803,
+
+        CRAQUEGLASS_REPARE_11804 = 11804,
+
+        CRAQUEGLASS_REPARE_11805 = 11805,
+
+        LAME_EMPOISONNEE_11806 = 11806,
+
+        SOUFFLE_EMBRASE_11807 = 11807,
+
+        PEAU_DE_CROCODAILLE_11808 = 11808,
+
+        SO_CR_A_KILL_11809 = 11809,
+
+        CRAQUEGLASS_REMPLACE_11810 = 11810,
+
+        DAGUES_BOOMERANG_DU_CLAN_SMISSE_11811 = 11811,
+
+        ESPINGOLE_DE_BLAK_11812 = 11812,
+
+        ROUBLARDISE_SMISSE_11813 = 11813,
+
+        BOMBE_FLUVIALE_11814 = 11814,
+
+        SPHERE_AVEUGLANTE_11815 = 11815,
+
+        IMPOSTURE_SMISSE_11816 = 11816,
+
+        PULSION_SMISSE_11817 = 11817,
+
+        EXTRACTION_DU_CLAN_SMISSE_11818 = 11818,
+
+        REBOURS_SMISSE_11819 = 11819,
+
+        REBOURS_SMISSE_11820 = 11820,
+
+        PLOMBAGE_11821 = 11821,
+
+        PLOMBAGE_SMISSE_11822 = 11822,
+
+        DESENCHANTEMENT_DU_CLAN_SMISSE_11823 = 11823,
+
+        BOMBE_SMISSEMIQUE_11824 = 11824,
+
+        COUP_DE_LA_PANNE_11825 = 11825,
+
+        ENGRENAGE_A_DEUX_VITESSES_11826 = 11826,
+
+        EXTENSOMETRIE_11827 = 11827,
+
+        RESURRECTION_FUMEUSE_11828 = 11828,
+
+        RETOMBEE_VOLCANIQUE_11829 = 11829,
+
+        PUISSANCE_VOLUBILE_11830 = 11830,
+
+        SOUFFLE_STIMULANT_11831 = 11831,
+
+        ATTRACTION_NOCIVE_11832 = 11832,
+
+        FLATULENCE_TOXIQUE_11833 = 11833,
+
+        DECELERATION_VAPOREUSE_11834 = 11834,
+
+        EXHALAISON_REVIGORANTE_11835 = 11835,
+
+        GAZ_IRRITANT_11836 = 11836,
+
+        MANSOBTINATION_11837 = 11837,
+
+        MANSOBOND_11838 = 11838,
+
+        MANSESPIEGLERIE_11839 = 11839,
+
+        MANSOUSCULADE_11840 = 11840,
+
+        MANSABSORPTION_11841 = 11841,
+
+        MANSOLTIGE_11842 = 11842,
+
+        MANSOIN_11843 = 11843,
+
+        MANSANERIE_11844 = 11844,
+
+        MANSAVONNETTE_11845 = 11845,
+
+        MATRAQUAGE_DU_MATON_11846 = 11846,
+
+        MANSARRESTATION_11847 = 11847,
+
+        MANSOTE_MOUTON_DU_MATON_11848 = 11848,
+
+        PIOCHE_VOLTIGEANTE_11849 = 11849,
+
+        PROTECTION_GOBELINE_11850 = 11850,
+
+        MAÎTRE_DE_LEVISCERATION_11851 = 11851,
+
+        BRUTALITE_BWORK_11852 = 11852,
+
+        DEPORTATION_STRATEGIQUE_11853 = 11853,
+
+        FLAIR_INFAILLIBLE_11854 = 11854,
+
+        TUERIE_FANTMATIQUE_11855 = 11855,
+
+        RUGISSEMENT_SPECTRAL_11856 = 11856,
+
+        RECRUTEMENT_DE_LAURORE_POURPRE_11857 = 11857,
+
+        COUP_DE_BOUTONCLIER_DELITE_11858 = 11858,
+
+        EMPALEMENT_DELITE_11859 = 11859,
+
+        POSTILLON_DELITE_11860 = 11860,
+
+        ATTRAPE_COTON_TIGE_DELITE_11861 = 11861,
+
+        BADIGEONNAGE_DE_CERUMEN_11862 = 11862,
+
+        BADIGEONNAGE_DE_CERUMEN_11863 = 11863,
+
+        SALUT_DELITE_11864 = 11864,
+
+        COUP_DE_CURE_DENT_DELITE_11865 = 11865,
+
+        TIR_DE_CURE_DENT_DELITE_11866 = 11866,
+
+        MARQUAGE_ELITISTE_11867 = 11867,
+
+        LAMENTATION_11868 = 11868,
+
+        DEVERSEMENT_LARMOYANT_11869 = 11869,
+
+        DELUGE_DE_LARMES_11870 = 11870,
+
+        ASPIRATION_SANGLOTANTE_11871 = 11871,
+
+        GLOUGLOUTTE_SALEE_11872 = 11872,
+
+        STINETHIO_11873 = 11873,
+
+        DEGAGE__11874 = 11874,
+
+        MYOPIE_11875 = 11875,
+
+        VISION_TROUBLE_11876 = 11876,
+
+        OBSTACLE_A_LA_DESTINEE_11877 = 11877,
+
+        PARADOXE_DE_KARDORIM_11878 = 11878,
+
+        OBSTACLE_A_LA_DESTINEE_11879 = 11879,
+
+        CONTESTATION_11881 = 11881,
+
+        SOMMATION_DU_DRAGON_11882 = 11882,
+
+        FLAMME_PRIMORDIALE_11883 = 11883,
+
+        TU_POUSSES_LE_BOUCHON_UN_PEU_TROP_LOIN_JORIS__11884 = 11884,
+
+        TU_POUSSES_LE_BOUCHON_UN_PEU_TROP_LOIN_JORIS__11885 = 11885,
+
+        BONNETEAU_11886 = 11886,
+
+        TU_POUSSES_LE_BOUCHON_UN_PEU_TROP_LOIN_JORIS__11887 = 11887,
+
+        MIGI_VERTIGINEUX_11892 = 11892,
+
+        HIDARI_VERTIGINEUX_11893 = 11893,
+
+        KAMAE_VERTIGINEUX_11894 = 11894,
+
+        BLUFF_VERTIGINEUX_11895 = 11895,
+
+        SI_MILICIENS_POUR_FIXER_LEUR_ETAT_AU_CAPITAINE_A_LEUR_MORT_DECLENCHE_11897 = 11897,
+
+        BI_LISSE_MI_GRENU_11898 = 11898,
+
+        DI_LISSE_MI_GRENU_11899 = 11899,
+
+        SI_LISSE_MI_GRENU_11900 = 11900,
+
+        PI_LISSE_MI_GRENU_11901 = 11901,
+
+        AVANT_GARDE__ARRIERE_GARDE_11902 = 11902,
+
+        HALLEBORDAGE_11903 = 11903,
+
+        CRAQUEGLASS_REMPLACE_DECLENCHE_11911 = 11911,
+
+        CRAQUEGLASS_CYCLES_DES_ETATS_11912 = 11912,
+
+        BRULURE_CELESTE_11913 = 11913,
+
+        RAPPROCHEMENT_TEMPORAIRE_11914 = 11914,
+
+        _11915 = 11915,
+
+        MESSAGERES_DE_LA_MORT_11916 = 11916,
+
+        BOBINE_DE_LA_DESTINEE_11917 = 11917,
+
+        FUSEAU_DE_LA_DESTINEE_11918 = 11918,
+
+        CISEAUX_DE_LA_DESTINEE_11919 = 11919,
+
+        OLE_11920 = 11920,
+
+        OTTO_11921 = 11921,
+
+        BONJOUR_11922 = 11922,
+
+        CE_QUI_A_ETE_SEST_DEFAIT_11923 = 11923,
+
+        CE_QUI_A_ETE_SEST_DEFAIT_11924 = 11924,
+
+        CE_QUI_SERA_SEST_DEFAIT_11925 = 11925,
+
+        _11929 = 11929,
+
+        DOFUS_EBENE_NOUVEAU_SORT_A_11931 = 11931,
+
+        DOFUS_EBENE_NOUVEAU_SORT_B_11932 = 11932,
+
+        _11933 = 11933,
+
+        _11934 = 11934,
+
+        MORT_CROCOBUR_RECUPERATION_CD_11935 = 11935,
+
+        PARADOXE_DE_LA_BWORKETTE_11936 = 11936,
+
+        PARADOXE_DE_LA_BWORKETTE_11937 = 11937,
+
+        _11938 = 11938,
+
+        _11939 = 11939,
+
+        MONOGEL_11943 = 11943,
+
+        FONDU_DECHAÎNE_11944 = 11944,
+
+        FONDU_DECHAÎNE_11945 = 11945,
+
+        SOUFFLE_LIQUEUWANT_11946 = 11946,
+
+        SPIWITUEUW_11947 = 11947,
+
+        DOFUS_ARGENTE_SCINTILLANT_11949 = 11949,
+
+        ABSOWPTION_11950 = 11950,
+
+        CACAOBSTWUANT_11951 = 11951,
+
+        CHOCOHOWTE_11952 = 11952,
+
+        ENWOBAGE_11953 = 11953,
+
+        ECLAT_11954 = 11954,
+
+        CHOCOLAVE_11955 = 11955,
+
+        FONDU_DECHAÎNE_11956 = 11956,
+
+        REACTION_POURPRE_11957 = 11957,
+
+        REACTION_POURPRE_2_11958 = 11958,
+
+        REACTION_POURPRE_3_11959 = 11959,
+
+        REACTION_POURPRE_4_11960 = 11960,
+
+        REACTION_POURPRE_5_11961 = 11961,
+
+        REACTION_POURPRE_6_11962 = 11962,
+
+        EMBRIGADEMENT_11963 = 11963,
+
+        FONDU_DECHAÎNE_11964 = 11964,
+
+        AFWIANDAGE_11965 = 11965,
+
+        BARRAGE_QUADRAMENTAIRE_11966 = 11966,
+
+        BARRAGE_QUADRAMENTAIRE_11967 = 11967,
+
+        A_ASSIGNATION_ALEATOIRE_DES_ETATS_11971 = 11971,
+
+        BARRAGE_QUADRAMENTAIRE_11972 = 11972,
+
+        CHOCOLAT_SPERGER_11973 = 11973,
+
+        CHOCOMMANDEMENT_11974 = 11974,
+
+        CACAOBSTRUCTION_11975 = 11975,
+
+        TORREADOR_11976 = 11976,
+
+        TORREFACTION_11977 = 11977,
+
+        PADBRA_11978 = 11978,
+
+        HYDROLYSE_11979 = 11979,
+
+        CHOCOCLIER_11980 = 11980,
+
+        GLAÇAGE_11981 = 11981,
+
+        GLAÇAGE_11982 = 11982,
+
+        CHOC_THERMIQUE_11983 = 11983,
+
+        REFROIDISSEMENT_11984 = 11984,
+
+        SURCHAUFFE_11985 = 11985,
+
         ECLABOSSAGE_11986 = 11986,
+
         ECLABOSSAGE_11987 = 11987,
-        FEVE_DU_SAMEDI_SOIR = 11988,
+
+        FEVE_DU_SAMEDI_SOIR_11988 = 11988,
+
         PIEGE_A_GOURMANDS_11989 = 11989,
+
         PIEGE_A_GOURMANDS_11990 = 11990,
-        PEPITE_CHOCOMAGIQUE_11991 = 11991,
-        MANQUE = 11992,
-        PEPITE_CHOCOMAGIQUE_11993 = 11993,
+
+        ECLAT_KAO_11991 = 11991,
+
+        MANQUE_11992 = 11992,
+
+        ECLAT_KAO_11993 = 11993,
+
         CHOCOLATOMANIE_11994 = 11994,
+
         CHOCOLATOMANIE_11995 = 11995,
-        CHOCOLATOMANIE = 11996,
-        POUSSEE_FLORALE = 12003,
-        TYRANNICAL_Arrow9315,
+
+        CHOCOLATOMANIE_11996 = 11996,
+
+        REACTION_POURPRE_7_11998 = 11998,
+
+        TIGE_EMPOISONNEE_11999 = 11999,
+
+        REACTION_POURPRE_8_12000 = 12000,
+
+        BULBOMBE_12001 = 12001,
+
+        PISTIL_AFFAIBLISSANT_12002 = 12002,
+
+        POUSSEE_FLORALE_12003 = 12003,
+
+        BRECHE_SOUFFLANTE_12004 = 12004,
+
+        BARRAGE_QUADRAMENTAIRE_12005 = 12005,
+
+        ECLOSION_FLORALE_12006 = 12006,
+
+        ETREINTE_BOURGEONNANTE_12011 = 12011,
+
+        ETREINTE_BOURGEONNANTE_12012 = 12012,
+
+        PETALE_ENCHANTEUR_12017 = 12017,
+
+        A_DESACTIVE_IMMUNITE_12019 = 12019,
+
+        KAKOAKLAKE_12021 = 12021,
+
+        ECLOSION_FLORALE_12022 = 12022,
+
+        MORCELAGE_12023 = 12023,
+
+        CROQUEZ_MOI_12024 = 12024,
+
+        CROQUEZ_MOI_12025 = 12025,
+
+        CROQUEZ_MOI_12026 = 12026,
+
+        TROOLVERISATION_12027 = 12027,
+
+        EXACTION_12028 = 12028,
+
+        MORCELAGE_12029 = 12029,
+
+        CATAPULTAGE_12030 = 12030,
+
+        CROQUANIBALISME_12031 = 12031,
+
+        BRECHE_LIQUIDE_12033 = 12033,
+
+        BRECHE_ARDENTE_12034 = 12034,
+
+        BRECHE_ROCAILLEUSE_12035 = 12035,
+
+        _12036 = 12036,
+
+        PLUIE_DE_PEPITE_12037 = 12037,
+
+        CHARGE_ECLAIR_12038 = 12038,
+
+        B_ARRET_DOMMAGES_12039 = 12039,
+
+        ANIM_COUP_DEPEE_DASH_12040 = 12040,
+
+        GUIMIMAUVE_12042 = 12042,
+
+        ENGLUMAUVE_12043 = 12043,
+
+        ENROBAGE_12047 = 12047,
+
+        GLYCEMIE_12049 = 12049,
+
+        KWAKAOUST_12050 = 12050,
+
+        SKWALALA_12052 = 12052,
+
+        SOMBREMOUS_12053 = 12053,
+
+        C_CLEAN_ETATS_12056 = 12056,
+
+        DELIVREE_LIBEREE_12057 = 12057,
+
+        D_POUSSEE_12058 = 12058,
+
+        PANACHE_12059 = 12059,
+
+        TEMPS_MORT_12060 = 12060,
+
+        PANACHE_AUTOKILL_MONSTRES_12061 = 12061,
+
+        COMBUSTION_LENTE_12063 = 12063,
+
+        CATACHRONIE_12064 = 12064,
+
+        ALENTISSEMENT_12065 = 12065,
+
+        CONTRACTION_TEMPORELLE_12066 = 12066,
+
+        PANACHE_VIP_12067 = 12067,
+
+        PANACHE_EVENEMENT_12068 = 12068,
+
+        INEXORABILIS_12069 = 12069,
+
+        ACEDIE_12070 = 12070,
+
+        CHRONOSTASE_12071 = 12071,
+
+        GLYPHE_CHRONOSTASE_12072 = 12072,
+
+        SHURSHARGE_12073 = 12073,
+
+        SHURSHARGE_12074 = 12074,
+
+        DESTIN_SHUSHESTE_12075 = 12075,
+
+        DESTIN_SHUSHESTE_12076 = 12076,
+
+        INEXORABILIS_12077 = 12077,
+
+        ACEDIE_12078 = 12078,
+
+        CHAUDRON_CHOCO_12079 = 12079,
+
+        CHAUDRON_CHOCO_12080 = 12080,
+
+        CHAUDRON_CHOCO_12081 = 12081,
+
+        EMBUCHE_SINISTRE_12082 = 12082,
+
+        PANACHE_GLYPHE_DECLENCHE_12083 = 12083,
+
+        GANACHE_12084 = 12084,
+
+        GANACHE_12085 = 12085,
+
+        EMBUCHE_SINISTRE_12086 = 12086,
+
+        CLOCHES_DU_KAO_12087 = 12087,
+
+        CLOCHES_DU_KAO_12088 = 12088,
+
+        EQUADOR_12089 = 12089,
+
+        PANACHE_ETAT_GLYPHE_VIP_12092 = 12092,
+
+        DESTIN_SHUSHESTE_12093 = 12093,
+
+        PANACHE_DOPOU_12094 = 12094,
+
+        PANACHE_POISON_PA_12095 = 12095,
+
+        PANACHE_POISON_PM_12096 = 12096,
+
+        PANACHE_TELEPORTATION_VIP_12097 = 12097,
+
+        DESTIN_SHUSHESTE_12098 = 12098,
+
+        DESTIN_SHUSHESTE_12099 = 12099,
+
+        PANACHE_MARQUAGE_12100 = 12100,
+
+        FATALIS_12101 = 12101,
+
+        PANACHE_MARQUAGE_2_12102 = 12102,
+
+        PANACHE_MELANGE_12103 = 12103,
+
+        PANACHE_MELANGE_SWAP_12104 = 12104,
+
+        ENTRAILLES_DE_LA_TOUR_MINERALE_12105 = 12105,
+
+        RESONANCE_12106 = 12106,
+
+        PANACHE_REROLL_VIP_12109 = 12109,
+
+        PANACHE_VIP_2_12110 = 12110,
+
+        DISSONANCE_12111 = 12111,
+
+        DELOCK_CRISTAUXGOLEMS_CHOIX_CIBLE_01_12113 = 12113,
+
+        DELOCK_CRISTAUXGOLEMS_CHOIX_CIBLE_02_12114 = 12114,
+
+        DELOCK_VIA_CRISTAL_12115 = 12115,
+
+        PANACHE_AUTOKILL_CN_12116 = 12116,
+
+        TELEPORTATION_AGONIE_12117 = 12117,
+
+        CONTREFLAQUE_12118 = 12118,
+
+        RADIATIONS_12119 = 12119,
+
+        CONTREFLAQUE_12120 = 12120,
+
+        A_VISEE_12121 = 12121,
+
+        RADIATIONS_12122 = 12122,
+
+        GLYPHE_RADIATIONS_12123 = 12123,
+
+        A_SORT_DANIMATION_12124 = 12124,
+
+        _12125 = 12125,
+
+        RESONANCE_12126 = 12126,
+
+        PIEGE_DE_CRISTAL_12127 = 12127,
+
+        PIEGE_DE_CRISTAL_12128 = 12128,
+
+        FRAPPE_CRISTALLINE_12129 = 12129,
+
+        RALE_DAGONIE_12130 = 12130,
+
+        RALE_DAGONIE_12131 = 12131,
+
+        ATTRACTION_MINERALE_12134 = 12134,
+
+        EXHUMATION_DE_LA_GARDE_MALAKITE_12136 = 12136,
+
+        CŒUR_CRISTAL_12137 = 12137,
+
+        SOMMEIL_DAGONIE_12138 = 12138,
+
+        FEU_DES_TENEBRES_12139 = 12139,
+
+        CRISTALACTITE_12141 = 12141,
+
+        DELUGE_AILE_12142 = 12142,
+
+        SOMBRE_LAME_12143 = 12143,
+
+        EMBUCHE_SINISTRE_12144 = 12144,
+
+        ESSOR_12145 = 12145,
+
+        SHURSHARGE_12146 = 12146,
+
+        FROID_DE_NOVAMAIRE_12148 = 12148,
+
+        FROID_DE_NOVAMAIRE_12149 = 12149,
+
+        FROID_DE_NOVAMAIRE_12150 = 12150,
+
+        WAGGLUTINANT_12151 = 12151,
+
+        POUWSUITE_12152 = 12152,
+
+        STEWOÏDES_12153 = 12153,
+
+        SKWAT_12154 = 12154,
+
+        GWOKWIK_12155 = 12155,
+
+        CHOKOBOMBAWDE_12156 = 12156,
+
+        TWANCHEE_12157 = 12157,
+
+        OMBWAGE_12158 = 12158,
+
+        CELEWITE_12159 = 12159,
+
+        SECOUWISTE_12160 = 12160,
+
+        ŒUFOWIE_12161 = 12161,
+
+        REGNE_DU_ROI_FOU_12162 = 12162,
+
+        REGNE_DU_ROI_FOU_12163 = 12163,
+
+        REGNE_DU_ROI_FOU_12164 = 12164,
+
+        REGNE_DU_ROI_FOU_12165 = 12165,
+
+        REGNE_DU_ROI_FOU_12166 = 12166,
+
+        REGNE_DU_ROI_FOU_TRIGGER_X_12168 = 12168,
+
+        _12172 = 12172,
+
+        _12173 = 12173,
+
+        _12174 = 12174,
+
+        _12175 = 12175,
+
+        ALEORICTUS_12176 = 12176,
+
+        APPLIQUE_HIT_SI_TOUCHE_PAR_LE_SORT_ALEORICTUSSIBLE_12177 = 12177,
+
+        ETREINTE_BOURGEONNANTE_12178 = 12178,
+
+        SECOUWISTE_DECLENCHE_12179 = 12179,
+
+        ETREINTE_BOURGEONNANTE_12180 = 12180,
+
+        ETREINTE_BOURGEONNANTE_12181 = 12181,
+
+        ECLOSION_FLORALE_12182 = 12182,
+
+        CHOCOHOWTE_DECLENCHE_12183 = 12183,
+
+        ALEORICTUS_12184 = 12184,
+
+        DEMENCE_IV__IMPATIENCE_IV_12185 = 12185,
+
+        CHASSE_A_LHOMME_12186 = 12186,
+
+        CHASSE_A_LHOMME_12187 = 12187,
+
+        PSYCHOMOTRICITE_12188 = 12188,
+
+        MORTELAGE_12189 = 12189,
+
+        PERSECUTION_12190 = 12190,
+
+        OPPRESSION_12191 = 12191,
+
+        CAUCHEMAR_DU_MAWABOUAINO_12194 = 12194,
+
+        REVE_DU_MAWABOUAINO_12195 = 12195,
+
+        PARADOXE_DU_MAWABOUAINO_12196 = 12196,
+
+        IMPATIENCE_I_12197 = 12197,
+
+        IMPATIENCE_II_12198 = 12198,
+
+        IMPATIENCE_III_12199 = 12199,
+
+        GESTION_DE_LIMPATIENCE_12200 = 12200,
+
+        TROMBE_DACIER_12202 = 12202,
+
+        TROMBE_DACIER_12203 = 12203,
+
+        FEU_DES_TENEBRES_DECLENCHE_12204 = 12204,
+
+        MARTEL_12205 = 12205,
+
+        HYSTERIA_12206 = 12206,
+
+        PULSION_MEURTRIERE_12208 = 12208,
+
+        _12209 = 12209,
+
+        _12210 = 12210,
+
+        GANACHE_12213 = 12213,
+
+        SOMBRE_LAME_DECLENCHE_12214 = 12214,
+
+        MOWFAL_12216 = 12216,
+
+        REPRESAILLES_QUADRAMENTAIRES_12219 = 12219,
+
+        ENERGIE_KAOTIK_12220 = 12220,
+
+        COUP_DU_CROU_12221 = 12221,
+
+        ERE_DE_LA_CHOCOMANCIE_12222 = 12222,
+
+        MYSTERICORDE_12223 = 12223,
+
+        CHRONO_INVASION_12224 = 12224,
+
+        CHRONO_INVASION_12225 = 12225,
+
+        TALONNADE_12227 = 12227,
+
+        CARCAN_12228 = 12228,
+
+        CHRONO_ECRASEMENT_12229 = 12229,
+
+        PARALYSIE_12231 = 12231,
+
+        ANABOLISME_12232 = 12232,
+
+        CHRONO_ENDURANCE_12233 = 12233,
+
+        INGURGITATION_12234 = 12234,
+
+        INGURGITATION_12235 = 12235,
+
+        JONCTION_12236 = 12236,
+
+        COUP_DE_MARRE_DEAU_12237 = 12237,
+
+        COURAGE_DE_LEPOUVANTAIL_12238 = 12238,
+
+        IMPATIENCE_12239 = 12239,
+
+        COUP_DE_MARRE_DEAU_12240 = 12240,
+
+        CHRONO_INTERCEPTION_12241 = 12241,
+
+        CHRONO_INTERCEPTION_12242 = 12242,
+
+        CHRONO_INTERCEPTION_12243 = 12243,
+
+        CHRONO_ECRASEMENT_12244 = 12244,
+
+        CHRONO_TRIGHEURE_12245 = 12245,
+
+        EXCLUSION_12247 = 12247,
+
+        CHRONO_PROTECTION_12248 = 12248,
+
+        CHRONOCLIER_12249 = 12249,
+
+        CHRONOCLIER_12250 = 12250,
+
+        LIQUEFACTION_12251 = 12251,
+
+        CHRONO_TENACITE_12252 = 12252,
+
+        INIMITIE_12253 = 12253,
+
+        BOULVERSEMENT_12254 = 12254,
+
+        CHRONO_VIRULENCE_12255 = 12255,
+
+        PERSEVERANCE_12256 = 12256,
+
+        AVEUGLETTE_12257 = 12257,
+
+        CHRONO_PERNICIOSITE_12258 = 12258,
+
+        METATHESE_12259 = 12259,
+
+        PERNIPIEGE_12260 = 12260,
+
+        PERNIPIEGE_12261 = 12261,
+
+        CHRONO_FRENESIE_12262 = 12262,
+
+        CHRONO_FRENESIE_12263 = 12263,
+
+        MULTIFOCUSSE_12264 = 12264,
+
+        PILONNAGE_12265 = 12265,
+
+        CHRONO_COLERE_12266 = 12266,
+
+        AFFAISSEMENT_12267 = 12267,
+
+        CHRONO_TAQUINERIE_12269 = 12269,
+
+        METAPLASME_12270 = 12270,
+
+        METAPLASME_12271 = 12271,
+
+        PERVERSION_12272 = 12272,
+
+        CHRONO_STIMULATION_12273 = 12273,
+
+        DEVOTION_COMBATIVE_12274 = 12274,
+
+        CHRONO_CALMANT_12275 = 12275,
+
+        CHRONO_ALTRUISME_12276 = 12276,
+
+        CHRONO_ALTRUISME_12277 = 12277,
+
+        STASE_REGENERANTE_12278 = 12278,
+
+        STASE_REGENERANTE_12279 = 12279,
+
+        SOLIDARITE_CHRONIQUE_12280 = 12280,
+
+        CHRONO_GALVANISATION_12281 = 12281,
+
+        CHRONOXYDATION_12282 = 12282,
+
+        ONDE_PROTECTRICE_12283 = 12283,
+
+        CHRONO_EXALTATION_12284 = 12284,
+
+        FRELATERIE_12285 = 12285,
+
+        DEPLACEMENTS_DEGRADANTS_12286 = 12286,
+
+        CHRONO_VIRULENCE_12287 = 12287,
+
+        GANACHE_12288 = 12288,
+
+        GANACHE_12289 = 12289,
+
+        CROQUELURE_12290 = 12290,
+
+        SORT_DE_DELOCK_ELEMENTAIRE_12291 = 12291,
+
+        CROQUELURE_12292 = 12292,
+
+        CROQUELURE_12293 = 12293,
+
+        RECUPERATION_12294 = 12294,
+
+        PHASE__12295 = 12295,
+
+        ROCHER_CROQUANT_12297 = 12297,
+
+        ENROBAGE_FONDU_12298 = 12298,
+
+        MORCEAUX_SOUFFLES_12299 = 12299,
+
+        MOUSSE_LAVEE_12300 = 12300,
+
+        CŒUR_BRISE_12301 = 12301,
+
+        ATTRACTION_GOURMANDE_12302 = 12302,
+
+        ATTRACTION_GOURMANDE_12303 = 12303,
+
+        TOTAL_IMPWAKT_12304 = 12304,
+
+        TOTAL_IMPWAKT_12305 = 12305,
+
+        CROUSTICHOC_12306 = 12306,
+
+        CROUSTICHOC_12307 = 12307,
+
+        ECLAT_KAO_DECLENCHE_02_12308 = 12308,
+
+        SPATULE_TRANCHE_GOURMANDS_12309 = 12309,
+
+        COMMERCE_INEQUITABLE_12310 = 12310,
+
+        ARTISANAT_DU_KAO_12311 = 12311,
+
+        ARTISANAT_DU_KAO_12313 = 12313,
+
+        _12314 = 12314,
+
+        FORASTERO_12315 = 12315,
+
+        TRINITARIO_12316 = 12316,
+
+        CRIOLLO_12317 = 12317,
+
+        ROCHER_CROQUANT_12318 = 12318,
+
+        REVE_DU_CROQUELEUR_12319 = 12319,
+
+        REVE_DE_LA_PRETRESSE_DE_KAO_12320 = 12320,
+
+        PARADOXE_DE_LA_PRETRESSE_DE_KAO_12321 = 12321,
+
+        CAUCHEMAR_DE_LA_PRETRESSE_DE_KAO_12322 = 12322,
+
+        PARADOXE_DU_CROQUELEUR_12323 = 12323,
+
+        CAUCHEMAR_DU_CROQUELEUR_12324 = 12324,
+
+        CHANGEMENT_DE_SCALE_12325 = 12325,
+
+        DEBUFF_DES_BONUS_DE_PHASES_12326 = 12326,
+
+        MASKANSOCOLAT_12327 = 12327,
+
+        MANSOCOLERE_12328 = 12328,
+
+        KWAKAOUST_12329 = 12329,
+
+        SKWALALA_12330 = 12330,
+
+        MANSAUT_12331 = 12331,
+
+        ATTRAPE_GOURMAND_12332 = 12332,
+
+        CHOCOSKARFARCE_12333 = 12333,
+
+        CHOCOSKARFARCE_12334 = 12334,
+
+        CHOCOLATHEISME_12335 = 12335,
+
+        SHOKOLEGRAM_12336 = 12336,
+
+        AMSTRAMGRAM_12337 = 12337,
+
+        BOUREBOUR_12338 = 12338,
+
+        RATATAM_12339 = 12339,
+
+        MYSTERE_DE_PWAK_12340 = 12340,
+
+        EMBROUILLE_DE_PWAK_12341 = 12341,
+
+        OVATION_12342 = 12342,
+
+        REGENERATION_PRINTANIERE_12343 = 12343,
+
+        DOFUS_CACAO_12344 = 12344,
+
+        MARQUE_CHOCOLATEE_12345 = 12345,
+
+        EPICENTRE_12346 = 12346,
+
+        CAST_RADIATIONS_12347 = 12347,
+
+        RADIATIONS_GLYPHE_QUI_LANCE_UN_SORT_12348 = 12348,
+
+        CHOCOBLIQUE_12349 = 12349,
+
+        DESTIN_SHUSHESTE_12350 = 12350,
+
+        TROMBE_DACIER_12351 = 12351,
+
+        MYSTERE_DE_PWAK_12352 = 12352,
+
+        CRISTALACTITE_12353 = 12353,
+
+        ACTIVATION_RUNES_CRISTALACTITE_12354 = 12354,
+
+        ANOMALIE_DE_LA_CAVERNE_DAGUABRIAL_12355 = 12355,
+
+        ANOMALIE_DE_BRAKMAR_12356 = 12356,
+
+        ANOMALIE_DE_LAURORE_POURPRE_12357 = 12357,
+
+        ANOMALIE_DE_LATELIER_DE_NOXIMILIEN_12358 = 12358,
+
+        ANOMALIE_DU_PALAIS_DE_BONTA_12359 = 12359,
+
+        ANOMALIE_DU_PALAIS_DE_BONTA_12360 = 12360,
+
+        ANOMALIE_DES_ABYSSES_DU_TEMPS_12361 = 12361,
+
+        ANOMALIE_DU_VILLAGE_DES_FLAQUEUX_12362 = 12362,
+
+        ELIXIR_UCHRONIQUE_12363 = 12363,
+
+        UCHRONIE_MAJEURE_12364 = 12364,
+
+        UCHRONIE_MINEURE_12365 = 12365,
+
+        UCHRONIE_BINAR_12366 = 12366,
+
+        UCHRONIE_BOBLE_12367 = 12367,
+
+        UCHRONIE_CAFRA_12368 = 12368,
+
+        UCHRONIE_CORRODE_12369 = 12369,
+
+        UCHRONIE_DOMO_12370 = 12370,
+
+        UCHRONIE_DYNAMO_12371 = 12371,
+
+        UCHRONIE_HOSKAR_12372 = 12372,
+
+        UCHRONIE_INDULGENTE_12373 = 12373,
+
+        ANOMALIE_DU_MARCHE_DE_KELBA_12374 = 12374,
+
+        ANOMALIE_DE_LA_TOUR_MINERALE_12375 = 12375,
+
+        ANOMALIE_DE_LHORLOGE_DE_XELOR_12376 = 12376,
+
+        UCHRONIE_MINEURE_12377 = 12377,
+
+        UCHRONIE_MINEURE_12378 = 12378,
+
+        UCHRONIE_MINEURE_12379 = 12379,
+
+        UCHRONIE_MINEURE_12380 = 12380,
+
+        UCHRONIE_MINEURE_12381 = 12381,
+
+        UCHRONIE_MINEURE_12382 = 12382,
+
+        UCHRONIE_MINEURE_12383 = 12383,
+
+        UCHRONIE_MINEURE_12384 = 12384,
+
+        UCHRONIE_MINEURE_12385 = 12385,
+
+        UCHRONIE_MINEURE_12386 = 12386,
+
+        STELLION_12387 = 12387,
+
+        MIRAGE_12388 = 12388,
+
+        MIRAGE_12389 = 12389,
+
+        MIRAGE_12390 = 12390,
+
+        MIRAGE_12391 = 12391,
+
+        CHRONOPORTATION_12392 = 12392,
+
+        TOILE_TEMPORELLE_12393 = 12393,
+
+        REMINISCENCE_SUR_PATTES_12394 = 12394,
+
+        REMINISCENCE_SUR_PATTES_12395 = 12395,
+
+        CRI_DE_LAIGLE_12396 = 12396,
+
+        SAGESSE_DOULOUREUSE_12397 = 12397,
+
+        LA_BOUCLE_EST_BOUCLEE_12398 = 12398,
+
+        ARAKNAFRAPPE_12399 = 12399,
+
+        IMPACT_POURPRE_12400 = 12400,
+
+        JAVELOT_BRAKMARIEN_12401 = 12401,
+
+        CHOCOBLIQUE_DECLENCHE_12402 = 12402,
+
+        ANAWCHIE_12403 = 12403,
+
+        ASSASINDIC_12404 = 12404,
+
+        HEURE_DE_POINTE_12405 = 12405,
+
+        CRISTALACTITE_12406 = 12406,
+
+        CONTRAINTE_HORAIRE_12407 = 12407,
+
+        RETARD_CHRONIQUE_12408 = 12408,
+
+        EMBUSQUE_12409 = 12409,
+
+        DEMASQUE_12410 = 12410,
+
+        MIRAGE_12411 = 12411,
+
+        AURORE_DES_AIGUILLES_12412 = 12412,
+
+        EAU_CALME_12413 = 12413,
+
+        EAU_TROUBLE_12414 = 12414,
+
+        MIRAGE_ON__OFF_12415 = 12415,
+
+        ATELIER_DE_LHORLOGER_12416 = 12416,
+
+        FABRICATION_DE_PROTO_NOXINES_12417 = 12417,
+
+        VIGILANCE_DE_LHORLOGER_12418 = 12418,
+
+        VIGILANCE_DE_LHORLOGER_12419 = 12419,
+
+        NOXINE_PREMIERE_GENERATION_12420 = 12420,
+
+        TEMPS_DAVANCE_12421 = 12421,
+
+        BULLE_DU_TEMPS_PERDU_12422 = 12422,
+
+        BULLE_DU_TEMPS_PERDU_12423 = 12423,
+
+        BULLE_DU_TEMPS_PERDU_12424 = 12424,
+
+        BOMBE_MECANIQUE_12425 = 12425,
+
+        MECANISME_DEFENSIF_12426 = 12426,
+
+        MECANISME_DEFENSIF_12427 = 12427,
+
+        TEMPS_DE_RETARD_12428 = 12428,
+
+        BOUILLONNEMENT_12429 = 12429,
+
+        SUBREPTICE_12430 = 12430,
+
+        SUBREPTICE_12431 = 12431,
+
+        SUBREPTICE_12432 = 12432,
+
+        ASON_INSHU_12433 = 12433,
+
+        ASON_INSHU_12434 = 12434,
+
+        SHURPRISE_12435 = 12435,
+
+        SHURPRISE_12436 = 12436,
+
+        SHUCULBUTE_12437 = 12437,
+
+        SHUCULBUTE_12438 = 12438,
+
+        PIEGE_A_REMOUS_12439 = 12439,
+
+        PIEGE_A_REMOUS_12440 = 12440,
+
+        PIEGE_A_REMOUS_12441 = 12441,
+
+        AFFOUILLEMENT_12442 = 12442,
+
+        PIEGE_CATALEPTIQUE_12443 = 12443,
+
+        PIEGE_CATALEPTIQUE_12444 = 12444,
+
+        PIEGE_DEPRAVANT_12445 = 12445,
+
+        PIEGE_DEPRAVANT_12446 = 12446,
+
+        CROUMINI_12447 = 12447,
+
+        CROUMINI_12448 = 12448,
+
+        GLAIVATAC_12449 = 12449,
+
+        PRISE_DE_RISQUE_12450 = 12450,
+
+        ECROUM_12451 = 12451,
+
+        ABRAINI_12452 = 12452,
+
+        SORT_INITIAL_PROTO_NOXINES_DECLENCHE_01_12453 = 12453,
+
+        SEVE_BLESSANTE_12454 = 12454,
+
+        ABRAPOUSSE_12455 = 12455,
+
+        ABRARONCES_12456 = 12456,
+
+        ABRARONCE_12457 = 12457,
+
+        BILBINI_12458 = 12458,
+
+        BILBYPHE_12459 = 12459,
+
+        BILBHOQUET_12460 = 12460,
+
+        BILBOUJPO_12461 = 12461,
+
+        BILBINSOLENCE_12462 = 12462,
+
+        CROCODINI_12463 = 12463,
+
+        CROCOMORSURE_12464 = 12464,
+
+        FONDUE_ETHEREE_12465 = 12465,
+
+        EPINES_DORSALES_12466 = 12466,
+
+        ECLOSION_FLORALE_12467 = 12467,
+
+        C_RECUL_12468 = 12468,
+
+        C_DETECTION_DIRECTION_12469 = 12469,
+
+        C_TELEPORTATION_RETOUR_12470 = 12470,
+
+        C_POUSSEE_12471 = 12471,
+
+        C_REORIENTATION_12472 = 12472,
+
+        RAULEPIQUE_12473 = 12473,
+
+        AUTO_DESTRUCTION_12474 = 12474,
+
+        CELERITE_DU_PIOU_12475 = 12475,
+
+        CELERITE_DU_PIOU_DECLENCHE_12476 = 12476,
+
+        EPARGNE_DU_KOALAK_12477 = 12477,
+
+        EPARGNE_DU_KOALAK_DECLENCHE_12478 = 12478,
+
+        EVASION_DU_KITSOU_12479 = 12479,
+
+        TOILE_DE_LARAKNE_12480 = 12480,
+
+        HYSTERIE_DE_LA_TRUCHE_12481 = 12481,
+
+        SOIF_DU_MOSKITO_12482 = 12482,
+
+        IMPATIENCE_DU_WABBIT_12483 = 12483,
+
+        BRUTALITE_DU_TROOL_12484 = 12484,
+
+        PRECISION_DU_BWORK_12485 = 12485,
+
+        RAGE_DU_MULOU_12486 = 12486,
+
+        GENEROSITE_DU_BWAK_12487 = 12487,
+
+        DOUCEUR_DE_LA_BOUFETTE_12488 = 12488,
+
+        ROBUSTESSE_DU_CRAQUELEUR_12489 = 12489,
+
+        PROTECTION_DE_LA_KROKILLE_12490 = 12490,
+
+        GOURMANDISE_DU_GLOUTOBLOP_12492 = 12492,
+
+        INVOCATION_CRISTAUX_12493 = 12493,
+
+        ALEORICTUS_12494 = 12494,
+
+        ESSOR_ANIMATION_12495 = 12495,
+
+        CATAPULTAGE_ANIMATION_12496 = 12496,
+
+        IMMORTALITE_DU_CHAFER_12497 = 12497,
+
+        ECORCE_DE_LABRAKNYDE_12498 = 12498,
+
+        ALTRUISME_DU_CHAMPA_12499 = 12499,
+
+        BIENVEILLANCE_DE_LA_TOFOUNE_12500 = 12500,
+
+        APPEL_DU_PANDORE_12501 = 12501,
+
+        ENTRAVE_DU_DRAGOEUF_12502 = 12502,
+
+        DEVOUEMENT_DE_LA_DOMOIZELLE_12503 = 12503,
+
+        HYSTERIA_12504 = 12504,
+
+        TOXICITE_DU_SCORBUTE_12505 = 12505,
+
+        EMPATHIE_DE_LA_BOURSOIN_12506 = 12506,
+
+        ALEORICTUS_12507 = 12507,
+
+        ALEORICTUS_ZONE_A_12508 = 12508,
+
+        ALEORICTUS_ZONE_B_12509 = 12509,
+
+        ALEORICTUS_ZONE_C_12510 = 12510,
+
+        ALEORICTUS_ZONE_D_12511 = 12511,
+
+        ALEORICTUS_12512 = 12512,
+
+        ALEORICTUS_12513 = 12513,
+
+        PETALE_ENCHANTEUR_12514 = 12514,
+
+        MOWFAL_ANIMATION_12515 = 12515,
+
+        PANACHE_REROLL_VIP_ANTIFAIL_12516 = 12516,
+
+        CROQUELURE_12517 = 12517,
+
+        _12518 = 12518,
+
+        SOIF_DU_MOSKITO_DECLENCHE_12519 = 12519,
+
+        APPEL_DU_PANDORE_DECLENCHE_12520 = 12520,
+
+        APPEL_DU_PANDORE_DECLENCHE_2_12521 = 12521,
+
+        EMPATHIE_DE_LA_BOURSOIN_DECLENCHE_12522 = 12522,
+
+        _12523 = 12523,
+
+        _12524 = 12524,
+
+        GEOMANCIE_12526 = 12526,
+
+        BOULET_EMERAUDE_12531 = 12531,
+
+        RADIATIONS_GLYPHE_QUI_LANCE_UN_SORT_12532 = 12532,
+
+        RADIATIONS_12533 = 12533,
+
+        ETREINTE_BOURGEONNANTE_12535 = 12535,
+
+        CAUCHEMAR_DE_BATOFU_12543 = 12543,
+
+        _12545 = 12545,
+
+        DRAGONIQUE_12548 = 12548,
+
+        CANINE_12549 = 12549,
+
+        ENVOL_12550 = 12550,
+
+        SOUFFLE_DU_DRAGON_12551 = 12551,
+
+        FEU_SACRIFICIEL_12552 = 12552,
+
+        _12553 = 12553,
+
+        PIQURE_MOTIVANTE_12554 = 12554,
+
+        FOSSILE_12555 = 12555,
+
+        _12556 = 12556,
+
+        FOUET_12557 = 12557,
+
+        _12558 = 12558,
+
+        RESISTANCE_NATURELLE_12559 = 12559,
+
+        PLUMEAU_12560 = 12560,
+
+        _12561 = 12561,
+
+        _12562 = 12562,
+
+        FRAPPE_DU_CRAQUELEUR_12563 = 12563,
+
+        RAPPEL_12564 = 12564,
+
+        _12565 = 12565,
+
+        _12566 = 12566,
+
+        _12567 = 12567,
+
+        LAISSE_SPIRITUELLE_12568 = 12568,
+
+        _12569 = 12569,
+
+        _12570 = 12570,
+
+        _12571 = 12571,
+
+        _12572 = 12572,
+
+        _12573 = 12573,
+
+        _12574 = 12574,
+
+        _12575 = 12575,
+
+        _12576 = 12576,
+
+        _12577 = 12577,
+
+        _12578 = 12578,
+
+        _12579 = 12579,
+
+        BECO_MELANIQUE_12580 = 12580,
+
+        BECO_SOUFFLE_12581 = 12581,
+
+        _12583 = 12583,
+
+        _12584 = 12584,
+
+        _12585 = 12585,
+
+        _12586 = 12586,
+
+        _12587 = 12587,
+
+        _12588 = 12588,
+
+        _12589 = 12589,
+
+        ATTIRANCE_LAINEUSE_12590 = 12590,
+
+        AEROPIQUE_12591 = 12591,
+
+        _12592 = 12592,
+
+        _12593 = 12593,
+
+        _12594 = 12594,
+
+        _12595 = 12595,
+
+        _12596 = 12596,
+
+        CANINE_12597 = 12597,
+
+        FOSSILE_12598 = 12598,
+
+        _12599 = 12599,
+
+        CROC_REPULSIF_12600 = 12600,
+
+        ONDE_AQUATIQUE_12601 = 12601,
+
+        _12602 = 12602,
+
+        _12603 = 12603,
+
+        SEDIMENTATION_12604 = 12604,
+
+        TOURBILLON_12605 = 12605,
+
+        BAUME_PROTECTEUR_12606 = 12606,
+
+        _12607 = 12607,
+
+        CRAVACHE_12608 = 12608,
+
+        DEPLUMAGE_12609 = 12609,
+
+        _12610 = 12610,
+
+        _12611 = 12611,
+
+        CŒUR_DE_DRAGON_12612 = 12612,
+
+        _12613 = 12613,
+
+        CONSTRICTION_12614 = 12614,
+
+        GEYSER_12615 = 12615,
+
+        _12616 = 12616,
+
+        RELAIS_12617 = 12617,
+
+        FAVORITISME_12618 = 12618,
+
+        REMPLACEMENT_12619 = 12619,
+
+        _12620 = 12620,
+
+        _12621 = 12621,
+
+        _12622 = 12622,
+
+        _12623 = 12623,
+
+        _12624 = 12624,
+
+        _12625 = 12625,
+
+        RELAIS_12626 = 12626,
+
+        FAVORITISME_12627 = 12627,
+
+        _12628 = 12628,
+
+        _12631 = 12631,
+
+        BECO_ALBINOS_12632 = 12632,
+
+        _12634 = 12634,
+
+        _12635 = 12635,
+
+        _12636 = 12636,
+
+        _12637 = 12637,
+
+        _12638 = 12638,
+
+        _12640 = 12640,
+
+        _12641 = 12641,
+
+        _12642 = 12642,
+
+        _12643 = 12643,
+
+        _12644 = 12644,
+
+        _12645 = 12645,
+
+        _12646 = 12646,
+
+        _12662 = 12662,
+
+        _12664 = 12664,
+
+        CELERITE_DU_PIOU_12678 = 12678,
+
+        EPARGNE_DU_KOALAK_12679 = 12679,
+
+        BECORUNE_DE_TELEPORTATION_12695 = 12695,
+
+        BECORUNE_DE_REPLI_12696 = 12696,
+
+        BECOMPRESSEUR_12698 = 12698,
+
+        LE_FOUET_DOSAMODAS_12699 = 12699,
+
+        __INVOCATIONS__GESTION_DE_LA_MORT_12700 = 12700,
+
+        _12701 = 12701,
+
+        DECOUPAGE_12705 = 12705,
+
+        TRANSPOSITION_12706 = 12706,
+
+        TRANSPOSITION_12707 = 12707,
+
+        ATTIRANCE_12708 = 12708,
+
+        ATTIRANCE_12709 = 12709,
+
+        CHATIMENT_12710 = 12710,
+
+        SANGUINAIRE_12711 = 12711,
+
+        BAIN_DE_SANG_12712 = 12712,
+
+        ROBUSTE_12713 = 12713,
+
+        DECOUPAGE_12714 = 12714,
+
+        FURIE_12715 = 12715,
+
+        CHATIMENT_12716 = 12716,
+
+        CHATIMENT_12717 = 12717,
+
+        EVOLUTION_SOUFFRANCE_12718 = 12718,
+
+        SANGUINAIRE_12719 = 12719,
+
+        SANGUINAIRE_12720 = 12720,
+
+        ROBUSTE_12721 = 12721,
+
+        ROBUSTE_12722 = 12722,
+
+        FURIE_12723 = 12723,
+
+        FULGURANCE_12724 = 12724,
+
+        SUPPLICE_12725 = 12725,
+
+        PROJECTION_12726 = 12726,
+
+        NERVOSITE_12727 = 12727,
+
+        STASE_12728 = 12728,
+
+        AFFLUX_12729 = 12729,
+
+        DOULEUR_CUISANTE_12730 = 12730,
+
+        DECIMATION_12731 = 12731,
+
+        BAIN_DE_SANG_12732 = 12732,
+
+        ASSAUT_12733 = 12733,
+
+        ABSORPTION_12734 = 12734,
+
+        ATTIRANCE_12735 = 12735,
+
+        TRANSPOSITION_12736 = 12736,
+
+        MUTILATION_12737 = 12737,
+
+        TRANSFERT_DE_VIE_12738 = 12738,
+
+        SACRIFICE_12739 = 12739,
+
+        FOLIE_SANGUINAIRE_12740 = 12740,
+
+        PUNITION_12741 = 12741,
+
+        DEROBADE_12742 = 12742,
+
+        BERSERK_12743 = 12743,
+
+        EPEE_VOLANTE_12744 = 12744,
+
+        CONDENSATION_12745 = 12745,
+
+        RAVAGE_12746 = 12746,
+
+        IMMOLATION_12747 = 12747,
+
+        HEMORRAGIE_12748 = 12748,
+
+        AVERSION_12749 = 12749,
+
+        HECATOMBE_12750 = 12750,
+
+        ENTAILLE_12751 = 12751,
+
+        CARNAGE_12752 = 12752,
+
+        DESOLATION_12753 = 12753,
+
+        RIPOSTE_12754 = 12754,
+
+        DECHAÎNEMENT_12755 = 12755,
+
+        HOSTILITE_12756 = 12756,
+
+        DISSOLUTION_12757 = 12757,
+
+        PERFUSION_12758 = 12758,
+
+        COAGULATION_12759 = 12759,
+
+        CHATIMENT_12760 = 12760,
+
+        COURONNE_DEPINES_12761 = 12761,
+
+        PACTE_DE_SANG_12762 = 12762,
+
+        FLUCTUATION_12763 = 12763,
+
+        PENITENCE_12764 = 12764,
+
+        EPEE_VELOCE_12765 = 12765,
+
+        HECATOMBE_12766 = 12766,
+
+        PERFUSION_12767 = 12767,
+
+        PACTE_DE_SANG_12768 = 12768,
+
+        PENITENCE_12769 = 12769,
+
+        RIPOSTE_12770 = 12770,
+
+        CONDENSATION_12771 = 12771,
+
+        BERSERK_12772 = 12772,
+
+        COURONNE_DEPINES_12773 = 12773,
+
+        CONVALESCENCE_12774 = 12774,
+
+        COAGULATION_12775 = 12775,
+
+        DESOLATION_12776 = 12776,
+
+        IVRESSE_12777 = 12777,
+
+        MEDITATION_12778 = 12778,
+
+        BAMBOU_MALCHANCEUX_12779 = 12779,
+
+        PICOLE_12780 = 12780,
+
+        POING_ENFLAMME_12781 = 12781,
+
+        SCHNAPS_12782 = 12782,
+
+        EPOUVANTE_12783 = 12783,
+
+        SOUFFLE_ALCOOLISE_12784 = 12784,
+
+        VULNERABILITE_12785 = 12785,
+
+        RIBOTE_12786 = 12786,
+
+        KARCHAM_12787 = 12787,
+
+        VERTIGE_12788 = 12788,
+
+        STABILISATION_12789 = 12789,
+
+        EVICTION_12790 = 12790,
+
+        ETHYLO_12791 = 12791,
+
+        SOUILLURE_12792 = 12792,
+
+        PROPULSION_12793 = 12793,
+
+        VAGUE_A_LAME_12794 = 12794,
+
+        COLERE_DE_ZATOÏSHWAN_12795 = 12795,
+
+        FLASQUE_EXPLOSIVE_12796 = 12796,
+
+        PANDATAK_12797 = 12797,
+
+        PANDANLKU_12798 = 12798,
+
+        LIEN_SPIRITUEUX_12799 = 12799,
+
+        COUP_DE_BAMBOU_12800 = 12800,
+
+        BEUVERIE_12801 = 12801,
+
+        TOURNEE_GENERALE_12802 = 12802,
+
+        GUEULE_DE_BOIS_12803 = 12803,
+
+        BOMBANCE_12804 = 12804,
+
+        CERCLE_BRULANT_12805 = 12805,
+
+        CONSOLATION_12806 = 12806,
+
+        ENGOURDISSEMENT_12807 = 12807,
+
+        EAU_DE_VIE_12808 = 12808,
+
+        LIQUEUR_12809 = 12809,
+
+        CHAMRAK_12810 = 12810,
+
+        CASCADE_12811 = 12811,
+
+        VARAPPE_12812 = 12812,
+
+        VARAPPE_12813 = 12813,
+
+        NAUSEE_12814 = 12814,
+
+        DISTILLATION_12815 = 12815,
+
+        BRASSAGE_12816 = 12816,
+
+        PROHIBITION_12817 = 12817,
+
+        GNLE_12818 = 12818,
+
+        FERMENTATION_12819 = 12819,
+
+        ABSINTHE_12820 = 12820,
+
+        BISTOUILLE_12821 = 12821,
+
+        BRANCARD_12822 = 12822,
+
+        BRANCARD_12823 = 12823,
+
+        BAMBOU_12824 = 12824,
+
+        VARAPPE_DU_BAMBOU_12825 = 12825,
+
+        EBRIETE_12826 = 12826,
+
+        DEVERSEMENT_12827 = 12827,
+
+        CASCADE_12828 = 12828,
+
+        POTION_MAGIQUE_12829 = 12829,
+
+        KARCHAMRAK_12830 = 12830,
+
+        VARAPPE_BAMBOU_12831 = 12831,
+
+        KARCHAM_12832 = 12832,
+
+        CHAMRAK_12833 = 12833,
+
+        LAIT_DE_BAMBOU_12834 = 12834,
+
+        PICOLE_12835 = 12835,
+
+        KARCHAMRAK_12836 = 12836,
+
+        VARAPPE_TEST_DECLENCHE_01_12837 = 12837,
+
+        VARAPPE_TEST_DECLENCHE_02_12838 = 12838,
+
+        VARAPPE_12839 = 12839,
+
+        ROULETTE_12840 = 12840,
+
+        PILE_OU_FACE_12841 = 12841,
+
+        CHANCE_DECAFLIP_12842 = 12842,
+
+        TREFLE_12843 = 12843,
+
+        BOND_DU_FELIN_12844 = 12844,
+
+        ROUE_DE_LA_FORTUNE_12845 = 12845,
+
+        TOPKAJ_12846 = 12846,
+
+        ESPRIT_FELIN_12847 = 12847,
+
+        BLUFF_12848 = 12848,
+
+        GRIFFE_JOUEUSE_12849 = 12849,
+
+        CONTRECOUP_12850 = 12850,
+
+        GRIFFE_DE_CEANGAL_12851 = 12851,
+
+        PERCEPTION_12852 = 12852,
+
+        REKOP_12853 = 12853,
+
+        ODORAT_12854 = 12854,
+
+        LANGUE_RAPEUSE_12855 = 12855,
+
+        GRIFFE_INVOCATRICE_12856 = 12856,
+
+        REFLEXES_12857 = 12857,
+
+        TOUT_OU_RIEN_12858 = 12858,
+
+        DESTIN_DECAFLIP_12859 = 12859,
+
+        CHATATAQUE_12860 = 12860,
+
+        FELINTION_12861 = 12861,
+
+        GUIGNE_12862 = 12862,
+
+        AUBAINE_12863 = 12863,
+
+        TOUPET_12864 = 12864,
+
+        ENTRECHAT_12865 = 12865,
+
+        FACE_OU_PILE_12866 = 12866,
+
+        RUGISSEMENT_12867 = 12867,
+
+        COROLLAIRE_12868 = 12868,
+
+        CARESSE_INVOCATRICE_12869 = 12869,
+
+        PERIL_12870 = 12870,
+
+        COUP_DU_SORT_12871 = 12871,
+
+        FEULEMENT_12872 = 12872,
+
+        LAPEMENT_12873 = 12873,
+
+        MISTIGRI_12874 = 12874,
+
+        COUSSINETS_12875 = 12875,
+
+        BONNE_ETOILE_12876 = 12876,
+
+        REDISTRIBUTION_12877 = 12877,
+
+        FANFARONNADE_12878 = 12878,
+
+        MESAVENTURE_12879 = 12879,
+
+        INFORTUNE_12880 = 12880,
+
+        TROMPERIE_12881 = 12881,
+
+        AUDACE_DECAFLIP_12882 = 12882,
+
+        KRAPS_12883 = 12883,
+
+        RONRONNEMENT_12884 = 12884,
+
+        COUP_DU_SORT_12885 = 12885,
+
+        COUP_DU_SORT_12886 = 12886,
+
+        COUP_DU_SORT_12887 = 12887,
+
+        TROMPERIE_12888 = 12888,
+
+        PERIL_12889 = 12889,
+
+        PERIL_12890 = 12890,
+
+        REDISTRIBUTION_12891 = 12891,
+
+        AUDACE_DECAFLIP_12892 = 12892,
+
+        FANFARONNADE_12893 = 12893,
+
+        RUGISSEMENT_12894 = 12894,
+
+        _12895 = 12895,
+
+        LAPEMENT_12896 = 12896,
+
+        FEULEMENT_12897 = 12897,
+
+        ECAFLIP_12898 = 12898,
+
+        PERCEPTION_12899 = 12899,
+
+        ROULETTE_12900 = 12900,
+
+        BONNE_ETOILE_12901 = 12901,
+
+        TRUANDERIE_12902 = 12902,
+
+        CONCENTRATION_DE_CHAKRA_12903 = 12903,
+
+        COUP_SOURNOIS_12904 = 12904,
+
+        FOURBERIE_12905 = 12905,
+
+        PIEGE_SOURNOIS_12906 = 12906,
+
+        POISON_INSIDIEUX_12907 = 12907,
+
+        PEUR_12908 = 12908,
+
+        FOURVOIEMENT_12909 = 12909,
+
+        PIEGE_DIMMOBILISATION_12910 = 12910,
+
+        ARNAQUE_12911 = 12911,
+
+        INVISIBILITE_12913 = 12913,
+
+        PIEGE_REPULSIF_12914 = 12914,
+
+        DOUBLE_12915 = 12915,
+
+        PIEGE_FANGEUX_12916 = 12916,
+
+        ATTAQUE_MORTELLE_12917 = 12917,
+
+        PIEGE_INSIDIEUX_12918 = 12918,
+
+        CRUAUTE_12919 = 12919,
+
+        PIEGE_DE_MASSE_12920 = 12920,
+
+        PIEGE_MORTEL_12921 = 12921,
+
+        POISSE_12922 = 12922,
+
+        IMMOBILISATION_PIEGE_SRAM_12923 = 12923,
+
+        EXPLOSION_DE_MASSE_12924 = 12924,
+
+        EMPOISONNEMENT_SRAM_12925 = 12925,
+
+        PIEGE_INSIDIEUX_12926 = 12926,
+
+        PIEGE_MORTEL_SRAM_12927 = 12927,
+
+        REPULSION_12928 = 12928,
+
+        PIEGE_SOURNOIS_12929 = 12929,
+
+        BRUME_12930 = 12930,
+
+        PIEGE_SCELERAT_12931 = 12931,
+
+        CHAUSSE_TRAPPE_12932 = 12932,
+
+        TOXINES_12933 = 12933,
+
+        PILLAGE_12934 = 12934,
+
+        COUPE_GORGE_12935 = 12935,
+
+        COMPLOTEUR_12936 = 12936,
+
+        LARCIN_12937 = 12937,
+
+        EXTORSION_12938 = 12938,
+
+        GUET_APENS_12939 = 12939,
+
+        INJECTION_TOXIQUE_12940 = 12940,
+
+        PIEGE_A_FRAGMENTATION_12941 = 12941,
+
+        PIEGE_DE_DERIVE_12942 = 12942,
+
+        EPIDEMIE_12943 = 12943,
+
+        MEPRISE_12945 = 12945,
+
+        PERQUISITION_12947 = 12947,
+
+        PIEGE_FUNESTE_12948 = 12948,
+
+        PERFIDIE_12949 = 12949,
+
+        CALAMITE_12950 = 12950,
+
+        BRUME_12951 = 12951,
+
+        PIEGE_SCELERAT_12952 = 12952,
+
+        GUET_APENS_12953 = 12953,
+
+        PIEGE_A_FRAGMENTATION_12954 = 12954,
+
+        PIEGE_DE_DERIVE_12955 = 12955,
+
+        EPIDEMIE_12956 = 12956,
+
+        FOSSE_COMMUNE_12957 = 12957,
+
+        MEPRISE_12958 = 12958,
+
+        PIEGE_DE_PROXIMITE_12959 = 12959,
+
+        PERQUISITION_12960 = 12960,
+
+        PILLAGE_12961 = 12961,
+
+        PIEGE_FUNESTE_12962 = 12962,
+
+        CALAMITE_12963 = 12963,
+
+        EXPLOSION_DU_DOUBLE_12964 = 12964,
+
+        TOXINES_12965 = 12965,
+
+        COMPLOT_12966 = 12966,
+
+        PIEGES_12967 = 12967,
+
+        PIEGES_12968 = 12968,
+
+        INJECTION_TOXIQUE_12969 = 12969,
+
+        PIEGE_FANGEUX_12970 = 12970,
+
+        PIEGES_12971 = 12971,
+
+        PIEGES_12972 = 12972,
+
+        PIEGES_12974 = 12974,
+
+        TOXINES_12975 = 12975,
+
+        TYPHON_12976 = 12976,
+
+        AVEUGLEMENT_12977 = 12977,
+
+        ATTAQUE_NATURELLE_12978 = 12978,
+
+        BARRICADE_12979 = 12979,
+
+        TREVE_12980 = 12980,
+
+        REMPART_12981 = 12981,
+
+        BOUCLIER_FECA_12982 = 12982,
+
+        RETOUR_DU_BATON_12983 = 12983,
+
+        ATTAQUE_NUAGEUSE_12984 = 12984,
+
+        GLYPHE_ENFLAMME_12985 = 12985,
+
+        TELEGLYPHE_12986 = 12986,
+
+        GLYPHE_DAVEUGLEMENT_12987 = 12987,
+
+        GLYPHE_DE_REPULSION_12988 = 12988,
+
+        FRISSON_12989 = 12989,
+
+        GLYPHE_OPTIQUE_12990 = 12990,
+
+        GLYPHE_GRAVITATIONNEL_12991 = 12991,
+
+        GLYPHE_AGRESSIF_12992 = 12992,
+
+        LETHARGIE_12993 = 12993,
+
+        BULLE_12994 = 12994,
+
+        BASTION_12995 = 12995,
+
+        GLYPHE_ENFLAMME_12996 = 12996,
+
+        MISE_EN_GARDE_12997 = 12997,
+
+        GLYPHE_OPTIQUE_12998 = 12998,
+
+        GLYPHE_AGRESSIF_12999 = 12999,
+
+        GLYPHE_DAVEUGLEMENT_13000 = 13000,
+
+        GLYPHE_DE_REPULSION_13001 = 13001,
+
+        GLYPHE_AGRESSIF_13002 = 13002,
+
+        GLYPHE_DAVEUGLEMENT_13003 = 13003,
+
+        GLYPHE_OPTIQUE_13004 = 13004,
+
+        GLYPHE_GRAVITATIONNEL_13005 = 13005,
+
+        GLYPHE_ENFLAMME_13006 = 13006,
+
+        ATTRACTION_NATURELLE_13007 = 13007,
+
+        EBLOUISSEMENT_13008 = 13008,
+
+        FORTIFICATION_13009 = 13009,
+
+        BOURRASQUE_13010 = 13010,
+
+        BOURSOUFFLURE_13011 = 13011,
+
+        MANOEUVRE_13012 = 13012,
+
+        GLYPHE_FULMINANT_13013 = 13013,
+
+        ATONIE_13014 = 13014,
+
+        ATTAQUE_ORAGEUSE_13015 = 13015,
+
+        PAVOIS_13016 = 13016,
+
+        TETANIE_13017 = 13017,
+
+        EGIDE_13018 = 13018,
+
+        BARRIERE_13019 = 13019,
+
+        RENFORT_13020 = 13020,
+
+        GLYPHE_PROTECTEUR_13021 = 13021,
+
+        TENSION_13022 = 13022,
+
+        GLYPHE_DITINERANCE_13023 = 13023,
+
+        GLYPHE_DEXCURSION_13024 = 13024,
+
+        GLYPHE_DE_PERCEPTION_13025 = 13025,
+
+        INERTIE_13026 = 13026,
+
+        ATARAXIE_13027 = 13027,
+
+        GLYPHE_FULMINANT_13028 = 13028,
+
+        BARRIERE_13030 = 13030,
+
+        BARRIERE_13031 = 13031,
+
+        GLYPHE_PROTECTEUR_13032 = 13032,
+
+        GLYPHE_DITINERANCE_13034 = 13034,
+
+        GLYPHE_DEXCURSION_13036 = 13036,
+
+        GLYPHE_DE_PERCEPTION_13037 = 13037,
+
+        GLYPHE_DE_VISION_13039 = 13039,
+
+        INERTIE_13040 = 13040,
+
+        ATARAXIE_13041 = 13041,
+
+        SANCTUAIRE_13042 = 13042,
+
+        _13043 = 13043,
+
+        BARRIERE_13044 = 13044,
+
+        GLYPHE_DEXCURSION_13045 = 13045,
+
+        PAVOIS_13046 = 13046,
+
+        FLECHE_MAGIQUE_13047 = 13047,
+
+        TIR_CRITIQUE_13048 = 13048,
+
+        FLECHE_GLACEE_13049 = 13049,
+
+        FLECHE_CINGLANTE_13050 = 13050,
+
+        FLECHE_ENFLAMMEE_13051 = 13051,
+
+        TIR_PUISSANT_13052 = 13052,
+
+        FLECHE_DEXPIATION_13053 = 13053,
+
+        ŒIL_DE_TAUPE_13054 = 13054,
+
+        FLECHE_DE_RECUL_13055 = 13055,
+
+        FLECHE_DIMMOBILISATION_13056 = 13056,
+
+        FLECHE_PUNITIVE_13057 = 13057,
+
+        TIR_ELOIGNE_13058 = 13058,
+
+        FLECHE_HARCELANTE_13059 = 13059,
+
+        FLECHE_EMPOISONNEE_13060 = 13060,
+
+        FLECHE_DESTRUCTRICE_13061 = 13061,
+
+        FLECHE_PERSECUTRICE_13062 = 13062,
+
+        FLECHE_RALENTISSANTE_13063 = 13063,
+
+        FLECHE_ABSORBANTE_13064 = 13064,
+
+        FLECHE_EXPLOSIVE_13065 = 13065,
+
+        MAÎTRISE_DE_LARC_13066 = 13066,
+
+        FLECHE_DE_DISPERSION_13067 = 13067,
+
+        FLECHE_DE_CONCENTRATION_13068 = 13068,
+
+        FLECHE_EROSIVE_13069 = 13069,
+
+        FLECHE_DE_REPLI_13070 = 13070,
+
+        FLECHE_PARALYSANTE_13071 = 13071,
+
+        FLECHE_REPULSIVE_13072 = 13072,
+
+        ACUITE_ABSOLUE_13073 = 13073,
+
+        FLECHE_DE_REDEMPTION_13074 = 13074,
+
+        FLECHE_ECRASANTE_13075 = 13075,
+
+        BALISE_DE_RAPPEL_13076 = 13076,
+
+        FLECHE_ASSAILLANTE_13077 = 13077,
+
+        FLECHE_DU_JUGEMENT_13078 = 13078,
+
+        BALISE_TACTIQUE_13079 = 13079,
+
+        FLECHE_MASSACRANTE_13080 = 13080,
+
+        FLECHE_CURATIVE_13081 = 13081,
+
+        FLECHE_TYRANNIQUE_13082 = 13082,
+
+        TIR_DE_BARRAGE_13083 = 13083,
+
+        FLECHE_DEVORANTE_13084 = 13084,
+
+        FLECHE_PERCUTANTE_13085 = 13085,
+
+        FLECHE_FULMINANTE_13086 = 13086,
+
+        SENTINELLE_13087 = 13087,
+
+        REPRESAILLES_13088 = 13088,
+
+        FLECHE_PERCUTANTE_13089 = 13089,
+
+        FLECHE_FULMINANTE_13090 = 13090,
+
+        BALISE_DE_RAPPEL_13091 = 13091,
+
+        FLECHE_DEVORANTE_13092 = 13092,
+
+        BALISE_TACTIQUE_13093 = 13093,
+
+        _13094 = 13094,
+
+        FLECHE_REPULSIVE_13095 = 13095,
+
+        FLECHE_TYRANNIQUE_13096 = 13096,
+
+        FLECHE_TYRANNIQUE_13097 = 13097,
+
+        REPRESAILLES_13098 = 13098,
+
+        SENTINELLE_13099 = 13099,
+
+        FLECHE_FULMINANTE_13100 = 13100,
+
+        FLECHE_EXPLOSIVE_13101 = 13101,
+
+        FLECHE_RALENTISSANTE_13102 = 13102,
+
+        SENTINELLE_13103 = 13103,
+
+        FLECHE_ECRASANTE_13104 = 13104,
+
+        FLECHE_ASSAILLANTE_13105 = 13105,
+
+        PRESSION_13106 = 13106,
+
+        BOND_13107 = 13107,
+
+        INTIMIDATION_13108 = 13108,
+
+        DUEL_13109 = 13109,
+
+        EPEE_DIVINE_13110 = 13110,
+
+        EPEE_DU_DESTIN_13111 = 13111,
+
+        MASSACRE_13112 = 13112,
+
+        FRICTION_13113 = 13113,
+
+        PRECIPITATION_13114 = 13114,
+
+        COUPERET_13115 = 13115,
+
+        SOUFFLE_13116 = 13116,
+
+        EPEE_DU_JUGEMENT_13117 = 13117,
+
+        PUISSANCE_13118 = 13118,
+
+        EPEE_DESTRUCTRICE_13119 = 13119,
+
+        VITALITE_13120 = 13120,
+
+        TEMPETE_DE_PUISSANCE_13121 = 13121,
+
+        EPEE_CELESTE_13122 = 13122,
+
+        CONCENTRATION_13123 = 13123,
+
+        COLERE_DE_IOP_13124 = 13124,
+
+        EPEE_DE_IOP_13125 = 13125,
+
+        DEFERLEMENT_13126 = 13126,
+
+        PUTSCH_13127 = 13127,
+
+        FRIKT_13128 = 13128,
+
+        MENACE_13130 = 13130,
+
+        TANNEE_13131 = 13131,
+
+        DETERMINATION_13132 = 13132,
+
+        ENDURANCE_13133 = 13133,
+
+        FENDOIR_13134 = 13134,
+
+        ANNEAU_DESTRUCTEUR_13135 = 13135,
+
+        RASSEMBLEMENT_13136 = 13136,
+
+        VIOLENCE_13137 = 13137,
+
+        ACCUMULATION_13138 = 13138,
+
+        FRACTURE_13139 = 13139,
+
+        COUP_POUR_COUP_13140 = 13140,
+
+        EMPRISE_13141 = 13141,
+
+        VERTU_13142 = 13142,
+
+        AGITATION_13143 = 13143,
+
+        TUMULTE_13144 = 13144,
+
+        ZENITH_13145 = 13145,
+
+        PUGILAT_13146 = 13146,
+
+        SENTENCE_13147 = 13147,
+
+        CONQUETE_13148 = 13148,
+
+        FENDOIR_13149 = 13149,
+
+        RASSEMBLEMENT_13150 = 13150,
+
+        VIOLENCE_13151 = 13151,
+
+        COUP_POUR_COUP_13152 = 13152,
+
+        CONDAMNATION_13153 = 13153,
+
+        TUMULTE_13154 = 13154,
+
+        SENTENCE_13155 = 13155,
+
+        FUREUR_13156 = 13156,
+
+        STRATEGIE_IOP_13157 = 13157,
+
+        DETERMINATION_13158 = 13158,
+
+        ACCUMULATION_13159 = 13159,
+
+        ACCUMULATION_13160 = 13160,
+
+        AGITATION_13161 = 13161,
+
+        FUREUR_13162 = 13162,
+
+        FUREUR_13163 = 13163,
+
+        COUP_POUR_COUP_13164 = 13164,
+
+        DUEL_13165 = 13165,
+
+        EPEE_DESTRUCTRICE_13167 = 13167,
+
+        MOT_FRACASSANT_13168 = 13168,
+
+        MOT_BLESSANT_13169 = 13169,
+
+        MOT_TURBULENT_13170 = 13170,
+
+        MOT_ALTERNATIF_13171 = 13171,
+
+        MOT_INTERDIT_13172 = 13172,
+
+        MOT_STIMULANT_13173 = 13173,
+
+        MOT_DE_PREVENTION_13174 = 13174,
+
+        MOT_DE_FRAYEUR_13175 = 13175,
+
+        MOT_DAMITIE_13176 = 13176,
+
+        MOT_SELECTIF_13177 = 13177,
+
+        MOT_DE_REGENERATION_13178 = 13178,
+
+        MOT_TOURNOYANT_13179 = 13179,
+
+        MOT_DE_JOUVENCE_13180 = 13180,
+
+        MOT_ECLATANT_13181 = 13181,
+
+        MOT_DEROUTANT_13182 = 13182,
+
+        MOT_DIMMOBILISATION_13183 = 13183,
+
+        MOT_DENVOL_13184 = 13184,
+
+        MOT_DE_SILENCE_13185 = 13185,
+
+        MOT_REVITALISANT_13186 = 13186,
+
+        MOT_DE_RECONSTITUTION_13187 = 13187,
+
+        LAPINO_DE_VIE_13188 = 13188,
+
+        MOT_BRUTAL_13189 = 13189,
+
+        MOTS_DEAU_13190 = 13190,
+
+        MOT_DAMITIE_13191 = 13191,
+
+        MOTS_DAIR_13192 = 13192,
+
+        MOT_DIMMOBILISATION_13193 = 13193,
+
+        MOT_DE_RECONSTITUTION_DECLENCHE_13194 = 13194,
+
+        MOTS_DEAU_ET_DAIR_ANIMES_13195 = 13195,
+
+        MOT_DE_RECONSTITUTION_ANIME_13196 = 13196,
+
+        MOT_DAMITIE_13197 = 13197,
+
+        MOT_STIMULANT_13198 = 13198,
+
+        MOT_DENVOL_13199 = 13199,
+
+        MOT_DAFFECTION_13200 = 13200,
+
+        MOT_MARQUANT_13201 = 13201,
+
+        MOT_VEXANT_13202 = 13202,
+
+        MOT_TABOU_13203 = 13203,
+
+        MOT_DE_SEDUCTION_13204 = 13204,
+
+        MOT_DABNEGATION_13205 = 13205,
+
+        MOT_ESPIEGLE_13206 = 13206,
+
+        MOT_DEFENDU_13207 = 13207,
+
+        MOT_IMPARTIAL_13208 = 13208,
+
+        MOT_RETENTISSANT_13209 = 13209,
+
+        MOT_DAGONIE_13210 = 13210,
+
+        MARQUE_DE_REGENERATION_13211 = 13211,
+
+        MOT_VIVIFIANT_13212 = 13212,
+
+        MOT_FURIEUX_13213 = 13213,
+
+        MOT_TOURBILLONNANT_13214 = 13214,
+
+        MOT_ACCABLANT_13215 = 13215,
+
+        MOT_SACRIFICIEL_13216 = 13216,
+
+        MOT_DE_RALLIEMENT_13217 = 13217,
+
+        MOT_GALVANISANT_13218 = 13218,
+
+        MOT_DE_SOLIDARITE_13219 = 13219,
+
+        MOT_PERNICIEUX_13220 = 13220,
+
+        GLYPHE_MARQUANT_13221 = 13221,
+
+        FIOLIE_13222 = 13222,
+
+        MOT_IMPARTIAL_13224 = 13224,
+
+        MOT_DAGONIE_13225 = 13225,
+
+        GLYPHE_DE_REGENERATION_13226 = 13226,
+
+        MOT_FURIEUX_13227 = 13227,
+
+        MOT_FURIEUX_13228 = 13228,
+
+        MOT_SACRIFICIEL_13230 = 13230,
+
+        MOT_DE_RALLIEMENT_13231 = 13231,
+
+        MOT_DE_SOLIDARITE_13232 = 13232,
+
+        MOT_DE_SOLIDARITE_13233 = 13233,
+
+        MOT_DE_SOLIDARITE_13234 = 13234,
+
+        MOT_PERNICIEUX_13235 = 13235,
+
+        MOT_DAFFECTION_13236 = 13236,
+
+        MOT_IMPARTIAL_13237 = 13237,
+
+        MOT_GALVANISANT_13238 = 13238,
+
+        MOT_DE_SOLIDARITE_13239 = 13239,
+
+        TP_LAPINO_13240 = 13240,
+
+        MOT_SELECTIF_13241 = 13241,
+
+        RALENTISSEMENT_13242 = 13242,
+
+        REMBOBINAGE_13243 = 13243,
+
+        AIGUILLE_13244 = 13244,
+
+        GELURE_13245 = 13245,
+
+        FLOU_13246 = 13246,
+
+        SYNCHRO_13247 = 13247,
+
+        DEMOTIVATION_13248 = 13248,
+
+        TELEPORTATION_13249 = 13249,
+
+        PARADOXE_TEMPOREL_13250 = 13250,
+
+        FUITE_13251 = 13251,
+
+        FRAPPE_DE_XELOR_13252 = 13252,
+
+        RAYON_OBSCUR_13253 = 13253,
+
+        FLETRISSEMENT_13254 = 13254,
+
+        CONTRE_13255 = 13255,
+
+        HORLOGE_13256 = 13256,
+
+        POUSSIERE_TEMPORELLE_13257 = 13257,
+
+        CADRAN_DE_XELOR_13258 = 13258,
+
+        VOL_DU_TEMPS_13259 = 13259,
+
+        MOMIFICATION_13260 = 13260,
+
+        SABLIER_DE_XELOR_13261 = 13261,
+
+        RAULEBAQUE_13262 = 13262,
+
+        TELEPORTATION_13263 = 13263,
+
+        CONTRE_13264 = 13264,
+
+        TELEFRAG_13265 = 13265,
+
+        PARADOXE_13266 = 13266,
+
+        FUITE_13267 = 13267,
+
+        FUITE_13268 = 13268,
+
+        OSCILLATION_13269 = 13269,
+
+        SYNCHRONISATION_13270 = 13270,
+
+        FIN_DES_TEMPS_13271 = 13271,
+
+        TELEFRAG_13272 = 13272,
+
+        TELEFRAG_13273 = 13273,
+
+        TELEFRAG_13274 = 13274,
+
+        TELEFRAG_13275 = 13275,
+
+        TELEFRAG_13276 = 13276,
+
+        TELEFRAG_13277 = 13277,
+
+        TELEFRAG_13278 = 13278,
+
+        TELEFRAG_13279 = 13279,
+
+        PARADOXE_13280 = 13280,
+
+        SOUVENIR_13281 = 13281,
+
+        RETOUR_SPONTANE_13282 = 13282,
+
+        ROUAGE_13283 = 13283,
+
+        DESSECHEMENT_13284 = 13284,
+
+        RENVOI_13285 = 13285,
+
+        RAYON_TENEBREUX_13286 = 13286,
+
+        COMPLICE_13287 = 13287,
+
+        PERTURBATION_13288 = 13288,
+
+        DISTORSION_TEMPORELLE_13289 = 13289,
+
+        PETRIFICATION_13290 = 13290,
+
+        CONSERVATION_13291 = 13291,
+
+        SUSPENSION_TEMPORELLE_13292 = 13292,
+
+        PREMONITION_13293 = 13293,
+
+        PENDULE_13294 = 13294,
+
+        FAILLE_TEMPORELLE_13295 = 13295,
+
+        DESYNCHRONISATION_13296 = 13296,
+
+        BOUCLIER_TEMPOREL_13297 = 13297,
+
+        CLEPSYDRE_13298 = 13298,
+
+        ENGRENAGE_13299 = 13299,
+
+        GLAS_13300 = 13300,
+
+        INSTABILITE_TEMPORELLE_13301 = 13301,
+
+        DESSECHEMENT_13302 = 13302,
+
+        RAYON_TENEBREUX_13303 = 13303,
+
+        PETRIFICATION_13304 = 13304,
+
+        PENDULE_13305 = 13305,
+
+        CAST_PENDULE_02_13306 = 13306,
+
+        FAILLE_TEMPORELLE_13307 = 13307,
+
+        FAILLE_TEMPORELLE_13308 = 13308,
+
+        DESYNCHRONISATION_13309 = 13309,
+
+        BOUCLIER_TEMPOREL_13310 = 13310,
+
+        CLEPSYDRE_13311 = 13311,
+
+        INSTABILITE_TEMPORELLE_13312 = 13312,
+
+        CONSERVATION_13313 = 13313,
+
+        PREMONITION_13314 = 13314,
+
+        GLAS_13315 = 13315,
+
+        SABLIER_DE_XELOR_13316 = 13316,
+
+        POUSSIERE_TEMPORELLE_13317 = 13317,
+
+        TELEFRAG_13318 = 13318,
+
+        TELEFRAG_13319 = 13319,
+
+        TELEFRAG_13320 = 13320,
+
+        TELEFRAG_13321 = 13321,
+
+        TELEFRAG_13322 = 13322,
+
+        TELEFRAG_INSTABILITE_13323 = 13323,
+
+        TELEFRAG_13324 = 13324,
+
+        INSTABILITE_TEMPORELLE_13325 = 13325,
+
+        GLAS_13326 = 13326,
+
+        INSTABILITE_TEMPORELLE_13327 = 13327,
+
+        SAC_ANIME_13328 = 13328,
+
+        CHANCE_13329 = 13329,
+
+        LANCER_DE_PELLE_13330 = 13330,
+
+        ROULAGE_DE_PELLE_13331 = 13331,
+
+        CLE_REDUCTRICE_13332 = 13332,
+
+        DESINVOCATION_13333 = 13333,
+
+        BOÎTE_DE_PANDORE_13334 = 13334,
+
+        REMBLAI_13335 = 13335,
+
+        PELLE_FANTOMATIQUE_13336 = 13336,
+
+        MALADRESSE_13337 = 13337,
+
+        LANCER_DE_PIECES_13338 = 13338,
+
+        CUPIDITE_13339 = 13339,
+
+        FORCE_DE_LAGE_13340 = 13340,
+
+        _13341 = 13341,
+
+        ACCELERATION_13342 = 13342,
+
+        PELLE_DU_JUGEMENT_13343 = 13343,
+
+        PELLE_ANIMEE_13344 = 13344,
+
+        PELLE_MASSACRANTE_13345 = 13345,
+
+        CORRUPTION_13346 = 13346,
+
+        COFFRE_ANIME_13347 = 13347,
+
+        BARAKA_13348 = 13348,
+
+        RETRAITE_ANTICIPEE_13349 = 13349,
+
+        PROSPECTION_13350 = 13350,
+
+        SAC_RIFICE_13351 = 13351,
+
+        LANCER_DE_BECHE_13352 = 13352,
+
+        MONNAIE_SONNANTE_13353 = 13353,
+
+        MUSETTE_ANIMEE_13354 = 13354,
+
+        BECHE_FANTOMATIQUE_13355 = 13355,
+
+        DEAMBULATION_13356 = 13356,
+
+        BOÎTE_A_OUTILS_13357 = 13357,
+
+        TOURBIERE_13358 = 13358,
+
+        CLEF_DE_BRAS_13359 = 13359,
+
+        OBSOLESCENCE_13360 = 13360,
+
+        BECHE_ANIMEE_13361 = 13361,
+
+        AVARICE_13362 = 13362,
+
+        ROULAGE_DE_BECHE_13363 = 13363,
+
+        VIVACITE_13364 = 13364,
+
+        ABATTEMENT_13365 = 13365,
+
+        OPPORTUNITE_13366 = 13366,
+
+        BECHE_DU_JUGEMENT_13367 = 13367,
+
+        BECHE_CARNIVORE_13368 = 13368,
+
+        DECADENCE_13369 = 13369,
+
+        CORRECTION_13370 = 13370,
+
+        COFFRE_REGENERANT_13371 = 13371,
+
+        DERNIER_RECOURS_13372 = 13372,
+
+        PARTAGE_13373 = 13373,
+
+        DEAMBULATION_13375 = 13375,
+
+        SOUFFRE_DOULEUR_13376 = 13376,
+
+        BECHATTAQUE_13377 = 13377,
+
+        ROULAGE_DE_BECHE_13378 = 13378,
+
+        BECHE_CARNIVORE_13379 = 13379,
+
+        REGENERATION_13380 = 13380,
+
+        REGENERATION_13381 = 13381,
+
+        DERNIER_RECOURS_13382 = 13382,
+
+        DECADENCE_13383 = 13383,
+
+        BOÎTE_A_OUTILS_13384 = 13384,
+
+        DIFFRACTION_13385 = 13385,
+
+        MASQUE_DE_LINTREPIDE_13386 = 13386,
+
+        MASQUE_DU_PLEUTRE_13387 = 13387,
+
+        MASQUE_DU_PSYCHOPATHE_13388 = 13388,
+
+        MARTELO_13389 = 13389,
+
+        RETENTION_13390 = 13390,
+
+        APPEAU_13391 = 13391,
+
+        DISTANCE_13392 = 13392,
+
+        APATHIE_13393 = 13393,
+
+        FURIA_13394 = 13394,
+
+        CABRIOLE_13395 = 13395,
+
+        BOLICHE_13396 = 13396,
+
+        PLASTRON_13397 = 13397,
+
+        TORTORUGA_13398 = 13398,
+
+        TRANSE_13399 = 13399,
+
+        REUCHE_13400 = 13400,
+
+        DEBANDADE_13401 = 13401,
+
+        FOUGUE_13402 = 13402,
+
+        APPUI_13403 = 13403,
+
+        MASCARADE_13404 = 13404,
+
+        PICADA_13405 = 13405,
+
+        MASQUE_DU_COUARD_13406 = 13406,
+
+        AGULAR_13407 = 13407,
+
+        PARAFUSO_13408 = 13408,
+
+        MASQUE_DE_LINFATIGABLE_13409 = 13409,
+
+        PIVOT_13410 = 13410,
+
+        ARMADUR_13411 = 13411,
+
+        SCUDO_13412 = 13412,
+
+        ESTRELIA_13413 = 13413,
+
+        MASQUE_DE_LHYSTERIQUE_13414 = 13414,
+
+        CAVALCADE_13415 = 13415,
+
+        ATABAK_13416 = 13416,
+
+        GINGA_13417 = 13417,
+
+        COMEDIE_13418 = 13418,
+
+        BOCCIARA_13419 = 13419,
+
+        CATALEPSIE_13420 = 13420,
+
+        APOSTASIE_13421 = 13421,
+
+        PONTEIRA_13422 = 13422,
+
+        INFERNO_13423 = 13423,
+
+        GRIMACE_13424 = 13424,
+
+        BRINCADERIA_13425 = 13425,
+
+        NEVROSE_13426 = 13426,
+
+        GRIMACE_13427 = 13427,
+
+        MASQUE_DE_LHYSTERIQUE_13428 = 13428,
+
+        ROUBLABOT_13429 = 13429,
+
+        REFOULAGE_13430 = 13430,
+
+        ROUBLARDISE_13431 = 13431,
+
+        DETONATEUR_13432 = 13432,
+
+        EXTRACTION_13433 = 13433,
+
+        BOTTE_13434 = 13434,
+
+        TORNABOMBE_13435 = 13435,
+
+        BOMBE_A_EAU_13436 = 13436,
+
+        AIMANTATION_13437 = 13437,
+
+        DAGUES_BOOMERANG_13438 = 13438,
+
+        ENTOURLOUPE_13439 = 13439,
+
+        ESPINGOLE_13440 = 13440,
+
+        POUDRE_13441 = 13441,
+
+        PULSAR_13442 = 13442,
+
+        RESQUILLE_13443 = 13443,
+
+        EXPLOBOMBE_13444 = 13444,
+
+        REMISSION_13445 = 13445,
+
+        DERNIER_SOUFFLE_13446 = 13446,
+
+        _13448 = 13448,
+
+        TROMBLON_13449 = 13449,
+
+        KABOOM_13450 = 13450,
+
+        POUSSETTE_13451 = 13451,
+
+        ASPIRATEUR_13452 = 13452,
+
+        DETONATION_13453 = 13453,
+
+        INITIALISATION_13454 = 13454,
+
+        EXPLOSION_ROUBLARDE_13455 = 13455,
+
+        EXPLOSION_ROUBLARDE_CIBLE_13456 = 13456,
+
+        EXPLOSION_ROUBLARDE_CHAÎNE_13457 = 13457,
+
+        MUR_DE_FEU_13458 = 13458,
+
+        TORNADE_ROUBLARDE_CIBLE_13459 = 13459,
+
+        TORNADE_ROUBLARDE_CHAÎNE_13460 = 13460,
+
+        MUR_DAIR_13461 = 13461,
+
+        AVERSE_ROUBLARDE_13462 = 13462,
+
+        AVERSE_ROUBLARDE_CIBLE_13463 = 13463,
+
+        AVERSE_ROUBLARDE_CHAÎNE_13464 = 13464,
+
+        MUR_DEAU_13465 = 13465,
+
+        POUDREUSE_13466 = 13466,
+
+        TORNADE_ROUBLARDE_13467 = 13467,
+
+        ALLUMAGE_13468 = 13468,
+
+        OBLITERATION_13469 = 13469,
+
+        ETOUPILLE_13470 = 13470,
+
+        EXPLOBOMBE_LATENTE_13471 = 13471,
+
+        RUSE_13472 = 13472,
+
+        MOUSQUET_13473 = 13473,
+
+        TORNABOMBE_LATENTE_13474 = 13474,
+
+        CADENCE_13475 = 13475,
+
+        STRATAGEME_13476 = 13476,
+
+        RECEL_13477 = 13477,
+
+        BOMBE_A_EAU_LATENTE_13478 = 13478,
+
+        BOMBE_COLLANTE_13479 = 13479,
+
+        CROISEMENT_13480 = 13480,
+
+        _13481 = 13481,
+
+        ARQUEBUSE_13482 = 13482,
+
+        MITRAILLE_13483 = 13483,
+
+        PIEGE_MAGNETIQUE_13484 = 13484,
+
+        PIEGE_MAGNETIQUE_13485 = 13485,
+
+        SISMOBOMBE_LATENTE_13486 = 13486,
+
+        BOMBE_AMBULANTE_13487 = 13487,
+
+        PLOMBAGE_13488 = 13488,
+
+        IMPOSTURE_13489 = 13489,
+
+        MEGABOMBE_13490 = 13490,
+
+        SISMOBOMBE_13491 = 13491,
+
+        RUNE_BOMBES_LATENTES_13492 = 13492,
+
+        MIMESIS_13493 = 13493,
+
+        MIMESIS_13494 = 13494,
+
+        MIMESIS_13495 = 13495,
+
+        ABSORPTION_EXPLOSIVE_13496 = 13496,
+
+        ABSORPTION_EXPLOSIVE_13497 = 13497,
+
+        MEGATTAQUE_13498 = 13498,
+
+        MEGABOOM_13499 = 13499,
+
+        MEGABOOM_13500 = 13500,
+
+        MUR_DE_TERRE_13501 = 13501,
+
+        AVALANCHE_ROUBLARDE_CHAÎNE_13502 = 13502,
+
+        AVALANCHE_ROUBLARDE_CIBLE_13503 = 13503,
+
+        AVALANCHE_ROUBLARDE_13504 = 13504,
+
+        CADENCE_13505 = 13505,
+
+        MEGAMIKAZE_13506 = 13506,
+
+        BOMBE_COLLANTE_13507 = 13507,
+
+        PLOMBAGE_13508 = 13508,
+
+        ETOUPILLE_13510 = 13510,
+
+        OBLITERATION_13511 = 13511,
+
+        TREMBLEMENT_13514 = 13514,
+
+        FOLLE_TRANSMUTEE_13515 = 13515,
+
+        RONCE_13516 = 13516,
+
+        FEU_DE_BROUSSE_13517 = 13517,
+
+        HERBE_FOLLE_13518 = 13518,
+
+        ARBRE_13519 = 13519,
+
+        SURPUISSANTE_TRANSMUTEE_13520 = 13520,
+
+        RONCE_INSOLENTE_13521 = 13521,
+
+        SACRIFIEE_TRANSMUTEE_13522 = 13522,
+
+        GONFLABLE_TRANSMUTEE_13523 = 13523,
+
+        RONCES_MULTIPLES_13524 = 13524,
+
+        RONCE_APAISANTE_13525 = 13525,
+
+        BLOQUEUSE_TRANSMUTEE_13526 = 13526,
+
+        RONCES_AGRESSIVES_13527 = 13527,
+
+        LARME_13528 = 13528,
+
+        VENT_EMPOISONNE_13529 = 13529,
+
+        PUISSANCE_SYLVESTRE_13530 = 13530,
+
+        SACRIFICE_POUPESQUE_13531 = 13531,
+
+        DON_NATUREL_13532 = 13532,
+
+        POISON_PARALYSANT_13533 = 13533,
+
+        ARBRE_DE_VIE_13534 = 13534,
+
+        FEUILLAGE_13535 = 13535,
+
+        POUSSEE_SYLVESTRE_13536 = 13536,
+
+        TREMBLEMENT_13537 = 13537,
+
+        DESENVOUTEMENT_SYLVESTRE_13538 = 13538,
+
+        SOIN_SYLVESTRE_13539 = 13539,
+
+        PUISSANCE_SYLVESTRE_13540 = 13540,
+
+        PREPARATION_POUPESQUE_13541 = 13541,
+
+        SUBSTITUTION_POUPESQUE_13542 = 13542,
+
+        _13543 = 13543,
+
+        DON_NATUREL_13544 = 13544,
+
+        INFECTION_POUPESQUE_13545 = 13545,
+
+        RONCE_APAISANTE_13546 = 13546,
+
+        RONCE_INSOLENTE_13547 = 13547,
+
+        VENT_EMPOISONNE_13548 = 13548,
+
+        ARBRE_13549 = 13549,
+
+        ARBRE_13550 = 13550,
+
+        PUISSANCE_SYLVESTRE_13551 = 13551,
+
+        INFECTION_POUPESQUE_13552 = 13552,
+
+        INFECTION_POUPESQUE_13553 = 13553,
+
+        RONCES_AGRESSIVES_13554 = 13554,
+
+        INFECTION_POUPESQUE_13555 = 13555,
+
+        FEUILLAGE_13556 = 13556,
+
+        ARBRE_13557 = 13557,
+
+        FEUILLAGE_13558 = 13558,
+
+        BROUSSAILLE_EMPOISONNEE_13559 = 13559,
+
+        ARBRE_FEUILLU_13560 = 13560,
+
+        BLOQUEUSE_13561 = 13561,
+
+        POISON_DE_PROXIMITE_13562 = 13562,
+
+        MONTEE_DE_SEVE_13563 = 13563,
+
+        FOLLE_13564 = 13564,
+
+        REMPOTAGE_13565 = 13565,
+
+        INFLUENCE_VEGETALE_13566 = 13566,
+
+        SACRIFIEE_13567 = 13567,
+
+        SECOUSSE_13568 = 13568,
+
+        INOCULATION_13569 = 13569,
+
+        FORCE_DE_LA_NATURE_13570 = 13570,
+
+        FLEAU_13571 = 13571,
+
+        ALTRUISME_VEGETAL_13572 = 13572,
+
+        GONFLABLE_13573 = 13573,
+
+        RONCE_HARCELANTE_13574 = 13574,
+
+        CONTAGION_13575 = 13575,
+
+        MALEDICTION_VAUDOU_13576 = 13576,
+
+        RONCE_PARALYSANTE_13577 = 13577,
+
+        SURPUISSANTE_13578 = 13578,
+
+        HARMONIE_13579 = 13579,
+
+        POISON_DE_PROXIMITE_13580 = 13580,
+
+        REMPOTAGE_13581 = 13581,
+
+        SECOUSSE_13582 = 13582,
+
+        INOCULATION_13583 = 13583,
+
+        FORCE_DE_LA_NATURE_13584 = 13584,
+
+        ALTRUISME_VEGETAL_13585 = 13585,
+
+        RONCE_HARCELANTE_13586 = 13586,
+
+        CONTAGION_13587 = 13587,
+
+        CONTAGION_INFECTION_13588 = 13588,
+
+        RONCE_PARALYSANTE_13589 = 13589,
+
+        ENTRAVE_SYLVESTRE_13590 = 13590,
+
+        ATTIRANCE_SYLVESTRE_13591 = 13591,
+
+        FLEAU_INFECTION_13592 = 13592,
+
+        BROUSSAILLE_EMPOISONNEE_13593 = 13593,
+
+        FORCE_DE_LA_NATURE_INFECTION_13594 = 13594,
+
+        MALEDICTION_VAUDOU_13595 = 13595,
+
+        MALEDICTION_VAUDOU_13596 = 13596,
+
+        MALEDICTION_VAUDOU_13597 = 13597,
+
+        HARMONIE_13598 = 13598,
+
+        ARBRE_DE_VIE_13599 = 13599,
+
+        ENTRAVE_SYLVESTRE_13600 = 13600,
+
+        SACRIFICE_13601 = 13601,
+
+        __COMPTEUR_INFECTION_13602 = 13602,
+
+        RESET_INFECTION_13603 = 13603,
+
+        RUNE_DE_FEU_13665 = 13665,
+
+        LANCE_FLAMME_13666 = 13666,
+
+        STALAGMITE_13667 = 13667,
+
+        ONDE_TELLURIQUE_13668 = 13668,
+
+        ETHER_13669 = 13669,
+
+        RUNIFICATION_13670 = 13670,
+
+        COMBINAISON_ELEMENTAIRE_13671 = 13671,
+
+        DRAIN_ELEMENTAIRE_13672 = 13672,
+
+        RUNE_EAU_13673 = 13673,
+
+        ORAGE_13674 = 13674,
+
+        METEORE_PERCUTANT_13675 = 13675,
+
+        GLACIER_13676 = 13676,
+
+        ECLATS_GLACES_13677 = 13677,
+
+        RAFALE_TRANSPERÇANTE_13678 = 13678,
+
+        LAME_ASTRALE_13679 = 13679,
+
+        TRAIT_ARDENT_13680 = 13680,
+
+        DEFLAGRATION_13681 = 13681,
+
+        BOUCLIER_ELEMENTAIRE_13682 = 13682,
+
+        TRAVERSEE_13683 = 13683,
+
+        TRAITEMENT_RUNIQUE_13684 = 13684,
+
+        RUNE_AIR_13685 = 13685,
+
+        RUNE_TERRE_13686 = 13686,
+
+        RUNE_FEU_13687 = 13687,
+
+        RUNE_DEAU_13688 = 13688,
+
+        RUNE_DAIR_13689 = 13689,
+
+        RUNE_DE_TERRE_13690 = 13690,
+
+        RUNES_ELEMENTAIRES_13691 = 13691,
+
+        MANIFESTATION_AIR_13692 = 13692,
+
+        MANIFESTATION_AIR_13693 = 13693,
+
+        PROPAGATION_13694 = 13694,
+
+        PROPAGATION_13695 = 13695,
+
+        POLARITE_13696 = 13696,
+
+        EMPREINTE_13697 = 13697,
+
+        BOUCLIER_ELEMENTAIRE_13698 = 13698,
+
+        POLARITE_13699 = 13699,
+
+        CONTRIBUTION_13700 = 13700,
+
+        CONTRIBUTION_13701 = 13701,
+
+        COMBINAISON_ELEMENTAIRE_13702 = 13702,
+
+        COMBINAISON_ELEMENTAIRE_13703 = 13703,
+
+        COMBINAISON_ELEMENTAIRE_13704 = 13704,
+
+        COMBINAISON_ELEMENTAIRE_13705 = 13705,
+
+        COMBINAISON_ELEMENTAIRE_13706 = 13706,
+
+        COMBINAISON_ELEMENTAIRE_13707 = 13707,
+
+        ONDE_CELESTE_13708 = 13708,
+
+        DARD_13709 = 13709,
+
+        MANIFESTATION_13710 = 13710,
+
+        CATARACTE_13711 = 13711,
+
+        TISON_13712 = 13712,
+
+        MORPH_13713 = 13713,
+
+        OURAGAN_13714 = 13714,
+
+        LAME_TELLURIQUE_13715 = 13715,
+
+        COURANT_QUADRAMENTAL_13716 = 13716,
+
+        STALACTITE_13717 = 13717,
+
+        VOLCAN_13718 = 13718,
+
+        PIEGE_ELEMENTAIRE_13719 = 13719,
+
+        GARDIEN_ELEMENTAIRE_13720 = 13720,
+
+        DELUGE_13721 = 13721,
+
+        CYCLE_ELEMENTAIRE_13722 = 13722,
+
+        LANCE_SOLAIRE_13723 = 13723,
+
+        SURCHARGE_RUNIQUE_13724 = 13724,
+
+        BRECHE_TECTONIQUE_13725 = 13725,
+
+        COMETE_13726 = 13726,
+
+        CREATION_13727 = 13727,
+
+        REPULSION_RUNIQUE_13728 = 13728,
+
+        COURANT_QUADRAMENTAL_EAU_13729 = 13729,
+
+        COURANT_QUADRAMENTAL_TERRE_13730 = 13730,
+
+        COURANT_QUADRAMENTAL_FEU_13731 = 13731,
+
+        COURANT_QUADRAMENTAL_AIR_13732 = 13732,
+
+        PIEGE_ELEMENTAIRE_13733 = 13733,
+
+        RAYON_QUADRAMENTAL_13734 = 13734,
+
+        MANIFESTATION_FEU_13735 = 13735,
+
+        MANIFESTATION_FEU_13736 = 13736,
+
+        MANIFESTATION_EAU_13737 = 13737,
+
+        MANIFESTATION_EAU_13738 = 13738,
+
+        MANIFESTATION_TERRE_13739 = 13739,
+
+        MANIFESTATION_TERRE_13740 = 13740,
+
+        MANIFESTATION_13741 = 13741,
+
+        MORPH_13742 = 13742,
+
+        REPULSION_RUNIQUE_13743 = 13743,
+
+        ETAT_DERNIERE_RUNE_13744 = 13744,
+
+        RAGE_OUGINAK_13745 = 13745,
+
+        FORME_BESTIALE_13746 = 13746,
+
+        FORME_OUGINAK_13747 = 13747,
+
+        PROIE_13748 = 13748,
+
+        FLAIR_13749 = 13749,
+
+        ROQUET___DECLENCHEMENT_13750 = 13750,
+
+        ACCROCS_13751 = 13751,
+
+        ACCROCS_13752 = 13752,
+
+        TETANISATION_13753 = 13753,
+
+        RABATTAGE_13754 = 13754,
+
+        TRAQUE_13755 = 13755,
+
+        MOLOSSE_13756 = 13756,
+
+        DOGUE_13757 = 13757,
+
+        CERBERE_13758 = 13758,
+
+        CUBITUS_13759 = 13759,
+
+        CUBITUS_13760 = 13760,
+
+        OS_A_MOELLE_13761 = 13761,
+
+        OS_A_MOELLE_13762 = 13762,
+
+        TIBIA_13763 = 13763,
+
+        LIMIER_13764 = 13764,
+
+        LIMIER_13765 = 13765,
+
+        CHAROGNE_13766 = 13766,
+
+        CARCASSE_13767 = 13767,
+
+        CARCASSE_13768 = 13768,
+
+        APAISEMENT_13769 = 13769,
+
+        CONVERGENCE_13770 = 13770,
+
+        ARCANIN_13771 = 13771,
+
+        PELAGE_PROTECTEUR_13772 = 13772,
+
+        ABOIEMENT_13773 = 13773,
+
+        LANCE_ROQUET_13774 = 13774,
+
+        ROQUET___RAPPROCHEMENT_13775 = 13775,
+
+        RAGE_OUGINAK_13776 = 13776,
+
+        RAGE_OUGINAK_13777 = 13777,
+
+        TIBIA_13778 = 13778,
+
+        FLAIR_13779 = 13779,
+
+        PANIQUE_13780 = 13780,
+
+        PANIQUE_13781 = 13781,
+
+        FORME_OUGINAK_13782 = 13782,
+
+        ROQUET___DECLENCHEMENT_13783 = 13783,
+
+        TRAQUE_13784 = 13784,
+
+        PROIE_13785 = 13785,
+
+        GIBIER_13786 = 13786,
+
+        MACHOIRE_13787 = 13787,
+
+        CALCANEUS_13788 = 13788,
+
+        DEPOUILLE_13789 = 13789,
+
+        ABOI_13790 = 13790,
+
+        AFFECTION_13791 = 13791,
+
+        GANGRENE_13792 = 13792,
+
+        MUSELIERE_13793 = 13793,
+
+        HUMERUS_13794 = 13794,
+
+        CHASSE_13795 = 13795,
+
+        BATTUE_13796 = 13796,
+
+        CANINOS_13797 = 13797,
+
+        FEROCITE_13798 = 13798,
+
+        RADIUS_13799 = 13799,
+
+        VERTEBRE_13800 = 13800,
+
+        POURSUITE_13801 = 13801,
+
+        AMAROK_13802 = 13802,
+
+        ROGNE_13803 = 13803,
+
+        DEPEÇAGE_13804 = 13804,
+
+        ACHARNEMENT_13805 = 13805,
+
+        PISTAGE_13806 = 13806,
+
+        CALCANEUS_13807 = 13807,
+
+        DEPOUILLE_13808 = 13808,
+
+        ABOI_13809 = 13809,
+
+        MUSELIERE_13810 = 13810,
+
+        BATTUE_13811 = 13811,
+
+        POURSUITE_13812 = 13812,
+
+        AMAROK_13813 = 13813,
+
+        MACHOIRE_13814 = 13814,
+
+        FEROCITE_13815 = 13815,
+
+        AFFECTION_13816 = 13816,
+
+        CHASSE_13817 = 13817,
+
+        ROGNE_13818 = 13818,
+
+        SCAPHANDRE_13819 = 13819,
+
+        MAREE_13820 = 13820,
+
+        RESSAC_13821 = 13821,
+
+        COURANT_13822 = 13822,
+
+        FLIBUSTE_13823 = 13823,
+
+        SELPATRE_13824 = 13824,
+
+        ECUME_13825 = 13825,
+
+        VAPOR_13826 = 13826,
+
+        ANCRAGE_13827 = 13827,
+
+        FOENE_13828 = 13828,
+
+        HARPONNEUSE_13829 = 13829,
+
+        GARDIENNE_13830 = 13830,
+
+        TACTIRELLE_13831 = 13831,
+
+        EVOLUTION_13832 = 13832,
+
+        CUIRASSE_13833 = 13833,
+
+        ARMURE_DE_SEL_13834 = 13834,
+
+        EMBUSCADE_13835 = 13835,
+
+        SECOURISME_13836 = 13836,
+
+        LONGUE_VUE_13837 = 13837,
+
+        ASPIRATION_13838 = 13838,
+
+        BOUMF_13839 = 13839,
+
+        BOUME_13840 = 13840,
+
+        BOUMT_13841 = 13841,
+
+        CINETIK_13844 = 13844,
+
+        MAINTENANCE_13847 = 13847,
+
+        INTERVENTION_13848 = 13848,
+
+        BRISE_LAME_13849 = 13849,
+
+        BRISE_LAME_13850 = 13850,
+
+        EVOLUTION_II_13851 = 13851,
+
+        EVOLUTION_III_13852 = 13852,
+
+        TRANSKO_13853 = 13853,
+
+        AMARAGE_13857 = 13857,
+
+        SABORDAGE_13858 = 13858,
+
+        CHALUTIER_13859 = 13859,
+
+        TRANSITION_13860 = 13860,
+
+        HARMATTAN_13861 = 13861,
+
+        ASSISTANCE_13862 = 13862,
+
+        BLINDAGE_13863 = 13863,
+
+        FOREUSE_13864 = 13864,
+
+        TORPILLE_13865 = 13865,
+
+        CORROSION_13866 = 13866,
+
+        SOUPAPE_13867 = 13867,
+
+        SURTENSION_13868 = 13868,
+
+        BATHYSCAPHE_13869 = 13869,
+
+        PERISCOPE_13870 = 13870,
+
+        SAUVETAGE_13871 = 13871,
+
+        COURT_CIRCUIT_13872 = 13872,
+
+        SONAR_13873 = 13873,
+
+        NAUTILE_13874 = 13874,
+
+        ARRAISONNAGE_13875 = 13875,
+
+        RECURSIVITE_13876 = 13876,
+
+        COMPAS_13877 = 13877,
+
+        ASSISTANCE_13878 = 13878,
+
+        COURT_CIRCUIT_13879 = 13879,
+
+        SONAR_13880 = 13880,
+
+        RECURSIVITE_13881 = 13881,
+
+        COMPAS_13882 = 13882,
+
+        CHALUTAGE_13883 = 13883,
+
+        CHALUCHAVA_13885 = 13885,
+
+        EXCAVATION_13888 = 13888,
+
+        BATHYSCAPHANDRE_13889 = 13889,
+
+        DECOMPRESSION_13891 = 13891,
+
+        BOUMA_13892 = 13892,
+
+        BOUMBOUM_13893 = 13893,
+
+        FORAGE_13894 = 13894,
+
+        FORAGE_13895 = 13895,
+
+        FORAGE_13896 = 13896,
+
+        FORAGE_13897 = 13897,
+
+        FOENE_13898 = 13898,
+
+        PACAGE_13901 = 13901,
+
+        PACAGE_13902 = 13902,
+
+        MORSURE_ALBINOS_13908 = 13908,
+
+        EMPOISONNEMENT_DU_SANG_13909 = 13909,
+
+        TORREADOR_13944 = 13944,
+
+        ECLAT_KAO_13945 = 13945,
+
+        _13946 = 13946,
+
+        _13947 = 13947,
+
+        _13950 = 13950,
+
+        ENCANAILLEMENT_13951 = 13951,
+
+        CYCLE_LUNAIRE_13952 = 13952,
+
+        CYCLE_LUNAIRE_13953 = 13953,
+
+        CYCLE_LUNAIRE_13955 = 13955,
+
+        PRISON_SANGUINE_13956 = 13956,
+
+        JEU_DAIGUILLES_13957 = 13957,
+
+        DAGYDE_ENSORCELEE_13958 = 13958,
+
+        TIR_DE_PRECISION_13959 = 13959,
+
+        REGENERATION_SACRIFICIELLE_13960 = 13960,
+
+        ACCUMULATION_CRITIQUE_13961 = 13961,
+
+        RAGE_NOCTURNE_13962 = 13962,
+
+        SAUVAGERIE_REPTILIENNE_13963 = 13963,
+
+        CRONNIBALISME__13964 = 13964,
+
+        SAUT_A_LAVEUGLE_13965 = 13965,
+
+        TORNADE_SANGLANTE_13966 = 13966,
+
+        UPPERCUT_BRULANT_13967 = 13967,
+
+        TRAQUENARD_REPTILIEN_13968 = 13968,
+
+        POISON_PETRIFIANT_13969 = 13969,
+
+        ATTIRANCE_DE_LINVISIBLE_13970 = 13970,
+
+        GOUTTE_LUNAIRE_13971 = 13971,
+
+        GOUTTE_LUNAIRE_13972 = 13972,
+
+        GOUTTE_LUNAIRE_13973 = 13973,
+
+        FAISCEAU_LUNAIRE_13974 = 13974,
+
+        FAISCEAU_LUNAIRE_13975 = 13975,
+
+        FAISCEAU_LUNAIRE_13976 = 13976,
+
+        CARAPACE_LUNAIRE_13977 = 13977,
+
+        RICOCHET_SACRE_13978 = 13978,
+
+        _13980 = 13980,
+
+        SOUFFRANCE_1_13981 = 13981,
+
+        SOUFFRANCE_2_13982 = 13982,
+
+        SOUFFRANCE_3_13983 = 13983,
+
+        SOUFFRANCE_4_13984 = 13984,
+
+        SOUFFRANCE_5_13985 = 13985,
+
+        SOUFFRANCE_6_13986 = 13986,
+
+        SOUFFRANCE_7_13987 = 13987,
+
+        SOUFFRANCE_8_13988 = 13988,
+
+        SOUFFRANCE_9_13989 = 13989,
+
+        SOUFFRANCE_10_13990 = 13990,
+
+        LE_FOUET_DOSAMODAS_13991 = 13991,
+
+        LE_FOUET_DOSAMODAS_13992 = 13992,
+
+        BAIN_DE_SANG_13993 = 13993,
+
+        LE_FOUET_DOSAMODAS_13994 = 13994,
+
+        MUTILATION_13996 = 13996,
+
+        INVOCATION_OSAMODAS_13997 = 13997,
+
+        PRIME_13998 = 13998,
+
+        RITUEL_DE_JASHIN_13999 = 13999,
+
+        RITUEL_DE_JASHIN_14000 = 14000,
+
+        RITUEL_DE_JASHIN_14001 = 14001,
+
+        RITUEL_DE_JASHIN_14002 = 14002,
+
+        __DEPLACEMENT_INVOCATION_14003 = 14003,
+
+        __CLEAN_PARAMETRES_MANAGER_14004 = 14004,
+
+        __INVOCATION_MANAGER_14005 = 14005,
+
+        SECOND_14006 = 14006,
+
+        TIERCE_14007 = 14007,
+
+        QUART_14008 = 14008,
+
+        QUINT_14009 = 14009,
+
+        SIXTE_14010 = 14010,
+
+        PILORI_14011 = 14011,
+
+        LE_FOUET_DOSAMODAS_14012 = 14012,
+
+        INVOCATION_OSAMODAS_14013 = 14013,
+
+        ERUPTION_14014 = 14014,
+
+        GAMBADE_14015 = 14015,
+
+        BATRA_14016 = 14016,
+
+        AQUACULTURE_14017 = 14017,
+
+        POISON_CINGLANT_14018 = 14018,
+
+        PILON_LAINEUX_14019 = 14019,
+
+        TOISON_BOUFFANTE_14020 = 14020,
+
+        REPTINCELLES_14021 = 14021,
+
+        CORBEAU_EMBRASE_14022 = 14022,
+
+        ECAILLE_TRANSVERSALE_14023 = 14023,
+
+        ERUPTION_14024 = 14024,
+
+        EQUILIBRE_BESTIAL_14025 = 14025,
+
+        PONCTION_14026 = 14026,
+
+        ERUPTION_EXPLOSIVE_14027 = 14027,
+
+        BENEDICTION_ANIMALE_14028 = 14028,
+
+        ERUPTION_ERUPTIVE_14029 = 14029,
+
+        ERUPTION_EFFUSIVE_14030 = 14030,
+
+        MONTEE_DE_LAVE_14031 = 14031,
+
+        EVOLUTION_MAGMATIQUE_14032 = 14032,
+
+        ERUPTION_INOFFENSIVE_14033 = 14033,
+
+        LAVOMATIK_14034 = 14034,
+
+        FLAQUE_DE_LAVE_14035 = 14035,
+
+        MAGMORSURE_14036 = 14036,
+
+        MORT_DILLEMENT_14037 = 14037,
+
+        FOLIE_SANGUINAIRE_DECLENCHE_01_14038 = 14038,
+
+        FOLIE_SANGUINAIRE_DECLENCHE_02_14039 = 14039,
+
+        BOURRASCASSE_14040 = 14040,
+
+        PASSIFAGRESSIF_14041 = 14041,
+
+        PASSIFAGRESSIF_DECOLLAGE_14042 = 14042,
+
+        PASSIFAGRESSIF_14043 = 14043,
+
+        PASSIFAGRESSIF_RETOUR_POS_PRECEDENTE_14044 = 14044,
+
+        APPEL_DE_LA_LUNE_14045 = 14045,
+
+        APPEL_MORTEL_DE_LA_LUNE_14046 = 14046,
+
+        STEUNE_14047 = 14047,
+
+        PARADE_LUNAIRE_14048 = 14048,
+
+        DRAGTAÏE_14049 = 14049,
+
+        CUIT_RASSE_14051 = 14051,
+
+        PARADE_LUNAIRE_14052 = 14052,
+
+        DRAGUE_14053 = 14053,
+
+        COUP_DE_FOUDRE_14054 = 14054,
+
+        TOHU_BOHU_14055 = 14055,
+
+        PARADE_LUNAIRE_14056 = 14056,
+
+        COUPEDAIKALLE_14057 = 14057,
+
+        SOUAP_14058 = 14058,
+
+        SHINOUQUE_14060 = 14060,
+
+        PARADE_LUNAIRE_14061 = 14061,
+
+        SOUFFLE_14062 = 14062,
+
+        PROPAGATION_ARDENTE_14063 = 14063,
+
+        SORT_DU_GLYPHE_14064 = 14064,
+
+        PARADE_LUNAIRE_14065 = 14065,
+
+        __REPTINCELLES__DRAGONNET_A_PROXIMITE_CIBLE_14066 = 14066,
+
+        PIED_TINEMENT_14067 = 14067,
+
+        __REPTINCELLES__DOMMAGES_ET_SOINS_14068 = 14068,
+
+        __REPTINCELLES__CLEAN_ETATS_14069 = 14069,
+
+        CROKENJAMBE_14070 = 14070,
+
+        AQUACULTURE_14071 = 14071,
+
+        RENFORCEMENT_COQUILLESQUE_14072 = 14072,
+
+        RENFORCEMENT_COQUILLESQUE_14073 = 14073,
+
+        COUP_QUILLESQUE_14074 = 14074,
+
+        __RELAIS__CORRESPONDANCE_SLOTS_14075 = 14075,
+
+        PRESSION_COQUILLESQUE_14076 = 14076,
+
+        MUTILATION_FX_14077 = 14077,
+
+        APPEL_DE_LA_LUNE_14078 = 14078,
+
+        CHARGE_0_14079 = 14079,
+
+        COQUILLETTES_ULA_14080 = 14080,
+
+        TCHEK_SI_INVOC_POSSIBLE_OU_NON_14081 = 14081,
+
+        INVOCATION_DES_COQUILLES_14082 = 14082,
+
+        __POISON_CINGLANT__VERIF_CRAPAUD_14083 = 14083,
+
+        POISON_CINGLANT_14084 = 14084,
+
+        _14085 = 14085,
+
+        EVOLUTION_SOUFFRANCE_DECLENCHE_01_14087 = 14087,
+
+        __ECAILLE_TRANSVERSALE__DECLENCHE_14088 = 14088,
+
+        PLUMEAU_14089 = 14089,
+
+        __PLUMEAU__INTERMEDIAIRE_DEJA_UTILISE_14090 = 14090,
+
+        __FRAPPE_DU_CRAQUELEUR__COMPTE_14091 = 14091,
+
+        PILON_LAINEUX_14092 = 14092,
+
+        __TOISON_BOUFFANTE__DECLENCHE_14095 = 14095,
+
+        DESOLATION_14096 = 14096,
+
+        ARRET_MUTILATION_14097 = 14097,
+
+        TOISON_BOUFFANTE_14098 = 14098,
+
+        RUNE_DENVOL_14099 = 14099,
+
+        __ENVOL__DECLENCHE_14100 = 14100,
+
+        __GAMBADE__DECLENCHE_14101 = 14101,
+
+        _14102 = 14102,
+
+        _14103 = 14103,
+
+        APPEL_DE_LA_LUNE_14104 = 14104,
+
+        REVE_DE_TORKELONIA_14107 = 14107,
+
+        PARADOXE_DE_TORKELONIA_14108 = 14108,
+
+        CAUCHEMAR_DE_TORKELONIA_14109 = 14109,
+
+        CAUCHEMAR_DE_TORKELONIA_14110 = 14110,
+
+        __BATRA_FUNESTE__DECLENCHE_14111 = 14111,
+
+        __LAISSE_SPIRITUELLE__DECLENCHE_14112 = 14112,
+
+        _14113 = 14113,
+
+        _14114 = 14114,
+
+        GAMBETTE_14115 = 14115,
+
+        __BECO_ALBINOS__DEBUFF_FIN_DE_TOUR_14116 = 14116,
+
+        TRANSPOFU_14117 = 14117,
+
+        DISTOFU_14118 = 14118,
+
+        __BECOMPRESSEUR__RUNE_14119 = 14119,
+
+        MORSURE_MELANIQUE_14120 = 14120,
+
+        ATTIRANCE_LAINEUSE_DELUXE_14121 = 14121,
+
+        PROJECTION_BAVEUSE_14122 = 14122,
+
+        TIR_SELECTIF_14123 = 14123,
+
+        CRACHAT_DU_BOUFTOU_ALBINOS_14124 = 14124,
+
+        MORSURE_ANTICIPEE_14125 = 14125,
+
+        PROJECTION_LOINTAINE_14126 = 14126,
+
+        CRAPOISON_14127 = 14127,
+
+        MEMOIRE_AMPHIBIENNE_14128 = 14128,
+
+        CRAPOISON_INITIATEUR_14130 = 14130,
+
+        FOCUS_LAINEUX_14131 = 14131,
+
+        TOISON_PESANTE_14132 = 14132,
+
+        CRAPOUSSEE_14133 = 14133,
+
+        OGIVE_SALIVAIRE_14134 = 14134,
+
+        __OGIVE_SALIVAIRE__DECLENCHE_14135 = 14135,
+
+        DRAGOFEU_X_14136 = 14136,
+
+        CRAPOUSSEE_A_BILE_14137 = 14137,
+
+        DIAGOFEU_14138 = 14138,
+
+        __DIAGOFEU__DECLENCHE_14139 = 14139,
+
+        BRASIER_14140 = 14140,
+
+        __DRAGOFEU_INCANDESCENT__DECLENCHE_14141 = 14141,
+
+        DRAGOFEU_INCANDESCENT_14142 = 14142,
+
+        __INVERSION_DRACONIQUE__DECLENCHE_14143 = 14143,
+
+        INVERSION_DRACONIQUE_14144 = 14144,
+
+        EMBRASEMENT_DU_DRAGON_14145 = 14145,
+
+        DRAGOFEU_CURATIF_14146 = 14146,
+
+        DRAGOBSTRUCTION_14147 = 14147,
+
+        __DRAGONSECRATION__DECLENCHE_14148 = 14148,
+
+        DRAGONSECRATION_14149 = 14149,
+
+        SOUFFLE_DU_DRAGON_14150 = 14150,
+
+        CŒUR_DE_DRAGON_14151 = 14151,
+
+        SOUFFLE_DU_DRAGON_14152 = 14152,
+
+        _1_DECLENCHE_TRANSFORMATION_OSAMODAS_14153 = 14153,
+
+        LE_FOUET_DOSAMODAS_14155 = 14155,
+
+        __CRAPOUSSEE_A_BILE__DECLENCHE_14156 = 14156,
+
+        LE_FOUET_DOSAMODAS_14157 = 14157,
+
+        _14158 = 14158,
+
+        ASCENDANT_TOFU_14159 = 14159,
+
+        ASCENDANT_BOUFTOU_14160 = 14160,
+
+        ASCENDANT_CRAPAUD_14161 = 14161,
+
+        ASCENDANT_DRAGONNET_14162 = 14162,
+
+        __AQUACULTURE__ANIMATION_CASTER_14163 = 14163,
+
+        _14164 = 14164,
+
+        __TOISON_BOUFFANTE__DECLENCHE_TRANSFERT_14167 = 14167,
+
+        __BATRA__CIBLES_14168 = 14168,
+
+        __TOURBILLON__DECLENCHE_RANG_1_14169 = 14169,
+
+        __TOURBILLON__DECLENCHE_RANG_2_14170 = 14170,
+
+        __CROC_REPULSIF_DECLENCHE_14171 = 14171,
+
+        EQUILIBRE_BESTIAL_14172 = 14172,
+
+        BATRA_14173 = 14173,
+
+        LE_FOUET_DOSAMODAS_14174 = 14174,
+
+        AUGMENTE_LA_CHARGE_INVOCATRICE__TOFU__14175 = 14175,
+
+        AUGMENTE_LA_CHARGE_INVOCATRICE__BOUFTOU__14176 = 14176,
+
+        AUGMENTE_LA_CHARGE_INVOCATRICE__CRAPAUD__14177 = 14177,
+
+        AUGMENTE_LA_CHARGE_INVOCATRICE__DRAGONNET__14178 = 14178,
+
+        CONSOMME_LES_CHARGES_INVOCATRICES_14179 = 14179,
+
+        REMPLACEMENT_14180 = 14180,
+
+        __ECAILLE_TRANSVERSALE__CLEAN_14181 = 14181,
+
+        EMPLAFONNEMENT_14182 = 14182,
+
+        EMPLAFONNEMENT_14183 = 14183,
+
+        EMPLAFONNEMENT_14184 = 14184,
+
+        CRI_DECHIRANT_14185 = 14185,
+
+        MORT_SURE_14186 = 14186,
+
+        KHARNAGE_14187 = 14187,
+
+        REFLEXE_PRIMITIF_14188 = 14188,
+
+        DRAGOSS_PELLE_14189 = 14189,
+
+        TRANSMISSION_SISMIQUE_14190 = 14190,
+
+        OFFRANDE_ROCAILLEUSE_14191 = 14191,
+
+        OFFRANDE_ROCAILLEUSE_14192 = 14192,
+
+        EMPLAFONNEMENT_14193 = 14193,
+
+        COMBUSTION_14194 = 14194,
+
+        CIRQUE_ENFLAMME_14195 = 14195,
+
+        CIRQUE_ENFLAMME_14196 = 14196,
+
+        OFFRANDE_ARDENTE_14197 = 14197,
+
+        OFFRANDE_ARDENTE_14198 = 14198,
+
+        DRAGOSS_TIDKALISS_14199 = 14199,
+
+        DRAGOSS_TIDKALISS_14200 = 14200,
+
+        DRAGOSS_IMOUN_14201 = 14201,
+
+        OFFRANDE_AERIENNE_14202 = 14202,
+
+        OFFRANDE_AERIENNE_14203 = 14203,
+
+        FUMEROLLE_14204 = 14204,
+
+        FUMEROLLE_14205 = 14205,
+
+        EAUZONE_14206 = 14206,
+
+        OFFRANDE_AQUEUSE_14207 = 14207,
+
+        OFFRANDE_AQUEUSE_14208 = 14208,
+
+        EMPLAFONNEMENT_REUSSI_ANIM_CROC_14209 = 14209,
+
+        HYOÏDE_14210 = 14210,
+
+        HYOÏDE_14211 = 14211,
+
+        ENGOUEMENT_14212 = 14212,
+
+        DON_OSSEUX_14213 = 14213,
+
+        DON_OSSEUX_14214 = 14214,
+
+        CAMELEOMANIE_14215 = 14215,
+
+        CAMELEOMANIE_14216 = 14216,
+
+        CAMELEOMANIE_14217 = 14217,
+
+        EAUZONE_14218 = 14218,
+
+        __CROC_REPULSIF_DECLENCHE_PHASE_11_14222 = 14222,
+
+        __PLUMEAU__RESET_14225 = 14225,
+
+        _14226 = 14226,
+
+        BERSERK_14227 = 14227,
+
+        _14228 = 14228,
+
+        _14229 = 14229,
+
+        SAIGNEMENT_14230 = 14230,
+
+        DEPLUMAGE_14232 = 14232,
+
+        __GAMBETTE__DECLENCHE_14233 = 14233,
+
+        __TRANSPOFU__GAIN_PM_14234 = 14234,
+
+        __INFORMO__DECLENCHE_14235 = 14235,
+
+        MURISSEMENT_14236 = 14236,
+
+        _1___1_EVOLUTION_DECLENCHE_14237 = 14237,
+
+        TIMIDE_14238 = 14238,
+
+        AUDACIEUX_14239 = 14239,
+
+        INTREPIDE_14240 = 14240,
+
+        SOMATOTROPINE_14241 = 14241,
+
+        KNOUT_14242 = 14242,
+
+        DRAKAARIS_14243 = 14243,
+
+        PEPINIERE_14244 = 14244,
+
+        DRAGLOMERA_14246 = 14246,
+
+        DRALBATRE_14247 = 14247,
+
+        GEYSER_14248 = 14248,
+
+        RONDE_ELEMENTAIRE_14249 = 14249,
+
+        ENTARTRAGE_14250 = 14250,
+
+        ENTARTRAGE_14251 = 14251,
+
+        ENTARTRAGE_14252 = 14252,
+
+        CALCINATION_14253 = 14253,
+
+        FEUILLETAGE_14254 = 14254,
+
+        FEUILLETAGE_14255 = 14255,
+
+        FEUILLETAGE_14256 = 14256,
+
+        FENDAGE_14257 = 14257,
+
+        CATAPLASME_14258 = 14258,
+
+        _14259 = 14259,
+
+        CATAPLASME_14260 = 14260,
+
+        CATAPLASME_14261 = 14261,
+
+        ENGOBAGE_14262 = 14262,
+
+        SILICOSE_14263 = 14263,
+
+        SILICOSE_14264 = 14264,
+
+        SILICOSE_14265 = 14265,
+
+        CRASSIER_14266 = 14266,
+
+        REFLEXE_PRIMITIF_DECLENCHE_14267 = 14267,
+
+        RONDE_ELEMENTAIRE_14268 = 14268,
+
+        PEPINIERE_14269 = 14269,
+
+        PEPINIERE_14270 = 14270,
+
+        RONDE_ELEMENTAIRE_14271 = 14271,
+
+        RONDE_ELEMENTAIRE_14272 = 14272,
+
+        PELLE_MINERALE_14273 = 14273,
+
+        SEGNIFUGE_14274 = 14274,
+
+        AUDACIEUX_14275 = 14275,
+
+        PELLE_EPRISE_14276 = 14276,
+
+        SURTENSION_14277 = 14277,
+
+        PELLE_EN_LAIR_14278 = 14278,
+
+        HARPONNEUSE_EVOLUTION_14279 = 14279,
+
+        HARPONNEUSE_EVOLUTION_II_14280 = 14280,
+
+        HARPONNEUSE_EVOLUTION_III_14281 = 14281,
+
+        FOREUSE_EVOLUTION_II_14282 = 14282,
+
+        RECURSIVITE_14283 = 14283,
+
+        FOREUSE_EVOLUTION_III_14284 = 14284,
+
+        FOREUSE_EVOLUTION_14285 = 14285,
+
+        TACTIRELLE_EVOLUTION_II_14286 = 14286,
+
+        TACTIRELLE_EVOLUTION_III_14287 = 14287,
+
+        TACTIRELLE_EVOLUTION_14288 = 14288,
+
+        CHALUTIER_EVOLUTION_14289 = 14289,
+
+        CHALUTIER_EVOLUTION_II_14290 = 14290,
+
+        CHALUTIER_EVOLUTION_III_14291 = 14291,
+
+        GARDIENNE_EVOLUTION_II_14292 = 14292,
+
+        GARDIENNE_EVOLUTION_III_14293 = 14293,
+
+        GARDIENNE_EVOLUTION_14294 = 14294,
+
+        BATHYSCAPHE_EVOLUTION_II_14295 = 14295,
+
+        BATHYSCAPHE_EVOLUTION_III_14296 = 14296,
+
+        BATHYSCAPHE_EVOLUTION_14297 = 14297,
+
+        __DECLENCHEUR_FAVORITISME_14299 = 14299,
+
+        FAVORITISME_14300 = 14300,
+
+        ESPRITS_BESTIAUX_14301 = 14301,
+
+        COMBINAISON_14302 = 14302,
+
+        COMPTEUR_DE_COUP_14303 = 14303,
+
+        VRAIFAUX_AIR_14304 = 14304,
+
+        CHECK_DU_COMPTEUR_AIR_14305 = 14305,
+
+        REVETEMENT_14306 = 14306,
+
+        ALCOSHU_14307 = 14307,
+
+        PISTON_14308 = 14308,
+
+        PANDJIU_14309 = 14309,
+
+        PELOTAGE_14310 = 14310,
+
+        MIAOUCH_14311 = 14311,
+
+        DEROBADE_14312 = 14312,
+
+        MARQUE_MORTUAIRE_14313 = 14313,
+
+        FOSSE_COMMUNE_14314 = 14314,
+
+        COUPE_GORGE_14315 = 14315,
+
+        LA_PIECE_DECAFLIP_14316 = 14316,
+
+        _14317 = 14317,
+
+        LA_PIECE_DECAFLIP_14318 = 14318,
+
+        MARQUE_MORTUAIRE_14319 = 14319,
+
+        _2_INTERMEDIAIRE_TRANSFORMATION_14320 = 14320,
+
+        CANAL_CANIN_14321 = 14321,
+
+        CANAL_CANIN_14322 = 14322,
+
+        TRANCHAGE_SAIGNANT_14324 = 14324,
+
+        GEOLOGIE_14325 = 14325,
+
+        OCTOPOSITION_14326 = 14326,
+
+        LEZARDE_14327 = 14327,
+
+        SELECTION_14328 = 14328,
+
+        GALERIE_14329 = 14329,
+
+        LE_PIECE_DENUTROF_14330 = 14330,
+
+        __PELLE_ENFLAMMEE_14331 = 14331,
+
+        DANSE_DES_1000_LAMES_14332 = 14332,
+
+        JUS_RACIQUE_14333 = 14333,
+
+        ETREINTE_14334 = 14334,
+
+        RETOUR_DE_LAME_14335 = 14335,
+
+        PROTECTION_FEUILLUE_14336 = 14336,
+
+        POOLAY_FRIT_14337 = 14337,
+
+        COUP_DE_CROC_ASTRUBIEN_14338 = 14338,
+
+        ACCELERATION_ECAILLEUSE_14339 = 14339,
+
+        SAUVETAGE_SAUVAGE_14340 = 14340,
+
+        TRIBUT_14341 = 14341,
+
+        TORRENT_ARCANIQUE_14342 = 14342,
+
+        VRAIFAUX_FEU_14343 = 14343,
+
+        VRAIFAUX_EAU_14344 = 14344,
+
+        VRAIFAUX_TERRE_14345 = 14345,
+
+        INSTINCT_PARTAGE_14346 = 14346,
+
+        INSTINCT_PARTAGE_DECLENCHE_14347 = 14347,
+
+        ECORCHURE_14348 = 14348,
+
+        STIMULI_14349 = 14349,
+
+        EQUITE_14350 = 14350,
+
+        EQUITE_DECLENCHE_14351 = 14351,
+
+        ASSAUT_ASTRAL_14352 = 14352,
+
+        CHECK_DU_COMPTEUR_FEU_14353 = 14353,
+
+        TRIBUT_14354 = 14354,
+
+        CHECK_DU_COMPTEUR_EAU_14355 = 14355,
+
+        CHECK_DU_COMPTEUR_TERRE_14356 = 14356,
+
+        APPEL_DE_LA_MEUTE_14357 = 14357,
+
+        __APPEL_DE_LA_MEUTE__RAPPROCHEMENT_14358 = 14358,
+
+        TORRENT_ARCANIQUE_DECLENCHE_01_14359 = 14359,
+
+        REPONSE_14360 = 14360,
+
+        CHANGEMENT_DE_PHASE_14361 = 14361,
+
+        DARD_BRULANT_14362 = 14362,
+
+        TURBULENCE_14363 = 14363,
+
+        DOUBLE_TRANSPERCEMENT_14364 = 14364,
+
+        DOUBLE_TRANSPERCEMENT_DECLENCHE_14365 = 14365,
+
+        DOUBLE_TRANSPERCEMENT_DECLENCHE_14366 = 14366,
+
+        FEINTE_OFFENSIVE_14367 = 14367,
+
+        FOUET_ECARLATE_14368 = 14368,
+
+        __VAGUE_A_LAME__POUSSEE_14369 = 14369,
+
+        FRAPPE_ACERBE_14370 = 14370,
+
+        REJUVENATION_14371 = 14371,
+
+        ATTAQUE_IRIDESCENTE_14372 = 14372,
+
+        ESPRIT_MAÎTRISE_14373 = 14373,
+
+        CRAPOISON_14374 = 14374,
+
+        CRAPETTE_14375 = 14375,
+
+        CRAPAUSTROPHE_14376 = 14376,
+
+        LE_SOULIER_DE_SADIDA_14377 = 14377,
+
+        _14378 = 14378,
+
+        _14379 = 14379,
+
+        AGACEMENT_14380 = 14380,
+
+        ACCELERATION_POUPESQUE_14381 = 14381,
+
+        SOIN_POUPESQUE_14382 = 14382,
+
+        SOIN_POUPESQUE_14383 = 14383,
+
+        SACRIFICE_14384 = 14384,
+
+        SACRIFICE_14385 = 14385,
+
+        BOUTURE_14386 = 14386,
+
+        BOUTURE_14387 = 14387,
+
+        SAC_RIFICE_14388 = 14388,
+
+        SAC_ANIME_14389 = 14389,
+
+        FUREUR_BESTIALE_14390 = 14390,
+
+        GALERIE_ANIMATION_14391 = 14391,
+
+        FORET_CONNECTEE_14392 = 14392,
+
+        BRAISES_EPINEUSES_14393 = 14393,
+
+        INFECTION_POUPESQUE_14394 = 14394,
+
+        TORRENT_ARCANIQUE_DECLENCHE_02_14395 = 14395,
+
+        MANGROVE_14396 = 14396,
+
+        MANGROVE_14397 = 14397,
+
+        PULSATION_MALSAINE_14398 = 14398,
+
+        CRUEL_ET_VULNERABLE_14399 = 14399,
+
+        VULNERABLE_ET_CRUEL_14400 = 14400,
+
+        PAUME_AQUEUSE_14402 = 14402,
+
+        PAUME_AQUEUSE_14403 = 14403,
+
+        GRIFFES_PERFORANTES_14404 = 14404,
+
+        GRIFFES_PERFORANTES_14405 = 14405,
+
+        MUGISSEMENT_14406 = 14406,
+
+        MAÎTRE_DE_LESPRIT_TELLURIQUE_14407 = 14407,
+
+        MAÎTRE_DE_LESPRIT_INCANDESCENT_14408 = 14408,
+
+        MAÎTRE_DE_LESPRIT_AQUATIQUE_14409 = 14409,
+
+        MAÎTRE_DE_LESPRIT_AERIEN_14410 = 14410,
+
+        GRENAILLE_14411 = 14411,
+
+        CASEMATE_14412 = 14412,
+
+        GALERIE_DECLENCHE_14413 = 14413,
+
+        SHRAPNEL_14414 = 14414,
+
+        BOMBARDE_14415 = 14415,
+
+        BOMBARDE_DECLENCHE_14416 = 14416,
+
+        FEINTE_OFFENSIVE_ANIMATION_14417 = 14417,
+
+        SHRAPNEL_14418 = 14418,
+
+        _14419 = 14419,
+
+        MUGISSEMENT_14420 = 14420,
+
+        COMBUSTION_14421 = 14421,
+
+        COMBUSTION_14422 = 14422,
+
+        RENVOI_ARDENT_14423 = 14423,
+
+        RENVOI_ARDENT_14424 = 14424,
+
+        CROCA_EN_JAMBE_14425 = 14425,
+
+        CROCA_EN_JAMBE_14426 = 14426,
+
+        INVISIBILOSS_14427 = 14427,
+
+        FLAMME_DIVINE_14428 = 14428,
+
+        SURCHARGE_DIVINE_14429 = 14429,
+
+        DIVIGNITION_14430 = 14430,
+
+        BOND_GRESILLANT_14431 = 14431,
+
+        POISON_PETRIFIANT_14432 = 14432,
+
+        TORPEUR_14433 = 14433,
+
+        TORPEUR_14434 = 14434,
+
+        CHELICERES_14435 = 14435,
+
+        FLAMME_LATERALE_14436 = 14436,
+
+        FLAMMES_NOCTURNES_14437 = 14437,
+
+        VENIN_LUNAIRE_14438 = 14438,
+
+        RAPLAPATTES_14439 = 14439,
+
+        CHAGROUARRR_14440 = 14440,
+
+        CHAGRIFFES_14441 = 14441,
+
+        PROTECTION_DU_LAPINO_14442 = 14442,
+
+        RUGISSEMENT_INTIMIDANT_14443 = 14443,
+
+        HERBOMICIDE_14444 = 14444,
+
+        TERRE_NOURRICIERE_14445 = 14445,
+
+        MOT_DENTRAIDE_14446 = 14446,
+
+        __MOT_DENTRAIDE__SWITCH_14447 = 14447,
+
+        MOT_DENTRAIDE_14449 = 14449,
+
+        MOT_SECRET_14511 = 14511,
+
+        TELEPORTAIL_14573 = 14573,
+
+        PORTAIL_14574 = 14574,
+
+        AFFRONT_14575 = 14575,
+
+        POING_FULGURANT_14576 = 14576,
+
+        DISTRIBUTION_14577 = 14577,
+
+        DISTRIBE_14578 = 14578,
+
+        RAYON_DE_WAKFU_14579 = 14579,
+
+        ETIREMENT_14580 = 14580,
+
+        THERAPIE_14581 = 14581,
+
+        NEUTRAL_14582 = 14582,
+
+        COMMOTION_14583 = 14583,
+
+        AFFLICTION_14584 = 14584,
+
+        STUPEUR_14585 = 14585,
+
+        ORTAL_14586 = 14586,
+
+        CICATRISATION_14587 = 14587,
+
+        OFFENSE_14588 = 14588,
+
+        ODYSSEE_14589 = 14589,
+
+        CAMOUFLET_14590 = 14590,
+
+        FOCUS_14591 = 14591,
+
+        BRIMADE_14592 = 14592,
+
+        AUDACE_14593 = 14593,
+
+        PARASITE_14594 = 14594,
+
+        RAILLERIE_14595 = 14595,
+
+        ENTRAIDE_14596 = 14596,
+
+        TELEPORTAIL_REUSSI_14597 = 14597,
+
+        ENTRAIDE_14598 = 14598,
+
+        PARASITE_14599 = 14599,
+
+        _14600 = 14600,
+
+        DISTRIBE_14601 = 14601,
+
+        MEPRIS_14602 = 14602,
+
+        TRIBULATION_14603 = 14603,
+
+        PORTAIL_FLEXIBLE_14604 = 14604,
+
+        CONVULSION_14605 = 14605,
+
+        FAISCEAU_14606 = 14606,
+
+        INTERRUPTION_14607 = 14607,
+
+        OUTRAGE_14608 = 14608,
+
+        CONTRACTION_14609 = 14609,
+
+        SINECURE_14610 = 14610,
+
+        DIFFUSION_14611 = 14611,
+
+        DISTORSION_14612 = 14612,
+
+        SERMON_14613 = 14613,
+
+        CONJURATION_14614 = 14614,
+
+        PAUME_CURATIVE_14615 = 14615,
+
+        EXODE_14616 = 14616,
+
+        CABALE_14617 = 14617,
+
+        APLOMB_14618 = 14618,
+
+        VIRUS_14619 = 14619,
+
+        PERSIFLAGE_14620 = 14620,
+
+        COALITION_14621 = 14621,
+
+        CONFLAGRATION_14622 = 14622,
+
+        DISTORSION_14623 = 14623,
+
+        DISTORSION_14624 = 14624,
+
+        CONFLAGRATION_14625 = 14625,
+
+        CONTRACTION_14626 = 14626,
+
+        CONJURATION_14627 = 14627,
+
+        DIFFUSION_14628 = 14628,
+
+        PARASITE_14629 = 14629,
+
+        VIRUS_14630 = 14630,
+
+        TELEPORTAIL_IMPOSSIBLE_14631 = 14631,
+
+        CONFLAGRATION_14632 = 14632,
+
+        PAUME_CURATIVE_14633 = 14633,
+
+        INVOCTO_14634 = 14634,
+
+        LARBRE_QUI_CACHE_LA_FORET_14635 = 14635,
+
+        FLECHE_COMPLICE_14636 = 14636,
+
+        INSOLENCE_14637 = 14637,
+
+        SARCASME_14638 = 14638,
+
+        __FLECHE_COMPLICE__DOMMAGES_14639 = 14639,
+
+        CORRUPTION_LENTE_14640 = 14640,
+
+        FLECHE_DABOLITION_14641 = 14641,
+
+        BRISE_TEMPS_14642 = 14642,
+
+        CHRONOPHAGIE_14643 = 14643,
+
+        PILORI_14645 = 14645,
+
+        FIOLIE_14646 = 14646,
+
+        RICOCHET_SACRE_14647 = 14647,
+
+        RICOCHET_SACRE_14648 = 14648,
+
+        RICOCHET_SACRE_14649 = 14649,
+
+        HEURE_GRAVE_14650 = 14650,
+
+        EMBAUMEMENT_14651 = 14651,
+
+        __SOUFFLE_DU_DRAGON__POUSSEE_14655 = 14655,
+
+        __COEUR_DE_DRAGON__CIBLES_14657 = 14657,
+
+        __COEUR_DE_DRAGON__DOMMAGES_14658 = 14658,
+
+        AIGUILLE_14659 = 14659,
+
+        REVE_DE_DRAEGNERYS_14661 = 14661,
+
+        __ECAILLE_TRANSVERSALE__SPLASH_DRAGONNET_14662 = 14662,
+
+        PARADOXE_DE_DRAEGNERYS_14663 = 14663,
+
+        __ECAILLE_TRANSVERSALE__COMPTEUR_14664 = 14664,
+
+        CAUCHEMAR_DE_DRAEGNERYS_14665 = 14665,
+
+        REVE_DU_KHARNOZOR_14666 = 14666,
+
+        REVE_DU_KHARNOZOR_14667 = 14667,
+
+        PARADOXE_DU_KHARNOZOR_14669 = 14669,
+
+        __FOUET__DEPLACEMENT_14670 = 14670,
+
+        PARADOXE_DU_KHARNOZOR_14671 = 14671,
+
+        CAUCHEMAR_DU_KHARNOZOR_14672 = 14672,
+
+        CAUCHEMAR_DU_KHARNOZOR_14673 = 14673,
+
+        __ECAILLE_TRANSVERSALE__FX_14674 = 14674,
+
+        __FLAMME_LATERALE__ATTIRANCE_14675 = 14675,
+
+        FERVEUR_14676 = 14676,
+
+        VINDICTE_14677 = 14677,
+
+        PARADOXE_DU_KHARNOZOR_14679 = 14679,
+
+        RONDA_14681 = 14681,
+
+        PURGATORIO_14682 = 14682,
+
+        RONDA_14683 = 14683,
+
+        _14685 = 14685,
+
+        FRENESIE_SAUVAGE_14686 = 14686,
+
+        _14688 = 14688,
+
+        DEBUG_MANGROVE_14690 = 14690,
+
+        CYCLE_LUNAIRE_14691 = 14691,
+
+        __ANIM__PERTE_DE_CHARGE_14692 = 14692,
+
+        __ANIM__GAIN_DE_CHARGE_14693 = 14693,
+
+        __GAMBADE__FX_14694 = 14694,
+
+        __CANAL_CANIN__ANIMATION_14695 = 14695,
+
+        __MANGROVE__ANIM_1_14696 = 14696,
+
+        __MANGROVE__ANIM_2_14697 = 14697,
+
+        DEBUFF_SOUFFRANCE_14698 = 14698,
+
+        __SEGNIFUGE__CHANGEMENT_CASTER_14699 = 14699,
+
+        FEUILLAGE_14700 = 14700,
+
+        SHINOUQUE_14701 = 14701,
+
+        PICOLE_14702 = 14702,
+
+        SAIGNEMENT_14703 = 14703,
+
+        RIPOSTE_14704 = 14704,
+
+        TRANSFERT_DE_VIE_DECLENCHE_14705 = 14705,
+
+        SAIGNEMENT_14706 = 14706,
+
+        GRIFFE_JOUEUSE_14708 = 14708,
+
+        LANGUE_RAPEUSE_14709 = 14709,
+
+        HYPERACTIVITE_14710 = 14710,
+
+        SOUDES_14711 = 14711,
+
+        SOUDES_14712 = 14712,
+
+        RIP_HAUSTE_14713 = 14713,
+
+        VERFEUR_14714 = 14714,
+
+        VERFEUR_14715 = 14715,
+
+        LIOUBE_14717 = 14717,
+
+        COMPTEUR_DE_MILICIENS_14718 = 14718,
+
+        EMPORTEMENT_14719 = 14719,
+
+        EAU_STRASISME_14720 = 14720,
+
+        BROCHETTE_MILICIENNE_14721 = 14721,
+
+        BROCHETTE_MILICIENNE_14722 = 14722,
+
+        BROCHETTE_MILICIENNE_14723 = 14723,
+
+        CRAMPON_14724 = 14724,
+
+        MICILE_14725 = 14725,
+
+        MILISSAERIEN_14726 = 14726,
+
+        MISSILO_14727 = 14727,
+
+        UNE_AIDE_PRECIEUSE_14728 = 14728,
+
+        MOT_STIMULANT_FX_14729 = 14729,
+
+        VERTEBRE_14730 = 14730,
+
+        ANIMATION_TOURELLES_SI_LDV_AVEC_LE_STEAMER_14739 = 14739,
+
+        PLOMBAGE_CC_14740 = 14740,
+
+        MANIGANCE_14741 = 14741,
+
+        EFFRACTION_14742 = 14742,
+
+        MOT_STIMULANT_ANIM__FX_14743 = 14743,
+
+        DEROBADE_14746 = 14746,
+
+        ARDEUR_14754 = 14754,
+
+        ARDEUR_DECLENCHE_14755 = 14755,
+
+        TORNADE_14756 = 14756,
+
+        EMANATION_14757 = 14757,
+
+        TROMBE_14758 = 14758,
+
+        TONNERRE_14759 = 14759,
+
+        TONNERRE_DECLENCHE_14760 = 14760,
+
+        TEMPETE_14761 = 14761,
+
+        PRYTEK_14762 = 14762,
+
+        PRYTEK_BRILLANTE_14763 = 14763,
+
+        PRYTEK_IRIDESCENTE_14764 = 14764,
+
+        EQUANIMITE_14765 = 14765,
+
+        EQUANIMITE_DECLENCHE_14766 = 14766,
+
+        EQUANIMITE_DECLENCHE_GAIN_14767 = 14767,
+
+        VINDICTE_14768 = 14768,
+
+        OBSTRUCTION_14769 = 14769,
+
+        DRACHE_IMPARTIALE_14770 = 14770,
+
+        DRACHE_IMPARTIALE_ANIMATION_14771 = 14771,
+
+        SALVE_PREVENTIVE_14772 = 14772,
+
+        FLECHE_DU_JUGEMENT_14773 = 14773,
+
+        EQUANIMITE_DECLENCHE_PERTE_14774 = 14774,
+
+        GLYPHE_AGRESSIF_DU_DOPEUL_14782 = 14782,
+
+        GLYPHE_OPTIQUE_DU_DOPEUL_14783 = 14783,
+
+        GLYPHE_ENFLAMME_DU_DOPEUL_14784 = 14784,
+
+        GLYPHE_DAVEUGLEMENT_DU_DOPEUL_14785 = 14785,
+
+        GLYPHE_ENFLAMME_DU_DOPEUL_14786 = 14786,
+
+        GLYPHE_AGRESSIF_DU_DOPEUL_14787 = 14787,
+
+        GLYPHE_DAVEUGLEMENT_DU_DOPEUL_14788 = 14788,
+
+        GLYPHE_OPTIQUE_DU_DOPEUL_14789 = 14789,
+
+        DRAGONIQUE_DU_DOPEUL_14790 = 14790,
+
+        DRAGONIQUE_DU_DOPEUL_14791 = 14791,
+
+        CANINE_DU_DOPEUL_14792 = 14792,
+
+        CANINE_DU_DOPEUL_14793 = 14793,
+
+        FOSSILE_DU_DOPEUL_14794 = 14794,
+
+        FOSSILE_DU_DOPEUL_14795 = 14795,
+
+        DRAGOFEU_14796 = 14796,
+
+        DRAGOFEU_ROUGE_14797 = 14797,
+
+        BECO_DU_TOFU_14798 = 14798,
+
+        CONTUSION_14799 = 14799,
+
+        SOUFFLE_DU_TOFU_14800 = 14800,
+
+        MORSURE_DU_BOUFTOU_14801 = 14801,
+
+        MOON_14802 = 14802,
+
+        __GESTION_MOT_STIMULANT_14804 = 14804,
+
+        _14805 = 14805,
+
+        MOT_MIROIR_14806 = 14806,
+
+        _14807 = 14807,
+
+        __DEBUFF_ENICENTRE_14808 = 14808,
+
+        _14809 = 14809,
+
+        _14810 = 14810,
+
+        _14811 = 14811,
+
+        PELUCHE_PHORREUR_14812 = 14812,
+
+        PELUCHE_BOUFTOU_14813 = 14813,
+
+        PELUCHE_TOFU_14814 = 14814,
+
+        PELUCHE_CHACHA_14815 = 14815,
+
+        PELUCHE_MINIKRONE_14816 = 14816,
+
+        EPEE_DU_JUGEMENT_14817 = 14817,
+
+        FUSTIGATION_14818 = 14818,
+
+        DRESSEUR_DE_PELUCHE_14819 = 14819,
+
+        _14820 = 14820,
+
+        PHORRAKOR_14821 = 14821,
+
+        PHORRAGE_14822 = 14822,
+
+        PELUCHE_PHORREUR_14823 = 14823,
+
+        MINIKRONE_EN_BOURRE_14824 = 14824,
+
+        ESBROUFE_14825 = 14825,
+
+        PELUCHE_MINIKRONE_14826 = 14826,
+
+        MINOUILLE_14827 = 14827,
+
+        MAMMA_MIAOU_14828 = 14828,
+
+        PELUCHE_CHACHA_14829 = 14829,
+
+        BECO_BECO_14830 = 14830,
+
+        BECO_BECO_14831 = 14831,
+
+        NID_DOUILLET_14832 = 14832,
+
+        _14833 = 14833,
+
+        REMBOURRAGE_14834 = 14834,
+
+        BOUFTEPEH_14835 = 14835,
+
+        PELUCHE_BOUFTOU_14836 = 14836,
+
+        PELUCHE_DE_COMBAT_14837 = 14837,
+
+        _14838 = 14838,
+
+        ENTRECHAT_14839 = 14839,
+
+        FLECHE_EXPLOBOT_14840 = 14840,
+
+        ROA_DU_PONT_14841 = 14841,
+
+        BOUFTEPEH_14842 = 14842,
+
+        PHORRAGE_14843 = 14843,
+
+        _14845 = 14845,
+
+        _14846 = 14846,
+
+        PIOLAID_DE_GOBSEK_14847 = 14847,
+
+        PIOCHEKOUR_DE_GOBSEK_14848 = 14848,
+
+        PIOCHETRON_DE_GOBSEK_14849 = 14849,
+
+        _14851 = 14851,
+
+        _14852 = 14852,
+
+        _14853 = 14853,
+
+        _14854 = 14854,
+
+        _14855 = 14855,
+
+        _14856 = 14856,
+
+        _14857 = 14857,
+
+        _14858 = 14858,
+
+        _14859 = 14859,
+
+        _14860 = 14860,
+
+        MORSURE_HUMIDE_14861 = 14861,
+
+        _14862 = 14862,
+
+        _14863 = 14863,
+
+        _14864 = 14864,
+
+        EMBAUMEMENT_ANIM_14865 = 14865,
+
+        _14866 = 14866,
+
+        _14867 = 14867,
+
+        _14868 = 14868,
+
+        _14869 = 14869,
+
+        _14870 = 14870,
+
+        _14871 = 14871,
+
+        _14872 = 14872,
+
+        _14873 = 14873,
+
+        _14874 = 14874,
+
+        _14875 = 14875,
+
+        _14876 = 14876,
+
+        _14877 = 14877,
+
+        _14878 = 14878,
+
+        _14879 = 14879,
+
+        _14880 = 14880,
+
+        _14881 = 14881,
+
+        _14882 = 14882,
+
+        _14883 = 14883,
+
+        _14884 = 14884,
+
+        _14885 = 14885,
+
+        _14886 = 14886,
+
+        _14887 = 14887,
+
+        _14888 = 14888,
+
+        _14889 = 14889,
+
+        GOBLINERIE_DE_GOBSTAKL_14890 = 14890,
+
+        _14891 = 14891,
+
+        COLERE_MAUVE_14892 = 14892,
+
+        _14893 = 14893,
+
+        _14894 = 14894,
+
+        _14895 = 14895,
+
+        _14896 = 14896,
+
+        _14897 = 14897,
+
+        _14898 = 14898,
+
+        _14899 = 14899,
+
+        SPRYNT_14900 = 14900,
+
+        SPRYNT_BRILLANTE_14901 = 14901,
+
+        SPRYNT_IRIDESCENTE_14902 = 14902,
+
+        PRYSSION_14903 = 14903,
+
+        PRYSSION_BRILLANTE_14904 = 14904,
+
+        PRYSSION_IRIDESCENTE_14905 = 14905,
+
+        SURPRYZ_14906 = 14906,
+
+        SURPRYZ_BRILLANTE_14907 = 14907,
+
+        SURPRYZ_IRIDESCENTE_14908 = 14908,
+
+        _14909 = 14909,
+
+        _14910 = 14910,
+
+        APRYKOU_14911 = 14911,
+
+        APRYKOU_BRILLANTE_14912 = 14912,
+
+        APRYKOU_IRIDESCENTE_14913 = 14913,
+
+        _14914 = 14914,
+
+        _14915 = 14915,
+
+        RATRAPRY_14916 = 14916,
+
+        RATRAPRY_14917 = 14917,
+
+        RATRAPRY_BRILLANTE_14918 = 14918,
+
+        RATRAPRY_IRIDESCENTE_14919 = 14919,
+
+        _14920 = 14920,
+
+        _14921 = 14921,
+
+        _14922 = 14922,
+
+        _14923 = 14923,
+
+        PRYGEN_14924 = 14924,
+
+        PRYGEN_BRILLANTE_14925 = 14925,
+
+        PRYGEN_IRIDESCENTE_14926 = 14926,
+
+        _14927 = 14927,
+
+        _14928 = 14928,
+
+        _14929 = 14929,
+
+        PRYCIPITHON_14930 = 14930,
+
+        PRYCIPITHON_BRILLANT_14931 = 14931,
+
+        PRYCIPITHON_IRIDESCENTE_14932 = 14932,
+
+        ESPRYT_14933 = 14933,
+
+        KORPRYS_14934 = 14934,
+
+        TELPRYS_14935 = 14935,
+
+        TELPRYS_14936 = 14936,
+
+        TELPRYS_14937 = 14937,
+
+        TELPRYS_BRILLANTE_14938 = 14938,
+
+        TELPRYS_IRIDESCENTE_14939 = 14939,
+
+        PRYSMARU_14940 = 14940,
+
+        PRYSMENVOUT_14941 = 14941,
+
+        APRYBOU_14944 = 14944,
+
+        APRYBOU_14945 = 14945,
+
+        PRYXIMITE_14946 = 14946,
+
+        PRYXIMITE_14947 = 14947,
+
+        PRYXIMITE_14948 = 14948,
+
+        PRYMUNE_14949 = 14949,
+
+        PRYSANTOR_14950 = 14950,
+
+        _14952 = 14952,
+
+        _14953 = 14953,
+
+        _14954 = 14954,
+
+        __MOT_DENTRAIDE__FX_14955 = 14955,
+
+        _14956 = 14956,
+
+        _14957 = 14957,
+
+        _14958 = 14958,
+
+        _14959 = 14959,
+
+        _14960 = 14960,
+
+        _14961 = 14961,
+
+        _14962 = 14962,
+
+        _14964 = 14964,
+
+        _14965 = 14965,
+
+        FUREUR_14966 = 14966,
+
+        _RECIEVE_DMG_14967 = 14967,
+
+        _CHECK__PDV_14968 = 14968,
+
+        _SCALE_100_A_70__14969 = 14969,
+
+        _SCALE_70_A_40__14970 = 14970,
+
+        _SCALE_40_A_10__14971 = 14971,
+
+        FUREUR_14973 = 14973,
+
+        FUREUR_14974 = 14974,
+
+        MORT_IMMINENTE_14975 = 14975,
+
+        FLECHE_CAUCHEMARDESQUE_14976 = 14976,
+
+        _ADD_GLYPH_14978 = 14978,
+
+        _CHOOSE_GLYPH_14979 = 14979,
+
+        REVEIL_DOULOUREUX_14980 = 14980,
+
+        LAMINAGE_TERRIFIANT_14981 = 14981,
+
+        DECHIREMENT_HANDICAPANT_14982 = 14982,
+
+        FAIBLESSE_ONIRIQUE_14983 = 14983,
+
+        TRAHISON_14984 = 14984,
+
+        TRAHISON_ELIOTROPE_14985 = 14985,
+
+        ASSERVISSEMENT_14987 = 14987,
+
+        JOUG_PROTECTEUR_14988 = 14988,
+
+        SKRIMEUR_14989 = 14989,
+
+        _ANIM_SKRIMEUR_14990 = 14990,
+
+        TYRANNIE_14991 = 14991,
+
+        HARGNE_14992 = 14992,
+
+        FASCINATION_CAUCHEMARDESQUE_14993 = 14993,
+
+        FASCINATION_CAUCHEMARDESQUE_14994 = 14994,
+
+        ATTRAPE_CAUCHEMAR_14995 = 14995,
+
+        THERAPIE_TRAHISON_15001 = 15001,
+
+        RAILLERIE_TRAHISON_15002 = 15002,
+
+        AUDACE_TRAHISON_15003 = 15003,
+
+        PARASITE_TRAHISON_15004 = 15004,
+
+        LAPEMENT_TRAHISON_15005 = 15005,
+
+        PELOTAGE_TRAHISON_15006 = 15006,
+
+        BLUFF_TRAHISON_15007 = 15007,
+
+        TOPKAJ_TRAHISON_15008 = 15008,
+
+        MOT_BLESSANT_TRAHISON_15009 = 15009,
+
+        EPIDEMIE_15010 = 15010,
+
+        MOT_TABOU_TRAHISON_15011 = 15011,
+
+        MOT_BRUTAL_TRAHISON_15012 = 15012,
+
+        MOT_DEROUTANT_TRAHISON_15013 = 15013,
+
+        _SPAWN_INVOC_15014 = 15014,
+
+        CONCENTRATION_TRAHISON_15016 = 15016,
+
+        _HUB_15017 = 15017,
+
+        EPEE_CELESTE_TRAHISON_15018 = 15018,
+
+        TEMPETE_DE_PUISSANCE_TRAHISON_15019 = 15019,
+
+        EPEE_DU_JUGEMENT_TRAHISON_15020 = 15020,
+
+        _TRIGGER_STATE__DMG_15021 = 15021,
+
+        FLECHE_DABOLITION_TRAHISON_15022 = 15022,
+
+        FLECHE_FULMINANTE_TRAHISON_15023 = 15023,
+
+        FLECHE_DE_REDEMPTION_TRAHISON_15024 = 15024,
+
+        FLECHE_DESTRUCTRICE_TRAHISON_15025 = 15025,
+
+        ATTAQUE_NATURELLE_TRAHISON_15026 = 15026,
+
+        BOURSOUFFLURE_TRAHISON_15027 = 15027,
+
+        ATTAQUE_NUAGEUSE_TRAHISON_15028 = 15028,
+
+        RETOUR_DU_BATON_TRAHISON_15029 = 15029,
+
+        PROJECTION_TRAHISON_15030 = 15030,
+
+        AVERSION_TRAHISON_15032 = 15032,
+
+        RAVAGE_TRAHISON_15033 = 15033,
+
+        ASSAUT_TRAHISON_15034 = 15034,
+
+        TRAHISON_ECAFLIP_15035 = 15035,
+
+        TRAHISON_ENIRIPSA_15036 = 15036,
+
+        TRAHISON_IOP_15037 = 15037,
+
+        TRAHISON_CRA_15038 = 15038,
+
+        TRAHISON_FECA_15039 = 15039,
+
+        TRAHISON_SACRIEUR_15040 = 15040,
+
+        RONCES_AGRESSIVES_TRAHISON_15041 = 15041,
+
+        LARME_TRAHISON_15042 = 15042,
+
+        RONCE_PARALYSANTE_TRAHISON_15043 = 15043,
+
+        BRAISES_EPINEUSES_TRAHISON_15044 = 15044,
+
+        DRAGONIQUE_TRAHISON_15045 = 15045,
+
+        ONDE_AQUATIQUE_TRAHISON_15046 = 15046,
+
+        CANINE_TRAHISON_15047 = 15047,
+
+        FOSSILE_TRAHISON_15048 = 15048,
+
+        _STATE_COUNTER__15049 = 15049,
+
+        PELLE_MASSACRANTE_TRAHISON_15050 = 15050,
+
+        LANCER_DE_PELLE_TRAHISON_15051 = 15051,
+
+        PELLE_EN_LAIR_TRAHISON_15052 = 15052,
+
+        ROULAGE_DE_PELLE_TRAHISON_15053 = 15053,
+
+        TRUANDERIE_TRAHISON_15054 = 15054,
+
+        COUPE_GORGE_TRAHISON_15055 = 15055,
+
+        ARNAQUE_TRAHISON_15056 = 15056,
+
+        _STATE_COUNTER___15057 = 15057,
+
+        CRUAUTE_TRAHISON_15058 = 15058,
+
+        ROUAGE_TRAHISON_15059 = 15059,
+
+        RAYON_TENEBREUX_TRAHISON_15060 = 15060,
+
+        DESSECHEMENT_TRAHISON_15061 = 15061,
+
+        AIGUILLE_TRAHISON_15062 = 15062,
+
+        TRAHISON_SADIDA_15063 = 15063,
+
+        TRAHISON_OSAMODAS_15064 = 15064,
+
+        TRAHISON_ENUTROF_15065 = 15065,
+
+        TRAHISON_SRAM_15066 = 15066,
+
+        TRAHISON_XELOR_15067 = 15067,
+
+        _ADD_GLYPH_15068 = 15068,
+
+        PANDJIU_TRAHISON_15069 = 15069,
+
+        RIBOTE_TRAHISON_15070 = 15070,
+
+        _DISPEL_GLYPH_15071 = 15071,
+
+        SOUFFLE_ALCOOLISE_TRAHISON_15072 = 15072,
+
+        _GLYPH_SPELL_DMG__RES_15073 = 15073,
+
+        ETHYLO_TRAHISON_15074 = 15074,
+
+        PULSAR_TRAHISON_15075 = 15075,
+
+        MITRAILLE_TRAHISON_15076 = 15076,
+
+        RECEL_TRAHISON_15077 = 15077,
+
+        ARQUEBUSE_TRAHISON_15078 = 15078,
+
+        APATHIE_TRAHISON_15079 = 15079,
+
+        PICADA_TRAHISON_15080 = 15080,
+
+        PURGATORIO_TRAHISON_15081 = 15081,
+
+        PONTEIRA_TRAHISON_15082 = 15082,
+
+        SABORDAGE_TRAHISON_15083 = 15083,
+
+        FOENE_TRAHISON_15084 = 15084,
+
+        CORROSION_TRAHISON_15085 = 15085,
+
+        NAUTILE_TRAHISON_15086 = 15086,
+
+        METEORE_PERCUTANT_TRAHISON_15087 = 15087,
+
+        DELUGE_TRAHISON_15088 = 15088,
+
+        LANCE_FLAMME_TRAHISON_15089 = 15089,
+
+        LAME_ASTRALE_TRAHISON_15090 = 15090,
+
+        MACHOIRE_TRAHISON_15091 = 15091,
+
+        CUBITUS_TRAHISON_15092 = 15092,
+
+        BATTUE_TRAHISON_15093 = 15093,
+
+        MUSELIERE_TRAHISON_15094 = 15094,
+
+        TRAHISON_PANDAWA_15095 = 15095,
+
+        TRAHISON_ROUBLARD_15096 = 15096,
+
+        TRAHISON_ZOBAL_15097 = 15097,
+
+        TRAHISON_STEAMER_15098 = 15098,
+
+        TRAHISON_HUPPERMAGE_15099 = 15099,
+
+        TRAHISON_OUGINAK_15100 = 15100,
+
+        REGARD_HORRIFIQUE_15101 = 15101,
+
+        _15102 = 15102,
+
+        _15103 = 15103,
+
+        ESCLAVAGISME_15104 = 15104,
+
+        ESCLAVAGISME_15105 = 15105,
+
+        ESCLAVAGISME_15106 = 15106,
+
+        ESCLAVAGISME_15107 = 15107,
+
+        ESCLAVAGISME_15108 = 15108,
+
+        ASSERVISSEMENT_15109 = 15109,
+
+        JOUG_PROTECTEUR_15110 = 15110,
+
+        TAVELURE_15111 = 15111,
+
+        TRAHISON_15112 = 15112,
+
+        TRAHISON_15113 = 15113,
+
+        TRAHISON_15114 = 15114,
+
+        TRAHISON_15115 = 15115,
+
+        LIEN_PESTILENTIELLE_15116 = 15116,
+
+        AVARICE_15118 = 15118,
+
+        CAUCHEMARASME_15119 = 15119,
+
+        _CHECK_ELEM_TRIGGER_DMG_15122 = 15122,
+
+        AVARICE_15123 = 15123,
+
+        _RESET_STATE_ELEM_15124 = 15124,
+
+        _TRIGGER_POISON_15125 = 15125,
+
+        EPIDEMIE_15126 = 15126,
+
+        _CLEAN_ELEM_15127 = 15127,
+
+        TRAHISON_15129 = 15129,
+
+        INVOCATION_DE_FUNGUS_15130 = 15130,
+
+        INVOCATION_DE_FUNGUS_15131 = 15131,
+
+        CHAMP_TAJE_15132 = 15132,
+
+        TYRANNIE_15133 = 15133,
+
+        _STATE_COUNTER__15134 = 15134,
+
+        DECADANSE_15135 = 15135,
+
+        AFFINITE_CRUELLE_15136 = 15136,
+
+        DECADANSE_15137 = 15137,
+
+        ARBAGUETTE_15138 = 15138,
+
+        TERREUR_MOUVANTE_15139 = 15139,
+
+        TAMBOURRE_PIF_15140 = 15140,
+
+        DARDS_DE_LAINE_15141 = 15141,
+
+        ESCARMOUCHE_15142 = 15142,
+
+        ESCARMOUCHE_15143 = 15143,
+
+        ANCREPULSION_15144 = 15144,
+
+        TERREUR_MOUVANTE_15147 = 15147,
+
+        TERREUR_MOUVANTE_15148 = 15148,
+
+        TERREUR_MOUVANTE_15149 = 15149,
+
+        DOMESTICATION_15150 = 15150,
+
+        FOUET_PALLIATIF_15151 = 15151,
+
+        FOUET_CADENCE_15152 = 15152,
+
+        FOUET_CADENCE_ANIM_15153 = 15153,
+
+        FOUET_CADENCE_ANIM_2_15154 = 15154,
+
+        FOUET_CADENCE_ANIM_3_15155 = 15155,
+
+        FOUET_DOPANT_15156 = 15156,
+
+        DIGESTION_15157 = 15157,
+
+        TRAUMASQUE_15158 = 15158,
+
+        MORIBOND_15159 = 15159,
+
+        MORIBOND_ANIMATION_15160 = 15160,
+
+        BARBARIE_15161 = 15161,
+
+        MORSURE_DARAKNE_15162 = 15162,
+
+        _UNLOCK_KILL_15163 = 15163,
+
+        ENCHAÎNEMENT_15164 = 15164,
+
+        EVASION_15165 = 15165,
+
+        _SPAWN_INVOC_15166 = 15166,
+
+        RENFORTICHE_15167 = 15167,
+
+        RENFORTICHE_COMPTEUR_15168 = 15168,
+
+        COMPRESSION_15169 = 15169,
+
+        _REVIVE_15170 = 15170,
+
+        _RUNE_15171 = 15171,
+
+        _SPAWN_RUNEGLYPH_15173 = 15173,
+
+        PENITENCE_15174 = 15174,
+
+        ENCHAÎNEMENT_15175 = 15175,
+
+        TOURMENTS_PERPETUELS_15176 = 15176,
+
+        MALTRAITANCE_15177 = 15177,
+
+        TOURMENTS_PERPETUELS_15178 = 15178,
+
+        DEFERLANTE_15179 = 15179,
+
+        _STATE_COUNTER__15180 = 15180,
+
+        _CHECK_COUNTER_15181 = 15181,
+
+        MEGALERIEN_15182 = 15182,
+
+        PAGAIFRENEE_15183 = 15183,
+
+        REPRIMANDE_15184 = 15184,
+
+        REPRIMANDE_15185 = 15185,
+
+        REPRIMANDE_15186 = 15186,
+
+        OPPRESSION_15187 = 15187,
+
+        FUSTIGATION_15188 = 15188,
+
+        DECHAÎNEMENT_15189 = 15189,
+
+        SEVICE_15190 = 15190,
+
+        CALME_ASTRAL_15191 = 15191,
+
+        _ANIM_POISON_15193 = 15193,
+
+        TERREUR_MOUVANTE_15194 = 15194,
+
+        _IF_DONT_ATTACK_15195 = 15195,
+
+        _EON_STATE_5_15196 = 15196,
+
+        DEMANTELEMENT_15197 = 15197,
+
+        TERMINAL_GRIS_15198 = 15198,
+
+        ASSEMBRICOLAGE_15199 = 15199,
+
+        POUILLEUX_MASSACREUR_15200 = 15200,
+
+        CRACHE_MISERE_15201 = 15201,
+
+        DESOSSAGE_15202 = 15202,
+
+        SOUFFLE_DU_DESERT_15203 = 15203,
+
+        BANTHA_15204 = 15204,
+
+        BALLE_VORACE_15205 = 15205,
+
+        GRENADE_AVEUGLANTE_15206 = 15206,
+
+        SOL_ARIDE_15207 = 15207,
+
+        FOUET_GADDERFI_15208 = 15208,
+
+        FAIM_DU_MONDE_15209 = 15209,
+
+        THESAURISATION_15211 = 15211,
+
+        MISEREUX_15212 = 15212,
+
+        SENTENCE_DE_LA_BALANCE_15213 = 15213,
+
+        EPREUVE_DE_LA_BALANCE_15214 = 15214,
+
+        COLLECTE_DES_FERRAILLEURS_15215 = 15215,
+
+        COLLECTE_DES_KREVLADALS_15216 = 15216,
+
+        COLLECTE_DES_DESOSSEURS_15217 = 15217,
+
+        COLLECTE_DES_SKENTUS_15218 = 15218,
+
+        COLLECTE_DES_DAWAJS_15219 = 15219,
+
+        BALANCE_FLEAU_15220 = 15220,
+
+        EPIDEMIE_15221 = 15221,
+
+        DISLOCATION_15222 = 15222,
+
+        DISLOCATION_15223 = 15223,
+
+        RESTAURATION_DE_PROXIMITE_15224 = 15224,
+
+        RESTAURATION_DE_PROXIMITE_15225 = 15225,
+
+        RESTAURATION_ELOIGNEE_15226 = 15226,
+
+        RESTAURATION_ELOIGNEE_15227 = 15227,
+
+        RESTAURATION_KROBIENNE_15228 = 15228,
+
+        RESTAURATION_MOBILE_15229 = 15229,
+
+        RESTAURATION_MOBILE_15230 = 15230,
+
+        DECELLULARISATION_15231 = 15231,
+
+        DECELLULARISATION_15232 = 15232,
+
+        _ANIM_15233 = 15233,
+
+        _LOCK_KILL_15234 = 15234,
+
+        ENCHAÎNEMENT_15236 = 15236,
+
+        _SPAWN_INVOC_7_8_15237 = 15237,
+
+        FUNERAILLES_CELESTES_15239 = 15239,
+
+        FUNERAILLES_CELESTES_AIR__ATTIRANCE_15240 = 15240,
+
+        FUNERAILLES_CELESTES_TERRE__POUSSEE_15241 = 15241,
+
+        GRAND_URUBU_15242 = 15242,
+
+        DAKHMA_15243 = 15243,
+
+        APPEL_DU_VAUTOUR_15244 = 15244,
+
+        GABELLE_15245 = 15245,
+
+        BARCHAN_15246 = 15246,
+
+        ARSENAL_15247 = 15247,
+
+        _15248 = 15248,
+
+        BRAVOURE_15249 = 15249,
+
+        ATTRACTION_VENALE_15250 = 15250,
+
+        _15251 = 15251,
+
+        IMPACT_15257 = 15257,
+
+        _15258 = 15258,
+
+        LYNCHAGE_15259 = 15259,
+
+        MAGMALEFICE_15260 = 15260,
+
+        MAGMALEFICE_15261 = 15261,
+
+        COUP_DEPEE_15262 = 15262,
+
+        COUP_DE_MARTEAU_15263 = 15263,
+
+        COUP_DE_HACHE_15264 = 15264,
+
+        COUP_DE_MORGENSTERN_15265 = 15265,
+
+        CELERITE_15266 = 15266,
+
+        CELERITE_15267 = 15267,
+
+        CELERITE_GLYPHE_15268 = 15268,
+
+        CHARO_VIE_15269 = 15269,
+
+        CHAROGNE_15270 = 15270,
+
+        MARTYRE_15275 = 15275,
+
+        MARTYRE_15276 = 15276,
+
+        ESCLAVAGISME_15278 = 15278,
+
+        ARSENAL_80_15280 = 15280,
+
+        ARSENAL_60_15281 = 15281,
+
+        ARSENAL_40_15282 = 15282,
+
+        ARSENAL_20_15283 = 15283,
+
+        __CPT_REPLACEMENT_15285 = 15285,
+
+        __COUT_EN_PA_15286 = 15286,
+
+        POSTURES_15287 = 15287,
+
+        _STATE_PEHATYTE_COUNTER__15289 = 15289,
+
+        _STATE_PEHATYTE_COUNTER___15290 = 15290,
+
+        _STATE_PEHOTYTE_COUNTER__15291 = 15291,
+
+        _STATE_PEHOTYTE_COUNTER___15292 = 15292,
+
+        _STATE_PEHAIMYTE_COUNTER__15293 = 15293,
+
+        _STATE_PEHAIMYTE_COUNTER___15294 = 15294,
+
+        _STATE_TACLYTE_COUNTER__15295 = 15295,
+
+        _STATE_TACLYTE_COUNTER___15296 = 15296,
+
+        _STATE_BRUTALYTE_COUNTER__15297 = 15297,
+
+        _STATE_BRUTALYTE_COUNTER___15298 = 15298,
+
+        _STATE_TETANYTE_COUNTER__15299 = 15299,
+
+        _STATE_TETANYTE_COUNTER___15300 = 15300,
+
+        _STATE_GANGRAINYTE_COUNTER__15301 = 15301,
+
+        _STATE_GANGRAINYTE_COUNTER___15302 = 15302,
+
+        _STATE_PARASITYE_COUNTER__15303 = 15303,
+
+        _STATE_PARASITYE_COUNTER___15304 = 15304,
+
+        _STATE_FLEMINGYTE_COUNTER__15305 = 15305,
+
+        _STATE_FLEMINGYTE_COUNTER___15306 = 15306,
+
+        CORRUPTION_15307 = 15307,
+
+        CORRUPTION_15308 = 15308,
+
+        _STATE_GERMINALE_COUNTER___15309 = 15309,
+
+        _PUT_HUB_PLAYER_15310 = 15310,
+
+        TERRAIN_FERTILE_15311 = 15311,
+
+        _IF_HEAL_OR_SELF_HEAL_15314 = 15314,
+
+        _HEAL_GERMINALE_OFF_15315 = 15315,
+
+        _HEAL_GERMINALE_ON_15316 = 15316,
+
+        __PEUT_RESSUSCITER__15317 = 15317,
+
+        ARCHIVE_253_BENEDICTION_ANIMALE_15322 = 15322,
+
+        BENEDICTION_ANIMALE_15323 = 15323,
+
+        PEHATYTE_15324 = 15324,
+
+        _APA_PEHATYTE_15325 = 15325,
+
+        _R_PEHOTYTE_15326 = 15326,
+
+        _MPA_PEHAIMYTE_15327 = 15327,
+
+        _T_TACLYTE_15328 = 15328,
+
+        PEHOTYTE_15329 = 15329,
+
+        PEHAIMYTE_15330 = 15330,
+
+        TACLYTE_15331 = 15331,
+
+        BRUTALYTE_15332 = 15332,
+
+        TETANYTE_15333 = 15333,
+
+        GANGRAINYTE_15334 = 15334,
+
+        PARASITYTE_15335 = 15335,
+
+        FLEMINGYTE_15336 = 15336,
+
+        _CLEAN_DISEASE_1___6_SPELL_15337 = 15337,
+
+        _CLEAN_DISEASE_7___9_SPELL_15338 = 15338,
+
+        ARCHIVE_253_FEU_SACRIFICIEL_15339 = 15339,
+
+        __FEU_SACRIFICIEL__DECLENCHE_15340 = 15340,
+
+        FANATISME_15341 = 15341,
+
+        FRAPPE_CARDINALE_15342 = 15342,
+
+        FRAPPE_CARDINALE_DECLENCHE_15343 = 15343,
+
+        PSYCLOPE_15344 = 15344,
+
+        PLUIE_DE_LAMES_15345 = 15345,
+
+        ESPRIT_DESTRUCTEUR_15346 = 15346,
+
+        RETRAIT_PA_15347 = 15347,
+
+        RETRAIT_PM_15348 = 15348,
+
+        CEREBRUTE_15349 = 15349,
+
+        MORTIFICATION_15350 = 15350,
+
+        CHAROGNARD_15351 = 15351,
+
+        ARMUTATION_15352 = 15352,
+
+        ARMUTATION_15353 = 15353,
+
+        OLGUROPOING_15354 = 15354,
+
+        OLGUROPOING_DECLENCHE_15355 = 15355,
+
+        OLGUROPOING_DECLENCHE_REDUCTION_15356 = 15356,
+
+        PRESSE_15357 = 15357,
+
+        SEISME_15358 = 15358,
+
+        _HUB_CORRUPTION_15359 = 15359,
+
+        AURA_DU_DESTRIER_PURULENT_15360 = 15360,
+
+        KISSIPHROT_SIPIQUE_15361 = 15361,
+
+        BOUILLON_DE_CULTURE_15362 = 15362,
+
+        BOUILLON_DE_CULTURE_15363 = 15363,
+
+        _RANDOM_DISEASE_15364 = 15364,
+
+        _STATE_DISEASE_1_15365 = 15365,
+
+        DECOUPE_15366 = 15366,
+
+        TIMBER_15367 = 15367,
+
+        HACHE_TIRANTE_15368 = 15368,
+
+        EUPHORAGE_15375 = 15375,
+
+        EUPHORAGE_15376 = 15376,
+
+        CATACOMBE_15377 = 15377,
+
+        CATACOMBE_15378 = 15378,
+
+        DECHARNER_15379 = 15379,
+
+        _HCH_PUSH_MONSTERS_15380 = 15380,
+
+        _PUSH_MONSTERS_AND_DELOCK_CORRUPTION_15381 = 15381,
+
+        DESARÇONNE_15383 = 15383,
+
+        BECHE_CORROMPUE_15384 = 15384,
+
+        INCU_BATTEUR_15385 = 15385,
+
+        CONVALESCENCE_PROLIFIQUE_15386 = 15386,
+
+        LIQUEFACTION_15387 = 15387,
+
+        PUTREFACTION_15388 = 15388,
+
+        BOMBE_BACTERIOLOGIQUE_15389 = 15389,
+
+        BOMBE_BACTERIOLOGIQUE_15390 = 15390,
+
+        DECOMPOSITION_15391 = 15391,
+
+        ECLOSION_GERMINAL_15392 = 15392,
+
+        GERMINTAÏDE_15393 = 15393,
+
+        TETANYSME_15394 = 15394,
+
+        PEAU_POURRIE_15395 = 15395,
+
+        CORRUPTION_15396 = 15396,
+
+        TOURBE_YLOL_15397 = 15397,
+
+        BRUTALYSME_15398 = 15398,
+
+        CRACHACIDE_15399 = 15399,
+
+        SPORE_ADDIKT_15400 = 15400,
+
+        FLEMINGYSME_15401 = 15401,
+
+        MATURATION_15402 = 15402,
+
+        PARASITYSME_15403 = 15403,
+
+        MUCUS_15404 = 15404,
+
+        PONCTION_LOMBRIC_15405 = 15405,
+
+        TIR_PURULENT_15406 = 15406,
+
+        GANGRAINE_15407 = 15407,
+
+        DEBARBOUILLIE_15408 = 15408,
+
+        MORSURE_PUTRIDE_15409 = 15409,
+
+        LANGUE_MORTE_15410 = 15410,
+
+        SPONGIEUX_15411 = 15411,
+
+        _PUT_HUB_IF_INVOC_15412 = 15412,
+
+        PHASE_GERMINAL_15413 = 15413,
+
+        PHASE_GERMINAL_15414 = 15414,
+
+        _EOFF_GERMINAL___DEBUFF_ALL_DISEASE_15416 = 15416,
+
+        A_CHAQUE_RECEPTION_DE_DOMMAGES_LA_CIBLE_RETOURNE_A_SA_POSITION_PRECEDENTE_15417 = 15417,
+
+        EXPLOSE_A_LA_FIN_DU_TOUR_DE_LA_CIBLE_ET_APPLIQUE_LA_CORRUPTION_QUE_LA_CIBLE_PORTE_DANS_UNE_ZONE_DE_1_A_3_PO_AUTOUR_DELLE_15418 = 15418,
+
+        SI_LE_MONSTRE_SUBIT_DES_DOMMAGES_EN_MELEE_CELUI_CI_REPLIQUE_SE_REPOUSSE_DUNE_CASE_ET_FAIT_PERDRE_2PM_A_SON_ATTAQUANT_15419 = 15419,
+
+        PEAU_POURRIE_15420 = 15420,
+
+        SI_LE_MONSTRE_SUBIT_DES_DOMMAGES_DE_POUSSE_IL_REDUIT_DE_3_LA_PORTE_DES_ENNEMIS_AUTOUR_DU_POINT_DIMPACT_DE_1_A_2_PO_15421 = 15421,
+
+        SPONGIEUX_15422 = 15422,
+
+        OLGUROPOING__LES_DOMMAGES_SONT_REDUIT_DE_50_SUR_LES_OLGOTHS_15423 = 15423,
+
+        PHASE_GERMINAL_15424 = 15424,
+
+        SI_LA_CIBLE_EST_DANS_LA_PHASE_GERMINALE_SES_CORRUPTIONS_NE_SONT_PLUS_REDUITES_LORSQUELLE_EST_SOIGNEE_15426 = 15426,
+
+        LES_SOINS_REÇUS_GUERISSENT_LES_CORRUPTIONS_PORTEES_PAR_LA_CIBLE_15427 = 15427,
+
+        LA_CIBLE_OCCASIONNE_DES_DOMMAGES_DANS_SON_MEILLEUR_ELEMENT_DE_1_A_3_PO_AUTOUR_DELLE_A_CHAQUE_FOIS_QUELLE_INFLIGE_DES_DOMMAGES_15429 = 15429,
+
+        SI_LA_CIBLE_EST_POUSSEE_ATTIREE_TELEPORTEE_ETC_ELLE_SUBIT_DES_DOMMAGES_15430 = 15430,
+
+        LES_CORRUPTIONS_SONT_CONTRACTEES_SUITE_A_CERTAINS_MALUS_OU_APPLIQUEES_PAR_DES_SORTS_DE_MONSTRES_15435 = 15435,
+
+        PORTEUR_DE_LA_TETANYTE_15436 = 15436,
+
+        PORTEUR_DE_LA_BRUTALYTE_15437 = 15437,
+
+        PORTEUR_DE_LA_FLEMYNGYTE_15438 = 15438,
+
+        PORTEUR_DE_LA_PARASITYTE_15439 = 15439,
+
+        PORTEUR_DE_LA_GANGRAINYTE_15440 = 15440,
+
+        REGENERATION_DE_LA_MONTURE_15441 = 15441,
+
+        _FIXE_STATE_1627_ONCE_15442 = 15442,
+
+        MORSURE_PUTRIDE_15443 = 15443,
+
+        LANGUE_MORTE_15444 = 15444,
+
+        ESCLAVAGISME_15445 = 15445,
+
+        GERMINATOR_15446 = 15446,
+
+        SPRYNT_15447 = 15447,
+
+        SPRYNT_15448 = 15448,
+
+        ESPRYT_15449 = 15449,
+
+        _DEBUF_KISIFROT_SIPIK_15450 = 15450,
+
+        ESPRYT_15451 = 15451,
+
+        APRYKOU_15452 = 15452,
+
+        KORPRYS_15453 = 15453,
+
+        KORPRYS_15454 = 15454,
+
+        TELPRYS_FX_CIBLES_VERS_CASTER_15455 = 15455,
+
+        TELPRYS_FX_CASTER_15456 = 15456,
+
+        _CORRUPT_COLOR_SKIN_15457 = 15457,
+
+        PRYXIMITE_FX_CIBLES_VERS_CASTER_15458 = 15458,
+
+        PRYXIMITE_FX_CASTER_15459 = 15459,
+
+        PRYSMENVOUT_FX_15460 = 15460,
+
+        APRYBOU_FX_15461 = 15461,
+
+        ANCREPULSION_ANIM_15462 = 15462,
+
+        INCU_BATTEUR_15463 = 15463,
+
+        CORRUPTION_15464 = 15464,
+
+        _CLEAN_CORRUPTION_15465 = 15465,
+
+        LA_CORRUPTION_SE_PROPAGE_SUR_TOUTES_LES_CIBLES_AUTOUR_DU_CORROMPU_A_LA_FIN_DE_SON_TOUR_DE_1_A_2_PO_15466 = 15466,
+
+        FRAPPE_CARDINALE_FX_AIR_15467 = 15467,
+
+        FRAPPE_CARDINALE_FX_EAU_15468 = 15468,
+
+        FRAPPE_CARDINALE_FX_TERRE_15469 = 15469,
+
+        FRAPPE_CARDINALE_FX_FEU_15470 = 15470,
+
+        FRAPPE_CARDINALE_FX_MULTI_15471 = 15471,
+
+        SPORE_ADDIKT_ANIM_15472 = 15472,
+
+        _15473 = 15473,
+
+        PEAU_POURRISSANTE_15474 = 15474,
+
+        GUERISON_15475 = 15475,
+
+        APPEL_DES_TENEBRES_15476 = 15476,
+
+        APPEL_DES_TENEBRES_15477 = 15477,
+
+        DERANGEMENT_15478 = 15478,
+
+        DERNIERE_PENSEE_15479 = 15479,
+
+        REMINISCENCE_DOULOUREUSE_15480 = 15480,
+
+        MALAISE_OBSCUR_15481 = 15481,
+
+        _ANIM_CORRUPTION_15482 = 15482,
+
+        OLGUROPOING_DECLENCHE_ESPION_15483 = 15483,
+
+        OLGUROPOING_15484 = 15484,
+
+        _15485 = 15485,
+
+        _SORT_INITIAL_15486 = 15486,
+
+        _INC_OR_HALLU_15487 = 15487,
+
+        INCARNATION_15488 = 15488,
+
+        HALLUCINATION_15489 = 15489,
+
+        DODECADOR_15490 = 15490,
+
+        DODECADOR_15491 = 15491,
+
+        _SORT_INITIAL_ANIM_15492 = 15492,
+
+        _SKIN_DEBUFF_15493 = 15493,
+
+        _EQUILIBRAGE_15494 = 15494,
+
+        EGIDE_CALENDAIRE_15495 = 15495,
+
+        TIR_PURULENT_15496 = 15496,
+
+        GANGRAINE_15497 = 15497,
+
+        DEBARBOUILLIE_15498 = 15498,
+
+        GERMINTAÏDE_15499 = 15499,
+
+        TETANYSME_15500 = 15500,
+
+        TOURBE_YLOL_15501 = 15501,
+
+        BRUTALYSME_15502 = 15502,
+
+        CRACHACIDE_15503 = 15503,
+
+        PARASITYSME_15504 = 15504,
+
+        MUCUS_15505 = 15505,
+
+        PONCTION_LOMBRIC_15506 = 15506,
+
+        NECROSE_15507 = 15507,
+
+        GLAIVE_CLIMATIQUE_15508 = 15508,
+
+        DECES_CHEMENT_15509 = 15509,
+
+        DECES_CHEMENT_15510 = 15510,
+
+        DECES_CHEMENT_15511 = 15511,
+
+        DECES_CHEMENT_15512 = 15512,
+
+        DECES_CHEMENT_15513 = 15513,
+
+        ONGUENT_PESTILENTIEL_15514 = 15514,
+
+        SOLSTICE_DHIVER_15515 = 15515,
+
+        CONFUSION_15516 = 15516,
+
+        CONFUSION_15517 = 15517,
+
+        CONFUSION_15518 = 15518,
+
+        SOLSTICE_DETE_15519 = 15519,
+
+        EQUINOXE_DE_PRINTEMPS_15520 = 15520,
+
+        COMPOSTAGE_15521 = 15521,
+
+        EQUINOXE_DAUTOMNE_15522 = 15522,
+
+        PRYGEN_DECLENCHE_15523 = 15523,
+
+        SOIN_OSAMODAS_15524 = 15524,
+
+        BENEDICTION_ANIMALE_TEST_15525 = 15525,
+
+        AUGMENTE_LA_CHARGE_INVOCATRICE_15526 = 15526,
+
+        MERYDIQUE_15527 = 15527,
+
+        BETE_ET_MECHANT_15528 = 15528,
+
+        _IF_ATTACK_15529 = 15529,
+
+        _CHECK_IF_ATTACK_15530 = 15530,
+
+        SI_LE_MONSTRE_NATTAQUE_PAS_PENDANT_SON_TOUR_DE_JEU_IL_DEVIENT_ENRAGE_AU_DEBUT_DE_SON_PROCHAIN_TOUR_15531 = 15531,
+
+        FOUTEL_CAMP_15532 = 15532,
+
+        KASSE_TOA_15533 = 15533,
+
+        COUVERTURE_SABLONNEUSE_15534 = 15534,
+
+        ARBAMECA_15535 = 15535,
+
+        SOUFFLE_DU_DESERT_15536 = 15536,
+
+        SABLES_MOUVANTS_15537 = 15537,
+
+        SABLES_MOUVANTS_15538 = 15538,
+
+        INSTINCT_DU_FRERTS_15539 = 15539,
+
+        _ANIM_INSTINCT_DU_FRERTS_15540 = 15540,
+
+        JET_DE_SABLE_15541 = 15541,
+
+        _PO_JET_DE_SABLE_15542 = 15542,
+
+        JET_DE_SABLE_15543 = 15543,
+
+        PIC_POCHE_15544 = 15544,
+
+        TORNADE_DES_MILLES_BECO_15545 = 15545,
+
+        TORNADE_DES_MILLES_BECO_15546 = 15546,
+
+        SLAMINO_15547 = 15547,
+
+        SEUIL_PV_50_MISERE_15548 = 15548,
+
+        LARBRE_DE_MORT_A_PRIS_POSSESSION_DE_CE_CORPS_15549 = 15549,
+
+        HAINE_MORTELLE_15550 = 15550,
+
+        _SORT_INITIAL_15551 = 15551,
+
+        CORRUPTION_AQUEUSE_15552 = 15552,
+
+        CONTRACTION_TOURNOYANTE_15553 = 15553,
+
+        _APPARITION_15554 = 15554,
+
+        VENT_GEANCE_15555 = 15555,
+
+        REPULSION_VICIEE_15556 = 15556,
+
+        _X_15557 = 15557,
+
+        STAICHE_15558 = 15558,
+
+        CHOUNE_15559 = 15559,
+
+        SOUFFLE_CHAUD_15560 = 15560,
+
+        VENTILATION_15561 = 15561,
+
+        DEFERLEMENT_VENTEUX_15562 = 15562,
+
+        _SORT_INITIAL_CHOUNE_15563 = 15563,
+
+        ATCHOUNE_15564 = 15564,
+
+        MACHOUILLE_15565 = 15565,
+
+        BABINONDATION_15566 = 15566,
+
+        ABOI_15567 = 15567,
+
+        FIDELITE_15568 = 15568,
+
+        MACHOUILLE_15569 = 15569,
+
+        SOURCE_DU_VENT_15570 = 15570,
+
+        _ALEA_WIND_15571 = 15571,
+
+        VENT_HURLANT_15572 = 15572,
+
+        VENT_HURLANT_15573 = 15573,
+
+        DES_VENTS_HURLANTS_DEFERLERONT_DE_LA_SOURCE_AU_DEBUT_DE_SON_PROCHAIN_TOUR_15574 = 15574,
+
+        DES_VENTS_FURIEUX_DEFERLERONT_DE_LA_SOURCE_AU_DEBUT_DE_SON_PROCHAIN_TOUR_15575 = 15575,
+
+        DES_VENTS_FURIEUX_DEFERLERONT_DE_LA_SOURCE_DANS_2_TOURS_15576 = 15576,
+
+        DECHARGE_DIMENSIONNELLE_15577 = 15577,
+
+        VENT_FURIEUX_15578 = 15578,
+
+        VENT_FURIEUX_15579 = 15579,
+
+        BRISE_EQUILIDIENNE_15580 = 15580,
+
+        _FURVENT_CD__1_15581 = 15581,
+
+        TRANSPOSITION_COPLANAIRE_VIVIFIANTE_15582 = 15582,
+
+        LA_SOURCE_ANNONCERA_UNE_NOUVELLE_DEFERLANTE_DE_VENTS_AU_DEBUT_DE_SON_PROCHAIN_TOUR_15583 = 15583,
+
+        CONTRACTIONS_A_VENT_COUREUSES_15584 = 15584,
+
+        _PUT_GLYPH_15585 = 15585,
+
+        VENTS_AVEUGLANTS_15586 = 15586,
+
+        VENTS_FULGURANTS_15587 = 15587,
+
+        VENTS_BRULANTS_15588 = 15588,
+
+        VENTS_TRANCHANTS_15589 = 15589,
+
+        VENTS_FUNESTES_15590 = 15590,
+
+        _IF_INVOC_15591 = 15591,
+
+        STAICHE_CINGLANTE_15592 = 15592,
+
+        SLAMINEAU_15593 = 15593,
+
+        CHOUNE_15594 = 15594,
+
+        INTENABLE_15595 = 15595,
+
+        _EQUILIBRAGE_15596 = 15596,
+
+        __BENEDICTION_ANIMALE__DECLENCHE_FORCE_REFRESH_15598 = 15598,
+
+        __DERNIERE_CHARGE_15599 = 15599,
+
+        BOMBE_BACTERIOLOGIQUE_15600 = 15600,
+
+        _PUT_HUB_PLAYER_15601 = 15601,
+
+        TERRAIN_FERTILE_15602 = 15602,
+
+        VOL_TIGEUR_15603 = 15603,
+
+        APPEL_DES_VENTS_15604 = 15604,
+
+        VENT_TARDISE_15605 = 15605,
+
+        VIRE_VOLER_15606 = 15606,
+
+        DRAINAGE_15607 = 15607,
+
+        SURPRESSION_15608 = 15608,
+
+        CHOURAVAGE_15609 = 15609,
+
+        CONTRE_PLAQUAGE_15610 = 15610,
+
+        CHARGE_CROQUANTE_15611 = 15611,
+
+        SABLE_TOURBILLONNANT_15612 = 15612,
+
+        NUAGE_DE_SABLE_15613 = 15613,
+
+        NUAGE_DE_SABLE_15614 = 15614,
+
+        PHALANGE_ARDENTE_15615 = 15615,
+
+        SQUAT_FLAMBE_15616 = 15616,
+
+        SABLACANE_15617 = 15617,
+
+        ROULO_BOULOS_15618 = 15618,
+
+        CARAPASSABLE_15619 = 15619,
+
+        CARAPASSABLE_15620 = 15620,
+
+        BLAST_15621 = 15621,
+
+        FLARMURE_15622 = 15622,
+
+        FLARMURE_15623 = 15623,
+
+        TORNADE_15624 = 15624,
+
+        TURBINE_15625 = 15625,
+
+        CREUSE_SABLE_15626 = 15626,
+
+        SABLE_MOUVANT_15627 = 15627,
+
+        DARD_EMPOISONNE_15628 = 15628,
+
+        PINCE_PATTES_15629 = 15629,
+
+        _SORT_INITIAL_15630 = 15630,
+
+        _EQUILIBRAGE_15631 = 15631,
+
+        _MORT_X_15632 = 15632,
+
+        _MORT_X_15633 = 15633,
+
+        _PUT_GLYPH_15634 = 15634,
+
+        VERTIGE_ANIMATION_15635 = 15635,
+
+        PROPULSION_ANIMATION_15636 = 15636,
+
+        _SORT_INITIAL_15637 = 15637,
+
+        _TB_SEARCH_ALLY_15638 = 15638,
+
+        _GLYPH__BUF_15639 = 15639,
+
+        ENCHAÎNE_15640 = 15640,
+
+        VERROUILLAGE_15641 = 15641,
+
+        PIEGE_DE_SANG_15642 = 15642,
+
+        CHAÎNON_MANQUANT_15643 = 15643,
+
+        ALIENATION_15644 = 15644,
+
+        LAME_CHERCHEUSE_15645 = 15645,
+
+        BONNE_FERTUNE_15646 = 15646,
+
+        CHAÎNE_ALIMENTAIRE_15647 = 15647,
+
+        CRAVACHE_METALLIQUE_15648 = 15648,
+
+        FERS_ROUGES_15649 = 15649,
+
+        FUSTICHAÎNE_15650 = 15650,
+
+        CHAÎNE_DE_TRANSMISSION_15651 = 15651,
+
+        CHAÎNE_CENTENAIRE_15652 = 15652,
+
+        CHAÎNE_CENTENAIRE_15653 = 15653,
+
+        CHAÎNE_DE_VIE_15654 = 15654,
+
+        _CHAÎNE__DESESPOIR_15655 = 15655,
+
+        CHAÎNON_CINGLANT_15656 = 15656,
+
+        ACIER_COUCHE_BON_CHIENCHIEN_15657 = 15657,
+
+        CHAÎNE_DE_MARKOV_15658 = 15658,
+
+        DEUS_EX_MACHAÎNA_15659 = 15659,
+
+        BOND_15660 = 15660,
+
+        COLERE_DE_IOP_15661 = 15661,
+
+        SUPREMATIE_15662 = 15662,
+
+        BROQUEL_15663 = 15663,
+
+        TERCET_15664 = 15664,
+
+        DMONTEMPS_15665 = 15665,
+
+        DMONTEMPS_15666 = 15666,
+
+        LANCE_LANCE_15667 = 15667,
+
+        EMPALE_15668 = 15668,
+
+        LANCIEN_15669 = 15669,
+
+        EPONCTION_15670 = 15670,
+
+        _EQUILIBRAGE_15671 = 15671,
+
+        BOUCLIER_REPULSIF_15672 = 15672,
+
+        EPEE_CRANTEE_15673 = 15673,
+
+        FRAPPE_EOLIENNE_15674 = 15674,
+
+        _EQUILIBRAGE_15675 = 15675,
+
+        STAICHE_CINGLANTE_15676 = 15676,
+
+        _15677 = 15677,
+
+        ESCLAVAGISME_15679 = 15679,
+
+        TIMBER_FX_15681 = 15681,
+
+        _15684 = 15684,
+
+        TEST_DMG_FONCTION_PM_UTILISES_15685 = 15685,
+
+        POUSSIRANCE_15686 = 15686,
+
+        _15688 = 15688,
+
+        _15689 = 15689,
+
+        _EQUILIBRAGE_15690 = 15690,
+
+        _15691 = 15691,
+
+        _15692 = 15692,
+
+        OLGUROPOING_DECLENCHE_OLGOTH_DE_GUERRE_15694 = 15694,
+
+        OLGUROPOING_15695 = 15695,
+
+        _DEBUFF_1664_15696 = 15696,
+
+        _15697 = 15697,
+
+        _15698 = 15698,
+
+        _15699 = 15699,
+
+        _15700 = 15700,
+
+        _15701 = 15701,
+
+        _15702 = 15702,
+
+        _15703 = 15703,
+
+        _15704 = 15704,
+
+        _15705 = 15705,
+
+        _15706 = 15706,
+
+        _15707 = 15707,
+
+        ROUGEOIEMENT__A__15708 = 15708,
+
+        _15709 = 15709,
+
+        _15710 = 15710,
+
+        _15711 = 15711,
+
+        _15712 = 15712,
+
+        _15713 = 15713,
+
+        _15714 = 15714,
+
+        BERSERK_DECLENCHE_2_15715 = 15715,
+
+        REVE_DE_CORRUPTION_15716 = 15716,
+
+        PARADOXE_DE_CORRUPTION_15717 = 15717,
+
+        CAUCHEMAR_DE_CORRUPTION_15718 = 15718,
+
+        _15719 = 15719,
+
+        REVE_DE_GUERRE_15731 = 15731,
+
+        PARADOXE_DE_GUERRE_15732 = 15732,
+
+        CAUCHEMAR_DE_GUERRE_15733 = 15733,
+
+        REVE_DE_SERVITUDE_15734 = 15734,
+
+        PARADOXE_DE_SERVITUDE_15737 = 15737,
+
+        CAUCHEMAR_DE_SERVITUDE_15738 = 15738,
+
+        GUERRE_DE_POSITIONS_15739 = 15739,
+
+        UBIQUITE_15741 = 15741,
+
+        UBIQUITE_CURATIVE_15742 = 15742,
+
+        UBIQUITE_MALADIVE_15743 = 15743,
+
+        UBIQUITE_15744 = 15744,
+
+        MAISIAL_15745 = 15745,
+
+        MALEDICTION_DE_MAISIAL_15746 = 15746,
+
+        BOUCLIER_DE_MAISIAL_15747 = 15747,
+
+        BENEDICTION_DE_MAISIAL_15748 = 15748,
+
+        PUISSANCE_DE_MAISIAL_15749 = 15749,
+
+        RELATIVITE_15750 = 15750,
+
+        INTERMEDE_15751 = 15751,
+
+        PERMANENCE_15752 = 15752,
+
+        _SORT_INITIAL_FEU_PRIMORDIAL_15753 = 15753,
+
+        FEU_PRIMORDIAL_15754 = 15754,
+
+        FEU_PRIMORDIAL__INVOC_15755 = 15755,
+
+        UBIGLYPHE_DECLENCHE_15759 = 15759,
+
+        SEUIL_PV_25_VALKYR_15760 = 15760,
+
+        EPREUVE_DE_LA_VALKYR_15761 = 15761,
+
+        MORT_VALKYR_15762 = 15762,
+
+        GARDE_DE_LA_VALKYR_15763 = 15763,
+
+        VIERGE_DE_FER_15764 = 15764,
+
+        GARDE_OUVERTE_15765 = 15765,
+
+        TEMPETE_DAIRAIN_15766 = 15766,
+
+        CHEVAUCHEE_DES_VALKYRS_15767 = 15767,
+
+        PROFIL_DE_LA_VALKYR_15768 = 15768,
+
+        VALKYR_IKYRIE_15769 = 15769,
+
+        KYRJA_15770 = 15770,
+
+        CONSUMEMENT_15771 = 15771,
+
+        CONSUMEMENT_15772 = 15772,
+
+        CONSUMEMENT_15773 = 15773,
+
+        CALVAIRE_15774 = 15774,
+
+        DESARROI_15775 = 15775,
+
+        EMBUCHE_15776 = 15776,
+
+        BRISE_GARDE_15777 = 15777,
+
+        _15778 = 15778,
+
+        _15779 = 15779,
+
+        POUSSEE_GARDE_OUVERTE_15780 = 15780,
+
+        _15801 = 15801,
+
+        _15802 = 15802,
+
+        PACAGE_15803 = 15803,
+
+        PACAGE_15804 = 15804,
+
+        PACAGE_15805 = 15805,
+
+        ONDE_AQUATIQUE_15807 = 15807,
+
+        _15832 = 15832,
+
+        GARDE_I_15846 = 15846,
+
+        GARDE_II_15847 = 15847,
+
+        GARDE_III_15848 = 15848,
+
+        CHARGE_MENTALE_15858 = 15858,
+
+        CHARGE_MENTALE_15859 = 15859,
+
+        CHARGE_MENTALE_15860 = 15860,
+
+        CHARGE_MENTALE_15861 = 15861,
+
+        LE_NOMBRE_DACTIONS_DE_LA_CIBLE_EST_LIMITE_QUAND_CETTE_LIMITE_EST_ATTEINTE_LA_CIBLE_PASSE_SON_TOUR_15862 = 15862,
+
+        PALAIS_MENTAL_15863 = 15863,
+
+        PALAIS_MENTAL_15872 = 15872,
+
+        PALAIS_MENTAL_15874 = 15874,
+
+        PALAIS_MENTAL_15875 = 15875,
+
+        CHEVAUCHEE_DES_VALKYRS_ANIM__FX_15879 = 15879,
+
+        VALKYR_IKYRIE_15880 = 15880,
+
+        PALAIS_MENTAL_15881 = 15881,
+
+        PALAIS_MENTAL_15882 = 15882,
+
+        PSYCHOTROPES_DELIRANTS_15883 = 15883,
+
+        PSYCHOTROPES_DELIRANTS_15884 = 15884,
+
+        VOYAGE_PARADOXALE_15897 = 15897,
+
+        AZIMUTATION_15905 = 15905,
+
+        AZIMUTATION_15906 = 15906,
+
+        REVE_DE_MISERE_15907 = 15907,
+
+        PARADOXE_DE_MISERE_15908 = 15908,
+
+        CAUCHEMAR_DE_MISERE_15909 = 15909,
+
+        PARALYSIS_ANALYSIS_15910 = 15910,
+
+        INTRUSION_CEREBRALE_15911 = 15911,
+
+        EPUISEMENTAL_15912 = 15912,
+
+        VEILLOGRAIN_15913 = 15913,
+
+        VEILLOGRAIN_15914 = 15914,
+
+        RADABLASTE_15915 = 15915,
+
+        PRESSENTIMENT_15916 = 15916,
+
+        CELERITE_DES_VEILLEURS_15917 = 15917,
+
+        CELERITE_DES_VEILLEURS_15919 = 15919,
+
+        DEFERLEMENT_15921 = 15921,
+
+        DEFERLEMENT_15922 = 15922,
+
+        VOYAGE_PARADOXALE_15936 = 15936,
+
+        _15943 = 15943,
+
+        _15965 = 15965,
+
+        _15966 = 15966,
+
+        _15967 = 15967,
+
+        _15968 = 15968,
+
+        DEFLAGRATION_PRIMORDIALE_15969 = 15969,
+
+        GLIGLIPLICATION_ENRAGEE_15972 = 15972,
+
+        _15974 = 15974,
+
+        NUEE_PESTILENTIELLE_15975 = 15975,
+
+        NUEE_PESTILENTIELLE_15978 = 15978,
+
+        FERS_DE_LA_TYRANNIE_15984 = 15984,
+
+        REJET_ENRAGE_15985 = 15985,
+
+        CONTRACTION_RAGEUSE_15986 = 15986,
+
+        INVOCATION_DE_SPECTRE_DE_BOUATE_DE_PANDORE_15988 = 15988,
+
+        OUVERTURE_HASARDEUSE_SPECTRALE_15989 = 15989,
+
+        DEFLAGRATION_PRIMORDIALE_15993 = 15993,
+
+        EPREUVE_DE_LA_BALANCE_15996 = 15996,
+
+        TRANCHLAME_15997 = 15997,
+
+        BOUBOU_15998 = 15998,
+
+        VISCOSITE_16001 = 16001,
+
+        VISCOSITE_16002 = 16002,
+
+        VENTREGLISSE_16006 = 16006,
+
+        HAMEÇONNAGE_16011 = 16011,
+
+        HURLEMENT_16012 = 16012,
+
+        COMPOSTAGE_16013 = 16013,
+
+        FERS_DE_LA_TYRANNIE_16049 = 16049,
+
+        MORSURE_ACHROMIQUE_16050 = 16050,
+
+        VAMPIRISATION_MELANIQUE_16051 = 16051,
+
+        RATATINAGE_AERIEN_16052 = 16052,
+
+        RAGE_INCONTRLABLE_16053 = 16053,
+
+        RUSE_DE_SOUSOURIS_16054 = 16054,
+
+        LAISSE_SPIRITUELLE_16067 = 16067,
+
+        PARADOXE_DE_SERVITUDE_16197 = 16197,
     }
 }

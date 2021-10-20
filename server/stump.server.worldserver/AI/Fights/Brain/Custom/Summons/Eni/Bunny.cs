@@ -24,11 +24,11 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Ani
                 return;
 
             if (fighter is SummonedMonster && (fighter as SummonedMonster).Monster.MonsterId == 39)
-                fighter.CastAutoSpell(new Spell((int) SpellIdEnum.STIMULATING_WORD_126, (short) fighter.Level),
+                fighter.CastAutoSpell(new Spell((int) SpellIdEnum.MOT_STIMULANT_7509, (short) fighter.Level),
                     fighter.Cell);
             if (fighter is SummonedMonster &&
                 (fighter as SummonedMonster).Monster.MonsterId == (int) MonsterIdEnum.LAPINO_PROTECTEUR)
-                fighter.CastAutoSpell(new Spell((int) SpellIdEnum.STIMULATING_WORD, (short) fighter.Level),
+                fighter.CastAutoSpell(new Spell((int) SpellIdEnum.MOT_STIMULANT_7509, (short) fighter.Level),
                     fighter.Cell);
         }
 

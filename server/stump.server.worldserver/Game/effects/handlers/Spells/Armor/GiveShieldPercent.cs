@@ -31,9 +31,9 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Armor
 
                 if (Effect.Duration != 0 || Effect.Delay != 0)
                 {
-                    if (Spell.Id == (int)SpellIdEnum.EMERALD_DOFUS)
+                    if (Spell.Id == (int)SpellIdEnum.DOFUS_EMERAUDE_8393)
                     {
-                        var buff = Caster.GetBuffs(entry => entry.Spell.Id == (int)SpellIdEnum.EMERALD_DOFUS &&
+                        var buff = Caster.GetBuffs(entry => entry.Spell.Id == (int)SpellIdEnum.DOFUS_EMERAUDE_8393 &&
                                                    entry.Dice.Id == 1039).ToList();
 
                         if (buff.Count() == 0)

@@ -19,7 +19,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
         private void Fight_FightStarted(IFight obj)
         {
             Fighter.Stats.Fields.FirstOrDefault(x => x.Key == PlayerFields.SummonLimit).Value.Base = 3;
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.CALL_OF_THE_DEEP_SEA_6793, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.APPEL_DES_FONDS_MARINS_6793, 1), Fighter.Cell);
             foreach (var entity in Fighter.Fight.GetAllFighters())
                 if (entity is MonsterFighter)
                 {

@@ -65,9 +65,9 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                             !x.HasState((int) SpellStatesEnum.INDEPLACABLE_97));
 
                         if (target == null)
-                            spellToCast = new Spell((int) SpellIdEnum.TRANSKO_3240, 1);
+                            spellToCast = new Spell((int) SpellIdEnum._3240, 1);
                         else
-                            spellToCast = new Spell((int) SpellIdEnum.TRANSKO_3240,
+                            spellToCast = new Spell((int) SpellIdEnum._3240,
                                 (short) target.GetStates().FirstOrDefault(x =>
                                         x.State.Id == (int) SpellStatesEnum.TRANSKO_364 && !x.IsDisabled).Spell
                                     .CurrentLevel);
@@ -78,7 +78,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 case MonsterIdEnum.GARDIENNE:
                 {
                     if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
-                    spellToCast = new Spell((int) SpellIdEnum.RESCUE_3244, 1);
+                    spellToCast = new Spell((int) SpellIdEnum._3244, 1);
                     target = fighter.Team.Fighters.FirstOrDefault(x =>
                         x.HasState((int) SpellStatesEnum.SECOURISME_131));
                     break;
@@ -89,11 +89,11 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                 {
                     if (!HasState((int) SpellStatesEnum.EVOLUTION_III_135)) break;
                     if (HasState((int) SpellStatesEnum.TELLURIQUE_127))
-                        spellToCast = new Spell((int) SpellIdEnum.BOOBOOME, 1);
+                        spellToCast = new Spell((int) SpellIdEnum._3239, 1);
                     else if (HasState((int) SpellStatesEnum.AQUATIQUE_128))
-                        spellToCast = new Spell((int) SpellIdEnum.BWOOBWOOM, 1);
+                        spellToCast = new Spell((int) SpellIdEnum._3232, 1);
                     else if (HasState((int) SpellStatesEnum.ARDENT_129))
-                        spellToCast = new Spell((int) SpellIdEnum.BOOBOOMF, 1);
+                        spellToCast = new Spell((int) SpellIdEnum._3231, 1);
 
                     target = fighter.OpposedTeam.Fighters.FirstOrDefault(x =>
                         x.HasState((int) SpellStatesEnum.EMBUSCADE_130));
@@ -151,7 +151,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             if (actor != this)
                 return;
 
-            CastAutoSpell(new Spell((int) SpellIdEnum.TRANSKO, 1), Cell);
+            CastAutoSpell(new Spell((int) SpellIdEnum.TRANSKO_5223, 1), Cell);
         }
 
         void AdjustStats()

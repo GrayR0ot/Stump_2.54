@@ -136,11 +136,11 @@ namespace Stump.Server.WorldServer.Game.Fights.Teams
 
         public void CheckAndAddWaves(int MapId, MonsterGroup group)
         {
-            List<MonsterDungeonWaveSpawnEntity> m_waves = MonsterManager.Instance.GetMonsterDungeonsWaveSpawnsByMapId(MapId);
+            List<NewMonsterDungeonWaveSpawnEntity> m_waves = MonsterManager.Instance.GetMonsterDungeonsWaveSpawnsByMapId(MapId);
             if (m_waves.Count < 1) return;
             foreach(var wavemonster in m_waves)
             {
-                Monster monster = new Monster(MonsterManager.Instance.GetMonsterGrade(wavemonster.MonsterGradeId), group);
+                Monster monster = new Monster(MonsterManager.Instance.GetMonsterGrade(MonsterManager.Instance.GetTemplate(wavemonster.MonsterTemplateId).Grades.First().Id), group);
                 var monsterFighter = new MonsterFighter(this, monster, (int)wavemonster.WaveNumber, (int)wavemonster.MinPlayerLevel);
                 m_wavesFighters.Add(monsterFighter);
             }

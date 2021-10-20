@@ -104,7 +104,6 @@ namespace Stump.Server.WorldServer.Game.Fights
 
             foreach (var team in m_teams)
             {
-                double finalBonus = FightFormulas.getRandomFinalBonus();
                 IEnumerable<FightActor> droppers =
                     team.OpposedTeam.GetAllFighters(entry => entry.IsDead() && entry.CanDrop()).ToList();
 
@@ -354,8 +353,9 @@ namespace Stump.Server.WorldServer.Game.Fights
                             winXP = FightFormulas.CalculateWinExp(looter, team.GetAllFighters<CharacterFighter>(),
                                 droppers, (biggestwave.WaveNumber + 1));
 
-                        winXP = (long) (winXP * finalBonus);
-                        this.AgeBonus = (short) ((finalBonus * 100) - 100);
+                        double bonus = (((double) Map.SubArea.Bonus + 100) / 100);
+                        winXP = (long) (winXP * bonus);
+                        this.Bonus = (short) ((bonus * 100) - 100);
                         if (looter is FightPlayerResult)
                         {
                             if ((looter as FightPlayerResult).Character.WorldAccount.Vip >= 2)

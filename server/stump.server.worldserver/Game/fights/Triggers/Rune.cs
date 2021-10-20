@@ -80,13 +80,13 @@ namespace Stump.Server.WorldServer.Game.Fights.Triggers
         {
             switch (spell.Id)
             {
-                case (int)SpellIdEnum.EARTH_RUNE_6191:
+                case (int)SpellIdEnum._6191:
                     return Color.Brown;
-                case (int)SpellIdEnum.FIRE_RUNE_6192:
+                case (int)SpellIdEnum._6192:
                     return Color.Red;
-                case (int)SpellIdEnum.WATER_RUNE_6193:
+                case (int)SpellIdEnum._6193:
                     return Color.Blue;
-                case (int)SpellIdEnum.AIR_RUNE_6190:
+                case (int)SpellIdEnum._6190:
                     return Color.Green;
                 default:
                     return Color.Black;

@@ -19,7 +19,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             if (fighter != Fighter)
                 return;
 
-            fighter.CastAutoSpell(new Spell((int) SpellIdEnum.BAGRIFICE_3252, 1), fighter.Cell);
+            fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SAC_RIFICES_8401, 1), fighter.Cell);
         }
     }
 
@@ -37,7 +37,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             if (fighter != Fighter)
                 return;
 
-            fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SHARING_9549, 1), fighter.Cell);
+            fighter.CastAutoSpell(new Spell((int) SpellIdEnum.PARTAGE_9129, 1), fighter.Cell);
         }
     }
 
@@ -58,7 +58,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
             if (fighter != Fighter)
                 return;
 
-            fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FRASCH_9556, 1), fighter.Cell);
+            fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SOUFFRE_DOULEUR_13376, 1), fighter.Cell);
         }
     }
 }
