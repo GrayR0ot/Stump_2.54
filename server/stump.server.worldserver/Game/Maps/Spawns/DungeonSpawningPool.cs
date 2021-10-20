@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using NLog;
@@ -10,6 +11,7 @@ using Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters;
 using Stump.Server.WorldServer.Game.Fights;
 using Stump.Server.WorldServer.Game.Fights.Teams;
 using Stump.Server.WorldServer.Game.Maps.Cells;
+using Stump.Server.WorldServer.Game.Maps.Teleport;
 
 namespace Stump.Server.WorldServer.Game.Maps.Spawns
 {
@@ -19,12 +21,12 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
 
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
-        private readonly Dictionary<MonsterGroup, MonsterDungeonSpawn> m_groupsSpawn =
-            new Dictionary<MonsterGroup, MonsterDungeonSpawn>();
+        private readonly Dictionary<MonsterGroup, NewMonsterDungeonSpawn> m_groupsSpawn =
+            new Dictionary<MonsterGroup, NewMonsterDungeonSpawn>();
 
         private readonly object m_locker = new object();
-        private readonly List<MonsterDungeonSpawn> m_spawns = new List<MonsterDungeonSpawn>();
-        private Queue<MonsterDungeonSpawn> m_spawnsQueue = new Queue<MonsterDungeonSpawn>();
+        private readonly List<NewMonsterDungeonSpawn> m_spawns = new List<NewMonsterDungeonSpawn>();
+        private Queue<NewMonsterDungeonSpawn> m_spawnsQueue = new Queue<NewMonsterDungeonSpawn>();
 
         public DungeonSpawningPool(Map map)
             : this(map, DungeonSpawnsInterval)
@@ -36,9 +38,9 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
         {
         }
 
-        public ReadOnlyCollection<MonsterDungeonSpawn> Spawns => m_spawns.AsReadOnly();
+        public ReadOnlyCollection<NewMonsterDungeonSpawn> Spawns => m_spawns.AsReadOnly();
 
-        public void AddSpawn(MonsterDungeonSpawn spawn)
+        public void AddSpawn(NewMonsterDungeonSpawn spawn)
         {
             lock (m_locker)
             {
@@ -47,7 +49,7 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
             }
         }
 
-        public void RemoveSpawn(MonsterDungeonSpawn spawn)
+        public void RemoveSpawn(NewMonsterDungeonSpawn spawn)
         {
             lock (m_locker)
             {
@@ -55,7 +57,7 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
 
                 var asList = m_spawnsQueue.ToList();
                 if (asList.Remove(spawn))
-                    m_spawnsQueue = new Queue<MonsterDungeonSpawn>(asList);
+                    m_spawnsQueue = new Queue<NewMonsterDungeonSpawn>(asList);
             }
         }
 
@@ -86,11 +88,134 @@ namespace Stump.Server.WorldServer.Game.Maps.Spawns
 
                 var group = new MonsterGroupWithAlternatives(Map.GetNextContextualId(),
                     new ObjectPosition(Map, cell, Map.GetRandomDirection()), this);
-                foreach (var entity in spawn.GroupMonsters)
-                    if (entity.MinPartyMembers != null)
-                        group.AddMonster(new Monster(entity.MonsterGrade, group), entity.MinPartyMembers.Value);
-                    else
-                        group.AddMonster(new Monster(entity.MonsterGrade, group));
+
+                try
+                {
+                    //1-4
+                    group.AddMonster(new Monster(spawn.GroupMonsters[0].MonsterTemplate.Grades.First(), group),
+                        1);
+                    if (spawn.GroupMonsters.Count >= 2)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[1].MonsterTemplate.Grades.First(), group),
+                            1);
+                    if (spawn.GroupMonsters.Count >= 3)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[2].MonsterTemplate.Grades.First(), group),
+                            1);
+                    if (spawn.GroupMonsters.Count >= 4)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[3].MonsterTemplate.Grades.First(), group),
+                            1);
+                    
+                    //1-5
+                    group.AddMonster(new Monster(spawn.GroupMonsters[0].MonsterTemplate.Grades.First(), group),
+                        5);
+                    if (spawn.GroupMonsters.Count >= 2)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[1].MonsterTemplate.Grades.First(), group),
+                            5);
+                    if (spawn.GroupMonsters.Count >= 3)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[2].MonsterTemplate.Grades.First(), group),
+                            5);
+                    if (spawn.GroupMonsters.Count >= 4)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[3].MonsterTemplate.Grades.First(), group),
+                            5);
+                    if (spawn.GroupMonsters.Count >= 5)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[4].MonsterTemplate.Grades.First(), group),
+                            5);
+                    //1-6
+                    group.AddMonster(new Monster(spawn.GroupMonsters[0].MonsterTemplate.Grades.First(), group),
+                        6);
+                    if (spawn.GroupMonsters.Count >= 2)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[1].MonsterTemplate.Grades.First(), group),
+                            6);
+                    if (spawn.GroupMonsters.Count >= 3)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[2].MonsterTemplate.Grades.First(), group),
+                            6);
+                    if (spawn.GroupMonsters.Count >= 4)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[3].MonsterTemplate.Grades.First(), group),
+                            6);
+                    if (spawn.GroupMonsters.Count >= 5)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[4].MonsterTemplate.Grades.First(), group),
+                            6);
+                    if (spawn.GroupMonsters.Count >= 6)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[5].MonsterTemplate.Grades.First(), group),
+                            6);
+                    //1-7
+                    group.AddMonster(new Monster(spawn.GroupMonsters[0].MonsterTemplate.Grades.First(), group),
+                        7);
+                    if (spawn.GroupMonsters.Count >= 2)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[1].MonsterTemplate.Grades.First(), group),
+                            7);
+                    if (spawn.GroupMonsters.Count >= 3)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[2].MonsterTemplate.Grades.First(), group),
+                            7);
+                    if (spawn.GroupMonsters.Count >= 4)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[3].MonsterTemplate.Grades.First(), group),
+                            7);
+                    if (spawn.GroupMonsters.Count >= 5)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[4].MonsterTemplate.Grades.First(), group),
+                            7);
+                    if (spawn.GroupMonsters.Count >= 6)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[5].MonsterTemplate.Grades.First(), group),
+                            7);
+                    if (spawn.GroupMonsters.Count >= 7)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[6].MonsterTemplate.Grades.First(), group),
+                            7);
+                    //1-8
+                    group.AddMonster(new Monster(spawn.GroupMonsters[0].MonsterTemplate.Grades.First(), group),
+                        8);
+                    if (spawn.GroupMonsters.Count >= 2)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[1].MonsterTemplate.Grades.First(), group),
+                            8);
+                    if (spawn.GroupMonsters.Count >= 3)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[2].MonsterTemplate.Grades.First(), group),
+                            8);
+                    if (spawn.GroupMonsters.Count >= 4)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[3].MonsterTemplate.Grades.First(), group),
+                            8);
+                    if (spawn.GroupMonsters.Count >= 5)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[4].MonsterTemplate.Grades.First(), group),
+                            8);
+                    if (spawn.GroupMonsters.Count >= 6)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[5].MonsterTemplate.Grades.First(), group),
+                            8);
+                    if (spawn.GroupMonsters.Count >= 7)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[6].MonsterTemplate.Grades.First(), group),
+                            8);
+                    if (spawn.GroupMonsters.Count >= 8)
+                        group.AddMonster(new Monster(spawn.GroupMonsters[7].MonsterTemplate.Grades.First(), group),
+                            8);
+                    
+                    /*foreach (var entity in spawn.GroupMonsters)
+                    {
+                        try
+                        {
+                            if (entity.MinPartyMembers != null)
+                            {
+                                if (entity.DungeonSpawnId == 1)
+                                {
+                                    Console.WriteLine("Spawning group " + entity.MinPartyMembers);
+                                    group.AddMonster(new Monster(entity.MonsterTemplate.Grades.First(), group),
+                                        1);
+                                }
+                                else
+                                {
+    
+                                    group.AddMonster(new Monster(entity.MonsterTemplate.Grades.First(), group),
+                                        1);
+                                }
+                            }
+                            else
+                                group.AddMonster(new Monster(entity.MonsterTemplate.Grades.First(), group));
+                        }
+                        catch (Exception e)
+                        {
+                            /*Console.WriteLine("ERROR Spawning: " + entity.Id);
+                            Console.WriteLine("ERROR: : " + e.StackTrace);*/
+                    /*}
+                }*/
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error spawning dungeon group #" + spawn.Id + " on map " + spawn.MapId);
+                }
 
                 m_groupsSpawn.Add(group, spawn);
 

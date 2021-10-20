@@ -171,7 +171,7 @@ namespace Stump.Server.WorldServer.Game.Fights.Results
             #region xp guilde
             if (Character.GuildMember != null && Character.GuildMember.GivenPercent > 0)
             {
-                int difference = Math.Min((int) Character.Level, 200) - Character.EquippedMount.Level;
+                int difference = Math.Min((int) Character.Level, 200) - Character.Guild.Level;
                 double rate = 1;
                 if (difference >= 70)
                 {

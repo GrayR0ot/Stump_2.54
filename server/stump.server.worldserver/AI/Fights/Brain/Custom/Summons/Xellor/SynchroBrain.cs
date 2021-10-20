@@ -21,7 +21,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons
                 return;
 
             var spellHandler = SpellManager.Instance.GetSpellCastHandler(Fighter,
-                new Spell((int) SpellIdEnum.SYNCHRONISATION, 0), Fighter.Cell, false);
+                new Spell((int) SpellIdEnum._5434, 0), Fighter.Cell, false);
             spellHandler.Initialize();
 
             var handlers = spellHandler.GetEffectHandlers().ToArray();

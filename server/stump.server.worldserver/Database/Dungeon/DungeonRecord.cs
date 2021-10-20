@@ -23,5 +23,7 @@ namespace Stump.Server.WorldServer.Database.Dungeons
         public int EntranceMapId { get; set; }
 
         public int ExitMapId { get; set; }
+        
+        public int KeyItemId { get; set; }
     }
 }

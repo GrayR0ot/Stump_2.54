@@ -25,5 +25,10 @@ namespace Stump.Server.WorldServer.Game.Maps.Teleport
         {
             return m_dungeons.Values.Where(x => x.MapsIdsCSV.Contains(mapId.ToString())).FirstOrDefault();
         }
+
+        public Dictionary<int, DungeonRecord> GetAllDungeons()
+        {
+            return m_dungeons;
+        }
     }
 }

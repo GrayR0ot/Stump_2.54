@@ -20,11 +20,11 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
             {
                 if (Fighter.HasState((int) SpellStatesEnum.GLYPHE_IMPAIRE_29))
                     Fighter.CastSpell(
-                        new Spell((int) SpellIdEnum.ODD_GLYPH,
+                        new Spell((int) SpellIdEnum.GLYPHE_IMPAIR_1073,
                             (short) (Fighter as SummonedMonster).MonsterGrade.GradeId), Fighter.Cell);
                 else if (Fighter.HasState((int) SpellStatesEnum.GLYPHE_PAIRE_30))
                     Fighter.CastSpell(
-                        new Spell((int) SpellIdEnum.EVEN_GLYPH,
+                        new Spell((int) SpellIdEnum.GLYPHE_PAIR_1072,
                             (short) (Fighter as SummonedMonster).MonsterGrade.GradeId), Fighter.Cell);
             }
         }

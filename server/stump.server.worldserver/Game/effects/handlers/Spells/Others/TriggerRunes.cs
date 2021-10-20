@@ -21,16 +21,16 @@ namespace Stump.Server.WorldServer.Game.Effects.Handlers.Spells.Others
             {
                 var target = Fight.GetOneFighter(trigger.CenterCell);
 
-                if (Spell.Id == (int)SpellIdEnum.RUNIC_TREATMENT && target == null)
+                if (Spell.Id == (int)SpellIdEnum.TRAITEMENT_RUNIQUE_13684 && target == null)
                     target = Caster;
 
-                if (Spell.Id == (int)SpellIdEnum.RUNIC_REPULSION_9597)
+                if (Spell.Id == (int)SpellIdEnum.REPULSION_RUNIQUE_13728)
                     target = Fight.GetOneFighter(TargetedCell);
 
-                if (Spell.Id == (int)SpellIdEnum.RUNIC_OVERCHARGE && target == null)
+                if (Spell.Id == (int)SpellIdEnum.SURCHARGE_RUNIQUE_13724 && target == null)
                     target = Fight.GetOneFighter(TargetedCell);
 
-                if (Spell.Id == (int)SpellIdEnum.MANIFESTATION_9579 && target == null)
+                if (Spell.Id == (int)SpellIdEnum.MANIFESTATION_13710 && target == null)
                     target = Caster;
 
                 if (Spell.Id == (int)SpellIdEnum.INVASION_9084 && target == null)

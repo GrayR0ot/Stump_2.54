@@ -18,19 +18,21 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
         private Dictionary<int, MonsterTemplate> m_monsterTemplates;
         private Dictionary<int, List<MonsterSpell>> m_monsterSpells;
         private Dictionary<int, MonsterSpawn> m_monsterSpawns;
-        private Dictionary<int, MonsterDungeonSpawn> m_monsterDungeonsSpawns;
+        private Dictionary<int, NewMonsterDungeonSpawn> m_monsterDungeonsSpawns;
         private Dictionary<int, DroppableItem> m_droppableItems;
         private Dictionary<int, MonsterGrade> m_monsterGrades;
         private Dictionary<int, MonsterRace> m_monsterRaces;
         private Dictionary<int, MonsterSuperRace> m_monsterSuperRaces;
         private Dictionary<int, MonsterStaticSpawn> m_monsterStaticSpawns;
-        private List<MonsterDungeonWaveSpawnEntity> m_dungeonswaves;
+        private List<NewMonsterDungeonWaveSpawnEntity> m_dungeonswaves;
 
         [Initialization(InitializationPass.Sixth)]
         public override void Initialize()
         {
-            m_monsterTemplates = Database.Query<MonsterTemplate>(MonsterTemplateRelator.FetchQuery).ToDictionary(entry => entry.Id);
-            m_monsterGrades = Database.Query<MonsterGrade>(MonsterGradeRelator.FetchQuery).ToDictionary(entry => entry.Id);
+            m_monsterTemplates = Database.Query<MonsterTemplate>(MonsterTemplateRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
+            m_monsterGrades = Database.Query<MonsterGrade>(MonsterGradeRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
             m_monsterSpells = new Dictionary<int, List<MonsterSpell>>();
             foreach (var spell in Database.Query<MonsterSpell>(MonsterSpellRelator.FetchQuery))
             {
@@ -40,20 +42,25 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 
                 list.Add(spell);
             }
-            m_monsterSpawns = Database.Query<MonsterSpawn>(MonsterSpawnRelator.FetchQuery).ToDictionary(entry => entry.Id);
-            m_monsterDungeonsSpawns = Database
-                .Query<MonsterDungeonSpawn, MonsterDungeonSpawnEntity, MonsterGrade, MonsterDungeonSpawn>
-                (new MonsterDungeonSpawnRelator().Map, MonsterDungeonSpawnRelator.FetchQuery)
+
+            m_monsterSpawns = Database.Query<MonsterSpawn>(MonsterSpawnRelator.FetchQuery)
                 .ToDictionary(entry => entry.Id);
-            m_droppableItems = Database.Query<DroppableItem>(DroppableItemRelator.FetchQuery).ToDictionary(entry => entry.Id);
+            m_monsterDungeonsSpawns = Database
+                .Query<NewMonsterDungeonSpawn, NewMonsterDungeonSpawnEntity, MonsterTemplate, NewMonsterDungeonSpawn>
+                    (new NewMonsterDungeonSpawnRelator().Map, NewMonsterDungeonSpawnRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
+            m_droppableItems = Database.Query<DroppableItem>(DroppableItemRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
             m_monsterRaces = Database.Query<MonsterRace>(MonsterRaceRelator.FetchQuery).ToDictionary(entry => entry.Id);
-            m_monsterSuperRaces = Database.Query<MonsterSuperRace>(MonsterSuperRaceRelator.FetchQuery).ToDictionary(entry => entry.Id);
+            m_monsterSuperRaces = Database.Query<MonsterSuperRace>(MonsterSuperRaceRelator.FetchQuery)
+                .ToDictionary(entry => entry.Id);
             m_monsterStaticSpawns = Database
                 .Query<MonsterStaticSpawn, MonsterStaticSpawnEntity, MonsterGrade, MonsterStaticSpawn>
-                (new MonsterStaticSpawnRelator().Map, MonsterStaticSpawnRelator.FetchQuery)
+                    (new MonsterStaticSpawnRelator().Map, MonsterStaticSpawnRelator.FetchQuery)
                 .ToDictionary(entry => entry.Id);
 
-            m_dungeonswaves = Database.Query<MonsterDungeonWaveSpawnEntity>(MonsterDungeonWaveSpawnRelator.FetchQuery).ToList();
+            m_dungeonswaves = Database
+                .Query<NewMonsterDungeonWaveSpawnEntity>(NewMonsterDungeonWaveSpawnRelator.FetchQuery).ToList();
         }
 
         public Dictionary<int, DroppableItem> GetDrops()
@@ -83,7 +90,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 
         public List<MonsterGrade> GetMonsterGrades(int monsterId)
         {
-            return m_monsterGrades.Where(entry => entry.Value.MonsterId == monsterId).Select(entry => entry.Value).ToList();
+            return m_monsterGrades.Where(entry => entry.Value.MonsterId == monsterId).Select(entry => entry.Value)
+                .ToList();
         }
 
         public List<MonsterSpell> GetMonsterGradeSpells(int id)
@@ -94,7 +102,8 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
 
         public List<DroppableItem> GetMonsterDroppableItems(int id)
         {
-            return m_droppableItems.Where(entry => entry.Value.MonsterOwnerId == id).Select(entry => entry.Value).ToList();
+            return m_droppableItems.Where(entry => entry.Value.MonsterOwnerId == id).Select(entry => entry.Value)
+                .ToList();
         }
 
         public MonsterRace GetMonsterRace(int id)
@@ -124,9 +133,9 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
         {
             return
                 m_monsterTemplates.Values.FirstOrDefault(entry => entry.Name.Equals(name,
-                                                                                    ignoreCommandCase
-                                                                                        ? StringComparison.InvariantCultureIgnoreCase
-                                                                                        : StringComparison.InvariantCulture));
+                    ignoreCommandCase
+                        ? StringComparison.InvariantCultureIgnoreCase
+                        : StringComparison.InvariantCulture));
         }
 
         public void AddMonsterSpell(MonsterSpell spell)
@@ -150,16 +159,16 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Monsters
             return m_monsterSpawns.Values.ToArray();
         }
 
-        public MonsterDungeonSpawn[] GetMonsterDungeonsSpawns()
+        public NewMonsterDungeonSpawn[] GetMonsterDungeonsSpawns()
         {
             return m_monsterDungeonsSpawns.Values.ToArray();
         }
 
-        public List<MonsterDungeonWaveSpawnEntity> GetMonsterDungeonsWaveSpawnsByMapId(int MapId)
+        public List<NewMonsterDungeonWaveSpawnEntity> GetMonsterDungeonsWaveSpawnsByMapId(int MapId)
         {
             var djsSpawns = m_monsterDungeonsSpawns.Values.Where(x => x.MapId == MapId).Select(x => x.Id);
-            var toreturn = m_dungeonswaves.Where(x => djsSpawns.Contains(x.DungeonSpawnId)).ToList();
-            return toreturn;
+            var toReturn = m_dungeonswaves.Where(x => djsSpawns.Contains(x.DungeonSpawnId)).ToList();
+            return toReturn;
         }
 
         public MonsterStaticSpawn[] GetMonsterStaticSpawns()

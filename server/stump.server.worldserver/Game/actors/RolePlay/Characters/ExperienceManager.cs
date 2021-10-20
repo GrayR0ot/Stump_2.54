@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ServiceStack.Text;
 using Stump.Server.BaseServer.Database;
 using Stump.Server.BaseServer.Initialization;
 using Stump.Server.WorldServer.Database.Characters;
@@ -72,24 +73,10 @@ namespace Stump.Server.WorldServer.Game.Actors.RolePlay.Characters
 
             return exp.Value;
         }
-        public ushort GetCharacterLevel(long experience, int prestigeRank)
-        {
-            return GetCharacterLevel(experience - prestigeRank*HighestCharacterExperience);
-        }
 
         public ushort GetCharacterLevel(long experience)
         {
-            try
-            {
-                if (experience >= m_highestCharacterLevel.Value.CharacterExp)
-                    return m_highestCharacterLevel.Key;
-
-                return (ushort) (m_records.First(entry => entry.Value.CharacterExp > experience).Key - 1);
-            }
-            catch (InvalidOperationException ex)
-            {
-                throw new Exception(string.Format("Experience {0} isn't bind to a character level", experience), ex);
-            }
+            return (ushort) (m_records.First(entry => entry.Value.CharacterExp > experience).Key - 1);
         }
 
         #endregion

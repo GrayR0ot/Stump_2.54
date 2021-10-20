@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
         private void Fight_FightStarted(IFight obj)
         {
             Fighter.Stats.Fields.FirstOrDefault(x => x.Key == PlayerFields.SummonLimit).Value.Base = 3;
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.KWEST, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.KETE_2569, 1), Fighter.Cell);
         }
 
         [BrainIdentifier((int) MonsterIdEnum.SPORAKNE)]
@@ -32,7 +32,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
             private void Fight_FightStarted(IFight obj)
             {
-                Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.JIEM, 1), Fighter.Cell);
+                Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.HAIMJI_2495, 1), Fighter.Cell);
             }
 
             [BrainIdentifier((int) MonsterIdEnum.MERULETTE)]
@@ -46,7 +46,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
                 private void Fight_FightStarted(IFight obj)
                 {
-                    Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SERPULVERISE, 1), Fighter.Cell);
+                    Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.MERULE_TRAÇON_2697, 1), Fighter.Cell);
                 }
             }
         }

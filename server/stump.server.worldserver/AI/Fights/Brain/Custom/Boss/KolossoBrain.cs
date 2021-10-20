@@ -16,7 +16,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.PIAUTRE, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.PIAUTRE_2523, 1), Fighter.Cell);
         }
     }
 }

@@ -112,7 +112,7 @@ namespace Stump.Server.WorldServer.Game.Guilds
         public CharacterMinimalInformations GetCharacterMinimalInformations()
         {
             return new CharacterMinimalInformations((ulong) Id, Name,
-                ExperienceManager.Instance.GetCharacterLevel(Experience, Character.Level > 200 ? (Character.Level-200) : 0));
+                ExperienceManager.Instance.GetCharacterLevel(Experience));
         }
 
         public CharacterMinimalGuildPublicInformations GetCharacterMinimalGuildPublicInformations()
@@ -141,7 +141,7 @@ namespace Stump.Server.WorldServer.Game.Guilds
                     Record.AccountId, 0, Character.Status);
 
             return new NetworkGuildMember((ulong) Id, Name,
-                ExperienceManager.Instance.GetCharacterLevel(Experience, Character.Level > 200 ? (Character.Level-200) : 0),
+                ExperienceManager.Instance.GetCharacterLevel(Experience),
                 Sex == SexTypeEnum.SEX_FEMALE, false,
                 (sbyte) Breed, (ushort) RankId,
                 (ulong) GivenExperience, (sbyte) GivenPercent, (uint) Rights, 0,

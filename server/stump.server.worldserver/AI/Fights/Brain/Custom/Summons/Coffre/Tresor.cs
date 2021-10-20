@@ -18,10 +18,10 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Summons.Coffre
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FORTUNE_42, 6), Fighter.Cell);
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.INITIADON, 1), Fighter.Cell);
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.TELEPATHY_2554, 1), Fighter.Cell);
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.THWACK, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.FORTUNE_8974, 6), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.INIMOUTH_2356, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.TELEPATHIE_2554, 1), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.CLAKO_2602, 1), Fighter.Cell);
         }
 
         public override void Play()

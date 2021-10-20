@@ -1,12 +1,10 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using Stump.Server.WorldServer.Game.Effects.Instances;
-using System.Text.Json;
 using Stump.Core.IO;
 using Stump.DofusProtocol.D2oClasses;
-using JsonSerializer = System.Text.Json.JsonSerializer;
+using Stump.Server.WorldServer.Game.Effects.Instances;
 
 namespace ItemTemplateEffectGenerator
 {
@@ -34,11 +32,6 @@ namespace ItemTemplateEffectGenerator
                 {
                     effectInstances.Add(effect.GetEffectInstance());
                 }
-
-                if(file.Contains("11503"))
-                {
-                    Console.WriteLine(JsonConvert.SerializeObject(effectInstances));
-                }
                 byte[] serializedEffects = effectInstances.ToBinary();
 
                 String outputName = file.Replace("input\\", "output\\");
@@ -50,4 +43,4 @@ namespace ItemTemplateEffectGenerator
             }
         }
     }
-}*/
+}

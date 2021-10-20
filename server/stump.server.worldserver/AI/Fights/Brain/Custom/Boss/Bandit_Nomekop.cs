@@ -18,7 +18,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
 
         private void Fight_FightStarted(IFight obj)
         {
-            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.DISTANT_SHOOTING_172, 6), Fighter.Cell);
+            Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.TIR_ELOIGNE_7431, 6), Fighter.Cell);
         }
 
         public override void Play()
