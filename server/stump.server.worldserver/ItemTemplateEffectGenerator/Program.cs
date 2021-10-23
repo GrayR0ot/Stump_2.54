@@ -1,8 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json;
+using Stump.Core.Extensions;
 using Stump.DofusProtocol.D2oClasses;
+using Stump.DofusProtocol.D2oClasses.Tools.D2i;
 using Stump.DofusProtocol.D2oClasses.Tools.D2o;
 using Stump.ORM;
+using Stump.Server.WorldServer.Database.I18n;
 using Stump.Server.WorldServer.Database.Items.Templates;
+using Stump.Server.WorldServer.Database.Mounts;
+using Stump.Server.WorldServer.Database.Npcs;
 using Stump.Server.WorldServer.Database.Spells;
 
 namespace SpellEffectGenerator
@@ -25,7 +33,70 @@ namespace SpellEffectGenerator
 
             D2OReader d2OReader;
 
+            #region Lang
+
+            /*databaseAccessor.Database.Execute("TRUNCATE TABLE `langs`");
+            databaseAccessor.Database.Execute("TRUNCATE TABLE `langs_ui`");
+            D2IFile d2IFile =
+                new D2IFile(
+                    @"C:\\Users\\leomo\\Mon Drive\C#\\Nexytrus\\Nexytrus\\bin\Debug\\net5.0\\dofus_windows_main_5.0_2.54.16.345 - Copie\\data\\i18n\\i18n_fr.d2i");
+            Dictionary<int, string> langs = d2IFile.GetAllText();
+            Dictionary<string, string> langsUi = d2IFile.GetAllUiText();
+
+            foreach (var entrySet in langs)
+            {
+                LangText langText = new LangText();
+                langText.Id = (uint) entrySet.Key;
+                langText.French = entrySet.Value;
+                databaseAccessor.Database.Insert(langText);
+            }
+
+            foreach (var entrySet in langsUi)
+            {
+                LangTextUi langText = new LangTextUi();
+                langText.Name = entrySet.Key;
+                langText.French = entrySet.Value;
+                databaseAccessor.Database.Insert(langText);
+            }*/
+
+            #endregion
+
+            #region Npc
+
+            /*databaseAccessor.Database.Execute("TRUNCATE TABLE `npcs_templates`");
+            d2OReader =
+                new D2OReader(
+                    @"C:\\Users\\leomo\\Mon Drive\C#\\Nexytrus\\Nexytrus\\bin\Debug\\net5.0\\dofus_windows_main_5.0_2.54.16.345 - Copie\\data\\common\\Npcs.d2o");
+            Dictionary<int, Npc> npcs = d2OReader.ReadObjects<Npc>();
+
+            foreach (Npc npc in npcs.Values)
+            {
+                    NpcTemplate npcTemplate = new NpcTemplate();
+                    npcTemplate.AssignFields(npc);
+                    databaseAccessor.Database.Insert(npcTemplate);
+            }*/
+
+            #endregion
+
+            #region Mount
+
+            databaseAccessor.Database.Execute("TRUNCATE TABLE `mounts_templates`");
+            d2OReader =
+                new D2OReader(
+                    @"C:\\Users\\leomo\\Mon Drive\C#\\Nexytrus\\Nexytrus\\bin\Debug\\net5.0\\dofus_windows_main_5.0_2.54.16.345 - Copie\\data\\common\\Mounts.d2o");
+            Dictionary<int, Mount> mounts = d2OReader.ReadObjects<Mount>();
+
+            foreach (Mount mount in mounts.Values)
+            {
+                    MountTemplate mountTemplate = new MountTemplate();
+                    mountTemplate.AssignFields(mount);
+                    databaseAccessor.Database.Insert(mountTemplate);
+            }
+
+            #endregion
+
             #region ItemTemplate
+
             databaseAccessor.Database.Execute("TRUNCATE TABLE `items_templates`");
             d2OReader =
                 new D2OReader(
@@ -41,9 +112,11 @@ namespace SpellEffectGenerator
                     databaseAccessor.Database.Insert(itemTemplate);
                 }
             }
+
             #endregion
-            
+
             #region WeaponTemplate
+
             databaseAccessor.Database.Execute("TRUNCATE TABLE `items_templates_weapons`");
             d2OReader =
                 new D2OReader(
@@ -57,9 +130,11 @@ namespace SpellEffectGenerator
 
                 databaseAccessor.Database.Insert(weaponTemplate);
             }
+
             #endregion
-            
+
             #region ItemSetTemplate
+
             databaseAccessor.Database.Execute("TRUNCATE TABLE `items_sets`");
             d2OReader =
                 new D2OReader(
@@ -72,7 +147,9 @@ namespace SpellEffectGenerator
 
                 databaseAccessor.Database.Insert(itemSetTemplate);
             }
+
             databaseAccessor.Database.Execute("TRUNCATE TABLE `items_sets`");
+
             #endregion
 
             databaseAccessor.CloseConnection();

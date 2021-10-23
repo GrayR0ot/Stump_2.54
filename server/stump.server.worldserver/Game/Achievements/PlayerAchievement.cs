@@ -105,7 +105,6 @@ namespace Stump.Server.WorldServer.Game.Achievements
         {
             Owner.ChangeSubArea += OnChangeSubArea;
             Owner.FightEnded += OnFightEnded;
-            Owner.FightStarted += OnFightStarted;
             Owner.LevelChanged += OnLevelChanged;
             Owner.CraftItem += OnCraftItem;
             Owner.DecraftItem += OnDecraftItem;
@@ -427,22 +426,6 @@ namespace Stump.Server.WorldServer.Game.Achievements
                             if (criterion.Eval(Owner))
                                 AddCriterion(criterion);
                         }
-
-                        // IDOLS
-                        /*foreach (var monster in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>())
-                        {
-                            if (monster.Monster.Template.IsBoss)
-                                foreach (var achievement in Singleton<AchievementManager>.Instance.TryGetIdolsScoreCriterionByMonster(monster.Monster.Template).Where(criterion => criterion != null))
-                                {
-                                    Console.WriteLine("Score: " + achievement.Score + " for monster " + achievement.Monster.Id);
-                                    if (ContainsCriterion(achievement.Criterion)) continue;
-                                    if (achievement.Eval(Owner))
-                                    {
-                                        AddCriterion(achievement);
-                                    }
-                                }
-                            }
-                        }*/
                         foreach (var criterions in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>()
                             .Select(item =>
                                 Singleton<AchievementManager>.Instance.TryGetIdolsScoreCriterionByMonster(item.Monster
@@ -551,43 +534,6 @@ namespace Stump.Server.WorldServer.Game.Achievements
                 }
 
             m_challs.Clear();
-        }
-
-        private void OnFightStarted(Character character, CharacterFighter fighter)
-        {
-            //Challs
-            if (fighter.Fight.Map.IsDungeon())
-                foreach (var challenges in fighter.Fight.DefendersTeam
-                    .GetAllFighters<MonsterFighter>(x => x.Monster.Template.IsBoss)
-                    .Select(item =>
-                        Singleton<AchievementManager>.Instance.TryGetCriterionsByBossWithChallenge(
-                            item.Monster.Template)).Where(criterion => criterion != null))
-                foreach (var challenge in challenges)
-                {
-                    var chall = ChallengeManager.Instance.GetChallenge(challenge.ChallIdentifier, fighter.Fight);
-
-                    if (chall == null)
-                        continue;
-                    Console.WriteLine("debug + " + chall.Id);
-                    fighter.Fight.AddChallenge(chall);
-                    m_challs.Add(chall);
-                    ContextHandler.SendChallengeInfoMessage(fighter.Fight.Clients, chall);
-                    chall.Initialize();
-
-                    if (chall is VolunteerChallenge || chall is ReprieveChallenge)
-                    {
-                        if (chall.Id == 233)
-                            chall.Target = fighter.Fight.DefendersTeam
-                                .GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2884).FirstOrDefault();
-                        else if (chall.Id == 234)
-                            chall.Target = fighter.Fight.DefendersTeam
-                                .GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2992).FirstOrDefault();
-                        else
-                            chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x =>
-                                    x.Monster.Template.Id == challenge.GetMonsterIdByChallId(challenge.ChallIdentifier))
-                                .FirstOrDefault();
-                    }
-                }
         }
 
         private void OnChangeSubArea(RolePlayActor actor, SubArea subArea)

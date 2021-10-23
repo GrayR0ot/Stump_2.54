@@ -69,14 +69,17 @@ namespace Stump.Server.WorldServer.Game.Fights
 
             void initChallenge()
             {
-                var challenge = ChallengeManager.Instance.GetRandomChallenge(this);
+                for (int i = 0; i < (Map.IsDungeon() ? 2 : 1); i++)
+                {
+                    var challenge = ChallengeManager.Instance.GetRandomChallenge(this);
 
-                // no challenge found
-                if (challenge == null)
-                    return;
+                    // no challenge found
+                    if (challenge == null)
+                        return;
 
-                challenge.Initialize();
-                AddChallenge(challenge);
+                    challenge.Initialize();
+                    AddChallenge(challenge);
+                }
             }
         }
 

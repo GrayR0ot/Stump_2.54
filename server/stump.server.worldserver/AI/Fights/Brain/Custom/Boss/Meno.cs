@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿/*using System.Linq;
 using Stump.DofusProtocol.Enums;
 using Stump.Server.WorldServer.Game.Actors.Fight;
 using Stump.Server.WorldServer.Game.Fights;
@@ -51,4 +51,4 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom
                 }
         }
     }
-}
+}*/
