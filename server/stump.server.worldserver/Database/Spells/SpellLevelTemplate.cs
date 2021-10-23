@@ -52,6 +52,7 @@ namespace Stump.Server.WorldServer.Database.Spells
 
         public uint CriticalHitProbability { get; set; }
 
+        [Ignore]
         public string StatesRequiredCSV
         {
             get => m_statesRequiredCSV;
@@ -96,6 +97,7 @@ namespace Stump.Server.WorldServer.Database.Spells
 
         public uint MinRange { get; set; }
 
+        [Ignore]
         public string StatesForbiddenCSV
         {
             get => m_statesForbiddenCSV;
@@ -166,6 +168,7 @@ namespace Stump.Server.WorldServer.Database.Spells
             set => AdditionalEffectsZonesCSV = value.ToCSV(",");
         }
 
+        [Ignore]
         public string StatesAuthorizedCSV { get; set; }
 
         [Ignore]
@@ -173,6 +176,44 @@ namespace Stump.Server.WorldServer.Database.Spells
         {
             get { return StatesAuthorizedCSV.Split(',').Select(x => Convert.ToInt32(x)).ToArray(); }
             set => StatesAuthorizedCSV = value.ToCSV(",");
+        }
+
+        public SpellLevelTemplate()
+        {
+        }
+
+        public SpellLevelTemplate(uint id, uint spellId, uint spellBreed, uint apCost, uint range, bool castInLine, bool castInDiagonal, bool castTestLos, uint criticalHitProbability, uint criticalFailureProbability, bool needFreeCell, bool needFreeTrapCell, bool needTakenCell, bool rangeCanBeBoosted, int maxStack, uint maxCastPerTurn, uint maxCastPerTarget, uint minCastInterval, uint initialCooldown, int globalCooldown, uint minPlayerLevel, bool hideEffects, bool hidden, uint minRange, string mStatesRequiredCsv, string mStatesForbiddenCsv, string additionalEffectsZonesCsv, string statesAuthorizedCsv, byte[] mCriticalEffectsBin, byte[] mEffectsBin)
+        {
+            Id = id;
+            SpellId = spellId;
+            SpellBreed = spellBreed;
+            ApCost = apCost;
+            Range = range;
+            CastInLine = castInLine;
+            CastInDiagonal = castInDiagonal;
+            CastTestLos = castTestLos;
+            CriticalHitProbability = criticalHitProbability;
+            CriticalFailureProbability = criticalFailureProbability;
+            NeedFreeCell = needFreeCell;
+            NeedFreeTrapCell = needFreeTrapCell;
+            NeedTakenCell = needTakenCell;
+            RangeCanBeBoosted = rangeCanBeBoosted;
+            MaxStack = maxStack;
+            MaxCastPerTurn = maxCastPerTurn;
+            MaxCastPerTarget = maxCastPerTarget;
+            MinCastInterval = minCastInterval;
+            InitialCooldown = initialCooldown;
+            GlobalCooldown = globalCooldown;
+            MinPlayerLevel = minPlayerLevel;
+            HideEffects = hideEffects;
+            Hidden = hidden;
+            MinRange = minRange;
+            m_statesRequiredCSV = mStatesRequiredCsv;
+            m_statesForbiddenCSV = mStatesForbiddenCsv;
+            AdditionalEffectsZonesCSV = additionalEffectsZonesCsv;
+            StatesAuthorizedCSV = statesAuthorizedCsv;
+            m_criticalEffectsBin = mCriticalEffectsBin;
+            m_effectsBin = mEffectsBin;
         }
 
         #region IAssignedByD2O Members
@@ -218,8 +259,8 @@ namespace Stump.Server.WorldServer.Database.Spells
 
         public void BeforeSave(bool insert)
         {
-            m_statesForbiddenCSV = StatesForbidden.ToCSV(",");
-            m_statesRequiredCSV = StatesRequired.ToCSV(",");
+            //m_statesForbiddenCSV = StatesForbidden.ToCSV(",");
+            //m_statesRequiredCSV = StatesRequired.ToCSV(",");
             //m_effectsBin = EffectManager.Instance.SerializeEffects(Effects);
             // m_criticalEffectsBin = EffectManager.Instance.SerializeEffects(CriticalEffects);
         }
