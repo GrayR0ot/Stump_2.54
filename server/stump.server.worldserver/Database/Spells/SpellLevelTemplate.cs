@@ -52,7 +52,6 @@ namespace Stump.Server.WorldServer.Database.Spells
 
         public uint CriticalHitProbability { get; set; }
 
-        [Ignore]
         public string StatesRequiredCSV
         {
             get => m_statesRequiredCSV;
@@ -97,7 +96,6 @@ namespace Stump.Server.WorldServer.Database.Spells
 
         public uint MinRange { get; set; }
 
-        [Ignore]
         public string StatesForbiddenCSV
         {
             get => m_statesForbiddenCSV;
@@ -168,7 +166,6 @@ namespace Stump.Server.WorldServer.Database.Spells
             set => AdditionalEffectsZonesCSV = value.ToCSV(",");
         }
 
-        [Ignore]
         public string StatesAuthorizedCSV { get; set; }
 
         [Ignore]
@@ -259,8 +256,8 @@ namespace Stump.Server.WorldServer.Database.Spells
 
         public void BeforeSave(bool insert)
         {
-            //m_statesForbiddenCSV = StatesForbidden.ToCSV(",");
-            //m_statesRequiredCSV = StatesRequired.ToCSV(",");
+            m_statesForbiddenCSV = StatesForbidden.ToCSV(",");
+            m_statesRequiredCSV = StatesRequired.ToCSV(",");
             //m_effectsBin = EffectManager.Instance.SerializeEffects(Effects);
             // m_criticalEffectsBin = EffectManager.Instance.SerializeEffects(CriticalEffects);
         }

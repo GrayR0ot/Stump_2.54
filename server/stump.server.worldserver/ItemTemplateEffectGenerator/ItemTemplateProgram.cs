@@ -8,9 +8,9 @@ using Stump.Server.WorldServer.Game.Effects.Instances;
 
 namespace ItemTemplateEffectGenerator
 {
-    internal class Program
+    internal class ItemTemplateProgram
     {
-        public static void Main(string[] args)
+        public static void aMain(string[] args)
         {
             if (!Directory.Exists(@"output"))
                 Directory.CreateDirectory(@"output");
