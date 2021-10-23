@@ -16,7 +16,7 @@ namespace SpellEffectGenerator
                 Directory.CreateDirectory(@"output");
             if (!Directory.Exists(@"output\spellEffects"))
                 Directory.CreateDirectory(@"output\spellEffects");
-            EffectManager effectManager = new EffectManager();
+            /*EffectManager effectManager = new EffectManager();
             
             byte[] binaryEffects = File.ReadAllBytes(@"input\\spellEffects.bin");
             List<EffectBase> effects = effectManager.DeserializeEffects(binaryEffects);
