@@ -6,30 +6,30 @@ using System.Linq;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.NOMADE)]
-    [ChallengeIdentifier((int)ChallengeEnum.CHAFER_RONIN__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.COFFRE_DES_FORGERONS__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.ABRAKNYDE_ANCESTRAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CHOUQUE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KRALAMOUR_GÉANT__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MISSIZ_FRIZZ__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KLIME__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_FATIGUÉS__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.CHAFER_RONIN_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.COFFRE_DES_FORGERONS_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.ABRAKNYDE_ANCESTRAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.LE_CHOUQUE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.KRALAMOUR_GEANT_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MISSIZ_FRIZZ_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KLIME_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_FATIGUES_CHALLENGE_1)]
 
-    [ChallengeIdentifier((int)ChallengeEnum.PÉTULANT)]
+    [ChallengeIdentifier((int)ChallengeEnum.PETULANT)]
     public class NomadChallenge : DefaultChallenge
     {
 
         static readonly int[] Nomade =
         {
             (int)ChallengeEnum.NOMADE,
-            (int)ChallengeEnum.CHAFER_RONIN__CHALLENGE_1_,
-            (int)ChallengeEnum.COFFRE_DES_FORGERONS__CHALLENGE_1_,
-            (int)ChallengeEnum.ABRAKNYDE_ANCESTRAL__CHALLENGE_1_,
-            (int)ChallengeEnum.CHOUQUE__CHALLENGE_2_,
-            (int)ChallengeEnum.KRALAMOUR_GÉANT__CHALLENGE_1_,
-            (int)ChallengeEnum.MISSIZ_FRIZZ__CHALLENGE_1_,
-            (int)ChallengeEnum.KLIME__CHALLENGE_2_,
-            (int)ChallengeEnum.GROZILLA_ET_GRASMERA_FATIGUÉS__CHALLENGE_1_,
+            (int)ChallengeEnum.CHAFER_RONIN_CHALLENGE_1,
+            (int)ChallengeEnum.COFFRE_DES_FORGERONS_CHALLENGE_1,
+            (int)ChallengeEnum.ABRAKNYDE_ANCESTRAL_CHALLENGE_1,
+            (int)ChallengeEnum.LE_CHOUQUE_CHALLENGE_2,
+            (int)ChallengeEnum.KRALAMOUR_GEANT_CHALLENGE_1,
+            (int)ChallengeEnum.MISSIZ_FRIZZ_CHALLENGE_1,
+            (int)ChallengeEnum.KLIME_CHALLENGE_2,
+            (int)ChallengeEnum.GROZILLA_ET_GRASMERA_FATIGUES_CHALLENGE_1,
         };
 
         public NomadChallenge(int id, IFight fight)
@@ -75,7 +75,7 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
             if (Nomade.Contains(Id) && fighter.MP <= 0)
                 return;
 
-            if (Id == (int)ChallengeEnum.PÉTULANT && fighter.AP <= 0)
+            if (Id == (int)ChallengeEnum.PETULANT && fighter.AP <= 0)
                 return;
 
             UpdateStatus(ChallengeStatusEnum.FAILED);

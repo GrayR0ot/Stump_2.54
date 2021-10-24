@@ -6,46 +6,46 @@ using System.Linq;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.HARDI)]
-    [ChallengeIdentifier((int)ChallengeEnum.CORAILLEUR_MAGISTRAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.WA_WABBIT__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.REINE_NYÉE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CHOUDINI__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.DRAGON_COCHON__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MEULOU__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.RAT_BLANC__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.RAT_NOIR__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_MULTICOLORE_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.TANUKOUÏ_SAN__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.PÉKI_PÉKI__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SPHINCTER_CELL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.PHOSSILE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KANIGROULA__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BWORKER__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.VORTEX__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.LARVE_DE_KOUTOULOU__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.HALOUINE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA__CHALLENGE_1__286)]
+    [ChallengeIdentifier((int)ChallengeEnum.CORAILLEUR_MAGISTRAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.WA_WABBIT_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.REINE_NYEE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.CHOUDINI_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.DRAGON_COCHON_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MEULOU_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.RAT_BLANC_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.RAT_NOIR_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_MULTICOLORE_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.TANUKOUÏ_SAN_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.PEKI_PEKI_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.SPHINCTER_CELL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.PHOSSILE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KANIGROULA_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BWORKER_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.VORTEX_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.LARVE_DE_KOUTOULOU_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.HALOUINE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_CHALLENGE_1)]
 
 
     [ChallengeIdentifier((int)ChallengeEnum.COLLANT)]
-    [ChallengeIdentifier((int)ChallengeEnum.TOURNESOL_AFFAMÉ__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KANKREBLATH__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_BLEUE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_CITRON__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_FRAISE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_MENTHE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CHOUDINI__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MAÎTRE_CORBAC__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MAÎTRE_PANDORE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CROCABULIA__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.OUGAH__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GLOURSÉLESTE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.OMBRE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MISSIZ_FRIZZ___CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.REINE_DES_VOLEURS__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.XLII__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_ÉPUISÉS__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MANSOT_ROYAL__CHALLENGE_2_)]
+    [ChallengeIdentifier((int)ChallengeEnum.TOURNESOL_AFFAME_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KANKREBLATH_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_BLEUE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_CITRON_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_FRAISE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_MENTHE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.CHOUDINI_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MAÎTRE_CORBAC_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MAÎTRE_PANDORE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.CROCABULIA_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.OUGAH_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GLOURSELESTE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.OMBRE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.MISSIZ_FRIZZ_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.REINE_DES_VOLEURS_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.XLII_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_EPUISES_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.MANSOT_ROYAL_CHALLENGE_2)]
 
     public class ImpertinenceChallenge : DefaultChallenge
     {
@@ -54,24 +54,24 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
         static readonly int[] Collant =
         {
             (int) ChallengeEnum.COLLANT,
-            (int) ChallengeEnum.TOURNESOL_AFFAMÉ__CHALLENGE_1_,
-            (int) ChallengeEnum.KANKREBLATH__CHALLENGE_2_,
-            (int) ChallengeEnum.GELÉE_ROYALE_BLEUE__CHALLENGE_2_,
-            (int) ChallengeEnum.GELÉE_ROYALE_CITRON__CHALLENGE_2_,
-            (int) ChallengeEnum.GELÉE_ROYALE_FRAISE__CHALLENGE_2_,
-            (int) ChallengeEnum.GELÉE_ROYALE_MENTHE__CHALLENGE_2_,
-            (int) ChallengeEnum.CHOUDINI__CHALLENGE_1_,
-            (int) ChallengeEnum.MAÎTRE_CORBAC__CHALLENGE_1_,
-            (int) ChallengeEnum.MAÎTRE_PANDORE__CHALLENGE_2_,
-            (int) ChallengeEnum.CROCABULIA__CHALLENGE_1_,
-            (int) ChallengeEnum.OUGAH__CHALLENGE_1_,
-            (int) ChallengeEnum.GLOURSÉLESTE__CHALLENGE_1_,
-            (int) ChallengeEnum.OMBRE__CHALLENGE_2_,
-            (int) ChallengeEnum.MISSIZ_FRIZZ___CHALLENGE_2_,
-            (int) ChallengeEnum.REINE_DES_VOLEURS__CHALLENGE_2_,
-            (int) ChallengeEnum.XLII__CHALLENGE_2_,
-            (int)ChallengeEnum.GROZILLA_ET_GRASMERA_ÉPUISÉS__CHALLENGE_2_,
-            (int)ChallengeEnum.MANSOT_ROYAL__CHALLENGE_2_
+            (int) ChallengeEnum.TOURNESOL_AFFAME_CHALLENGE_1,
+            (int) ChallengeEnum.KANKREBLATH_CHALLENGE_2,
+            (int) ChallengeEnum.GELEE_ROYALE_BLEUE_CHALLENGE_2,
+            (int) ChallengeEnum.GELEE_ROYALE_CITRON_CHALLENGE_2,
+            (int) ChallengeEnum.GELEE_ROYALE_FRAISE_CHALLENGE_2,
+            (int) ChallengeEnum.GELEE_ROYALE_MENTHE_CHALLENGE_2,
+            (int) ChallengeEnum.CHOUDINI_CHALLENGE_1,
+            (int) ChallengeEnum.MAÎTRE_CORBAC_CHALLENGE_1,
+            (int) ChallengeEnum.MAÎTRE_PANDORE_CHALLENGE_2,
+            (int) ChallengeEnum.CROCABULIA_CHALLENGE_1,
+            (int) ChallengeEnum.OUGAH_CHALLENGE_1,
+            (int) ChallengeEnum.GLOURSELESTE_CHALLENGE_1,
+            (int) ChallengeEnum.OMBRE_CHALLENGE_2,
+            (int) ChallengeEnum.MISSIZ_FRIZZ_CHALLENGE_2,
+            (int) ChallengeEnum.REINE_DES_VOLEURS_CHALLENGE_2,
+            (int) ChallengeEnum.XLII_CHALLENGE_2,
+            (int)ChallengeEnum.GROZILLA_ET_GRASMERA_EPUISES_CHALLENGE_2,
+            (int)ChallengeEnum.MANSOT_ROYAL_CHALLENGE_2
         };
 
         public ImpertinenceChallenge(int id, IFight fight)

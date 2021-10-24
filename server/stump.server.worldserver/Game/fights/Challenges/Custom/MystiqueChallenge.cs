@@ -8,9 +8,9 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.MYSTIQUE)]
-    [ChallengeIdentifier((int)ChallengeEnum.KORRIANDRE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MERKATOR__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BETHEL_AKARNA__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.KORRIANDRE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MERKATOR_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BETHEL_AKARNA_CHALLENGE_1)]
     public class MystiqueChallenge : DefaultChallenge
     {
         public MystiqueChallenge(int id, IFight fight)

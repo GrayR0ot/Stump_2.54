@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.CRUEL)]
-    [ChallengeIdentifier((int)ChallengeEnum.ORDONNÉ)]
+    [ChallengeIdentifier((int)ChallengeEnum.ORDONNE)]
     public class CruelChallenge : DefaultChallenge
     {
         private MonsterFighter[] m_monsters;
@@ -56,7 +56,7 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
         MonsterFighter GetNextTarget()
         {
             var monsters = m_monsters.OrderBy(x => x.Level);
-            if (Id == (int)ChallengeEnum.ORDONNÉ)
+            if (Id == (int)ChallengeEnum.ORDONNE)
                 monsters = m_monsters.OrderByDescending(x => x.Level);
 
             return monsters.FirstOrDefault(x => x.IsAlive());

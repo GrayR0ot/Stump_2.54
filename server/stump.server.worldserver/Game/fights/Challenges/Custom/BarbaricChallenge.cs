@@ -5,10 +5,10 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.BARBARE)]
-    [ChallengeIdentifier((int)ChallengeEnum.HAUTE_TRUCHE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.XLII__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SYLARGH__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.PROTOZORREUR__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.HAUTE_TRUCHE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.XLII_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.SYLARGH_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.PROTOZORREUR_CHALLENGE_1)]
     public class BarbaricChallenge : DefaultChallenge
     {
         public BarbaricChallenge(int id, IFight fight)

@@ -44,7 +44,7 @@ namespace Stump.Server.WorldServer.AI.Fights.Brain.Custom.Boss
                     if (summoned is SummonedMonster)
                         if (summoned.Monster.Template.Id == 5122)
                             if (summoned.IsAlive())
-                                Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SCEAU_DINVULNERABILITE_9153, 1),
+                                Fighter.CastAutoSpell(new Spell((int) SpellIdEnum.SCEAU_DINVULNERABILITE_9151, 1),
                                     Fighter.Cell);
             }
         }

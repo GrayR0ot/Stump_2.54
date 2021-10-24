@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.SURVIVANT)]
-    [ChallengeIdentifier((int)ChallengeEnum.PROTÉGEZ_VOS_MULES)]
+    [ChallengeIdentifier((int)ChallengeEnum.PROTEGEZ_VOS_MULES)]
     public class SurvivorChallenge : DefaultChallenge
     {
         public SurvivorChallenge(int id, IFight fight)

@@ -6,7 +6,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.LE_TEMPS_QUI_COURT)]
-    [ChallengeIdentifier((int)ChallengeEnum.SILF_LE_RASBOUL_MAJEUR__CHALLENGE_2_)]
+    [ChallengeIdentifier((int)ChallengeEnum.SILF_LE_RASBOUL_MAJEUR_CHALLENGE_2)]
     public class TimeFliesChallenge : DefaultChallenge
     {
         public TimeFliesChallenge(int id, IFight fight)

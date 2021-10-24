@@ -11,7 +11,7 @@ namespace Stump.Server.WorldServer
         /// </summary>
         [Variable(true)] public static float RegenRate = 2;
 
-        [Variable(true)] public static float XpRate = 2;
+        [Variable(true)] public static float XpRate = 6;
 
         [Variable(true)] public static float KamasRate = 5;
 
@@ -19,7 +19,7 @@ namespace Stump.Server.WorldServer
 
         [Variable(true)] public static float ResourceDropRate = 2;
 
-        [Variable(true)] public static float JobXpRate = 2;
+        [Variable(true)] public static float JobXpRate = 1;
 
         [Variable(true)] public static float VipBonusXp = 2;
 

@@ -679,8 +679,6 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
                     return SpellCastResult.CELL_NOT_FREE;
                 }*/
             }
-            Console.WriteLine("SpellID: " + cast.Spell.Id);
-            Console.WriteLine("ForbiddenID: " + SpellCastResult.STATE_FORBIDDEN);
             if (!cast.IsConditionBypassed(SpellCastResult.STATE_FORBIDDEN) && spellLevel.StatesForbidden.Any(HasState))
             {
                 return SpellCastResult.STATE_FORBIDDEN;

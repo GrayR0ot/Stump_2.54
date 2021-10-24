@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.IMPRÉVISIBLE)]
+    [ChallengeIdentifier((int)ChallengeEnum.IMPREVISIBLE)]
     public class UnpredictableChallenge : DefaultChallenge
     {
         public UnpredictableChallenge(int id, IFight fight)

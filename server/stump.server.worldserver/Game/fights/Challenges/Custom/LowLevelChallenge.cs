@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.LES_PETITS_D_ABORD)]
+    [ChallengeIdentifier((int)ChallengeEnum.LES_PETITS_DABORD)]
     public class LowLevelChallenge : DefaultChallenge
     {
         public LowLevelChallenge(int id, IFight fight)

@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.ABNÉGATION)]
+    [ChallengeIdentifier((int)ChallengeEnum.ABNEGATION)]
     public class SelfSacrificeChallenge : DefaultChallenge
     {
         public SelfSacrificeChallenge(int id, IFight fight)

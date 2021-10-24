@@ -5,11 +5,11 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
 
-    [ChallengeIdentifier((int)ChallengeEnum.HALOUINE__CHALLENGE_CHRONO_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_SOMNAMBULES__CHALLENGE_CHRONO_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_FATIGUÉS__CHALLENGE_CHRONO_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA__CHALLENGE_CHRONO_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_ÉPUISÉS__CHALLENGE_CHRONO_)]
+    [ChallengeIdentifier((int)ChallengeEnum.HALOUINE_CHALLENGE_CHRONO)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_SOMNAMBULES_CHALLENGE_CHRONO)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_FATIGUES_CHALLENGE_CHRONO)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_CHALLENGE_CHRONO)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_EPUISES_CHALLENGE_CHRONO)]
 
     public class ChronoChallenge : DefaultChallenge
     {

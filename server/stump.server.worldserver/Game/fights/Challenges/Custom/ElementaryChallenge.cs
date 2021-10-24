@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.ELÉMENTAIRE)]
+    [ChallengeIdentifier((int)ChallengeEnum.ELEMENTAIRE)]
     public class ElementaryChallenge : DefaultChallenge
     {
         private EffectSchoolEnum m_element;

@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.DEUX_POUR_LE_PRIX_D_UN)]
+    [ChallengeIdentifier((int)ChallengeEnum.DEUX_POUR_LE_PRIX_DUN)]
     public class TwoForThePriceOfOneChallenge : DefaultChallenge
     {
         private int m_kills;

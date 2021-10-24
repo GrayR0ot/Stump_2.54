@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.TUEUR_À_GAGES)]
+    [ChallengeIdentifier((int)ChallengeEnum.TUEUR_A_GAGES)]
     public class ContractKillerChallenge : DefaultChallenge
     {
         public ContractKillerChallenge(int id, IFight fight)

@@ -5,7 +5,7 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.LES_MULES_D_ABORD)]
+    [ChallengeIdentifier((int)ChallengeEnum.LES_MULES_DABORD)]
     public class MulesChallenge : DefaultChallenge
     {
         public MulesChallenge(int id, IFight fight)

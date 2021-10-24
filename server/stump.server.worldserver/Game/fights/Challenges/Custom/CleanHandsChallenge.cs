@@ -5,16 +5,16 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.MAINS_PROPRES)]
-    [ChallengeIdentifier((int)ChallengeEnum.SCARABOSSE_DORÉ__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KWAKWA__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BULBIG_BROZEUR__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.WA_WOBOT__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MANTISCORE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KOULOSSE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MINOTOROR__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.ROYALMOUTH__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MAÎTRE_DES_PANTINS__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_SOMNAMBULES__CHALLENGE_2_)]
+    [ChallengeIdentifier((int)ChallengeEnum.SCARABOSSE_DORE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.KWAKWA_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BULBIG_BROZEUR_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.WA_WOBOT_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MANTISCORE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KOULOSSE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.MINOTOROR_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.ROYALMOUTH_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MAÎTRE_DES_PANTINS_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_SOMNAMBULES_CHALLENGE_2)]
 
     public class CleanHandsChallenge : DefaultChallenge
     {

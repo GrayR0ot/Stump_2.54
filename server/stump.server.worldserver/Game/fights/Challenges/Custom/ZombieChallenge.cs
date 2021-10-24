@@ -5,18 +5,18 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.ZOMBIE)]
-    [ChallengeIdentifier((int)ChallengeEnum.KARDORIM__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SCARABOSSE_DORÉ__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KWAKWA__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KANNIBOUL_EBIL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MANTISCORE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KOULOSSE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.TYNRIL_AHURI__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.USH_GALESH__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.PÈRE_VER__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KORRIANDRE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BETHEL_AKARNA__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA__CHALLENGE_1__285)]
+    [ChallengeIdentifier((int)ChallengeEnum.KARDORIM_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.SCARABOSSE_DORE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KWAKWA_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KANNIBOUL_EBIL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MANTISCORE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.KOULOSSE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.TYNRIL_AHURI_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.USH_GALESH_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.PERE_VER_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.KORRIANDRE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BETHEL_AKARNA_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROZILLA_ET_GRASMERA_CHALLENGE_1)]
 
     public class ZombieChallenge : DefaultChallenge
     {

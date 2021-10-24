@@ -10,12 +10,12 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
     [ChallengeIdentifier((int) ChallengeEnum.PERDU_DE_VUE)]
 
     // Liberty criterion
-    [ChallengeIdentifier((int) ChallengeEnum.CHÊNE_MOU__CHALLENGE_1_)]
-    [ChallengeIdentifier((int) ChallengeEnum.PHOSSILE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int) ChallengeEnum.COMTE_RAZOF__CHALLENGE_1_)]
-    [ChallengeIdentifier((int) ChallengeEnum.CHALOEIL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int) ChallengeEnum.ILYZAELLE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int) ChallengeEnum.DAZAK_MARTEGEL__CHALLENGE_1_)]
+    [ChallengeIdentifier((int) ChallengeEnum.CHENE_MOU_CHALLENGE_1)]
+    [ChallengeIdentifier((int) ChallengeEnum.PHOSSILE_CHALLENGE_2)]
+    [ChallengeIdentifier((int) ChallengeEnum.COMTE_RAZOF_CHALLENGE_1)]
+    [ChallengeIdentifier((int) ChallengeEnum.CHALŒIL_CHALLENGE_1)]
+    [ChallengeIdentifier((int) ChallengeEnum.ILYZAELLE_CHALLENGE_1)]
+    [ChallengeIdentifier((int) ChallengeEnum.DAZAK_MARTEGEL_CHALLENGE_1)]
     public class SightseeingChallenge : DefaultChallenge
     {
         public SightseeingChallenge(int id, IFight fight)

@@ -1770,7 +1770,7 @@ namespace Stump.Server.WorldServer.Game.Fights
                     cell = Map.Cells.Where(x => GetOneFighter(x) == null).OrderBy(v => new MapPoint(freeplacements[0]).ManhattanDistanceTo(v)).FirstOrDefault();
                 }
                 DefendersTeam.AddFighter(fighter);
-                fighter.CastAutoSpell(new Spell((int)SpellIdEnum.SCEAU_DINVULNERABILITE_9153, 1), fighter.Cell);
+                fighter.CastAutoSpell(new Spell((int)SpellIdEnum.INVULNERABILITE_DIMENSIONNELLE_6722, 1), fighter.Cell);
                 foreach (var idol in ActiveIdols)
                 {
                     if (!idol.Template.TargetString.Equals("CharacterFighter"))

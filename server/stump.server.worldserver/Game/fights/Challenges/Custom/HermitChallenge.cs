@@ -5,57 +5,57 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.ANACHORÈTE)]
-    [ChallengeIdentifier((int)ChallengeEnum.MOB_L_EPONGE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BOOSTACHE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BWORKETTE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BULBIG_BROZEUR__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.NELWEEN__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CRAQUELEUR_LÉGENDAIRE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.DAÏGORO__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MINOTOROR__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.FRAKTALE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.TOXOLIATH__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SYLARGH__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.ANACHORETE)]
+    [ChallengeIdentifier((int)ChallengeEnum.MOB_LEPONGE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BOOSTACHE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BWORKETTE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BULBIG_BROZEUR_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.NELWEEN_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.CRAQUELEUR_LEGENDAIRE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.DAÏGORO_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MINOTOROR_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.FRAKTALE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.TOXOLIATH_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.SYLARGH_CHALLENGE_1)]
 
     [ChallengeIdentifier((int)ChallengeEnum.PUSILLANIME)]
-    [ChallengeIdentifier((int)ChallengeEnum.BOUFTOU_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SHIN_LARVE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_COCO_ROYAL__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_GRIOTTE_ROYAL__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_INDIGO_ROYAL__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_REINETTE_ROYAL__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.DAÏGORO__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.KLIME__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.NILEZA__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CHALOEIL__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CAPITAINE_MENO__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.LARVE_DE_KOUTOULOU__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.ANERICE_LA_SHUSHESS__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.BOUFTOU_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.SHIN_LARVE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_COCO_ROYAL_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_GRIOTTE_ROYAL_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_INDIGO_ROYAL_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_REINETTE_ROYAL_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.DAÏGORO_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.KLIME_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.NILEZA_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.CHALŒIL_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.CAPITAINE_MENO_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.LARVE_DE_KOUTOULOU_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.ANERICE_LA_SHUSHESS_CHALLENGE_1)]
     public class HermitChallenge : DefaultChallenge
     {
         readonly FightTeam m_team;
 
         static readonly int[] Anacho =
         {
-            (int)ChallengeEnum.ANACHORÈTE,
-            (int)ChallengeEnum.MOB_L_EPONGE__CHALLENGE_1_,
-            (int)ChallengeEnum.BOOSTACHE__CHALLENGE_1_,
-            (int)ChallengeEnum.BWORKETTE__CHALLENGE_1_,
-            (int)ChallengeEnum.BULBIG_BROZEUR__CHALLENGE_1_,
-            (int)ChallengeEnum.NELWEEN__CHALLENGE_2_,
-            (int)ChallengeEnum.CRAQUELEUR_LÉGENDAIRE__CHALLENGE_1_,
-            (int)ChallengeEnum.DAÏGORO__CHALLENGE_1_,
-            (int)ChallengeEnum.MINOTOROR__CHALLENGE_1_,
-            (int)ChallengeEnum.FRAKTALE__CHALLENGE_1_,
-            (int)ChallengeEnum.TOXOLIATH__CHALLENGE_2_,
-            (int)ChallengeEnum.SYLARGH__CHALLENGE_1_,
+            (int)ChallengeEnum.ANACHORETE,
+            (int)ChallengeEnum.MOB_LEPONGE_CHALLENGE_1,
+            (int)ChallengeEnum.BOOSTACHE_CHALLENGE_1,
+            (int)ChallengeEnum.BWORKETTE_CHALLENGE_1,
+            (int)ChallengeEnum.BULBIG_BROZEUR_CHALLENGE_1,
+            (int)ChallengeEnum.NELWEEN_CHALLENGE_2,
+            (int)ChallengeEnum.CRAQUELEUR_LEGENDAIRE_CHALLENGE_1,
+            (int)ChallengeEnum.DAÏGORO_CHALLENGE_1,
+            (int)ChallengeEnum.MINOTOROR_CHALLENGE_1,
+            (int)ChallengeEnum.FRAKTALE_CHALLENGE_1,
+            (int)ChallengeEnum.TOXOLIATH_CHALLENGE_2,
+            (int)ChallengeEnum.SYLARGH_CHALLENGE_1,
         };
 
         public HermitChallenge(int id, IFight fight)
             : base(id, fight)
         {
-            if (id == (int)ChallengeEnum.ANACHORÈTE)
+            if (id == (int)ChallengeEnum.ANACHORETE)
             {
                 BonusMin = 20;
                 BonusMax = 30;

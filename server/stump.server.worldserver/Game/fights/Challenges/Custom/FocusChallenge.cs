@@ -5,12 +5,12 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.FOCUS)]
-    [ChallengeIdentifier((int)ChallengeEnum.TANUKOUÏ_SAN__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CAPITAINE_EKARLATTE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.VORTEX__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.TAL_KASHA__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.ILYZAELLE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SOLAR__CHALLENGE_2_)]
+    [ChallengeIdentifier((int)ChallengeEnum.TANUKOUÏ_SAN_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.CAPITAINE_EKARLATTE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.VORTEX_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.TAL_KASHA_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.ILYZAELLE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.SOLAR_CHALLENGE_2)]
     public class FocusChallenge : DefaultChallenge
     {
         public FocusChallenge(int id, IFight fight)

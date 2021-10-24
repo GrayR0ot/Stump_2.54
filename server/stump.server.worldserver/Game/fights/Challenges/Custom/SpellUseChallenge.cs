@@ -8,7 +8,6 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.JARDINIER)]
     [ChallengeIdentifier((int)ChallengeEnum.FOSSOYEUR)]
-    [ChallengeIdentifier((int)ChallengeEnum.CASINO_ROYAL)]
     [ChallengeIdentifier((int)ChallengeEnum.ARAKNOPHILE)]
     public class SpellUseChallenge : DefaultChallenge
     {
@@ -17,16 +16,8 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
         public SpellUseChallenge(int id, IFight fight)
             : base(id, fight)
         {
-            if (id == (int)ChallengeEnum.CASINO_ROYAL)
-            {
-                BonusMin = 30;
-                BonusMax = 30;
-            }
-            else
-            {
                 BonusMin = 10;
                 BonusMax = 20;
-            }
 
             switch ((ChallengeEnum)Id)
             {
@@ -35,9 +26,6 @@ namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
                     break;
                 case ChallengeEnum.FOSSOYEUR:
                     m_spell = (int)SpellIdEnum.INVOCATION_DE_CHAFERFU_373;
-                    break;
-                case ChallengeEnum.CASINO_ROYAL:
-                    m_spell = (int)SpellIdEnum.ROULETTE_7464;
                     break;
                 case ChallengeEnum.ARAKNOPHILE:
                     m_spell = (int)SpellIdEnum.INVOCATION_DARAKNE_370;

@@ -6,7 +6,7 @@ using System;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.INTOUCHABLE)]
-    [ChallengeIdentifier((int)ChallengeEnum.TYNRIL_AHURI__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.TYNRIL_AHURI_CHALLENGE_1)]
     public class UntouchableChallenge : DefaultChallenge
     {
         public UntouchableChallenge(int id, IFight fight)

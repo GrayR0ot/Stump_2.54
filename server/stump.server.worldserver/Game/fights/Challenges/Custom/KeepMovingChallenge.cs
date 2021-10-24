@@ -7,18 +7,18 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.CIRCULEZ)]
-    [ChallengeIdentifier((int)ChallengeEnum.MALLÉFISK__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BEN_LE_RIPATE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MINOTOT__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.TOXOLIATH__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.MALLEFISK_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BEN_LE_RIPATE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.MINOTOT_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.TOXOLIATH_CHALLENGE_1)]
 
     // Liberty criterion
-    [ChallengeIdentifier((int)ChallengeEnum.CHÊNE_MOU__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.PHOSSILE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.COMTE_RAZOF__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.CHALOEIL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.ILYZAELLE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.DAZAK_MARTEGEL__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.CHENE_MOU_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.PHOSSILE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.COMTE_RAZOF_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.CHALŒIL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.ILYZAELLE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.DAZAK_MARTEGEL_CHALLENGE_1)]
     public class KeepMovingChallenge : DefaultChallenge
     {
         public KeepMovingChallenge(int id, IFight fight)

@@ -49,7 +49,17 @@ namespace Stump.Server.WorldServer.Database.Items.Templates
 
         public uint NameId { get; set; }
 
-        public string Name => m_name ?? (m_name = TextManager.Instance.GetText(NameId));
+        public string Name
+        {
+            get
+            {
+                return m_name ?? (m_name = TextManager.Instance.GetText(NameId));
+            }
+            set
+            {
+                m_name = value;
+            }
+        }
 
         public uint TypeId { get; set; }
 

@@ -9,8 +9,8 @@ using System.Linq;
 
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
-    [ChallengeIdentifier((int)ChallengeEnum.ÉCONOME)]
-    [ChallengeIdentifier((int)ChallengeEnum.GOURLO_LE_TERRIBLE__CHALLENGE_2_)]
+    [ChallengeIdentifier((int)ChallengeEnum.ECONOME)]
+    [ChallengeIdentifier((int)ChallengeEnum.GOURLO_LE_TERRIBLE_CHALLENGE_2)]
     public class ScantyChallenge : DefaultChallenge
     {
         private readonly List<FightActor> m_weaponsUsed = new List<FightActor>();

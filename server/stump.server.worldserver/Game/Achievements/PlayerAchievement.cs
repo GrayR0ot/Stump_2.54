@@ -105,6 +105,7 @@ namespace Stump.Server.WorldServer.Game.Achievements
         {
             Owner.ChangeSubArea += OnChangeSubArea;
             Owner.FightEnded += OnFightEnded;
+            Owner.FightStarted += OnFightStarted;
             Owner.LevelChanged += OnLevelChanged;
             Owner.CraftItem += OnCraftItem;
             Owner.DecraftItem += OnDecraftItem;
@@ -534,6 +535,43 @@ namespace Stump.Server.WorldServer.Game.Achievements
                 }
 
             m_challs.Clear();
+        }
+        
+        private void OnFightStarted(Character character, CharacterFighter fighter)
+        {
+            //Challs
+            if (fighter.Fight.Map.IsDungeon())
+            {
+                foreach (var challenges in fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.IsBoss).Select(item => Singleton<AchievementManager>.Instance.TryGetCriterionsByBossWithChallenge(item.Monster.Template)).Where(criterion => criterion != null))
+                {
+                    foreach (var challenge in challenges)
+                    {
+                        var chall = ChallengeManager.Instance.GetChallenge(challenge.ChallIdentifier, fighter.Fight);
+
+                        if (chall == null)
+                            continue;
+                        fighter.Fight.AddChallenge(chall);
+                        m_challs.Add(chall);
+                        ContextHandler.SendChallengeInfoMessage(fighter.Fight.Clients, chall);
+                        chall.Initialize();
+
+                        if (chall is VolunteerChallenge || chall is ReprieveChallenge)
+                        {
+
+                            if (chall.Id == 233)
+                            {
+                                chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2884).FirstOrDefault();
+                            }
+                            else if (chall.Id == 234)
+                            {
+                                chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == 2992).FirstOrDefault();
+                            }
+                            else
+                                chall.Target = fighter.Fight.DefendersTeam.GetAllFighters<MonsterFighter>(x => x.Monster.Template.Id == challenge.GetMonsterIdByChallId(challenge.ChallIdentifier)).FirstOrDefault();
+                        }
+                    }
+                }
+            }
         }
 
         private void OnChangeSubArea(RolePlayActor actor, SubArea subArea)

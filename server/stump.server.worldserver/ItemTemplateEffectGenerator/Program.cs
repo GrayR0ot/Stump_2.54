@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json.Nodes;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Stump.Core.Extensions;
 using Stump.DofusProtocol.D2oClasses;
 using Stump.DofusProtocol.D2oClasses.Tools.D2i;
@@ -12,6 +15,8 @@ using Stump.Server.WorldServer.Database.Items.Templates;
 using Stump.Server.WorldServer.Database.Mounts;
 using Stump.Server.WorldServer.Database.Npcs;
 using Stump.Server.WorldServer.Database.Spells;
+using Stump.Server.WorldServer.Game.Items;
+using Item = Stump.DofusProtocol.D2oClasses.Item;
 
 namespace SpellEffectGenerator
 {
@@ -33,9 +38,24 @@ namespace SpellEffectGenerator
 
             D2OReader d2OReader;
 
+            JObject appearancesJson = JObject.Parse(File.ReadAllText(@"appearances.json"));
+            Dictionary<int, int> appearances = new Dictionary<int, int>();
+            foreach (var jsonObject in (JArray)appearancesJson["data"])
+            {
+                try
+                {
+                        appearances.Add((int) jsonObject["official"], (int) jsonObject["swf"]);
+                }
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine("Failed on " + jsonObject["id"]);
+                }
+            }
+            Console.WriteLine("Loaded " + appearances.Count + " appearances!");
+
             #region Lang
 
-            /*databaseAccessor.Database.Execute("TRUNCATE TABLE `langs`");
+            databaseAccessor.Database.Execute("TRUNCATE TABLE `langs`");
             databaseAccessor.Database.Execute("TRUNCATE TABLE `langs_ui`");
             D2IFile d2IFile =
                 new D2IFile(
@@ -57,7 +77,7 @@ namespace SpellEffectGenerator
                 langText.Name = entrySet.Key;
                 langText.French = entrySet.Value;
                 databaseAccessor.Database.Insert(langText);
-            }*/
+            }
 
             #endregion
 
@@ -109,6 +129,18 @@ namespace SpellEffectGenerator
                 {
                     ItemTemplate itemTemplate = new ItemTemplate();
                     itemTemplate.AssignFields(item);
+                    if (appearances.ContainsKey((int)itemTemplate.Id))
+                    {
+                        int appearanceId = 0;
+                        appearances.TryGetValue((int)itemTemplate.Id, out appearanceId);
+                        itemTemplate.AppearanceId = (uint)appearanceId;
+                    }
+                    if (langs.ContainsKey((int)itemTemplate.NameId))
+                    {
+                        string name = "toDo";
+                        langs.TryGetValue((int)itemTemplate.NameId, out name);
+                        itemTemplate.Name = name;
+                    }
                     databaseAccessor.Database.Insert(itemTemplate);
                 }
             }

@@ -12,14 +12,14 @@ using System.Linq;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.VERSATILE)]
-    [ChallengeIdentifier((int)ChallengeEnum.MOB_L_EPONGE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BATOFU__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SHIN_LARVE__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.DRAGON_COCHON__CHALLENGE_2_)]
-    [ChallengeIdentifier((int)ChallengeEnum.MOON__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GROLLOUM__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.HAREBOURG__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.SOLAR__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.MOB_LEPONGE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.BATOFU_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.SHIN_LARVE_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.DRAGON_COCHON_CHALLENGE_2)]
+    [ChallengeIdentifier((int)ChallengeEnum.MOON_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GROLLOUM_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.HAREBOURG_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.SOLAR_CHALLENGE_1)]
     public class VersatileChallenge : DefaultChallenge
     {
         readonly List<Pair<FightActor, int>> m_weaponsUsed = new List<Pair<FightActor, int>>();

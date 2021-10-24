@@ -7,16 +7,16 @@ using Stump.Server.WorldServer.Game.Fights.Teams;
 namespace Stump.Server.WorldServer.Game.Fights.Challenges.Custom
 {
     [ChallengeIdentifier((int)ChallengeEnum.DUEL)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_COCO_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_GRIOTTE_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_INDIGO_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_REINETTE_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_BLEUE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_CITRON__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_FRAISE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.GELÉE_ROYALE_MENTHE__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.BLOP_MULTICOLORE_ROYAL__CHALLENGE_1_)]
-    [ChallengeIdentifier((int)ChallengeEnum.EL_PIKO__CHALLENGE_1_)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_COCO_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_GRIOTTE_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_INDIGO_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_REINETTE_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_BLEUE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_CITRON_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_FRAISE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.GELEE_ROYALE_MENTHE_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.BLOP_MULTICOLORE_ROYAL_CHALLENGE_1)]
+    [ChallengeIdentifier((int)ChallengeEnum.EL_PIKO_CHALLENGE_1)]
     public class DuelChallenge : DefaultChallenge
     {
         private readonly Dictionary<MonsterFighter, CharacterFighter> m_history = new Dictionary<MonsterFighter, CharacterFighter>();
