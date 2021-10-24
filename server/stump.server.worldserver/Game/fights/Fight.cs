@@ -1235,7 +1235,9 @@ namespace Stump.Server.WorldServer.Game.Fights
                 return true;
             }
 
-            cell = availableCells[random.Next(availableCells.Length)];
+            var selected = availableCells[random.Next(availableCells.Length)];
+            cell = selected;
+            fighter.Team.PlacementCells = fighter.Team.PlacementCells.Where(x => x.Id != selected.Id).ToArray();
 
             return true;
         }

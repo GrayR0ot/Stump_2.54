@@ -90,6 +90,7 @@ namespace Stump.Server.WorldServer.Game.Fights.Teams
         public Cell[] PlacementCells
         {
             get;
+            set;
         }
 
         public AlignmentSideEnum AlignmentSide

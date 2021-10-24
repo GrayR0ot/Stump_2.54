@@ -88,9 +88,14 @@ namespace Stump.Server.WorldServer.Game.Fights.Results
                     }
                 else
                 {
-                    var item = ItemManager.Instance.CreatePlayerItem(Character, drop.ItemId, (int)drop.Amount);
-                    Character.Inventory.AddItem(item, false);
-
+                    try
+                    {
+                        var item = ItemManager.Instance.CreatePlayerItem(Character, drop.ItemId, (int)drop.Amount);
+                        Character.Inventory.AddItem(item, false);
+                    } catch(Exception e)
+                    {
+                        Console.WriteLine("Unable to create drop with template #" + drop.ItemId);
+                    }
                 }
             }
 
