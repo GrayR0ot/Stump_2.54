@@ -217,69 +217,6 @@
     <Compile Include="AI\Fights\Brain\Brain.cs" />
     <Compile Include="AI\Fights\Brain\BrainIdentifierAttribute.cs" />
     <Compile Include="AI\Fights\Brain\BrainManager.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Amy.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Bandit_Edasse.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Bandit_Eratz.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Bandit_Nomekop.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\BenBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Bethel.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Bolgrot.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Dagon.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\DiscipleDuKimboBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\FraktaleBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\FrizzBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\GlourselesteBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Grollum.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\HamrackBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\HarebourgBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\IlyzaelleBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\KlimeBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\KolossoBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\KorriandreBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\KoutoulouBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\KralamoureBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\KwakwaBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Levitrof.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\MansotRoyalBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Meno.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Merkator.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Meulou.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\MorcacBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\NilezaBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\ObsidiantreBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\PhossileBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\PounicheurBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\ProfesseurXabrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Razof.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\RoyalMouthBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Solar.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\Sphincter_Cell.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Boss\TonneauPirateBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Coffre\Tresor.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Ecaflip\Ruleta.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Elio\Totem.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Eni\Bunny.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Eni\Fiole.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Enu\LivingBagBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Feca\EgideBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Feca\PavoisBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Iop\StrategeBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Huppermage\Manifestations.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Osamodas\Plumeau.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Osamodas\Tofu.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Osamodas\TofuGodin.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Panda\Bambou.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Panda\BarrelBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Roubland\Megabombe.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Roubland\Tymobot.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Sadida\Arbre.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Sadida\Block.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Sadida\Inflatable.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Sadida\Madoll.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Sadida\Sacrificial.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Sadida\UltraPowerfulcs.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Xellor\SynchroBrain.cs" />
-    <Compile Include="AI\Fights\Brain\Custom\Summons\Zobal\MasqueBrain.cs" />
     <Compile Include="AI\Fights\Brain\EnvironmentAnalyser.cs" />
     <Compile Include="AI\Fights\Brain\InitBrain.cs" />
     <Compile Include="AI\Fights\Spells\AISpellEffectAttribute.cs" />
@@ -1326,6 +1263,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\Spells\Casts\Breeds\Cra" />
+    <Folder Include="Game\spells\Casts\Breeds\Cra" />
+    <Folder Include="Game\Spells\Casts\Monsters" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

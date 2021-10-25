@@ -818,6 +818,11 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
         private double _bonusCoeffPortals;
         public virtual bool CastSpell(SpellCastInformations cast)
         {
+            //FULMI
+            if (cast.Spell.Template.Id == 13090)
+            {
+                cast.Caster.m_buffedSpells.Remove(cast.Spell.Template.Id);
+            }
             if (!cast.Force && (!IsFighterTurn() || IsDead()))
                 return false;
 
@@ -976,6 +981,15 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             foreach (var state in damage.Source.GetStates())
             {
                 damage.Source.TriggerBuffs(damage.Source, BuffTriggerType.AttackWithASpecificState, state.State.Id);
+            }
+            
+            //FULMI
+            if (damage.Source is CharacterFighter)
+            {
+                if (damage.Spell.Template.Id == 13090)
+                {
+                    damage.Source.BuffSpell(damage.Spell, 10);
+                }
             }
 
             damage.Source.TriggerBuffs(damage.Source, BuffTriggerType.BeforeAttack, damage);
@@ -1669,7 +1683,7 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         #region Buffs
 
-        readonly Dictionary<Spell, short> m_buffedSpells = new Dictionary<Spell, short>();
+        readonly Dictionary<int, short> m_buffedSpells = new Dictionary<int, short>();
         readonly UniqueIdProvider m_buffIdProvider = new UniqueIdProvider();
         readonly List<Buff> m_buffList = new List<Buff>();
         public ReadOnlyCollection<Buff> Buffs => m_buffList.AsReadOnly();
@@ -1847,23 +1861,23 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
 
         public void BuffSpell(Spell spell, short boost)
         {
-            if (spell != null && !m_buffedSpells.ContainsKey(spell))
-                m_buffedSpells.Add(spell, boost);
+            if (spell != null && !m_buffedSpells.ContainsKey(spell.Id))
+                m_buffedSpells.Add(spell.Id, boost);
             else
-                m_buffedSpells[spell] += boost;
+                m_buffedSpells[spell.Id] += boost;
         }
 
         public void UnBuffSpell(Spell spell, short boost)
         {
-            if (spell != null && !m_buffedSpells.ContainsKey(spell))
+            if (spell != null && !m_buffedSpells.ContainsKey(spell.Id))
                 return;
 
-            m_buffedSpells[spell] -= boost;
+            m_buffedSpells[spell.Id] -= boost;
 
-            if (m_buffedSpells[spell] == 0)
-                m_buffedSpells.Remove(spell);
+            if (m_buffedSpells[spell.Id] == 0)
+                m_buffedSpells.Remove(spell.Id);
         }
-        public short GetSpellBoost(Spell spell) => !m_buffedSpells.ContainsKey(spell) ? (short)0 : m_buffedSpells[spell];
+        public short GetSpellBoost(Spell spell) => !m_buffedSpells.ContainsKey(spell.Id) ? (short)0 : m_buffedSpells[spell.Id];
 
         public virtual bool MustSkipTurn() => GetBuffs(x => x is SkipTurnBuff).Any();
 
