@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{C887096B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellEffectRevemp", "..\..\Tools\SpellEffectRevemp\SpellEffectRevemp.csproj", "{5AD62F75-4D30-4220-8434-B8783ED346F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2oEditor", "..\..\Tools\D2oEditor\D2oEditor.csproj", "{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -337,6 +339,24 @@ Global
 		{5AD62F75-4D30-4220-8434-B8783ED346F0}.Release|x64.Build.0 = Release|Any CPU
 		{5AD62F75-4D30-4220-8434-B8783ED346F0}.Release|x86.ActiveCfg = Release|Any CPU
 		{5AD62F75-4D30-4220-8434-B8783ED346F0}.Release|x86.Build.0 = Release|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug|x64.Build.0 = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug-uptodate|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug-uptodate|Any CPU.Build.0 = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug-uptodate|x64.ActiveCfg = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug-uptodate|x64.Build.0 = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug-uptodate|x86.ActiveCfg = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Debug-uptodate|x86.Build.0 = Debug|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Release|x64.ActiveCfg = Release|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Release|x64.Build.0 = Release|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -357,6 +377,7 @@ Global
 		{1CE99BC5-C02B-4B2D-98E0-C3A0BA3F8D76} = {C887096B-D2C3-42E9-8A31-19E0DE0CA035}
 		{78BAFBBB-4622-4121-92DC-1D5477D2C1EC} = {C887096B-D2C3-42E9-8A31-19E0DE0CA035}
 		{5AD62F75-4D30-4220-8434-B8783ED346F0} = {C887096B-D2C3-42E9-8A31-19E0DE0CA035}
+		{FDB5DC74-38E9-4EE7-8FC6-6744CBE249D8} = {C887096B-D2C3-42E9-8A31-19E0DE0CA035}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5201BF58-D999-4074-8EA3-3860B9F2EA19}

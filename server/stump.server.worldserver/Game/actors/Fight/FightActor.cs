@@ -986,9 +986,12 @@ namespace Stump.Server.WorldServer.Game.Actors.Fight
             //FULMI
             if (damage.Source is CharacterFighter)
             {
-                if (damage.Spell.Template.Id == 13090)
+                if (damage != null && damage.Spell != null && damage.Spell.Template != null)
                 {
-                    damage.Source.BuffSpell(damage.Spell, 10);
+                    if (damage.Spell.Template.Id == 13090)
+                    {
+                        damage.Source.BuffSpell(damage.Spell, 10);
+                    }
                 }
             }
 

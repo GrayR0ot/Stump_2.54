@@ -616,6 +616,12 @@ namespace Stump.Server.WorldServer.Game.Achievements.Criterions
                 case (int) ChallengeEnum.GROZILLA_ET_GRASMERA_CHALLENGE_DUO:
                     return (int) MonsterIdEnum.GROZILLA;
 
+                case (int) ChallengeEnum.PRETRESSE_DE_KAO_CHALLENGE_1:
+                case (int) ChallengeEnum.PRETRESSE_DE_KAO_CHALLENGE_2:
+                case (int) ChallengeEnum.PRETRESSE_DE_KAO_CHALLENGE_DUO:
+                case (int) ChallengeEnum.PRETRESSE_DE_KAO_CHALLENGE_CHRONO:
+                    return (int) MonsterIdEnum.GROZILLA;
+
 
                 default:
                     return 0;

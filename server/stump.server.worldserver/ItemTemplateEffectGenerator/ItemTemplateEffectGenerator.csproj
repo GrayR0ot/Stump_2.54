@@ -32,6 +32,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="DofusRE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\DofusRe\src\DofusRE\bin\Debug\net5.0\DofusRE.dll</HintPath>
+        </Reference>
         <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
           <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0-rc.1.21451.13\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
           <Private>True</Private>
@@ -46,6 +49,7 @@
           <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
           <Private>True</Private>
         </Reference>
+        <Reference Include="System.ComponentModel.Composition" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
@@ -81,6 +85,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CharacteristicEnum.cs" />
+        <Compile Include="CustomItems.cs" />
         <Compile Include="EffectManager.cs" />
         <Compile Include="ItemTemplateProgram.cs" />
         <Compile Include="Program.cs" />

@@ -72,14 +72,14 @@ namespace Stump.Server.WorldServer.Game.Effects.Instances
                 duration = Duration,
                 group = Group,
                 random = Random,
-                modificator = Modificator,
-                trigger = Trigger,
+                //modificator = Modificator,
+                //trigger = Trigger,
                 triggers = Triggers,
-                zoneMinSize = ZoneMinSize,
-                zoneSize = ZoneSize,
-                zoneShape = (uint)ZoneShape,
-                zoneEfficiencyPercent = ZoneEfficiencyPercent,
-                zoneMaxEfficiency = ZoneMaxEfficiency,
+                //zoneMinSize = ZoneMinSize,
+                //zoneSize = ZoneSize,
+                //zoneShape = (uint)ZoneShape,
+                //zoneEfficiencyPercent = ZoneEfficiencyPercent,
+                //zoneMaxEfficiency = ZoneMaxEfficiency,
                 text = m_value
             };
         }

@@ -14,6 +14,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
 {
     public class JobManager : DataManager<JobManager>, ISaveable
     {
+        private readonly object m_lock = new object();
         public const int MAX_JOB_LEVEL_GAP = 100;
         public const int WEIGHT_BONUS_PER_LEVEL = 12;
         public const double WEIGHT_BONUS_DECREASE = 1 / 200d;
@@ -27,25 +28,28 @@ namespace Stump.Server.WorldServer.Game.Jobs
         public void Save()
         {
             Database.BeginTransaction();
-            var dbIds = m_historyRecords;
-
-            foreach (var id in dbIds.Distinct())
+            lock (m_lock)
             {
-                var record = GetCraftItemById(id.ItemId, id.OwnerId);
-                if (record != null)
+                var dbIds = new List<CraftItemRecord>(m_historyRecords);
+
+                foreach (var id in dbIds.Distinct())
                 {
-                    record.Amount = id.Amount;
-                    Database.Save(record);
-                }
-                else
-                {
-                    record = new CraftItemRecord
+                    var record = GetCraftItemById(id.ItemId, id.OwnerId);
+                    if (record != null)
                     {
-                        ItemId = id.ItemId,
-                        Amount = id.Amount,
-                        OwnerId = id.OwnerId
-                    };
-                    Database.Insert(record);
+                        record.Amount = id.Amount;
+                        Database.Save(record);
+                    }
+                    else
+                    {
+                        record = new CraftItemRecord
+                        {
+                            ItemId = id.ItemId,
+                            Amount = id.Amount,
+                            OwnerId = id.OwnerId
+                        };
+                        Database.Insert(record);
+                    }
                 }
             }
 
@@ -60,7 +64,7 @@ namespace Stump.Server.WorldServer.Game.Jobs
             m_recipeRecords = Database.Query<RecipeRecord>(RecipeRelator.FetchQuery).ToDictionary(x => x.Id);
 
             m_historyRecords = Database.Query<CraftItemRecord>(CraftItemRelator.FetchQuery).ToList();
-            
+
 
             World.Instance.RegisterSaveableInstance(this);
         }

@@ -172,3 +172,5 @@ C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\server\stump.server.worldserver\ItemT
 C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\server\stump.server.worldserver\ItemTemplateEffectGenerator\obj\Debug\ItemTemplateEffectGenerator.csproj.CopyComplete
 C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\server\stump.server.worldserver\ItemTemplateEffectGenerator\obj\Debug\ItemTemplateEffectGenerator.exe
 C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\server\stump.server.worldserver\ItemTemplateEffectGenerator\obj\Debug\ItemTemplateEffectGenerator.pdb
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\server\stump.server.worldserver\ItemTemplateEffectGenerator\bin\Debug\DofusRE.dll
+C:\Users\leomo\Mon Drive\C#\AS4-DEV - 2.54\server\stump.server.worldserver\ItemTemplateEffectGenerator\bin\Debug\DofusRE.pdb
